@@ -13,24 +13,27 @@
 		"forceConsistentCasingInFileNames": true,
 		"baseUrl": ".",
 		"allowJs": true,
-		"checkJs": true,
 		"paths": {
 			"$app/*": [ ".svelte/dev/runtime/app/*", ".svelte/build/runtime/app/*" ],
-			"$lib/*": [ "src/lib/*" ],
-      "$components/*": [ "src/lib/components/*" ],
-      "$stores": [ "src/lib/stores/index.ts" ],
-      "$stores/*": [ "src/lib/stores/*" ],
-      "$utils": [ "src/lib/utils/index.ts" ],
-      "$utils/*": [ "src/lib/utils/* "],
-      "$types": [ "src/types/index.ts" ],
-      "$views": [ "src/lib/views/index.ts" ],
-      "$views/*": [ "src/lib/views/* "],
+			"@lib/*": [ "src/lib/*" ],
+			"@components": [ "src/lib/components/index.ts" ],
+      "@components/*": [ "src/lib/components/*" ],
+      "@stores": [ "src/lib/stores/index.ts" ],
+      "@stores/*": [ "src/lib/stores/*" ],
+      "@utils": [ "src/lib/utils/index.ts" ],
+      "@utils/*": [ "src/lib/utils/* "],
+      "@types": [ "src/types/index.ts" ],
+      "@views": [ "src/lib/views/index.ts" ],
+			"@styles/*": [ "src/lib/styles/*" ],
+      "@views/*": [ "src/lib/views/* "],
+			"@paths": [ "src/core/paths.ts" ],
 		}
 	},
 	"include": [
     "src/**/*.d.ts",
     "src/**/*.js",
     "src/**/*.ts",
-    "src/**/*.svelte"
+    "src/**/*.svelte",
+		"src/**/*.json"
   ]
 }
