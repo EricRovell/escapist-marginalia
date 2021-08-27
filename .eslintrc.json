@@ -32,6 +32,10 @@
 		"indent": [	"error", "tab" ],
 		"linebreak-style": [ "error", "windows"	],
 		"quotes": [	"error","double" ],
-		"semi": [	"error", "always"	]
+		"semi": [	"error", "always"	],
+		"@typescript-eslint/no-unsafe-assignment": "off",
+		"@typescript-eslint/no-unsafe-call": "off",
+		"@typescript-eslint/no-unsafe-member-access": "off",
+		"@typescript-eslint/explicit-module-boundary-types": "off"
 	}
 }
