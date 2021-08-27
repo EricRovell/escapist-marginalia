@@ -1,0 +1,42 @@
+<script lang="ts">
+	import { Datetime } from "@components";
+
+	export let title: string;
+	export let href: string | undefined = undefined;
+	export let date: Date | undefined = undefined;
+</script>
+
+<article>
+	<header>
+		<a {href}>
+			<h3>{title}</h3>
+		</a>
+	</header>
+	<slot />
+	<footer>
+		<slot name="footer" />
+		{#if date}
+			<Datetime {date} />
+		{/if}
+	</footer>
+</article>
+
+<style>
+	article {
+		display: grid;
+		gap: var(--spacing-2);
+		border: var(--border-1);
+		border-radius: var(--radius-small);
+		padding: var(--spacing-3);
+	}
+
+	article h3 {
+		font-size: var(--font-size-4);
+	}
+
+	footer {
+		display: flex;
+		justify-content: flex-end;
+		gap: var(--spacing-2);
+	}
+</style>
