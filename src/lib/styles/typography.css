@@ -1,0 +1,73 @@
+/* variation fonts */
+@font-face {
+  font-family: "Montserrat-VF";
+  src: url("/fonts/Montserrat-VF.woff2") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Caveat-VF";
+  src: url("/fonts/Caveat-VF.woff2") format("woff2-variations");
+}
+
+/* fallbacks, regular */
+@font-face {
+  font-family: "Montserrat-Medium-Regular";
+  src: url("/fonts/Montserrat-Medium-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Caveat-Semibold";
+  src: url("/fonts/Caveat-Semibold.woff2") format("woff2");
+}
+
+:root {
+  --font-main: "Montserrat-Medium-Regular", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-secondary: "Caveat-Semibold", var(--font-main);
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    --font-main: "Montserrat-VF", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+    --font-secondary: "Caveat-VF", var(--font-main);
+  }
+}
+
+/* size */
+:root {
+  --base-font-size: 16px;
+  --font-size: clamp(12px, 16px + 1vw, 20px);
+
+  /* popular ratios: */
+  --ratio-minor-second: calc(15/16);
+  --ratio-major-second:  calc(8/9);
+  --ratio-golden: calc((1 + 1.41) / 2);
+  --ratio-minor-third: calc(5/6);
+  --ratio-major-third: calc(4/5);
+  --ratio-perfect-fourth: calc(3/4);
+
+  /* base */
+  /* font-size: var(--font-size); */
+  
+  /* chosen ratio */
+  --ratio: var(--ratio-major-second);
+  --ratio-reverse: calc(1 / var(--ratio));
+
+  /* medium */
+  --font-size-5: var(--font-size);
+  /* smaller */
+  --font-size-4: calc(var(--font-size-5) * var(--ratio));
+  --font-size-3: calc(var(--font-size-4) * var(--ratio));
+  --font-size-2: calc(var(--font-size-3) * var(--ratio));
+  --font-size-1: calc(var(--font-size-2) * var(--ratio));
+  /* bigger */
+  --font-size-6: calc(var(--font-size-5) * var(--ratio-reverse));
+  --font-size-7: calc(var(--font-size-6) * var(--ratio-reverse));
+  --font-size-8: calc(var(--font-size-7) * var(--ratio-reverse));
+  --font-size-9: calc(var(--font-size-8) * var(--ratio-reverse));
+}
+
+@media (max-width: 400px) {
+	:root {
+    --font-size: 14px;
+  }
+}

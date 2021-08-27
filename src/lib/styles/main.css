@@ -1,0 +1,135 @@
+/* design system */
+:root {
+  --color-surface-300: hsl(var(--surface-h) var(--surface-s-300) var(--surface-l-300));
+  --color-surface-400: hsl(var(--surface-h) var(--surface-s-400) var(--surface-l-400));
+  --color-surface-500: hsl(var(--surface-h) var(--surface-s-500) var(--surface-l-500));
+  --color-surface-600: hsl(var(--surface-h) var(--surface-s-600) var(--surface-l-600));
+  
+  /* colors */
+  --color-primary: hsl(var(--primary-h) var(--primary-s) var(--primary-l));
+  --color-neutral: hsl(var(--neutral-h) var(--neutral-s) var(--neutral-l));
+  --color-success: hsl(var(--success-h) var(--success-s) var(--success-l));
+  --color-danger: hsl(var(--danger-h) var(--danger-s) var(--danger-l));
+  --color-warning: hsl(var(--warning-h) var(--warning-s) var(--warning-l));
+  --color-info: hsl(var(--info-h) var(--info-s) var(--info-l));
+  --color-link: hsl(var(--link-h) var(--link-s) var(--link-l));
+  
+  /* grayscale */
+  --color-gray-100: hsl(var(--gray-h) var(--gray-s-100) var(--gray-l-100));
+  --color-gray-200: hsl(var(--gray-h) var(--gray-s-200) var(--gray-l-200));
+  --color-gray-300: hsl(var(--gray-h) var(--gray-s-300) var(--gray-l-300));
+  --color-gray-400: hsl(var(--gray-h) var(--gray-s-400) var(--gray-l-400));
+  --color-gray-500: hsl(var(--gray-h) var(--gray-s-500) var(--gray-l-500));
+  --color-gray-600: hsl(var(--gray-h) var(--gray-s-600) var(--gray-l-600));
+  --color-gray-700: hsl(var(--gray-h) var(--gray-s-700) var(--gray-l-700));
+  --color-gray-800: hsl(var(--gray-h) var(--gray-s-800) var(--gray-l-800));
+  --color-gray-900: hsl(var(--gray-h) var(--gray-s-900) var(--gray-l-900));
+  
+  /* radius */
+  --radius-small: 2px;
+  --radius-medium: 5px;
+  
+  /* spacing */ 
+  --spacing-em-base: 0.25em;
+  --spacing-1: calc(1 * var(--spacing-em-base));
+  --spacing-2: calc(2 * var(--spacing-em-base));
+  --spacing-3: calc(3 * var(--spacing-em-base));
+  --spacing-4: calc(4 * var(--spacing-em-base));
+  --spacing-5: calc(5 * var(--spacing-em-base));
+  --spacing-6: calc(6 * var(--spacing-em-base));
+  
+  --spacing-rem-base: 0.25em;
+  --spacing-rem-1: calc(1 * var(--spacing-rem-base));
+  --spacing-rem-2: calc(2 * var(--spacing-rem-base));
+  --spacing-rem-3: calc(3 * var(--spacing-rem-base));
+  --spacing-rem-4: calc(4 * var(--spacing-rem-base));
+  --spacing-rem-5: calc(5 * var(--spacing-rem-base));
+  --spacing-rem-6: calc(6 * var(--spacing-rem-base));
+  
+  /* focus */
+  --focus-ring-color: var(--color-primary);
+  --focus-ring-size: 0;
+  
+  /* borders */
+  --border-1: solid 1px hsl(var(--gray-h) var(--gray-s-600) var(--gray-l-600) / 0.5);
+  
+  /* z-index */
+  --z-index-under: -1;
+  --z-index-default: 0;
+  --z-index-wrapper: 1;
+  --z-index-dropdown: 2;
+  --z-index-popover: 5;
+  --z-index-navigation: 10;
+  --z-index-popup: 15;
+  --z-index-immortal: 100;
+  
+  /* easing */
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+/* utility classes */
+.variant-primary {
+  --variant-h: var(--primary-h);
+  --variant-s: var(--primary-s);
+  --variant-l: var(--primary-l);
+  --variant-contrast: var(--primary-contrast);
+}
+
+.variant-neutral {
+  --variant-h: var(--neutral-h);
+  --variant-s: var(--neutral-s);
+  --variant-l: var(--neutral-l);
+  --variant-contrast: var(--neutral-contrast);
+}
+
+.variant-success {
+  --variant-h: var(--success-h);
+  --variant-s: var(--success-s);
+  --variant-l: var(--success-l);
+  --variant-contrast: var(--success-contrast);
+}
+
+.variant-danger {
+  --variant-h: var(--danger-h);
+  --variant-s: var(--danger-s);
+  --variant-l: var(--danger-l);
+  --variant-contrast: var(--danger-contrast);
+}
+
+.variant-warning {
+  --variant-h: var(--warning-h);
+  --variant-s: var(--warning-s);
+  --variant-l: var(--warning-l);
+  --variant-contrast: var(--warning-contrast);
+}
+
+.variant-info {
+  --variant-h: var(--info-h);
+  --variant-s: var(--info-s);
+  --variant-l: var(--info-l);
+  --variant-contrast: var(--info-contrast);
+}
+
+.variant-link {
+  --variant-h: var(--link-h);
+  --variant-s: var(--link-s);
+  --variant-l: var(--link-l);
+  --variant-contrast: var(--link-contrast);
+}

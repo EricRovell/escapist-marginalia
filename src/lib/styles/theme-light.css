@@ -1,0 +1,36 @@
+:root[theme=light],
+.theme-light {
+  --gray-h: 225;
+  --gray-a: 1;
+  
+  --gray-s-100: 25%; --gray-l-100: 95%;
+  --gray-s-200: 16%; --gray-l-200: 90%;
+  --gray-s-300:  8%; --gray-l-300: 80%;
+  --gray-s-400:  8%; --gray-l-400: 70%;
+  --gray-s-500:  7%; --gray-l-500: 60%;
+  --gray-s-600: 15%; --gray-l-600: 50%;
+  --gray-s-700: 12%; --gray-l-700: 40%;
+  --gray-s-800: 25%; --gray-l-800: 20%;
+  --gray-s-900: 15%; --gray-l-900: 15%;
+  
+  --surface-h: 0;  
+  --surface-s-300: 13%; --surface-l-300: 85%;
+  --surface-s-400: 13%; --surface-l-400: 90%;
+  --surface-s-500: 13%; --surface-l-500: 98%;
+  
+  --primary-h: 15; --primary-s: 100%; --primary-l: 59%;
+  --neutral-h: 218; --neutral-s: 53%; --neutral-l: 39%;
+  --success-h: 114; --success-s: 77%; --success-l: 38%;
+  --danger-h: 359; --danger-s: 78%; --danger-l: 58%;
+  --warning-h: 39; --warning-s: 100%; --warning-l: 50%;
+  --info-h: 248; --info-s: 37%; --info-l: 49%;
+  --link-h: 217; --link-s: 34%; --link-l: 35%;
+  
+  --primary-contrast: hsl(var(--gray-h) var(--gray-s-800) var(--gray-l-800));
+  --neutral-contrast: hsl(var(--gray-h) var(--gray-s-200) var(--gray-l-200));
+  --success-contrast: hsl(var(--gray-h) var(--gray-s-200) var(--gray-l-200));
+  --danger-contrast: hsl(var(--gray-h) var(--gray-s-800) var(--gray-l-800));
+  --warning-contrast: hsl(var(--gray-h) var(--gray-s-800) var(--gray-l-800));
+  --info-contrast: hsl(var(--gray-h) var(--gray-s-200) var(--gray-l-200));
+  --link-contrast: hsl(var(--gray-h) var(--gray-s-200) var(--gray-l-200));
+}
