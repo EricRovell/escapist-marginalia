@@ -22,27 +22,18 @@
 
 <script>
 	import { pathBlogpost } from "@paths";
-	import { Card } from "@components";
+	import { Card, Timeline } from "@components";
 
 	export let posts = [];
 </script>
 
-<ul class="posts">
+<Timeline.Container>
 	{#each posts as { title, date, slug }}
-		<li class="post">
+		<Timeline.Item {date}>
 			<Card
 				{title}
-				{date}
 				href={pathBlogpost(slug)}
 			/>
-		</li>
+		</Timeline.Item>
 	{/each}
-</ul>
-
-<style>
-	.posts {
-		display: grid;
-		justify-self: center;
-		gap: var(--spacing-4);
-	}
-</style>
+</Timeline.Container>
