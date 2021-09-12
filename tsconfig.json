@@ -26,13 +26,17 @@
 			"@styles/*": [ "src/lib/styles/*" ],
       "@views/*": [ "src/lib/views/* "],
 			"@paths": [ "src/core/paths.ts" ],
-		}
+		},
+		"plugins": [
+			{ "name": "typescript-plugin-css-modules" }
+		]
 	},
 	"include": [
     "src/**/*.d.ts",
     "src/**/*.js",
     "src/**/*.ts",
     "src/**/*.svelte",
-		"src/**/*.json"
+		"src/**/*.json",
+		"src/**/*.module.css"
   ]
 }

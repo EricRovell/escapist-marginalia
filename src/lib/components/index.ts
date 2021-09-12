@@ -7,3 +7,5 @@ export { default as WorkInProgress } from "./WorkInProgress.svelte";
 export { default as Masthead } from "./Masthead.svelte";
 export { default as Card } from "./Card.svelte";
 export { default as Datetime } from "./Datetime.svelte";
+
+export * as Timeline from "./timeline";

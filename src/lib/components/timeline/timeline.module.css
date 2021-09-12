@@ -1,0 +1,40 @@
+.timeline {
+	--item-padding: 2rem;
+
+	display: grid;
+	justify-self: center;
+	gap: var(--spacing-6);
+
+	border-left: solid 1px hsl(var(--gray-h) var(--gray-s-600) var(--gray-l-600) / 0.5);
+	padding-left: var(--item-padding);
+
+	width: min(100%, 720px);
+}
+
+.item {
+	--datetime-font-size: var(--font-size-1);
+
+	position: relative;
+}
+
+.item > article {
+	display: grid;
+	gap: 0.5em;
+}
+
+.item h2 {
+	font-size: var(--font-size-3);
+	font-weight: 400;
+}
+
+.marker {
+	--size: 1em;
+
+	position: absolute;
+	left: calc(-0.5 * var(--size) - var(--item-padding));
+
+	width: var(--size);
+	height: var(--size);
+	border-radius: 50%;
+	background-color: var(--color-primary);
+}
