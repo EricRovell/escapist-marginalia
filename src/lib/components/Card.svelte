@@ -13,12 +13,14 @@
 		</a>
 	</header>
 	<slot />
-	<footer>
-		<slot name="footer" />
-		{#if date}
-			<Datetime {date} />
-		{/if}
-	</footer>
+	{#if $$slots.footer || date}
+		<footer>
+			<slot name="footer" />
+			{#if date}
+				<Datetime {date} />
+			{/if}
+		</footer>
+	{/if}
 </article>
 
 <style>
@@ -38,5 +40,9 @@
 		display: flex;
 		justify-content: flex-end;
 		gap: var(--spacing-2);
+	}
+
+	a:hover {
+		color: var(--color-primary);
 	}
 </style>
