@@ -39,9 +39,10 @@
 		"eslint": "^7.32.0",
 		"eslint-plugin-svelte3": "^3.2.0",
 		"jest": "^27.1.0",
-		"katex": "^0.13.13",
+		"katex": "^0.13.18",
 		"mdsvex": "^0.9.8",
-		"rehype-katex": "^6.0.1",
+		"rehype-katex": "5",
+		"remark-math": "2",
 		"rollup": "^2.56.3",
 		"rollup-plugin-terser": "^7.0.2",
 		"rollup-plugin-typescript2": "^0.30.0",
@@ -52,6 +53,7 @@
 		"tslib": "^2.3.1",
 		"typescript": "^4.4.2",
 		"typescript-plugin-css-modules": "^3.4.0",
+		"unist-util-visit": "2",
 		"vite": "^2.5.1"
 	},
 	"type": "module"
