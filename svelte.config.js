@@ -1,6 +1,6 @@
 import sveltePreprocess from "svelte-preprocess";
 import { mdsvex } from "mdsvex";
-import katex from "rehype-katex";
+import { mdsvexConfig } from "./mdsvex.config.js";
 import adapter from "@sveltejs/adapter-static";
 import path from "path";
 
@@ -18,14 +18,7 @@ const aliasList = [
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: [
-		mdsvex({
-			rehypePlugins: [
-				katex
-			],
-			layout: {
-				blogpost: "./src/lib/layout/Blogpost.svelte"
-			}
-		}),
+		mdsvex(mdsvexConfig),
 		sveltePreprocess(),
 	],
 	extensions: [ ".svelte", ".svx" ],
