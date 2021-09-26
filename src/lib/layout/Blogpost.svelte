@@ -2,6 +2,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	import { theme } from "@stores";
 	import styles from "./blogpost.module.css";
+	import "katex/dist/katex.min.css";
 
 	export let title;
 
