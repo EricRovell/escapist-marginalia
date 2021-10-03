@@ -1,5 +1,13 @@
 # Personal blog
 
+## 0.5.0 (2021-10-03)
+
+- Improve `project-euler` posts with new dedicated layout, the problem description stands out better now;
+
+## 0.4.0 (2021-09-26)
+
+- Remove `Math` component in favor of math preprocessing settings, thanks to this [issue](https://github.com/pngwn/MDsveX/issues/302);
+
 ## 0.3.0 (2021-09-12)
 
 - [fix]: revert blogpost headings styles partialy as it breaks the layout for small screens;
