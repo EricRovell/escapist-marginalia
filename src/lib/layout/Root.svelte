@@ -42,11 +42,7 @@
 	<section label="content" class="content">
 		<slot />
 	</section>
-	<Footer>
-		<section class="copyright">
-      © {new Date().getFullYear()} eric/rovell, v0.1.0 | CC BY-NC-SA 4.0 Licence.
-    </section>
-	</Footer>
+	<Footer />
 </div>
 
 <style>
@@ -80,16 +76,6 @@
     width: min(100%, var(--max-width));
     min-height: calc(100vh - 50px);
     margin: 15vh 0;
-  }
-
-  .copyright {
-    justify-self: start;
-  }
-
-  @media (max-width: 540px) {
-    .copyright {
-      justify-self: center;
-    }
   }
 
   /* let bottom menu be full width */
