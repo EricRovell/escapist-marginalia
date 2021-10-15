@@ -83,4 +83,15 @@
     grid-template-rows: 1fr;
     width: max-content;
   }
+
+  @media screen and (max-width: 600px) {
+    header {
+      grid-template: 1fr / repeat(2, 1fr);
+      grid-template-areas: "navigation controls";
+    }
+
+    section[label="logo"] {
+      display: none;
+    }
+  }
 </style>
