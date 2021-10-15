@@ -19,7 +19,7 @@ export async function getPosts(): Promise<Post[]> {
 
 		posts.push({
 			title,
-			date: new Date(created),
+			date: new Date(created as Date),
 			series,
 			slug: basename(filename, ".svx")
 		});
