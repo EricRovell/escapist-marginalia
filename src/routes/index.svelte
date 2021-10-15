@@ -3,7 +3,7 @@
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export async function load({ fetch }) {
-		const res = await fetch("/api/blog/posts.json");
+		const res = await fetch("/api/blog/posts.json?sort=-1");
 
 		if (res.ok) {
 			return {
