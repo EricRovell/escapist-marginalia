@@ -24,19 +24,19 @@
         <Navigation.Item href={pathBlog} pattern={/\/blog|\/content/}>
           Blog
         </Navigation.Item>
-        <Navigation.Item href={pathGallery} pattern={/\/gallery/}>
+        <Navigation.Item href={pathGallery} pattern={/\/gallery/} disabled>
           Gallery
         </Navigation.Item>
         <Navigation.Item href={pathProjects}>
           Projects
         </Navigation.Item>
-        <Navigation.Item href={pathAbout}>
+        <Navigation.Item href={pathAbout} disabled>
           About
         </Navigation.Item>
       </Navigation.Container>
     </svelte:fragment>
     <svelte:fragment slot="controls">
-      <ThemeSelect size="30px" />
+      <ThemeSelect />
     </svelte:fragment>
   </Masthead>
 	<section label="content" class="content">
