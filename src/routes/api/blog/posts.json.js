@@ -1,24 +1,12 @@
-import { basename } from "path";
+import { getPosts } from "@core/getPosts";
 
-export async function get() {
-	const posts = [];
+export async function get({ query }) {
+	const sort = query.get("sort");
+	let posts = await getPosts();
 
-	// Import all .svx files in the directory
-	const modules = import.meta.glob("/src/routes/content/**/*.svx");
-
-	for await (const [ filename, module ] of Object.entries(modules)) {
-		const { metadata } = await module();
-		const { title, created } = metadata;
-
-		posts.push({
-			title,
-			date: new Date(created),
-			slug: basename(filename, ".svx")
-		});
+	if (sort) {
+		posts.sort((a, b) => (a.date > b.date ? Number(sort) : 1));
 	}
-
-	// Sort posts by descending date
-	posts.sort((a, b) => (a.date > b.date ? -1 : 1));
 
 	return {
 		body: posts

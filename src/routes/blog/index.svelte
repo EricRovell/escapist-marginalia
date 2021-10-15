@@ -3,12 +3,12 @@
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export async function load({ fetch }) {
-		const res = await fetch("/api/blog/posts.json");
+		const res = await fetch("/api/blog/series.json");
 
 		if (res.ok) {
 			return {
 				props: {
-					posts: await res.json()
+					catalogue: await res.json()
 				}
 			};
 		}
@@ -21,19 +21,45 @@
 </script>
 
 <script>
-	import { pathBlogpost } from "@paths";
-	import { Card, Timeline } from "@components";
+	import { Card } from "@components";
+	import { pathBlogpost } from "@core/paths";
 
-	export let posts = [];
+	export let catalogue = {};
+
+	console.log(Object.entries(catalogue));
 </script>
 
-<Timeline.Container>
-	{#each posts as { title, date, slug }}
-		<Timeline.Item {date}>
-			<Card
-				{title}
-				href={pathBlogpost(slug)}
-			/>
-		</Timeline.Item>
+<main>
+	{#each Object.entries(catalogue) as [ series, posts ]}
+		<section>
+			<h2>{series}</h2>
+			<div>
+				{#each posts as { title, slug, date }}
+					<Card
+						{title}
+						href={pathBlogpost(slug)}
+						{date}
+					/>
+				{/each}
+			</div>
+		</section>
 	{/each}
-</Timeline.Container>
+</main>
+
+<style>
+	main {
+		width: 100%;
+	}
+
+	h2 {
+		background-color: var(--color-surface-300);
+		padding: 0.75rem;
+		margin-bottom: 1rem;
+	}
+
+	section > div {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+		gap: 1rem;
+	}
+</style>

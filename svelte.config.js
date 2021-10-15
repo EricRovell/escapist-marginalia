@@ -12,7 +12,8 @@ const aliasList = [
 	{ name: "@utils", path: "./src/lib/utils" },
 	{ name: "@views", path: "./src/lib/views" },
 	{ name: "@types", path: "./src/types" },
-	{ name: "@paths", path: "./src/core/paths.ts" }
+	{ name: "@paths", path: "./src/core/paths.ts" },
+	{ name: "@core", path: "./src/core" }
 ];
 
 /** @type {import('@sveltejs/kit').Config} */
