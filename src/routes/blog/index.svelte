@@ -25,8 +25,6 @@
 	import { pathBlogpost } from "@core/paths";
 
 	export let catalogue = {};
-
-	console.log(Object.entries(catalogue));
 </script>
 
 <main>
