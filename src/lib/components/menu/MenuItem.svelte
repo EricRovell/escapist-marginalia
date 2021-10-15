@@ -110,5 +110,6 @@
   .disabled {
     pointer-events: none;
     color: var(--color-gray-300);
+    text-decoration: line-through;
   }
 </style>
