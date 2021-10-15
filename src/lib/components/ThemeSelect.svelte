@@ -1,4 +1,6 @@
 <script lang="ts" context="module">
+  type Theme = "auto" | "light" | "dark";
+
 	interface Coordinate {
 		x: number;
 		y: number;

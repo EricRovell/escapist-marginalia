@@ -1,4 +1,4 @@
-import { writable, get } from "svelte/store";
+import { writable } from "svelte/store";
 import { mediaObserver } from "svelte-media-observer";
 import type { MediaQueries } from "svelte-media-observer";
 
@@ -10,21 +10,41 @@ const mediaQueries: MediaQueries<"light"> = [
 
 export const media = mediaObserver(mediaQueries);
 
-//const forced = writable<boolean>(false);
+function getThemePreference(): Theme {
+	if (globalThis.window) {
+		const theme = document.documentElement.getAttribute("theme");
+		if (theme === "dark" || theme === "light") {
+			return theme;
+		}
+	}
 
-/**
- * Theme store has two states: forced | system.
- */
+	return "auto";
+}
+
 function initThemeStore() {
-	const initial: Theme = get(media).light ? "light" : "dark";
-	
-
+	const initial: Theme = getThemePreference();
 	const { subscribe, update } = writable<Theme>(initial);
 
 	return {
 		subscribe,
-		change: () => update(value => value === "dark" ? "light" : "dark")
+		change: () => update(value => {
+			if (value === "light") return "dark";
+			if (value === "dark") return "auto";
+			return "light";
+		})
 	};
 }
 
 export const theme = initThemeStore();
+
+theme.subscribe(value => {
+	if (!globalThis.window) {
+		return;
+	}
+
+	if (value !== "auto") {
+		document.documentElement.setAttribute("theme", value);
+	} else {
+		document.documentElement.removeAttribute("theme");
+	}
+});
