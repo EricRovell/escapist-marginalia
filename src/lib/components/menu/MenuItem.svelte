@@ -1,13 +1,13 @@
 <script lang="ts" context="module">
   import type { Variant } from "@types";
-  //import type { Readable } from "svelte/store";
 </script>
 
 <script lang="ts">
   import { getContext } from "svelte";
   import { active } from "./active";
   
-  export let href: string;
+  export let href = "";
+  export let disabled = false;
   export let prefetch: true | undefined = undefined;
   export let pattern: RegExp | null = null;
   export let decorationPosition: "top" | "bottom" = "bottom";
@@ -15,6 +15,9 @@
   export let decorationSize = "0.2em";
   
   const page = getContext("page");
+
+  // if no `href` is provided -> link will be disabled
+  $: disabled = href ? disabled : true;
 </script>
 
 <!--
@@ -41,6 +44,7 @@
 <li>
   <a
     class="menu-item underline-{decorationPosition}"
+    class:disabled
     style="--menu-item-decoration-color: var(--color-{decorationColor}); --menu-item-decoration-size: {decorationSize}"
     {href}
     use:active={{ current: $page.path, pattern }}
@@ -101,5 +105,10 @@
 
   li :global(.menu-item[aria-current]::after) {
     transform: scaleY(1);
+  }
+
+  .disabled {
+    pointer-events: none;
+    color: var(--color-gray-300);
   }
 </style>
