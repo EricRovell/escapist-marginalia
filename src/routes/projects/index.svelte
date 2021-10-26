@@ -3,7 +3,7 @@
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export async function load({ fetch }) {
-		const res = await fetch("/data/projects.json");
+		const res = await fetch("/api/projects.json");
 
 		if (res.ok) {
 			return {
@@ -22,24 +22,31 @@
 
 <script lang="ts">
 	import { Card, Icon } from "@components";
-	import { iconGithub, iconNpm } from "@components/icons/default";
+	import { iconGithub, iconNpm, iconURL } from "@components/icons/default";
 	import type { Project } from "@types";
 
 	export let projects: Project[] = [];
 </script>
 
 <ul>
-	{#each projects as { name, description, repository, npm }}
+	{#each projects as { name, description, github, packageName, homepage }}
 		<li>
 			<Card	title={name}>
 				<p>{description}</p>
 				<svelte:fragment slot="footer">
-					<a href={repository} title="Github repository">
+					<a href={github} title="Github repository">
 						<Icon path={iconGithub} size="1.25em" />
 					</a>
-					<a href={npm} title="NPM package">
-						<Icon path={iconNpm} color="danger" size="1.25em" />
-					</a>
+					{#if packageName}
+						<a href={`https://www.npmjs.com/package/${packageName}`} title="NPM package">
+							<Icon path={iconNpm} color="danger" size="1.25em" />
+						</a>
+					{/if}
+					{#if homepage}
+						<a href={homepage} title="Live project URL">
+							<Icon path={iconURL} size="1.25em" />
+						</a>
+					{/if}
 				</svelte:fragment>
 			</Card>
 		</li>
