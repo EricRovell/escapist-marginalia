@@ -26,7 +26,7 @@
 <style>
 	article {
 		display: grid;
-		gap: var(--spacing-2);
+		gap: var(--spacing-3);
 		border: var(--border-1);
 		border-radius: var(--radius-small);
 		padding: var(--spacing-3);
@@ -39,6 +39,7 @@
 	footer {
 		display: flex;
 		justify-content: flex-end;
+		align-items: flex-end;
 		gap: var(--spacing-2);
 	}
 
