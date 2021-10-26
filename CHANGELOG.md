@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/ericrovell/ericrovell.me/compare/v0.2.0...v0.3.0) (2021-10-26)
+
+
+### Features
+
+* `fetchJSON` utility function ([5fa9897](https://github.com/ericrovell/ericrovell.me/commit/5fa9897adc01993fd8bee17c6edbcc7beb1df328))
+* **api:** get ptojects list categorized ([8f8810c](https://github.com/ericrovell/ericrovell.me/commit/8f8810c6eb349c9098408f5dbbc510438919ae94))
+* getting a list a projects core utility ([f6a779a](https://github.com/ericrovell/ericrovell.me/commit/f6a779aeda848667f52c5f3fa22e0f8bbd0fa011))
+* **icon:** url icon ([540d1ba](https://github.com/ericrovell/ericrovell.me/commit/540d1ba96ee57fcbf9235f47e623cf8397436da7))
+
+
+### Bug Fixes
+
+* **styles:** better spacing and layout fixes ([fe273dd](https://github.com/ericrovell/ericrovell.me/commit/fe273dddf548e5f160a8ab6aca058802c8a6969c))
+
 ## 0.2.0 (2021-10-15)
 
 
