@@ -3,12 +3,12 @@
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export async function load({ fetch }) {
-		const res = await fetch("/api/blog/series.json");
+		const res = await fetch("/api/blog/posts.json");
 
 		if (res.ok) {
 			return {
 				props: {
-					catalogue: await res.json()
+					posts: await res.json()
 				}
 			};
 		}
@@ -20,15 +20,19 @@
 	}
 </script>
 
-<script>
+<script lang="ts">
 	import { Card } from "@components";
 	import { pathBlogpost } from "@core/paths";
+	import { groupBy } from "@lib/util";
+	import type { Blogpost } from "../../types";
 
-	export let catalogue = {};
+	export let posts: Blogpost[] = [];
+
+	$: groupedPosts = Object.entries(groupBy(posts, post => post.series));
 </script>
 
 <main>
-	{#each Object.entries(catalogue) as [ series, posts ]}
+	{#each groupedPosts as [ series, posts ]}
 		<section>
 			<h2>{series}</h2>
 			<div>
