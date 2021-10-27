@@ -1,20 +1,16 @@
 <script context="module" lang="ts">
 	import type { Project } from "@types";
 
-	interface ProjectsCategories {
-		[key: string]: Project[];
-	}
-
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export async function load({ fetch }) {
-		const res = await fetch("/api/projects/categories.json");
+		const res = await fetch("/api/projects.json");
 
 		if (res.ok) {
 			return {
 				props: {
-					categories: await res.json()
+					projects: await res.json()
 				}
 			};
 		}
@@ -29,12 +25,15 @@
 <script lang="ts">
 	import { Card, Icon } from "@components";
 	import { iconGithub, iconNpm, iconURL } from "@components/icons/default";
+	import { groupBy } from "@lib/util";
 
-	export let categories: ProjectsCategories = {};
+	export let projects: Project[] = [];
+
+	$: groupedProjects = Object.entries(groupBy(projects, project => project.type));
 </script>
 
 <main>
-	{#each Object.entries(categories) as [ category, projects ]}
+	{#each groupedProjects as [ category, projects ]}
 		<section>
 			<h2>{category}</h2>
 			<ul>
