@@ -1,5 +1,12 @@
 export type Variant = "neutral" | "primary" | "success" | "danger" | "warning" | "info" | "link";
 
+export interface Blogpost {
+	title: string;
+	date: Date;
+	slug: string;
+	series: string;
+}
+
 /**
  * Defines a used `repo` object subset from `Github Rest API`
  */
