@@ -4,12 +4,18 @@
 
 	export let date: Date;
 	export let action = "New blogpost";
+
+	const dateOptions: Intl.DateTimeFormatOptions = {
+		year: "numeric",
+		month: "short",
+		day: "numeric",
+	};
 </script>
 
 <li class={styles.item}>
 	<div class={styles.marker} />
 	<article>
-		<Datetime {date} />
+		<Datetime {date} options={dateOptions} />
 		<h2>{action}</h2>
 		<slot />
 	</article>
