@@ -43,6 +43,7 @@ export const mdsvexConfig = {
 	remarkPlugins: [ math, katex_blocks ],
 	rehypePlugins: [ correct_hast_tree, rehype_katex ],
 	layout: {
-		"project-euler": "./src/lib/layout/LayoutProjectEuler.svelte"
+		"project-euler": "./src/lib/layout/LayoutProjectEuler.svelte",
+		"blogpost": "./src/lib/layout/Blogpost.svelte"
 	}
 };
