@@ -1,0 +1,48 @@
+---
+title: "Interesting anagram check algorithm"
+series: "algorithms"
+lang: en
+created: 2021-11-01T00:00:00.000Z
+slug: anagram-hash
+layout: blogpost
+---
+
+Let's define what *anagram* is:
+
+<dl>
+	<dt>Anagram</dt>
+	<dd>
+		Two strings are said to be anagram if we can form one string by arranging the characters of another string.
+	</dd>
+	<dd>
+		For example: race - care.
+	</dd>
+</dl>
+
+Anagram check is quite common exercise. One of the most straightforward ways to solve this problem is to compare sorted input strings. There is one more way to solve it, it may not be the most optimal option, but it is quite interesting.
+
+## Algorithm
+
+1. Map each of the symbols to a distinct prime number.
+2. Multiply the characters of each word.
+3. Since every number is a **prime** of a **unique** product of primes *(fundamental theorem of arithmetic)*, two words are anagrams of their products are the same.
+
+## Example
+
+Let $F(a) = 2$, $F(e) = 3$ и $F(r) = 5$, then:
+
+```math
+F(are) = 2 * 5 * 3 = 30
+```
+
+```math
+F(ear) = 3 * 2 * 5 = 30
+```
+
+```math
+F(ear) = F(are)
+```
+
+## Limitations
+
+As the prime numbers are the main ingridient of this approach, these primes should be generated first, and it would be better to generate the bare minimum. Also, in case of really long words the value of the product should be considered.
