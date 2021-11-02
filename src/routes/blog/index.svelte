@@ -50,18 +50,20 @@
 
 <style>
 	main {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-l);
 		width: 100%;
 	}
 
 	h2 {
-		background-color: var(--color-surface-300);
-		padding: 0.75rem;
-		margin-bottom: 1rem;
+		font-size: var(--font-size-6);
+		margin-bottom: var(--space-m);
 	}
 
 	section > div {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
-		gap: 1rem;
+		gap: var(--space-m);
 	}
 </style>

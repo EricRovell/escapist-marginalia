@@ -26,10 +26,10 @@
 <style>
 	article {
 		display: grid;
-		gap: var(--spacing-3);
+		gap: var(--space-m);
 		border: var(--border-1);
 		border-radius: var(--radius-small);
-		padding: var(--spacing-3);
+		padding: var(--space-m);
 	}
 
 	article h3 {

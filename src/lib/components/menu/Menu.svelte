@@ -48,7 +48,7 @@
     place-items: center;
     place-content: center start;
     grid-auto-flow: column;
-    gap: var(--spacing-3, 0.75em);
+    gap: var(--space-m);
     
     width: fit-content;
     height: var(--navigation-height);

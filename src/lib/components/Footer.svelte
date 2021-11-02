@@ -28,19 +28,19 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: var(--spacing-rem-6, 1.5rem) var(--spacing-rem-2, 0.5rem);
+    padding: var(--space-l) var(--space-s);
     background: var(--color-surface-300);
   }
 
   .wrapper {
     display: flex;
     justify-content: space-between;
-    gap: var(--spacing-6);
+    gap: var(--space-l);
     width: 100%;
     height: 100%;
 
     justify-self: center;
-    max-width: var(--max-width);
+    width: min(100%, calc(var(--max-width) + 2 * var(--space-s)));
   }
 
   footer a {
@@ -50,7 +50,7 @@
   section[label="info"] {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: var(--space-s);
   }
 
   section[label="links"] {
