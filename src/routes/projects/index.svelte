@@ -68,21 +68,19 @@
 	main {
 		display: flex;
 		flex-direction: column;
-		gap: 1em;
+		gap: var(--space-l);
 		width: 100%;
-		padding: 0 var(--spacing-rem-2, 0.5rem);
 	}
 
 	h2 {
-		margin-bottom: 0.5em;
+		font-size: var(--font-size-6);
+		margin-bottom: var(--space-m);
 	}
 
 	ul {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-		gap: 1.25rem;
-		width: 100%;
-		align-items: stretch;
+		grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+		gap: var(--space-m);
 	}
 
 	li {

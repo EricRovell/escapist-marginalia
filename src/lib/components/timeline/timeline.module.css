@@ -1,31 +1,28 @@
 .timeline {
-	--item-padding: 2rem;
-
 	position: relative;
 	display: grid;
 	justify-self: center;
-	gap: var(--spacing-6);
+	gap: var(--space-m);
 	width: min(100%, 720px);
 	border-left: solid 1px hsl(var(--gray-h) var(--gray-s-600) var(--gray-l-600) / 0.5);
-	padding-left: var(--item-padding);
-	padding-bottom: var(--item-padding);
+	padding-left: var(--space-l);
+	padding-bottom: var(--space-l);
 }
 
 .timeline::after {
 	content: "";
 	position: absolute;
 	bottom: 0;
-	left: -0.25rem;
+	left: calc(-0.5 * var(--space-s));
 	background: red;
-	width: 0.5rem;
-	height: 0.5rem;
+	width: var(--space-s);
+	height: var(--space-s);
 	clip-path: circle(50% at 50% 50%);
 	background-color: var(--color-primary);
 }
 
 .item {
 	--datetime-font-size: var(--font-size-1);
-
 	position: relative;
 }
 
@@ -40,13 +37,11 @@
 }
 
 .marker {
-	--size: 1em;
-
 	position: absolute;
-	left: calc(-0.5 * var(--size) - var(--item-padding));
+	left: calc(-0.5 * 1em - var(--space-l));
 
-	width: var(--size);
-	height: var(--size);
+	width: 1em;
+	height: 1em;
 	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 	background-color: var(--color-primary);
 }

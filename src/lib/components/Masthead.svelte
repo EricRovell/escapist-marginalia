@@ -58,9 +58,9 @@
     place-items: center;
     gap: var(--spacing-3, 0.75em);
 
-    width: min(100%, var(--max-width));
+    width: min(100%, calc(var(--max-width) + 2 * var(--space-s)));
     height: var(--header-height, 50px);
-    padding: 0 var(--spacing-rem-2, 0.5rem);    
+    padding: 0 var(--space-s);    
     z-index: var(--z-index-navigation);
   }
   

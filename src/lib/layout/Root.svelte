@@ -3,7 +3,7 @@
   import { Navigation, Footer, Icon, ThemeSelect, Masthead } from "../components";
   import { iconTelescope } from "@components/icons/default";
 
-  import "@styles/main.css";
+  import "@styles/tokens.css";
   import "@styles/normalize.css";
   import "@styles/theme-dark.css";
   import "@styles/theme-light.css";
@@ -85,7 +85,7 @@
     }
     
     .content {
-      padding: 0 1em;
+      padding: 0 var(--space-m);
     }
   }
 </style>
