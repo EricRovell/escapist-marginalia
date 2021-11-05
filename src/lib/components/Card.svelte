@@ -26,10 +26,10 @@
 <style>
 	article {
 		display: grid;
-		gap: var(--spacing-3);
+		gap: var(--space-m);
 		border: var(--border-1);
 		border-radius: var(--radius-small);
-		padding: var(--spacing-3);
+		padding: var(--space-m);
 	}
 
 	article h3 {
@@ -40,7 +40,7 @@
 		display: flex;
 		justify-content: flex-end;
 		align-items: flex-end;
-		gap: var(--spacing-2);
+		gap: var(--space-s);
 	}
 
 	a:hover {

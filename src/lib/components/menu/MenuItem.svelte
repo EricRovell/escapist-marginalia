@@ -55,21 +55,19 @@
 
 <style>
   .menu-item {
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: var(--color-gray-600);
-    cursor: pointer;
-    
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: 0.5em; */
     height: var(--navigation-height);
-    
-    text-transform: capitalize;
+    width: 100%;
+    height: 100%;
 
-    position: relative;
+    text-decoration: none;
+    color: var(--color-gray-600);
+    text-transform: capitalize;
+    cursor: pointer;
   }
   
   .menu-item:hover {
@@ -91,7 +89,7 @@
 
   .menu-item.underline-bottom::after {
     transform-origin: 0 100%;
-    bottom: 15%;
+    bottom: -50%;
   }
   
   .menu-item.underline-top::after {
