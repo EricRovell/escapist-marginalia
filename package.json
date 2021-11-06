@@ -67,5 +67,8 @@
 	"simple-git-hooks": {
 		"pre-commit": "npx lint-staged",
 		"pre-push": "npm run lint"
+	},
+	"dependencies": {
+		"svelte-i18n": "^3.3.13"
 	}
 }
