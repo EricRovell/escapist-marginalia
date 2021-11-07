@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { lang } from "@stores";
+	import { lang } from "@core/i18n";
 	import { Icon } from "@components";
 	import { iconLocale } from "@components/icons/default";
 
