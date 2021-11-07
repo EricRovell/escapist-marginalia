@@ -81,6 +81,7 @@
     grid-auto-flow: column;
     grid-auto-columns: auto;
     grid-template-rows: 1fr;
+    gap: var(--space-s);
     width: max-content;
   }
 
