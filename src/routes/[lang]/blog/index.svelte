@@ -23,18 +23,25 @@
 <script lang="ts">
 	import { Card } from "@components";
 	import { pathBlogpost } from "@core/paths";
+	import { _, lang } from "@core/i18n";
 	import { groupBy } from "@lib/util";
-	import type { Blogpost } from "../../types";
+	import type { Blogpost } from "../../../types";
 
 	export let posts: Blogpost[] = [];
 
-	$: groupedPosts = Object.entries(groupBy(posts, post => post.series));
+	let filteredPosts: Blogpost[];
+	let groupedPosts: Array<[ string, Blogpost[]]>;
+
+	$: filteredPosts = posts.filter(post => post.lang === $lang);
+	$: groupedPosts = Object.entries(groupBy(filteredPosts, post => post.series));
 </script>
 
 <main>
 	{#each groupedPosts as [ series, posts ]}
 		<section>
-			<h2>{series}</h2>
+			<h2>
+				{$_(`categories.${series}`)}
+			</h2>
 			<div>
 				{#each posts as { title, slug, date }}
 					<Card
@@ -59,6 +66,7 @@
 	h2 {
 		font-size: var(--font-size-6);
 		margin-bottom: var(--space-m);
+		text-transform: capitalize;
 	}
 
 	section > div {

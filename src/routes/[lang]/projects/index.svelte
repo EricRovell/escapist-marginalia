@@ -23,6 +23,7 @@
 </script>
 
 <script lang="ts">
+	import { _ } from "@core/i18n";
 	import { Card, Icon } from "@components";
 	import { iconGithub, iconNpm, iconURL } from "@components/icons/default";
 	import { groupBy } from "@lib/util";
@@ -35,7 +36,9 @@
 <main>
 	{#each groupedProjects as [ category, projects ]}
 		<section>
-			<h2>{category}</h2>
+			<h2>
+				{$_(`categories.${category}`)}
+			</h2>
 			<ul>
 				{#each projects as { name, description, github, packageName, homepage }}
 					<li>
@@ -75,6 +78,7 @@
 	h2 {
 		font-size: var(--font-size-6);
 		margin-bottom: var(--space-m);
+		text-transform: capitalize;
 	}
 
 	ul {
