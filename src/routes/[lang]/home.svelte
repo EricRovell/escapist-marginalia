@@ -23,12 +23,10 @@
 <script>
 	import { pathBlogpost } from "@paths";
 	import { Card, Timeline } from "@components";
-	import { locale, lang, _ } from "@core/i18n";
-	import { page } from "$app/stores";
+	import { lang, _ } from "@core/i18n";
 
 	export let posts = [];
 
-	$: $locale = $page.params.lang;
 	$: filteredPosts = posts.filter(post => post.lang === $lang);
 </script>
 
