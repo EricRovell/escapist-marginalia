@@ -15,5 +15,8 @@
   "tooltip": {
     "change-theme": "Change theme",
     "change-locale": "Change language"
+  },
+  "message": {
+    "blogpost": "blogpost"
   }
 }

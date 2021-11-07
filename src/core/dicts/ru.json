@@ -15,5 +15,8 @@
   "tooltip": {
     "change-theme": "Сменить тему оформления",
     "change-locale": "Сменить язык"
+  },
+  "message": {
+    "blogpost": "статья"
   }
 }

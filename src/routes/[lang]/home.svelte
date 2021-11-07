@@ -23,7 +23,7 @@
 <script>
 	import { pathBlogpost } from "@paths";
 	import { Card, Timeline } from "@components";
-	import { locale, lang } from "@core/i18n";
+	import { locale, lang, _ } from "@core/i18n";
 	import { page } from "$app/stores";
 
 	export let posts = [];
@@ -33,8 +33,8 @@
 </script>
 
 <Timeline.Container>
-	{#each filteredPosts as { title, date, slug }}
-		<Timeline.Item {date}>
+	{#each filteredPosts as { title, date, slug } (slug)}
+		<Timeline.Item {date} locale={$lang} action={$_("message.blogpost")}>
 			<Card
 				{title}
 				href={pathBlogpost(slug)}
