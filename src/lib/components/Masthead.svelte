@@ -82,6 +82,7 @@
     grid-auto-flow: column;
     grid-auto-columns: auto;
     grid-template-rows: 1fr;
+    align-items: center;
     gap: var(--space-s);
     width: max-content;
   }
