@@ -1,39 +1,9 @@
-<script context="module">
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ fetch }) {
-		const res = await fetch("/api/blog/posts.json?sort=-1");
+<script lang="ts">
+	import { browser } from "$app/env";
+	import { goto } from "$app/navigation";
+	import { lang } from "@core/i18n";
 
-		if (res.ok) {
-			return {
-				props: {
-					posts: await res.json()
-				}
-			};
-		}
-
-		return {
-			status: res.status,
-			error: new Error("Could not load URL")
-		};
+	if (browser) {
+		void goto(`${$lang}/home`, { replaceState: true });
 	}
 </script>
-
-<script>
-	import { pathBlogpost } from "@paths";
-	import { Card, Timeline } from "@components";
-
-	export let posts = [];
-</script>
-
-<Timeline.Container>
-	{#each posts as { title, date, slug }}
-		<Timeline.Item {date}>
-			<Card
-				{title}
-				href={pathBlogpost(slug)}
-			/>
-		</Timeline.Item>
-	{/each}
-</Timeline.Container>

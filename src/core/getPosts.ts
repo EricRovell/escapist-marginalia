@@ -9,10 +9,11 @@ export async function getPosts(): Promise<Blogpost[]> {
 
 	for await (const [ filename, module ] of Object.entries(modules)) {
 		const { metadata } = await module();
-		const { title, created, series } = metadata;
+		const { title, created, series, lang } = metadata;
 
 		posts.push({
 			title,
+			lang,
 			date: new Date(created as Date),
 			series,
 			slug: basename(filename, ".svx")

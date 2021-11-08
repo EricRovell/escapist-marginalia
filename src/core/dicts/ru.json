@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "home": "главная",
+    "blog": "блог",
+    "gallery": "галерея",
+    "projects": "проекты",
+    "about": "о себе"
+  },
+  "categories": {
+    "project-euler": "проект эйлера",
+    "algorithms": "алгоритмы",
+    "package": "библиотеки",
+    "app": "веб приложение"
+  },
+  "tooltip": {
+    "change-theme": "Сменить тему оформления",
+    "change-locale": "Сменить язык"
+  },
+  "message": {
+    "blogpost": "статья"
+  }
+}

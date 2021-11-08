@@ -5,6 +5,7 @@ export interface Blogpost {
 	date: Date;
 	slug: string;
 	series: string;
+	lang: "ru" | "en";
 }
 
 /**

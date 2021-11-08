@@ -63,6 +63,7 @@
     height: var(--navigation-height);
     width: 100%;
     height: 100%;
+    white-space: nowrap;
 
     text-decoration: none;
     color: var(--color-gray-600);
