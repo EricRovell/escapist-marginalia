@@ -1,16 +1,13 @@
 import { derived } from "svelte/store";
-import { addMessages, init, getLocaleFromNavigator, locale } from "svelte-i18n";
+import { register, init, getLocaleFromNavigator, locale } from "svelte-i18n";
 
-import dictEN from "./dicts/en.json";
-import dictRU from "./dicts/ru.json";
+export { _, locale, waitLocale } from "svelte-i18n";
 
-export { _, locale } from "svelte-i18n";
+export function i18nInit(lang?: string) {
+	register("en", () => import("./dicts/en.json"));
+	register("ru", () => import("./dicts/ru.json"));
 
-export async function i18nInit(lang?: string) {
-	addMessages("ru", dictRU);
-	addMessages("en", dictEN);
-
-	await init({
+	void init({
 		fallbackLocale: lang || "en",
 		initialLocale: getLocaleFromNavigator()
 	});
@@ -19,4 +16,6 @@ export async function i18nInit(lang?: string) {
 /**
  * Derived from `locale` to remove all but used user language.
  */
-export const lang = derived(locale, $locale => $locale.slice(0, 2));
+export const lang = derived(locale, ($locale, set) => {
+	set($locale.slice(0, 2));
+}, "en");
