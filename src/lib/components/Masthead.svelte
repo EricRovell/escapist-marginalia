@@ -71,6 +71,7 @@
   
   section[label="navigation"] {
     grid-area: navigation;
+    font-size: var(--font-size-2);
   }
   
   section[label="controls"] {
@@ -81,16 +82,24 @@
     grid-auto-flow: column;
     grid-auto-columns: auto;
     grid-template-rows: 1fr;
+    align-items: center;
+    gap: var(--space-s);
     width: max-content;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 650px) {
     header {
       grid-template: 1fr / repeat(2, 1fr);
       grid-template-areas: "navigation controls";
     }
 
     section[label="logo"] {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    section[label="controls"] > :global(.lang-select) {
       display: none;
     }
   }

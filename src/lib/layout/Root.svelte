@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { pathRoot, pathBlog, pathGallery, pathProjects, pathAbout } from "@paths";
-  import { Navigation, Footer, Icon, ThemeSelect, Masthead } from "../components";
+  import { pathHome, pathBlog, pathGallery, pathProjects, pathAbout } from "@paths";
+  import { _ } from "@core/i18n";
+  import { Navigation, Footer, Icon, ThemeSelect, Masthead, LangSelect } from "../components";
   import { iconTelescope } from "@components/icons/default";
 
   import "@styles/tokens.css";
@@ -12,30 +13,31 @@
 
 <div id="app">
   <Masthead>
-    <a class="logo" href={pathRoot} slot="logo">
+    <a class="logo" href={$pathHome} slot="logo">
       <Icon path={iconTelescope} />
       <span>eric/rovell</span>
     </a>
     <svelte:fragment slot="navigation">
       <Navigation.Container>
-        <Navigation.Item href={pathRoot}>
-          Home
+        <Navigation.Item href={$pathHome} pattern={/\/home/}>
+          {$_("sections.home")}
         </Navigation.Item>
-        <Navigation.Item href={pathBlog} pattern={/\/blog|\/content/}>
-          Blog
+        <Navigation.Item href={$pathBlog} pattern={/\/blog|\/content/}>
+          {$_("sections.blog")}
         </Navigation.Item>
-        <Navigation.Item href={pathGallery} pattern={/\/gallery/} disabled>
-          Gallery
+        <Navigation.Item href={$pathGallery} pattern={/\/gallery/} disabled>
+          {$_("sections.gallery")}
         </Navigation.Item>
-        <Navigation.Item href={pathProjects}>
-          Projects
+        <Navigation.Item href={$pathProjects}>
+          {$_("sections.projects")}
         </Navigation.Item>
-        <Navigation.Item href={pathAbout} disabled>
-          About
+        <Navigation.Item href={$pathAbout} disabled>
+          {$_("sections.about")}
         </Navigation.Item>
       </Navigation.Container>
     </svelte:fragment>
     <svelte:fragment slot="controls">
+      <LangSelect />  
       <ThemeSelect />
     </svelte:fragment>
   </Masthead>

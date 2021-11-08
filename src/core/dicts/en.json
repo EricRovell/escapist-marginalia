@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "home": "home",
+    "blog": "blog",
+    "gallery": "gallery",
+    "projects": "projects",
+    "about": "about"
+  },
+  "categories": {
+    "project-euler": "project euler",
+    "algorithms": "algorithms",
+    "package": "libraries",
+    "app": "web applications"
+  },
+  "tooltip": {
+    "change-theme": "Change theme",
+    "change-locale": "Change language"
+  },
+  "message": {
+    "blogpost": "blogpost"
+  }
+}

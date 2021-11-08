@@ -34,6 +34,7 @@
 .item h2 {
 	font-size: var(--font-size-3);
 	font-weight: 400;
+	text-transform: capitalize;
 }
 
 .marker {
