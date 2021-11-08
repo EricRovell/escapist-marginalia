@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/ericrovell/ericrovell.me/compare/v0.3.0...v0.4.0) (2021-11-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* **style:** spacing tokens are renamed and using `rem` values to provide consistent spacing across the project.
+
+### Features
+
+* `blogpost` layout ([fce7945](https://github.com/ericrovell/ericrovell.me/commit/fce7945a66b22ceab7731ef99790d242de714b37))
+* `groupBy` utility function ([097b480](https://github.com/ericrovell/ericrovell.me/commit/097b480158f97935eb73af572a7622efe3722ee9))
+* **icons:** update project icons ([044ea25](https://github.com/ericrovell/ericrovell.me/commit/044ea25929edcd16918a8b5ea9be2d851ca24132))
+* new blogpost, anagram hash check ([1196e98](https://github.com/ericrovell/ericrovell.me/commit/1196e986a979899860b76ae2b1ee58d40a546ef8))
+* **style:** update spacing tokens ([9bacf9e](https://github.com/ericrovell/ericrovell.me/commit/9bacf9ec01ad6891fda45bc26cddc5ba5ef792fb))
+* update blogpost style to include dd elements; remove math margin ([2d3c9ee](https://github.com/ericrovell/ericrovell.me/commit/2d3c9ee5ee6174f4f2a5641d9e11832362835a10))
+
+
+### Bug Fixes
+
+* **style:** update `Card` footer gap space token ([082f632](https://github.com/ericrovell/ericrovell.me/commit/082f632ec7c8ea4c2515eb8a0b9d7531eeead505))
+
 ## [0.3.0](https://github.com/ericrovell/ericrovell.me/compare/v0.2.0...v0.3.0) (2021-10-26)
 
 
