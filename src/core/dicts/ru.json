@@ -4,7 +4,10 @@
     "blog": "блог",
     "gallery": "галерея",
     "projects": "проекты",
-    "about": "о себе"
+    "about": "о себе",
+    "source": "Исходный код",
+    "licence": "Лицензия",
+    "privacy": "Приватность"
   },
   "categories": {
     "project-euler": "проект эйлера",

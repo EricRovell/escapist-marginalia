@@ -4,7 +4,10 @@
     "blog": "blog",
     "gallery": "gallery",
     "projects": "projects",
-    "about": "about"
+    "about": "about",
+    "source": "source",
+    "licence": "licence",
+    "privacy": "privacy"
   },
   "categories": {
     "project-euler": "project euler",
