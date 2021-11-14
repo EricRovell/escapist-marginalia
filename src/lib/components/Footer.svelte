@@ -1,21 +1,46 @@
 <script>
-  import { version, homepage } from "../../../package.json";
+  import Link from "./Link.svelte";
+  import LangSelect from "./LangSelect.svelte";
+  import { _ } from "@core/i18n";
+  import { version } from "../../../package.json";
+
+  import {
+  	pathSource,
+  	pathLicence,
+  	pathPrivacy,
+  	pathBlog,
+  	pathGallery,
+  	pathAbout
+  } from "@core/paths";
+
+  $: links = [
+  	{ label: "blog", href: $pathBlog },
+  	{ label: "gallery", href: $pathGallery, disabled: true },
+  	{ label: "source", href: pathSource },
+  	{ label: "licence", href: pathLicence },
+  	{ label: "privacy", href: pathPrivacy, disabled: true },    
+  	{ label: "about", href: $pathAbout }
+  ];
 </script>
 
 <footer>
   <div class="wrapper">
-    <section label="info">
+    <nav>
+      <ul>
+        {#each links as { label, href, disabled = false }}
+          <li>
+            <Link {href} {disabled}>
+              {$_(`sections.${label}`)}
+            </Link>
+          </li>
+        {/each}
+      </ul>
+    </nav>
+    <section label="user">
       <span>
-        © {new Date().getFullYear()} eric/rovell, {version}
+        © {new Date().getFullYear()} eric/rovell, v.{version}
       </span>
-      <span>
-        CC BY-NC-SA 4.0 Licence
-      </span>
-    </section>
-    <section label="links">
-      <a href={homepage}>
-        Github
-      </a>
+      <LangSelect />
     </section>
   </div>
 </footer>
@@ -34,8 +59,9 @@
 
   .wrapper {
     display: flex;
-    justify-content: space-between;
-    gap: var(--space-l);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-m);
     width: 100%;
     height: 100%;
 
@@ -43,19 +69,23 @@
     width: min(100%, calc(var(--max-width) + 2 * var(--space-s)));
   }
 
-  footer a {
-    color: var(--color-primary);
-  }
-
-  section[label="info"] {
+  section[label="user"] {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-s);
-  }
-
-  section[label="links"] {
-    display: flex;
+    justify-content: space-between;
     align-items: flex-end;
+    width: 100%;
+    font-size: var(--font-size-2);
+    color: hsl(var(--gray-h) var(--gray-s-700) var(--gray-l-700));
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    color: var(--color-primary);
+    text-transform: capitalize;
+    gap: var(--space-m);
   }
 
   @media (max-width: 540px) {
