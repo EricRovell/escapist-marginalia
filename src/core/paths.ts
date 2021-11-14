@@ -10,3 +10,7 @@ export const pathProjects = derived(root, $root => `${$root}/projects`);
 export const pathAbout = derived(root, $root => `${$root}/about`);
 
 export const pathBlogpost = (slug: string) => `/content/${slug}`;
+
+export const pathLicence = "https://github.com/EricRovell/ericrovell.me/blob/main/LICENSE";
+export { homepage as pathSource } from "../../package.json";
+export const pathPrivacy = "";
