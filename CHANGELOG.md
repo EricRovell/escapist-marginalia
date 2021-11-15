@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/ericrovell/ericrovell.me/compare/v0.4.0...v0.5.0) (2021-11-15)
+
+
+### Features
+
+* `Code` custom md component for syntax highlight ([a16af02](https://github.com/ericrovell/ericrovell.me/commit/a16af02b706d9b75bb11fcc3fc4058fbeb4af73a))
+* `Link` component ([16669c7](https://github.com/ericrovell/ericrovell.me/commit/16669c7733cdadc8259c0b0dd3218e595a0b34b4))
+* add i18n package ([4586f54](https://github.com/ericrovell/ericrovell.me/commit/4586f54af40c47bcb9fc3d2f45678254c429e732))
+* added paths ([9381fd2](https://github.com/ericrovell/ericrovell.me/commit/9381fd20b9fc844a45d40dd3e097d706a2f7a177))
+* **component:** `LangSelect` component ([6d6898c](https://github.com/ericrovell/ericrovell.me/commit/6d6898c77e2a282282ff2a9e792d44e33f0a2d0d))
+* **component:** make `LangSelect` semantic and improve accessibility ([93c5b81](https://github.com/ericrovell/ericrovell.me/commit/93c5b814f1b27864d2317165f14f0b3e083b25b8))
+* i18n module ([505ae2f](https://github.com/ericrovell/ericrovell.me/commit/505ae2fb98b5c7f749946a8dab2669baece5505c))
+* **i18n:** async dict loading ([1a06e0e](https://github.com/ericrovell/ericrovell.me/commit/1a06e0eaae6b752d47c386e5af353f5be892889b))
+* **i18n:** locale dicts ([d06caee](https://github.com/ericrovell/ericrovell.me/commit/d06caeed5c76efdfc4a62cbed0b740d4f6448461))
+* **i18n:** sync current lang pages ([32fc3b8](https://github.com/ericrovell/ericrovell.me/commit/32fc3b8aa3d50ba7c5a282ba955be3ed9bbc2251))
+* **i18n:** timeline localization ([3a032e1](https://github.com/ericrovell/ericrovell.me/commit/3a032e10a3bc4422e3ae5c23c38d1ed03c95c13a))
+* **i18n:** update dict ([03113af](https://github.com/ericrovell/ericrovell.me/commit/03113afb90d1c60045ae58e0a1688776d6f693c6))
+* **i18n:** update paths and add translations ([b637652](https://github.com/ericrovell/ericrovell.me/commit/b637652de8d0a18b1128b7e827397c78ff5db53c))
+* **i18n:** updated i18n dicts ([f1f525e](https://github.com/ericrovell/ericrovell.me/commit/f1f525ecad8e8ddf405b636347fbc5d88fbc5e89))
+* refactored blogpost layouts & references section ([f1aa200](https://github.com/ericrovell/ericrovell.me/commit/f1aa200e782b92135b9a1772623b6f718b0f91e5))
+* **routing:** add [lang] param for i18n routing ([1697405](https://github.com/ericrovell/ericrovell.me/commit/169740598080145afa08a1c0369c668dba5f9761))
+* **styles:** update `Masthead` responsiveness ([a7492f2](https://github.com/ericrovell/ericrovell.me/commit/a7492f23b4623c41ff50f1f29fbcf24788e98149))
+* update paths according to lang ([0c7fdfa](https://github.com/ericrovell/ericrovell.me/commit/0c7fdfada2d6ca131568d3ebbca14c0b44bccb44))
+* updated footer contents ([9d3cda6](https://github.com/ericrovell/ericrovell.me/commit/9d3cda6cdb7ef575f5a4b9c697b98f697cfd0083))
+
+
+### Bug Fixes
+
+* expose `Link` component export ([e520c75](https://github.com/ericrovell/ericrovell.me/commit/e520c758fded33f402c3d0a98ea9155dd284731b))
+* lang store path ([28ee76a](https://github.com/ericrovell/ericrovell.me/commit/28ee76aa43264df6bd55e7a8150a5a29fd970923))
+* **styles:** align control section items ([7b749a1](https://github.com/ericrovell/ericrovell.me/commit/7b749a121af37fdd00bcb6fb850bbeaedddf2e42))
+* **styles:** controls section gap spacing ([87381c0](https://github.com/ericrovell/ericrovell.me/commit/87381c05f46f1a5deb90b2c753c8dbaae07f3a25))
+
 ## [0.4.0](https://github.com/ericrovell/ericrovell.me/compare/v0.3.0...v0.4.0) (2021-11-08)
 
 
