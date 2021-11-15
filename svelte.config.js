@@ -31,6 +31,12 @@ const config = {
 				alias: Object.fromEntries(aliasList.map(alias => (
 					[ alias.name, path.resolve(alias.path) ]
 				)))
+			},
+			server: {
+				fs: {
+					// Allow serving files from one level up to the project root
+					allow: [ ".." ]
+				}
 			}
 		}
 	}
