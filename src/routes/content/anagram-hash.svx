@@ -4,7 +4,11 @@ series: "algorithms"
 lang: en
 created: 2021-11-01T00:00:00.000Z
 slug: anagram-hash
-layout: blogpost
+layout: algorithm
+references: [
+	{ label: "Anagram", href: "https://en.wikipedia.org/wiki/Anagram" },
+  { label: "Fundamental Theorem of Arithmetic", href: "https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic" }  
+]
 ---
 
 Let's define what *anagram* is:

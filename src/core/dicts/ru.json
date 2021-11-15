@@ -20,6 +20,7 @@
     "change-locale": "Сменить язык"
   },
   "message": {
-    "blogpost": "статья"
+    "blogpost": "статья",
+    "reference-list": "Ссылки по теме" 
   }
 }

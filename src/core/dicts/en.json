@@ -20,6 +20,7 @@
     "change-locale": "Change language"
   },
   "message": {
-    "blogpost": "blogpost"
+    "blogpost": "blogpost",
+    "reference-list": "Reference List" 
   }
 }

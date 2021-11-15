@@ -8,5 +8,6 @@ export { default as Masthead } from "./Masthead.svelte";
 export { default as Card } from "./Card.svelte";
 export { default as Datetime } from "./Datetime.svelte";
 export { default as LangSelect } from "./LangSelect.svelte";
+export { default as Link } from "./Link.svelte";
 
 export * as Timeline from "./timeline";
