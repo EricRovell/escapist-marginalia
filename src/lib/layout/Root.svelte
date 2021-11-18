@@ -85,9 +85,5 @@
     #app {
       padding: 0;
     }
-    
-    .content {
-      padding: 0 var(--space-m);
-    }
   }
 </style>

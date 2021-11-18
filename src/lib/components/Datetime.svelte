@@ -65,7 +65,7 @@
 
 <style>
   time {
-    display: flex;
+    display: inline-flex;
     justify-content: flex-start;
     align-items: center;
 
