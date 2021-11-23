@@ -9,5 +9,6 @@ export { default as Card } from "./Card.svelte";
 export { default as Datetime } from "./Datetime.svelte";
 export { default as LangSelect } from "./LangSelect.svelte";
 export { default as Link } from "./Link.svelte";
+export { default as CheckboxGroup } from "./CheckboxGroup.svelte";
 
 export * as Timeline from "./timeline";
