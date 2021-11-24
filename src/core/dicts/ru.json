@@ -21,6 +21,7 @@
   },
   "message": {
     "blogpost": "статья",
-    "reference-list": "Ссылки по теме" 
+    "reference-list": "Ссылки по теме",
+    "content-language": "язык публикаций"
   }
 }

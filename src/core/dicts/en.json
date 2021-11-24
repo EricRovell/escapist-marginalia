@@ -21,6 +21,7 @@
   },
   "message": {
     "blogpost": "blogpost",
-    "reference-list": "Reference List" 
+    "reference-list": "Reference List",
+    "content-language": "content language"
   }
 }

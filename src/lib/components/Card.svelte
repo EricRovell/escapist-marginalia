@@ -33,7 +33,8 @@
 	}
 
 	article h3 {
-		font-size: var(--font-size-4);
+		font-size: var(--font-size-3);
+		font-weight: 550;
 	}
 
 	footer {
@@ -41,6 +42,8 @@
 		justify-content: flex-end;
 		align-items: flex-end;
 		gap: var(--space-s);
+		font-size: var(--font-size-1);
+		color: hsl(var(--gray-h) var(--gray-s-700) var(--gray-l-700));
 	}
 
 	a:hover {

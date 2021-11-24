@@ -1,12 +1,11 @@
-<script context="module">
-	import { waitLocale } from "@core/i18n";
-	import { i18nInit } from "@core/i18n";
+<script context="module" lang="ts">
+	import { waitLocale, i18nInit } from "@core/i18n";
 
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
-	export async function load() {
-		void i18nInit();
+	export async function load({ page }) {
+		void i18nInit(page.params.lang as string);
 		await waitLocale();
 		
 		return {
