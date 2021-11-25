@@ -1,6 +1,7 @@
 <script context="module">
 	import { default as code } from "./Code.svelte";
-	export { code };
+	import { Link as a } from "@components";
+	export { code, a };
 </script>
 
 <script>
