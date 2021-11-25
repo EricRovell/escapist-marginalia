@@ -45,6 +45,7 @@
   <a
     class="menu-item underline-{decorationPosition}"
     class:disabled
+    tabIndex={disabled ? -1 : undefined}
     style="--menu-item-decoration-color: var(--color-{decorationColor}); --menu-item-decoration-size: {decorationSize}"
     {href}
     use:active={{ current: $page.path, pattern }}
