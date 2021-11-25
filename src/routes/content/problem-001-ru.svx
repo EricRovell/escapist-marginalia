@@ -6,10 +6,6 @@ created: 2021-06-10T00:00:00.000Z
 updated: 2021-08-26T00:00:00.000Z
 slug: project-euler-001-ru
 layout: "project-euler"
-references: [
-  { label: "Project Euler, Problem 1: Multiples of 3 or 5", href: "https://projecteuler.net/problem=1" },
-  { label: "Project Euler, Problem 1: Multiples of 3 or 5", href: "https://projecteuler.net/problem=1" }
-]
 ---
 
 <section slot="problem">
@@ -93,3 +89,7 @@ arithmetic_sum(divisor, limit):
 multiples_sum(limit):
   return arithmetic_sum(3, limit) + arithmetic_sum(5, limit) - arithmetic_sum(3 * 5, limit)
 ```
+
+## Ссылки
+
+1. [Project Euler, Problem 1: Multiples of 3 or 5](https://projecteuler.net/problem=1)
