@@ -4,6 +4,7 @@
 	export let nofollow = false;
 	export let disabled = false;
 	export let prefetch: true | undefined = undefined;
+	export let title: string | undefined = undefined;
 
 	// if no `href` is provided -> link will be disabled
 	$: disabled = href ? disabled : true;
@@ -16,8 +17,10 @@
 	{href}
 	{target}
 	{rel}
+	{title}
 	{...$$restProps}
 	class:disabled
+	tabIndex={disabled ? -1 : undefined}
 	sapper:prefetch={!external || prefetch}
 	>
 		<slot />
@@ -25,13 +28,28 @@
 
 <style>
 	a {
-		color: inherit;
+		color: var(--link-color);
 		font-size: inherit;
+	}
+
+	a:hover {
+		color: var(--link-color-active);
+		text-decoration: underline;
+	}
+
+	a:focus-visible {
+		outline: 1.5px dashed var(--link-color-active);
+		outline-offset: calc(var(--space-xs) / 2);
+	}
+
+	a:active {
+		color: var(--link-color-active);
+		background-color: var(--link-bg-active);
 	}
 
 	.disabled {
     pointer-events: none;
-    color: var(--color-gray-300);
+    opacity: 0.7;
     text-decoration: line-through;
   }
 </style>
