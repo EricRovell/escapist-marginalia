@@ -6,10 +6,6 @@ created: 2021-06-11T00:00:00.000Z
 updated: 2021-06-13T00:00:00.000Z
 slug: project-euler-002-ru
 layout: "project-euler"
-references: [
-  { label: "Project Euler, Problem 2: Even Fibonacci numbers", href: "https://projecteuler.net/problem=2" },
-  { label: "Числа Фибоначчи", href: "https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B0_%D0%A4%D0%B8%D0%B1%D0%BE%D0%BD%D0%B0%D1%87%D1%87%D0%B8" }
-]
 ---
 
 <section slot="problem">
@@ -99,3 +95,8 @@ def fibonacci_sequence_even(limit: int) -> int:
 def even_fib_sum(limit: int) -> int:
   return sum([ item for item in fibonacci_sequence_even(limit) ])
 ```
+
+## Ссылки
+
+1. [Project Euler, Problem 2: Even Fibonacci numbers](https://projecteuler.net/problem=2)
+2. [Числа Фибоначчи](https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B0_%D0%A4%D0%B8%D0%B1%D0%BE%D0%BD%D0%B0%D1%87%D1%87%D0%B8)

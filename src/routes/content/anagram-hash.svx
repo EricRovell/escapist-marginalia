@@ -5,10 +5,6 @@ lang: en
 created: 2021-11-01T00:00:00.000Z
 slug: anagram-hash
 layout: algorithm
-references: [
-	{ label: "Anagram", href: "https://en.wikipedia.org/wiki/Anagram" },
-  { label: "Fundamental Theorem of Arithmetic", href: "https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic" }  
-]
 ---
 
 Let's define what *anagram* is:
@@ -50,3 +46,8 @@ F(ear) = F(are)
 ## Limitations
 
 As the prime numbers are the main ingridient of this approach, these primes should be generated first, and it would be better to generate the bare minimum. Also, in case of really long words the value of the product should be considered.
+
+## References
+
+1. [Anagram](https://en.wikipedia.org/wiki/Anagram)
+2. [Fundamental Theorem of Arithmetic](https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic)
