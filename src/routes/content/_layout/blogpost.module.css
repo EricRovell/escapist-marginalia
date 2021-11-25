@@ -20,22 +20,6 @@
 	line-height: 1.25;
 }
 
-.footer {
-	width: min(65ch, 100%);
-}
-
-.footer ol {
-	list-style: decimal;
-	list-style-position: inside;
-
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-s);
-	padding: var(--space-m) 0;
-
-	color: var(--color-link);
-}
-
 .header > h1 {
 	font-size: var(--font-size-7);
 	text-align: center;
@@ -69,6 +53,17 @@
 
 .article dd {
 	margin-left: var(--space-s);
+}
+
+.article ol {
+	list-style: decimal;
+	list-style-position: inside;
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-s);
+
+	color: var(--color-link);
 }
 
 /* project euler */
