@@ -10,5 +10,6 @@ export { default as Datetime } from "./Datetime.svelte";
 export { default as LangSelect } from "./LangSelect.svelte";
 export { default as Link } from "./Link.svelte";
 export { default as CheckboxGroup } from "./CheckboxGroup.svelte";
+export { default as TOC } from "./TOC.svelte";
 
 export * as Timeline from "./timeline";
