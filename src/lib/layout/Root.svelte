@@ -72,10 +72,9 @@
   }
 
   .content {
-    display: grid;
-    grid-auto-rows: min-content;
-    place-items: start start;
-    width: min(100%, var(--max-width));
+    display: flex;
+    justify-content: center;
+    width: 100%;
     min-height: calc(100vh - 50px);
     margin: 15vh 0;
   }
