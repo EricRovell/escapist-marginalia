@@ -27,7 +27,7 @@
 	<header class={styles.header}>
 		<h1>{title}</h1>
 	</header>
-	<aside>
+	<aside class={styles.sidebar}>
 		<TOC headings={toc} />
 	</aside>
 	<main class={styles.article}>
