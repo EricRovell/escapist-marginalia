@@ -22,6 +22,7 @@
   "message": {
     "blogpost": "blogpost",
     "reference-list": "Reference List",
-    "content-language": "content language"
+    "content-language": "content language",
+    "toc": "Table of contents"
   }
 }

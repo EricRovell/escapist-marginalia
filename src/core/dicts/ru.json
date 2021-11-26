@@ -22,6 +22,7 @@
   "message": {
     "blogpost": "статья",
     "reference-list": "Ссылки по теме",
-    "content-language": "язык публикаций"
+    "content-language": "язык публикаций",
+    "toc": "Содержание"
   }
 }

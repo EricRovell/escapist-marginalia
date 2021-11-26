@@ -3,13 +3,12 @@
 	export let targetBlank = false;
 	export let nofollow = false;
 	export let disabled = false;
-	export let prefetch: true | undefined = undefined;
 	export let title: string | undefined = undefined;
 
 	// if no `href` is provided -> link will be disabled
 	$: disabled = href ? disabled : true;
 	$: external = href.indexOf("://") !== -1;
-	$: target = (targetBlank || external) ? "_blank" : "";
+	$: target = (targetBlank || external) ? "_blank" : undefined;
 	$: rel = `${external ? "noopener noreferrer" : ""}` + `${nofollow ? "nofollow" : ""}`;
 </script>
 
@@ -21,7 +20,6 @@
 	{...$$restProps}
 	class:disabled
 	tabIndex={disabled ? -1 : undefined}
-	sapper:prefetch={!external || prefetch}
 	>
 		<slot />
 </a>

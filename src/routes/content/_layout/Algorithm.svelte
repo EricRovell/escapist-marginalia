@@ -5,10 +5,12 @@
 </script>
 
 <script>
+	import { TOC } from "@components";
 	import styles from "./blogpost.module.css";
 	import "katex/dist/katex.min.css";
 
 	export let title;
+	export let toc = [];
 </script>
 
 <svelte:head>
@@ -21,11 +23,14 @@
 	
 	Layout for blogposts where math equations is needed.
 -->
-<article class={styles.article}>
+<article class={styles.body}>
 	<header class={styles.header}>
 		<h1>{title}</h1>
 	</header>
-	<main>
+	<aside class={styles.sidebar}>
+		<TOC headings={toc} />
+	</aside>
+	<main class={styles.article}>
 		<slot />
 	</main>
 </article>
