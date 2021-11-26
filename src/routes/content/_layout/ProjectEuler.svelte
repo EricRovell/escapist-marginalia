@@ -5,10 +5,12 @@
 </script>
 
 <script>
+	import { TOC } from "@components";
 	import styles from "./blogpost.module.css";
 	import "katex/dist/katex.min.css";
 
 	export let title;
+	export let toc = [];
 </script>
 
 <svelte:head>
@@ -21,11 +23,14 @@
 	
 	Layout for blogposts about Project Euler, so the math & code highlight are included.
 -->
-<article class={styles.article}>
+<article class={styles.body}>
 	<header class={styles.header}>
 		<h1>{title}</h1>
 	</header>
-	<main>
+	<aside>
+		<TOC headings={toc} />
+	</aside>
+	<main class={styles.article}>
 		<slot name="problem" class={styles.problem} />
 		<slot />
 	</main>
