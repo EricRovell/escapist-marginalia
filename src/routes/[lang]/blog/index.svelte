@@ -48,7 +48,7 @@
 					{#each posts as { title, slug, date }}
 						<Card
 							{title}
-							href={pathBlogpost(slug)}
+							href={$pathBlogpost(slug)}
 							{date}
 						/>
 					{/each}
