@@ -1,12 +1,11 @@
 <script context="module">
-	import { default as code } from "./Code.svelte";
-	import { Link as a } from "@components";
+	import { Link as a, Code as code } from "@components";
 	export { code, a };
 </script>
 
 <script>
 	import { TOC } from "@components";
-	import styles from "./blogpost.module.css";
+	import styles from "@styles/pages/blogpost.module.css";
 	import "katex/dist/katex.min.css";
 
 	export let title;
@@ -21,7 +20,7 @@
 <!--
 	@component
 	
-	Layout for blogposts about Project Euler, so the math & code highlight are included.
+	Layout for blogposts where math equations is needed.
 -->
 <article class={styles.body}>
 	<header class={styles.header}>
@@ -31,7 +30,6 @@
 		<TOC headings={toc} />
 	</aside>
 	<main class={styles.article}>
-		<slot name="problem" class={styles.problem} />
 		<slot />
 	</main>
 </article>

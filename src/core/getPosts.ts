@@ -5,7 +5,7 @@ export async function getPosts(): Promise<Blogpost[]> {
 	const posts: Blogpost[] = [];
 
 	// Import all .svx files in the directory
-	const modules = import.meta.glob("/src/routes/content/**/*.svx");
+	const modules = import.meta.glob("/src/content/**/*.svx");
 
 	for await (const [ filename, module ] of Object.entries(modules)) {
 		const { metadata } = await module();

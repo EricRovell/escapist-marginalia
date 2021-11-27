@@ -59,7 +59,7 @@
 								<footer>
 									<Datetime {date} locale={$lang} options={{ month: "long", day: "numeric" }} />, {$_("message.blogpost")}
 								</footer>
-								<Link	href={pathBlogpost(slug)}>
+								<Link	href={$pathBlogpost(slug)}>
 									{title}
 								</Link>
 							</article>

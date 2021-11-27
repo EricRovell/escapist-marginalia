@@ -75,7 +75,7 @@ export const mdsvexConfig = {
 	remarkPlugins: [ get_headings, math, katex_blocks ],
 	rehypePlugins: [ correct_hast_tree, rehype_katex, slug ],
 	layout: {
-		"project-euler": "./src/routes/content/_layout/ProjectEuler.svelte",
-		"algorithm": "./src/routes/content/_layout/Algorithm.svelte"
+		"project-euler": "./src/lib/layout/ProjectEuler.svelte",
+		"algorithm": "./src/lib/layout/Algorithm.svelte"
 	}
 };
