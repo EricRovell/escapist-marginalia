@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/ericrovell/ericrovell.me/compare/v0.5.0...v0.6.0) (2021-11-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* `Timeline` now consists of the parts instead: Container, Section, Item.
+
+### Features
+
+* `Gallery` component ([b1ec9c5](https://github.com/ericrovell/ericrovell.me/commit/b1ec9c532e866d79dc7b68d9941026009315cfab))
+* `Image` component ([d7c359a](https://github.com/ericrovell/ericrovell.me/commit/d7c359ada80b8d179e6929365429bd8862c01a17))
+* **component:** `CheckboxGroup` component ([94e1ad6](https://github.com/ericrovell/ericrovell.me/commit/94e1ad6474e2ef1fa4238f99042ec6b77779a786))
+* **component:** implement `TOC` ([48752b9](https://github.com/ericrovell/ericrovell.me/commit/48752b98f02995865e698dce010a1022bbbebb57))
+* dynamic blogpost rendering page component ([d87e8b7](https://github.com/ericrovell/ericrovell.me/commit/d87e8b79471506e103cee5b9ae5d0cd9622d9d7b))
+* gallery metadata ([105b9c4](https://github.com/ericrovell/ericrovell.me/commit/105b9c45515a1b0fd905faf0631d3f260059d193))
+* gallery route ([b3392ea](https://github.com/ericrovell/ericrovell.me/commit/b3392ea3c25493a63329624e85744abf72fcb3f7))
+* **i18n:** update dicts ([6e091fe](https://github.com/ericrovell/ericrovell.me/commit/6e091fe497e20b3303c48b7d093e6b14b9bca524))
+* implement custom `toc` plugin ([9be537d](https://github.com/ericrovell/ericrovell.me/commit/9be537d8f2922676fb3d0c32ef0fcf255607102d))
+* improve `Link` a11y styles ([aa511e5](https://github.com/ericrovell/ericrovell.me/commit/aa511e5ddcf08918c7e208c574011ccc8851c2c8))
+* improved `Timeline` by breaking into sections. ([30dfd82](https://github.com/ericrovell/ericrovell.me/commit/30dfd8257d4f5e1a5e754e7d31670442f8d3f58b))
+* **layout:** `ContentFilter` layout component ([5b61ef1](https://github.com/ericrovell/ericrovell.me/commit/5b61ef1cef7d3dec42831169e09ea701b024d811))
+* remove `Timeline` hardcoded size, move it to layout ([098b5f6](https://github.com/ericrovell/ericrovell.me/commit/098b5f6319c454ac8cbd02fb586d3aa2c700905d))
+* simplistic (yet) custom error page ([218ceb1](https://github.com/ericrovell/ericrovell.me/commit/218ceb1761c12f43ff5ff2361a81f331e77488b3))
+* **styles:** pages style modules ([3e562db](https://github.com/ericrovell/ericrovell.me/commit/3e562db84464ece1901f45096f480978b0204f62))
+* **styles:** remove unused tokens; new link tokens ([72c86db](https://github.com/ericrovell/ericrovell.me/commit/72c86db5dec80e7504364943c61d73df53fede60))
+* update `Card` typography styles ([3361879](https://github.com/ericrovell/ericrovell.me/commit/336187923c950cb8e773dc96da1eb91798407bbd))
+* use `TOC`, update layout ([98384b1](https://github.com/ericrovell/ericrovell.me/commit/98384b11298d6dea4a99125b08e336ed1a087d39))
+* use updated `Timeline` to render posts by group ([26418d9](https://github.com/ericrovell/ericrovell.me/commit/26418d964a53b31034ef336f8e29927829e35e5c))
+* using `ContentFilter` layout and page styles modules ([b9e3586](https://github.com/ericrovell/ericrovell.me/commit/b9e358622acf416051c9ef8ac42050d16a4b504b))
+
+
+### Bug Fixes
+
+* **content:** remove unnecessary parentheses ([0e2f33e](https://github.com/ericrovell/ericrovell.me/commit/0e2f33e4327f292b3d130d2fbfd2b1edd8d6104a))
+* do not let focus disabled menu items ([c71da22](https://github.com/ericrovell/ericrovell.me/commit/c71da22bce0b2a123a0658dd46e51d2e6145ac64))
+* each page should include it's own padding ([ff04b36](https://github.com/ericrovell/ericrovell.me/commit/ff04b3622685bd82f3c460490c0fcc69df98eb53))
+* empty target is not included at attr ([494fd80](https://github.com/ericrovell/ericrovell.me/commit/494fd804a700c5f86c2648262b50a7f7d0eea485))
+* set `inline` as it should be for `time` ([31a1e36](https://github.com/ericrovell/ericrovell.me/commit/31a1e36b6e44c7909352d86f7e6ddfd17acd07b5))
+* **styles:** fixed aside element height ([befed0a](https://github.com/ericrovell/ericrovell.me/commit/befed0af50db6bc69bb2fca72a03c0d9cd00cd47))
+* **styles:** missing aside element's class ([84bb104](https://github.com/ericrovell/ericrovell.me/commit/84bb104abd65444e675cca3ee1d03a0e451b0b31))
+* temproral fix for prerendering route without index ([419556e](https://github.com/ericrovell/ericrovell.me/commit/419556e8a00bec7e5474315ba4fe179d986267bd))
+
 ## [0.5.0](https://github.com/ericrovell/ericrovell.me/compare/v0.4.0...v0.5.0) (2021-11-15)
 
 
