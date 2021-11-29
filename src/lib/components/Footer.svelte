@@ -15,7 +15,7 @@
 
   $: links = [
   	{ label: "blog", href: $pathBlog },
-  	{ label: "gallery", href: $pathGallery, disabled: true },
+  	{ label: "gallery", href: $pathGallery },
   	{ label: "source", href: pathSource },
   	{ label: "licence", href: pathLicence },
   	{ label: "privacy", href: pathPrivacy, disabled: true },    

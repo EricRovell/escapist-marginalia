@@ -25,7 +25,7 @@
         <Navigation.Item href={$pathBlog} pattern={/\/blog|\/content/}>
           {$_("sections.blog")}
         </Navigation.Item>
-        <Navigation.Item href={$pathGallery} pattern={/\/gallery/} disabled>
+        <Navigation.Item href={$pathGallery} pattern={/\/gallery/}>
           {$_("sections.gallery")}
         </Navigation.Item>
         <Navigation.Item href={$pathProjects}>
@@ -76,7 +76,7 @@
     justify-content: center;
     width: 100%;
     min-height: calc(100vh - 50px);
-    margin: 15vh 0;
+    margin: 15vh 0 25vh 0;
   }
 
   /* let bottom menu be full width */
