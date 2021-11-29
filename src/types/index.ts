@@ -28,3 +28,5 @@ export interface Project extends Omit<GithubRepo, "html_url"> {
 	github: string;
 	packageName?: string;
 }
+
+export type { GalleryItem } from "@components";

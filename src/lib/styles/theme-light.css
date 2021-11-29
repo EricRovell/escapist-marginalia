@@ -13,10 +13,11 @@
     --gray-s-800: 25%; --gray-l-800: 20%;
     --gray-s-900: 15%; --gray-l-900: 15%;
     
-    --surface-h: 0;  
+    --surface-h: 0;
     --surface-s-300: 13%; --surface-l-300: 85%;
     --surface-s-400: 13%; --surface-l-400: 90%;
     --surface-s-500: 13%; --surface-l-500: 98%;
+    --surface-s-600: 45%; --surface-l-500: 50%;
     
     --primary-h: 15; --primary-s: 100%; --primary-l: 59%;
     --neutral-h: 218; --neutral-s: 53%; --neutral-l: 39%;
@@ -29,6 +30,8 @@
     --link-color: #6268CA;
     --link-color-active: #48447F;
     --link-bg-active: #B4B8F1;
+
+    --gallery-border: hsl(236 69% 83%);
   }
 }
 
@@ -63,4 +66,6 @@
   --link-color: #6268CA;
   --link-color-active: #48447F;
   --link-bg-active: #B4B8F1;
+
+  --gallery-border: hsl(236 69% 83%);
 }

@@ -30,6 +30,8 @@
     --link-color: #7A82E3;
     --link-color-active: #B4B8F1;
     --link-bg-active: #3B3562;
+
+    --gallery-border: hsl(217 26% 35%);
   }
 }
 
@@ -65,4 +67,6 @@
   --link-color: #7A82E3;
   --link-color-active: #B4B8F1;
   --link-bg-active: #3B3562;
+
+  --gallery-border: hsl(217 26% 35%);
 }
