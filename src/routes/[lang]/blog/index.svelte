@@ -22,7 +22,7 @@
 
 <script lang="ts">
 	import styles from "@styles/pages/blog.module.css";
-	import { Card } from "@components";
+	import { PageMeta, Card } from "@components";
 	import { ContentFilter } from "@lib/layout";
 	import { pathBlogpost } from "@core/paths";
 	import { _, lang } from "@core/i18n";
@@ -39,17 +39,19 @@
 	$: groupedPosts = Object.entries(groupBy(filteredPosts, post => post.series));
 </script>
 
+<PageMeta route="blog" />
+
 <div class={styles.layout}>
 	<ContentFilter bind:contentLanguage>
 		{#each groupedPosts as [ series, posts ]}
 			<section>
 				<h2>{$_(`categories.${series}`)}</h2>
 				<div class={styles.posts}>
-					{#each posts as { title, slug, date }}
+					{#each posts as { title, slug, created }}
 						<Card
 							{title}
 							href={$pathBlogpost(slug)}
-							{date}
+							date={created}
 						/>
 					{/each}
 				</div>

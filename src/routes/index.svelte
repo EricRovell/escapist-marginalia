@@ -7,7 +7,3 @@
 		void goto(`${$lang}/home`, { replaceState: true });
 	}
 </script>
-
-<svelte:head>
-	<meta name="robots" content="noindex, nofollow" />
-</svelte:head>
