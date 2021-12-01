@@ -1,9 +1,11 @@
 ---
 title: "Проект Эйлера #1: Числа, кратные 3 или 5"
+description: "Решаем Проект Эйлера, проблема №1: Числа кратные 3 или 5."
 series: "project-euler"
 lang: ru
 created: 2021-06-10T00:00:00.000Z
 updated: 2021-08-26T00:00:00.000Z
+keywords: "проект эйлера, математика, арифметическая прогрессия"
 slug: project-euler-001-ru
 layout: "project-euler"
 ---

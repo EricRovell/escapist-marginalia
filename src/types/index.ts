@@ -2,7 +2,10 @@ export type Variant = "neutral" | "primary" | "success" | "danger" | "warning" |
 
 export interface Blogpost {
 	title: string;
-	date: Date;
+	description: string;
+	created: Date;
+	updated: Date;
+	keywords: string[];
 	slug: string;
 	series: string;
 	lang: "ru" | "en";
