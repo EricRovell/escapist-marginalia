@@ -14,6 +14,7 @@ export { default as TOC } from "./TOC.svelte";
 export { default as Code } from "./code-highlight/Code.svelte";
 export { default as Gallery } from "./gallery/Gallery.svelte";
 export { default as Meta } from "./meta/Meta.svelte";
+export { default as PageMeta } from "./meta/PageMeta.svelte";
 
 export * as Timeline from "./timeline";
 
