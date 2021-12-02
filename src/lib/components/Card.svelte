@@ -9,9 +9,13 @@
 
 <article>
 	<header>
-		<Link {href}>
+		{#if href}
+			<Link {href}>
+				<h3>{title}</h3>
+			</Link>
+		{:else}
 			<h3>{title}</h3>
-		</Link>
+		{/if}
 	</header>
 	<slot />
 	{#if $$slots.footer || date}
