@@ -34,7 +34,7 @@
 
 	article h3 {
 		font-size: var(--font-size-3);
-		font-weight: 550;
+		font-weight: 600;
 	}
 
 	footer {

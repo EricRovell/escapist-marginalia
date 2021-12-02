@@ -27,6 +27,7 @@
 	import { PageMeta, Card, Icon } from "@components";
 	import { iconGithub, iconNpm, iconURL } from "@components/icons/default";
 	import { groupBy } from "@lib/util";
+	import styles from "@styles/pages/projects.module.css";
 
 	export let projects: Project[] = [];
 
@@ -35,15 +36,15 @@
 
 <PageMeta route="projects" />
 
-<main>
+<main class={styles.layout}>
 	{#each groupedProjects as [ category, projects ]}
 		<section>
 			<h2>
 				{$_(`categories.${category}`)}
 			</h2>
-			<ul>
+			<ul class={styles.projects}>
 				{#each projects as { name, description, github, packageName, homepage }}
-					<li>
+					<li class={styles.project}>
 						<Card	title={name}>
 							<p>{description}</p>
 							<svelte:fragment slot="footer">
@@ -68,28 +69,3 @@
 		</section>
 	{/each}
 </main>
-
-<style>
-	main {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-l);
-		width: 100%;
-	}
-
-	h2 {
-		font-size: var(--font-size-6);
-		margin-bottom: var(--space-m);
-		text-transform: capitalize;
-	}
-
-	ul {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
-		gap: var(--space-m);
-	}
-
-	li {
-		display: contents;
-	}
-</style>
