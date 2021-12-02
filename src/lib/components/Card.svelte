@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Datetime } from "@components";
+	import Datetime from "./Datetime.svelte";
+	import Link from "./Link.svelte";
 
 	export let title: string;
 	export let href: string | undefined = undefined;
@@ -8,9 +9,13 @@
 
 <article>
 	<header>
-		<a {href}>
+		{#if href}
+			<Link {href}>
+				<h3>{title}</h3>
+			</Link>
+		{:else}
 			<h3>{title}</h3>
-		</a>
+		{/if}
 	</header>
 	<slot />
 	{#if $$slots.footer || date}
@@ -44,9 +49,5 @@
 		gap: var(--space-s);
 		font-size: var(--font-size-1);
 		color: hsl(var(--gray-h) var(--gray-s-700) var(--gray-l-700));
-	}
-
-	a:hover {
-		color: var(--color-primary);
 	}
 </style>

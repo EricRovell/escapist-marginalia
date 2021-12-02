@@ -31,6 +31,10 @@
     --link-color-active: #B4B8F1;
     --link-bg-active: #3B3562;
 
+    --link-accent-color: #A98635;
+    --link-accent-color-active: #E2B642;
+    --link-accent-bg-active: #49381C;
+
     --gallery-border: hsl(217 26% 35%);
   }
 }
@@ -67,6 +71,10 @@
   --link-color: #7A82E3;
   --link-color-active: #B4B8F1;
   --link-bg-active: #3B3562;
+
+  --link-accent-color: #A98635;
+  --link-accent-color-active: #E2B642;
+  --link-accent-bg-active: #49381C;
 
   --gallery-border: hsl(217 26% 35%);
 }

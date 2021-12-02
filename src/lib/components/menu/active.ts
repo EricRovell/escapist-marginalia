@@ -12,18 +12,19 @@ interface Options {
  * 
  * If the pattern is not provided, the href attribute are compated with the current.
  */
-export function active(node: HTMLAnchorElement, { pattern, current }: Options)  {
-	const href = node.getAttribute("href");
+export function active(node: HTMLLIElement, { pattern, current }: Options)  {
+	const a = node.firstElementChild as HTMLAnchorElement;
+	const href = a.getAttribute("href");
   
 	function update({ pattern, current }: Options): void {
 		if (pattern && pattern instanceof RegExp) {
 			(pattern.test(current))
-				? node.setAttribute("aria-current", "page")
-				: node.removeAttribute("aria-current");
+				? a.setAttribute("aria-current", "page")
+				: a.removeAttribute("aria-current");
 		} else {
 			(!pattern && current === href)
-				? node.setAttribute("aria-current", "page")
-				: node.removeAttribute("aria-current");
+				? a.setAttribute("aria-current", "page")
+				: a.removeAttribute("aria-current");
 		}
 	}
   

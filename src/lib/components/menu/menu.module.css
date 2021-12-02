@@ -1,0 +1,47 @@
+.menu-container {
+	--navigation-height: 50px;
+
+	--link-color: var(--link-accent-color);
+  --link-color-active: var(--link-accent-color-active);
+  --link-bg-active: var(--link-accent-bg-active);
+}
+
+.menu-items {
+	display: inline-grid;
+	place-items: center;
+	place-content: center start;
+	grid-auto-flow: column;
+	
+	width: fit-content;
+	height: var(--navigation-height);
+}
+
+.menu-item {
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: var(--navigation-height);
+	width: 100%;
+	height: 100%;
+	white-space: nowrap;
+
+	text-decoration: none;
+	color: var(--color-gray-600);
+	text-transform: capitalize;
+	cursor: pointer;
+
+	padding: var(--space-xs);
+}
+
+.menu-item a[aria-current] {
+	color: var(--link-color-active);
+
+	outline: 1px solid currentColor;
+	outline-offset: 0.2em;
+}
+
+.menu-item a[aria-current]:focus-visible {
+	outline-style: dashed;
+}

@@ -79,6 +79,10 @@
   }
 
   nav ul {
+    --link-color: var(--link-accent-color);
+    --link-color-active: var(--link-accent-color-active);
+    --link-bg-active: var(--link-accent-bg-active);
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
