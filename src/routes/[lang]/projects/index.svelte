@@ -24,7 +24,7 @@
 
 <script lang="ts">
 	import { _ } from "@core/i18n";
-	import { Card, Icon } from "@components";
+	import { PageMeta, Card, Icon } from "@components";
 	import { iconGithub, iconNpm, iconURL } from "@components/icons/default";
 	import { groupBy } from "@lib/util";
 
@@ -32,6 +32,8 @@
 
 	$: groupedProjects = Object.entries(groupBy(projects, project => project.type));
 </script>
+
+<PageMeta route="projects" />
 
 <main>
 	{#each groupedProjects as [ category, projects ]}

@@ -1,7 +1,11 @@
 <script lang="ts">
+	import { _ } from "@core/i18n";
+	import { PageMeta, Gallery } from "@components";
+
 	import items from "@core/gallery.json";
-	import { Gallery } from "@components";
 </script>
+
+<PageMeta route="gallery" />
 
 <main>
 	<Gallery {items} />

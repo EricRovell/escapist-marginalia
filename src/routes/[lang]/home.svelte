@@ -23,7 +23,7 @@
 <script lang="ts">
 	import styles from "@styles/pages/home.module.css";
 	import { pathBlogpost } from "@paths";
-	import { Link, Timeline, Datetime } from "@components";
+	import { PageMeta, Link, Timeline, Datetime } from "@components";
 	import { ContentFilter } from "@lib/layout";
 	import { lang, _ } from "@core/i18n";
 	import { groupBy } from "@lib/util";
@@ -36,8 +36,10 @@
 	let groupedByYear: Record<number, Blogpost[]>;
 
 	$: filteredPosts = posts.filter(post => contentLanguage.includes(post.lang));
-	$: groupedByYear = groupBy(filteredPosts, post => new Date(post.date).getFullYear());
+	$: groupedByYear = groupBy(filteredPosts, post => new Date(post.created).getFullYear());
 </script>
+
+<PageMeta route="home" />
 
 <!--
 	Note:

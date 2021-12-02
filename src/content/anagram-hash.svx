@@ -1,8 +1,11 @@
 ---
 title: "Interesting anagram check algorithm"
+description: "Exploring interesting solution to check a word for anagram using math."
 series: "algorithms"
 lang: en
 created: 2021-11-01T00:00:00.000Z
+updated: 2021-11-28T02:21:00.000Z
+keywords: "algorithm, math, anagram"
 slug: anagram-hash
 layout: algorithm
 ---
