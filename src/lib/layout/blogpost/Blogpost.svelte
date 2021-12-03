@@ -6,8 +6,7 @@
 <script>
 	import { webpage } from "@core/paths";
 	import { Meta, TOC } from "@components";
-	import styles from "@styles/pages/blogpost.module.css";
-	import "katex/dist/katex.min.css";
+	import styles from "./blogpost.module.css";
 
 	export let title;
 	export let description;
@@ -60,6 +59,8 @@
 		<TOC headings={toc} />
 	</aside>
 	<main class={styles.article}>
+		<slot name="pre-content" />
 		<slot />
+		<slot name="post-content" />
 	</main>
 </article>

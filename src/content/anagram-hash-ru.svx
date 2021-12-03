@@ -7,8 +7,12 @@ created: 2021-11-01T00:00:00.000Z
 updated: 2021-11-30T03:12:00.000Z
 keywords: "алгоритм, математика, анаграмма"
 slug: anagram-hash-ru
-layout: algorithm
+layout: blogpost
 ---
+
+<script>
+	import "katex/dist/katex.min.css";
+</script>
 
 Для начала дадим определение:
 

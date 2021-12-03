@@ -26,6 +26,9 @@
 
 <style>
 	a {
+		display: inline-flex;
+		align-items: baseline;
+		gap: var(--space-xs);
 		color: var(--link-color);
 		font-size: inherit;
 	}
