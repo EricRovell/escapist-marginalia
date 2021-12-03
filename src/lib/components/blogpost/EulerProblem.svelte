@@ -22,8 +22,6 @@
 
 		display: flex;
 		flex-direction: column;
-
-		font-size: var(--font-size-4);
 		border: var(--border);
 	}
 
