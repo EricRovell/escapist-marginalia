@@ -85,16 +85,6 @@
 	color: var(--color-link);
 }
 
-/* project euler */
-
-.article > section[slot="problem"] {
-	display: grid;
-	gap: 0.5em;
-	padding: 1.25em;
-	font-size: var(--font-size-4);
-	border: solid 1px hsl(var(--gray-h) var(--gray-s-600) var(--gray-l-600) / 0.5);
-}
-
 /* responsiveness */
 
 @media screen and (max-width: 1150px) {
