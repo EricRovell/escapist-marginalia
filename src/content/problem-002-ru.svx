@@ -7,10 +7,15 @@ created: 2021-06-11T00:00:00.000Z
 updated: 2021-06-13T00:00:00.000Z
 keywords: "проект эйлера, математика, числа фибоначчи"
 slug: project-euler-002-ru
-layout: "project-euler"
+layout: blogpost
 ---
 
-<section slot="problem">
+<script>
+  import { EulerProblem } from "@components/blogpost";
+	import "katex/dist/katex.min.css";
+</script>
+
+<EulerProblem problem={2}>
 Каждый новый член последовательности Фибоначчи получается из суммы двух предыдущих. Начиная с 1 и 2, первые 10 членов последовательности будут:
 
 ```math
@@ -18,7 +23,7 @@ layout: "project-euler"
 ```
 	
 Найти сумму всех чётных членов последовательности, значения которых не превышают четыре миллиона.
-</section>
+</EulerProblem>
 
 ## Brute-force решение
 
