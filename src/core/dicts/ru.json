@@ -23,6 +23,8 @@
     "blogpost": "статья",
     "reference-list": "Ссылки по теме",
     "content-language": "язык публикаций",
-    "toc": "Содержание"
+    "toc": "Содержание",
+    "created-at": "Опубликовано",
+    "last-updated-at": "Последнее обновление"
   }
 }
