@@ -23,6 +23,8 @@
     "blogpost": "blogpost",
     "reference-list": "Reference List",
     "content-language": "content language",
-    "toc": "Table of contents"
+    "toc": "Table of contents",
+    "created-at": "Created at",
+    "last-updated-at": "Last updated at"
   }
 }

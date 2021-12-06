@@ -6,6 +6,7 @@
 <script>
 	import { webpage } from "@core/paths";
 	import { Meta, TOC } from "@components";
+	import { Header } from "@components/blogpost";
 	import styles from "./blogpost.module.css";
 
 	export let title;
@@ -52,9 +53,13 @@
 	Layout for blogposts where math equations is needed.
 -->
 <article class={styles.body}>
-	<header class={styles.header}>
-		<h1>{title}</h1>
-	</header>
+	<Header
+		{title}
+		{description}
+		{keywords}
+		{created}
+		{updated}
+	/>
 	<aside class={styles.sidebar}>
 		<TOC headings={toc} />
 	</aside>
