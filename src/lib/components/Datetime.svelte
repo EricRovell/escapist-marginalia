@@ -1,49 +1,59 @@
 <script lang="ts" context="module">
-  function renderDate(date: Date | string = new Date(), locale?: string, params?: Intl.DateTimeFormatOptions) {
-  	const renderDate = new Intl.DateTimeFormat(locale, params ?? {
-  		year: "numeric",
-  		month: "short",
-  		day: "numeric",
-  		hour: "numeric",
-  		minute: "numeric",
-  		hour12: false
-  	});
+	interface Props {
+		date?: Date | string;
+		options?: Intl.DateTimeFormatOptions;
+		locale?: string;
+		relative?: boolean;
+	}
 
-  	return renderDate.format(new Date(date));
-  }
+	const defaultOptions: Intl.DateTimeFormatOptions = {
+		year: "numeric",
+		month: "short",
+		day: "numeric",
+		hour: "numeric",
+		minute: "numeric",
+		hour12: false
+	};
 
-  function renderRelativeDate(date: Date | string = new Date(), locale?: string) {
-  	const difference = Date.now() - new Date(date).getTime();
-  	const rtf = new Intl.RelativeTimeFormat(locale);
+	function renderDate(date: Date | string = new Date(), locale?: string, params: Intl.DateTimeFormatOptions = defaultOptions) {
+		const renderDate = new Intl.DateTimeFormat(locale, params);
+		return renderDate.format(new Date(date));
+	}
 
-  	for (let hour = 1; hour < 23; hour++) {
-  		if (difference < hour * 3600 * 1000) {
-  			return rtf.format(-1 * hour, "hour");
-  		}
-  	}
+	function renderRelativeDate(date: Date | string = new Date(), locale?: string, params: Intl.DateTimeFormatOptions = defaultOptions) {
+		const difference = Date.now() - new Date(date).getTime();
+		const rtf = new Intl.RelativeTimeFormat(locale);
 
-  	for (let day = 1; day < 4; day++) {
-  		if (difference < day * 24 * 3600 * 1000) {
-  			return rtf.format(-1 * day, "day");
-  		}
-  	}
+		for (let hour = 1; hour < 23; hour++) {
+			if (difference < hour * 3600 * 1000) {
+				return rtf.format(-1 * hour, "hour");
+			}
+		}
 
-  	if (difference < 7 * 24 * 3600 * 1000) {
-  		return rtf.format(-1, "week");
-  	}
+		for (let day = 1; day < 4; day++) {
+			if (difference < day * 24 * 3600 * 1000) {
+				return rtf.format(-1 * day, "day");
+			}
+		}
 
-  	return renderDate(date, locale);
-  }
+		if (difference < 7 * 24 * 3600 * 1000) {
+			return rtf.format(-1, "week");
+		}
+
+		return renderDate(date, locale, params);
+	}
 </script>
 
 <script lang="ts">
-	export let date: Date | string = new Date();
-	export let options: Intl.DateTimeFormatOptions | undefined = undefined;
-	export let locale: string | undefined = undefined;
-	export let relative = false;
+	type $$Props = Props;
 
-	let renderedDate = (relative)
-		? renderRelativeDate(date, locale)
+	export let date: $$Props["date"] = new Date();
+	export let options: $$Props["options"] = defaultOptions;
+	export let locale: $$Props["locale"] = undefined;
+	export let relative: $$Props["relative"] = false;
+
+	$: renderedDate = (relative)
+		? renderRelativeDate(date, locale, options)
 		: renderDate(date, locale, options);
 </script>
 
