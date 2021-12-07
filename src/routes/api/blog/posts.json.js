@@ -1,3 +1,4 @@
+import { dev } from "$app/env";
 import { getPosts } from "@core/getPosts";
 
 export async function get({ query }) {
@@ -5,10 +6,11 @@ export async function get({ query }) {
 	let posts = await getPosts();
 
 	if (sort) {
-		posts.sort((a, b) => (a.date > b.date ? Number(sort) : 1));
+		posts.sort((a, b) => (a.created > b.created ? Number(sort) : 1));
 	}
 
 	return {
-		body: posts
+		// render all posts during development
+		body: posts.filter(post => dev || post.published)
 	};
 }

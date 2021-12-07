@@ -1,14 +1,28 @@
 export type Variant = "neutral" | "primary" | "success" | "danger" | "warning" | "info" | "link";
 
-export interface Blogpost {
+/**
+ * Describes the metadata object from the blogpost's frontmatter.
+ */
+export interface BlogpostMetadata {
 	title: string;
 	description: string;
+	series: string;
+	created: string;
+	updated: string;
+	keywords: string;
+	published?: boolean;
+	layout?: string;
+	slug: string;
+	lang: "ru" | "en";
+}
+
+/**
+ * Describes the blogpost's metadata.
+ */
+export interface Blogpost extends Omit<BlogpostMetadata, "created" | "updated" | "keywords"> {
 	created: Date;
 	updated: Date;
 	keywords: string[];
-	slug: string;
-	series: string;
-	lang: "ru" | "en";
 }
 
 /**
