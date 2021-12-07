@@ -12,7 +12,6 @@ export interface BlogpostMetadata {
 	keywords: string;
 	published?: boolean;
 	layout?: string;
-	slug: string;
 	lang: "ru" | "en";
 }
 
@@ -23,6 +22,7 @@ export interface Blogpost extends Omit<BlogpostMetadata, "created" | "updated" |
 	created: Date;
 	updated: Date;
 	keywords: string[];
+	slug: string;
 }
 
 /**
