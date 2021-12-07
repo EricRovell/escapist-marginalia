@@ -6,7 +6,7 @@ lang: ru
 created: 2021-06-10T00:00:00.000Z
 updated: 2021-08-26T00:00:00.000Z
 keywords: "проект эйлера, математика, арифметическая прогрессия"
-slug: project-euler-001-ru
+published: true
 layout: blogpost
 ---
 

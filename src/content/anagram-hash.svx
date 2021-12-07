@@ -6,7 +6,7 @@ lang: en
 created: 2021-11-01T00:00:00.000Z
 updated: 2021-11-28T02:21:00.000Z
 keywords: "algorithm, math, anagram"
-slug: anagram-hash
+published: true
 layout: blogpost
 ---
 
