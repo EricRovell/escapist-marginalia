@@ -2,7 +2,7 @@
   import { pathHome, pathBlog, pathGallery, pathProjects, pathAbout } from "@paths";
   import { _ } from "@core/i18n";
   import { Navigation, Footer, Icon, ThemeSelect, Masthead, LangSelect } from "../components";
-  import { iconTelescope } from "@components/icons/default";
+  import { logo } from "@components/icons/logo";
 
   import "@styles/tokens.css";
   import "@styles/normalize.css";
@@ -14,8 +14,7 @@
 <div id="app">
   <Masthead>
     <a class="logo" href={$pathHome} slot="logo">
-      <Icon path={iconTelescope} />
-      <span>eric/rovell</span>
+      <Icon path={logo} size="25px" />
     </a>
     <svelte:fragment slot="navigation">
       <Navigation.Container>
