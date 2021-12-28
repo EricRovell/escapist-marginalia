@@ -1,0 +1,14 @@
+---
+title: "Что такое кроп фактор?"
+description: "Число диафрагмы такое странное не просто так, разберёмся что это такое."
+series: "photography"
+lang: ru
+created: 2021-12-08T00:00:00.000Z
+updated: 2021-12-08T00:00:00.000Z
+keywords: "фотография, кроп фактор"
+layout: blogpost
+---
+
+## Ссылки
+
+- [Что такое кроп-фактор?](https://photo7.ru/chto-takoe-krop-faktor-v-fotografii/)
