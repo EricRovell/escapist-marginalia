@@ -1,4 +1,4 @@
-import { basename } from "path";
+import { basename, dirname } from "path";
 import type { Blogpost, BlogpostMetadata } from "../types";
 
 export async function getPosts(): Promise<Blogpost[]> {
@@ -9,13 +9,14 @@ export async function getPosts(): Promise<Blogpost[]> {
 
 	for await (const [ filename, module ] of Object.entries(modules)) {
 		const { metadata } = await module();
-		const { created, updated, keywords, ...rest }: BlogpostMetadata = metadata;
+		const { created, updated, keywords, lang, ...rest }: BlogpostMetadata = metadata;
 
 		posts.push({
 			created: new Date(created),
 			updated: new Date(updated),
 			keywords: keywords.split(","),
-			slug: basename(filename, ".svx"),
+			slug: `${lang}-${basename(dirname(filename), ".svx")}`,
+			lang,
 			...rest
 		});
 	}

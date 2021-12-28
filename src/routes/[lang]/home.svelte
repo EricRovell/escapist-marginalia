@@ -55,11 +55,14 @@
 					<svelte:fragment slot="header">
 						<Datetime date={year} options={{ year: "numeric" }} />
 					</svelte:fragment>
-					{#each posts as { title, slug, date } (slug)}
+					{#each posts as { title, slug, created } (slug)}
 						<Timeline.Item>
 							<article>
 								<footer>
-									<Datetime {date} locale={$lang} options={{ month: "long", day: "numeric" }} />, {$_("message.blogpost")}
+									<Datetime
+										date={created}
+										locale={$lang}
+										options={{ month: "long", day: "numeric" }} />, {$_("message.blogpost")}
 								</footer>
 								<Link	href={$pathBlogpost(slug)}>
 									{title}
