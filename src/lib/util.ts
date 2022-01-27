@@ -37,3 +37,26 @@ export function groupBy<T, K extends keyof any>(items: T[], getKey: (item: T) =>
 		return previous;
 	}, {} as Record<K, T[]>);
 }
+
+/**
+ * Prevents the page scroll depending on condition.
+ */
+export function preventPageScroll(condition: boolean) {
+	// SSR check
+	if (!globalThis.window) return;
+		
+	if (condition) {
+		// prevent page scroll, mostly for safari hack
+		document.body.style.cssText = `
+			top: -${window.scrollY}px;
+			position: fixed;
+			overflow-y: scroll;
+		`;
+	} else {
+		document.body.style.cssText = "";
+		window.scrollTo({
+			top: -1 * parseInt(document.body.style.top || "0"),
+			behavior: "auto"
+		});
+	}
+}
