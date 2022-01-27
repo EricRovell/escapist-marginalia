@@ -53,9 +53,10 @@ export function preventPageScroll(condition: boolean) {
 			overflow-y: scroll;
 		`;
 	} else {
+		const scrollY = parseInt(document.body.style.top || "0");
 		document.body.style.cssText = "";
 		window.scrollTo({
-			top: -1 * parseInt(document.body.style.top || "0"),
+			top: -1 * scrollY,
 			behavior: "auto"
 		});
 	}
