@@ -5,6 +5,7 @@
 	export let alt: string;
 	export let lazy = false;
 	export let style = "";
+	export let className: string | undefined = undefined;
 </script>
 
 <picture {style}>
@@ -14,6 +15,7 @@
 		{height}
 		{alt}
 		loading={lazy ? "lazy" : undefined}
+		class={className}
 		{...$$restProps}
 	/>
 </picture>
