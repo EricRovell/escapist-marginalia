@@ -1,8 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@sveltejs/adapter-static': ^1.0.0-next.23
-  '@sveltejs/kit': ^1.0.0-next.206
+  '@sveltejs/adapter-static': ^1.0.0-next.26
+  '@sveltejs/kit': ^1.0.0-next.247
   '@typescript-eslint/eslint-plugin': ^5.10.1
   '@typescript-eslint/parser': ^5.10.1
   eslint: ^8.7.0
@@ -33,8 +33,8 @@ dependencies:
   svelte-i18n: 3.3.13_svelte@3.46.3
 
 devDependencies:
-  '@sveltejs/adapter-static': 1.0.0-next.23
-  '@sveltejs/kit': 1.0.0-next.206_svelte@3.46.3
+  '@sveltejs/adapter-static': 1.0.0-next.26
+  '@sveltejs/kit': 1.0.0-next.247_svelte@3.46.3
   '@typescript-eslint/eslint-plugin': 5.10.1_29a9f4c2bb099a1cba99d91e619128a7
   '@typescript-eslint/parser': 5.10.1_eslint@8.7.0+typescript@4.5.4
   eslint: 8.7.0
@@ -183,21 +183,20 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@sveltejs/adapter-static/1.0.0-next.23:
-    resolution: {integrity: sha512-7fp+tVjh/Fi5PQxTBQAdwbOgBqtJYtNNVaa6Gb7nf7ETClojrZWFZq9ZtRfIkrrNyRNGPOl81IMO5tIHNkVfxw==}
+  /@sveltejs/adapter-static/1.0.0-next.26:
+    resolution: {integrity: sha512-LXR0HkPygZ+m9wJhFqbYWbJ0jquhgUK6vL/8AwnqbAZGGtQFloMpf49WOANk7MiLBeY6L97W5jPLSxHiDW3T0Q==}
     dependencies:
       tiny-glob: 0.2.9
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.206_svelte@3.46.3:
-    resolution: {integrity: sha512-AQEOKZLG1GKkuBfWUKKxMs9A3AzE9tSHYc4Lu+AL/4BAs4erIFdOei2ldsxak2ICxxeaCloqVRPvIOtj7UEacg==}
+  /@sveltejs/kit/1.0.0-next.247_svelte@3.46.3:
+    resolution: {integrity: sha512-8xoSxJ3+Zid4y53dXd9lTLp94heYV1qmCEN6K2sjkFNELy2VaQ0/AWj2z0HWMnUQ2/iojb63OQvdXC46NaV+sQ==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
       svelte: ^3.44.0
     dependencies:
       '@sveltejs/vite-plugin-svelte': 1.0.0-next.32_svelte@3.46.3+vite@2.7.9
-      cheap-watch: 1.0.4
       sade: 1.7.4
       svelte: 3.46.3
       vite: 2.7.9
@@ -627,11 +626,6 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
-    dev: true
-
-  /cheap-watch/1.0.4:
-    resolution: {integrity: sha512-QR/9FrtRL5fjfUJBhAKCdi0lSRQ3rVRRum3GF9wDKp2TJbEIMGhUEr2yU8lORzm9Isdjx7/k9S0DFDx+z5VGtw==}
-    engines: {node: '>=8'}
     dev: true
 
   /chokidar/3.5.2:

@@ -31,8 +31,8 @@
 		"node": ">=14.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^1.0.0-next.23",
-		"@sveltejs/kit": "^1.0.0-next.206",
+		"@sveltejs/adapter-static": "^1.0.0-next.26",
+		"@sveltejs/kit": "^1.0.0-next.247",
 		"@typescript-eslint/eslint-plugin": "^5.10.1",
 		"@typescript-eslint/parser": "^5.10.1",
 		"eslint": "^8.7.0",
