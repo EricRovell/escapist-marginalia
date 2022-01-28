@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
 	export interface GalleryItem {
-		href: string;
+		path: string;
 		format: string;
 		width: number;
 		height: number;

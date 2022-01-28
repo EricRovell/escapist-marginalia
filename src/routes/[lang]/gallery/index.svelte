@@ -9,7 +9,7 @@
 <main>
 	<Gallery
 		{items}
-		getSrc={({ href, format }) => `${href}.${format}`}
+		getSrc={({ path, format }) => `${path}.${format}`}
 	/>
 </main>
 
