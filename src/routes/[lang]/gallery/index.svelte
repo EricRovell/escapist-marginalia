@@ -7,7 +7,10 @@
 <PageMeta route="gallery" />
 
 <main>
-	<Gallery {items} />
+	<Gallery
+		{items}
+		getSrc={({ href, format }) => `${href}.${format}`}
+	/>
 </main>
 
 <style>
