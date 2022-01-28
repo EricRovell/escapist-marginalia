@@ -1,6 +1,6 @@
 <script context="module">
-	export async function load({ page }) {
-		const { lang = "en", slug } = page.params;
+	export async function load({ params }) {
+		const { lang = "en", slug } = params;
 
 		try {
 			let post = await import(`../../../content/blogpost/${slug}/index-${lang}.svx`);

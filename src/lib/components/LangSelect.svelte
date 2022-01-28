@@ -23,7 +23,7 @@
 	let href: string;
 	let path: string;
 
-	$: path = $page.path;
+	$: path = $page.url.pathname;
 	$: href = stripLangParam(path);
 </script>
 

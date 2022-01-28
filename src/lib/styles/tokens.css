@@ -44,7 +44,7 @@
   --z-index-popover: 5;
   --z-index-navigation: 10;
   --z-index-popup: 15;
-  --z-index-immortal: 100;
+  --z-index-modal: 100;
   
   /* space values & inset */
   --space-xs: calc(0.25 * 1rem);
