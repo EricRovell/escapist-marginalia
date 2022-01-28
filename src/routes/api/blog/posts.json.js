@@ -1,8 +1,8 @@
 import { dev } from "$app/env";
 import { getPosts } from "@core/getPosts";
 
-export async function get({ query }) {
-	const sort = query.get("sort");
+export async function get({ url }) {
+	const sort = url.searchParams.get("sort");
 	let posts = await getPosts();
 
 	if (sort) {

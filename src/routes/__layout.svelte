@@ -4,8 +4,8 @@
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
-	export async function load({ page }) {
-		void i18nInit(page.params.lang as string);
+	export async function load({ params }) {
+		void i18nInit(params.lang as string);
 		await waitLocale();
 		
 		return {
