@@ -1,5 +1,5 @@
 import sveltePreprocess from "svelte-preprocess";
-import intlPrecompile from "svelte-intl-precompile";
+import intlPrecompile from "svelte-intl-precompile/sveltekit-plugin";
 import { mdsvex } from "mdsvex";
 import { mdsvexConfig } from "./mdsvex.config.js";
 import adapter from "@sveltejs/adapter-static";
