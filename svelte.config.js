@@ -25,7 +25,6 @@ const config = {
 	extensions: [ ".svelte", ".svx" ],
 	kit: {
 		adapter: adapter(),
-		target: "body",
 		vite: {
 			resolve: {
 				alias: Object.fromEntries(aliasList.map(alias => (
