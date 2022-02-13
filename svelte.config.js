@@ -1,4 +1,5 @@
 import sveltePreprocess from "svelte-preprocess";
+import intlPrecompile from "svelte-intl-precompile";
 import { mdsvex } from "mdsvex";
 import { mdsvexConfig } from "./mdsvex.config.js";
 import adapter from "@sveltejs/adapter-static";
@@ -36,7 +37,10 @@ const config = {
 					// Allow serving files from one level up to the project root
 					allow: [ ".." ]
 				}
-			}
+			},
+			plugins: [
+				intlPrecompile("locales") // -> as ""
+			]
 		}
 	}
 };
