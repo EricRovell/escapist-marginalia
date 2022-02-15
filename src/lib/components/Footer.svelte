@@ -1,7 +1,7 @@
 <script>
   import Link from "./Link.svelte";
   import LangSelect from "./LangSelect.svelte";
-  import { _ } from "@core/i18n";
+  import { t } from "@core/i18n";
   import { version } from "../../../package.json";
 
   import {
@@ -30,7 +30,7 @@
         {#each links as { label, href, disabled = false }}
           <li>
             <Link {href} {disabled}>
-              {$_(`sections.${label}`)}
+              {$t(`sections.${label}`)}
             </Link>
           </li>
         {/each}
