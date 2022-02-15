@@ -16,6 +16,6 @@ declare module "$locales/*.json" {
 
 declare namespace App {
 	interface Session {
-		userLanguage: string;
+		userLanguage?: string;
 	}
 }
