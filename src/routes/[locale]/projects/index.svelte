@@ -1,10 +1,8 @@
 <script context="module" lang="ts">
+	import type { Load } from "@sveltejs/kit";
 	import type { Project } from "@types";
-
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ fetch }) {
+	
+	export const load: Load = async ({ fetch }) => {
 		const res = await fetch("/api/projects.json");
 
 		if (res.ok) {
@@ -19,7 +17,7 @@
 			status: res.status,
 			error: new Error("Could not load")
 		};
-	}
+	};
 </script>
 
 <script lang="ts">

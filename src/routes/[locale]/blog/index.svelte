@@ -1,8 +1,7 @@
-<script context="module">
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ fetch }) {
+<script context="module" lang="ts">
+	import type { Load } from "@sveltejs/kit";
+
+	export const load: Load = async ({ fetch }) => {
 		const res = await fetch("/api/blog/posts.json");
 
 		if (res.ok) {
@@ -17,7 +16,7 @@
 			status: res.status,
 			error: new Error("Could not load URL")
 		};
-	}
+	};
 </script>
 
 <script lang="ts">
