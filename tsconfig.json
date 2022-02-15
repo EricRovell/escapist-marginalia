@@ -26,7 +26,8 @@
 			"@styles/*": [ "src/lib/styles/*" ],
       "@views/*": [ "src/lib/views/* "],
 			"@paths": [ "src/core/paths.ts" ],
-			"@core/*": [ "src/core/*" ]
+			"@core/*": [ "src/core/*" ],
+			"$locales": [ "src/locales/*" ]
 		},
 		"plugins": [
 			{ "name": "typescript-plugin-css-modules" }
