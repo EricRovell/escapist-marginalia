@@ -8,13 +8,13 @@
 
 <script lang="ts">
 	import { Link } from "@components";
-	import { _ } from "@core/i18n";
+	import { t } from "@core/i18n";
 
 	export let headings: Heading[] = [];
 </script>
 
 <nav>
-	<h2>{$_("message.toc")}</h2>
+	<h2>{$t("message.toc")}</h2>
 	<ol>
 		{#each headings as { level, title, id }}
 			<li style="--toc-level: {level - 2};">

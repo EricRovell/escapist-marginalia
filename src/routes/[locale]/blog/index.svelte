@@ -1,8 +1,7 @@
-<script context="module">
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ fetch }) {
+<script context="module" lang="ts">
+	import type { Load } from "@sveltejs/kit";
+
+	export const load: Load = async ({ fetch }) => {
 		const res = await fetch("/api/blog/posts.json");
 
 		if (res.ok) {
@@ -17,7 +16,7 @@
 			status: res.status,
 			error: new Error("Could not load URL")
 		};
-	}
+	};
 </script>
 
 <script lang="ts">
@@ -25,13 +24,13 @@
 	import { PageMeta, Card } from "@components";
 	import { ContentFilter } from "@lib/layout";
 	import { pathBlogpost } from "@core/paths";
-	import { _, lang } from "@core/i18n";
+	import { t, locale } from "@core/i18n";
 	import { groupBy } from "@lib/util";
 	import type { Blogpost } from "../../../types";
 
 	export let posts: Blogpost[] = [];
 
-	let contentLanguage: string[] = [ $lang ];
+	let contentLanguage: string[] = [ $locale ];
 	let filteredPosts: Blogpost[];
 	let groupedPosts: Array<[ string, Blogpost[]]>;
 
@@ -45,7 +44,7 @@
 	<ContentFilter bind:contentLanguage>
 		{#each groupedPosts as [ series, posts ]}
 			<section>
-				<h2>{$_(`categories.${series}`)}</h2>
+				<h2>{$t(`categories.${series}`)}</h2>
 				<div class={styles.posts}>
 					{#each posts as { title, slug, created }}
 						<Card

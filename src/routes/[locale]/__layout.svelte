@@ -3,7 +3,7 @@
 	import { locale } from "@core/i18n";
 	import { Meta } from "@components";
 
-	$: $locale = $page.params.lang;
+	$: $locale = $page.params.locale;
 </script>
 
 <Meta

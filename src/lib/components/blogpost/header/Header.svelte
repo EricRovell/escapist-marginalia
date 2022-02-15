@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Datetime from "../../Datetime.svelte";
-	import { _, lang } from "@core/i18n";
+	import { t, locale } from "@core/i18n";
 	import styles from "./header.module.css";
 
 	export let title: string;
@@ -29,6 +29,6 @@
 				<li>{keyword}</li>
 			{/each}
 		</ul>
-		<span>{$_(`message.${dateMessage}`)}: <Datetime {date} locale={$lang} options={dateOptions} relative /></span>
+		<span>{$t(`message.${dateMessage}`)}: <Datetime {date} locale={$locale} options={dateOptions} relative /></span>
 	</footer>
 </header>

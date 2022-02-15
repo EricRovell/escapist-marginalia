@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/stores";
-	import { lang } from "@core/i18n";
+	import { locale } from "@core/i18n";
 	import { Icon } from "@components";
 	import { iconLocale } from "@components/icons/default";
 
@@ -32,7 +32,7 @@
 	<ul>
 		{#each [ "en", "ru" ] as language}
 			<li>
-				<a href={`/${language}/${href}`} class:active={$lang === language}>
+				<a href={`/${language}/${href}`} class:active={$locale === language}>
 					{language}
 				</a>
 			</li>

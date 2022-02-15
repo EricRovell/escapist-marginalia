@@ -1,4 +1,5 @@
 import sveltePreprocess from "svelte-preprocess";
+import intlPrecompile from "svelte-intl-precompile/sveltekit-plugin";
 import { mdsvex } from "mdsvex";
 import { mdsvexConfig } from "./mdsvex.config.js";
 import adapter from "@sveltejs/adapter-static";
@@ -13,7 +14,8 @@ const aliasList = [
 	{ name: "@views", path: "./src/lib/views" },
 	{ name: "@types", path: "./src/types" },
 	{ name: "@paths", path: "./src/core/paths.ts" },
-	{ name: "@core", path: "./src/core" }
+	{ name: "@core", path: "./src/core" },
+	{ name: "$locales", path: "./src/locales" }
 ];
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -36,7 +38,10 @@ const config = {
 					// Allow serving files from one level up to the project root
 					allow: [ ".." ]
 				}
-			}
+			},
+			plugins: [
+				intlPrecompile("/src/locales")
+			]
 		}
 	}
 };

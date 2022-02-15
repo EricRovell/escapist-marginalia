@@ -1,10 +1,8 @@
 <script context="module" lang="ts">
+	import type { Load } from "@sveltejs/kit";
 	import type { Project } from "@types";
-
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ fetch }) {
+	
+	export const load: Load = async ({ fetch }) => {
 		const res = await fetch("/api/projects.json");
 
 		if (res.ok) {
@@ -19,11 +17,11 @@
 			status: res.status,
 			error: new Error("Could not load")
 		};
-	}
+	};
 </script>
 
 <script lang="ts">
-	import { _ } from "@core/i18n";
+	import { t } from "@core/i18n";
 	import { PageMeta, Card, Icon } from "@components";
 	import { iconGithub, iconNpm, iconURL } from "@components/icons/default";
 	import { groupBy } from "@lib/util";
@@ -40,7 +38,7 @@
 	{#each groupedProjects as [ category, projects ]}
 		<section>
 			<h2>
-				{$_(`categories.${category}`)}
+				{$t(`categories.${category}`)}
 			</h2>
 			<ul class={styles.projects}>
 				{#each projects as { name, description, github, packageName, homepage }}

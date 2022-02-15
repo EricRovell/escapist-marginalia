@@ -1,25 +1,31 @@
-import { derived } from "svelte/store";
-import { register, init, getLocaleFromNavigator, locale } from "svelte-i18n";
+import { 
+	addMessages
+} from "svelte-intl-precompile";
+export {
+	init,
+	t,
+	locales,
+	locale
+} from "svelte-intl-precompile";
 
-export { _, locale, waitLocale } from "svelte-i18n";
+import ru from "$locales/ru.json";
+import en from "$locales/en.json";
 
-export function i18nInit(lang?: string) {
-	// UI
-	register("en", () => import("./dicts/en.json"));
-	register("ru", () => import("./dicts/ru.json"));
-	// Pages meta
-	register("en", () => import("./dicts/en-pages.json"));
-	register("ru", () => import("./dicts/ru-pages.json"));
+export function loadMessages(): void {
+	addMessages("ru", ru);
+	addMessages("en", en);
 
-	void init({
-		fallbackLocale: lang || "en",
-		initialLocale: getLocaleFromNavigator()
-	});
+	/**
+	 * TODO: manage locales async, using `register()` and `waitLocale()`
+	 * 
+	 * register("en", () => import("$locales/en.json"));
+	 */
 }
 
-/**
- * Derived from `locale` to remove all but used user language.
- */
-export const lang = derived(locale, ($locale, set) => {
-	set($locale.slice(0, 2));
-}, "en");
+export const supportedLocales = [ "en", "ru" ];
+
+export function validateLocale(locale: string, fallback = "en"): string {
+	return supportedLocales.includes(locale)
+		? locale
+		: fallback;
+}

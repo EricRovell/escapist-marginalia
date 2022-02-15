@@ -1,6 +1,6 @@
 <script lang="ts">
   import { pathHome, pathBlog, pathGallery, pathProjects, pathAbout } from "@paths";
-  import { _ } from "@core/i18n";
+  import { t } from "@core/i18n";
   import { Navigation, Footer, Icon, ThemeSelect, Masthead, LangSelect } from "../components";
   import { logo } from "@components/icons/logo";
 
@@ -19,19 +19,19 @@
     <svelte:fragment slot="navigation">
       <Navigation.Container>
         <Navigation.Item href={$pathHome} pattern={/\/home/}>
-          {$_("sections.home")}
+          {$t("sections.home")}
         </Navigation.Item>
         <Navigation.Item href={$pathBlog} pattern={/\/blog|\/content/}>
-          {$_("sections.blog")}
+          {$t("sections.blog")}
         </Navigation.Item>
         <Navigation.Item href={$pathGallery} pattern={/\/gallery/}>
-          {$_("sections.gallery")}
+          {$t("sections.gallery")}
         </Navigation.Item>
         <Navigation.Item href={$pathProjects}>
-          {$_("sections.projects")}
+          {$t("sections.projects")}
         </Navigation.Item>
         <Navigation.Item href={$pathAbout} disabled>
-          {$_("sections.about")}
+          {$t("sections.about")}
         </Navigation.Item>
       </Navigation.Container>
     </svelte:fragment>

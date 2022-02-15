@@ -1,5 +1,7 @@
-<script context="module">
-	export async function load({ params }) {
+<script context="module" lang="ts">
+	import type { Load } from "@sveltejs/kit";
+
+	export const load: Load = async ({ params }) => {
 		const { lang = "en", slug } = params;
 
 		try {
@@ -15,7 +17,7 @@
 				error: "Page Not Found"
 			};
 		}
-	}
+	};
 </script>
 
 <script>

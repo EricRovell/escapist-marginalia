@@ -1,9 +1,9 @@
 import { derived } from "svelte/store";
-import { lang } from "./i18n";
+import { locale } from "./i18n";
 import { page } from "$app/stores";
 
-export const webpage = derived(page, $page => `https://www.${$page.host}${$page.url.pathname}`);
-export const root = derived(lang, $lang => `/${$lang}`);
+export const webpage = derived(page, $page => `https://www.${$page.url.host}${$page.url.pathname}`);
+export const root = derived(locale, $locale => `/${$locale}`);
 
 export const pathHome = derived(root, $root => `${$root}/home`);
 export const pathBlog = derived(root, $root => `${$root}/blog`);

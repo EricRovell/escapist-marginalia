@@ -1,8 +1,7 @@
-<script context="module">
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ fetch }) {
+<script context="module" lang="ts">
+	import type { Load } from "@sveltejs/kit";
+
+	export const load: Load = async ({ fetch }) => {
 		const res = await fetch("/api/blog/posts.json?sort=-1");
 
 		if (res.ok) {
@@ -17,7 +16,7 @@
 			status: res.status,
 			error: new Error("Could not load URL")
 		};
-	}
+	};
 </script>
 
 <script lang="ts">
@@ -25,13 +24,13 @@
 	import { pathBlogpost } from "@paths";
 	import { PageMeta, Link, Timeline, Datetime } from "@components";
 	import { ContentFilter } from "@lib/layout";
-	import { lang, _ } from "@core/i18n";
+	import { locale, t } from "@core/i18n";
 	import { groupBy } from "@lib/util";
 	import type { Blogpost } from "../../types";
 
 	export let posts: Blogpost[] = [];
 
-	let contentLanguage: string[] = [ $lang ];
+	let contentLanguage: string[] = [ $locale ];
 	let filteredPosts: Blogpost[];
 	let groupedByYear: Record<number, Blogpost[]>;
 
@@ -61,8 +60,8 @@
 								<footer>
 									<Datetime
 										date={created}
-										locale={$lang}
-										options={{ month: "long", day: "numeric" }} />, {$_("message.blogpost")}
+										locale={$locale}
+										options={{ month: "long", day: "numeric" }} />, {$t("message.blogpost")}
 								</footer>
 								<Link	href={$pathBlogpost(slug)}>
 									{title}

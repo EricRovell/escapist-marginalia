@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from "@core/i18n";
+	import { t } from "@core/i18n";
 	import { webpage } from "@core/paths";
 	import Meta from "./Meta.svelte";
 
@@ -11,22 +11,22 @@
 	Commot <head /> meta tags for routes.
 -->
 <Meta
-	title={$_(`pages.${route}.title`)}
+	title={$t(`pages.${route}.title`)}
 	meta={{
-		description: $_(`pages.${route}.description`),
-		keywords: $_(`pages.${route}.keywords`),
-		subject: $_(`pages.${route}.subject`)
+		description: $t(`pages.${route}.description`),
+		keywords: $t(`pages.${route}.keywords`),
+		subject: $t(`pages.${route}.subject`)
 	}}
 	openGraph={{
-		title: $_(`pages.${route}.title`),
-		description: $_(`pages.${route}.description`),
+		title: $t(`pages.${route}.title`),
+		description: $t(`pages.${route}.description`),
 		type: "website",
 		url: $webpage
 	}}
 	twitter={{
 		card: "summary",
-		title: $_(`pages.${route}.title`),
-		description: $_(`pages.${route}.description`),
+		title: $t(`pages.${route}.title`),
+		description: $t(`pages.${route}.description`),
 		url: $webpage
 	}}
 />

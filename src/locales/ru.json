@@ -1,5 +1,33 @@
 {
-	"pages": {
+  "sections": {
+    "home": "главная",
+    "blog": "блог",
+    "gallery": "галерея",
+    "projects": "проекты",
+    "about": "о себе",
+    "source": "Исходный код",
+    "licence": "Лицензия",
+    "privacy": "Приватность"
+  },
+  "categories": {
+    "project-euler": "проект эйлера",
+    "algorithms": "алгоритмы",
+    "package": "библиотеки",
+    "app": "веб приложение"
+  },
+  "tooltip": {
+    "change-theme": "Сменить тему оформления",
+    "change-locale": "Сменить язык"
+  },
+  "message": {
+    "blogpost": "статья",
+    "reference-list": "Ссылки по теме",
+    "content-language": "язык публикаций",
+    "toc": "Содержание",
+    "created-at": "Опубликовано",
+    "last-updated-at": "Последнее обновление"
+  },
+  "pages": {
 		"home": {
 			"title": "Эрик Ровелл",
 			"description": "Личный блог о программировании, фотографии и обо всём интересном мне.",

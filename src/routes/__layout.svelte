@@ -1,17 +1,35 @@
 <script context="module" lang="ts">
-	import { waitLocale, i18nInit } from "@core/i18n";
+	import { init, loadMessages, validateLocale, supportedLocales } from "@core/i18n";
+	import type { Load } from "@sveltejs/kit";
 
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ params }) {
-		void i18nInit(params.lang as string);
-		await waitLocale();
-		
+	export const load: Load = ({ session, params, url }) => {
+		loadMessages();
+
+		const locale = validateLocale(params.locale || session.userLanguage);
+
+		init({
+			initialLocale: locale,
+			fallbackLocale: "ru"
+		});
+
+		if (url.pathname === "/") {
+			return {
+				status: 303,
+				redirect: `/${locale}/home`
+			};
+		}
+
+		if (!supportedLocales.includes(params.locale)) {
+			return {
+				status: 303,
+				redirect: `/${locale}/home`
+			};
+		}
+
 		return {
 			status: 200
 		};
-	}
+	};
 </script>
 
 <script lang="ts">
