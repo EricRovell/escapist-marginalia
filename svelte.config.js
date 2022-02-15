@@ -14,7 +14,8 @@ const aliasList = [
 	{ name: "@views", path: "./src/lib/views" },
 	{ name: "@types", path: "./src/types" },
 	{ name: "@paths", path: "./src/core/paths.ts" },
-	{ name: "@core", path: "./src/core" }
+	{ name: "@core", path: "./src/core" },
+	{ name: "$locales", path: "./src/locales" }
 ];
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -39,7 +40,7 @@ const config = {
 				}
 			},
 			plugins: [
-				intlPrecompile("locales") // -> as ""
+				intlPrecompile("/src/locales")
 			]
 		}
 	}
