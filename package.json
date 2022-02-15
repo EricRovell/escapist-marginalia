@@ -67,7 +67,6 @@
 		"pre-push": "npm run lint"
 	},
 	"dependencies": {
-		"svelte-i18n": "^3.3.13",
 		"svelte-intl-precompile": "^0.8.1"
 	}
 }
