@@ -8,14 +8,12 @@
 
 :root {
   color-scheme: light dark;
-  scroll-padding: calc(50px);
 }
 
 body {
 	line-height: 1.4;
-  color: var(--color-gray-800);
-  
-  background-color: var(--color-surface-400, hsl(217 27% 7%));
+  color: var(--color-text-primary);
+  background-color: var(--surface-1);
   transition: background-color 0.2s linear;
 }
 
@@ -48,4 +46,18 @@ sub {
 
 sup {
   top: -0.5em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	:focus {
+		transition: outline-offset 0.25s ease;
+	}
+
+	/* :focus:not(:active) {
+		outline-offset: 5px;
+	} */
+}
+
+input[type="checkbox"]:hover {
+  cursor: pointer;
 }
