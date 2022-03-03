@@ -1,0 +1,37 @@
+:global(body) {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+	line-height: 1.0;
+
+	position: relative;
+}
+
+.app {
+	--max-width: 1440px;
+	width: 100%;
+	
+	font-family: var(--font-main);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1 1 0%;
+}
+
+.content {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	min-height: calc(100vh - 50px);
+	margin: 15vh 0 25vh 0;
+}
+
+/* let bottom menu be full width */
+@media screen and (max-width: 640px) {
+	#app {
+		padding: 0;
+	}
+}

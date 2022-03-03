@@ -83,7 +83,7 @@
 	}
 
 	article > footer {
-		font-size: var(--font-size-2);
-    color: hsl(var(--gray-h) var(--gray-s-700) var(--gray-l-700));
+		font-size: var(--font-size-m);
+    color: var(--color-text-secondary);
 	}
 </style>

@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/stores";
-	import { locale } from "@core/i18n";
-	import { Icon } from "@components";
-	import { iconLocale } from "@components/icons/default";
+	import { locale, supportedLocales } from "@core/i18n";
 
 	export let title: string | undefined = undefined;
 
@@ -27,10 +25,9 @@
 	$: href = stripLangParam(path);
 </script>
 
-<nav class="lang-select" {title}>
-	<Icon path={iconLocale} color="primary" />
-	<ul>
-		{#each [ "en", "ru" ] as language}
+<nav class="lang-select flex-center" {title}>
+	<ul class="flex-center">
+		{#each supportedLocales as language}
 			<li>
 				<a href={`/${language}/${href}`} class:active={$locale === language}>
 					{language}
@@ -42,40 +39,25 @@
 
 <style>
   .lang-select {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-		gap: var(--space-xs);
-    font-size: var(--font-size-2);
-		border: var(--border-1);
-		padding-left: var(--space-xs);
+    font-size: var(--font-size-s);
+		border: 2px solid var(--color-border);
+		border-radius: var(--radius-s);
   }
 
-	.lang-select ul {
-		display: flex;
-    justify-content: center;
-    align-items: center;
-	}
-
 	a {
-		--color: var(--color-gray-700);
-		--bg-opacity: 0;
-
 		display: flex;
 		text-transform: uppercase;
 		padding: var(--space-xs);
-		color: var(--color);
 		font-weight: 600;
-		background-color: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / var(--bg-opacity));
+		color: var(--color-text-secondary);
 	}
 	
 	.lang-select a:hover {
-		--color: var(--color-gray-100);
-		--bg-opacity: 1;
+		--bg: var(--color-blue-600);
 	}
 
 	a.active {
-		--color: var(--color-gray-100);
-		--bg-opacity: 0.75;
+		background-color: var(--surface-2);
+		color: var(--color-link);
 	}
 </style>

@@ -14,7 +14,7 @@
 	export let group: string[] = [];
 </script>
 
-<fieldset>
+<fieldset class="card">
 	<legend>{legend}</legend>
 	{#each options as { label, value }}
 		<label>
@@ -32,30 +32,29 @@
 
 <style>
 	fieldset {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-s);
-		padding: var(--space-s);
-		padding-top: var(--space-s);
-		border: var(--border-1);
-		border-radius: var(--radius-medium);
-		font-size: var(--font-size-2);
+		font-size: var(--font-size-m);
 	}
 
 	legend {
-		margin-bottom: var(--space-xs);
 		text-transform: capitalize;
+		padding: 0 5px;
+		white-space: nowrap;
 	}
 
 	label {
 		display: flex;
 		align-items: center;
 		gap: var(--space-xs);
-		font-size: var(--font-size-1);
+		font-size: var(--font-size-s);
 	}
 
 	label:hover {		
 		cursor: pointer;
 		user-select: none;
+	}
+
+	input {
+		width: 1.25em;
+		height: 1.25em;
 	}
 </style>

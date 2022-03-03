@@ -65,7 +65,7 @@
 
 <style>
   .indicator {
-    fill: var(--color-primary);
+    fill: var(--accent);
     width: 100%;
     height: 100%;
   }

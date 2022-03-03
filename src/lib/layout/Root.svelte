@@ -1,9 +1,11 @@
 <script lang="ts">
   import { pathHome, pathBlog, pathGallery, pathProjects, pathAbout } from "@paths";
   import { t } from "@core/i18n";
-  import { Navigation, Footer, Icon, ThemeSelect, Masthead, LangSelect } from "../components";
+  import { Navigation, Footer, Icon, ThemeSelect, Masthead, LangSelect, Link } from "../components";
   import { logo } from "@components/icons/logo";
+  import styles from "./root.module.css";
 
+  import "@styles/utility.css";
   import "@styles/tokens.css";
   import "@styles/normalize.css";
   import "@styles/theme-dark.css";
@@ -11,11 +13,13 @@
   import "@styles/typography.css";
 </script>
 
-<div id="app">
+<div class={styles.app}>
   <Masthead>
-    <a class="logo" href={$pathHome} slot="logo">
-      <Icon path={logo} size="25px" />
-    </a>
+    <svelte:fragment slot="logo">
+      <Link href={$pathHome}>
+        <Icon path={logo} size="25px" />
+      </Link>
+    </svelte:fragment>
     <svelte:fragment slot="navigation">
       <Navigation.Container>
         <Navigation.Item href={$pathHome} pattern={/\/home/}>
@@ -40,48 +44,8 @@
       <ThemeSelect />
     </svelte:fragment>
   </Masthead>
-	<section label="content" class="content">
+	<section label="content" class={styles.content}>
 		<slot />
 	</section>
 	<Footer />
 </div>
-
-<style>
-  :global(body) {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
-    line-height: 1.0;
-
-    position: relative;
-  }
-  
-  #app {
-    --max-width: 1440px;
-    width: 100%;
-    
-    font-family: var(--font-main);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 0%;
-  }
-
-  .content {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    min-height: calc(100vh - 50px);
-    margin: 15vh 0 25vh 0;
-  }
-
-  /* let bottom menu be full width */
-  @media screen and (max-width: 640px) {
-    #app {
-      padding: 0;
-    }
-  }
-</style>

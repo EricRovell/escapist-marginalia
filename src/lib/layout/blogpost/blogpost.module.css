@@ -36,7 +36,7 @@
 .article :is(h2, h3, h4, h5, h6) {
 	--border-size: 1px;
 
-	color: var(--color-primary);
+	color: var(--color-heading-accent);
 	margin-top: var(--space-m);
 	padding-bottom: var(--space-s);
 	border-bottom: solid var(--border-size) hsl(var(--gray-h) var(--gray-s-600) var(--gray-l-600) / 0.5);
@@ -72,6 +72,11 @@
 	gap: var(--space-s);
 
 	color: var(--color-link);
+}
+
+.article ul {
+	list-style: initial;
+	list-style-position: inside;
 }
 
 /* responsiveness */
