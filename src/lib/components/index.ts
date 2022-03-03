@@ -15,8 +15,12 @@ export { default as Code } from "./code-highlight/Code.svelte";
 export { default as Gallery } from "./gallery/Gallery.svelte";
 export { default as Meta } from "./meta/Meta.svelte";
 export { default as PageMeta } from "./meta/PageMeta.svelte";
+export { default as Slider } from "./Slider.svelte";
+export { default as RadioGroup } from "./radio/RadioGroup.svelte";
+export { default as RadioButton } from "./radio/RadioButton.svelte";
+export { default as Modal } from "./modal/Modal.svelte";
 
 export * as Timeline from "./timeline";
 
-export type { GalleryItem } from "./gallery/Gallery.svelte";
+export type { GalleryItem, GetSrc } from "./gallery/Gallery.svelte";
 export type { MetaProps } from "./meta/Meta.svelte";
