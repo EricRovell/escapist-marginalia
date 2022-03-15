@@ -67,11 +67,13 @@
   section[label="logo"] {
     grid-area: logo;
     justify-self: start;
+    /* icon color inherit */
+    color: var(--color-primary-400);
   }
   
   section[label="navigation"] {
     grid-area: navigation;
-    font-size: var(--font-size-2);
+    font-size: var(--font-size-m);
   }
   
   section[label="controls"] {

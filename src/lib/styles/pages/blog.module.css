@@ -15,8 +15,10 @@
 }
 
 .layout > main h2 {
-	font-size: var(--font-size-4);
-	margin-bottom: var(--space-m);
+	font-family: var(--font-secondary);
+	font-size: var(--font-size-xl);
+	font-variation-settings: "wght" 200;
+	margin-bottom: var(--space-l);
 	text-transform: capitalize;
 }
 
@@ -27,7 +29,7 @@
 }
 
 .posts h3 {
-	font-size: var(--font-size-2);
+	font-size: var(--font-size-m);
 }
 
 @media screen and (max-width: 640px) {

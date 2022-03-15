@@ -7,7 +7,7 @@
 	export let date: Date | undefined = undefined;
 </script>
 
-<article>
+<article class="card">
 	<header>
 		{#if href}
 			<Link {href}>
@@ -29,25 +29,11 @@
 </article>
 
 <style>
-	article {
-		display: grid;
-		gap: var(--space-m);
-		border: var(--border-1);
-		border-radius: var(--radius-small);
-		padding: var(--space-m);
-	}
-
-	article h3 {
-		font-size: var(--font-size-3);
-		font-weight: 600;
-	}
-
 	footer {
 		display: flex;
 		justify-content: flex-end;
 		align-items: flex-end;
 		gap: var(--space-s);
-		font-size: var(--font-size-1);
-		color: hsl(var(--gray-h) var(--gray-s-700) var(--gray-l-700));
+		font-size: var(--font-size-s);
 	}
 </style>
