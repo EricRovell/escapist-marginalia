@@ -19,7 +19,7 @@
   	{ label: "source", href: pathSource },
   	{ label: "licence", href: pathLicence },
   	{ label: "privacy", href: pathPrivacy, disabled: true },    
-  	{ label: "about", href: $pathAbout }
+  	{ label: "about", href: $pathAbout, disabled: true }
   ];
 </script>
 
