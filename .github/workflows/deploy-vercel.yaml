@@ -5,7 +5,7 @@ on:
       - published
   push:
 		branches:
-			- production
+			- prod
   workflow_dispatch:
 
 jobs:
