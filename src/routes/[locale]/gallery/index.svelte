@@ -25,10 +25,13 @@
 	import { PageMeta, Gallery, Image, Modal } from "@components";
 	import { fetchJSON } from "@lib/util";
 	import type { GalleryItem } from "@components";
+import { prerendering } from "$app/env";
 
 	export let photos: GalleryItem[] = [];
 
-	$: id = $page.url.searchParams.get("id");
+	$: id = prerendering
+		? null
+		: $page.url.searchParams.get("id");
 
 	const getModalImage = async (id: string) => (
 		await fetchJSON<GalleryItem>(`/api/photos/${id}.json`)
