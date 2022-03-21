@@ -89,17 +89,6 @@
 	}
 }
 
-/* Modal view */
-
-.modal-image {
-	width: auto;
-	height: auto;
-	max-width: 85vw;
-	max-height: 85vh;
-	
-	object-fit: contain;
-}
-
 /* ovverride subcomponents styling */
 
 .gallery-item a {

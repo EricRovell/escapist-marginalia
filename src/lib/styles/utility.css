@@ -18,3 +18,12 @@
 	padding: var(--space-m);
 	background-color: var(--surface-2);
 }
+
+.modal-image {
+	width: auto;
+	height: auto;
+	max-width: 85vw;
+	max-height: 85vh;
+	
+	object-fit: contain;
+}
