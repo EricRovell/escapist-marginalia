@@ -6,6 +6,7 @@ import adapter from "@sveltejs/adapter-static";
 import path from "path";
 
 const aliasList = [
+	{ name: "@data", path: "./src/data" },
 	{ name: "@components", path: "./src/lib/components" },
 	{ name: "@lib", path: "./src/lib" },
 	{ name: "@styles", path: "./src/lib/styles" },
