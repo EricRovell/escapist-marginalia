@@ -4,7 +4,7 @@ export interface Size {
 }
 
 export interface GalleryItem extends Size {
-	id: number;
+	id: string;
 	path: string;
 	format: string;
 	alt: string;
