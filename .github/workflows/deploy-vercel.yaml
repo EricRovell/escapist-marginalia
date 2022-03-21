@@ -4,8 +4,8 @@ on:
     types:
       - published
   push:
-		branches:
-			- prod
+    branches:
+      - prod
   workflow_dispatch:
 
 jobs:
