@@ -1,5 +1,6 @@
 [
 	{
+		"id": "20180819",
 		"path": "/img/gallery/2018-08-19",
 		"format": "webp",
 		"width": 1200,
@@ -8,6 +9,7 @@
 		"title": "Scarlet wind"
 	},
 	{
+		"id": "20190217",
 		"path": "/img/gallery/2019-02-17",
 		"format": "webp",
 		"width": 1200,
@@ -16,6 +18,7 @@
 		"title": "Periodic"
 	},
 	{
+		"id": "20200613",
 		"path": "/img/gallery/2020-06-13",
 		"format": "webp",
 		"width": 800,
@@ -24,6 +27,7 @@
 		"title": "Starless night"
 	},
 	{
+		"id": "20200305",
 		"path": "/img/gallery/2020-03-05",
 		"format": "webp",
 		"width": 1200,
@@ -32,6 +36,7 @@
 		"title": "Luminous"
 	},
 	{
+		"id": "20201010",
 		"path": "/img/gallery/2020-10-10",
 		"format": "webp",
 		"width": 1200,
@@ -40,6 +45,7 @@
 		"title": "Inception"
 	},
 	{
+		"id": "20210404",
 		"path": "/img/gallery/2021-04-04",
 		"format": "webp",
 		"width": 1000,
@@ -48,6 +54,7 @@
 		"title": "April"
 	},
 	{
+		"id": "20180305",
 		"path": "/img/gallery/0047",
 		"format": "webp",
 		"width": 1500,
@@ -56,6 +63,7 @@
 		"title": "Upside Down"
 	},
 	{
+		"id": "20210307",
 		"path": "/img/gallery/2021-03-07",
 		"format": "webp",
 		"width": 910,
@@ -64,6 +72,7 @@
 		"title": "Against the Wind"
 	},
 	{
+		"id": "20210620",
 		"path": "/img/gallery/3378",
 		"format": "webp",
 		"width": 1500,
