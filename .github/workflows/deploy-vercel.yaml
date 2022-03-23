@@ -1,35 +1,47 @@
-name: "Deploy Vercel"
+# This is a basic workflow to help you get started with Actions
+name: Vercel Deployment
 
 on:
-  release:
-    types:
-      - published
-  push:
-    branches:
-      - prod
-  workflow_dispatch:
+	push:
+		branches: [ prod ]
+	pull_request:
+		branches: [ prod ]
+	# Allows you to run this workflow manually from the Actions tab
+	workflow_dispatch:
 
 jobs:
-  vercel: 
-    runs-on: ubuntu-latest
-    name: "Deploy front-end"
-    
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '14'
-          registry-url: https://registry.npmjs.org/
 
-      - name: "Deploy to Vercel"
-        run: |
-          prodRun=""
-          if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
-            prodRun="--prod"
-          fi
+	build_test:
+		runs-on: ubuntu-latest
+		strategy:
+			matrix:
+				node-version: [14.x]
 
-          npx vercel --token ${VERCEL_TOKEN} $prodRun
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+		steps:
+			- uses: actions/checkout@v2
+
+			- name: setup node
+				uses: actions/setup-node@master
+				with:
+					node-version: ${{ matrix.node-version }}
+
+			- name: Install dependencies
+				run: |
+					npm i pnpm -g
+					pnpm i
+			- name: build
+				run: |
+					pnpm run build
+
+	push_to_vercel:
+	
+		runs-on: ubuntu-latest
+		steps:
+			- uses: actions/checkout@v2
+			- uses: amondnet/vercel-action@v20
+				if: github.event_name == 'push' && github.ref == 'refs/heads/prod'
+				with:
+					vercel-token: ${{ secrets.VERCEL_TOKEN }}
+					vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} 
+					vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
+					vercel-args: "--prod"
