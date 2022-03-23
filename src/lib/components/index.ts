@@ -15,7 +15,7 @@ export { default as Code } from "./code-highlight/Code.svelte";
 export { default as Gallery } from "./gallery/Gallery.svelte";
 export { default as Meta } from "./meta/Meta.svelte";
 export { default as PageMeta } from "./meta/PageMeta.svelte";
-export { Image } from "./Image";
+export { Image } from "./image";
 export { default as Modal } from "./modal/Modal.svelte";
 
 export * as Timeline from "./timeline";

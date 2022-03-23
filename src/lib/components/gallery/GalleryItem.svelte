@@ -8,7 +8,7 @@
 	import styles from "./gallery.module.css";
 
 	export let cellScale = 400;
-	export let id: number;
+	export let id: string;
 	export let width: number;
 	export let height: number;
 

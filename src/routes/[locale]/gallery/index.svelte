@@ -21,21 +21,10 @@
 </script>
 
 <script lang="ts">
-	import { page } from "$app/stores";
-	import { PageMeta, Gallery, Image, Modal } from "@components";
-	import { fetchJSON } from "@lib/util";
+	import { PageMeta, Gallery } from "@components";
 	import type { GalleryItem } from "@components";
-import { prerendering } from "$app/env";
 
 	export let photos: GalleryItem[] = [];
-
-	$: id = prerendering
-		? null
-		: $page.url.searchParams.get("id");
-
-	const getModalImage = async (id: string) => (
-		await fetchJSON<GalleryItem>(`/api/photos/${id}.json`)
-	);
 </script>
 
 <PageMeta route="gallery" />
@@ -46,16 +35,6 @@ import { prerendering } from "$app/env";
 		getSrc={({ path, format }) => `${path}.${format}`}
 	/>
 </main>
-
-<Modal open={Boolean(id)} on:close={() => window.history.go(-1)}>
-	{#await getModalImage(id) then photo}
-		<Image
-			className={"modal-image"}
-			src={`${photo.path}.${photo.format}`}
-			{...photo}
-		/>
-	{/await}
-</Modal>
 
 <style>
 	main {

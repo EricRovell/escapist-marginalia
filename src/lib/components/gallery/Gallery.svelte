@@ -3,14 +3,25 @@
 </script>
 
 <script lang="ts">
+	import { afterNavigate } from "$app/navigation";
 	import Picture from "./GalleryItem.svelte";
-	import { Image } from "../Image";
+	import Modal from "../modal/Modal.svelte";
+	import Image from "../image/Image.svelte";
 	import styles from "./gallery.module.css";
 
 	export let cellScale = 400;
 	export let cellSize = 100;
 	export let getSrc: GetSrc;
 	export let items: GalleryItem[] = [];
+
+	let preview: GalleryItem | null = null;
+
+	afterNavigate(() => {
+		const photoID = new URLSearchParams(window.location.search).get("id") ?? null;
+		if (photoID) {
+			preview = items.filter(({ id }) => id === photoID)[0];
+		}
+	});
 </script>
 
 <!--
@@ -31,3 +42,14 @@
 		</Picture>
 	{/each}
 </ul>
+
+<!--
+	Fullscreen Preview
+-->
+<Modal open={Boolean(preview)} on:close={() => window.history.go(-1)}>
+	<Image
+		className={"modal-image"}
+		src={`${preview.path}.${preview.format}`}
+		{...preview}
+	/>
+</Modal>
