@@ -3,9 +3,9 @@ name: Vercel Deployment
 
 on:
   push:
-    branches: [ prod ]
+    branches: [ main, prod ]
   pull_request:
-    branches: [ prod ]
+    branches: [ main, prod ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
