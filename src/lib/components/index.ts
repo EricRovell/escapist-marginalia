@@ -17,6 +17,7 @@ export { default as Meta } from "./meta/Meta.svelte";
 export { default as PageMeta } from "./meta/PageMeta.svelte";
 export { Image } from "./image";
 export { default as Modal } from "./modal/Modal.svelte";
+export { default as Switch } from "./switch/Switch.svelte";
 
 export * as Timeline from "./timeline";
 export * from "./gallery";
