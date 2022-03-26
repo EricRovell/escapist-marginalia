@@ -17,7 +17,10 @@
 
     --color-border: var(--color-blue-800);  
 
-    --gallery-border: hsl(217 26% 35%);
+    --switch-track-color: var(--color-gray-600);
+    --switch-track-color-active: var(--color-blue-700);
+    --switch-thumb-color: var(--color-gray-200);
+    --switch-thumb-color-highlight: var(--color-blue-900);
   }
 }
 
@@ -40,5 +43,8 @@
 
   --color-border: var(--color-blue-800);
 
-  --gallery-border: hsl(217 26% 35%);
+  --switch-track-color: var(--color-gray-600);
+  --switch-track-color-active: var(--color-blue-700);
+  --switch-thumb-color: var(--color-gray-200);
+  --switch-thumb-color-highlight: var(--color-blue-900);
 }
