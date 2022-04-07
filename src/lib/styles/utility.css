@@ -27,3 +27,25 @@
 	
 	object-fit: contain;
 }
+
+/* scrollbar */
+.custom-scroll {
+  scrollbar-width: var(--scroll-width);
+  scrollbar-color: var(--scroll-thumb-color) var(--scroll-track-color);
+}
+
+/* Works on Chrome, Edge, and Safari */
+.custom-scroll::-webkit-scrollbar {
+  width: var(--scroll-width);
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: var(--scroll-track-color);
+	border-radius:var(--scroll-thumb-radius);
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color);
+	border-radius: var(--scroll-thumb-radius);
+  border: var(--scroll-thumb-padding) solid var(--scroll-track-color);
+}
