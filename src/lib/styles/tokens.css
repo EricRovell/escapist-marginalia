@@ -38,6 +38,10 @@
   --radius-s: 5px;
   --radius-m: 10px;
   --radius-l: 15px;
+
+  --scroll-width: 8px;
+  --scroll-thumb-radius: 10px;
+  --scroll-thumb-padding: 1px;
   
   /* z-index */
   --z-index-under: -1;

@@ -1,5 +1,5 @@
 <script>
-	import "./code-highlight-dark.css";
+	import "./code.styles.css";
 </script>
 
 <!--
@@ -10,6 +10,8 @@
 
 	! Highlight styles are global, should be careful.
 -->
-<code>
-	<slot />
-</code>
+<pre>
+	<code>
+		<slot />
+	</code>
+</pre>

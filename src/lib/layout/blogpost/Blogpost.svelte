@@ -1,6 +1,6 @@
 <script context="module">
-	import { Link as a, Code as code } from "@components";
-	export { code, a };
+	import { Link as a, Code as pre } from "@components";
+	export { pre, a };
 </script>
 
 <script>
