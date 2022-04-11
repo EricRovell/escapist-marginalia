@@ -69,4 +69,6 @@
   --space-m: calc(1 * 1rem);
   --space-l: calc(2 * 1rem);
   --space-xl: calc(4 * 1rem);
+
+  --max-width: 1440px;
 }

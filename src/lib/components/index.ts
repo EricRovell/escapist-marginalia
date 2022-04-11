@@ -1,13 +1,9 @@
 export { default as Icon } from "./icons/Icon.svelte";
 export { default as Footer } from "./Footer.svelte";
-export * as Navigation from "./menu";
-export { ThemeSelect } from "./theme-select";
 export { default as SVG } from "./SVG.svelte";
 export { default as WorkInProgress } from "./WorkInProgress.svelte";
-export { default as Masthead } from "./Masthead.svelte";
 export { default as Card } from "./Card.svelte";
 export { default as Datetime } from "./Datetime.svelte";
-export { default as LangSelect } from "./LangSelect.svelte";
 export { default as Link } from "./Link.svelte";
 export { default as CheckboxGroup } from "./CheckboxGroup.svelte";
 export { default as TOC } from "./TOC.svelte";
@@ -18,6 +14,7 @@ export { default as PageMeta } from "./meta/PageMeta.svelte";
 export { Image } from "./image";
 export { default as Modal } from "./modal/Modal.svelte";
 export { default as Switch } from "./switch/Switch.svelte";
+export { Masthead } from "./masthead";
 
 export * as Timeline from "./timeline";
 export * from "./gallery";

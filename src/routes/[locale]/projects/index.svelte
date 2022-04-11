@@ -23,6 +23,7 @@
 <script lang="ts">
 	import { t } from "@core/i18n";
 	import { PageMeta, Card, Icon } from "@components";
+	import { LayoutPage } from "@layout";
 	import { iconGithub, iconNpm, iconURL } from "@components/icons/default";
 	import { groupBy } from "@lib/util";
 	import styles from "@styles/pages/projects.module.css";
@@ -34,36 +35,46 @@
 
 <PageMeta route="projects" />
 
-<main class={styles.layout}>
-	{#each groupedProjects as [ category, projects ]}
-		<section>
-			<h2>
-				{$t(`categories.${category}`)}
-			</h2>
-			<ul class={styles.projects}>
-				{#each projects as { name, description, github, packageName, homepage }}
-					<li class={styles.project}>
-						<Card	title={name}>
-							<p>{description}</p>
-							<svelte:fragment slot="footer">
-								<a href={github} title="Github repository">
-									<Icon path={iconGithub} size="1.25em" />
-								</a>
-								{#if packageName}
-									<a href={`https://www.npmjs.com/package/${packageName}`} title="NPM package">
-										<Icon path={iconNpm} color="danger" size="1.25em" />
+<LayoutPage>
+	<svelte:fragment slot="banner">
+		<h1 class="headline">
+			{$t("pages.projects.title")}
+		</h1>
+		<p class="headline">
+			{$t("pages.projects.description")}
+		</p>
+	</svelte:fragment>
+	<div class={styles.layout}>
+		{#each groupedProjects as [ category, projects ]}
+			<section>
+				<h2>
+					{$t(`categories.${category}`)}
+				</h2>
+				<ul class={styles.projects}>
+					{#each projects as { name, description, github, packageName, homepage }}
+						<li class={styles.project}>
+							<Card	title={name}>
+								<p>{description}</p>
+								<svelte:fragment slot="footer">
+									<a href={github} title="Github repository">
+										<Icon path={iconGithub} size="1.25em" />
 									</a>
-								{/if}
-								{#if homepage}
-									<a href={homepage} title="Live project URL">
-										<Icon path={iconURL} size="1.25em" />
-									</a>
-								{/if}
-							</svelte:fragment>
-						</Card>
-					</li>
-				{/each}
-			</ul>
-		</section>
-	{/each}
-</main>
+									{#if packageName}
+										<a href={`https://www.npmjs.com/package/${packageName}`} title="NPM package">
+											<Icon path={iconNpm} color="danger" size="1.25em" />
+										</a>
+									{/if}
+									{#if homepage}
+										<a href={homepage} title="Live project URL">
+											<Icon path={iconURL} size="1.25em" />
+										</a>
+									{/if}
+								</svelte:fragment>
+							</Card>
+						</li>
+					{/each}
+				</ul>
+			</section>
+		{/each}
+	</div>
+</LayoutPage>

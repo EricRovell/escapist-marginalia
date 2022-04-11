@@ -18,6 +18,7 @@
 	{rel}
 	{title}
 	{...$$restProps}
+	aria-disabled={disabled ? "true" : undefined}
 	class:disabled
 	tabIndex={disabled ? -1 : undefined}
 	>
@@ -33,7 +34,7 @@
 		font-size: inherit;
 	}
 
-	a:hover {
+	a:not(.disabled):hover {
 		color: var(--color-link-hover, currentColor);
 		text-decoration: underline;
 	}
@@ -48,9 +49,13 @@
 		background-color: var(--color-link-active-bg);
 	}
 
-	.disabled {
-    pointer-events: none;
-    opacity: 0.7;
+	a[aria-disabled="true"] {
+		cursor: not-allowed;
+		opacity: 0.7;
     text-decoration: line-through;
-  }
+	}
+
+	a[aria-disabled="true"]:active {
+		pointer-events: none;
+	}
 </style>
