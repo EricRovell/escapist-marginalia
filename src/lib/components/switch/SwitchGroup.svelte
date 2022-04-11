@@ -1,17 +1,14 @@
 <script lang="ts" context="module">
-	export interface Options {
-		label: string;
-		value: string;
-		checked?: boolean;
-	}
+	import type { SwitchGroupOptions } from "./switch.types";
 </script>
 
 <script lang="ts">
 	import { Switch } from "@components";
+	import styles from "./switch-group.module.css";
 
 	export let legend: string;
 	export let name: string;
-	export let options: Array<Options>;
+	export let options: Array<SwitchGroupOptions>;
 	
 	export let group: string[] = [];
 
@@ -24,8 +21,8 @@
 	};
 </script>
 
-<fieldset class="card">
-	<legend>{legend}</legend>
+<fieldset class={`card ${styles.fieldset}`}>
+	<legend class={styles.legend}>{legend}</legend>
 	{#each options as { label, value }}
 		{@const disabled = group.length === 1 && group[0] === value}
 		<Switch
@@ -38,15 +35,3 @@
 		</Switch>
 	{/each}
 </fieldset>
-
-<style>
-	fieldset {
-		font-size: var(--font-size-m);
-	}
-
-	legend {
-		text-transform: capitalize;
-		padding: 0 5px;
-		white-space: nowrap;
-	}
-</style>

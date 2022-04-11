@@ -1,0 +1,9 @@
+.fieldset {
+	font-size: var(--font-size-m);
+}
+
+.legend {
+	text-transform: capitalize;
+	padding: 0 5px;
+	white-space: nowrap;
+}

@@ -10,6 +10,9 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 2ch;
+
+	cursor: pointer;
+	user-select: none;
 }
 
 .input {
@@ -29,9 +32,7 @@
   background: var(--switch-track-color);
 	outline-offset: 5px;
 	transition: box-shadow var(--switch-transition-duration) linear;
-  
-	cursor: pointer;
-  user-select: none;
+
   -webkit-tap-highlight-color: transparent;
 	touch-action: pan-y;
 }
@@ -71,6 +72,10 @@
 
 .input:focus-visible {
 	outline: 2px dashed var(--color-blue-500);
+}
+
+.switch:global(.disabled) {
+	cursor: not-allowed;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -7,7 +7,7 @@
 	export let value: string | undefined = undefined;
 </script>
 
-<label class={`${styles.switch} ${className}`}>
+<label class={`${styles.switch} ${className}`} class:disabled>
 	<slot />
 	<input
 		class={styles.input}
