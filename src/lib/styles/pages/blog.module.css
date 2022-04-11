@@ -2,9 +2,7 @@
 	display: grid;
 	grid-template: 1fr / 1fr 200px;
 	gap: var(--space-l);
-	padding: 0 var(--space-m);
-	width: min(1200px, 100%);
-
+	width: 100%;
 	justify-self: center;
 }
 

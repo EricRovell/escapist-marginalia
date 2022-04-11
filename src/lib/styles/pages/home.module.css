@@ -2,21 +2,7 @@
 	display: grid;
 	grid-template: 1fr / 1fr 200px;
 	gap: var(--space-l);
-	padding: 0 var(--space-m);
-	width: min(calc(65ch + 200px), 100%);
-
-	justify-self: center;
-}
-
-article {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-xs);
-}
-
-article > footer {
-	font-size: var(--font-size-s);
-	color: hsl(var(--gray-h) var(--gray-s-700) var(--gray-l-700));
+	width: 100%;
 }
 
 @media screen and (max-width: 640px) {
