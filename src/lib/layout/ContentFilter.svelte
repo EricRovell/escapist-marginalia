@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { t } from "@core/i18n";
-	import { CheckboxGroup } from "@components";
+	import { SwitchGroup } from "@components";
 
 	export let contentLanguage: string[] = [];
 </script>
@@ -12,7 +12,7 @@
 	<slot />
 </div>
 <aside>
-	<CheckboxGroup
+	<SwitchGroup
 		legend={$t("message.content-language")}
 		name="content-lang"
 		options={[
