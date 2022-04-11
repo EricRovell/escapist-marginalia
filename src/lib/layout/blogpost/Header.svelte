@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Datetime from "../../Datetime.svelte";
 	import { t, locale } from "@core/i18n";
+	import { Datetime } from "@components";	
 	import styles from "./header.module.css";
 
 	export let title: string;
@@ -20,7 +20,7 @@
 		: [ created, "created-at" ];
 </script>
 
-<header class={styles.header}>
+<div class={styles.wrapper}>
 	<h1>{title}</h1>
 	<p>{description}</p>
 	<footer>
@@ -31,4 +31,4 @@
 		</ul>
 		<span>{$t(`message.${dateMessage}`)}: <Datetime {date} locale={$locale} options={dateOptions} relative /></span>
 	</footer>
-</header>
+</div>

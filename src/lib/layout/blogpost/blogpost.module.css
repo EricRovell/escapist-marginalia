@@ -1,36 +1,12 @@
-/* root layout */
-
-.body {
-	display: grid;
-	grid-template-rows: auto 1fr;
-	grid-template-columns: 1fr 65ch calc(25ch + 1.75 * var(--space-xl)) 1fr;
-	grid-template-areas:
-		". header header ."
-		". article toc .";
-	justify-self: center;
-	width: 100%;
-	margin-bottom: 20vh;
-}
-
-/* article */
-
 .article {
 	grid-area: article;
 
 	display: grid;
 	justify-self: center;
 	gap: var(--space-m);
+	width: min(100%, calc(65ch + 2 * var(--space-s)));
 
 	line-height: 1.25;
-}
-
-.sidebar {
-	grid-area: toc;
-	justify-self: end;
-
-	position: sticky;
-	top: 7.5vh;
-	height: min-content;
 }
 
 .article :is(h2, h3, h4, h5, h6) {
@@ -77,23 +53,4 @@
 .article ul {
 	list-style: initial;
 	list-style-position: inside;
-}
-
-/* responsiveness */
-
-@media screen and (max-width: 1150px) {
-	.body {
-		grid-template-rows: repeat(3, auto);
-		grid-template-columns: 1fr min(70ch, calc(100% - var(--space-l))) 1fr;
-		grid-template-areas:
-			". header ."
-			". toc ."
-			". article .";
-		row-gap: var(--space-l);
-	}
-
-	.sidebar{
-		position: initial;
-		justify-self: start;
-	}
 }
