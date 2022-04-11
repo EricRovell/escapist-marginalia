@@ -7,7 +7,7 @@
 	place-items: center;
 	place-content: center start;
 	grid-auto-flow: column;
-	gap: var(--space-s);
+	gap: var(--space-xs);
 	
 	width: fit-content;
 	height: var(--navigation-height);
@@ -32,7 +32,7 @@
 }
 
 .menu-item a {
-	padding: var(--space-xs);
+	padding: var(--space-s);
 	border-radius: var(--radius-s);
 }
 
