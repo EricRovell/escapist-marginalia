@@ -1,0 +1,37 @@
+.banner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: var(--space-m);
+	padding: var(--space-xl) var(--space-s);
+	background-color: var(--surface-2);
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.content {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	width: min(100%, calc(var(--max-width) + 2 * var(--space-m)));
+	padding: var(--space-m);
+	margin-top: var(--space-xl);
+}
+
+.content:global(.no-banner) {
+	margin-top: 15vh;
+}
+
+.banner > h1:global(.headline) {
+	font-family: var(--font-secondary);
+	color: var(--color-blue-400);
+}
+
+/* .banner > p:global(.headline) {
+	text-align: center;
+} */
