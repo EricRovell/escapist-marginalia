@@ -8,9 +8,9 @@
 <!--
 	Layout for page with main content and filters tab.
 -->
-<main>
+<div>
 	<slot />
-</main>
+</div>
 <aside>
 	<CheckboxGroup
 		legend={$t("message.content-language")}
