@@ -1,0 +1,57 @@
+.masthead {
+	grid-area: masthead;
+	
+	display: grid;
+	grid-template: 1fr / repeat(3, 1fr);
+	grid-template-areas: "logo navigation controls";
+	place-items: center;
+	gap: var(--spacing-3, 0.75em);
+
+	width: min(100%, calc(var(--max-width) + 2 * var(--space-s)));
+	height: var(--header-height, 75px);
+	padding: 0 var(--space-s);    
+	z-index: var(--z-index-navigation);
+
+	background-color: var(--masthead-bg, transparent);
+}
+
+.masthead > section[label="logo"] {
+	grid-area: logo;
+	justify-self: start;
+	color: var(--color-primary-400);
+}
+
+.masthead >section[label="navigation"] {
+	grid-area: navigation;
+	font-size: var(--font-size-m);
+}
+
+.masthead >section[label="controls"] {
+	grid-area: controls;
+	justify-self: end;
+	
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: auto;
+	grid-template-rows: 1fr;
+	align-items: center;
+	gap: var(--space-s);
+	width: max-content;
+}
+
+@media screen and (max-width: 650px) {
+	.masthead {
+		grid-template: 1fr / repeat(2, 1fr);
+		grid-template-areas: "navigation controls";
+	}
+
+	.masthead > section[label="logo"] {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.masthead > section[label="controls"] > :global(.lang-select) {
+		display: none;
+	}
+}
