@@ -30,30 +30,30 @@
   "pages": {
 		"home": {
 			"title": "Eric Rovell",
-			"description": "Personal blog about programming & photography.",
-			"keywords": "blog, web development, photography, portfolio",
+			"description": "Personal blog about math, programming, photography, and more...",
+			"keywords": "blog, math, web development, photography, portfolio",
 			"subject": "personal website"
 		},
 		"blog": {
-			"title": "Blog: List of published articles",
-			"description": "Personal blog about programming & photography.",
+			"title": "Blog",
+			"description": "List of published articles.",
 			"keywords": "blog, web development, photography, portfolio",
 			"subject": "personal blog"
 		},
 		"gallery": {
-			"title": "Gallery: Some of my works",
-			"description": "A gallery of my photos I have done some time ago.",
+			"title": "Photo Gallery",
+			"description": "A photo collection I have done some time ago.",
 			"keywords": "gallery, photography, portfolio",
 			"subject": "photo gallery"
 		},
 		"projects": {
-			"title": "Projects: Portfolio of my web development projects",
-			"description": "A list of my personal web projects to showcase.",
+			"title": "Projects",
+			"description": "Portfolio of my web development projects and contributions.",
 			"keywords": "portfolio, web development, programming",
 			"subject": "web developer portfolio"
 		},
 		"about": {
-			"title": "About Me",
+			"title": "About",
 			"description": "Hi! My name is Eric Rovell, this page tells a bit of my story, interests and motivation.",
 			"keywords": "blog, web development, photography, portfolio",
 			"subject": "personal website"
