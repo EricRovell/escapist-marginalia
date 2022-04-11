@@ -22,7 +22,7 @@
 <script lang="ts">
 	import styles from "@styles/pages/blog.module.css";
 	import { PageMeta, Card } from "@components";
-	import { ContentFilter } from "@lib/layout";
+	import { ContentFilter, LayoutPage } from "@layout";
 	import { pathBlogpost } from "@core/paths";
 	import { t, locale } from "@core/i18n";
 	import { groupBy } from "@lib/util";
@@ -40,21 +40,31 @@
 
 <PageMeta route="blog" />
 
-<div class={styles.layout}>
-	<ContentFilter bind:contentLanguage>
-		{#each groupedPosts as [ series, posts ]}
-			<section>
-				<h2>{$t(`categories.${series}`)}</h2>
-				<div class={styles.posts}>
-					{#each posts as { title, slug, created }}
-						<Card
-							{title}
-							href={$pathBlogpost(slug)}
-							date={created}
-						/>
-					{/each}
-				</div>
-			</section>
-		{/each}
-	</ContentFilter>
-</div>
+<LayoutPage>
+	<svelte:fragment slot="banner">
+		<h1 class="headline">
+			{$t("pages.blog.title")}
+		</h1>
+		<p class="headline">
+			{$t("pages.blog.description")}
+		</p>
+	</svelte:fragment>
+	<div class={styles.layout}>
+		<ContentFilter bind:contentLanguage>
+			{#each groupedPosts as [ series, posts ]}
+				<section>
+					<h2>{$t(`categories.${series}`)}</h2>
+					<div class={styles.posts}>
+						{#each posts as { title, slug, created }}
+							<Card
+								{title}
+								href={$pathBlogpost(slug)}
+								date={created}
+							/>
+						{/each}
+					</div>
+				</section>
+			{/each}
+		</ContentFilter>
+	</div>
+</LayoutPage>
