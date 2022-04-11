@@ -18,6 +18,7 @@
 			"@data/*": [ "src/data/*" ],
 			"@components": [ "src/lib/components/index.ts" ],
       "@components/*": [ "src/lib/components/*" ],
+			"@layout": [ "src/lib/layout/index.ts" ],
       "@stores": [ "src/lib/stores/index.ts" ],
       "@stores/*": [ "src/lib/stores/*" ],
       "@utils": [ "src/lib/utils/index.ts" ],
