@@ -20,22 +20,41 @@
 </script>
 
 <script lang="ts">
-	import styles from "@styles/pages/blog.module.css";
-	import { PageMeta, Card } from "@components";
-	import { ContentFilter, LayoutPage } from "@layout";
+	import { PageMeta, Card, SwitchGroup } from "@components";
+	import { LayoutPage } from "@layout";
 	import { pathBlogpost } from "@core/paths";
 	import { t, locale } from "@core/i18n";
-	import { groupBy } from "@lib/util";
+	import { find } from "@utils/query";
+	import styles from "./.blog.module.css";
+
 	import type { Blogpost } from "../../../types";
+	import type { QueryOption } from "@utils/query";
 
 	export let posts: Blogpost[] = [];
 
-	let contentLanguage: string[] = [ $locale ];
-	let filteredPosts: Blogpost[];
-	let groupedPosts: Array<[ string, Blogpost[]]>;
+	type Query<T> = {
+		"content-lang": QueryOption<string[], T>;
+		"content-topics": QueryOption<string[], T>;
+		"content-series": QueryOption<string[], T>;
+	}
 
-	$: filteredPosts = posts.filter(post => contentLanguage.includes(post.lang));
-	$: groupedPosts = Object.entries(groupBy(filteredPosts, post => post.series));
+	const queryOptions: Query<Blogpost> = {
+		"content-lang": {
+			value: [ $locale ],
+			validator: (value) => value.length > 0,
+			matcher: (value) => (item) => value.includes(item.lang)
+		},
+		"content-topics": {
+			validator: (value) => value.length > 0,
+			matcher: (value) => (item) => value.every(keyword => item.keywords.includes(keyword))
+		},
+		"content-series": {
+			validator: (value) => value.length > 0,
+			matcher: (value) => (item) => item.series === value[0]
+		}
+	};
+
+	$: content = find(posts, queryOptions);
 </script>
 
 <PageMeta route="blog" />
@@ -50,21 +69,43 @@
 		</p>
 	</svelte:fragment>
 	<div class={styles.layout}>
-		<ContentFilter bind:contentLanguage>
-			{#each groupedPosts as [ series, posts ]}
-				<section>
-					<h2>{$t(`categories.${series}`)}</h2>
-					<div class={styles.posts}>
-						{#each posts as { title, slug, created }}
-							<Card
-								{title}
-								href={$pathBlogpost(slug)}
-								date={created}
-							/>
-						{/each}
-					</div>
-				</section>
+		<main class="grid-flexible">
+			{#each content as { title, slug, created }}
+				<Card
+					{title}
+					href={$pathBlogpost(slug)}
+					date={created}
+				/>
 			{/each}
-		</ContentFilter>
+		</main>
+		<aside class={styles.sidebar}>
+			<SwitchGroup
+				legend={$t("dict.language")}
+				name="content-lang"
+				options={[
+					{ label: "English", value: "en", checked: $locale === "en" },
+					{ label: "Русский", value: "ru", checked: $locale === "ru" }
+				]}
+				bind:group={queryOptions["content-lang"].value}
+			/>
+			<SwitchGroup
+			legend={$t("dict.topics")}
+				name="content-topics"
+				options={[
+					{ label: $t("dict.math"), value: "math" },
+					{ label: $t("dict.photo"), value: "photo" },
+					{ label: $t("dict.web"), value: "web" }
+				]}
+				bind:group={queryOptions["content-topics"].value}
+			/>
+			<SwitchGroup
+			legend={$t("dict.series")}
+				name="content-series"
+				options={[
+					{ label: $t("dict.project-euler"), value: "project-euler" },
+				]}
+				bind:group={queryOptions["content-series"].value}
+			/>
+		</aside>
 	</div>
 </LayoutPage>
