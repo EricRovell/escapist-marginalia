@@ -25,7 +25,7 @@
 	import { PageMeta, Card, Icon } from "@components";
 	import { LayoutPage } from "@layout";
 	import { iconGithub, iconNpm, iconURL } from "@components/icons/default";
-	import { groupBy } from "@lib/util";
+	import { groupBy } from "@utils/helpers";
 	import styles from "@styles/pages/projects.module.css";
 
 	export let projects: Project[] = [];
@@ -48,7 +48,7 @@
 		{#each groupedProjects as [ category, projects ]}
 			<section>
 				<h2>
-					{$t(`categories.${category}`)}
+					{$t(`dict.${category}`)}
 				</h2>
 				<ul class={styles.projects}>
 					{#each projects as { name, description, github, packageName, homepage }}

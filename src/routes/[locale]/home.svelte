@@ -25,7 +25,7 @@
 	import { PageMeta, Link, Timeline, Datetime } from "@components";
 	import { ContentFilter, LayoutPage } from "@layout";
 	import { locale, t } from "@core/i18n";
-	import { groupBy } from "@lib/util";
+	import { groupBy } from "@utils/helpers";
 	import type { Blogpost } from "../../types";
 
 	export let posts: Blogpost[] = [];

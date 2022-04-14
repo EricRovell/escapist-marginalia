@@ -4,7 +4,7 @@
 	import { portal } from "@lib/actions";
 	import Icon from "../icons/Icon.svelte";
 	import { iconCancel } from "../icons/default";
-	import { preventPageScroll } from "@lib/util";
+	import { preventPageScroll } from "@utils/helpers";
 	import styles from "./modal.module.css";
 
 	const dispatch = createEventDispatcher();
