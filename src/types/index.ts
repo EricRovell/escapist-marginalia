@@ -9,7 +9,7 @@ export interface BlogpostMetadata {
 	series: string;
 	created: string;
 	updated: string;
-	keywords: string;
+	keywords: string[];
 	published?: boolean;
 	layout?: string;
 	lang: "ru" | "en";
