@@ -9,7 +9,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 2ch;
+	gap: 1ch;
 
 	cursor: pointer;
 	user-select: none;
@@ -23,6 +23,7 @@
 	flex-shrink: 0;
   display: grid;
   align-items: center;
+	margin-left: auto;
   grid: [track] 1fr / [track] 1fr;
 	inline-size: var(--switch-track-size);
   block-size: var(--switch-thumb-size);
@@ -59,6 +60,10 @@
 
 .input:hover:not(:disabled) {
 	box-shadow: 0 0 0 var(--switch-highlight-size) var(--switch-thumb-color-highlight);
+}
+
+.switch:hover:not(:disabled) {
+	color: var(--switch-track-color-active);
 }
 
 .input:disabled::after {

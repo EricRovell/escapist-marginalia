@@ -4,7 +4,8 @@
 
 <script lang="ts">
 	import { createEventDispatcher } from "svelte";
-	import { Switch } from "@components";
+	import Switch from "./Switch.svelte";
+	import Icon from "../icons/Icon.svelte";
 	import styles from "./switch-group.module.css";
 
 	export let legend: string;
@@ -25,7 +26,7 @@
 
 <fieldset class={`card ${styles.fieldset}`} on:change={() => dispatch("switch", { group, name })}>
 	<legend class={styles.legend}>{legend}</legend>
-	{#each options as { checked, disabled, label, value }}
+	{#each options as { checked, disabled, icon, label, value }}
 		<Switch
 			{checked}
 			{disabled}
@@ -33,6 +34,12 @@
 			{value}
 			on:change={handleChange}
 		>
+			{#if icon}
+				<Icon
+					path={icon}
+					title={label}
+				/>
+			{/if}
 			{label}
 		</Switch>
 	{/each}
