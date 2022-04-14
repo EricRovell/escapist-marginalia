@@ -25,7 +25,8 @@
 	import { pathBlogpost } from "@core/paths";
 	import { t, locale } from "@core/i18n";
 	import { find } from "@utils/query";
-	import styles from "./.blog.module.css";
+	import { iconPi, iconImg, iconNumberE, iconGlobe } from "@lib/components/icons/default";
+	import styles from "./.blog.module.css";	
 
 	import type { Blogpost } from "../../../types";
 	import type { QueryOption } from "@utils/query";
@@ -89,20 +90,20 @@
 				bind:group={queryOptions["content-lang"].value}
 			/>
 			<SwitchGroup
-			legend={$t("dict.topics")}
+				legend={$t("dict.topics")}
 				name="content-topics"
 				options={[
-					{ label: $t("dict.math"), value: "math" },
-					{ label: $t("dict.photo"), value: "photo" },
-					{ label: $t("dict.web"), value: "web" }
+					{ label: $t("dict.math"), value: "math", icon: iconPi },
+					{ label: $t("dict.photo"), value: "photo", icon: iconImg },
+					{ label: $t("dict.web"), value: "web", icon: iconGlobe }
 				]}
 				bind:group={queryOptions["content-topics"].value}
 			/>
 			<SwitchGroup
-			legend={$t("dict.series")}
+				legend={$t("dict.series")}
 				name="content-series"
 				options={[
-					{ label: $t("dict.project-euler"), value: "project-euler" },
+					{ label: $t("dict.project-euler"), value: "project-euler", icon: iconNumberE },
 				]}
 				bind:group={queryOptions["content-series"].value}
 			/>
