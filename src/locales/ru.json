@@ -9,11 +9,17 @@
     "licence": "Лицензия",
     "privacy": "Приватность"
   },
-  "categories": {
+  "dict": {
+		"language": "язык",
+		"topics": "тема",
+		"series": "серия",
     "project-euler": "проект эйлера",
     "algorithms": "алгоритмы",
-    "package": "библиотеки",
-    "app": "веб приложение"
+    "package": "библиотека",
+    "app": "веб приложение",
+		"math": "математика",
+		"photo": "фотография",
+		"web": "веб"
   },
   "tooltip": {
     "change-theme": "Сменить тему оформления",

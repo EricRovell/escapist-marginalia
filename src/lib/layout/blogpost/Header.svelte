@@ -25,7 +25,7 @@
 	<p>{description}</p>
 	<footer>
 		<ul>
-			{#each keywords.split(",") as keyword}
+			{#each keywords as keyword}
 				<li>{keyword}</li>
 			{/each}
 		</ul>

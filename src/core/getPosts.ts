@@ -14,7 +14,7 @@ export async function getPosts(): Promise<Blogpost[]> {
 		posts.push({
 			created: new Date(created),
 			updated: new Date(updated),
-			keywords: keywords.split(","),
+			keywords,
 			slug: `${lang}-${basename(dirname(filename), ".svx")}`,
 			lang,
 			...rest

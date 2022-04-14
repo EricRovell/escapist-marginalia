@@ -1,4 +1,4 @@
-import { fetchJSON } from "@lib/util";
+import { fetchJSON } from "@utils/helpers";
 import type { Project, GithubRepo } from "../types";
 
 interface DisplayedProjects {

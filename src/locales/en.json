@@ -9,11 +9,17 @@
     "licence": "licence",
     "privacy": "privacy"
   },
-  "categories": {
+  "dict": {
+		"language": "language",
+		"topics": "topics",
+		"series": "series",
     "project-euler": "project euler",
     "algorithms": "algorithms",
     "package": "libraries",
-    "app": "web applications"
+    "app": "web applications",
+		"math": "math",
+		"photo": "photography",
+		"web": "web"
   },
   "tooltip": {
     "change-theme": "Change theme",
@@ -62,5 +68,5 @@
 			"author": "Eric Rovell",
 			"language": "en"
 		}
-	}
+	}	
 }
