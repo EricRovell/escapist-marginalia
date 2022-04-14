@@ -5,7 +5,6 @@ export { default as WorkInProgress } from "./WorkInProgress.svelte";
 export { default as Card } from "./Card.svelte";
 export { default as Datetime } from "./Datetime.svelte";
 export { default as Link } from "./Link.svelte";
-export { default as CheckboxGroup } from "./CheckboxGroup.svelte";
 export { default as TOC } from "./TOC.svelte";
 export { default as Code } from "./code/Code.svelte";
 export { default as Gallery } from "./gallery/Gallery.svelte";
