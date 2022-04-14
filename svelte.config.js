@@ -29,6 +29,9 @@ const config = {
 	extensions: [ ".svelte", ".svx" ],
 	kit: {
 		adapter: adapter(),
+		prerender: {
+			default: true
+		},
 		vite: {
 			resolve: {
 				alias: Object.fromEntries(aliasList.map(alias => (
