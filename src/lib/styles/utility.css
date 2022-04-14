@@ -4,6 +4,17 @@
 	margin-right: auto;
 }
 
+.grid-flexible {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(var(--item-size, 350px), 1fr));
+	grid-auto-rows: min-content;
+	gap: var(--space-m);
+}
+
+.grid-flexible > .card {
+	height: auto;
+}
+
 .flex-center {
 	display: flex;
 	align-items: center;
@@ -13,6 +24,7 @@
 .card {
 	display: grid;
 	gap: var(--space-m);
+	height: min-content;
 	border: 2px solid var(--color-border);
 	border-radius: var(--radius-l);
 	padding: var(--space-m);
