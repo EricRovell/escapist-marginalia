@@ -17,3 +17,5 @@ export const pathModalPhoto = derived(pathGallery, $root => (slug: string) => `$
 export const pathLicence = "https://github.com/EricRovell/ericrovell.me/blob/main/LICENSE";
 export { homepage as pathSource } from "../../package.json";
 export const pathPrivacy = "";
+
+export const pathPackageNPM = (name: string) => `https://www.npmjs.com/package/${name}`;
