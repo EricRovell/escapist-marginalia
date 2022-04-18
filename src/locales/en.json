@@ -19,7 +19,13 @@
     "app": "web applications",
 		"math": "math",
 		"photo": "photography",
-		"web": "web"
+		"web": "web",
+		"recent-posts": "Recent Posts",
+		"all-posts": "All posts",
+		"recent-photos": "Recent Photos",
+		"entire-gallery": "Entire gallery",
+		"pinned-projects": "Pinned Projects",
+		"all-projects": "All projects"
   },
   "tooltip": {
     "change-theme": "Change theme",
