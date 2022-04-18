@@ -22,15 +22,14 @@
 
 <script lang="ts">
 	import { t } from "@core/i18n";
-	import { PageMeta, Card, Icon } from "@components";
+	import { PageMeta, CardProject } from "@components";
 	import { LayoutPage } from "@layout";
-	import { iconGithub, iconNpm, iconURL } from "@components/icons/default";
 	import { groupBy } from "@utils/helpers";
 	import styles from "@styles/pages/projects.module.css";
 
 	export let projects: Project[] = [];
 
-	$: groupedProjects = Object.entries(groupBy(projects, project => project.type));
+	$: groupedProjects = Object.entries<Project[]>(groupBy(projects, project => project.type));
 </script>
 
 <PageMeta route="projects" />
@@ -47,30 +46,19 @@
 	<div class={styles.layout}>
 		{#each groupedProjects as [ category, projects ]}
 			<section>
-				<h2>
+				<h2 class="heading">
 					{$t(`dict.${category}`)}
 				</h2>
 				<ul class={styles.projects}>
-					{#each projects as { name, description, github, packageName, homepage }}
+					{#each projects as { title, description, github, packageName, homepage }}
 						<li class={styles.project}>
-							<Card	title={name}>
-								<p>{description}</p>
-								<svelte:fragment slot="footer">
-									<a href={github} title="Github repository">
-										<Icon path={iconGithub} size="1.25em" />
-									</a>
-									{#if packageName}
-										<a href={`https://www.npmjs.com/package/${packageName}`} title="NPM package">
-											<Icon path={iconNpm} color="danger" size="1.25em" />
-										</a>
-									{/if}
-									{#if homepage}
-										<a href={homepage} title="Live project URL">
-											<Icon path={iconURL} size="1.25em" />
-										</a>
-									{/if}
-								</svelte:fragment>
-							</Card>
+							<CardProject 
+								{description}
+								{github}
+								{homepage}
+								{packageName}
+								{title}
+							/>
 						</li>
 					{/each}
 				</ul>

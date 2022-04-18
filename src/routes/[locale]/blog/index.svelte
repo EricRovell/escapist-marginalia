@@ -20,9 +20,8 @@
 </script>
 
 <script lang="ts">
-	import { PageMeta, Card, SwitchGroup } from "@components";
+	import { PageMeta, CardArticle, SwitchGroup } from "@components";
 	import { LayoutPage } from "@layout";
-	import { pathBlogpost } from "@core/paths";
 	import { t, locale } from "@core/i18n";
 	import { find } from "@utils/query";
 	import { iconPi, iconImg, iconNumberE, iconGlobe } from "@lib/components/icons/default";
@@ -71,11 +70,13 @@
 	</svelte:fragment>
 	<div class={styles.layout}>
 		<main class="grid-flexible">
-			{#each content as { title, slug, created }}
-				<Card
+			{#each content as { created, description, keywords, title, slug }}
+				<CardArticle
+					{created}
+					{description}
+					{keywords}
 					{title}
-					href={$pathBlogpost(slug)}
-					date={created}
+					{slug}
 				/>
 			{/each}
 		</main>

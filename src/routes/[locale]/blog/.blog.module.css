@@ -10,6 +10,7 @@
 	display: flex;
 	flex-flow: column nowrap;
 	gap: var(--space-m);
+	height: min-content;
 }
 
 .layout > main h2 {
