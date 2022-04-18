@@ -12,7 +12,7 @@
 	import styles from "./masthead.module.css";
 </script>
 
-<header class={styles.masthead}>
+<header class={`container ${styles.masthead}`}>
 	<section label="logo">
 		<Link href={$pathHome}>
 			<Icon path={logo} size="25px" />

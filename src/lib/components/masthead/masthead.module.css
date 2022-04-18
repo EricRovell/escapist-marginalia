@@ -6,10 +6,7 @@
 	grid-template-areas: "logo navigation controls";
 	place-items: center;
 	gap: var(--spacing-3, 0.75em);
-
-	width: min(100%, calc(var(--max-width) + 2 * var(--space-s)));
 	height: var(--header-height, 75px);
-	padding: 0 var(--space-s);    
 	z-index: var(--z-index-navigation);
 
 	background-color: var(--masthead-bg, transparent);
