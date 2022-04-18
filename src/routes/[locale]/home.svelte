@@ -107,13 +107,13 @@
 					</Link>
 				</header>
 				<ul class="grid-flexible" style="--item-size: 250px">
-					{#each projects as { title, description, github, packageName, homepage }}
+					{#each projects as { title, description, github, npm, homepage }}
 						<li>
 							<CardProject
 								{description}
 								{github}
 								{homepage}
-								{packageName}
+								{npm}
 								{title}
 							/>
 						</li>

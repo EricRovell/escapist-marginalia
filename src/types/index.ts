@@ -43,7 +43,7 @@ export interface GithubRepo {
 export interface Project extends Omit<GithubRepo, "html_url"> {
 	type: "app" | "package" | "website";
 	github: string;
-	packageName?: string;
+	npm?: string;
 }
 
 export type { GalleryItem } from "@components";

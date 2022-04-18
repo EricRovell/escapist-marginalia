@@ -1,10 +1,11 @@
 import { fetchJSON } from "@utils/helpers";
+import { pathPackageNPM } from "@paths";
 import type { Project, GithubRepo } from "../types";
 
 interface DisplayedProjects {
 	[key: string]: {
 		type: "package" | "app";
-		packageName?: string;
+		npm?: string;
 	}
 }
 
@@ -16,19 +17,19 @@ interface DisplayedProjects {
 const projects: DisplayedProjects = {
 	"blossom": {
 		type: "package",
-		packageName: "@ericrovell/blossom"
+		npm: pathPackageNPM("@ericrovell/blossom")
 	},
 	"svelte-media-observer": {
 		type: "package",
-		packageName: "svelte-media-observer"
+		npm: pathPackageNPM("svelte-media-observer")
 	},
 	"rational": {
 		type: "package",
-		packageName: "@ericrovell/rational"
+		npm: pathPackageNPM("@ericrovell/rational")
 	},
 	"radix": {
 		type: "package",
-		packageName: "@ericrovell/radix"
+		npm: pathPackageNPM("@ericrovell/radix")
 	},
 	"numbers": {
 		type: "app"

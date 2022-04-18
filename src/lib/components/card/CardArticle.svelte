@@ -17,9 +17,6 @@
 	export let slug: Blogpost["slug"];
 </script>
 
-<!--
-	locale={$locale}
--->
 <Card className={styles["card-article"]}>
 	<svelte:fragment slot="header">
 		<Datetime

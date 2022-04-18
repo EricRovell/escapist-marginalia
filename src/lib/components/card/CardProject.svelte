@@ -13,12 +13,12 @@
 	export let description: Project["description"];
 	export let title: Project["title"];
 	export let github: Project["github"];
-	export let packageName: Project["packageName"];
+	export let npm: Project["npm"];
 	export let homepage: Project["homepage"];
 
 	$: links = [
 		{ property: github, title: "Github", icon: iconGithub },
-		{ property: packageName, title: "NPM Package", icon: iconNpm },
+		{ property: npm, title: "NPM", icon: iconNpm },
 		{ property: homepage, title: "Website", icon: iconURL }
 	].filter(({ property }) => property);
 </script>

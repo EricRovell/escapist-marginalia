@@ -50,13 +50,13 @@
 					{$t(`dict.${category}`)}
 				</h2>
 				<ul class={styles.projects}>
-					{#each projects as { title, description, github, packageName, homepage }}
+					{#each projects as { title, description, github, npm, homepage }}
 						<li class={styles.project}>
 							<CardProject 
 								{description}
 								{github}
 								{homepage}
-								{packageName}
+								{npm}
 								{title}
 							/>
 						</li>
