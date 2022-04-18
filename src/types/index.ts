@@ -29,7 +29,7 @@ export interface Blogpost extends Omit<BlogpostMetadata, "created" | "updated" |
  * Defines a used `repo` object subset from `Github Rest API`
  */
 export interface GithubRepo {
-	name: string;
+	title: string;
 	description: string;
 	homepage: string;
 	html_url: string;

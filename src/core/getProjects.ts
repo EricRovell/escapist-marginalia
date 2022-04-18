@@ -18,9 +18,6 @@ const projects: DisplayedProjects = {
 		type: "package",
 		packageName: "@ericrovell/blossom"
 	},
-	"blossom-web": {
-		type: "app"
-	},
 	"svelte-media-observer": {
 		type: "package",
 		packageName: "svelte-media-observer"
@@ -53,7 +50,7 @@ export async function getProjects(): Promise<Project[]> {
 				homepage,
 				github: html_url,
 				language,
-				name,
+				title: name,
 				topics
 			};
 		});
