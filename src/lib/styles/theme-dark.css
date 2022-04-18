@@ -7,7 +7,7 @@
     --surface-1: #0e1625;
     --surface-2: #090e19;
 
-    --color-heading-accent: var(--color-primary-400);
+    --color-heading: var(--color-blue-400);
     --color-text-primary: var(--color-gray-400);
     --color-text-secondary: var(--color-gray-500);
     --color-link: var(--color-blue-400);
@@ -15,7 +15,7 @@
     --color-link-active: var(--color-blue-300);
     --color-link-active-bg: #3B3562;
 
-    --color-border: var(--color-blue-800);  
+    --color-border: var(--color-blue-800);
 
     --switch-track-color: var(--color-gray-600);
     --switch-track-color-active: var(--color-blue-700);
@@ -77,7 +77,7 @@
   --surface-1: #0e1625;
   --surface-2: #090e19;
 
-  --color-heading-accent: var(--color-primary-400);
+  --color-heading: var(--color-blue-400);
   --color-text-primary: var(--color-gray-400);
   --color-text-secondary: var(--color-gray-500);
   --color-link: var(--color-blue-400);

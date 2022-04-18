@@ -24,7 +24,7 @@
 </script>
 
 <footer>
-  <div class="wrapper">
+  <div class="container wrapper">
     <nav>
       <ul>
         {#each links as { label, href, disabled = false }}
@@ -53,7 +53,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: var(--space-l) var(--space-s);
+    padding: var(--space-l) 0;
     background: var(--surface-2);
   }
 
@@ -66,7 +66,6 @@
     height: 100%;
 
     justify-self: center;
-    width: min(100%, calc(var(--max-width) + 2 * var(--space-s)));
   }
 
   section[label="user"] {

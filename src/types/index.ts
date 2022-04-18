@@ -29,7 +29,7 @@ export interface Blogpost extends Omit<BlogpostMetadata, "created" | "updated" |
  * Defines a used `repo` object subset from `Github Rest API`
  */
 export interface GithubRepo {
-	name: string;
+	title: string;
 	description: string;
 	homepage: string;
 	html_url: string;
@@ -43,7 +43,7 @@ export interface GithubRepo {
 export interface Project extends Omit<GithubRepo, "html_url"> {
 	type: "app" | "package" | "website";
 	github: string;
-	packageName?: string;
+	npm?: string;
 }
 
 export type { GalleryItem } from "@components";

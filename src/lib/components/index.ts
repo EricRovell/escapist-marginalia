@@ -2,7 +2,6 @@ export { default as Icon } from "./icons/Icon.svelte";
 export { default as Footer } from "./Footer.svelte";
 export { default as SVG } from "./SVG.svelte";
 export { default as WorkInProgress } from "./WorkInProgress.svelte";
-export { default as Card } from "./Card.svelte";
 export { default as Datetime } from "./Datetime.svelte";
 export { default as Link } from "./Link.svelte";
 export { default as TOC } from "./TOC.svelte";
@@ -14,6 +13,7 @@ export { Image } from "./image";
 export { default as Modal } from "./modal/Modal.svelte";
 export { Masthead } from "./masthead";
 export { Switch, SwitchGroup } from "./switch";
+export { Card, CardArticle, CardProject } from "./card";
 
 export * as Timeline from "./timeline";
 export * from "./gallery";

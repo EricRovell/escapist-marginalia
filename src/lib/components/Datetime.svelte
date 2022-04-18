@@ -45,16 +45,17 @@
 </script>
 
 <script lang="ts">
+	import { locale } from "@core/i18n";
+
 	type $$Props = Props;
 
 	export let date: $$Props["date"] = new Date();
 	export let options: $$Props["options"] = defaultOptions;
-	export let locale: $$Props["locale"] = undefined;
 	export let relative: $$Props["relative"] = false;
 
 	$: renderedDate = (relative)
-		? renderRelativeDate(date, locale, options)
-		: renderDate(date, locale, options);
+		? renderRelativeDate(date, $locale, options)
+		: renderDate(date, $locale, options);
 </script>
 
 <!--

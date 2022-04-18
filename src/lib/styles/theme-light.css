@@ -7,12 +7,15 @@
     --surface-1: var(--color-blue-50);
     --surface-2: #edeef9;
 
+    --color-heading: var(--color-blue-400);
     --color-text-primary: var(--color-gray-300);
     --color-text-secondary: var(--color-gray-400);
     --color-link: var(--color-blue-500);
     --color-link-hover: var(--color-blue-400);
     --color-link-active: var(--color-blue-300);
     --color-link-active-bg: var(--color-blue-700);
+
+    --color-border: var(--color-blue-300);
 
     --switch-track-color: var(--color-gray-600);
     --switch-track-color-active: var(--color-blue-700);
@@ -74,12 +77,15 @@
   --surface-1: var(--color-blue-50);
   --surface-2: #edeef9;
 
+  --color-heading: var(--color-blue-400);
   --color-text-primary: var(--color-gray-900);
   --color-text-secondary: var(--color-gray-400);
   --color-link: var(--color-blue-500);
   --color-link-hover: var(--color-blue-400);
   --color-link-active: var(--color-blue-300);
   --color-link-active-bg: var(--color-blue-700);
+
+  --color-border: var(--color-blue-300);
 
   --switch-track-color: var(--color-gray-500);
   --switch-track-color-active: var(--color-blue-500);
