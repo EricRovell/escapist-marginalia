@@ -3,7 +3,7 @@
 	import type { Project } from "@types";
 	
 	export const load: Load = async ({ fetch }) => {
-		const res = await fetch("/api/projects.json");
+		const res = await fetch("/api/projects");
 
 		if (res.ok) {
 			return {

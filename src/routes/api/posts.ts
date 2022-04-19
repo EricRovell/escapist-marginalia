@@ -14,7 +14,7 @@ export async function get({ url }) {
 	const query: Query<Blogpost> = {
 		"lang": {
 			value: url.searchParams.get("lang"),
-			validator: value => [ "en", "ru"].includes(value),
+			validator: value => [ "en", "ru" ].includes(value),
 			matcher: value => item => item.lang === value
 		}
 	};

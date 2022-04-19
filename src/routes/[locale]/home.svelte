@@ -2,12 +2,12 @@
 	import type { Load } from "@sveltejs/kit";
 	import type { Blogpost, Project, GalleryItem } from "../../types";
 
-	export const load: Load = async ({ fetch, params }) => {
+	export const load: Load = async ({ fetch }) => {
 
 		const requests = [
-			fetch(`/api/blog/posts.json?sort=-1&lang=${params.locale}`),
-			fetch("/api/photos.json?limit=3"),
-			fetch("/api/projects.json?limit=3")
+			fetch("/api/posts"),
+			fetch("/api/photos"),
+			fetch("/api/projects")
 		];
 
 		const responses = await Promise.all(requests);
@@ -16,9 +16,9 @@
 		if (responses.every(r => r.ok)) {
 			return {
 				props: {
-					posts,
-					photos,
-					projects
+					posts: posts.slice(0, 5),
+					photos: photos.slice(0, 4),
+					projects: projects.slice(0, 4)
 				}
 			};
 		}

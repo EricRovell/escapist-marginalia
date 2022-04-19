@@ -2,7 +2,7 @@
 	import type { Load } from "@sveltejs/kit";
 
 	export const load: Load = async ({ fetch }) => {
-		const res = await fetch("/api/photos.json");
+		const res = await fetch("/api/photos");
 		const photos: GalleryItem[] = await res.json();
 
 		if (res.ok) {
