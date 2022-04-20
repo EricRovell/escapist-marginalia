@@ -14,13 +14,15 @@
 	left: 0;
 
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	text-align: center;
 	width: 100%;
 	height: 100%;
 	padding: var(--space-m);
 	border: 2px solid var(--color-border);
-	border-radius: var(--radius-l);
+	/* todo: broken icon image showoed up behind curved border... */
+	border-radius: 0 0 var(--radius-l) var(--radius-l);
 	background-color: var(--surface-2);
 
 	background-color: var(--surface-2);
