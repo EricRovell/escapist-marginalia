@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let className: string | undefined = undefined;
 	export let href: string;
 	export let targetBlank = false;
 	export let nofollow = false;
@@ -13,6 +14,7 @@
 </script>
 
 <a
+	class={className}
 	{href}
 	{target}
 	{rel}
