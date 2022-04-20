@@ -36,7 +36,7 @@
 
 <script lang="ts">
 	import { pathBlog, pathGallery, pathProjects } from "@paths";
-	import { PageMeta, Link, Image, CardArticle, CardProject } from "@components";
+	import { PageMeta, Link, Image, CardArticle, CardProject, GalleryGrid } from "@components";
 	import { LayoutPage } from "@layout";
 	import { t } from "@core/i18n";
 	import styles from "./.home.module.css";
@@ -89,13 +89,9 @@
 						&#x2192; {$t("dict.entire-gallery")}
 					</Link>
 				</header>
-				<ul class="grid-flexible" style="--item-size: 200px">
-					{#each photos as photo}
-						<li>
-							<Image {...photo} src={`${photo.path}.${photo.format}`} />
-						</li>
-					{/each}
-				</ul>
+				<GalleryGrid items={photos} let:item>
+					<Image {...item} />
+				</GalleryGrid>
 			</div>
 		</section>
 		<section label="recent-projects">

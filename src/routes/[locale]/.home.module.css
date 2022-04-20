@@ -34,17 +34,9 @@
 	background-color: var(--surface-2);
 }
 
-.layout > section[label="recent-photos"] ul li {
-	height: 250px;
-	border-radius: var(--radius-l);
-}
-
 .layout > section[label="recent-photos"] img {
 	object-fit: cover;
-	border-radius: calc(var(--radius-l) * 0.35);
-
-	display: flex;
-	height: 100%;
+	border-radius: var(--radius-l);
 }
 
 @media screen and (max-width: 640px) {
