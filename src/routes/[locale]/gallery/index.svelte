@@ -40,8 +40,5 @@
 			{$t("pages.gallery.description")}
 		</p>
 	</svelte:fragment>
-	<Gallery
-		items={photos}
-		getSrc={({ path, format }) => `${path}.${format}`}
-	/>
+	<Gallery items={photos}	/>
 </LayoutPage>
