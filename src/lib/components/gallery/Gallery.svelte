@@ -4,15 +4,18 @@
 
 <script lang="ts">
 	import { afterNavigate } from "$app/navigation";
-	import Picture from "./GalleryItem.svelte";
+	import Picture from "./GalleryImage.svelte";
 	import Modal from "../modal/Modal.svelte";
 	import Image from "../image/Image.svelte";
+	import Grid from "./Grid.svelte";
+	import Switch from "../switch/Switch.svelte";
+	import Icon from "../icons/Icon.svelte";
+	import { iconMasonry } from "../icons/default";
 	import styles from "./gallery.module.css";
 
-	export let cellScale = 400;
-	export let cellSize = 100;
-	export let getSrc: GetSrc;
+	export let getSrc: GetSrc = (item: GalleryItem) => item.src;
 	export let items: GalleryItem[] = [];
+	export let masonry = false;
 
 	let preview: GalleryItem | null = null;
 
@@ -24,24 +27,23 @@
 	});
 </script>
 
-<!--
-	Responsive Gallery
-	Idea source: https://www.samdawson.dev/article/auto-flow-dense-varying-image-sizes
--->
-<ul class={styles.gallery} style="--cell-size: {cellSize}px;">
-	{#each items as item}
-		{@const { id, width = 400, height = 400, title } = item}
-		<Picture {id} {cellScale} {width} {height}>
-			<Image
-				src={getSrc(item)}
-				{...item}
-			/>
+<section class={styles.container}>
+	<aside class={styles["control-panel"]}>
+		<Switch bind:checked={masonry} className="card">
+			<Icon path={iconMasonry} />
+			Masonry
+		</Switch>
+	</aside>
+	<Grid {items} {masonry} let:item>
+		{@const { id, title } = item}
+		<Picture {id}>
+			<Image src={getSrc(item)}	{...item} />
 			<svelte:fragment slot="caption">
 				{title}
 			</svelte:fragment>
 		</Picture>
-	{/each}
-</ul>
+	</Grid>
+</section>
 
 <!--
 	Fullscreen Preview
@@ -49,7 +51,7 @@
 <Modal open={Boolean(preview)} on:close={() => window.history.go(-1)}>
 	<Image
 		className={"modal-image"}
-		src={`${preview.path}.${preview.format}`}
+		src={preview.src}
 		{...preview}
 	/>
 </Modal>
