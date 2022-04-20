@@ -12,12 +12,12 @@
 	<slot />
 	<input
 		class={styles.input}
-		{checked}
+		bind:checked
+		bind:value
 		{disabled}
 		{name}
 		type="checkbox"
 		role="switch"
-		{value}
 		on:change
 	/>
 </label>
