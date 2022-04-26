@@ -44,6 +44,12 @@
   overflow: hidden;
 }
 
+.ellipsis {
+	text-overflow: ellipsis;
+	word-wrap: none;
+	overflow: hidden;
+}
+
 .heading {
 	color: var(--color-heading);
 	font-family: var(--font-secondary);
