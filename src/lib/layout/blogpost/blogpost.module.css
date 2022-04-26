@@ -2,20 +2,27 @@
 	grid-area: article;
 
 	display: grid;
+	grid-template-columns: 1fr min(calc(100% - 2 * var(--space-m)), 65ch) 1fr;
 	justify-self: center;
 	gap: var(--space-m);
-	width: min(100%, calc(65ch + 2 * var(--space-s)));
+	/* width: min(100%, calc(65ch + 2 * var(--space-s))); */
 
-	line-height: 1.25;
+	line-height: 1.5;
+}
+
+.article > * {
+	grid-column: 2;
+}
+
+.article > :global(.wide) {
+	width: 100%;
+	grid-column: 1 / 4;
 }
 
 .article :is(h2, h3, h4, h5, h6) {
-	--border-size: 1px;
-
-	color: var(--color-heading-accent);
+	color: var(--color-heading);
 	margin-top: var(--space-m);
 	padding-bottom: var(--space-s);
-	border-bottom: solid var(--border-size) hsl(var(--gray-h) var(--gray-s-600) var(--gray-l-600) / 0.5);
 }
 
 .article :global(.katex-display) {
@@ -39,18 +46,44 @@
 	margin-left: var(--space-s);
 }
 
-.article ol {
-	list-style: decimal;
-	list-style-position: inside;
-
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-s);
-
-	color: var(--color-link);
+.article ul:not([class]) {
+	list-style: initial;
+	list-style-position: outside;
 }
 
-.article ul {
-	list-style: initial;
-	list-style-position: inside;
+.article ul li:not([class]) {
+	padding-inline-start: 1ch;
+	margin-left: 1ch;
+}
+
+.article ul li:not([class])::marker {
+	content: "»";
+	color: var(--color-blue-400);
+	font-size: 1.5em;
+}
+
+.article ol:not([class]) {
+	list-style: decimal;
+	list-style-position: outside;
+}
+
+.article ol li:not([class]) {
+	margin-left: 1.5ch;
+}
+
+.article ol li:not([class]):not(:last-child) {
+	margin-bottom: var(--space-xs);
+}
+
+.article ol li:not([class])::marker {
+	color: var(--color-blue-400);
+}
+
+.article abbr {
+	text-decoration: green dashed underline;
+	text-underline-offset: var(--space-xs);
+}
+
+.article pre {
+	margin: var(--space-m) 0;
 }
