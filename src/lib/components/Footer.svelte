@@ -1,6 +1,6 @@
 <script>
   import Link from "./Link.svelte";
-  import LangSelect from "./LangSelect.svelte";
+  import NavLocale from "./nav-locale/NavLocale.svelte";
   import { t } from "@core/i18n";
   import { version } from "../../../package.json";
 
@@ -40,7 +40,7 @@
       <span>
         © {new Date().getFullYear()} Eric/Rovell, v.{version}
       </span>
-      <LangSelect />
+      <NavLocale />
     </section>
   </div>
 </footer>
