@@ -1,0 +1,50 @@
+.details {
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+	background-color: var(--surface-2);
+	border-radius: var(--radius-m);	
+	font-size: inherit;
+	box-shadow: 0px 0px 2px #7A82E3;
+}
+
+.details > summary {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	max-width: 100%;
+	padding: var(--space-s);
+
+	user-select: none;
+	cursor: pointer;
+}
+
+.content {
+	padding: var(--space-m) var(--space-l) var(--space-m) calc(var(--space-s) * 4);
+}
+
+.details > summary:focus {
+	outline: none;
+}
+
+.details[open] > summary .default-icon {
+	transform: rotate(90deg);
+}
+
+.details[open] > .content {
+	box-shadow: inset -1px 2px 2px -2px #7a82e3;
+}
+
+.details > summary::marker {
+	display: none;
+}
+
+.default-icon {
+	fill: currentColor;
+	width: var(--space-s);
+	height: var(--space-s);
+	margin: 0 var(--space-s);
+	
+	transition: transform 0.15s ease-in-out;
+}

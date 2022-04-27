@@ -5,7 +5,8 @@
     --accent: var(--color-primary-500);
 
     --surface-1: var(--color-blue-50);
-    --surface-2: #edeef9;
+    --surface-2: #e7e9ff;
+    --surface-3: #c6d1ff;
 
     --color-heading: var(--color-blue-400);
     --color-text-primary: var(--color-gray-300);
@@ -75,7 +76,8 @@
   --accent: var(--color-primary-500);
 
   --surface-1: var(--color-blue-50);
-  --surface-2: #edeef9;
+  --surface-2: #e7e9ff;
+  --surface-3: #c6d1ff;
 
   --color-heading: var(--color-blue-400);
   --color-text-primary: var(--color-gray-900);

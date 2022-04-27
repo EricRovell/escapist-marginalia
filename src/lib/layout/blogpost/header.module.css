@@ -3,19 +3,22 @@
 	flex-direction: column;
 	align-items: center;
 	gap: var(--space-m);
-	width: min(100%, calc(85ch + 2 * var(--space-s)));
+	width: min(100%, calc(1440px + 2 * var(--space-s)));
 }
 
 .wrapper > h1 {
 	font-size: var(--font-size-xxl);
 	font-family: var(--font-secondary);
 	font-variation-settings: "wght" 350;
-	color: var(--color-heading-accent);
+	color: var(--color-heading);
+	text-align: center;
 }
 
 .wrapper > p {
 	font-size: var(--font-size-l);
 	font-style: italic;
+	text-align: center;
+	width: min(100%, calc(65ch + 2 * var(--space-s)));
 }
 
 .wrapper > footer {

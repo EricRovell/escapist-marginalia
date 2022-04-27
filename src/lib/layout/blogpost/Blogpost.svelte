@@ -48,7 +48,7 @@
 	}}
 />
 
-<LayoutPage>
+<LayoutPage wide>
 	<Header
 		{title}
 		{description}

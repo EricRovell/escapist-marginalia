@@ -14,6 +14,7 @@ export { default as Modal } from "./modal/Modal.svelte";
 export { Masthead } from "./masthead";
 export { Switch, SwitchGroup } from "./switch";
 export { Card, CardArticle, CardProject } from "./card";
+export { Details } from "./details";
 
 export * as Timeline from "./timeline";
 export * from "./gallery";
