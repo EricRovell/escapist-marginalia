@@ -5,7 +5,7 @@
 	import * as Navigation from "../menu";
 	import Icon from "../icons/Icon.svelte";
 	import { ThemeSelect } from "../theme-select";
-	import LangSelect from "../LangSelect.svelte";
+	import LocaleRoute from "../nav-locale/NavLocale.svelte";
 	import Link from "../Link.svelte";
 	import { logo } from "@components/icons/logo";
 
@@ -38,7 +38,7 @@
 		</Navigation.Container>
 	</section>
 	<section label="controls">
-		<LangSelect />  
+		<LocaleRoute />  
 		<ThemeSelect />
 	</section>
 </header>
