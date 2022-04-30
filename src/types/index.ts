@@ -28,13 +28,34 @@ export interface Blogpost extends Omit<BlogpostMetadata, "created" | "updated" |
 /**
  * Defines a used `repo` object subset from `Github Rest API`
  */
-export interface GithubRepo {
-	title: string;
+export interface GithubAPIRepo {
+	name: string;
 	description: string;
 	homepage: string;
 	html_url: string;
 	language: string;
 	topics: string[];
+}
+
+export interface ProjectData {
+	name: string;
+	type: "library" | "app";
+	repository: string;
+	npm?: string;
+	website?: string;
+}
+
+export interface Project {
+	name: string;
+	description: string;
+	homepage: string;
+	github: string;
+	language: string;
+	topics: string[];
+	type: "library" | "app";
+	repository: string;
+	npm?: string;
+	website?: string;
 }
 
 /**
