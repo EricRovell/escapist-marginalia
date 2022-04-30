@@ -1,10 +1,9 @@
-import { getProjects } from "@core/getProjects";
+import { getProjects } from "@data/projects";
 
-export async function get({ url }: { url: URL }) {
+export async function get() {
 	const projects = await getProjects();
-	const limit = parseInt(url.searchParams.get("limit"));
 
-	return Number.isNaN(limit)
-		? { body: projects }
-		: { body: projects.slice(0, limit) };
+	return {
+		body: projects
+	};
 }

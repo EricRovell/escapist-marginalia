@@ -2,12 +2,12 @@
 	import type { Load } from "@sveltejs/kit";
 
 	export const load: Load = async ({ fetch }) => {
-		const res = await fetch("/api/posts");
+		const res = await fetch("/api/blogposts");
 
 		if (res.ok) {
 			return {
 				props: {
-					posts: await res.json()
+					blogposts: await res.json()
 				}
 			};
 		}
@@ -30,7 +30,7 @@
 	import type { Blogpost } from "../../../types";
 	import type { QueryOption } from "@utils/query";
 
-	export let posts: Blogpost[] = [];
+	export let blogposts: Blogpost[] = [];
 
 	type Query<T> = {
 		"content-lang": QueryOption<string[], T>;
@@ -54,7 +54,7 @@
 		}
 	};
 
-	$: content = find(posts, queryOptions);
+	$: content = find(blogposts, queryOptions);
 </script>
 
 <PageMeta route="blog" />
