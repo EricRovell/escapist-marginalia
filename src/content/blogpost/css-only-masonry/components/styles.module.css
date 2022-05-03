@@ -56,6 +56,13 @@
 	padding: 0 var(--space-s);
 }
 
+.masonry form {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: var(--space-s);
+	margin-bottom: var(--space-m);
+}
+
 .masonry ul li {
 	grid-row-end: span var(--masonry-item-row);
 	grid-column-end: span var(--masonry-item-column);
@@ -74,11 +81,6 @@
 	gap: calc(1.5 * var(--space-s));
 	width: 100%;
 	padding: var(--space-s) 0;
-}
-
-.masonry input[type="range"] {
-	width: 100%;
-	margin-bottom: var(--space-m);
 }
 
 /* Demo: "Grid Items Span" */

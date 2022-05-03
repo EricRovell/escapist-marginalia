@@ -3,6 +3,7 @@
 </script>
 
 <script lang="ts">
+	import { Range } from "@components";
 	import styles from "./styles.module.css";
 
 	export let items = 20;
@@ -21,12 +22,9 @@
 	Demo for `CSS Grid` width dense flow and spanned items.
 -->
 <section class="{styles.wide} wide {styles["grid-span"]}">
-	<label class="controls">
-		<span>
-			Items: <output>{items}</output>
-		</span>
-		<input type="range" bind:value={items} min={1} max={50} step={1}>
-	</label>
+	<Range bind:value={items} min={1} max={50} step={1}>
+		Items
+	</Range>
 	<ul class="grid">
 		{#each { length: items } as _, i}
 			{@const [ row, column ] = getSpan()}

@@ -18,10 +18,19 @@
 
     --color-border: var(--color-blue-800);
 
+    --focus-ring-color: #999EEB60;
+
     --switch-track-color: var(--color-gray-600);
-    --switch-track-color-active: var(--color-blue-700);
+    --switch-track-color-active: var(--color-blue-600);
     --switch-thumb-color: var(--color-gray-200);
     --switch-thumb-color-highlight: var(--color-blue-900);
+
+    --range-thumb-color: var(--color-blue-400);
+    --range-thumb-min-color: rgb(34, 32, 32);
+    --range-track-color: var(--color-gray-600);
+    --range-track-focus-color: var(--color-gray-500);
+    --range-track-active-color: var(--color-blue-600);
+    --range-tooltip-bg: var(--color-blue-500);
 
     --scroll-track-color: var(--surface-2);
     --scroll-thumb-color: #253758;
@@ -89,10 +98,19 @@
 
   --color-border: var(--color-blue-800);
 
+  --focus-ring-color: #999EEB60;
+
   --switch-track-color: var(--color-gray-600);
-  --switch-track-color-active: var(--color-blue-700);
+  --switch-track-color-active: var(--color-blue-600);
   --switch-thumb-color: var(--color-gray-200);
   --switch-thumb-color-highlight: var(--color-blue-900);
+
+  --range-thumb-color: var(--color-blue-400);
+  --range-thumb-min-color: rgb(34, 32, 32);
+  --range-track-color: var(--color-gray-600);
+  --range-track-focus-color: var(--color-gray-500);
+  --range-track-active-color: var(--color-blue-600);
+  --range-tooltip-bg: var(--color-blue-500);
 
   --scroll-track-color: var(--surface-2);
   --scroll-thumb-color: #253758;
