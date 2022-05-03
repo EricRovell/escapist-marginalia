@@ -15,6 +15,7 @@ export { Masthead } from "./masthead";
 export { Switch, SwitchGroup } from "./switch";
 export { Card, CardArticle, CardProject } from "./card";
 export { Details } from "./details";
+export { Range } from "./input-range";
 
 export * as Timeline from "./timeline";
 export * from "./gallery";
