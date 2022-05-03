@@ -8,6 +8,10 @@
 	box-shadow: 0px 0px 2px #7A82E3;
 }
 
+.details:hover {
+	box-shadow: 0px 0px 2px #7A82E3, 0 0 0 2px var(--focus-ring-color);
+}
+
 .details > summary {
 	display: flex;
 	justify-content: flex-start;
