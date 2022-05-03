@@ -3,6 +3,7 @@
 </script>
 
 <script lang="ts">
+	import { Range } from "@components";
 	import styles from "./styles.module.css";
 
 	export let items = 20;
@@ -16,18 +17,12 @@
 -->
 <section class="{styles.wide} wide {styles.masonry}">
 	<form>
-		<label>
-			<span>
-				Items: <output>{items}</output>
-			</span>
-			<input type="range" bind:value={items} min={5} max={40}>
-		</label>
-		<label>
-			<span>
-				Scale: <output>{scale}</output> px
-			</span>
-			<input type="range" bind:value={scale} min={40} max={200}>
-		</label>
+		<Range bind:value={items} min={5} max={40}>
+			Items
+		</Range>
+		<Range bind:value={scale} min={40} max={200}>
+			Scale
+		</Range>
 	</form>
 	<div class="custom-scroll {styles.wrapper}">
 		<ul style:--masonry-item-size="{scale}px">
