@@ -28,14 +28,14 @@
 	import styles from "./.blog.module.css";	
 
 	import type { Blogpost } from "../../../types";
-	import type { QueryOption } from "@utils/query";
+	import type { QueryItem } from "@utils/query";
 
 	export let blogposts: Blogpost[] = [];
 
 	type Query<T> = {
-		"content-lang": QueryOption<string[], T>;
-		"content-topics": QueryOption<string[], T>;
-		"content-series": QueryOption<string[], T>;
+		"content-lang": QueryItem<string[], T>;
+		"content-topics": QueryItem<string[], T>;
+		"content-series": QueryItem<string[], T>;
 	}
 
 	const queryOptions: Query<Blogpost> = {
