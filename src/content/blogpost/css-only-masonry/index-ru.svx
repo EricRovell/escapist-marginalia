@@ -2,10 +2,10 @@
 title: "Галерея изображений в раскладке Masonry на (почти) чистом CSS"
 description: "Реализуем компонент для галереи изображений в стиле раскладки Masonry, используя возможности CSS."
 lang: ru
-created: 2022-04-27T13:11:00.000Z
-updated: 2022-04-27T13:11:00.000Z
+created: 2022-05-11T15:30:00.000Z
+updated: 2022-05-11T15:30:00.000Z
 keywords: [ "css", "web" ]
-published: false
+published: true
 layout: blogpost
 ---
 
