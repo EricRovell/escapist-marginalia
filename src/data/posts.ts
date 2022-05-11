@@ -1,7 +1,7 @@
 import { basename, dirname } from "path";
 import { find } from "@utils/query";
 import type { Blogpost, BlogpostMetadata } from "../types";
-import type { QueryOption } from "@utils/query";
+import type { QueryItem } from "@utils/query";
 
 async function fetchBlogposts(): Promise<Blogpost[]> {
 	const posts: Blogpost[] = [];
@@ -34,9 +34,9 @@ export async function getBlogposts({ lang, keywords, published }: Partial<Blogpo
 	const blogposts = await fetchBlogposts();
 
 	type Query<T> = {
-		"published": QueryOption<boolean, T>;
-		"lang": QueryOption<"en" | "ru", T>;
-		"keywords": QueryOption<string[], T>;
+		"published": QueryItem<boolean, T>;
+		"lang": QueryItem<"en" | "ru", T>;
+		"keywords": QueryItem<string[], T>;
 	};
 
 	const query: Query<Blogpost> = {
@@ -57,9 +57,11 @@ export async function getBlogposts({ lang, keywords, published }: Partial<Blogpo
 		}
 	};
 
-	const result = find(blogposts, query);
+	const sortByDate = (a: Blogpost, b: Blogpost) => {
+		return new Date(a.created) > new Date(b.created)
+			? -1
+			: 1;
+	};
 
-	return limit
-		? result.slice(0, limit)
-		: result;
+	return find(blogposts, query, { limit, sort: sortByDate });
 }
