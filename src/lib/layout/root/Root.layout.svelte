@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { Masthead, Footer } from "@components";
+  import { Masthead, Footer, SideMenu } from "@components";
+  import MobileNav from "./Root.SideMenu.svelte";
+  import { t } from "@core/i18n";
 
   import "@styles/utility.css";
   import "@styles/tokens.css";
@@ -13,6 +15,12 @@
 
 <div class={styles.app}>
   <Masthead />
+  <SideMenu>
+    <svelte:fragment slot="title">
+      {$t("dict.menu")}
+    </svelte:fragment>
+    <MobileNav />
+  </SideMenu>
 	<div class={styles.content}>
 		<slot />
 	</div>

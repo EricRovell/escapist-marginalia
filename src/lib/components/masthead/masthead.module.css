@@ -38,17 +38,17 @@
 
 @media screen and (max-width: 650px) {
 	.masthead {
-		grid-template: 1fr / repeat(2, 1fr);
-		grid-template-areas: "navigation controls";
+		grid-template: 1fr / 1fr;
+		grid-template-areas: "logo . controls";
 	}
 
-	.masthead > section[label="logo"] {
+	.masthead > section[label="navigation"] {
 		display: none;
 	}
 }
 
-@media screen and (max-width: 500px) {
-	.masthead > section[label="controls"] > :global(.lang-select) {
+@media screen and (max-width: 520px) {
+	.masthead > section[label="navigation"] {
 		display: none;
 	}
 }
