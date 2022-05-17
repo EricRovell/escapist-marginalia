@@ -25,7 +25,8 @@
 		"recent-photos": "Recent Photos",
 		"entire-gallery": "Entire gallery",
 		"pinned-projects": "Pinned Projects",
-		"all-projects": "All projects"
+		"all-projects": "All projects",
+		"menu": "Menu"
   },
   "tooltip": {
     "change-theme": "Change theme",

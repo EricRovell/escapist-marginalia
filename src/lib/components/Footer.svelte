@@ -53,7 +53,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: var(--space-l) 0;
     background: var(--surface-2);
   }
 
@@ -64,6 +63,8 @@
     gap: var(--space-m);
     width: 100%;
     height: 100%;
+    padding-top: var(--space-l);
+    padding-bottom: var(--space-l);
 
     justify-self: center;
   }
@@ -91,6 +92,13 @@
     .wrapper {
       grid-template: repeat(2, 1fr) / 1fr;
       justify-items: center;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .wrapper {
+      /* floating button offset */
+      padding-bottom: 6rem;
     }
   }
 </style>
