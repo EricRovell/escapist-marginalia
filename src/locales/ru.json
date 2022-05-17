@@ -25,7 +25,8 @@
 		"recent-photos": "Последние фотографии",
 		"entire-gallery": "Вся галерея",
 		"pinned-projects": "Закреплённые проекты",
-		"all-projects": "Все проекты"
+		"all-projects": "Все проекты",
+		"menu": "Меню"
   },
   "tooltip": {
     "change-theme": "Сменить тему оформления",
