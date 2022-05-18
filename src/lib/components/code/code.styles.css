@@ -1,7 +1,29 @@
+/* variation fonts */
+@font-face {
+  font-family: "fira-code-vf";
+  src: url("/fonts/fira-code-vf.woff2") format("woff2-variations");
+}
+
+/* fallbacks, regular */
+@font-face {
+  font-family: "fira-code-regular";
+  src: url("/fonts/fira-code-regular.woff2") format("woff2");
+}
+
+:root {
+  --font-monospace: "fira-code-regular", Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    --font-monospace: "fira-code-vf", Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+  }
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
 	color: var(--code-color);
-	font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+	font-family: var(--font-monospace);
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
