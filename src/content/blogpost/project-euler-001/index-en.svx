@@ -1,0 +1,116 @@
+---
+title: "Project Euler #1: Multiples of 3 or 5"
+description: "The Project Euler #1 solution."
+series: "project-euler"
+lang: en
+created: 2022-05-24T00:20:00.000Z
+updated: 2022-05-24T00:20:00.000Z
+keywords: [ "project euler", "math" ]
+published: true
+layout: blogpost
+---
+
+<script>
+  import { EulerProblem } from "@components/blogpost";
+	import "katex/dist/katex.min.css";
+</script>
+
+<EulerProblem problem={1}>
+
+	If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+	Find the sum of all the multiples of 3 or 5 below 1000.
+
+</EulerProblem>
+
+## Bruteforce
+
+The first idea how to solve this problem is actually to brootforce is. One thousand numbers divisibility tests is not a time-consuming task. We need to iterate over all natural numbers till one thousand and test every one of them.
+
+Divisibility test may be implemented using [modulo operator][modulo-operator]. The modulo operator calculates the remainder of the integer division. If for a given number and a divisor the remainder is equals zero the number is divisible:
+
+```js
+number % divisor == 0
+```
+
+The solution can be written as:
+
+```python
+def main(limit: number): number:
+  total = 0
+  for number in range(limit):
+    if number % 3 == 0 or number % 5 == 0:
+      total += number
+  return number
+```
+
+Or just the same idea, but using list comprehension:
+
+```python
+  result = lambda limit: sum([ i for i in range(limit) if i % 3 == 0 or i % 5 == 0 ])
+```
+
+## Arithmeric approach
+
+Even though the brootforce solution is simple and fast enough, there is some space for improvement. Let's look closely at all natural numbers divisible by 3, for example:
+
+```math
+3, 6, 9, 12, 15, 18...
+```
+
+The thing is, it is an [arithmetic progression][arithmetic-progression] with a common difference of 3. Let's simplify the sequence by factoring out the common divisor:
+
+```math
+3 \times (1 + 2 + 3 + 4 + ... + N)
+```
+
+The same steps can be done with all natural numbers divisible by 5 and others. In each case we have the same arithmetic progression, so the next step is to calculate the [arithmetic series][arithmetic-series] using the equation:
+
+```math
+S_n = \frac{a_1 + a_n}{2} \times n
+```
+
+With the arithmetic series equation we can find the sum of all the natural numbers divisible by defined divisor up to the limit using simple function:
+
+```python
+def arithmetic_series(divisor, limit):
+  last_multiple = floor((limit - 1 ) / divisor)
+  return divisor * (1 + last_multiple) * last_multiple / 2
+```
+
+The last step is to calculate the solution as the sum of all divisible natural numbers by 3 or 5 up to defined limit:
+
+```python
+def main(limit):
+  return arithmetic_series(3, limit) + arithmetic_series(5, limit)
+```
+
+Well, not exactly. There is still a problem: with this approach we have dublicates. Some numbers like 15 are divisible by 3 *and* 5, so we must take this into account by subtracting all these numbers from the result. The final solution will look like this:
+
+```python
+def arithmetic_series(divisor, limit):
+  last_multiple = floor((limit - 1) / divisor)
+  return divisor * (1 + last_multiple) * last_multiple / 2
+
+def main(limit):
+  return arithmetic_series(3, limit) + arithmetic_series(5, limit) - arithmetic_series(3 * 5, limit)
+```
+
+## Comparison
+
+Since we are testing each number in brootforce solution the algorithm scales linearly which can be expessed using Big O Notation as *O(n)*, not bad actually. The arithmetic approach algorithm has a constant computation time, which is expressed as *O(1)*, which is much better.
+
+## References
+
+- [Project Euler][project-euler]
+- [Project Euler Problem 1: Multiples of 3 or 5][problem]
+- [Arithmetic Progression][arithmetic-progression]
+- [Arithmetic Series Formula][arithmetic-series]
+- [Problem solution by Kristian Edlund](https://www.mathblog.dk/project-euler-problem-1/)
+
+<!-- Reference Links -->
+[project-euler]: http://projecteuler.net/
+[problem]: https://projecteuler.net/problem=1
+[modulo-operator]: https://en.wikipedia.org/wiki/Modulo_operation
+[arithmetic-progression]: https://en.wikipedia.org/wiki/Arithmetic_progression
+[arithmetic-series]: https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:series/x9e81a4f98389efdf:arith-series/v/formula-for-arithmetic-series

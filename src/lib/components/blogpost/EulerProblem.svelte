@@ -5,24 +5,21 @@
 	export let problem: number;
 </script>
 
-<article class="euler-problem">
+<article class="euler-problem card">
 	<section>
 		<slot />
 	</section>
 	<footer>
 		<Link href={`https://projecteuler.net/problem=${problem}`}>
-			<Icon path={iconURL} size="0.85em" /> Problem #{problem}
+			Problem #{problem}
 		</Link>
 	</footer>
 </article>
 
 <style>
 	.euler-problem {
-		--border: solid 1px hsl(var(--gray-h) var(--gray-s-600) var(--gray-l-600) / 0.5);
-
 		display: flex;
 		flex-direction: column;
-		border: var(--border);
 	}
 
 	.euler-problem > section {
