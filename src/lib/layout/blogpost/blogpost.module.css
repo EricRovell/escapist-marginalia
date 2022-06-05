@@ -1,45 +1,28 @@
-/* root layout */
-
-.body {
-	display: grid;
-	grid-template-rows: auto 1fr;
-	grid-template-columns: 1fr 65ch calc(25ch + 1.75 * var(--space-xl)) 1fr;
-	grid-template-areas:
-		". header header ."
-		". article toc .";
-	justify-self: center;
-	width: 100%;
-	margin-bottom: 20vh;
-}
-
-/* article */
-
 .article {
 	grid-area: article;
 
 	display: grid;
+	grid-template-columns: 1fr min(calc(100% - 2 * var(--space-m)), 65ch) 1fr;
 	justify-self: center;
 	gap: var(--space-m);
+	/* width: min(100%, calc(65ch + 2 * var(--space-s))); */
 
-	line-height: 1.25;
+	line-height: 1.5;
 }
 
-.sidebar {
-	grid-area: toc;
-	justify-self: end;
+.article > * {
+	grid-column: 2;
+}
 
-	position: sticky;
-	top: 7.5vh;
-	height: min-content;
+.article > :global(.wide) {
+	width: 100%;
+	grid-column: 1 / 4;
 }
 
 .article :is(h2, h3, h4, h5, h6) {
-	--border-size: 1px;
-
-	color: var(--color-primary);
+	color: var(--color-heading);
 	margin-top: var(--space-m);
 	padding-bottom: var(--space-s);
-	border-bottom: solid var(--border-size) hsl(var(--gray-h) var(--gray-s-600) var(--gray-l-600) / 0.5);
 }
 
 .article :global(.katex-display) {
@@ -63,32 +46,44 @@
 	margin-left: var(--space-s);
 }
 
-.article ol {
-	list-style: decimal;
-	list-style-position: inside;
-
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-s);
-
-	color: var(--color-link);
+.article ul:not([class]) {
+	list-style: initial;
+	list-style-position: outside;
 }
 
-/* responsiveness */
+.article ul li:not([class]) {
+	padding-inline-start: 1ch;
+	margin-left: 1ch;
+}
 
-@media screen and (max-width: 1150px) {
-	.body {
-		grid-template-rows: repeat(3, auto);
-		grid-template-columns: 1fr min(70ch, calc(100% - var(--space-l))) 1fr;
-		grid-template-areas:
-			". header ."
-			". toc ."
-			". article .";
-		row-gap: var(--space-l);
-	}
+.article ul li:not([class])::marker {
+	content: "»";
+	color: var(--color-blue-400);
+	font-size: 1.5em;
+}
 
-	.sidebar{
-		position: initial;
-		justify-self: start;
-	}
+.article ol:not([class]) {
+	list-style: decimal;
+	list-style-position: outside;
+}
+
+.article ol li:not([class]) {
+	margin-left: 1.5ch;
+}
+
+.article ol li:not([class]):not(:last-child) {
+	margin-bottom: var(--space-xs);
+}
+
+.article ol li:not([class])::marker {
+	color: var(--color-blue-400);
+}
+
+.article abbr {
+	text-decoration: green dashed underline;
+	text-underline-offset: var(--space-xs);
+}
+
+.article pre {
+	margin: var(--space-m) 0;
 }

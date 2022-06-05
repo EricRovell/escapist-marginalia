@@ -1,0 +1,74 @@
+[
+	{
+		"id": "20180819",
+		"src": "/img/gallery/2018-08-19.webp",
+		"width": 1200,
+		"height": 800,
+		"alt": "Sunset at the shore with scarlet clouds.",
+		"title": "Scarlet wind"
+	},
+	{
+		"id": "20190217",
+		"src": "/img/gallery/2019-02-17.webp",
+		"width": 1200,
+		"height": 800,
+		"alt": "Black and white photography of the tall building.",
+		"title": "Periodic"
+	},
+	{
+		"id": "20200613",
+		"src": "/img/gallery/2020-06-13.webp",
+		"width": 800,
+		"height": 1200,
+		"alt": "White nights view at the shore.",
+		"title": "Starless night"
+	},
+	{
+		"id": "20200305",
+		"src": "/img/gallery/2020-03-05.webp",
+		"width": 1200,
+		"height": 1200,
+		"alt": "Tree leaves illuminated by the night lamp.",
+		"title": "Luminous"
+	},
+	{
+		"id": "20201010",
+		"src": "/img/gallery/2020-10-10.webp",
+		"width": 1200,
+		"height": 1200,
+		"alt": "Photoart with bridge photo rotated repeatedly around 4 times resulting in a square.",
+		"title": "Inception"
+	},
+	{
+		"id": "20210404",
+		"src": "/img/gallery/2021-04-04.webp",
+		"width": 1000,
+		"height": 1500,
+		"alt": "Sunset at the river with light clouds and flying bird at the sky.",
+		"title": "April"
+	},
+	{
+		"id": "20180305",
+		"src": "/img/gallery/0047.webp",
+		"width": 1500,
+		"height": 844,
+		"alt": "Reflection of the Lamp on the wet ground.",
+		"title": "Upside Down"
+	},
+	{
+		"id": "20210307",
+		"src": "/img/gallery/2021-03-07.webp",
+		"width": 910,
+		"height": 1500,
+		"alt": "Heavy snowfall at night illuminated by the lamp.",
+		"title": "Against the Wind"
+	},
+	{
+		"id": "20210620",
+		"src": "/img/gallery/3378.webp",
+		"width": 1500,
+		"height": 1000,
+		"alt": "Bird sitting on the lamp.",
+		"title": "Determination"
+	}
+]

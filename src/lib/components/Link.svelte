@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let className: string | undefined = undefined;
 	export let href: string;
 	export let targetBlank = false;
 	export let nofollow = false;
@@ -13,11 +14,13 @@
 </script>
 
 <a
+	class={className}
 	{href}
 	{target}
 	{rel}
 	{title}
 	{...$$restProps}
+	aria-disabled={disabled ? "true" : undefined}
 	class:disabled
 	tabIndex={disabled ? -1 : undefined}
 	>
@@ -29,28 +32,32 @@
 		display: inline-flex;
 		align-items: baseline;
 		gap: var(--space-xs);
-		color: var(--link-color);
+		color: var(--color-link);
 		font-size: inherit;
 	}
 
-	a:hover {
-		color: var(--link-color-active);
+	a:not(.disabled):hover {
+		color: var(--color-link-hover, currentColor);
 		text-decoration: underline;
 	}
 
 	a:focus-visible {
-		outline: 1.5px dashed var(--link-color-active);
+		outline: 2px dashed var(--color-link-hover, currentColor);
 		outline-offset: calc(var(--space-xs) / 2);
 	}
 
 	a:active {
-		color: var(--link-color-active);
-		background-color: var(--link-bg-active);
+		color: var(--color-link-active);
+		background-color: var(--color-link-active-bg);
 	}
 
-	.disabled {
-    pointer-events: none;
-    opacity: 0.7;
+	a[aria-disabled="true"] {
+		cursor: not-allowed;
+		opacity: 0.7;
     text-decoration: line-through;
-  }
+	}
+
+	a[aria-disabled="true"]:active {
+		pointer-events: none;
+	}
 </style>

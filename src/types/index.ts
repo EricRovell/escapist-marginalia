@@ -9,7 +9,7 @@ export interface BlogpostMetadata {
 	series: string;
 	created: string;
 	updated: string;
-	keywords: string;
+	keywords: string[];
 	published?: boolean;
 	layout?: string;
 	lang: "ru" | "en";
@@ -28,7 +28,7 @@ export interface Blogpost extends Omit<BlogpostMetadata, "created" | "updated" |
 /**
  * Defines a used `repo` object subset from `Github Rest API`
  */
-export interface GithubRepo {
+export interface GithubAPIRepo {
 	name: string;
 	description: string;
 	homepage: string;
@@ -37,13 +37,34 @@ export interface GithubRepo {
 	topics: string[];
 }
 
+export interface ProjectData {
+	name: string;
+	type: "library" | "app";
+	repository: string;
+	npm?: string;
+	website?: string;
+}
+
+export interface Project {
+	name: string;
+	description: string;
+	homepage: string;
+	github: string;
+	language: string;
+	topics: string[];
+	type: "library" | "app";
+	repository: string;
+	npm?: string;
+	website?: string;
+}
+
 /**
  * Defines a Project data used to render the view.
  */
 export interface Project extends Omit<GithubRepo, "html_url"> {
 	type: "app" | "package" | "website";
 	github: string;
-	packageName?: string;
+	npm?: string;
 }
 
 export type { GalleryItem } from "@components";

@@ -1,89 +1,89 @@
 <script context="module" lang="ts">
-	import type { Load } from "@sveltejs/kit";
-
-	export const load: Load = async ({ fetch }) => {
-		const res = await fetch("/api/blog/posts.json?sort=-1");
-
-		if (res.ok) {
-			return {
-				props: {
-					posts: await res.json()
-				}
-			};
-		}
-
-		return {
-			status: res.status,
-			error: new Error("Could not load URL")
-		};
-	};
+	import type { Blogpost, Project, GalleryItem } from "../../types";
 </script>
 
 <script lang="ts">
-	import styles from "@styles/pages/home.module.css";
-	import { pathBlogpost } from "@paths";
-	import { PageMeta, Link, Timeline, Datetime } from "@components";
-	import { ContentFilter } from "@lib/layout";
-	import { locale, t } from "@core/i18n";
-	import { groupBy } from "@lib/util";
-	import type { Blogpost } from "../../types";
+	import { pathBlog, pathGallery, pathProjects } from "@paths";
+	import { PageMeta, Link, Image, CardArticle, CardProject, GalleryGrid } from "@components";
+	import { LayoutPage } from "@layout";
+	import { t } from "@core/i18n";
+	import styles from "./.home.module.css";
 
-	export let posts: Blogpost[] = [];
-
-	let contentLanguage: string[] = [ $locale ];
-	let filteredPosts: Blogpost[];
-	let groupedByYear: Record<number, Blogpost[]>;
-
-	$: filteredPosts = posts.filter(post => contentLanguage.includes(post.lang));
-	$: groupedByYear = groupBy(filteredPosts, post => new Date(post.created).getFullYear());
+	export let blogposts: Blogpost[] = [];
+	export let photos: GalleryItem[] = [];
+	export let projects: Project[] = [];
 </script>
 
 <PageMeta route="home" />
 
-<!--
-	Note:
-	
-	Posts from API are sorted by date. Nevertheless, after gouping them by a year,
-	object keys are sorted ASC. Have to reverse the entries.
--->
-<div class={styles.layout}>
-	<ContentFilter bind:contentLanguage>
-		<Timeline.Container>
-			{#each Object.entries(groupedByYear).reverse() as [ year, posts ]}
-				<Timeline.Section>
-					<svelte:fragment slot="header">
-						<Datetime date={year} options={{ year: "numeric" }} />
-					</svelte:fragment>
-					{#each posts as { title, slug, created } (slug)}
-						<Timeline.Item>
-							<article>
-								<footer>
-									<Datetime
-										date={created}
-										locale={$locale}
-										options={{ month: "long", day: "numeric" }} />, {$t("message.blogpost")}
-								</footer>
-								<Link	href={$pathBlogpost(slug)}>
-									{title}
-								</Link>
-							</article>
-						</Timeline.Item>
+<LayoutPage classNameContent={styles.page} wide>
+	<svelte:fragment slot="banner">
+		<h1 class="headline">
+			{$t("pages.home.title")}
+		</h1>
+		<p class="headline">
+			{$t("pages.home.description")}
+		</p>
+	</svelte:fragment>
+	<div class={styles.layout}>
+		<section label="recent-posts">
+			<div>
+				<header>
+					<h2 class="heading">{$t("dict.recent-posts")}</h2>
+					<Link href={$pathBlog}>
+						&#x2192; {$t("dict.all-posts")}
+					</Link>
+				</header>
+				<ul class="grid-flexible" style="--item-size: 250px">
+					{#each blogposts as { created, description, keywords, title, slug }}
+						<li>
+							<CardArticle
+								{created}
+								{description}
+								{keywords}
+								{title}
+								{slug}
+							/>
+						</li>
 					{/each}
-				</Timeline.Section>
-			{/each}
-		</Timeline.Container>
-	</ContentFilter>
-</div>
-
-<style>
-	article {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-xs);
-	}
-
-	article > footer {
-		font-size: var(--font-size-2);
-    color: hsl(var(--gray-h) var(--gray-s-700) var(--gray-l-700));
-	}
-</style>
+				</ul>
+			</div>
+		</section>
+		<section label="recent-photos">
+			<div>
+				<header>
+					<h2 class="heading">{$t("dict.recent-photos")}</h2>
+					<Link href={$pathGallery}>
+						&#x2192; {$t("dict.entire-gallery")}
+					</Link>
+				</header>
+				<GalleryGrid items={photos} let:item>
+					<Image {...item} />
+				</GalleryGrid>
+			</div>
+		</section>
+		<section label="recent-projects">
+			<div>
+				<header>
+					<h2 class="heading">{$t("dict.pinned-projects")}</h2>
+					<Link href={$pathProjects}>
+						&#x2192; {$t("dict.all-projects")}
+					</Link>
+				</header>
+				<ul class="grid-flexible" style="--item-size: 250px">
+					{#each projects as { title, description, github, npm, homepage }}
+						<li>
+							<CardProject
+								{description}
+								{github}
+								{homepage}
+								{npm}
+								{title}
+							/>
+						</li>
+					{/each}
+				</ul>
+			</div>
+		</section>
+	</div>
+</LayoutPage>

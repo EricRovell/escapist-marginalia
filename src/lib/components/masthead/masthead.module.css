@@ -1,0 +1,54 @@
+.masthead {
+	grid-area: masthead;
+	
+	display: grid;
+	grid-template: 1fr / repeat(3, 1fr);
+	grid-template-areas: "logo navigation controls";
+	place-items: center;
+	gap: var(--spacing-3, 0.75em);
+	height: var(--header-height, 75px);
+	z-index: var(--z-index-navigation);
+
+	background-color: var(--masthead-bg, transparent);
+}
+
+.masthead > section[label="logo"] {
+	grid-area: logo;
+	justify-self: start;
+	color: var(--color-primary-400);
+}
+
+.masthead >section[label="navigation"] {
+	grid-area: navigation;
+	font-size: var(--font-size-m);
+}
+
+.masthead >section[label="controls"] {
+	grid-area: controls;
+	justify-self: end;
+	
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: auto;
+	grid-template-rows: 1fr;
+	align-items: center;
+	gap: var(--space-s);
+	width: max-content;
+}
+
+@media screen and (max-width: 650px) {
+	.masthead {
+		grid-template: 1fr / 1fr;
+		grid-template-areas: "logo . controls";
+	}
+
+	.masthead > section[label="navigation"] {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.masthead > section[label="navigation"] {
+		display: none;
+	}
+}

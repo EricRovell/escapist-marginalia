@@ -6,7 +6,9 @@ import adapter from "@sveltejs/adapter-static";
 import path from "path";
 
 const aliasList = [
+	{ name: "@data", path: "./src/data" },
 	{ name: "@components", path: "./src/lib/components" },
+	{ name: "@layout", path: "./src/lib/layout" },
 	{ name: "@lib", path: "./src/lib" },
 	{ name: "@styles", path: "./src/lib/styles" },
 	{ name: "@stores", path: "./src/lib/stores" },
@@ -27,6 +29,9 @@ const config = {
 	extensions: [ ".svelte", ".svx" ],
 	kit: {
 		adapter: adapter(),
+		prerender: {
+			default: false
+		},
 		vite: {
 			resolve: {
 				alias: Object.fromEntries(aliasList.map(alias => (

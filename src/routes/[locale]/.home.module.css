@@ -1,0 +1,51 @@
+/* override page layout */
+.page {
+	margin-top: unset;
+}
+
+.layout {
+	display: grid;
+	gap: var(--space-l);
+	width: 100%;
+}
+
+.layout h2 {
+	font-size: var(--font-size-xl);
+}
+
+.layout section > div > header {
+	margin-bottom: var(--space-l);
+}
+
+.layout > section {
+	display: flex;
+	justify-content: center;
+	padding: var(--space-xl) 0;
+}
+
+.layout > section div {
+	display: flex;
+	flex-direction: column;
+	width: min(100%, calc(var(--max-width) + 2 * var(--space-m)));
+	padding: var(--space-m);
+}
+
+.layout > section:nth-child(2n) {
+	background-color: var(--surface-2);
+}
+
+.layout > section[label="recent-photos"] img {
+	object-fit: cover;
+	border-radius: var(--radius-l);
+}
+
+@media screen and (max-width: 640px) {
+	.layout {
+		grid-template: min-content auto / 1fr;
+	}
+
+	.layout > main {
+		grid-row: 2;
+		grid-column: 1;
+	}
+}

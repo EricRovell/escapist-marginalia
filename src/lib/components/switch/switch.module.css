@@ -1,0 +1,90 @@
+.switch {
+	--switch-thumb-size: 1.35rem;
+	--switch-track-size: calc(var(--switch-thumb-size) * 1.5);
+	--switch-track-padding: 4px;
+	--switch-border-radius: 5px;
+	--switch-transition-duration: 350ms;
+	--switch-highlight-size: calc(0.2 * var(--switch-thumb-size));
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1ch;
+
+	cursor: pointer;
+	user-select: none;
+}
+
+.input {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+	flex-shrink: 0;
+  display: grid;
+  align-items: center;
+	margin-left: auto;
+  grid: [track] 1fr / [track] 1fr;
+	inline-size: var(--switch-track-size);
+  block-size: var(--switch-thumb-size);
+	border: none;
+	border-radius: var(--switch-border-radius);
+  padding: var(--switch-track-padding);
+  background: var(--switch-track-color);
+	outline-offset: 5px;
+	transition: box-shadow var(--switch-transition-duration) linear;
+
+  -webkit-tap-highlight-color: transparent;
+	touch-action: pan-y;
+}
+
+/* thumb */
+.input::after {
+	content: "";
+  grid-area: track;
+  inline-size: calc(var(--switch-thumb-size) - 2 * var(--switch-track-padding));
+  block-size: calc(var(--switch-thumb-size) - 2 * var(--switch-track-padding));;
+	background-color: var(--switch-thumb-color);
+	border-radius: var(--switch-border-radius);
+	transform: translateX(var(--switch-thumb-position, 0%));
+	
+	transition:
+		transform var(--switch-transition-duration) ease,
+		background-color 0.25s ease;
+}
+
+.input:checked {
+	background-color: var(--switch-track-color-active);
+  --switch-thumb-position: calc(var(--switch-track-size) - 100% - 2 * var(--switch-track-padding));
+}
+
+.input:hover:not(:disabled) {
+	box-shadow: 0 0 0 var(--switch-highlight-size) var(--switch-thumb-color-highlight);
+}
+
+.switch:hover:not(:disabled) {
+	color: var(--switch-track-color-active);
+}
+
+.input:disabled::after {
+	background-color: unset;
+	box-shadow: inset 0 0 0 2px var(--switch-thumb-color);
+}
+
+.switch .input:disabled {
+	cursor: not-allowed;
+}
+
+.input:focus-visible {
+	outline: 2px dashed var(--color-blue-500);
+}
+
+.switch:global(.disabled) {
+	cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.input::after {
+		transition: unset;
+	}
+}

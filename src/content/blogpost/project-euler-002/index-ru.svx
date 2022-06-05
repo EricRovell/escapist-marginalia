@@ -5,7 +5,7 @@ series: "project-euler"
 lang: ru
 created: 2021-06-11T00:00:00.000Z
 updated: 2021-06-13T00:00:00.000Z
-keywords: "проект эйлера, математика, числа фибоначчи"
+keywords: [ "project euler", "math" ]
 published: true
 layout: blogpost
 ---

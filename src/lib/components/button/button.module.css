@@ -1,0 +1,99 @@
+.button {
+	--button-accent: var(--color-blue-500);
+	--button-color: var(--color-blue-200);
+
+	--shadow-size: 0;
+	--button-bg-alpha: 1;
+	
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--spacing-2, 0.5em);
+
+	width: auto;
+	height: auto;
+	min-width: 5em;
+	min-height: 1em;
+	padding: var(--space-s);
+	border-radius: 0.25em;
+	background-color: var(--button-accent);
+	
+	color: var(--button-color, inherit);
+	font-size: inherit;
+	font-family: inherit;
+	font-variation-settings: "wght" 500;
+
+	outline: none;
+	border: none;
+	cursor: pointer;
+
+	box-shadow: 0 0 0 var(--shadow-size) var(--focus-ring-color);
+
+	transition:
+		background-color 150ms cubic-bezier(0, 0, 0.58, 1),
+		filter 150ms cubic-bezier(0, 0, 0.58, 1),
+		box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button::fill */
+
+.button.fill {
+	color: var(--variant-contrast);
+}
+
+/* Button::ouline */
+
+.button.outline {
+	--button-bg-alpha: 0;
+	
+	border: 2px solid hsl(var(--variant-h) var(--variant-s) var(--variant-l));
+	color: hsl(var(--variant-h) var(--variant-s) var(--variant-l));
+}
+
+.button.outline:hover {
+	--button-bg-alpha: 0.2;
+}
+
+/* Button::text */
+
+.button.text {
+	--button-bg-alpha: 0;
+	color: hsl(var(--variant-h) var(--variant-s) var(--variant-l));
+}
+
+.button.text:hover {
+	--button-bg-alpha: 0.1;
+}
+
+/* Feedback */
+
+.button:active {
+	filter: brightness(120%) hue-rotate(5deg);
+	transform: scale(0.975);
+}
+
+.button:active,
+.button:hover,
+.button:focus {
+	--shadow-size: 5px;
+}
+
+/* State */
+
+.button:disabled {
+	opacity: 0.75;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+/* Display */
+
+.wide {
+	display: flex;
+}
+
+@media (hover: hover) {
+	.button:hover {
+		filter: brightness(110%) hue-rotate(5deg);
+	}
+}

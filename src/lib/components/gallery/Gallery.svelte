@@ -1,59 +1,57 @@
 <script context="module" lang="ts">
-	export interface GalleryItem {
-		path: string;
-		format: string;
-		width: number;
-		height: number;
-		alt: string;
-	}
-
-	export type GetSrc = (item: GalleryItem) => string;
-
-	function getItemsSpan({ width, height }: Pick<GalleryItem, "width" | "height">, cellSize = 400): string {
-		const columnSpan = Math.floor(width / cellSize);
-		const rowSpan = Math.floor(height / cellSize);
-		return `--column-end: span ${columnSpan}; --row-end: span ${rowSpan};`;
-	}
+	import type { GalleryItem, GetSrc } from "./Gallery.types";
 </script>
 
 <script lang="ts">
-	import Image from "@lib/components/Image.svelte";
+	import { afterNavigate } from "$app/navigation";
+	import Picture from "./GalleryImage.svelte";
 	import Modal from "../modal/Modal.svelte";
+	import Image from "../image/Image.svelte";
+	import Grid from "./Grid.svelte";
+	import Switch from "../switch/Switch.svelte";
+	import Icon from "../icons/Icon.svelte";
+	import { iconMasonry } from "../icons/default";
 	import styles from "./gallery.module.css";
 
+	export let getSrc: GetSrc = (item: GalleryItem) => item.src;
 	export let items: GalleryItem[] = [];
-	export let cellScale = 400;
-	export let cellSize = 100;
-	export let getSrc: GetSrc;
+	export let masonry = false;
 
-	let modalOpened = false;
-	let modalImage: GalleryItem;
+	let preview: GalleryItem | null = null;
 
-	const openModal = (index: number) => {
-		modalImage = items[index];
-		modalOpened = true;
-	};
+	afterNavigate(() => {
+		const photoID = new URLSearchParams(window.location.search).get("id") ?? null;
+		if (photoID) {
+			preview = items.filter(({ id }) => id === photoID)[0];
+		}
+	});
 </script>
 
-<!--
-	Responsive Gallery
-	Idea source: https://www.samdawson.dev/article/auto-flow-dense-varying-image-sizes
--->
-<ul class={styles.gallery} style="--cell-size: {cellSize}px;">
-	{#each items as item, index}
-		<li style={getItemsSpan(item, cellScale)} on:click={() => openModal(index)}>
-			<Image
-				src={getSrc(item)}
-				{...item}
-			/>
-		</li>
-	{/each}
-</ul>
+<section class={styles.container}>
+	<aside class={styles["control-panel"]}>
+		<Switch bind:checked={masonry} className="card">
+			<Icon path={iconMasonry} />
+			Masonry
+		</Switch>
+	</aside>
+	<Grid {items} {masonry} let:item>
+		{@const { id, title } = item}
+		<Picture {id}>
+			<Image src={getSrc(item)}	{...item} />
+			<svelte:fragment slot="caption">
+				{title}
+			</svelte:fragment>
+		</Picture>
+	</Grid>
+</section>
 
-<Modal bind:open={modalOpened}>
+<!--
+	Fullscreen Preview
+-->
+<Modal open={Boolean(preview)} on:close={() => window.history.go(-1)}>
 	<Image
-		src={getSrc(modalImage)}
-		{...modalImage}
-		className={styles["modal-image"]}
+		className={"modal-image"}
+		src={preview.src}
+		{...preview}
 	/>
 </Modal>

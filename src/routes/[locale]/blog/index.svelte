@@ -2,12 +2,12 @@
 	import type { Load } from "@sveltejs/kit";
 
 	export const load: Load = async ({ fetch }) => {
-		const res = await fetch("/api/blog/posts.json");
+		const res = await fetch("/api/blogposts");
 
 		if (res.ok) {
 			return {
 				props: {
-					posts: await res.json()
+					blogposts: await res.json()
 				}
 			};
 		}
@@ -20,41 +20,94 @@
 </script>
 
 <script lang="ts">
-	import styles from "@styles/pages/blog.module.css";
-	import { PageMeta, Card } from "@components";
-	import { ContentFilter } from "@lib/layout";
-	import { pathBlogpost } from "@core/paths";
+	import { PageMeta, CardArticle, SwitchGroup } from "@components";
+	import { LayoutPage } from "@layout";
 	import { t, locale } from "@core/i18n";
-	import { groupBy } from "@lib/util";
+	import { find } from "@utils/query";
+	import { iconPi, iconImg, iconNumberE, iconGlobe } from "@lib/components/icons/default";
+	import styles from "./.blog.module.css";	
+
 	import type { Blogpost } from "../../../types";
+	import type { QueryItem } from "@utils/query";
 
-	export let posts: Blogpost[] = [];
+	export let blogposts: Blogpost[] = [];
 
-	let contentLanguage: string[] = [ $locale ];
-	let filteredPosts: Blogpost[];
-	let groupedPosts: Array<[ string, Blogpost[]]>;
+	type Query<T> = {
+		"content-lang": QueryItem<string[], T>;
+		"content-topics": QueryItem<string[], T>;
+		"content-series": QueryItem<string[], T>;
+	}
 
-	$: filteredPosts = posts.filter(post => contentLanguage.includes(post.lang));
-	$: groupedPosts = Object.entries(groupBy(filteredPosts, post => post.series));
+	const queryOptions: Query<Blogpost> = {
+		"content-lang": {
+			value: [ $locale ],
+			validator: (value) => value.length > 0,
+			matcher: (value) => (item) => value.includes(item.lang)
+		},
+		"content-topics": {
+			validator: (value) => value.length > 0,
+			matcher: (value) => (item) => value.every(keyword => item.keywords.includes(keyword))
+		},
+		"content-series": {
+			validator: (value) => value.length > 0,
+			matcher: (value) => (item) => item.series === value[0]
+		}
+	};
+
+	$: content = find(blogposts, queryOptions);
 </script>
 
 <PageMeta route="blog" />
 
-<div class={styles.layout}>
-	<ContentFilter bind:contentLanguage>
-		{#each groupedPosts as [ series, posts ]}
-			<section>
-				<h2>{$t(`categories.${series}`)}</h2>
-				<div class={styles.posts}>
-					{#each posts as { title, slug, created }}
-						<Card
-							{title}
-							href={$pathBlogpost(slug)}
-							date={created}
-						/>
-					{/each}
-				</div>
-			</section>
-		{/each}
-	</ContentFilter>
-</div>
+<LayoutPage>
+	<svelte:fragment slot="banner">
+		<h1 class="headline">
+			{$t("pages.blog.title")}
+		</h1>
+		<p class="headline">
+			{$t("pages.blog.description")}
+		</p>
+	</svelte:fragment>
+	<div class={styles.layout}>
+		<main class="grid-flexible">
+			{#each content as { created, description, keywords, title, slug }}
+				<CardArticle
+					{created}
+					{description}
+					{keywords}
+					{title}
+					{slug}
+				/>
+			{/each}
+		</main>
+		<aside class={styles.sidebar}>
+			<SwitchGroup
+				legend={$t("dict.language")}
+				name="content-lang"
+				options={[
+					{ label: "English", value: "en", checked: $locale === "en" },
+					{ label: "Русский", value: "ru", checked: $locale === "ru" }
+				]}
+				bind:group={queryOptions["content-lang"].value}
+			/>
+			<SwitchGroup
+				legend={$t("dict.topics")}
+				name="content-topics"
+				options={[
+					{ label: $t("dict.math"), value: "math", icon: iconPi },
+					{ label: $t("dict.photo"), value: "photo", icon: iconImg },
+					{ label: $t("dict.web"), value: "web", icon: iconGlobe }
+				]}
+				bind:group={queryOptions["content-topics"].value}
+			/>
+			<SwitchGroup
+				legend={$t("dict.series")}
+				name="content-series"
+				options={[
+					{ label: $t("dict.project-euler"), value: "project-euler", icon: iconNumberE },
+				]}
+				bind:group={queryOptions["content-series"].value}
+			/>
+		</aside>
+	</div>
+</LayoutPage>

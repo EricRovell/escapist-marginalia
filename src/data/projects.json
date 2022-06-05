@@ -1,0 +1,28 @@
+[
+	{
+		"name": "blossom",
+		"type": "library",
+		"repository": "EricRovell/blossom",
+		"npm": "https://www.npmjs.com/package/@ericrovell/blossom",
+		"website": "https://ericrovell.github.io/blossom-web"
+	},
+	{
+		"name": "svelte-media-observer",
+		"type": "library",
+		"repository": "EricRovell/svelte-media-observer",
+		"npm": "https://www.npmjs.com/package/svelte-media-observer",
+		"website": "https://svelte.dev/repl/e9f6a16dfd9a4013b1a0a76347b206eb?version=3"
+	},
+	{
+		"name": "rational",
+		"type": "library",
+		"repository": "EricRovell/rational",
+		"npm": "https://www.npmjs.com/package/@ericrovell/rational"
+	},
+	{
+		"name": "radix",
+		"type": "app",
+		"repository": "EricRovell/radix",
+		"website": "https://radix.vercel.app/"
+	}
+]

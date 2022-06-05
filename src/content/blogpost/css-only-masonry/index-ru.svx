@@ -1,0 +1,194 @@
+---
+title: "Галерея изображений в раскладке Masonry на (почти) чистом CSS"
+description: "Реализуем компонент для галереи изображений в стиле раскладки Masonry, используя возможности CSS."
+lang: ru
+created: 2022-05-11T15:30:00.000Z
+updated: 2022-05-11T15:30:00.000Z
+keywords: [ "css", "web" ]
+published: true
+layout: blogpost
+---
+
+<script>
+  import { Details } from "@components";
+  import { GridDense, GridCells, MasonryDemo, MasonryShift } from "./components";
+</script>
+
+Раскладка Masonry, известная под множеством имён: *плиточная вёрстка*, *Каскадная сетка*, "раскладка как в Pinterest", является в каком-то смысле привычной сеткой, но без фиксированной высоты строк. Основной смысл в использовании раскладки - максимильно эффективно использовать доступное пространство, избавляясь от лишних пробелов:
+
+<MasonryShift />
+
+Своим названием раскладка обязана слову "каменщик", внешне она напоминает укладку каменной стены. Таким образом, Masonry позволяет заполнять пространство эффективно элементами абсолютно различных размеров.
+
+<Details>
+  <svelte:fragment slot="title">
+    Что такое Masonry?
+  </svelte:fragment>
+
+  В раскладке Masonry элементы располагаются друг за другом в строчном направлении. В отличие от привычной табличной раскладки при переносе на новую строку элементы смещаются в вертикальном направлении, заполняя доступное пространство за элементом в предыдущей строке соответственной колонки.
+
+</Details>
+
+## Текущие возможности и перспективы
+
+Приблизиться к Masonry можно несколькими способами:
+
+- свойство `column-count` - самый очевидный кандидат, правда, приближением подобное решение является из-за наполнения по вертикали и возникающими в связи с этим сложностями с отзывчивостью;
+- использование `display: flex` с наполнением по вертикали в отличие от колонок, позволяет управлять визуальным порядком элементов, но тем не менее снова возникают проблемы с отзывчивостью и присутсвуют "магические числа". Узнать более подробно о данном подходе можно [здесь][css-masonry-flex];
+- раскладка CSS Grid со свойством `grid-auto-flow: dense` частично нарушает визуальный порядок, и самое важное, всё ещё остается сеткой с фиксированной высотой строк.
+
+Получить настоящую Masonry в скором будущем можно будет парой способов:
+
+- Используя <abbr title="Cascading Style Sheets">CSS</abbr>; уже сейчас разрабатывается [спецификация][draft], возможно, раскладка станет частью модуля CSS Grid. На момент написания статьи функционал доступен в Firefox Nightly за флагом `layout.css.grid-template-masonry-value.enabled`. Подробнее можно почитать [на MDN][mdn:masonry];
+- [CSS Layout API][css-layout-api] позволит писать свои алгоритмы раскладки без серьёзного падения производительности. Ознакомиться с реализацией раскладки Masonry с использованием CSS Layout API можно [тут][css-layout-api-masonry], и даже поиграть с [демо][css-layout-api-masonry-demo] на [поддерживающих][is-houdini-ready-yet] <abbr title="Application Programming Interface">API</abbr> браузерах.
+
+К сожалению, на момент написания статьи вывод неутешителен: для реализации раскладки всё ещё необходимо использовать JavaScript.
+
+## Приближение к Masonry с помощью CSS
+
+Целью данной статьи является демонстрация возможного легковесного приближения к Masonry с помощью средств <abbr title="Cascading Style Sheets">CSS</abbr> и лишь капельки JavaScript.
+
+Благодаря строчному наполнению не будет наблюдаться проблем с отзывчивостью, однако с целью максимально эффективно заполнить доступное пространство, некоторые элементы могут нарушать визуальный порядок. По этой причине в случае, если порядок имеет значение, данное решение использовать не рекомендуется.
+
+Результат будет выглядеть следующим образом:
+
+<MasonryDemo />
+
+## Реализация
+
+Фундаментом решения будет CSS Grid. Несмотря на то, что сетка имеет фиксированный размер строк, есть возможность упаковать элементы максимально эффективно, распологая их сразу на нескольких ячейках:
+
+```css
+.grid-item {
+  grid-row-end: span 3;
+  grid-column-end: span 2;
+}
+```
+
+Разбивая сетку на множество идентичных небольших ячеек, можно расположить более крупные по сравнению с размерами ячеек элементы вдоль и поперёк, и чем меньше размеры ячеек, тем лучше будет сохраняться соотношение.
+
+В зависимости от вариативности размеров элементов, в сетке будут появляться пробелы. Используя свойство `grid-auto-flow: dense`, сетка попытается их заполнить по возможности:
+
+<GridDense items={30} />
+
+### Стили
+
+Первым делом определим стили:
+
+1. Зададим раскладку `grid`.
+2. Определим столбцы динамически с помощью функции `repeat()` и параметра `auto-fill`, таким образом сетка заполнится максимально возможным количеством столбцов заданного размера, унаследованного через переменную `--masonry-scale`.
+3. Количество строк определяем аналогичным образом, но в этотм раз используя параметр `auto-fit`, лишь для необходимого количества строк. Размеры также наследуются из переменной `--masonry-scale`.
+4. Задаём свойство `dense` для "упаковки" доступного пространства сетки.
+
+```css
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--masonry-scale, 100px), 1fr));
+  grid-template-rows: repeat(auto-fit, var(--masonry-scale, 100px));
+  grid-auto-flow: dense;
+  grid-gap: 1rem;
+}
+```
+
+В итоге, получаем динамическую  отзывчивую сетку, заполненную околоквадратными ячейками заданного размера:
+
+<GridCells />
+
+Подробнее об этом приёме можно прочесть [здесь][no-media-css-grid].
+
+### Расчёт охвата
+
+Определив сетку, расположим элементы в зависимости от их размеров и размеров ячеек. Определим функцию `getMasonryItemSpan` для рассчёта величины охвата вдоль и поперёк. Переменная `--masonry-scale`, определяющая размеры ячеек, имеет ту же величину, что и `scale` являясь масштабным отрезком:
+
+```ts
+const calcMasonryItemSpan = (size, scale) => Math.floor(size / scale);
+```
+
+Результаты опрелеляют количество ячеек, на которые необходимо "растянуть" тот или иной элемент. Данные передаются в стили, с испольванием кастомных свойств:
+
+```css
+.masonry > .masonry-item {
+  grid-row-end: span var(--masonry-item-row);
+  grid-column-end: span var(--masonry-item-column); 
+}
+```
+
+На этом необходимость в использовании JavaScript заканчивается.
+
+### Результат
+
+Соберём картину воедино:
+
+1. Компонент получает на вход данные о размерах каждого элемента и масштабный размер ячеек;
+2. Размер ячеек передаётся в стили через переменную `--masonry-scale`;
+2. Основываясь на размерах, для каждого элемента расчитывается охват по вертикали и горизонтали, данные передаются через переменные `--masonry-item-row` и `--masonry-item-column` соответственно;
+
+Итого, пример базового компонента на [Svelte][svelte] будет выглядеть следующим образом:
+
+```svelte
+<script context="module">
+  const calcMasonryItemSpan = (size, scale) => Math.floor(size / scale);
+</script>
+
+<script>
+  export let scale = 100;
+  export let items = [];
+</script>
+
+<ul class="masonry" style:--masonry-scale="{scale}px">
+  {#each items as { height, width }}
+    <li
+      class="item"
+      style:--masonry-item-row={getMasonryItemSpan(height, scale)}
+      style:--masonry-item-column={getMasonryItemSpan(width, scale)}
+    >
+      <slot />
+    </li>
+  {/each}
+</ul>
+
+<style>
+  .masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--masonry-scale, 100px), 1fr));
+    grid-template-rows: repeat(auto-fit, var(--masonry-scale, 100px));
+    grid-auto-flow: dense;
+    grid-gap: 1rem;
+  }
+
+  .masonry > .item {
+    grid-row-end: span var(--masonry-item-row);
+    grid-column-end: span var(--masonry-item-column); 
+  }
+</style>
+```
+
+## Выводы
+
+Пример использования данной идеи можно увидеть на [в разделе галереи](/ru/gallery), по умолчанию раскладка отключена, не забудьте воспользоваться переключателем.
+
+Сложно назвать это приближение действительно достойной заменой полноценной раскладки Masonry, со свойственными ему ограничениями. Нарушение визуального порядка элементов является серьёзной проблемой. В зависимости от вариативности размеров элементов всё также могут наблюдаться пробелы, которые сетка не сможет заполнить. 
+
+В сравнении с другими аналогичными решениями оно отзывчиво, имеет отличную производительность благодаря небольшому использованию JavaScript. Идея хорошо показала себя при использовании разметки фотогалереи, изображения сохраняют свои пропорции, эффективно заполняя доступное пространство. Идея кажется простой, а простота всегда является плюсом.
+
+## Ссылки
+
+- [CSS Layout API][css-layout-api]
+- [How to make a dynamic interlocking image grid with CSS](https://www.samdawson.dev/article/auto-flow-dense-varying-image-sizes)
+- [Look Ma, No Media Queries! Responsive Layouts Using CSS Grid][no-media-css-grid]
+- [MDN: CSS Grid Masonry Layout][mdn:masonry]
+- [Native CSS Masonry Layout In CSS Grid](https://www.smashingmagazine.com/native-css-masonry-layout-css-grid/)
+- [Нативный Masonry Layout в CSS Grid Level 3](https://habr.com/ru/post/526008/)
+- [Спецификация CSS Grid Masonry Layout][draft]
+
+<!-- Reference Links -->
+
+[css-layout-api]: https://developer.mozilla.org/en-US/docs/Web/Guide/Houdini#css_layout_api
+[css-layout-api-masonry]: https://github.com/GoogleChromeLabs/houdini-samples/tree/master/layout-worklet/masonry
+[css-layout-api-masonry-demo]: https://css-houdini.rocks/masonry
+[css-masonry-flex]: https://tobiasahlin.com/blog/masonry-with-css/
+[draft]: https://drafts.csswg.org/css-grid-3/#masonry-layout
+[is-houdini-ready-yet]: https://ishoudinireadyyet.com/
+[mdn:masonry]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout
+[no-media-css-grid]: https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/
+[svelte]: https://svelte.dev/

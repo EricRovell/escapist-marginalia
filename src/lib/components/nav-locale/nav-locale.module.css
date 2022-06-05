@@ -1,0 +1,19 @@
+.locale-route {
+	border: 2px solid var(--color-border);
+	border-radius: var(--radius-s);
+	font-size: var(--font-size-m);
+	text-transform: uppercase;
+}
+
+.locale-route:hover {
+	background-color: var(--surface-2);
+}
+
+.locale-route:hover > a:not(:global(.disabled)) {
+	text-decoration: unset;
+}
+
+.locale-route a {
+	border-radius: var(--radius-s);
+	padding: var(--space-xs);
+}

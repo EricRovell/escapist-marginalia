@@ -1,12 +1,13 @@
 <script context="module">
-	import { Link as a, Code as code } from "@components";
-	export { code, a };
+	import { Link as a, Code as pre } from "@components";
+	export { pre, a };
 </script>
 
 <script>
 	import { webpage } from "@core/paths";
-	import { Meta, TOC } from "@components";
-	import { Header } from "@components/blogpost";
+	import { Meta } from "@components";
+	import Header from "./Header.svelte";
+	import { LayoutPage } from "../page-header";
 	import styles from "./blogpost.module.css";
 
 	export let title;
@@ -16,7 +17,7 @@
 	export let created;
 	export let updated;
 	export let series;
-	export let toc = [];
+	//export let toc = [];
 </script>
 
 <Meta
@@ -47,25 +48,21 @@
 	}}
 />
 
-<!--
-	@component
-	
-	Layout for blogposts where math equations is needed.
--->
-<article class={styles.body}>
+<LayoutPage wide>
 	<Header
 		{title}
 		{description}
 		{keywords}
 		{created}
 		{updated}
+		slot="banner"
 	/>
-	<aside class={styles.sidebar}>
+	<!-- <aside class={styles.sidebar}>
 		<TOC headings={toc} />
-	</aside>
-	<main class={styles.article}>
+	</aside> -->
+	<article class={styles.article}>
 		<slot name="pre-content" />
 		<slot />
 		<slot name="post-content" />
-	</main>
-</article>
+	</article>
+</LayoutPage>

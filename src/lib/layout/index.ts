@@ -1,2 +1,2 @@
-export { default as Root } from "./Root.svelte";
-export { default as ContentFilter } from "./ContentFilter.svelte";
+export { LayoutRoot } from "./root";
+export { LayoutPage } from "./page-header";

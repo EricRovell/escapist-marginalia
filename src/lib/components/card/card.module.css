@@ -1,0 +1,14 @@
+.card header {
+	display: flex;
+	flex-flow: column nowrap;
+	font-size: var(--font-size-s);
+	color: var(--color-gray-400);
+}
+
+.card h3 {
+	font-size: calc(1.25 * var(--font-size-m));
+}
+
+.card p {
+	font-size: var(--space-m);
+}

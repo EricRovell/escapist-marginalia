@@ -1,0 +1,37 @@
+.layout {
+	display: grid;
+	grid-template: 1fr / 5fr 1fr;
+	gap: var(--space-xl);
+	width: 100%;
+	justify-self: center;
+}
+
+.sidebar {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: var(--space-m);
+	height: min-content;
+}
+
+.layout > main h2 {
+	font-family: var(--font-secondary);
+	font-size: var(--font-size-xl);
+	font-variation-settings: "wght" 200;
+	margin-bottom: var(--space-l);
+	text-transform: capitalize;
+}
+
+.posts h3 {
+	font-size: var(--font-size-m);
+}
+
+@media screen and (max-width: 640px) {
+	.layout {
+		grid-template: min-content auto / 1fr;
+	}
+
+	.layout > main {
+		grid-row: 2;
+		grid-column: 1;
+	}
+}

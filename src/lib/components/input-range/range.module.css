@@ -1,0 +1,136 @@
+.container {
+  --range-thumb-size: var(--space-m);
+  --range-thumb-border: 3px;
+  --range-track-size: var(--space-xs);
+  --range-tooltip-color: white;
+
+  --range-range: calc(var(--range-max) - var(--range-min));
+  --range-progress: calc((var(--range-value) - var(--range-min)) / var(--range-range));
+  --range-dx: calc(0.5 * var(--range-thumb-size) + var(--range-progress) * (100% - var(--range-thumb-size)));
+
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--space-s);
+}
+
+.output {
+  position: absolute;
+  top: calc(-1 * var(--space-m));
+  left: calc(var(--range-dx));
+  transform: translateX(-50%);
+  border-radius: var(--radius-s);
+  padding: var(--space-xs) var(--space-s);
+  background-color: var(--range-tooltip-bg);
+  opacity: 0;
+  transition: opacity 0.25s linear;
+  pointer-events: none;
+
+  color: var(--range-tooltip-color);
+}
+
+.range:not(:disabled):focus ~ .output,
+.range:not(:disabled):active ~ .output,
+.range:not(:disabled):hover ~ .output {
+  opacity: 1;
+}
+
+/* Override basic appearance */
+
+.range {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	background-color: transparent;
+}
+
+.range::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.range::-ms-track {
+	width: 100%;
+	cursor: pointer;
+	/* Hides the slider so custom styles can be added */
+	background: transparent; 
+	border-color: transparent;
+	color: transparent;
+}
+
+.range:focus {
+	outline: none;
+}
+
+.range:disabled {
+  --range-track-color: var(--color-gray-600);
+  --range-thumb-color: var(--color-gray-300);
+  --range-track-active-color: var(--color-gray-600);
+}
+
+/* thumb */
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+	appearance: none;
+  height: var(--range-thumb-size);
+  width: var(--range-thumb-size);
+  border-radius: 50%;
+  border: var(--range-thumb-border) solid var(--range-thumb-color);
+  background: var(--range-thumb-color);
+  cursor: pointer;
+	/* Need to specify a margin in Chrome, but in Firefox it is automatic */
+  margin-top: calc(-0.4 * var(--range-thumb-size));
+  transition: box-shadow 0.25s ease-in-out;
+}
+
+.range:global(.min)::-webkit-slider-thumb {
+  background-color: var(--range-thumb-min-color);
+  border-color: var(--range-track-color);
+}
+
+.range:not(:disabled):hover::-webkit-slider-thumb,
+.range:not(:disabled):focus::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px 5px var(--focus-ring-color);
+}
+
+.range::-moz-range-thumb {
+  height: var(--range-thumb-size);
+  width: var(--range-thumb-size);
+  border-radius: 50%;
+  background: var(--range-thumb-color);
+  transition: box-shadow 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.range:not(:disabled):hover::-moz-range-thumb,
+.range:not(:disabled):focus::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 5px var(--focus-ring-color);
+}
+
+/* track */
+
+.range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: var(--range-track-size);
+  cursor: pointer;
+  border-radius: var(--radius-s);
+  background: linear-gradient(var(--range-track-active-color), var(--range-track-active-color)) 0 / var(--range-dx) 100% no-repeat var(--range-track-color);
+}
+
+.range:hover::-webkit-slider-runnable-track,
+.range:focus::-webkit-slider-runnable-track {
+  --range-track-color: var(--range-track-focus-color);
+}
+
+.range::-moz-range-track {
+  width: 100%;
+  height: var(--range-track-size);
+  cursor: pointer;
+  border-radius: var(--radius-s);
+  background: var(--range-track-color);
+}
+
+.range::-moz-range-progress {
+  background-color: var(--range-track-active-color);
+}

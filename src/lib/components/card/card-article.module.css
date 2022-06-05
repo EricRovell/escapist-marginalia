@@ -1,0 +1,33 @@
+.card-article {
+	grid-template-rows: min-content;
+}
+
+.card-article > :last-child {
+	align-self: end;
+}
+
+.card-article time {
+	margin-bottom: var(--space-xs);
+}
+
+.card-article p {
+	font-size: var(--font-size-m);
+}
+
+.keywords {
+	display: flex;
+	align-items: center;
+	gap: var(--space-s);
+	font-size: var(--font-size-s);
+}
+
+.keywords > li {
+	display: flex;
+}
+
+.keyword {
+	border: 2px solid var(--color-border);
+	border-radius: var(--radius-s);
+	padding: var(--space-xs) var(--space-s);
+	background-color: var(--surface-2);
+}

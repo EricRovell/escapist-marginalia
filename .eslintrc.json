@@ -18,7 +18,11 @@
 	"overrides": [
 		{
 			"files": [ "*.svelte" ],
-			"processor": "svelte3/svelte3"
+			"processor": "svelte3/svelte3",
+			"rules": {
+				"no-undef": "off",
+				"@typescript-eslint/no-unsafe-argument": "off"
+			}
 		}
 	],
 	"settings": {

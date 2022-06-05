@@ -1,11 +1,10 @@
 ---
 title: "Интересный алгоритм проверки слов на анаграмму"
 description: "Познакомимся с альтернативным способом проверить слово на анаграмму с помощью математики."
-series: "algorithms"
 lang: ru
 created: 2021-11-01T00:00:00.000Z
 updated: 2021-11-30T03:12:00.000Z
-keywords: "алгоритм, математика, анаграмма"
+keywords: [ "algorithms", "math" ]
 published: true
 layout: blogpost
 ---

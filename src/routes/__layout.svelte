@@ -33,9 +33,9 @@
 </script>
 
 <script lang="ts">
-	import { Root } from "@lib/layout";
+	import { LayoutRoot } from "@lib/layout";
 </script>
 
-<Root>
+<LayoutRoot>
 	<slot />
-</Root>
+</LayoutRoot>

@@ -28,13 +28,13 @@
 
 <style>
 	nav {
-		font-size: var(--font-size-2);
+		font-size: var(--font-size-m);
 		height: min-content;
 	}
 
 	h2 {
 		margin-bottom: var(--space-m);
-		font-size: var(--font-size-4);
+		font-size: var(--font-size-l);
 	}
 
 	ol {

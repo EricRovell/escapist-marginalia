@@ -1,6 +1,6 @@
 <script>
   import Link from "./Link.svelte";
-  import LangSelect from "./LangSelect.svelte";
+  import NavLocale from "./nav-locale/NavLocale.svelte";
   import { t } from "@core/i18n";
   import { version } from "../../../package.json";
 
@@ -19,12 +19,12 @@
   	{ label: "source", href: pathSource },
   	{ label: "licence", href: pathLicence },
   	{ label: "privacy", href: pathPrivacy, disabled: true },    
-  	{ label: "about", href: $pathAbout }
+  	{ label: "about", href: $pathAbout, disabled: true }
   ];
 </script>
 
 <footer>
-  <div class="wrapper">
+  <div class="container wrapper">
     <nav>
       <ul>
         {#each links as { label, href, disabled = false }}
@@ -38,9 +38,9 @@
     </nav>
     <section label="user">
       <span>
-        © {new Date().getFullYear()} eric/rovell, v.{version}
+        © {new Date().getFullYear()} Eric/Rovell, v.{version}
       </span>
-      <LangSelect />
+      <NavLocale />
     </section>
   </div>
 </footer>
@@ -53,8 +53,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: var(--space-l) var(--space-s);
-    background: var(--color-surface-300);
+    background: var(--surface-2);
   }
 
   .wrapper {
@@ -64,9 +63,10 @@
     gap: var(--space-m);
     width: 100%;
     height: 100%;
+    padding-top: var(--space-l);
+    padding-bottom: var(--space-l);
 
     justify-self: center;
-    width: min(100%, calc(var(--max-width) + 2 * var(--space-s)));
   }
 
   section[label="user"] {
@@ -74,15 +74,11 @@
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
-    font-size: var(--font-size-2);
+    font-size: var(--font-size-m);
     color: hsl(var(--gray-h) var(--gray-s-700) var(--gray-l-700));
   }
 
   nav ul {
-    --link-color: var(--link-accent-color);
-    --link-color-active: var(--link-accent-color-active);
-    --link-bg-active: var(--link-accent-bg-active);
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -96,6 +92,13 @@
     .wrapper {
       grid-template: repeat(2, 1fr) / 1fr;
       justify-items: center;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .wrapper {
+      /* floating button offset */
+      padding-bottom: 6rem;
     }
   }
 </style>
