@@ -20,6 +20,7 @@ specifiers:
   rollup-plugin-terser: ^7.0.2
   rollup-plugin-typescript2: ^0.32.1
   simple-git-hooks: ^2.8.0
+  stream: ^0.0.2
   svelte: ^3.48.0
   svelte-intl-precompile: ^0.8.1
   svelte-media-observer: ^1.0.2
@@ -53,6 +54,7 @@ devDependencies:
   rollup-plugin-terser: 7.0.2_rollup@2.75.7
   rollup-plugin-typescript2: 0.32.1_okefoyb4o5sittgqayreuhurei
   simple-git-hooks: 2.8.0
+  stream: 0.0.2
   svelte: 3.48.0
   svelte-media-observer: 1.0.2
   svelte-preprocess: 4.10.7_lvfi2wesz6u4l5rfbnetbucfmm
@@ -1032,6 +1034,10 @@ packages:
   /electron-to-chromium/1.4.68:
     resolution: {integrity: sha512-cId+QwWrV8R1UawO6b9BR1hnkJ4EJPCPAr4h315vliHUtVUJDk39Sg1PMNnaWKfj5x+93ssjeJ9LKL6r8LaMiA==}
     dev: false
+
+  /emitter-component/1.1.1:
+    resolution: {integrity: sha512-G+mpdiAySMuB7kesVRLuyvYRqDmshB7ReKEVuyBPkzQlmiDiLrt7hHHIy4Aff552bgknVN7B2/d3lzhGO5dvpQ==}
+    dev: true
 
   /emoji-regex/8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -2799,6 +2805,12 @@ packages:
 
   /space-separated-tokens/1.1.5:
     resolution: {integrity: sha512-q/JSVd1Lptzhf5bkYm4ob4iWPjx0KiRe3sRFBNrVqbJkFaBm5vbbowy1mymoPNLRa52+oadOhJ+K49wsSeSjTA==}
+    dev: true
+
+  /stream/0.0.2:
+    resolution: {integrity: sha512-gCq3NDI2P35B2n6t76YJuOp7d6cN/C7Rt0577l91wllh0sY9ZBuw9KaSGqH/b0hzn3CWWJbpbW0W0WvQ1H/Q7g==}
+    dependencies:
+      emitter-component: 1.1.1
     dev: true
 
   /string-argv/0.3.1:
