@@ -8,3 +8,11 @@
 	width: min-content;
 	grid-auto-flow: column;
 }
+
+/* modal */
+
+.modal {
+	--slidy-height: 100vh;
+	--slidy-width: 100vw;
+	background-color: rgb(0, 0, 0, 0.8);
+}
