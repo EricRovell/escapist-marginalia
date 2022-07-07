@@ -5,10 +5,10 @@
 	"scripts": {
 		"lint": "eslint src/**/*.{ts,js,svelte}",
 		"typecheck": "tsc --noEmit true",
-		"dev": "svelte-kit dev",
-		"dev:expose": "svelte-kit dev --host --port 5555",
-		"build": "svelte-kit build",
-		"preview": "svelte-kit preview"
+		"dev": "vite dev",
+		"dev:expose": "vite dev --host --port 5555",
+		"build": "vite build",
+		"preview": "vite preview"
 	},
 	"repository": {
 		"type": "git",
@@ -30,31 +30,31 @@
 		"node": ">=14.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "1.0.0-next.32",
-		"@sveltejs/kit": "1.0.0-next.345",
-		"@typescript-eslint/eslint-plugin": "^5.26.0",
-		"@typescript-eslint/parser": "^5.26.0",
-		"eslint": "^8.16.0",
+		"@sveltejs/adapter-static": "1.0.0-next.34",
+		"@sveltejs/kit": "1.0.0-next.360",
+		"@typescript-eslint/eslint-plugin": "^5.30.5",
+		"@typescript-eslint/parser": "^5.30.5",
+		"eslint": "^8.19.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"katex": "^0.15.6",
-		"lint-staged": "^12.4.2",
+		"katex": "^0.16.0",
+		"lint-staged": "^13.0.3",
 		"mdast-util-to-string": "^3.1.0",
 		"mdsvex": "^0.10.6",
 		"rehype-katex": "5",
 		"rehype-slug": "^5.0.1",
 		"remark-math": "2",
-		"rollup": "^2.75.3",
+		"rollup": "^2.75.7",
 		"rollup-plugin-terser": "^7.0.2",
-		"rollup-plugin-typescript2": "^0.31.2",
+		"rollup-plugin-typescript2": "^0.32.1",
 		"simple-git-hooks": "^2.8.0",
 		"svelte": "^3.48.0",
 		"svelte-media-observer": "^1.0.2",
-		"svelte-preprocess": "^4.10.6",
+		"svelte-preprocess": "^4.10.7",
 		"tslib": "^2.4.0",
-		"typescript": "^4.7.2",
+		"typescript": "^4.7.4",
 		"typescript-plugin-css-modules": "^3.4.0",
 		"unist-util-visit": "^4.1.0",
-		"vite": "^2.9.9"
+		"vite": "^2.9.13"
 	},
 	"type": "module",
 	"lint-staged": {
@@ -65,6 +65,8 @@
 		"pre-push": "npm run lint"
 	},
 	"dependencies": {
+		"@slidy/core": "^3.5.0",
+		"@slidy/svelte": "^3.1.0",
 		"svelte-intl-precompile": "^0.8.1"
 	}
 }
