@@ -2,10 +2,10 @@
 	import { init, loadMessages, validateLocale, supportedLocales } from "@core/i18n";
 	import type { Load } from "@sveltejs/kit";
 
-	export const load: Load = ({ session, params, url }) => {
+	export const load: Load = ({ /* session,  */params, url }) => {
 		loadMessages();
 
-		const locale = validateLocale(params.locale || session.userLanguage);
+		const locale = validateLocale(params.locale /* || session.userLanguage */);
 
 		init({
 			initialLocale: locale,
