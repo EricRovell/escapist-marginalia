@@ -19,9 +19,15 @@
 
 .modal > button {
 	position: absolute;
-	top: 1rem;
-	right: 1rem;
+	top: 0;
+	right: 0;
+	padding: 1rem;
 	cursor: pointer;
+	z-index: 2000 !important;
+}
+
+.modal > button:hover {
+	background-color: #4e4e4e54;
 }
 
 .backdrop {
@@ -32,7 +38,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 85vw;
+	/* max-width: 85vw; */
 	overflow-y: auto;
 	overscroll-behavior: contain;
 }
