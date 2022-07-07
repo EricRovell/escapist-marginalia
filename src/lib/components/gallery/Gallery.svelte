@@ -1,4 +1,5 @@
 <script context="module" lang="ts">
+	import { Slidy, classNames } from "@slidy/svelte";
 	import type { GalleryItem, GetSrc } from "./Gallery.types";
 </script>
 
@@ -17,12 +18,16 @@
 	export let items: GalleryItem[] = [];
 	export let masonry = false;
 
-	let preview: GalleryItem | null = null;
+	let preview: number | null = null;
 
 	afterNavigate(() => {
 		const photoID = new URLSearchParams(window.location.search).get("id") ?? null;
 		if (photoID) {
-			preview = items.filter(({ id }) => id === photoID)[0];
+			for (let i = 0; i < items.length; i++) {
+				if (items[i].id === photoID) {
+					preview = i;
+				}
+			}
 		}
 	});
 </script>
@@ -48,10 +53,15 @@
 <!--
 	Fullscreen Preview
 -->
-<Modal open={Boolean(preview)} on:close={() => window.history.go(-1)}>
-	<Image
-		className={"modal-image"}
-		src={preview.src}
-		{...preview}
+<Modal open={Number.isInteger(preview)} on:close={() => window.history.go(-1)}>
+	<Slidy
+		classNames={{
+			...classNames,
+			root: `${classNames.root} ${styles.modal}`
+		}}
+		slides={items}
+		index={preview}
+		snap="center"
+		thumbnail
 	/>
 </Modal>
