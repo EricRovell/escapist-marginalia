@@ -1,40 +1,23 @@
 <script lang="ts">
+  import { getContext } from "svelte";
+  import styles from "./radio.module.css";
+
   export let value: string;
-  export let group: string[];
   export let disabled = false;
   export let title: string | undefined = undefined;
-  export let label: string | undefined = undefined;
-  export let name: string;
+
+  const { name } = getContext("name");
 </script>
 
-<!--
-  @component
-  Radio Button
--->
-<label {title}>
+<label class="{styles.label}" {title}>
   <input
     type="radio"
-    bind:group
     {value}
     {disabled}
     {name}
     on:change
   />
-  <span>{label}</span>
+  <span>
+    <slot />
+  </span>
 </label>
-
-<style>
-  label {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    
-    position: relative;
-    user-select: none;
-    cursor: pointer;
-  }
-  
-  label:focus-within {
-    color: red;
-  }
-</style>

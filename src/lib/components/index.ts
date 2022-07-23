@@ -17,9 +17,11 @@ export { Card, CardArticle, CardProject } from "./card";
 export { Details } from "./details";
 export { Range } from "./input-range";
 export { SideMenu } from "./side-menu";
+export { default as Math } from "./Math.svelte";
 
 export * as Timeline from "./timeline";
 export * as Menu from "./menu";
 export * from "./gallery";
+export * as Radio from "./radio";
 
 export type { MetaProps } from "./meta/Meta.svelte";
