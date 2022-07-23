@@ -1,0 +1,25 @@
+.radio  {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	width: 100%;
+	border: none;
+}
+
+.radio legend {
+	text-align: center;
+}
+
+.radio input {
+	appearance: none;
+}
+
+.radio input + span {
+	padding: var(--space-s) var(--space-m);
+	border-radius: var(--radius-m);
+	background-color: var(--surface-2);
+}
+
+.radio input:checked + span {
+	background-color: var(--surface-3);
+}
