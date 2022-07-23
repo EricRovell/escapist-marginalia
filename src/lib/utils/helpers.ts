@@ -61,3 +61,11 @@ export function preventPageScroll(condition: boolean) {
 		});
 	}
 }
+
+/**
+ * Derives an array of sequental numbers.
+ */
+export const range = (start: number, end: number) => {
+	const size = end - start + 1;
+	return [...Array(size).keys()].map((i) => i + start);
+};
