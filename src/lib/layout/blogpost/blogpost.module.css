@@ -87,3 +87,67 @@
 .article pre {
 	margin: var(--space-m) 0;
 }
+
+/* table */
+
+.article table {
+	border-collapse: collapse;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-content: center;
+	border: 0.5px solid var(--color-border);
+	border-radius: var(--radius-m);
+}
+
+.article tr:last-child td:first-child {
+	border-bottom-left-radius: var(--radius-m);
+}
+
+.article tr:last-child td:last-child {
+	border-bottom-right-radius: var(--radius-m);
+}
+
+.article thead th:first-child {
+	border-top-left-radius: var(--radius-m);
+}
+
+.article thead th:last-child {
+	border-top-right-radius: var(--radius-m);
+}
+
+.article thead th {
+	background-color: var(--surface-2);
+}
+
+.article thead,
+.article tbody,
+.article tr {
+	display: contents;
+}
+
+.article th,
+.article td {
+	text-align: center;
+	padding: var(--space-s);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.article th,
+.article td {
+	border: 0.5px solid var(--color-border);
+}
+
+/* Wide Sections */
+
+.article :global(.wide) {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	gap: var(--space-m);
+	background-color: var(--surface-3);
+	padding-block: var(--space-m);
+	margin-block: var(--space-l);
+}
