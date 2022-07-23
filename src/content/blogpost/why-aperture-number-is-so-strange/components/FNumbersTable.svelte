@@ -6,7 +6,7 @@
 </script>
 
 <script lang="ts">
-	import { Math as MathExp } from "@components";
+	import { MathExp } from "@components";
 
 	/**
 	 * range of fstops to display
