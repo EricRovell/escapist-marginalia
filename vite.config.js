@@ -3,6 +3,7 @@ import intlPrecompile from "svelte-intl-precompile/sveltekit-plugin";
 import path from "path";
 
 const aliasList = [
+	{ name: "$lib", path: "src/lib" },
 	{ name: "@data", path: "./src/data" },
 	{ name: "@components", path: "./src/lib/components" },
 	{ name: "@layout", path: "./src/lib/layout" },

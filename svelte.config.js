@@ -14,6 +14,10 @@ const config = {
 		adapter: adapter(),
 		prerender: {
 			default: true,
+			entries: [
+				"*",
+				"/rss.xml"
+			]
 		}
 	}
 };
