@@ -17,7 +17,8 @@ const config = {
 			entries: [
 				"*",
 				"/rss.xml"
-			]
+			],
+			origin: "https://eric-rovell.vercel.app"
 		}
 	}
 };
