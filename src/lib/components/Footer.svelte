@@ -1,104 +1,122 @@
 <script>
-  import Link from "./Link.svelte";
-  import NavLocale from "./nav-locale/NavLocale.svelte";
-  import { t } from "@core/i18n";
-  import { version } from "../../../package.json";
+	import Link from "./Link.svelte";
+	import NavLocale from "./nav-locale/NavLocale.svelte";
+	import Icon from "./icons/Icon.svelte";
+	import { iconGithub, iconRSS } from "./icons/default";
+	import { t } from "@core/i18n";
+	import { version } from "../../../package.json";
 
-  import {
-  	pathSource,
-  	pathLicence,
-  	pathPrivacy,
-  	pathBlog,
-  	pathGallery,
-  	pathAbout
-  } from "@core/paths";
+	import {
+		pathSource,
+		pathLicence,
+		pathPrivacy,
+		pathBlog,
+		pathGallery,
+		pathRSS,
+		pathAbout
+	} from "@core/paths";
 
-  $: links = [
-  	{ label: "blog", href: $pathBlog },
-  	{ label: "gallery", href: $pathGallery },
-  	{ label: "source", href: pathSource },
-  	{ label: "licence", href: pathLicence },
-  	{ label: "privacy", href: pathPrivacy, disabled: true },    
-  	{ label: "about", href: $pathAbout, disabled: true }
-  ];
+	$: links = [
+		{ label: "blog", href: $pathBlog },
+		{ label: "gallery", href: $pathGallery },
+		{ label: "licence", href: pathLicence },
+		{ label: "privacy", href: pathPrivacy, disabled: true },    
+		{ label: "about", href: $pathAbout, disabled: true }
+	];
+
+	$: icons = [
+		{ label: "source", href: pathSource, icon: iconGithub },
+		{ label: "rss", href: $pathRSS, icon: iconRSS },
+	];
 </script>
 
 <footer>
-  <div class="container wrapper">
-    <nav>
-      <ul>
-        {#each links as { label, href, disabled = false }}
-          <li>
-            <Link {href} {disabled}>
-              {$t(`sections.${label}`)}
-            </Link>
-          </li>
-        {/each}
-      </ul>
-    </nav>
-    <section label="user">
-      <span>
-        © {new Date().getFullYear()} Eric/Rovell, v.{version}
-      </span>
-      <NavLocale />
-    </section>
-  </div>
+	<div class="container wrapper">
+		<nav>
+			<ul>
+				{#each links as { label, href, disabled = false }}
+					<li>
+						<Link {href} {disabled}>
+							{$t(`sections.${label}`)}
+						</Link>
+					</li>
+				{/each}
+			</ul>
+		</nav>
+		<nav>
+			<ul>
+				{#each icons as { label, href, icon }}
+					<li>
+						<Link {href}>
+							<Icon path={icon} title={$t(`sections.${label}`)} size="1.5em" />
+						</Link>
+					</li>
+				{/each}
+			</ul>
+		</nav>
+		<section label="user">
+			<span>
+				© {new Date().getFullYear()} Eric/Rovell, v.{version}
+			</span>
+			<NavLocale />
+		</section>
+	</div>
 </footer>
 
 <style>
-  footer {
-    grid-area: footer;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background: var(--surface-2);
-  }
+	footer {
+		grid-area: footer;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		background: var(--surface-2);
+	}
 
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-m);
-    width: 100%;
-    height: 100%;
-    padding-top: var(--space-l);
-    padding-bottom: var(--space-l);
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-m);
+		width: 100%;
+		height: 100%;
+		padding-top: var(--space-l);
+		padding-bottom: var(--space-l);
 
-    justify-self: center;
-  }
+		justify-self: center;
+	}
 
-  section[label="user"] {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
-    font-size: var(--font-size-m);
-    color: hsl(var(--gray-h) var(--gray-s-700) var(--gray-l-700));
-  }
+	section[label="user"] {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		width: 100%;
+		font-size: var(--font-size-m);
+		color: hsl(var(--gray-h) var(--gray-s-700) var(--gray-l-700));
+	}
 
-  nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-end;
-    color: var(--color-primary);
-    text-transform: capitalize;
-    gap: var(--space-m);
-  }
+	nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: flex-end;
+		color: var(--color-primary);
+		text-transform: capitalize;
+		gap: var(--space-m);
+	}
 
-  @media (max-width: 540px) {
-    .wrapper {
-      grid-template: repeat(2, 1fr) / 1fr;
-      justify-items: center;
-    }
-  }
+	@media (max-width: 540px) {
+		.wrapper {
+			grid-template: repeat(2, 1fr) / 1fr;
+			justify-items: center;
+		}
+	}
 
-  @media (max-width: 650px) {
-    .wrapper {
-      /* floating button offset */
-      padding-bottom: 6rem;
-    }
-  }
+	@media (max-width: 650px) {
+		.wrapper {
+			/* floating button offset */
+			padding-bottom: 6rem;
+		}
+	}
 </style>
