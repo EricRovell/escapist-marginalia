@@ -7,7 +7,8 @@
     "about": "about",
     "source": "source",
     "licence": "licence",
-    "privacy": "privacy"
+    "privacy": "privacy",
+		"rss": "RSS Feed"
   },
   "dict": {
 		"language": "language",
