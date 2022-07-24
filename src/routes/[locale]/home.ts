@@ -2,7 +2,7 @@ import { getBlogposts } from "@data/posts";
 import { getPhotos } from "@data/photos";
 import { getProjects } from "@data/projects";
 
-export const get = async () => {
+export const GET = async () => {
 	const [	blogposts, photos, projects ] = await Promise.all([
 		getBlogposts(),
 		getPhotos(),

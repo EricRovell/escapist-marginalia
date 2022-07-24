@@ -2,7 +2,7 @@ import { dev } from "$app/env";
 import { getBlogposts } from "@data/posts";
 import type { Blogpost } from "@types";
 
-export async function get({ url }) {
+export async function GET({ url }) {
 	const published = !dev
 		? { published: true }
 		: {};
