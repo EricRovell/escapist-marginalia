@@ -1,6 +1,6 @@
 import type { GalleryItem } from "@components/gallery";
 
-export async function get({ params }) {
+export async function GET({ params }) {
 	const photos = await import("@data/photos.json");
 	const photo: GalleryItem = photos
 		.default

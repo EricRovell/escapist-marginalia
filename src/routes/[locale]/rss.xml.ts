@@ -1,6 +1,6 @@
 import { buildRSSFeed } from "@data/rss";
 
-export async function get({ params, url }) {
+export async function GET({ params, url }) {
 	const headers = {
 		"Cache-Control": "max-age=0, s-maxage=3600",
 		"Content-Type": "application/xml"
