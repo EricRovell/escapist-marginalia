@@ -54,6 +54,15 @@ async function processImage({ filePath, pathOutput, id }) {
 		.resize({ width: 350 })
 		.toFile(path.join(pathOutput, `${id}.thumb.webp`));
 
+	/** TODO: 
+	 * Some services do not support WEBP for OG:IMAGE
+	 * Remove when they will do.
+	 *  */
+	await img
+		.jpeg({ quality: 70 })
+		.resize(350, 350)
+		.toFile(path.join(pathOutput, `${id}.og.jpeg`));
+
 	return {
 		width: imgMain.width,
 		height: imgMain.height,
@@ -61,7 +70,8 @@ async function processImage({ filePath, pathOutput, id }) {
 		thumb: {
 			width: imgThumb.width,
 			height: imgThumb.height,
-			src: `${SRC_IMG}/${id}.thumb.webp`
+			src: `${SRC_IMG}/${id}.thumb.webp`,
+			cover: `${SRC_IMG}/${id}.og.jpeg`
 		},
 		dominant: [ dominant.r, dominant.g, dominant.b ]
 	};

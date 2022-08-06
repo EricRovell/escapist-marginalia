@@ -21,6 +21,7 @@ export interface GalleryItem extends Size {
 		width: number;
 		height: number;
 		src: string;
+		cover: string;
 	}
 }
 
