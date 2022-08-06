@@ -4,7 +4,7 @@
 
 <script lang="ts">
 	import { pathGalleryImage } from "@core/paths";
-	import styles from "./gallery-image.module.css";
+	import styles from "./gallery-item.module.css";
 
 	export let id: string;
 	export let dominant: string;
