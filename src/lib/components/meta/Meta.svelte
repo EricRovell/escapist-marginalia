@@ -27,7 +27,7 @@
 	{/if}
 	{#if openGraph}
 		{#each Object.entries(openGraph) as [ name, content ]}
-			<meta name={`og:${name}`} {content} />
+			<meta property={`og:${name}`} {content} />
 		{/each}
 	{/if}
 	{#if twitter}
