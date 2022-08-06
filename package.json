@@ -9,7 +9,9 @@
 		"dev:expose": "vite dev --host --port 5555",
 		"build": "vite build",
 		"preview": "vite preview",
-		"prepare": "svelte-kit sync"
+		"prepare": "svelte-kit sync",
+		"img:prepare": "node src/scripts/images-prepare.js",
+		"img:process": "node src/scripts/images-process.js"
 	},
 	"repository": {
 		"type": "git",
@@ -32,11 +34,12 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "1.0.0-next.38",
-		"@sveltejs/kit": "1.0.0-next.392",
+		"@sveltejs/kit": "1.0.0-next.403",
 		"@typescript-eslint/eslint-plugin": "^5.30.7",
 		"@typescript-eslint/parser": "^5.30.7",
 		"eslint": "^8.20.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"exifreader": "^4.5.1",
 		"katex": "^0.16.0",
 		"lint-staged": "^13.0.3",
 		"mdast-util-to-string": "^3.1.0",
@@ -47,6 +50,7 @@
 		"rollup": "^2.77.0",
 		"rollup-plugin-terser": "^7.0.2",
 		"rollup-plugin-typescript2": "^0.32.1",
+		"sharp": "^0.30.7",
 		"simple-git-hooks": "^2.8.0",
 		"svelte": "^3.49.0",
 		"svelte-media-observer": "^1.0.2",
