@@ -9,7 +9,7 @@
 
 	export let items: GalleryItem[] = [];
 	export let masonry = false;
-	export let masonryScale: number | undefined = undefined;
+	export let masonryScale: number | undefined = 100;
 </script>
 
 <!--
@@ -18,7 +18,7 @@
 -->
 <ul class={styles.gallery} class:masonry>
 	{#each items as item}
-		{@const masonryItemSpan = masonry ? getMasonryItemSpan(item, masonryScale) : undefined}
+		{@const masonryItemSpan = masonry ? getMasonryItemSpan(item.thumb, masonryScale) : undefined}
 		<li class={styles["gallery-item"]} style={masonryItemSpan}>
 			<slot {item} />
 		</li>

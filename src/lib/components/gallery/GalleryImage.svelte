@@ -3,14 +3,15 @@
 </script>
 
 <script lang="ts">
-	import { pathModalPhoto } from "@core/paths";
+	import { pathGalleryImage } from "@core/paths";
 	import styles from "./gallery-image.module.css";
 
 	export let id: string;
+	export let dominant: string;
 </script>
 
-<Link className={styles.link} href={$pathModalPhoto(id.toString())}>
-	<figure class={styles.figure}>
+<Link className={styles.link} href={$pathGalleryImage(id.toString())}>
+	<figure class={styles.figure} style:--dominant={dominant}>
 		<slot />
 		<figcaption>
 			<slot name="caption" />
