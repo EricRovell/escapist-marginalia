@@ -46,7 +46,7 @@
 
 .ellipsis {
 	text-overflow: ellipsis;
-	word-wrap: none;
+	white-space: nowrap;
 	overflow: hidden;
 }
 
