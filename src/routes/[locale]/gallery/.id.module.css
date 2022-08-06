@@ -1,0 +1,89 @@
+.container {
+	width: 100%;
+	height: min-content;
+}
+
+/* img section */
+
+.image {
+	width: 100%;
+	height: min-content;
+	padding: var(--space-l);
+	background-color: var(--surface-2);
+}
+
+.image img {
+	max-width: 100%;
+	max-height: calc(90vh - 4 * var(--space-l));
+	object-fit: contain;
+}
+
+/* title */
+
+.title {
+	text-align: center;
+	padding-block: var(--space-l);
+}
+
+/* metadata */
+
+.metadata {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	justify-items: center;
+	gap: var(--space-l);
+	width: calc(min(100%, 85ch) - var(--space-l));
+	margin: 0 auto;
+}
+
+.metadata dl {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: var(--space-xs);
+}
+
+.metadata dt,
+.metadata .keywords h3 {
+	font-size: var(--font-size-m);
+	color: var(--color-gray-600);
+}
+
+.metadata dd:not(:last-child) {
+	margin-bottom: var(--space-s);
+}
+
+.metadata section {
+	display: flex;
+	flex-flow: column wrap;
+	gap: var(--space-m)
+}
+
+/* params */
+
+.metadata dl[aria-label="parameters"] {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template: repeat(4, min-content) / repeat(2, 10ch);
+}
+
+/* keywords */
+
+.keywords h3 {
+	margin-bottom: var(--space-s);
+}
+
+.keywords ul {
+	display: flex;
+	flex-flow: row wrap;
+	gap: var(--space-s);
+}
+
+.keywords li {
+	padding: var(--space-s);
+	background-color: var(--surface-2);
+	border: 2px solid var(--color-border);
+	border-radius: var(--space-s);
+	font-size: var(--font-size-m);
+}

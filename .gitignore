@@ -1,5 +1,7 @@
 /.svelte-kit
 /build
 /node_modules
+/static/img
+/src/data/gallery.json
 /inspiration
 .vercel

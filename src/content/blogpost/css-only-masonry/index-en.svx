@@ -161,8 +161,6 @@ Basic [Svelte][svelte] component implementation may look like this:
 
 ## Conclusion
 
-The idea is used within [the gallery](/en/gallery) section to display the photos with preserved aspect ratio. It's disabled by default, do not forget to turn it on.
-
 Of course, it is just an approximation of a real Masonry and has it's limitations: the broken visual order is the most important one. Also, depending on the item sizes variation there are still possible gaps the grid would not be able to fill. Comparing to other possible solutions it is lightweight, has a small JavaScript footprint and highly responsive solution without any magic numbers and hacks. Overall the idea feels like just straightforward.
 
 ## References and useful links
