@@ -1,4 +1,4 @@
-import data from "./photos.json";
+import data from "./gallery.json";
 import type { GalleryItem } from "../types";
 
 export function getPhotos(): GalleryItem[] {
