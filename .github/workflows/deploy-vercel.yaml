@@ -28,6 +28,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm i pnpm -g
+          pnpm run img:process
           pnpm i
       - name: build
         run: |
