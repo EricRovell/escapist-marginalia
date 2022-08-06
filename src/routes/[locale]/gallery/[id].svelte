@@ -17,7 +17,7 @@
 		title: image.title,
 		description: image.description,
 		url: $webpage,
-		image: `${$webpageRoot}/static${image.thumb.src}`,
+		image: `${$webpageRoot}${image.thumb.src}`,
 	}}
 	twitter={{
 		card: "summary",
