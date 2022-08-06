@@ -31,7 +31,7 @@ async function renameImages() {
 			const id =  await getID(filePath);
 			await rename(
 				filePath,
-				path.join(inputDir, `${id}.${extname(filePath)}`)
+				path.join(inputDir, `${id}${extname(filePath)}`)
 			);
 		}
 
