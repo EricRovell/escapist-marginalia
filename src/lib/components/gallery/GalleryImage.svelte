@@ -10,7 +10,7 @@
 	export let dominant: string;
 </script>
 
-<Link className={styles.link} href={$pathGalleryImage(id.toString())}>
+<Link className={styles.link} href={$pathGalleryImage(id)}>
 	<figure class={styles.figure} style:--dominant={dominant}>
 		<slot />
 		<figcaption>

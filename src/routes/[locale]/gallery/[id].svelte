@@ -1,32 +1,9 @@
-<script context="module" lang="ts">
-	import type { Load } from "@sveltejs/kit";
-	import type { GalleryItem } from "@types";	
-
-	export const load: Load = async ({ params, fetch }) => {
-		const { id } = params;
-
-		try {
-			const response = await fetch(`/api/photos/${id}`);
-			const image: GalleryItem = await response.json();
-
-			return {
-				props: {
-					image
-				}
-			};
-		} catch (error) {
-			return {
-				status: 404,
-				error: "Page Not Found"
-			};
-		}
-	};
-</script>
-
 <script lang="ts">
 	import { webpageRoot, webpage } from "@paths";
 	import { Image, Meta } from "@components";
+	import type { GalleryItem } from "@types";	
 	import styles from "./.id.module.css";
+
 	export let image: GalleryItem;
 </script>
 
