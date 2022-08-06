@@ -24,7 +24,7 @@
 					width={item.thumb.width}
 				/>
 				<svelte:fragment slot="caption">
-					{title}
+					<p class="ellipsis">{title}</p>
 				</svelte:fragment>
 			</GalleryItem>
 		</li>
