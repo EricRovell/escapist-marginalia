@@ -49,7 +49,7 @@
 				</ul>
 			</div>
 		</section>
-		<section label="recent-photos">
+		<section class="surface-2" label="recent-photos">
 			<div>
 				<header>
 					<h2 class="heading">{$t("dict.recent-photos")}</h2>

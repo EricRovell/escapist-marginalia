@@ -28,7 +28,7 @@
 />
 
 <main class={styles.container}>
-	<section class={styles["image"]} label="img">
+	<section class="surface-2 {styles["image"]}" label="img">
 		<Image
 			src={image.src}
 			width={image.width}
@@ -69,7 +69,7 @@
 				<h3>Keywords</h3>
 				<ul>
 					{#each image.keywords as keyword}
-						<li>{keyword}</li>
+						<li class="surface-2">{keyword}</li>
 					{/each}
 				</ul>
 			</div>

@@ -20,7 +20,7 @@
 	position: relative;
 	display: flex;
 	overflow: hidden;
-	border-radius: var(--radius-l);
+	border-radius: var(--radius-m);
 	transition: border-color 0.25s ease;
 }
 

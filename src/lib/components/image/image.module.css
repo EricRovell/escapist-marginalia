@@ -12,6 +12,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 5;
 
 	display: flex;
 	justify-content: center;
@@ -24,7 +25,4 @@
 	/* todo: broken icon image showoed up behind curved border... */
 	border-radius: 0 0 var(--radius-l) var(--radius-l);
 	background-color: var(--surface-2);
-
-	background-color: var(--surface-2);
-	z-index: 5;
 }

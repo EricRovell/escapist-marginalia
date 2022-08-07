@@ -4,9 +4,14 @@
 
     --accent: var(--color-primary-500);
 
-    --surface-1: var(--color-blue-50);
-    --surface-2: #e7e9ff;
-    --surface-3: #c6d1ff;
+    --surface-1: hsl(240 40% 97%);
+    --surface-2: hsl(240 75% 100%);
+    --surface-3: hsl(235 20% 92%);
+    --surface-4: hsl(235 20% 85%);    
+    --surface-text-1: var(--color-gray-700);
+    --surface-text-2: var(--color-gray-700);
+    --surface-text-3: var(--color-gray-800);
+    --surface-text-4: var(--color-gray-800);
 
     --color-heading: var(--color-blue-400);
     --color-text-primary: var(--color-gray-300);
@@ -84,9 +89,14 @@
 
   --accent: var(--color-primary-500);
 
-  --surface-1: var(--color-blue-50);
-  --surface-2: #e7e9ff;
-  --surface-3: #c6d1ff;
+  --surface-1: hsl(240 40% 97%);
+  --surface-2: hsl(240 75% 100%);
+  --surface-3: hsl(235 20% 92%);
+  --surface-4: hsl(235 20% 85%);  
+  --surface-text-1: var(--color-gray-700);
+  --surface-text-2: var(--color-gray-700);
+  --surface-text-3: var(--color-gray-800);
+  --surface-text-4: var(--color-gray-800);
 
   --color-heading: var(--color-blue-400);
   --color-text-primary: var(--color-gray-900);
