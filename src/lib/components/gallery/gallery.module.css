@@ -3,7 +3,7 @@
 .gallery {
 	display: flex;
 	flex-flow: row wrap;
-	gap: var(--space-m);
+	gap: calc(var(--space-s) * 1.5);
 	width: 100%;
 }
 

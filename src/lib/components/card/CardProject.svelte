@@ -26,7 +26,7 @@
 <!--
 	locale={$locale}
 -->
-<Card className={styles["card-project"]}>
+<Card className={`surface-2 ${styles["card-project"]}`}>
 	<svelte:fragment slot="header">
 		<h3>
 			{title}

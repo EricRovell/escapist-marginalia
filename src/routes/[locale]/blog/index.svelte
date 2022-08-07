@@ -80,7 +80,7 @@
 				/>
 			{/each}
 		</main>
-		<aside class={styles.sidebar}>
+		<aside class="{styles.sidebar}">
 			<SwitchGroup
 				legend={$t("dict.language")}
 				name="content-lang"

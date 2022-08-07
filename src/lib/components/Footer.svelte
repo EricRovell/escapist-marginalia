@@ -30,7 +30,7 @@
 	];
 </script>
 
-<footer>
+<footer class="surface-2">
 	<div class="container wrapper">
 		<nav>
 			<ul>
@@ -71,7 +71,6 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		background: var(--surface-2);
 	}
 
 	.wrapper {
@@ -93,7 +92,6 @@
 		align-items: flex-end;
 		width: 100%;
 		font-size: var(--font-size-m);
-		color: hsl(var(--gray-h) var(--gray-s-700) var(--gray-l-700));
 	}
 
 	nav ul {
@@ -101,7 +99,6 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: flex-end;
-		color: var(--color-primary);
 		text-transform: capitalize;
 		gap: var(--space-m);
 	}
