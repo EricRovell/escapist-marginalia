@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { webpageRoot, webpage } from "@paths";
-	import { Image, Meta } from "@components";
+	import { Image, Meta, ImageFullscreen } from "@components";
 	import type { GalleryItem } from "@types";	
 	import styles from "./.id.module.css";
 
 	export let image: GalleryItem;
+
+	let open = false;
 </script>
 
 <Meta
@@ -34,6 +36,7 @@
 			width={image.width}
 			height={image.height}
 			alt={image.description}
+			on:click={() => open = !open}
 		/>
 	</section>
 	<h1 class="{styles.title}">
@@ -76,3 +79,12 @@
 		</section>
 	</div>
 </main>
+
+<ImageFullscreen bind:open>
+	<Image
+		src={image.src}
+		width={image.width}
+		height={image.height}
+		alt={image.description}
+	/>
+</ImageFullscreen>

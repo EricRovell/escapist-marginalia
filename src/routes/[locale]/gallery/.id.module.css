@@ -6,15 +6,23 @@
 /* img section */
 
 .image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	height: min-content;
 	padding: var(--space-l);
 }
 
 .image img {
+	width: auto;
 	max-width: 100%;
 	max-height: calc(90vh - 4 * var(--space-l));
 	object-fit: contain;
+}
+
+.image img:hover {
+	cursor: zoom-in;
 }
 
 /* title */
