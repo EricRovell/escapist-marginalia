@@ -6,21 +6,29 @@
 /* img section */
 
 .image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	height: min-content;
 	padding: var(--space-l);
-	background-color: var(--surface-2);
 }
 
 .image img {
+	width: auto;
 	max-width: 100%;
 	max-height: calc(90vh - 4 * var(--space-l));
 	object-fit: contain;
 }
 
+.image img:hover {
+	cursor: zoom-in;
+}
+
 /* title */
 
 .title {
+	color: var(--color-heading);
 	text-align: center;
 	padding-block: var(--space-l);
 }
@@ -48,6 +56,7 @@
 .metadata .keywords h3 {
 	font-size: var(--font-size-m);
 	color: var(--color-gray-600);
+	font-weight: 400;
 }
 
 .metadata dd:not(:last-child) {
@@ -57,7 +66,7 @@
 .metadata section {
 	display: flex;
 	flex-flow: column wrap;
-	gap: var(--space-m)
+	gap: var(--space-m);
 }
 
 /* params */
@@ -82,7 +91,6 @@
 
 .keywords li {
 	padding: var(--space-s);
-	background-color: var(--surface-2);
 	border: 2px solid var(--color-border);
 	border-radius: var(--space-s);
 	font-size: var(--font-size-m);

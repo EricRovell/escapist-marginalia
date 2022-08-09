@@ -24,7 +24,7 @@
 	};
 </script>
 
-<fieldset class={`card ${styles.fieldset}`} on:change={() => dispatch("switch", { group, name })}>
+<fieldset class={`card surface-2 ${styles.fieldset}`} on:change={() => dispatch("switch", { group, name })}>
 	<legend class={styles.legend}>{legend}</legend>
 	{#each options as { checked, disabled, icon, label, value }}
 		<Switch

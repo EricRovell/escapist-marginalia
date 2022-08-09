@@ -5,7 +5,6 @@
 	align-items: center;
 	gap: var(--space-m);
 	padding: var(--space-xl) var(--space-s);
-	background-color: var(--surface-2);
 }
 
 .page {
@@ -34,9 +33,5 @@
 
 .banner > h1:global(.headline) {
 	font-family: var(--font-secondary);
-	color: var(--color-blue-400);
+	color: var(--color-heading);
 }
-
-/* .banner > p:global(.headline) {
-	text-align: center;
-} */

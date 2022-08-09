@@ -6,7 +6,7 @@ export { default as Datetime } from "./Datetime.svelte";
 export { default as Link } from "./Link.svelte";
 export { default as TOC } from "./TOC.svelte";
 export { default as Code } from "./code/Code.svelte";
-export { Gallery } from "./gallery";
+export { Gallery, ImageFullscreen } from "./gallery";
 export { default as Meta } from "./meta/Meta.svelte";
 export { default as PageMeta } from "./meta/PageMeta.svelte";
 export { Image } from "./image";
