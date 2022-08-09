@@ -7,17 +7,16 @@ export function pannable(node: HTMLElement): ReturnType<Action> {
 	let scale = 1;
 	let x = 0;
 	let y = 0;
-	let zoomTimeout: null | number = null;
+	let zoomTimeout: number | null = null;
 
 	const touchData = {
 		touches: [],
 		pinchDistance: 0,
-		lastEvent: null,
+		lastEvent: null
 	};
 
 	function handleMousedown(event: MouseEvent) {
 		node.style.cursor = "all-scroll";
-
 		node.dispatchEvent(new CustomEvent("panstart", {
 			detail: {
 				x: event.clientX,
@@ -25,22 +24,22 @@ export function pannable(node: HTMLElement): ReturnType<Action> {
 			}
 		}));
 
-		window.addEventListener("pointermove", handlePointerMove);
-		window.addEventListener("pointerup", handlePointerUp);
+		window.addEventListener("mousemove", handleMousemove);
+		window.addEventListener("mouseup", handleMouseup);
 	}
 
 	function handleWheel(event: WheelEvent) {
-		const zoomStep = 0.3;
 		event.preventDefault();
-		const delta = Math.sign(-1 * event.deltaY) * zoomStep;
-		scale = Math.min(Math.max(0.75, scale + delta), 4);
+
+		const delta = 0.3 *  Math.sign(-1 * event.deltaY);
+		scale = Math.min(Math.max(0.85, scale + delta), 4);
 
 		if (zoomTimeout) {
 			window.clearTimeout(zoomTimeout);
 		}
 
 		if (scale < 1) {
-			zoomTimeout = window.setTimeout(resetScale, 125);
+			zoomTimeout = window.setTimeout(resetScale, 150);
 		}
 
 		recenter();
@@ -48,7 +47,6 @@ export function pannable(node: HTMLElement): ReturnType<Action> {
 		node.dispatchEvent(new CustomEvent("panmove", {
 			detail: { x, y, spring: true }
 		}));
-
 		node.dispatchEvent(new CustomEvent("zoomchange", {
 			detail: { scale, spring: true }
 		}));
@@ -61,7 +59,7 @@ export function pannable(node: HTMLElement): ReturnType<Action> {
 		}));
 	}
 
-	function handlePointerMove(event: PointerEvent) {
+	function handleMousemove(event: MouseEvent) {
 		x += event.movementX / scale;
 		y += event.movementY / scale;
 
@@ -70,23 +68,22 @@ export function pannable(node: HTMLElement): ReturnType<Action> {
 		}));
 	}
 
-	function handlePointerUp(event: PointerEvent) {
-		node.style.cursor = "unset";
+	function handleMouseup(event: MouseEvent) {
 		recenter();
 
+		node.style.cursor = "unset";
 		node.dispatchEvent(new CustomEvent("panend", {
 			detail: {
 				x: event.clientX,
 				y: event.clientY
 			}
 		}));
-
 		node.dispatchEvent(new CustomEvent("panmove", {
-			detail: {x, y, spring: true}
+			detail: { x, y, spring: true }
 		}));
 
-		window.removeEventListener("pointermove", handlePointerMove);
-		window.removeEventListener("pointerup", handlePointerUp);
+		window.removeEventListener("mousemove", handleMousemove);
+		window.removeEventListener("mouseup", handleMouseup);
 	}
 
 	function recenter() {
@@ -116,55 +113,59 @@ export function pannable(node: HTMLElement): ReturnType<Action> {
 		}));
 	}
 
-	function handleTouchstart(e: TouchEvent) {
-		if (e.touches.length == 2) {
-			touchData.touches.push(e.touches[0]);
-			touchData.touches.push(e.touches[1]);
+	function handleTouchstart(event: TouchEvent) {
+		if (event.touches.length == 2) {
+			for (let i = 0; i < event.touches.length; i++) {
+				touchData.touches.push(event.touches[i]);
+			}
 		}
 	}
 
-	const calcDistance = (p1: Touch, p2: Touch) => (
-		Math.sqrt(Math.abs(p1.clientX - p2.clientX) ** 2 + Math.abs(p1.clientY - p2.clientY) ** 2)
-	);
+	const pointsDistance = (p1: Touch, p2: Touch) => {
+		const a = Math.abs(p1.clientX - p2.clientX);
+		const b = Math.abs(p1.clientY - p2.clientY);
+		return Math.sqrt(a ** 2 + b ** 2);
+	};
 
-	function handleTouchmove(e: TouchEvent) {
-		e.preventDefault();
+	function handleTouchmove(event: TouchEvent) {
+		//event.preventDefault();
 
-		if (e.touches.length == 1 && e.changedTouches.length == 1) {
+		if (event.touches.length == 1 && event.changedTouches.length == 1) {
 			if (!touchData.lastEvent) {
-				touchData.lastEvent = e.changedTouches[0];
+				touchData.lastEvent = event.changedTouches[0];
 			}
 
-			const dx = e.changedTouches[0].clientX - touchData.lastEvent.clientX;
-			const dy = e.changedTouches[0].clientY - touchData.lastEvent.clientY;
+			const diffX = event.changedTouches[0].clientX - touchData.lastEvent.clientX;
+			const diffY = event.changedTouches[0].clientY - touchData.lastEvent.clientY;
 
-			x += dx / scale;
-			y += dy / scale;
+			x += diffX / scale;
+			y += diffY / scale;
 
 			node.dispatchEvent(new CustomEvent("panmove", {
 				detail: { x, y, spring: false }
 			}));
 
-			touchData.lastEvent = e.changedTouches[0];
+			touchData.lastEvent = event.changedTouches[0];
 		}
 
-		if (e.touches.length == 2 && e.changedTouches.length == 2) {
-		// Check if the two target touches are the same ones that started the 2-touch
-			let point1 = -1, point2 = -1;
+		if (event.touches.length == 2 && event.changedTouches.length == 2) {
+			// Check if the two target touches are the same ones that started the 2-touch
+			let point1 = -1;
+			let point2 = -1;
 
-			for (let i = 0; i < touchData.t.length; i++) {
-				if (touchData.touches[i].identifier == e.touches[0].identifier) {
+			for (let i = 0; i < touchData.touches.length; i++) {
+				if (touchData.touches[i].identifier == event.touches[0].identifier) {
 					point1 = i;
 				}
-				if (touchData.touches[i].identifier == e.touches[1].identifier) {
+				if (touchData.touches[i].identifier == event.touches[1].identifier) {
 					point2 = i;
 				}
 			}
 
 			if (point1 >= 0 && point2 >= 0) {
 				// Calculate the difference between the start and move coordinates
-				const dist1 = calcDistance(touchData.touches[point1], touchData.touches[point2]);
-				const dist2 = calcDistance(e.touches[0], e.touches[1]);
+				const dist1 = pointsDistance(touchData.touches[point1], touchData.touches[point2]);
+				const dist2 = pointsDistance(event.touches[0], event.touches[1]);
 
 				if (touchData.pinchDistance === 0) {
 					touchData.pinchDistance = dist1;
@@ -188,25 +189,22 @@ export function pannable(node: HTMLElement): ReturnType<Action> {
 	function handleTouchend() {
 		touchData.pinchDistance = 0;
 		touchData.lastEvent = null;
-
-		if (scale < 1.02) {
+		if (scale < 1.05) {
 			resetScale();
 		}
-
 		recenter();
 	}
-	
+
 	window.addEventListener("wheel", handleWheel, { passive: false });
-	node.addEventListener("pointerdown", handleMousedown);
+	node.addEventListener("mousedown", handleMousedown);	
 	node.addEventListener("touchstart", handleTouchstart, { passive: true });
 	node.addEventListener("touchmove", handleTouchmove, { passive: true });
 	node.addEventListener("touchend", handleTouchend, { passive: true });
 
 	return {
 		destroy() {
-			window.clearTimeout(zoomTimeout);
 			window.removeEventListener("wheel", handleWheel);
-			node.removeEventListener("pointerdown", handleMousedown);
+			node.removeEventListener("mousedown", handleMousedown);
 			node.removeEventListener("touchstart", handleTouchstart);
 			node.removeEventListener("touchmove", handleTouchmove);
 			node.removeEventListener("touchend", handleTouchend);
