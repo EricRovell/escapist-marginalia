@@ -51,6 +51,7 @@ export function preventPageScroll(condition: boolean) {
 			top: -${window.scrollY}px;
 			position: fixed;
 			overflow-y: scroll;
+			overscroll-behavior: none;
 		`;
 	} else {
 		const scrollY = Number(document.body.style.top || "0");
