@@ -1,0 +1,41 @@
+.nav nav {
+	--navigation-height: fit-content;
+
+	display: flex;
+	justify-content: center;
+}
+
+.nav ul,
+.nav li {
+	width: 100%;
+}
+
+.nav ul {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	gap: unset;
+}
+
+.nav li:not(:last-child) {
+	border-bottom: 1px solid #999feb42;
+}
+
+.nav a {
+	width: 100%;
+	padding-top: var(--space-m);
+	padding-bottom: var(--space-m);
+}
+
+.nav a[aria-current] {
+	outline: none;
+	background-color: unset;
+}
+
+.controls {
+	--theme-toggle-size: 1.5em;
+
+	display: flex;
+	flex-flow: column nowrap;
+	gap: var(--space-s);
+}
