@@ -12,6 +12,7 @@
   },
   "dict": {
 		"language": "language",
+		"theme": "theme",
 		"topics": "topics",
 		"series": "series",
     "project-euler": "project euler",

@@ -12,6 +12,7 @@
   },
   "dict": {
 		"language": "язык",
+		"theme": "тема оформления",
 		"topics": "тема",
 		"series": "серия",
     "project-euler": "проект эйлера",
