@@ -24,8 +24,7 @@ const defaults: Options = {
 /**
  * Creates panStart, panMove, panEnd events so you can drag elements.
  */
-export function swipable(node: HTMLElement, options: Partial<Options> = defaults): ReturnType<Action> {
-
+export function swipable(node: HTMLElement, { threshold = 25, timeout = 750 }: Partial<Options> = defaults): ReturnType<Action> {
 	let x: number | null = null;
 	let y: number | null = null;
 	let dx: number | null = null;
@@ -58,18 +57,20 @@ export function swipable(node: HTMLElement, options: Partial<Options> = defaults
 			[];
 
 		if (Math.abs(dx) > Math.abs(dy)) {
-			if (Math.abs(dx) > options.threshold && dt < options.timeout) {
+			if (Math.abs(dx) > threshold && dt < timeout) {
 				eventType = (dx > 0)
 					? "swipe-left"
 					: "swipe-right";
 			}
 		}
 
-		else if (Math.abs(y) > options.threshold && dt < options.timeout) {
+		else if (Math.abs(y) > threshold && dt < timeout) {
 			eventType = (dy > 0)
 				? "swipe-up"
 				: "swipe-down";
 		}
+
+		console.log(dx, dy, threshold, timeout);
 
 		if (eventType) {
 			const lastTouch = changedTouches[0];
