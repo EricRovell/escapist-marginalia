@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { spring } from "svelte/motion";
 	import { Modal } from "@components";
-	import { pannable } from "$lib/actions/pannable";
+	import { pannable, swipable } from "$lib/actions";
 	import styles from "./image-fullscreen.module.css";
 
 	export let open = false;
@@ -37,10 +37,16 @@
 <Modal {open} on:close={close}>
 	<div
 		use:pannable
+		use:swipable={{ threshold: 200 }}
 		class="{styles.container}"
 		on:touchmove|preventDefault
 		on:panmove={handlePanMove}
     on:zoomchange={handleZoom}
+		on:swipe-down={() => {
+			if ($imageScale === 1) {
+				close();
+			}
+		}}
 		style="transform: scale({$imageScale}) translate({$coords.x}px, {$coords.y}px)"
 	>
 		<slot />
