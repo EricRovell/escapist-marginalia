@@ -64,13 +64,11 @@ export function swipable(node: HTMLElement, { threshold = 25, timeout = 750 }: P
 			}
 		}
 
-		else if (Math.abs(y) > threshold && dt < timeout) {
+		else if (Math.abs(dy) > threshold && dt < timeout) {
 			eventType = (dy > 0)
 				? "swipe-up"
 				: "swipe-down";
 		}
-
-		console.log(dx, dy, threshold, timeout);
 
 		if (eventType) {
 			const lastTouch = changedTouches[0];
