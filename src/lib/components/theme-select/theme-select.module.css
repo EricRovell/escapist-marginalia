@@ -1,0 +1,54 @@
+.switcher {
+	color: var(--color-link);
+
+	display: flex;
+	place-items: center;
+	height: auto;
+	height: auto;
+	padding: 0.1em;
+	border: 2px solid var(--color-border);
+	border-radius: var(--radius-s);
+	padding: calc(0.75 * var(--space-xs));
+	font-size: inherit;
+	font-family: inherit;
+	text-transform: capitalize;
+	cursor: pointer;	
+}
+
+.switcher:hover {
+	background-color: var(--surface-2);
+}
+
+.switcher:focus-visible {
+	outline: 2px dashed var(--color-link-hover, currentColor);
+	outline-offset: calc(var(--space-xs) / 2);
+	border-radius: var(--radius-s);
+}
+
+.switcher:global(.labeled) {
+	width: 100%;
+
+	border-radius: var(--radius-s);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--space-s);
+	width: 100%;
+	border: 2px solid var(--color-border);
+	border-radius: var(--radius-s);
+}
+
+.switcher:global(.labeled):focus-visible {
+	outline: 2px dashed var(--color-link-hover, currentColor);
+	outline-offset: calc(var(--space-xs) / 2);
+}
+
+.switcher:global(.labeled):active {
+	color: var(--color-link-active);
+	background-color: var(--color-link-active-bg);
+}
+
+.switcher:global(.labeled):hover {
+	background-color: var(--surface-2);
+}
+
