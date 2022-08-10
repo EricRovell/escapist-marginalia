@@ -1,8 +1,9 @@
+/* not:labeled */
 .locale-route {
 	border: 2px solid var(--color-border);
 	border-radius: var(--radius-s);
 	font-size: var(--font-size-m);
-	text-transform: uppercase;
+	text-transform: capitalize;
 }
 
 .locale-route:hover {
@@ -15,5 +16,17 @@
 
 .locale-route a {
 	border-radius: var(--radius-s);
-	padding: var(--space-xs);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--space-s);
+	width: 100%;
+}
+
+.locale {
+	text-transform: uppercase;
+}
+
+.locale-route:global(.labeled) a {
+	padding: calc(1.5 * var(--space-s));
 }
