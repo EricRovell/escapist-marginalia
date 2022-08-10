@@ -54,7 +54,7 @@ export function preventPageScroll(condition: boolean) {
 			overscroll-behavior: none;
 		`;
 	} else {
-		const scrollY = Number(document.body.style.top || "0");
+		const scrollY: number = parseInt(document.body.style.top as string || "0");
 		document.body.style.cssText = "";
 		window.scrollTo({
 			top: -1 * scrollY,

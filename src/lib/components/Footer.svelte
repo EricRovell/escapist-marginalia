@@ -58,7 +58,7 @@
 			<span>
 				© {new Date().getFullYear()} Eric/Rovell, v.{version}
 			</span>
-			<NavLocale />
+			<NavLocale labeled />
 		</section>
 	</div>
 </footer>
@@ -90,6 +90,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
+		gap: var(--space-m);
 		width: 100%;
 		font-size: var(--font-size-m);
 	}
@@ -114,6 +115,11 @@
 		.wrapper {
 			/* floating button offset */
 			padding-bottom: 6rem;
+		}
+
+		section[label="user"] {
+			flex-direction: column-reverse;
+			align-items: center;
 		}
 	}
 </style>

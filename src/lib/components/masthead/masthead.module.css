@@ -24,6 +24,8 @@
 }
 
 .masthead >section[label="controls"] {
+	--theme-toggle-size: 1.5em;
+
 	grid-area: controls;
 	justify-self: end;
 	
@@ -38,17 +40,18 @@
 
 @media screen and (max-width: 650px) {
 	.masthead {
+		--header-height: fit-content;
+
 		grid-template: 1fr / 1fr;
-		grid-template-areas: "logo . controls";
+		grid-template-areas: "logo";
 	}
 
-	.masthead > section[label="navigation"] {
-		display: none;
+	.masthead > section[label="logo"] {
+		place-self: center;
 	}
-}
 
-@media screen and (max-width: 520px) {
-	.masthead > section[label="navigation"] {
+	.masthead > section[label="navigation"],
+	.masthead > section[label="controls"] {
 		display: none;
 	}
 }

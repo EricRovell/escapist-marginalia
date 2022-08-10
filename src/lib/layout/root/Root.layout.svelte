@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Masthead, Footer, SideMenu } from "@components";
-  import MobileNav from "./Root.SideMenu.svelte";
+  import MobileNav from "./Root.SideMenuBody.svelte";
   import { t } from "@core/i18n";
 
   import "@styles/utility.css";
