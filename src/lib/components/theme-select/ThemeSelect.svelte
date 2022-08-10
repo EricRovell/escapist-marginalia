@@ -4,9 +4,13 @@
 
 <script lang="ts">
   import { theme } from "@stores";
-  import Indicator from "./Indicator.svelte";
-  
+  import { t } from "@core/i18n";
+  import ThemeIcon from "./ThemeIcon.svelte";
+  import styles from "./theme-select.module.css";
+
+  export let labeled = false;
   export let title = "Click to switch theme";
+  export let maskID: string | undefined = undefined;
 </script>
 
 <!--
@@ -30,28 +34,19 @@
     | rayOffset | number | 40                      | The rays' offset from the sun's center |
     | rays      | number | 8                       | the number of rays                     |
 -->
-<button on:click={theme.change} {title} class="switcher">
-	<Indicator
+<button
+  class="{styles.switcher}"
+  class:labeled
+  {title}
+  on:click={theme.change}
+>
+  {#if labeled}
+    <span class="label">
+      {$t("dict.theme")}: {$theme}
+    </span>
+  {/if}
+	<ThemeIcon
     theme={$theme}
+    {maskID}
   />
 </button>
-
-<style>
-  .switcher {
-    font-size: 30px;
-
-    width: var(--toggle-size, 1em);
-    height: var(--toggle-size, 1em);
-    padding: 0.1em;
-    border-radius: var(--radius-medium);
-    cursor: pointer;
-
-    display: flex;
-    place-items: center;
-  }
-
-  .switcher:hover,
-  .switcher:focus {
-    outline: 1px solid var(--color-primary);
-  }
-</style>
