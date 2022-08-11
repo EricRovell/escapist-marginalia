@@ -40,7 +40,8 @@
     "content-language": "язык публикаций",
     "toc": "Содержание",
     "created-at": "Опубликовано",
-    "last-updated-at": "Последнее обновление"
+    "last-updated-at": "Последнее обновление",
+		"build-at": "Сборка от"
   },
   "pages": {
 		"home": {
