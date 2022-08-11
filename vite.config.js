@@ -1,5 +1,6 @@
 import { sveltekit } from "@sveltejs/kit/vite";
 import intlPrecompile from "svelte-intl-precompile/sveltekit-plugin";
+import replace from "@rollup/plugin-replace";
 import path from "path";
 
 const aliasList = [
@@ -21,7 +22,10 @@ const aliasList = [
 const config = {
 	plugins: [
 		sveltekit(),
-		intlPrecompile("/src/locales")
+		intlPrecompile("/src/locales"),
+		replace({
+			"__buildTime__": () => new Date().toISOString()
+		})
 	],
 	resolve: {
 		alias: Object.fromEntries(aliasList.map(alias => (

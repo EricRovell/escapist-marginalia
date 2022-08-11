@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
 	import Link from "./Link.svelte";
+	import Datetime from "./Datetime.svelte";
 	import NavLocale from "./nav-locale/NavLocale.svelte";
 	import Icon from "./icons/Icon.svelte";
 	import { iconGithub, iconRSS } from "./icons/default";
 	import { t } from "@core/i18n";
-	import { version } from "../../../package.json";
 
 	import {
 		pathSource,
@@ -55,9 +55,12 @@
 			</ul>
 		</nav>
 		<section label="user">
-			<span>
-				© {new Date().getFullYear()} Eric/Rovell, v.{version}
-			</span>
+			<p>
+				<span>
+					© <Datetime options={{ year: "numeric" }} />, Eric/Rovell
+				</span>
+				<span>{$t("message.build-at")} <Datetime date={"__buildTime__"} /></span>
+			</p>
 			<NavLocale labeled />
 		</section>
 	</div>
@@ -104,6 +107,16 @@
 		gap: var(--space-m);
 	}
 
+	p {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: var(--space-s);
+	}
+
+	p :global(time) {
+		color: var(--color-gray-300);
+	}
+
 	@media (max-width: 540px) {
 		.wrapper {
 			grid-template: repeat(2, 1fr) / 1fr;
@@ -119,6 +132,10 @@
 
 		section[label="user"] {
 			flex-direction: column-reverse;
+			align-items: center;
+		}
+
+		p {
 			align-items: center;
 		}
 	}
