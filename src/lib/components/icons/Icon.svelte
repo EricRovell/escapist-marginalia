@@ -42,8 +42,6 @@
   {id}
   {viewBox}
   style={`--icon-margin: ${margin}; ${color ? `--icon-color: var(--color-${color});` : ""} ${style}`}
-  width={size}
-  height={size}
   aria-labelledby={title ?? null}
   role="presentation">
     {#if title}
@@ -59,6 +57,9 @@
 
 <style>
   svg {
+    aspect-ratio: 1 / 1;
+    width: var(--icon-size, 1em);
+    height: var(--icon-size, 1em);
     fill: var(--icon-color, currentColor);
     margin: var(--icon-margin, 0);
   }

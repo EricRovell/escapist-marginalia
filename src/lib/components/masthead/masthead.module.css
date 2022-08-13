@@ -13,6 +13,8 @@
 }
 
 .masthead > section[label="logo"] {
+	--icon-size: 1.5em;
+
 	grid-area: logo;
 	justify-self: start;
 	color: var(--color-primary-400);

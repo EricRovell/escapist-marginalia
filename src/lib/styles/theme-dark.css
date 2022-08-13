@@ -25,6 +25,11 @@
 
     --focus-ring-color: #999EEB60;
 
+    --button-accent: var(--color-blue-500);
+    --button-color: var(--color-blue-200);
+    --button-focus-ring-color: var(--focus-ring-color);
+    --button-border-color: var(--color-blue-400);
+
     --switch-track-color: var(--color-gray-600);
     --switch-track-color-active: var(--color-blue-600);
     --switch-thumb-color: var(--color-gray-200);
@@ -109,6 +114,11 @@
   --color-border: var(--color-blue-800);
 
   --focus-ring-color: #999EEB60;
+
+  --button-accent: var(--color-blue-500);
+  --button-color: var(--color-blue-200);
+  --button-focus-ring-color: var(--focus-ring-color);
+  --button-border-color: var(--color-blue-400);
 
   --switch-track-color: var(--color-gray-600);
   --switch-track-color-active: var(--color-blue-600);

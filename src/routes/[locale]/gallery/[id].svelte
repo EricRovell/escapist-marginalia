@@ -1,12 +1,39 @@
 <script lang="ts">
+	import { t } from "@core/i18n";
 	import { webpageRoot, webpage } from "@paths";
-	import { Image, Meta, ImageFullscreen } from "@components";
+	import { Button, Icon, Image, Link, Meta, ImageFullscreen } from "@components";
+	import { iconShare, iconDownload, iconFullscreen } from "$lib/components/icons/default";
+	import { share } from "@utils/helpers";
 	import type { GalleryItem } from "@types";	
 	import styles from "./.id.module.css";
 
 	export let image: GalleryItem;
 
 	let open = false;
+
+	const handleShare = async () => {
+		const files = [];
+
+		try {
+			const request = await fetch(image.src);
+			const blob = await request.blob();
+
+			files.push(
+				new File([ blob ], `${image.title}.webp`, {
+					type: blob.type
+				})
+			);
+		} catch(error) {
+			console.error(`Could not load the image: ${error.message}`);
+		}
+
+		await share({
+			files,
+			url: $webpage,
+			title: image.title,
+			text: image.description
+		});
+	};
 </script>
 
 <Meta
@@ -38,6 +65,31 @@
 			alt={image.description}
 			on:click={() => open = !open}
 		/>
+		<aside class="{styles.actions}">
+			<Button
+				appearance="ghost"
+				icon
+				title="{$t("tooltip.share")}"
+				on:click={handleShare}
+			>
+				<Icon path={iconShare} />
+			</Button>
+			<Link
+				download="{image.title}"
+				href="{image.src}"
+				title="{$t("tooltip.download")}"
+			>
+				<Icon path={iconDownload} />
+			</Link>
+			<Button
+				appearance="ghost"
+				icon
+				title="{$t("tooltip.fullscreen")}"
+				on:click={() => open = true}
+			>
+				<Icon path={iconFullscreen} />
+			</Button>
+		</aside>
 	</section>
 	<h1 class="{styles.title}">
 		&ldquo{image.title}&rdquo
