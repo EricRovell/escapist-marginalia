@@ -32,7 +32,10 @@
   },
   "tooltip": {
     "change-theme": "Change theme",
-    "change-locale": "Change language"
+    "change-locale": "Change language",
+		"share": "Share",
+		"download": "Download",
+		"fullscreen": "Fullscreen"
   },
   "message": {
     "blogpost": "blogpost",

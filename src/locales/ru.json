@@ -32,7 +32,10 @@
   },
   "tooltip": {
     "change-theme": "Сменить тему оформления",
-    "change-locale": "Сменить язык"
+    "change-locale": "Сменить язык",
+		"share": "Поделиться",
+		"download": "Скачать",
+		"fullscreen": "Полноэкранный просмотр"
   },
   "message": {
     "blogpost": "статья",
