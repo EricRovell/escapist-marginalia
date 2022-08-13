@@ -19,6 +19,7 @@ export { Range } from "./input-range";
 export { SideMenu } from "./side-menu";
 export { ThemeSelect } from "./theme-select";
 export { NavLocale } from "./nav-locale";
+export { Button } from "./button";
 
 export * as Timeline from "./timeline";
 export * as Menu from "./menu";
