@@ -43,12 +43,12 @@
 				{/each}
 			</ul>
 		</nav>
-		<nav>
+		<nav class="socials">
 			<ul>
 				{#each icons as { label, href, icon }}
 					<li>
 						<Link {href}>
-							<Icon path={icon} title={$t(`sections.${label}`)} size="1.5em" />
+							<Icon path={icon} title={$t(`sections.${label}`)} />
 						</Link>
 					</li>
 				{/each}
@@ -96,6 +96,10 @@
 		gap: var(--space-m);
 		width: 100%;
 		font-size: var(--font-size-m);
+	}
+
+	.socials {
+		--icon-size: 1.5em;
 	}
 
 	nav ul {
