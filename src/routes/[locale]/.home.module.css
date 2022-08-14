@@ -30,10 +30,6 @@
 	padding: var(--space-m);
 }
 
-.layout > section:nth-child(2n) {
-	background-color: var(--surface-2);
-}
-
 .layout > section[label="recent-photos"] img {
 	object-fit: cover;
 	border-radius: var(--radius-l);

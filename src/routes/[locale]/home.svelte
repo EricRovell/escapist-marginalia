@@ -4,7 +4,7 @@
 
 <script lang="ts">
 	import { pathBlog, pathGallery, pathProjects } from "@paths";
-	import { PageMeta, Link, Image, CardArticle, CardProject, GalleryGrid } from "@components";
+	import { PageMeta, Link, CardArticle, CardProject, Gallery } from "@components";
 	import { LayoutPage } from "@layout";
 	import { t } from "@core/i18n";
 	import styles from "./.home.module.css";
@@ -49,7 +49,7 @@
 				</ul>
 			</div>
 		</section>
-		<section label="recent-photos">
+		<section class="surface-2" label="recent-photos">
 			<div>
 				<header>
 					<h2 class="heading">{$t("dict.recent-photos")}</h2>
@@ -57,9 +57,7 @@
 						&#x2192; {$t("dict.entire-gallery")}
 					</Link>
 				</header>
-				<GalleryGrid items={photos} let:item>
-					<Image {...item} />
-				</GalleryGrid>
+				<Gallery items={photos} />
 			</div>
 		</section>
 		<section label="recent-projects">

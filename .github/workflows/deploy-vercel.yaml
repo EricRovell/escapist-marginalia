@@ -29,6 +29,7 @@ jobs:
         run: |
           npm i pnpm -g
           pnpm i
+          pnpm run img:process
       - name: build
         run: |
           pnpm run build

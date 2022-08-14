@@ -15,7 +15,7 @@
 <header class={`container ${styles.masthead}`}>
 	<section label="logo">
 		<Link href={$pathHome}>
-			<Icon path={logo} size="25px" />
+			<Icon path={logo} />
 		</Link>
 	</section>
 	<section label="navigation">

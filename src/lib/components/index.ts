@@ -6,7 +6,7 @@ export { default as Datetime } from "./Datetime.svelte";
 export { default as Link } from "./Link.svelte";
 export { default as TOC } from "./TOC.svelte";
 export { default as Code } from "./code/Code.svelte";
-export { Gallery, GalleryGrid } from "./gallery";
+export { Gallery, ImageFullscreen } from "./gallery";
 export { default as Meta } from "./meta/Meta.svelte";
 export { default as PageMeta } from "./meta/PageMeta.svelte";
 export { Image } from "./image";
@@ -17,6 +17,9 @@ export { Card, CardArticle, CardProject } from "./card";
 export { Details } from "./details";
 export { Range } from "./input-range";
 export { SideMenu } from "./side-menu";
+export { ThemeSelect } from "./theme-select";
+export { NavLocale } from "./nav-locale";
+export { Button } from "./button";
 export { MathExp } from "./math";
 
 export * as Timeline from "./timeline";

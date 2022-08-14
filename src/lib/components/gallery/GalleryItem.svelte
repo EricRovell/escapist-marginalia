@@ -1,0 +1,20 @@
+<script lang="ts" context="module">
+	import Link from "../Link.svelte";
+</script>
+
+<script lang="ts">
+	import { pathGalleryImage } from "@core/paths";
+	import styles from "./gallery-item.module.css";
+
+	export let id: string;
+	export let dominant: string;
+</script>
+
+<Link className={styles.link} href={$pathGalleryImage(id)}>
+	<figure class={styles.figure} style:--dominant={dominant}>
+		<slot />
+		<figcaption>
+			<slot name="caption" />
+		</figcaption>
+	</figure>
+</Link>

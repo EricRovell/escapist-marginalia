@@ -1,4 +1,4 @@
-import type { GetSession } from "@sveltejs/kit";
+/* import type { GetSession } from "@sveltejs/kit";
 
 export const getSession: GetSession = event => {
 	const languages = event.request.headers.get("accept-language");
@@ -6,4 +6,4 @@ export const getSession: GetSession = event => {
 	return languages
 		? { userLanguage: languages.slice(0, 2) }
 		: {};
-};
+}; */

@@ -7,10 +7,12 @@
     "about": "about",
     "source": "source",
     "licence": "licence",
-    "privacy": "privacy"
+    "privacy": "privacy",
+		"rss": "RSS Feed"
   },
   "dict": {
 		"language": "language",
+		"theme": "theme",
 		"topics": "topics",
 		"series": "series",
     "project-euler": "project euler",
@@ -30,7 +32,10 @@
   },
   "tooltip": {
     "change-theme": "Change theme",
-    "change-locale": "Change language"
+    "change-locale": "Change language",
+		"share": "Share",
+		"download": "Download",
+		"fullscreen": "Fullscreen"
   },
   "message": {
     "blogpost": "blogpost",
@@ -38,7 +43,8 @@
     "content-language": "content language",
     "toc": "Table of contents",
     "created-at": "Created at",
-    "last-updated-at": "Last updated at"
+    "last-updated-at": "Last updated at",
+		"build-at": "Build at"
   },
   "pages": {
 		"home": {

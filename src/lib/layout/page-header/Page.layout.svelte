@@ -16,7 +16,7 @@
 -->
 <main class={styles.page} class:wide>
 	{#if banner}
-		<header class={`${styles.banner} ${classNameBanner}`}>
+		<header class={`surface-2 ${styles.banner} ${classNameBanner}`}>
 			<slot name="banner" />
 		</header>
 	{/if}

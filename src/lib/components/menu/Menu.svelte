@@ -9,11 +9,13 @@
   import { page } from "$app/stores";  
   import { setContext } from "svelte";
   import styles from "./menu.module.css";
+
+  export let className = "";
   
   setContext<MenuContext>("page", page);
 </script>
 
-<nav class={styles["menu-container"]}>
+<nav class="{styles["menu-container"]} {className}">
   <ul class={styles["menu-items"]}>
     <slot />
   </ul>

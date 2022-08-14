@@ -7,10 +7,12 @@
     "about": "о себе",
     "source": "Исходный код",
     "licence": "Лицензия",
-    "privacy": "Приватность"
+    "privacy": "Приватность",
+		"rss": "Лента RSS"
   },
   "dict": {
 		"language": "язык",
+		"theme": "тема оформления",
 		"topics": "тема",
 		"series": "серия",
     "project-euler": "проект эйлера",
@@ -30,7 +32,10 @@
   },
   "tooltip": {
     "change-theme": "Сменить тему оформления",
-    "change-locale": "Сменить язык"
+    "change-locale": "Сменить язык",
+		"share": "Поделиться",
+		"download": "Скачать",
+		"fullscreen": "Полноэкранный просмотр"
   },
   "message": {
     "blogpost": "статья",
@@ -38,7 +43,8 @@
     "content-language": "язык публикаций",
     "toc": "Содержание",
     "created-at": "Опубликовано",
-    "last-updated-at": "Последнее обновление"
+    "last-updated-at": "Последнее обновление",
+		"build-at": "Сборка от"
   },
   "pages": {
 		"home": {

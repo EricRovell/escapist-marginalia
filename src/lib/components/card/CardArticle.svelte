@@ -17,7 +17,7 @@
 	export let slug: Blogpost["slug"];
 </script>
 
-<Card className={styles["card-article"]}>
+<Card className={`surface-2 ${styles["card-article"]}`}>
 	<svelte:fragment slot="header">
 		<Datetime
 			date={created}

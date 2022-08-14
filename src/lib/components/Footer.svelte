@@ -1,104 +1,146 @@
-<script>
-  import Link from "./Link.svelte";
-  import NavLocale from "./nav-locale/NavLocale.svelte";
-  import { t } from "@core/i18n";
-  import { version } from "../../../package.json";
+<script lang="ts">
+	import Link from "./Link.svelte";
+	import Datetime from "./Datetime.svelte";
+	import NavLocale from "./nav-locale/NavLocale.svelte";
+	import Icon from "./icons/Icon.svelte";
+	import { iconGithub, iconRSS } from "./icons/default";
+	import { t } from "@core/i18n";
 
-  import {
-  	pathSource,
-  	pathLicence,
-  	pathPrivacy,
-  	pathBlog,
-  	pathGallery,
-  	pathAbout
-  } from "@core/paths";
+	import {
+		pathSource,
+		pathLicence,
+		pathPrivacy,
+		pathBlog,
+		pathGallery,
+		pathRSS,
+		pathAbout
+	} from "@core/paths";
 
-  $: links = [
-  	{ label: "blog", href: $pathBlog },
-  	{ label: "gallery", href: $pathGallery },
-  	{ label: "source", href: pathSource },
-  	{ label: "licence", href: pathLicence },
-  	{ label: "privacy", href: pathPrivacy, disabled: true },    
-  	{ label: "about", href: $pathAbout, disabled: true }
-  ];
+	$: links = [
+		{ label: "blog", href: $pathBlog },
+		{ label: "gallery", href: $pathGallery },
+		{ label: "licence", href: pathLicence },
+		{ label: "privacy", href: pathPrivacy, disabled: true },    
+		{ label: "about", href: $pathAbout, disabled: true }
+	];
+
+	$: icons = [
+		{ label: "source", href: pathSource, icon: iconGithub },
+		{ label: "rss", href: $pathRSS, icon: iconRSS },
+	];
 </script>
 
-<footer>
-  <div class="container wrapper">
-    <nav>
-      <ul>
-        {#each links as { label, href, disabled = false }}
-          <li>
-            <Link {href} {disabled}>
-              {$t(`sections.${label}`)}
-            </Link>
-          </li>
-        {/each}
-      </ul>
-    </nav>
-    <section label="user">
-      <span>
-        © {new Date().getFullYear()} Eric/Rovell, v.{version}
-      </span>
-      <NavLocale />
-    </section>
-  </div>
+<footer class="surface-2">
+	<div class="container wrapper">
+		<nav>
+			<ul>
+				{#each links as { label, href, disabled = false }}
+					<li>
+						<Link {href} {disabled}>
+							{$t(`sections.${label}`)}
+						</Link>
+					</li>
+				{/each}
+			</ul>
+		</nav>
+		<nav class="socials">
+			<ul>
+				{#each icons as { label, href, icon }}
+					<li>
+						<Link {href}>
+							<Icon path={icon} title={$t(`sections.${label}`)} />
+						</Link>
+					</li>
+				{/each}
+			</ul>
+		</nav>
+		<section label="user">
+			<p>
+				<span>
+					© <Datetime options={{ year: "numeric" }} />, Eric/Rovell
+				</span>
+				<span>{$t("message.build-at")} <Datetime date={"__buildTime__"} /></span>
+			</p>
+			<NavLocale labeled />
+		</section>
+	</div>
 </footer>
 
 <style>
-  footer {
-    grid-area: footer;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background: var(--surface-2);
-  }
+	footer {
+		grid-area: footer;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
 
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-m);
-    width: 100%;
-    height: 100%;
-    padding-top: var(--space-l);
-    padding-bottom: var(--space-l);
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-m);
+		width: 100%;
+		height: 100%;
+		padding-top: var(--space-l);
+		padding-bottom: var(--space-l);
 
-    justify-self: center;
-  }
+		justify-self: center;
+	}
 
-  section[label="user"] {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
-    font-size: var(--font-size-m);
-    color: hsl(var(--gray-h) var(--gray-s-700) var(--gray-l-700));
-  }
+	section[label="user"] {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: var(--space-m);
+		width: 100%;
+		font-size: var(--font-size-m);
+	}
 
-  nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-end;
-    color: var(--color-primary);
-    text-transform: capitalize;
-    gap: var(--space-m);
-  }
+	.socials {
+		--icon-size: 1.5em;
+	}
 
-  @media (max-width: 540px) {
-    .wrapper {
-      grid-template: repeat(2, 1fr) / 1fr;
-      justify-items: center;
-    }
-  }
+	nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: flex-end;
+		text-transform: capitalize;
+		gap: var(--space-m);
+	}
 
-  @media (max-width: 650px) {
-    .wrapper {
-      /* floating button offset */
-      padding-bottom: 6rem;
-    }
-  }
+	p {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: var(--space-s);
+	}
+
+	p :global(time) {
+		color: var(--color-gray-300);
+	}
+
+	@media (max-width: 540px) {
+		.wrapper {
+			grid-template: repeat(2, 1fr) / 1fr;
+			justify-items: center;
+		}
+	}
+
+	@media (max-width: 650px) {
+		.wrapper {
+			/* floating button offset */
+			padding-bottom: 6rem;
+		}
+
+		section[label="user"] {
+			flex-direction: column-reverse;
+			align-items: center;
+		}
+
+		p {
+			align-items: center;
+		}
+	}
 </style>

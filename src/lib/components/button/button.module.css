@@ -1,20 +1,19 @@
+/* appearance:fill is default */
 .button {
-	--button-accent: var(--color-blue-500);
-	--button-color: var(--color-blue-200);
+	--button-shadow-size: 0;
+	--button-border-size: 2px;
+	--button-focus-ring-size: 0;
 
-	--shadow-size: 0;
-	--button-bg-alpha: 1;
-	
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	gap: var(--spacing-2, 0.5em);
+	gap: var(--space-s, 0.5em);
 
 	width: auto;
 	height: auto;
 	min-width: 5em;
 	min-height: 1em;
-	padding: var(--space-s);
+	padding: var(--space-m);
 	border-radius: 0.25em;
 	background-color: var(--button-accent);
 	
@@ -27,7 +26,9 @@
 	border: none;
 	cursor: pointer;
 
-	box-shadow: 0 0 0 var(--shadow-size) var(--focus-ring-color);
+	box-shadow:
+		inset 0 0 0 var(--button-border-size) var(--button-border-color),
+		0 0 0 var(--button-focus-ring-size) var(--button-focus-ring-color);
 
 	transition:
 		background-color 150ms cubic-bezier(0, 0, 0.58, 1),
@@ -35,47 +36,25 @@
 		box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Button::fill */
+/* button::ouline */
 
-.button.fill {
-	color: var(--variant-contrast);
+.button.outline,
+.button.ghost {
+	background-color: unset;
+	color: var(--button-accent);
 }
 
-/* Button::ouline */
+/* button::ghost */
 
-.button.outline {
-	--button-bg-alpha: 0;
-	
-	border: 2px solid hsl(var(--variant-h) var(--variant-s) var(--variant-l));
-	color: hsl(var(--variant-h) var(--variant-s) var(--variant-l));
-}
-
-.button.outline:hover {
-	--button-bg-alpha: 0.2;
-}
-
-/* Button::text */
-
-.button.text {
-	--button-bg-alpha: 0;
-	color: hsl(var(--variant-h) var(--variant-s) var(--variant-l));
-}
-
-.button.text:hover {
-	--button-bg-alpha: 0.1;
+.button.ghost {
+	--button-border-size: 0;
 }
 
 /* Feedback */
 
 .button:active {
 	filter: brightness(120%) hue-rotate(5deg);
-	transform: scale(0.975);
-}
-
-.button:active,
-.button:hover,
-.button:focus {
-	--shadow-size: 5px;
+	transform: scale(0.95);
 }
 
 /* State */
@@ -86,14 +65,21 @@
 	pointer-events: none;
 }
 
+.button:focus-visible,
+.button:hover,
+.button:active {
+	--button-focus-ring-size: 4px;
+}
+
 /* Display */
+
+.button:global(.icon) {
+	aspect-ratio: 1 / 1;
+	padding: var(--space-s);
+	min-width: 1.5em;
+	min-height: 1.5em;
+}
 
 .wide {
 	display: flex;
-}
-
-@media (hover: hover) {
-	.button:hover {
-		filter: brightness(110%) hue-rotate(5deg);
-	}
 }

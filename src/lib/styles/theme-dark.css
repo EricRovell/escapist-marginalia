@@ -7,6 +7,11 @@
     --surface-1: #0e1625;
     --surface-2: #090e19;
     --surface-3: #172137;
+    --surface-4: #202e4d;  
+    --surface-text-1: var(--color-gray-600);
+    --surface-text-2: var(--color-gray-500);
+    --surface-text-3: var(--color-gray-500);
+    --surface-text-4: var(--color-gray-500);
 
     --color-heading: var(--color-blue-400);
     --color-text-primary: var(--color-gray-400);
@@ -19,6 +24,11 @@
     --color-border: var(--color-blue-800);
 
     --focus-ring-color: #999EEB60;
+
+    --button-accent: var(--color-blue-500);
+    --button-color: var(--color-blue-200);
+    --button-focus-ring-color: var(--focus-ring-color);
+    --button-border-color: var(--color-blue-400);
 
     --switch-track-color: var(--color-gray-600);
     --switch-track-color-active: var(--color-blue-600);
@@ -87,6 +97,11 @@
   --surface-1: #0e1625;
   --surface-2: #090e19;
   --surface-3: #172137;
+  --surface-4: #202e4d;  
+  --surface-text-1: var(--color-gray-600);
+  --surface-text-2: var(--color-gray-500);
+  --surface-text-3: var(--color-gray-500);
+  --surface-text-4: var(--color-gray-500);
 
   --color-heading: var(--color-blue-400);
   --color-text-primary: var(--color-gray-400);
@@ -99,6 +114,11 @@
   --color-border: var(--color-blue-800);
 
   --focus-ring-color: #999EEB60;
+
+  --button-accent: var(--color-blue-500);
+  --button-color: var(--color-blue-200);
+  --button-focus-ring-color: var(--focus-ring-color);
+  --button-border-color: var(--color-blue-400);
 
   --switch-track-color: var(--color-gray-600);
   --switch-track-color-active: var(--color-blue-600);

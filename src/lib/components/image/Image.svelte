@@ -12,7 +12,7 @@
 	let error = false;
 </script>
 
-<picture class={styles.picture} {style}>
+<picture class={styles.picture} {style} on:click>
 	<img
 		{alt}
 		class={className}

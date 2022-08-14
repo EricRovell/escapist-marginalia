@@ -51,14 +51,37 @@ export function preventPageScroll(condition: boolean) {
 			top: -${window.scrollY}px;
 			position: fixed;
 			overflow-y: scroll;
+			overscroll-behavior: none;
 		`;
 	} else {
-		const scrollY = parseInt(document.body.style.top || "0");
+		const scrollY: number = parseInt(document.body.style.top as string || "0");
 		document.body.style.cssText = "";
 		window.scrollTo({
 			top: -1 * scrollY,
 			behavior: "auto"
 		});
+	}
+}
+
+/**
+ * Shares a data using `Web Share API` if supported.
+ */
+export async function share(data: ShareData): Promise<boolean> {
+	if (!navigator.share || !navigator.canShare) {
+		return false;
+	}
+
+	if (!navigator.canShare(data)) {
+		console.error("Specified data cannot be shared.");
+		return false;
+	}
+
+	try {
+		await navigator.share(data);
+		return true;
+	} catch (error) {
+		console.error(`Sharing was unsuccessful: ${error.message}`);
+		return false;
 	}
 }
 

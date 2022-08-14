@@ -11,9 +11,19 @@ const config = {
 	],
 	extensions: [ ".svelte", ".svx" ],
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			pages: "build",
+			assets: "build",
+			fallback: null,
+			precompress: false
+		}),
 		prerender: {
-			default: false
+			default: true,
+			entries: [
+				"*",
+				"/rss.xml"
+			],
+			origin: "https://eric-rovell.vercel.app"
 		}
 	}
 };
