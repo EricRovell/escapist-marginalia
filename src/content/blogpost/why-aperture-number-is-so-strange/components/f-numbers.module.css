@@ -1,0 +1,65 @@
+.root > article section,
+.root > article ol {
+	/* make a grid */
+	display: contents;
+}
+
+.root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.root > article {
+	width: min(100% - var(--space-m), 85vw);
+}
+
+.root input[type="range"] {
+	width: min(450px, 85vw);
+}
+
+.root > article {
+	display: grid;
+	grid-template: repeat(3, auto) / repeat(var(--f-number-items), 1fr);
+	column-gap: 1em;
+	align-items: center;
+	text-align: center;
+	overflow-x: auto;
+	width: fit-content;
+	max-width: calc(100% - var(--space-l));
+}
+
+.f-number li {
+	font-size: 1.25em;
+}
+
+.item {
+	padding-block: var(--space-s);
+}
+
+/* .item:not(:nth-child(9n)) {
+	border-right: 3px solid var(--surface-1);
+} */
+
+.calculated li,
+.progression li {
+	font-size: 0.85em;
+	color: var(--color-gray-500);
+	opacity: 0.85;
+}
+
+.root header {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	position: sticky;
+	left: 0;
+	background-color: var(--surface-3);
+	padding-inline: var(--space-s);
+	height: 100%;
+	z-index: 1;
+}
+
+.root ol {
+	list-style: none;
+}

@@ -20,9 +20,11 @@ export { SideMenu } from "./side-menu";
 export { ThemeSelect } from "./theme-select";
 export { NavLocale } from "./nav-locale";
 export { Button } from "./button";
+export { MathExp } from "./math";
 
 export * as Timeline from "./timeline";
 export * as Menu from "./menu";
 export * from "./gallery";
+export * as Radio from "./radio";
 
 export type { MetaProps } from "./meta/Meta.svelte";
