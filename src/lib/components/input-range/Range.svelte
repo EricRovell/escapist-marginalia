@@ -27,7 +27,7 @@
 		{step}
 		type="range"
 	/>
-	<output class={styles.output}>
+	<output class={styles.output} class:visually-hidden={!tooltip}>
 		{value}
 	</output>
 </label>
