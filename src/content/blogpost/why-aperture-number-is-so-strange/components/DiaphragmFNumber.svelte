@@ -1,10 +1,13 @@
 <script lang="ts">
+	import { tweened } from "svelte/motion";
 	import FNumberControls from "./FNumberControls.svelte";
 
-	const r = 50;
-	const stroke = 2;
+	export let dict: Record<string, string>;
 
-	let stop: number;
+	const r = 50;
+	const stroke = 8;
+
+	let stop = tweened(5.6);
 </script>
 
 <section class="wide wrapper">
@@ -19,7 +22,7 @@
 				<circle
 					cx={r}
 					cy={r}
-					r={(r - 2 * stroke) / 2 ** (0.5 * stop)}
+					r={(r - 2 * stroke) / 2 ** (0.5 * $stop)}
 					fill="black"
 				/>
 			</mask>
@@ -28,16 +31,16 @@
 			cx={r}
 			cy={r}
 			r={r - stroke}
-			fill="black"
-			stroke="#d2d2d2"
+			fill="var(--color-gray-500)"
+			stroke="var(--color-gray-700)"
 			stroke-width={stroke}
 			mask="url(#aperture-mask)"
 		/>		
 	</svg>
 	<FNumberControls
-		bind:value={stop}
+		bind:value={$stop}
 		name="aperture"
-		legend="Aperture Number"	
+		legend="{dict["aperture-number"]}"	
 	/>
 </section>
 

@@ -21,5 +21,13 @@
 }
 
 .radio input:checked + span {
-	background-color: var(--surface-3);
+	background-color: var(--surface-4);
+}
+
+.radio input:focus-visible + span {
+	outline: 1px dashed var(--color-blue-400);
+}
+
+.radio input:hover + span {
+	background-color: var(--surface-4);
 }
