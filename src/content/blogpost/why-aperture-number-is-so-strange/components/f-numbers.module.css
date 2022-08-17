@@ -29,7 +29,7 @@
 	max-width: calc(100% - var(--space-l));
 }
 
-.f-number li {
+.f-number {
 	font-size: 1.25em;
 }
 
@@ -37,12 +37,9 @@
 	padding-block: var(--space-s);
 }
 
-/* .item:not(:nth-child(9n)) {
-	border-right: 3px solid var(--surface-1);
-} */
-
 .calculated li,
-.progression li {
+.progression li,
+.f-number-intermidiate {
 	font-size: 0.85em;
 	color: var(--color-gray-500);
 	opacity: 0.85;
@@ -62,4 +59,20 @@
 
 .root ol {
 	list-style: none;
+}
+
+/* step controls view */
+.root :global(.step-controls) {
+	display: grid;
+	grid-template: 1fr 1fr / 1fr 1fr;
+	gap: var(--space-m);
+}
+
+.root :global(.step-controls) button {
+	font-size: 0.85em;
+}
+
+.root :global(.step-controls) label {
+	grid-row: 2;
+	grid-column: 1 / span 2;
 }
