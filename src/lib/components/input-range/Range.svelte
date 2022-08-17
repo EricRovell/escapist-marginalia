@@ -26,6 +26,7 @@
 		{max}
 		{step}
 		type="range"
+		on:change
 	/>
 	<output class={styles.output} class:visually-hidden={!tooltip}>
 		{value}
