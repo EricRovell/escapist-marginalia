@@ -6,7 +6,7 @@
 
 	const rendered = katex.renderToString(math, {
 		throwOnError: false,
-		displayMode: !inline
+		displayMode: inline
 	});
 </script>
 
