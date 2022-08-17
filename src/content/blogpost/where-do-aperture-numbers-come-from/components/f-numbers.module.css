@@ -10,6 +10,10 @@
 	align-items: center;
 }
 
+.root form {
+	margin-bottom: var(--space-m);
+}
+
 .root > article {
 	width: min(100% - var(--space-m), 85vw);
 }
