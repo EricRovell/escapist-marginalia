@@ -1,5 +1,5 @@
 .controls {
-	width: min(100%, 85vw);
+	width: min(450px, 85vw);
 	margin-top: var(--space-m);
 }
 

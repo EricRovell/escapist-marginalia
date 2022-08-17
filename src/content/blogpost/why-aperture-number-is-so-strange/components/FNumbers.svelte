@@ -63,10 +63,10 @@
 	</form>
 	<article>
 		<section class="{styles["f-numbers"]}">
+			<header>
+				{dict["f-number"]}
+			</header>
 			<ol class="">
-				<header>
-					{dict["f-number"]}
-				</header>
 				{#each range(...fstops) as fstop}
 					<li class="{styles.item} {styles["f-number"]}">
 						{Math.trunc((2 ** (fstop / 2)) * 10) / 10}
@@ -83,10 +83,10 @@
 			</ol>
 		</section>
 		<section class="{styles.calculated}">
+			<header>
+				{dict["calculated"]}
+			</header>
 			<ol class="">
-				<header>
-					{dict["calculated"]}
-				</header>
 				{#each range(...fstops) as fstop}
 					<li class="{styles.item}">
 						{(2 ** (fstop / 2)).toPrecision(4)}
@@ -103,20 +103,22 @@
 			</ol>
 		</section>
 		<section class="{styles.progression}">
+			<header>
+				{dict["progression"]}
+			</header>
 			<ol class="">
-				<header>
-					{dict["progression"]}
-				</header>
 				{#each range(...fstops) as fstop}
-					<li class="{styles.item}">
+					<li class="{styles.item}" style="position: relative">
 						<MathExp math={`(\\sqrt{2})^{${fstop}}`} inline />
 					</li>
 					{#if step > 1 && fstop < fstops[1]}
-						{#each range(2, step) as fstopStep}
-							<li class="{styles.item}">
-								<MathExp math={`(\\sqrt{2})^{${fstop}\\frac{${fstopStep - 1}}{${step}}}`} inline />
-							</li>
-						{/each}
+						{#key step}
+							{#each range(2, step) as fstopStep}
+								<li class="{styles.item}" style="position: relative">
+									<MathExp math={`(\\sqrt{2})^{${fstop}\\frac{${fstopStep - 1}}{${step}}}`} inline />
+								</li>
+							{/each}
+						{/key}
 					{/if}
 				{/each}
 			</ol>

@@ -5,8 +5,6 @@
 	grid-template-columns: 1fr min(calc(100% - 2 * var(--space-m)), 65ch) 1fr;
 	justify-self: center;
 	gap: var(--space-m);
-	/* width: min(100%, calc(65ch + 2 * var(--space-s))); */
-
 	line-height: 1.5;
 }
 
