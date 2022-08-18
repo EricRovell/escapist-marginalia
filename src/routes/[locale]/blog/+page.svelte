@@ -1,36 +1,16 @@
-<script context="module" lang="ts">
-	import type { Load } from "@sveltejs/kit";
-
-	export const load: Load = async ({ fetch }) => {
-		const res = await fetch("/api/blogposts");
-
-		if (res.ok) {
-			return {
-				props: {
-					blogposts: await res.json()
-				}
-			};
-		}
-
-		return {
-			status: res.status,
-			error: new Error("Could not load URL")
-		};
-	};
-</script>
-
 <script lang="ts">
 	import { PageMeta, CardArticle, SwitchGroup } from "@components";
 	import { LayoutPage } from "@layout";
 	import { t, locale } from "@core/i18n";
 	import { find } from "@utils/query";
 	import { iconPi, iconImg, iconNumberE, iconGlobe } from "@lib/components/icons/default";
-	import styles from "./.blog.module.css";	
+	import styles from "./blog.module.css";	
 
 	import type { Blogpost } from "../../../types";
 	import type { QueryItem } from "@utils/query";
+	import type { PageLoad } from "./$types";
 
-	export let blogposts: Blogpost[] = [];
+	export let data: PageLoad = [];
 
 	type Query<T> = {
 		"content-lang": QueryItem<string[], T>;
@@ -54,7 +34,7 @@
 		}
 	};
 
-	$: content = find(blogposts, queryOptions);
+	$: content = find(data.items, queryOptions);
 </script>
 
 <PageMeta route="blog" />

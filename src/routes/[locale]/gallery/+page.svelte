@@ -2,9 +2,9 @@
 	import { t } from "@core/i18n";
 	import { PageMeta, Gallery } from "@components";
 	import { LayoutPage } from "@layout";
-	import type { GalleryItem } from "@components";
+	import type { PageData } from "./$types";
 
-	export let items: GalleryItem[] = [];
+	export let data: PageData = [];
 </script>
 
 <PageMeta route="gallery" />
@@ -18,5 +18,5 @@
 			{$t("pages.gallery.description")}
 		</p>
 	</svelte:fragment>
-	<Gallery {items}	/>
+	<Gallery items={data}	/>
 </LayoutPage>

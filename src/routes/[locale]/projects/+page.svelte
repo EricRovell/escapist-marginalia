@@ -1,35 +1,15 @@
-<script context="module" lang="ts">
-	import type { Load } from "@sveltejs/kit";
-	import type { Project } from "@types";
-	
-	export const load: Load = async ({ fetch }) => {
-		const res = await fetch("/api/projects");
-
-		if (res.ok) {
-			return {
-				props: {
-					projects: await res.json()
-				}
-			};
-		}
-
-		return {
-			status: res.status,
-			error: new Error("Could not load")
-		};
-	};
-</script>
-
 <script lang="ts">
 	import { t } from "@core/i18n";
 	import { PageMeta, CardProject } from "@components";
 	import { LayoutPage } from "@layout";
 	import { groupBy } from "@utils/helpers";
 	import styles from "@styles/pages/projects.module.css";
+	import type { Project } from "@types";
+	import type { PageLoad } from "./$types";
 
-	export let projects: Project[] = [];
+	export let data: PageLoad = [];
 
-	$: groupedProjects = Object.entries<Project[]>(groupBy(projects, project => project.type));
+	$: groupedProjects = Object.entries<Project[]>(groupBy(data.items, project => project.type));
 </script>
 
 <PageMeta route="projects" />
