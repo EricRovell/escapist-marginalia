@@ -1,12 +1,13 @@
 ---
-title: "Masonry Image Gallery Layout with (almost) pure CSS"
-description: "Build Masonry-like layout image gallery component using the modern CSS."
-lang: en
 created: 2022-05-11T15:30:00.000Z
-updated: 2022-05-11T15:30:00.000Z
+description: "Build Masonry-like layout image gallery component using the modern CSS."
 keywords: [ "css", "web" ]
-published: true
+lang: en
 layout: blogpost
+published: true
+slug: "masonry-image-gallery-with-almost-pure-css"
+title: "Masonry Image Gallery Layout with (almost) pure CSS"
+updated: 2022-05-11T15:30:00.000Z
 ---
 
 <script>

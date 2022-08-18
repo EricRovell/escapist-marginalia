@@ -1,13 +1,14 @@
 ---
-title: "Проект Эйлера #1: Числа, кратные 3 или 5"
-description: "Решаем Проект Эйлера, проблема №1: Числа кратные 3 или 5."
-series: "project-euler"
-lang: ru
 created: 2021-06-10T00:00:00.000Z
-updated: 2022-05-24T00:20:00.000Z
+description: "Решаем Проект Эйлера, проблема №1: Числа кратные 3 или 5."
 keywords: [ "project euler", "math" ]
-published: true
+lang: ru
 layout: blogpost
+published: true
+series: "project-euler"
+slug: "проект-эйлера-1"
+title: "Проект Эйлера #1: Числа, кратные 3 или 5"
+updated: 2022-05-24T00:20:00.000Z
 ---
 
 <script>
