@@ -1,12 +1,13 @@
 ---
-title: "Interesting anagram check algorithm"
-description: "Exploring interesting solution to check a word for anagram using math."
-lang: en
 created: 2021-11-01T00:00:00.000Z
-updated: 2021-11-28T02:21:00.000Z
+description: "Exploring interesting solution to check a word for anagram using math."
 keywords: [ "algorithm", "math" ]
-published: true
+lang: en
 layout: blogpost
+published: true
+slug: "interesting-anagram-check-algorithm"
+title: "Interesting anagram check algorithm"
+updated: 2021-11-28T02:21:00.000Z
 ---
 
 <script>

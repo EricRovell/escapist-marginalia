@@ -1,17 +1,12 @@
-<script context="module" lang="ts">
-	import type { Blogpost, Project, GalleryItem } from "../../types";
-</script>
-
 <script lang="ts">
 	import { pathBlog, pathGallery, pathProjects } from "@paths";
 	import { PageMeta, Link, CardArticle, CardProject, Gallery } from "@components";
 	import { LayoutPage } from "@layout";
 	import { t } from "@core/i18n";
-	import styles from "./.home.module.css";
+	import type { PageData } from "./$types";
+	import styles from "./home.module.css";
 
-	export let blogposts: Blogpost[] = [];
-	export let photos: GalleryItem[] = [];
-	export let projects: Project[] = [];
+	export let data: PageData = {};
 </script>
 
 <PageMeta route="home" />
@@ -35,7 +30,7 @@
 					</Link>
 				</header>
 				<ul class="grid-flexible" style="--item-size: 250px">
-					{#each blogposts as { created, description, keywords, title, slug }}
+					{#each data.blogposts as { created, description, keywords, title, slug }}
 						<li>
 							<CardArticle
 								{created}
@@ -57,7 +52,7 @@
 						&#x2192; {$t("dict.entire-gallery")}
 					</Link>
 				</header>
-				<Gallery items={photos} />
+				<Gallery items={data.photos} />
 			</div>
 		</section>
 		<section label="recent-projects">
@@ -69,7 +64,7 @@
 					</Link>
 				</header>
 				<ul class="grid-flexible" style="--item-size: 250px">
-					{#each projects as { title, description, github, npm, homepage }}
+					{#each data.projects as { title, description, github, npm, homepage }}
 						<li>
 							<CardProject
 								{description}

@@ -1,12 +1,13 @@
 ---
-title: "Where do aperture numbers come from?"
-description: "Let's find out, why aperture numbers are as they are and where do they come from and what is the point of this."
-lang: en
 created: 2022-08-18T00:40:00.000Z
-updated: 2022-08-18T00:40:00.000Z
+description: "Let's find out, why aperture numbers are as they are and where do they come from and what is the point of this."
 keywords: [ "photography", "aperture", "f-number" ]
+lang: en
 layout: blogpost
 published: true
+slug: "where-do-aperture-numbers-come-from"
+title: "Where do aperture numbers come from?"
+updated: 2022-08-18T00:40:00.000Z
 ---
 
 <script>

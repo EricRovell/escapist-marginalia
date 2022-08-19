@@ -4,10 +4,10 @@
 	import { Button, Icon, Image, Link, Meta, ImageFullscreen } from "@components";
 	import { iconShare, iconDownload, iconFullscreen } from "$lib/components/icons/default";
 	import { share } from "@utils/helpers";
-	import type { GalleryItem } from "@types";	
-	import styles from "./.id.module.css";
+	import type { PageData } from "./$types";
+	import styles from "./id.module.css";
 
-	export let image: GalleryItem;
+	export let data: PageData;
 
 	let open = false;
 
@@ -37,21 +37,21 @@
 </script>
 
 <Meta
-	title={image.title}
+	title={data.title}
 	meta={{
-		description: image.description,
-		keywords: image.keywords.toString()
+		description: data.description,
+		keywords: data.keywords.toString()
 	}}
 	openGraph={{
-		title: image.title,
-		description: image.description,
+		title: data.title,
+		description: data.description,
 		url: $webpage,
-		image: `${$webpageRoot}${image.thumb.cover}`,
+		image: `${$webpageRoot}${data.thumb.cover}`,
 	}}
 	twitter={{
 		card: "summary",
-		title: image.title,
-		description: image.description,
+		title: data.title,
+		description: data.description,
 		url: $webpage
 	}}
 />
@@ -59,10 +59,10 @@
 <main class={styles.container}>
 	<section class="surface-2 {styles["image"]}" label="img">
 		<Image
-			src={image.src}
-			width={image.width}
-			height={image.height}
-			alt={image.description}
+			src={data.src}
+			width={data.width}
+			height={data.height}
+			alt={data.description}
 			on:click={() => open = !open}
 		/>
 		<aside class="{styles.actions}">
@@ -75,8 +75,8 @@
 				<Icon path={iconShare} />
 			</Button>
 			<Link
-				download="{image.title}"
-				href="{image.src}"
+				download="{data.title}"
+				href="{data.src}"
 				title="{$t("tooltip.download")}"
 			>
 				<Icon path={iconDownload} />
@@ -92,38 +92,38 @@
 		</aside>
 	</section>
 	<h1 class="{styles.title}">
-		&ldquo{image.title}&rdquo
+		&ldquo{data.title}&rdquo
 	</h1>
 	<div class="{styles.metadata}">
 		<section>
 			<dl aria-label="camera">
 				<dt>Camera</dt>
-				<dd>{image.camera}</dd>
+				<dd>{data.camera}</dd>
 				<dt>Lens</dt>
-				<dd>{image.lens}</dd>
+				<dd>{data.lens}</dd>
 			</dl>
 			<dl aria-label="parameters">
 				<dt>Aperture</dt>
-				<dd>{image.aperture}</dd>
+				<dd>{data.aperture}</dd>
 				<dt>ISO</dt>
-				<dd>{image.iso}</dd>
+				<dd>{data.iso}</dd>
 				<dt>Shutter Speed</dt>
-				<dd>{image.shutterSpeed}</dd>
+				<dd>{data.shutterSpeed}</dd>
 				<dt>Focal Length</dt>
-				<dd>{image.focalLength}</dd>
+				<dd>{data.focalLength}</dd>
 			</dl>
 		</section>
 		<section>
 			<dl aria-label="date">
 				<dt>Taken on</dt>
-				<dd>{image.date}</dd>
+				<dd>{data.date}</dd>
 				<dt>Copyright</dt>
 				<dd>ERIC_ROVELL</dd>
 			</dl>
 			<div class="{styles.keywords}">
 				<h3>Keywords</h3>
 				<ul>
-					{#each image.keywords as keyword}
+					{#each data.keywords as keyword}
 						<li class="surface-2">{keyword}</li>
 					{/each}
 				</ul>
@@ -134,9 +134,9 @@
 
 <ImageFullscreen bind:open>
 	<Image
-		src={image.src}
-		width={image.width}
-		height={image.height}
-		alt={image.description}
+		src={data.src}
+		width={data.width}
+		height={data.height}
+		alt={data.description}
 	/>
 </ImageFullscreen>

@@ -4,15 +4,17 @@ export type Variant = "neutral" | "primary" | "success" | "danger" | "warning" |
  * Describes the metadata object from the blogpost's frontmatter.
  */
 export interface BlogpostMetadata {
-	title: string;
-	description: string;
-	series: string;
 	created: string;
-	updated: string;
+	description: string;
+	filepath: string;
 	keywords: string[];
-	published?: boolean;
-	layout?: string;
 	lang: "ru" | "en";
+	layout?: string;
+	published?: boolean;
+	series: string;
+	slug: string;
+	title: string;
+	updated: string;
 }
 
 /**
