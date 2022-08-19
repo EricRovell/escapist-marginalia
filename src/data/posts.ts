@@ -1,4 +1,3 @@
-import { basename, dirname } from "path";
 import { find } from "@utils/query";
 import type { Blogpost, BlogpostMetadata } from "../types";
 import type { QueryItem } from "@utils/query";
@@ -7,18 +6,28 @@ async function fetchBlogposts(): Promise<Blogpost[]> {
 	const posts: Blogpost[] = [];
 
 	// Import all .svx files in the directory
-	const modules = import.meta.glob("/src/content/**/*.svx");
+	const modules = import.meta.glob("/src/content/blogpost/**/*.svx");
 
 	for await (const [ filename, module ] of Object.entries(modules)) {
 		const { metadata } = await module();
-		const { created, updated, keywords, lang, ...rest }: BlogpostMetadata = metadata;
+		const {
+			created,
+			updated,
+			title,
+			...rest
+		}: BlogpostMetadata = metadata;
 
 		posts.push({
 			created: new Date(created),
 			updated: new Date(updated),
-			keywords,
-			slug: `${lang}-${basename(dirname(filename), ".svx")}`,
-			lang,
+			title,
+			/**
+			 * All blogpost contents are located as:
+			 * /src/content/blogpost/{blogpost}/{file}.svx
+			 * For vite to analize dynamic imports we strill all but `{blogpost}/{file}`
+			 * And later we have to break it by "/" and put parts into the path.
+			 * */
+			filepath: filename.slice(22, -4),
 			...rest
 		});
 	}
@@ -30,16 +39,22 @@ interface Options {
 	limit?: number;
 }
 
-export async function getBlogposts({ lang, keywords, published }: Partial<Blogpost> = {}, { limit }: Options = {}): Promise<Blogpost[]> {
+export async function getBlogposts({ slug, lang, keywords, published }: Partial<Blogpost> = {}, { limit }: Options = {}): Promise<Blogpost[]> {
 	const blogposts = await fetchBlogposts();
 
 	type Query<T> = {
+		"slug": QueryItem<string, T>;
 		"published": QueryItem<boolean, T>;
 		"lang": QueryItem<"en" | "ru", T>;
 		"keywords": QueryItem<string[], T>;
 	};
 
 	const query: Query<Blogpost> = {
+		slug: {
+			value: slug,
+			validator: slug => typeof slug === "string",
+			matcher: slug => blogpost => blogpost.slug === slug
+		},
 		published: {
 			value: published,
 			validator: value => value,

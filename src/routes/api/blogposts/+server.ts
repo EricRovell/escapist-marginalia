@@ -1,8 +1,9 @@
 import { dev } from "$app/env";
 import { getBlogposts } from "@data/posts";
+import type { RequestHandler } from "$types";
 import type { Blogpost } from "@types";
 
-export async function GET({ url }) {
+export const GET: RequestHandler = async ({ url }) => {
 	const published = !dev
 		? { published: true }
 		: {};
@@ -12,7 +13,7 @@ export async function GET({ url }) {
 		...published
 	});
 
-	return {
-		body: data
-	};
-}
+	return new Response(
+		JSON.stringify(data)
+	);
+};

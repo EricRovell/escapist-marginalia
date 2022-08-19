@@ -1,13 +1,14 @@
 ---
-title: "Project Euler #1: Multiples of 3 or 5"
-description: "The Project Euler #1 solution."
-series: "project-euler"
-lang: en
 created: 2022-05-24T00:20:00.000Z
-updated: 2022-05-24T00:20:00.000Z
+description: "The Project Euler #1 solution."
 keywords: [ "project euler", "math" ]
-published: true
+lang: en
 layout: blogpost
+published: true
+series: "project-euler"
+slug: "project-euler-1"
+title: "Project Euler #1: Multiples of 3 or 5"
+updated: 2022-05-24T00:20:00.000Z
 ---
 
 <script>

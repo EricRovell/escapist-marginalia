@@ -8,7 +8,6 @@
   export let path: string | undefined = undefined;
   export let markup: string | undefined = undefined;
   export let color: Variant | string = ""; 
-  export let size = "1em";
   export let margin = "0";
   
   export let style = "";
