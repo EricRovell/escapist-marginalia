@@ -5,11 +5,13 @@
 	export let max = 100;
 	export let min = 0;
 	export let step = 1;
+	export let tooltip = false;
 	export let value: number;
 </script>
 
 <label
 	class={styles.container}
+	class:tooltip
 	style:--range-max="{max}"
 	style:--range-min="{min}"
 	style:--range-value="{value}"
@@ -24,8 +26,9 @@
 		{max}
 		{step}
 		type="range"
+		on:change
 	/>
-	<output class={styles.output}>
+	<output class={styles.output} class:visually-hidden={!tooltip}>
 		{value}
 	</output>
 </label>

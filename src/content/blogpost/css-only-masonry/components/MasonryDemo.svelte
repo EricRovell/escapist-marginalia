@@ -17,10 +17,10 @@
 -->
 <section class="{styles.wide} wide {styles.masonry}">
 	<form>
-		<Range bind:value={items} min={5} max={40}>
+		<Range bind:value={items} min={5} max={40} tooltip>
 			Items
 		</Range>
-		<Range bind:value={scale} min={40} max={200}>
+		<Range bind:value={scale} min={40} max={200} tooltip>
 			Scale
 		</Range>
 	</form>

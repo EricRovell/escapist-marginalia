@@ -15,6 +15,11 @@
 }
 
 .output {
+  visibility: hidden;
+}
+
+.container:global(.tooltip) .output {
+  visibility: visible;
   position: absolute;
   top: calc(-1 * var(--space-m));
   left: calc(var(--range-dx));

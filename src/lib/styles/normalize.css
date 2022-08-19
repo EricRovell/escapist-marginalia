@@ -61,3 +61,7 @@ sup {
 input[type="checkbox"]:hover {
   cursor: pointer;
 }
+
+.katex-display > .katex {
+  white-space: unset;
+}

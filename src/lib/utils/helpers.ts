@@ -84,3 +84,23 @@ export async function share(data: ShareData): Promise<boolean> {
 		return false;
 	}
 }
+
+/**
+ * Derives an array of sequental numbers.
+ */
+export const range = (start: number, end: number) => {
+	const size = end - start + 1;
+	return [...Array(size).keys()].map((i) => i + start);
+};
+
+/**
+ * Clamps a value between an upper and lower bound.
+ * NaN is clamped to the lower bound
+ */
+export function clamp(number: number, min = 0, max = 1): number {
+	return number > max
+		? max
+		: number > min
+			? number
+			: min;
+}

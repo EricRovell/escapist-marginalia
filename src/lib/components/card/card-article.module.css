@@ -16,6 +16,7 @@
 
 .keywords {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	gap: var(--space-s);
 	font-size: var(--font-size-s);
@@ -29,4 +30,5 @@
 	border: 2px solid var(--color-border);
 	border-radius: var(--radius-s);
 	padding: var(--space-xs) var(--space-s);
+	white-space: wrap;
 }
