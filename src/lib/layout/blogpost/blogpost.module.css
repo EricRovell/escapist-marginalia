@@ -1,3 +1,7 @@
+.toc {
+	margin-bottom: var(--space-l);
+}
+
 .article {
 	grid-area: article;
 
@@ -17,7 +21,7 @@
 	grid-column: 1 / 4;
 }
 
-.article :is(h2, h3, h4, h5, h6) {
+.article :is(h2, h3, h4, h5, h6):not([class]) {
 	color: var(--color-heading);
 	margin-top: var(--space-m);
 	padding-bottom: var(--space-s);

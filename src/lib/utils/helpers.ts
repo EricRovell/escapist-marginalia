@@ -104,3 +104,14 @@ export function clamp(number: number, min = 0, max = 1): number {
 			? number
 			: min;
 }
+
+/**
+ * 
+ */
+export function encodeTitleId(title: string) {
+	const id = title
+		.toLowerCase()
+		.replace(/\s/g, "-");
+
+	return encodeURI(id);
+}
