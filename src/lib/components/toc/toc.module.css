@@ -1,0 +1,20 @@
+.title {
+	font-size: var(--font-size-l);
+	margin: 0;
+}
+
+.toc {
+	font-size: var(--font-size-m);
+	height: min-content;
+}
+
+.toc-items {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-s);
+	list-style: none;
+}
+
+.toc-item {
+	margin-left: calc((var(--toc-level) - 1) * 2ch);
+}

@@ -5,7 +5,7 @@
 
 <script>
 	import { webpage } from "@core/paths";
-	import { Meta } from "@components";
+	import { Meta, TOC } from "@components";
 	import Header from "./Header.svelte";
 	import { LayoutPage } from "../page-header";
 	import styles from "./blogpost.module.css";
@@ -17,7 +17,7 @@
 	export let created;
 	export let updated;
 	export let series;
-	//export let toc = [];
+	export let toc = [];
 </script>
 
 <Meta
@@ -57,10 +57,10 @@
 		{updated}
 		slot="banner"
 	/>
-	<!-- <aside class={styles.sidebar}>
-		<TOC headings={toc} />
-	</aside> -->
 	<article class={styles.article}>
+		<aside class={styles.toc}>
+			<TOC headings={toc} {title} />
+		</aside>
 		<slot name="pre-content" />
 		<slot />
 		<slot name="post-content" />

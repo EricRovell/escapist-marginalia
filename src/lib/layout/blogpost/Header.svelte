@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { t, locale } from "@core/i18n";
-	import { Datetime } from "@components";	
+	import { Datetime } from "@components";
+	import { encodeTitleId } from "@utils/helpers";
 	import styles from "./header.module.css";
 
 	export let title: string;
@@ -21,7 +22,9 @@
 </script>
 
 <div class={styles.wrapper}>
-	<h1>{title}</h1>
+	<h1 id="{encodeTitleId(title)}">
+		{title}
+	</h1>
 	<p>{description}</p>
 	<footer>
 		<ul>

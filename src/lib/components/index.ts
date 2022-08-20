@@ -4,7 +4,7 @@ export { default as SVG } from "./SVG.svelte";
 export { default as WorkInProgress } from "./WorkInProgress.svelte";
 export { default as Datetime } from "./Datetime.svelte";
 export { default as Link } from "./Link.svelte";
-export { default as TOC } from "./TOC.svelte";
+export { TOC } from "./toc";
 export { default as Code } from "./code/Code.svelte";
 export { Gallery, ImageFullscreen } from "./gallery";
 export { default as Meta } from "./meta/Meta.svelte";
