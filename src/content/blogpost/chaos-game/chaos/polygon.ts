@@ -20,4 +20,10 @@ export class Polygon {
 	get random(): [ Vertice, number ] {
 		return randItem(this.vertices);
 	}
+
+	get points() {
+		return this.vertices
+			.map(({ x, y }) => `${x},${y}`)
+			.join(" ");
+	}
 }
