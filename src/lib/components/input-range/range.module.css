@@ -11,7 +11,7 @@
   position: relative;
   display: flex;
   flex-flow: column nowrap;
-  gap: var(--space-s);
+  gap: var(--space-m);
 }
 
 .output {
@@ -112,6 +112,14 @@
 .range:not(:disabled):focus::-moz-range-thumb {
   box-shadow: 0px 0px 0px 5px var(--focus-ring-color);
 }
+
+.range::-webkit-slider-thumb:active {
+  cursor: grabbing;
+}
+
+/* .range::-webkit-slider-thumb:hover {
+  cursor: grab;
+} */
 
 /* track */
 
