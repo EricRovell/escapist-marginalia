@@ -15,6 +15,10 @@ export class RenderManager {
 		this.shouldSetup = false;
 	}
 
+	get staticCanvas() {
+		return this.drawMap.size === 0;
+	}
+
 	redraw(): void {
 		this.shouldRedraw = true;
 	}
@@ -51,6 +55,8 @@ export class RenderManager {
 	}
 
 	render({ autoclear, context, height, pixelRatio, width }: CanvasRender) {
+		console.log("raf");
+
 		if (this.shouldResize) {
 			context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 			this.shouldResize = false;

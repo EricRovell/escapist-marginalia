@@ -29,7 +29,9 @@
 
 	const render = () => {
 		manager.render({ autoclear, context, height, pixelRatio, width });
-		frameId = requestAnimationFrame(render);
+		if (!manager.staticCanvas) {
+			frameId = requestAnimationFrame(render);
+		}
 	};
 
 	onMount(() => {
