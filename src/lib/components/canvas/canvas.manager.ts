@@ -1,11 +1,11 @@
-import type { Render } from "./canvas.types";
+import type { RenderFunction, LayerRender, CanvasRender } from "./canvas.types";
 
 export class RenderManager {
-	drawMap: Map<string, Render>;
-	setupMap: Map<string, Render>;
+	drawMap: Map<string, RenderFunction>;
+	setupMap: Map<string, RenderFunction>;
 	shouldRedraw: boolean;
 	shouldResize: boolean;
-	shouldSetup: boolean;	
+	shouldSetup: boolean;
 
 	constructor() {
 		this.drawMap = new Map();
@@ -24,7 +24,7 @@ export class RenderManager {
 		this.shouldRedraw = true;
 	}
 
-	register(id: string, { draw, setup }: { draw?: Render, setup?: Render } = {}): void {
+	register(id: string, { draw, setup }: LayerRender = {}) {
 		if (setup) {
 			this.setupMap.set(id, setup);
 			this.shouldSetup = true;
@@ -32,7 +32,6 @@ export class RenderManager {
 
 		if (draw) {
 			this.drawMap.set(id, draw);
-			this.shouldRedraw = true;
 		}
 
 		this.shouldRedraw = true;
@@ -44,21 +43,33 @@ export class RenderManager {
 		this.shouldRedraw = true;
 	}
 
-	render({ context, height, width }) {
+	clear({ context, height, pixelRatio, width }: Omit<CanvasRender, "autoclear">) {
+		context.save();
+		context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+		context.clearRect(0, 0, width, height);
+		context.restore();
+	}
+
+	render({ autoclear, context, height, pixelRatio, width }: CanvasRender) {
 		if (this.shouldResize) {
+			context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 			this.shouldResize = false;
 		}
 
 		if (this.shouldSetup) {
-			for (const render of this.setupMap.values()) {
-				render({ context, height, width });
+			for (const setup of this.setupMap.values()) {
+				setup({ context, height, width });
 			}
 			this.shouldSetup = false;
 		}
 
 		if (this.shouldRedraw) {
-			for (const render of this.drawMap.values()) {
-				render({ context, height, width });
+			if (autoclear) {
+				this.clear({ context, height, pixelRatio, width });
+			}
+
+			for (const draw of this.drawMap.values()) {
+				draw({ context, height, width });
 			}
 			this.shouldRedraw = false;
 		}

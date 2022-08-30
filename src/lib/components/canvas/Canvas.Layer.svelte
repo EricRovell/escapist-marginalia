@@ -1,24 +1,17 @@
-<script context="module" lang="ts">
-	import type { RenderManager, Render } from "./canvas.types";
-</script>
-
 <script lang="ts">
-	import { getContext, onMount } from "svelte";
+  import { getContext, onDestroy } from "svelte";
+  import { KEY } from "./Canvas.svelte";
+  import type { RenderFunction, RenderManager } from "./canvas.types";
 
-	export let id: string;
-	export let draw: Render | undefined = undefined;
-	export let setup: Render | undefined = undefined;
+  export let id: string;
+  export let draw: RenderFunction | undefined = undefined;
+  export let setup: RenderFunction | undefined = undefined;
 
-	const manager = getContext<RenderManager>("canvas");
+  const manager = getContext<RenderManager>(KEY);
 
-	onMount(() => {
-		manager.register(id, {
-			setup,
-			draw
-		});
+  manager.register(id, { setup, draw });
 
-		return () => {
-			manager.unregister(id);
-		};
-	});
+  onDestroy(() => manager.unregister(id));
+
+  $: draw, manager.redraw();
 </script>
