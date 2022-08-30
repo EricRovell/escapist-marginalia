@@ -10,6 +10,7 @@ const defaults = {
 };
 
 export class Chaos {
+	counter: number;
 	history: number[];
 	polygon: Polygon;
 	position: Coords;
@@ -25,6 +26,7 @@ export class Chaos {
 		this.step = options.step;
 		this.stepFactor = options.stepFactor || (3 / (this.polygon.n + 3));
 		this.position = { x: 0, y: 0 };
+		this.counter = 0;
 
 		this.palette = this.polygon.vertices.map(({ alpha }) => {
 			return `hsl(${Math.round(alpha * 180 / Math.PI)} 75% 50%)`;
@@ -106,6 +108,7 @@ export class Chaos {
 			? jump(this.position, verticeCoords, this.step)
 			: move(this.position, verticeCoords, this.stepFactor);
 		this.position = coords;
+		this.counter += 1;
 		return this.moveData;
 	}
 
