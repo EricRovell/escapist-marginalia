@@ -1,0 +1,73 @@
+.pagination {
+	place-self: center;
+
+	display: flex;
+	flex-flow: row wrap;
+	gap: calc(var(--pagination-item-size, 1.25rem) * 0.75);
+	place-content: center;
+	width: 100%;
+	height: 100%;
+	padding: 4px;
+	z-index: 1;
+}
+
+.arrow {
+	/* set the item size the same as padding from Button component to show icon */
+	--pagination-item-size: calc(2 * var(--space-m));
+	--icon-size: calc(0.6 * var(--pagination-item-size, 1.25rem));
+	padding: 0;
+}
+
+.arrow:last-of-type svg {
+	transform: rotate(0.5turn);
+}
+
+.arrow svg {
+	pointer-events: none;
+}
+
+.pagination-item {
+	aspect-ratio: 1 / 1;
+	background-color: var(--pagination-item-bg, currentColor);
+	opacity: 0.5;
+	width: var(--pagination-item-size, 1.25rem);
+	height: var(--pagination-item-size, 1.25rem);
+	cursor: pointer;
+}
+
+.pagination-item[aria-current] {
+	background-color: var(--pagination-item-bg-active, var(--color-blue-500));
+	opacity: 1;
+}
+
+/* ordinality */
+
+.pagination-item:global(.ordinal) {
+	font-size: calc(var(--pagination-item-size, 1.25rem) * 0.5);
+	color: white;
+	font-weight: 600;
+	line-height: calc(var(--pagination-item-size, 1.25rem) * 0.5);;
+}
+
+/* vertical mode */
+
+.pagination:global(.vertical) {
+	flex-flow: column nowrap;
+}
+
+/* ellipsis */
+
+.pagination-item:global(.ellipsis) {
+	--button-border-size: 0;
+	--button-shadow-size: 0;
+
+	background-color: unset;
+	color: inherit;
+	cursor: auto;
+}
+
+@media (hover: hover) {
+	.pagination-item:hover {
+		opacity: 0.75;
+	}
+}
