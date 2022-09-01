@@ -79,3 +79,21 @@ export function move(from: Coords, to: Coords, factor = 1): Coords {
 		y: (from.y + to.y) * factor
 	};
 }
+
+/**
+ * Generates all array subsets.
+ */
+export function subsets<T>(array: T[], includeEmpty = true): T[][] {
+	const subsets = [ [] ];
+	
+	for (const item of array) {
+		const last = subsets.length - 1;
+		for (let i = 0; i <= last; i++) {
+			subsets.push([ ...subsets[i], item ]);
+		}
+	}
+	
+	return includeEmpty
+		? subsets
+		: subsets.slice(1);
+}
