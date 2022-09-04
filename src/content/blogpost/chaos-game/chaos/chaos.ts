@@ -1,12 +1,14 @@
 import { getValidVertices, jump, move, getSetIntersection  } from "./chaos.utils";
 import { range } from "@utils/helpers";
 import { randItem } from "@utils/random";
-import type { ChaosOptions, Coords, Move, Polygon, Steps  } from "./chaos.types";
+import type { ChaosOptions, Coords, Move, Polygon, VerticeRestrictionRule } from "./chaos.types";
 
 const defaults = {
-	steps: [],
-	step: null,
-	stepFactor: 0
+	distances: [],
+	step: {
+		value: 0.5,
+		factor: true
+	}
 };
 
 export class Chaos {
@@ -14,17 +16,18 @@ export class Chaos {
 	history: number[];
 	polygon: Polygon;
 	position: Coords;
-	step: number;
-	steps: Array<Omit<Steps, "forbidden">>;
-	stepFactor: number;
+	step: {
+		value: number;
+		factor: boolean;
+	};
+	distances: Array<Omit<VerticeRestrictionRule, "forbidden">>;
 	palette: string[];
 
 	constructor(polygon: Polygon, options: Partial<ChaosOptions> = defaults) {
 		this.polygon = polygon;
 		this.history = [ 0 ];
-		this.steps = [];
-		this.step = options.step;
-		this.stepFactor = options.stepFactor || (3 / (this.polygon.n + 3));
+		this.distances = [];
+		this.step = options.step || defaults.step;
 		this.position = { x: 0, y: 0 };
 		this.counter = 0;
 
@@ -32,7 +35,7 @@ export class Chaos {
 			return `hsl(${Math.round(alpha * 180 / Math.PI)} 75% 50%)`;
 		});
 
-		this.initSteps(options.steps || []);
+		this.initDistances(options.distances || []);
 	}
 
 	/**
@@ -43,20 +46,20 @@ export class Chaos {
 	 * 
 	 * Optional `forbidden` flag marks steps as forbidden distances.
 	 */
-	initSteps(value: Steps[]) {
-		if (!value.length) {
+	initDistances(distances: VerticeRestrictionRule[]) {
+		if (!distances.length) {
 			return;
 		}
 
-		for (const { index, steps, forbidden = false } of value) {
+		for (const { index, values, forbidden = false } of distances) {
 			if (!forbidden) {
-				this.steps.push({ index, steps });
+				this.distances.push({ index, values });
 			} else {
 				const vertices = new Set(range(0, this.polygon.n - 1));
-				for (const step of steps) {
-					vertices.delete(step);
+				for (const value of values) {
+					vertices.delete(value);
 				}
-				this.steps.push({ index, steps: Array.from(vertices) });
+				this.distances.push({ index, values: Array.from(vertices) });
 			}
 		}
 	}
@@ -71,7 +74,7 @@ export class Chaos {
 	}
 
 	getRandomVerticeCoords(): Coords {
-		if (!this.steps.length) {
+		if (!this.distances.length) {
 			const [ coords, index ] = this.polygon.random;
 			this.updateHistory(index);
 			return coords;
@@ -79,10 +82,10 @@ export class Chaos {
 
 		const allowed: Set<number>[] = [];
 
-		for (const { index, steps } of this.steps) {
+		for (const { index, values } of this.distances) {
 			const vertice = this.history.at(index);
 			if (vertice >= 0) {
-				const vertices = getValidVertices(vertice, this.polygon.n, steps);
+				const vertices = getValidVertices(vertice, this.polygon.n, values);
 				allowed.push(new Set(vertices));
 			}
 		}
@@ -104,9 +107,9 @@ export class Chaos {
 
 	move(): Move {
 		const verticeCoords = this.getRandomVerticeCoords();
-		const coords = (this.step)
-			? jump(this.position, verticeCoords, this.step)
-			: move(this.position, verticeCoords, this.stepFactor);
+		const coords = (this.step.factor)
+			? move(this.position, verticeCoords, this.step.value)
+			: jump(this.position, verticeCoords, this.step.value);
 		this.position = coords;
 		this.counter += 1;
 		return this.moveData;

@@ -27,16 +27,18 @@ export type PolygonVerticesConstructor = (n: number, scale: number, origin?: Par
 /**
  * Polygon vertice randomness restriction rule.
  */
-export interface Steps {
+export interface VerticeRestrictionRule {
 	index: number;
-	steps: number[]
+	values: number[]
 	forbidden?: boolean;
 }
 
 export interface ChaosOptions {
-	steps: Steps[];
-	step: number | null;
-	stepFactor: number;
+	distances: VerticeRestrictionRule[];
+	step: {
+		value: number;
+		factor: boolean;
+	}
 }
 
 /**
