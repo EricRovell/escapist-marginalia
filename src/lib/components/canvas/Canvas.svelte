@@ -1,56 +1,57 @@
-<script context="module" lang="ts">
-	export let KEY = "canvas";
-</script>
-
 <script lang="ts">
-	import { onMount, setContext } from "svelte";
+	import { afterUpdate, onMount } from "svelte";
+	import Context from "../Context.svelte";
 	import { RenderManager } from "./canvas.manager";
 	import styles from "./canvas.module.css";
 
 	export let autoclear = false;
 	export let className = "";
-	export let height = 400;
+	export let height = 150;
 	export let pixelRatio: number | undefined = undefined;
-	export let width = 400;
+	export let width = 300;
 
-	export let canvas: HTMLCanvasElement | undefined = undefined;
-	export let context: CanvasRenderingContext2D | undefined = undefined;
-
-	let frameId: number;
-
-	if (!pixelRatio) {
-		pixelRatio = globalThis.window
-			? devicePixelRatio
-			: 1;
-	}
-
+	let canvas: HTMLCanvasElement;
+	let context: CanvasRenderingContext2D;
 	const manager = new RenderManager();
-	setContext<RenderManager>(KEY, manager);
 
-	const render = () => {
-		manager.render({ autoclear, context, height, pixelRatio, width });
-		if (!manager.staticCanvas) {
-			frameId = requestAnimationFrame(render);
-		}
-	};
+	if (globalThis.window && !pixelRatio) {
+		pixelRatio = devicePixelRatio || 1;
+	}
 
 	onMount(() => {
 		context = canvas.getContext("2d");
-		render();
+		manager.setParams({ autoclear, context, height, pixelRatio, width });
+		manager.render();
 
 		return () => {
-			cancelAnimationFrame(frameId);
+			manager.stop();
 		};
 	});
 
-	// resize on these props change
-	$: autoclear, height, pixelRatio, width, manager.resize();
+	afterUpdate(() => {
+		manager.setParams({ autoclear, context, height, pixelRatio, width });
+	});
+
+	/* component methods */
+
+	export const clear = () => {
+		manager.clear({ context, height, pixelRatio, width });
+	};
+
+	export const resize = () => {
+		manager.resize({ context, pixelRatio });
+	};
 </script>
 
 <canvas
 	bind:this="{canvas}"
 	class="{styles.canvas} {className}"
-	height="{height * pixelRatio}"
-	width="{width * pixelRatio}"
-/>
-<slot />
+	height="{pixelRatio * height}"
+	width="{pixelRatio * width}"
+>
+	{#if context}
+		<Context key="canvas" value="{manager}">
+			<slot />
+		</Context>
+	{/if}
+</canvas>
