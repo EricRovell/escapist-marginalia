@@ -3,7 +3,7 @@ import path, { extname } from "path";
 import ExifReader from "exifreader";
 import { cwd } from "process";
 
-const PATH_INPUT = "media/gallery";
+const PATH_INPUT = "src/content/gallery";
 const PATH_ROOT = cwd();
 
 /**
