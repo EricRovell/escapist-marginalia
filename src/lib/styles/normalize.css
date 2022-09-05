@@ -50,13 +50,20 @@ sup {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	:focus {
+	:focus-visible {
 		transition: outline-offset 0.25s ease;
 	}
 
-	/* :focus:not(:active) {
-		outline-offset: 5px;
-	} */
+	:focus-visible {
+    outline-width: 2px;
+    outline-style: dashed;
+		outline-offset: calc(0.75 * var(--space-xs));
+    outline-color: var(--focus-ring-color);
+	}
+
+  :focus-visible:active {
+    outline-width: 0;
+  }
 }
 
 input[type="checkbox"]:hover {
