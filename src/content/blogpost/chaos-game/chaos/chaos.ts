@@ -1,10 +1,11 @@
 import { getValidVertices, jump, move, getSetIntersection  } from "./chaos.utils";
 import { range } from "@utils/helpers";
-import { randItem } from "@utils/random";
+import { randItem, randInt } from "@utils/random";
 import type { ChaosOptions, Coords, Move, Polygon, VerticeRestrictionRule } from "./chaos.types";
 
-const defaults = {
+const defaults: ChaosOptions = {
 	distances: [],
+	palette: "color-wheel",
 	step: {
 		value: 0.5,
 		factor: true
@@ -24,17 +25,14 @@ export class Chaos {
 	palette: string[];
 
 	constructor(polygon: Polygon, options: Partial<ChaosOptions> = defaults) {
-		this.polygon = polygon;
-		this.history = [ 0 ];
-		this.distances = [];
-		this.step = options.step || defaults.step;
-		this.position = { x: 0, y: 0 };
 		this.counter = 0;
+		this.distances = [];
+		this.history = [ 0 ];
+		this.polygon = polygon;
+		this.position = { x: 0, y: 0 };
+		this.step = options.step || defaults.step;
 
-		this.palette = this.polygon.vertices.map(({ alpha }) => {
-			return `hsl(${Math.round(alpha * 180 / Math.PI)} 75% 50%)`;
-		});
-
+		this.initPalette(options.palette);
 		this.initDistances(options.distances || []);
 	}
 
@@ -65,6 +63,31 @@ export class Chaos {
 	}
 
 	/**
+	 * Defines the Chaos Game palette.
+	 */
+	initPalette(colors: ChaosOptions["palette"] = "color-wheel") {
+		if (colors === "color-wheel") {
+			this.palette = this.polygon.vertices.map(({ alpha }) => {
+				return `hsl(${Math.round(alpha * 180 / Math.PI)} 75% 50%)`;
+			});
+		}
+
+		else if (colors === "random") {
+			this.palette = this.polygon.vertices.map(() => {
+				return `rgb(${randInt(0, 255)} ${randInt(0, 255)} ${randInt(0, 255)})`;
+			});
+		}
+
+		else if (Array.isArray(colors) && colors.length !== this.polygon.n) {
+			this.palette = new Array(this.polygon.n).fill(colors);
+		}
+
+		else if (typeof colors === "string") {
+			this.palette = new Array(this.polygon.n).fill(colors);
+		}
+	}
+
+	/**
 	 * Stores the history of all lastly chosen vertex indices.
 	 * The size is equal to the number of vertices.
 	 */
@@ -73,11 +96,15 @@ export class Chaos {
 		this.history = this.history.slice(-this.polygon.n);
 	}
 
+	get randVerticeCoords(): Coords {
+		const [ coords, index ] = this.polygon.random;
+		this.updateHistory(index);
+		return coords;
+	}
+
 	getRandomVerticeCoords(): Coords {
 		if (!this.distances.length) {
-			const [ coords, index ] = this.polygon.random;
-			this.updateHistory(index);
-			return coords;
+			return this.randVerticeCoords;
 		}
 
 		const allowed: Set<number>[] = [];
@@ -91,6 +118,12 @@ export class Chaos {
 		}
 
 		const [ index ] = randItem(Array.from(getSetIntersection(allowed)));
+
+		if (index !== 0 && !index) {
+			console.warn("Could not generate random vertice due the restriction rules.");
+			return this.randVerticeCoords;
+		}
+
 		this.updateHistory(index);
 		return this.polygon.vertice(index);
 	}

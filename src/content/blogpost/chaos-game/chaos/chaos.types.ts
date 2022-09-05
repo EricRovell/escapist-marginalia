@@ -35,6 +35,7 @@ export interface VerticeRestrictionRule {
 
 export interface ChaosOptions {
 	distances: VerticeRestrictionRule[];
+	palette: "color-wheel" | "random" | string | string[];
 	step: {
 		value: number;
 		factor: boolean;
