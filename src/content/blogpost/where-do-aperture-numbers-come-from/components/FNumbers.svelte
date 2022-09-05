@@ -56,8 +56,11 @@
 			>
 				{dict["next-f-stop"]}
 			</Button>
-			<Range bind:value={step} min={1} max={7}>
+			<Range bind:value={step} min={1} max={7} output>
 				{dict["step"]}
+				<svelte:fragment slot="output">
+					1 / {step}
+				</svelte:fragment>
 			</Range>
 		{/if}
 	</form>

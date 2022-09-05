@@ -5,7 +5,7 @@ import ExifReader from "exifreader";
 import sharp from "sharp";
 import { cwd } from "process";
 
-const PATH_INPUT = "media/gallery";
+const PATH_INPUT = "src/content/gallery";
 const PATH_OUTPUT = "static/img";
 const PATH_JSON = "src/data";
 const PATH_ROOT = cwd();

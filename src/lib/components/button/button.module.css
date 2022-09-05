@@ -63,7 +63,6 @@
 	pointer-events: none;
 }
 
-.button:focus-visible,
 .button:hover,
 .button:active {
 	--button-focus-ring-size: 4px;

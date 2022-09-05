@@ -12,14 +12,11 @@
 
 .root form {
 	margin-bottom: var(--space-m);
+	width: min(450px, 85vw);
 }
 
 .root > article {
 	width: min(100% - var(--space-m), 85vw);
-}
-
-.root input[type="range"] {
-	width: min(450px, 85vw);
 }
 
 .root > article {
