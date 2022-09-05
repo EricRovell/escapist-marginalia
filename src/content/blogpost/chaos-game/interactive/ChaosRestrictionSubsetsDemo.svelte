@@ -52,16 +52,16 @@
 		{/key}
 	</div>
 	<form on:submit|preventDefault>
-		<Range bind:value="{n}" min="{3}" max="{9}" tooltip>
+		<Pagination
+			bind:current="{currentPage}"
+			start="{1}"
+			end="{pages}"
+			ordinal
+		/>
+		<Range bind:value="{n}" min="{3}" max="{9}" output>
 			{t["number-of-sides"]}
 		</Range>
 	</form>
-	<Pagination
-		bind:current="{currentPage}"
-		start="{1}"
-		end="{pages}"
-		ordinal
-	/>
 </section>
 
 <style>
@@ -81,7 +81,7 @@
 	form {
 		display: flex;
 		flex-flow: column nowrap;
-		gap: var(--space-m);
+		gap: var(--space-l);
 		width: min(100% - var(--space-m), 450px);
 	}
 </style>
