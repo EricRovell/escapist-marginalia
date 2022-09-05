@@ -18,7 +18,7 @@
 		<ChaosGame
 			points="{2500}"
 			polygon="{n}"
-			scale="{250}"
+			scale="{factor ? 150 : 100}"
 			pointSize="{1.5}"
 			step="{{ value, factor }}"
 		/>
@@ -28,11 +28,11 @@
 			{t["number-of-sides"]}
 		</Range>
 		{#if factor}
-			<Range bind:value min={0.1} max={1} step={0.01}>
+			<Range bind:value min={0.1} max={1} step={0.01} output>
 				{t["step-factor"]}
 			</Range>
 		{:else}
-			<Range bind:value min={0} max={300} step={1}>
+			<Range bind:value min={0} max={300} step={1} output>
 				{t["step"]}
 			</Range>
 		{/if}
