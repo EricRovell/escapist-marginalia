@@ -151,5 +151,5 @@
 	gap: var(--space-m);
 	background-color: var(--surface-3);
 	padding-block: var(--space-l);
-	margin-block: var(--space-m);
+	margin-block: var(--space-l);
 }
