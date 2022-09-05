@@ -44,7 +44,7 @@
 					distances="{[
 						{ index: -1, values: subset }
 					]}"
-					stepFactor="{0.5}"
+					step="{{ value: 0.5, factor: true }}"
 				>
 				 {`{ ${subset.map(i => i.toString()).join(", ")} }`}
 				</ChaosGame>
