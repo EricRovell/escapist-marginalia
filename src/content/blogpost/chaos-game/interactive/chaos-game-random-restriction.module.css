@@ -1,0 +1,13 @@
+.wrapper {
+	--size: min(100% - var(--space-m), 350px);
+
+	--canvas-width: var(--size);
+	--canvas-height: var(--size);
+}
+
+.form {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: var(--space-l);
+	width: var(--size);
+}

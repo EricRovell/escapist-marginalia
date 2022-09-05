@@ -1,0 +1,31 @@
+.root  {
+	display: grid;
+	gap: var(--space-m);
+	justify-items: center;
+}
+
+.polygon svg {
+	width: min(85vw, 375px);
+	place-self: center;
+}
+
+.steps {
+	/* padding: var(--space-m); */
+}
+
+.form {
+	display: grid;
+	gap: var(--space-m);
+	margin-top: var(--space-m);
+}
+
+.form fieldset {
+	border: none;
+}
+
+.controls-render,
+.controls-actions {
+	display: flex;
+	gap: var(--space-m);
+	justify-content: center;
+}

@@ -1,0 +1,37 @@
+{
+	"game-rules-demo": {
+		"title": "Chaos Game step-by-step rules demonstration",
+		"step-count": "Step count",
+		"show-paths": "Show paths",
+		"show-points": "Show points",
+		"make-move": "Make move",
+		"make-move-100": "Make 100 moves",
+		"reset": "Reset"
+	},
+	"polygon-density-map": {
+		"title": "Random points density map towards polygon vertices",
+		"number-of-sides": "Polygon type"
+	},
+	"restrictions-subset": {
+		"title": "Restricted Chaos Game Results",
+		"number-of-sides": "Polygon type"
+	},
+	"random-restrictions": {
+		"title": "Randomly Restricted Chaos Game Generator",
+		"next-randomly": "Next randomly chosen vertice may be away",
+		"from-the-last": "from the last",
+		"from-the-penultimate": "from the penultimate",
+		"number-of-sides": "Polygon type",
+		"random-chaos": "Generate"
+	},
+	"step-rule-values-demo": {
+		"title": "The step value Chaos Game rule effect",
+		"number-of-sides": "Polygon type",
+		"step-factor": "Step factor",
+		"step": "Step value"
+	},
+	"chaos-game-creator": {
+		"title": "Chaos Game Creator",
+		"reset": "Reset"
+	}
+}
