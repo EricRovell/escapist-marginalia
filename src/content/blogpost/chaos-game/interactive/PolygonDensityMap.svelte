@@ -51,7 +51,7 @@
 		{/each}
 	</svg>
 	<form class="{styles.form}" on:submit|preventDefault>
-		<Range bind:value={n} min={3} max={9}>
+		<Range bind:value={n} min={3} max={9} output>
 			{t["number-of-sides"]}
 		</Range>
 	</form>
