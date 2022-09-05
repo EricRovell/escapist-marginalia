@@ -44,14 +44,15 @@
 	<h3>{t.title}</h3>
 	{#key [ last, penultimate, n ]}
 		<ChaosGame
-			points="{2500}"
+			height="{450}"
+			points="{5000}"
 			polygon="{n}"
 			scale="{250}"
-			pointSize="{1.5}"
 			distances="{[
 				{ index: -1, values: last, forbidden: true },
 				{ index: -2, values: penultimate, forbidden: true }
 			]}"
+			width="{450}"
 		>
 		<p>{t["next-randomly"]}:</p>
 		<p>{renderRestrictionSet(last)} from <strong>{t["from-the-last"]}</strong>,</p>
