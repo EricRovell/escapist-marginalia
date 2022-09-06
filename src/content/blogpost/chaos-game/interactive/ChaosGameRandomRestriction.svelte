@@ -42,23 +42,21 @@
 -->
 <section class="wide {styles.wrapper}">
 	<h3>{t.title}</h3>
-	{#key [ last, penultimate, n ]}
-		<ChaosGame
-			height="{450}"
-			points="{5000}"
-			polygon="{n}"
-			scale="{250}"
-			distances="{[
-				{ index: -1, values: last, forbidden: true },
-				{ index: -2, values: penultimate, forbidden: true }
-			]}"
-			width="{450}"
-		>
-		<p>{t["next-randomly"]}:</p>
-		<p>{renderRestrictionSet(last)} from <strong>{t["from-the-last"]}</strong>,</p>
-		<p>{renderRestrictionSet(penultimate)} from <strong>{t["from-the-penultimate"]}</strong>.</p>
-		</ChaosGame>
-	{/key}
+	<ChaosGame
+		height="{450}"
+		points="{5000}"
+		polygon="{n}"
+		scale="{250}"
+		distances="{[
+			{ index: -1, values: last, forbidden: true },
+			{ index: -2, values: penultimate, forbidden: true }
+		]}"
+		width="{450}"
+	>
+	<p>{t["next-randomly"]}:</p>
+	<p>{renderRestrictionSet(last)} from <strong>{t["from-the-last"]}</strong>,</p>
+	<p>{renderRestrictionSet(penultimate)} from <strong>{t["from-the-penultimate"]}</strong>.</p>
+	</ChaosGame>
 	<form class="{styles.form}" on:submit|preventDefault>
 		<Range bind:value={n} min={3} max={10} output>
 			{t["number-of-sides"]}

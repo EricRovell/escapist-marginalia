@@ -14,15 +14,13 @@
 -->
 <section class="wide">
 	<h3>{t["title"]}</h3>
-	{#key [ value, n ]}
-		<ChaosGame
-			points="{2500}"
-			polygon="{n}"
-			scale="{factor ? 150 : 100}"
-			pointSize="{1.5}"
-			step="{{ value, factor }}"
-		/>
-	{/key}
+	<ChaosGame
+		points="{2500}"
+		polygon="{n}"
+		scale="{factor ? 150 : 100}"
+		pointSize="{1.5}"
+		step="{{ value, factor }}"
+	/>
 	<form on:submit|preventDefault>
 		<Range bind:value={n} min={3} max={9} output>
 			{t["number-of-sides"]}

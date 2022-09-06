@@ -34,22 +34,20 @@
 <section class="wide">
 	<h3>{t["title"]}</h3>
 	<div>
-		{#key [ n, currentPage ]}
-			{#each items.slice(from, from + perPage) as subset}
-				<ChaosGame
-					points="{3500}"
-					polygon="{n}"
-					scale="{250}"
-					pointSize="{1.5}"
-					distances="{[
-						{ index: -1, values: subset }
-					]}"
-					step="{{ value: 0.5, factor: true }}"
-				>
-				 {`{ ${subset.map(i => i.toString()).join(", ")} }`}
-				</ChaosGame>
-			{/each}
-		{/key}
+		{#each items.slice(from, from + perPage) as subset}
+			<ChaosGame
+				points="{3500}"
+				polygon="{n}"
+				scale="{175}"
+				pointSize="{1.5}"
+				distances="{[
+					{ index: -1, values: subset }
+				]}"
+				step="{{ value: 0.5, factor: true }}"
+			>
+				{`{ ${subset.map(i => i.toString()).join(", ")} }`}
+			</ChaosGame>
+		{/each}
 	</div>
 	<form on:submit|preventDefault>
 		<Pagination
