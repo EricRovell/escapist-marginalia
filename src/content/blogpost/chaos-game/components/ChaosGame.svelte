@@ -16,7 +16,7 @@
 </script>
 
 <figure>
-	<Canvas {width} {height}>
+	<Canvas {width} {height} autoclear>
 		<CanvasLayer
 			id="chaos-game"
 			setup="{({ context, height, width }) => {
