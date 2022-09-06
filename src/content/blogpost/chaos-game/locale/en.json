@@ -12,6 +12,14 @@
 		"title": "Random points density map towards polygon vertices",
 		"number-of-sides": "Polygon type"
 	},
+	"square-restrictions-demonstration": {
+		"title": "Square Chaos Game vertex restrictions",
+		"rules": [
+			"Vertex cannot be chosen twice.",
+			"Vertex cannot be a direct neighbor.",
+			"Vertex cannot b e on the same diagonal."
+		]
+	},
 	"restrictions-subset": {
 		"title": "Restricted Chaos Game Results",
 		"number-of-sides": "Polygon type"
