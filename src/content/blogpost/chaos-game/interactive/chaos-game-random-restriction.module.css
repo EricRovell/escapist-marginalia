@@ -9,5 +9,9 @@
 	display: flex;
 	flex-flow: column nowrap;
 	gap: var(--space-l);
-	width: var(--size);
+	width: min(100% - var(--space-m), 450px);
+}
+
+.form legend {
+	text-align: center;
 }

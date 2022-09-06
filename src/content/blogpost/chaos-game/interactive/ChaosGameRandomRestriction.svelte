@@ -60,7 +60,7 @@
 		</ChaosGame>
 	{/key}
 	<form class="{styles.form}" on:submit|preventDefault>
-		<Range bind:value={n} min={3} max={10}>
+		<Range bind:value={n} min={3} max={10} output>
 			{t["number-of-sides"]}
 		</Range>
 		<Button on:click={handleClick}>
