@@ -1,27 +1,27 @@
 <script lang="ts">
-	import { Button } from "@components";
+	import { Button, Range, Switch } from "@components";
 	import { Canvas, CanvasLayer } from "@components";
 	import { Chaos, Polygon } from "../chaos";
+	import styles from "./chaos-game-creator.module.css";
 	import type { PolygonOrigin } from "../chaos";
 	import type { SvelteComponent } from "svelte";
 
 	export let polygon = 3;
 	export let origin: PolygonOrigin = undefined;
 	export let step = { value: 0.5, factor: true };
-	//export let pointColor = "rgb(255 135 0 / 0.25)";
 	export let pointSize = 1;
-	export let scale = 300;
+	export let scale = 800;
 	export let distances = [];
 	export let t: Record<string, string>;
 
 	let canvas: SvelteComponent;
 
-	const chaos = new Chaos(new Polygon(polygon, scale, { y: 60 }), {
+	$: chaos = new Chaos(new Polygon(polygon, scale, origin), {
 		step,
 		distances
 	});
 
-	let moves = chaos.moves(2500);
+	let moves = [];
 
 	const handleClick = (value = 1) => {
 		moves = chaos.moves(value);
@@ -34,9 +34,9 @@
 
 <section class="wide">
 	<h3>{t.title}</h3>
-	<div>
-		<figure>
-			<Canvas bind:this={canvas} width="{640}" height="{640}">
+	<article class="{styles.wrapper}">
+		<figure class="{styles.figure}">
+			<Canvas bind:this={canvas} width="{1800}" height="{1800}">
 				<CanvasLayer
 					id="chaos"
 					setup="{({ context, height, width }) => {
@@ -54,41 +54,42 @@
 				/>
 			</Canvas>
 		</figure>
-		<fieldset>
-			<Button on:click={() => handleClick(1)}>+1</Button>
-			<Button on:click={() => handleClick(10)}>+10</Button>
-			<Button on:click={() => handleClick(100)}>+100</Button>
-			<Button on:click={() => handleClick(500)}>+500</Button>
-			<Button on:click={() => handleClick(1000)}>+1000</Button>
-			<Button on:click={handleReset}>{t.reset}</Button>
-		</fieldset>
-	</div>
+		<form on:submit|preventDefault class="{styles.form}">
+			<fieldset>
+				<legend>{t.polygon}</legend>
+				<Range bind:value="{polygon}" min="{3}" max="{16}" output>
+					{t.sides}
+				</Range>
+				<Range bind:value="{scale}" min="{0}" max="{1200}" output>
+					{t.scale}
+				</Range>
+			</fieldset>
+			<fieldset>
+				<legend>{t.step}</legend>
+				<Switch bind:checked="{step.factor}">
+					{t.factor}
+				</Switch>
+				<Range
+					bind:value="{step.value}"
+					min="{0}"
+					max="{step.factor ? 1 : 1200}"
+					step="{step.factor ? 0.01 : 1}"
+					output
+				>
+					{t.value}
+				</Range>
+			</fieldset>
+			<fieldset class="points">
+				<legend>{t.points}</legend>
+				<div class="{styles["button-group"]}">
+					<Button on:click={() => handleClick(1)}>+1</Button>
+					<Button on:click={() => handleClick(100)}>+100</Button>
+					<Button on:click={() => handleClick(500)}>+500</Button>
+					<Button on:click={() => handleClick(1000)}>+1000</Button>
+					<Button on:click={() => handleClick(5000)}>+5000</Button>
+				</div>
+			</fieldset>
+			<Button on:click={handleReset}>{t.clear}</Button>
+		</form>
+	</article>
 </section>
-
-<style>
-	div {
-		display: grid;
-		place-content: center;
-		width: min(100% - var(--space-m), 640px);
-	}
-
-	figure {
-		width: 100%;
-	}
-
-	section :global(canvas) {
-		--canvas-bg: rgb(255 0 0 / 0.05);
-
-		width: 350px;
-		height: 350px;
-	}
-
-	fieldset {
-		border: none;
-	}
-
-	fieldset :global(button) {
-		font-size: var(--font-size-xs);
-		padding: var(--space-m);
-	}
-</style>
