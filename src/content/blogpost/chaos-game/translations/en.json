@@ -17,7 +17,7 @@
 		"rules": [
 			"Vertex cannot be chosen twice.",
 			"Vertex cannot be a direct neighbor.",
-			"Vertex cannot b e on the same diagonal."
+			"Vertex cannot be at the same diagonal."
 		]
 	},
 	"restrictions-subset": {
@@ -40,6 +40,13 @@
 	},
 	"chaos-game-creator": {
 		"title": "Chaos Game Creator",
-		"reset": "Reset"
+		"polygon": "Polygon",
+		"sides": "Number of sides",
+		"scale": "scale",
+		"step": "step",
+		"factor": "Factor",
+		"value": "Value",
+		"points": "Draw Points",
+		"clear": "Clear"
 	}
 }
