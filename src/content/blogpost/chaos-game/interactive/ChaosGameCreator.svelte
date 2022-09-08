@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Range, Switch } from "@components";
+	import { Button, InputNumber, Range, Switch } from "@components";
 	import { Canvas, CanvasLayer } from "@components";
 	import { Chaos, Polygon } from "../chaos";
 	import styles from "./chaos-game-creator.module.css";
@@ -57,9 +57,9 @@
 		<form on:submit|preventDefault class="{styles.form}">
 			<fieldset>
 				<legend>{t.polygon}</legend>
-				<Range bind:value="{polygon}" min="{3}" max="{16}" output>
+				<InputNumber bind:value="{polygon}" min="{3}" max="{100}" step="{1}">
 					{t.sides}
-				</Range>
+				</InputNumber>
 				<Range bind:value="{scale}" min="{0}" max="{1200}" output>
 					{t.scale}
 				</Range>
