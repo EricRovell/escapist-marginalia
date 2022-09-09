@@ -1,0 +1,54 @@
+{
+	"game-rules-demo": {
+		"title": "Chaos Game step-by-step rules demonstration",
+		"step-count": "Step count",
+		"show-paths": "Show paths",
+		"show-points": "Show points",
+		"make-move": "Make move",
+		"make-move-100": "Make 100 moves",
+		"reset": "Reset"
+	},
+	"polygon-density-map": {
+		"title": "Random points density map towards polygon vertices",
+		"number-of-sides": "Polygon type"
+	},
+	"square-restrictions-demonstration": {
+		"title": "Square Chaos Game vertex restrictions",
+		"rules": [
+			"Vertex cannot be chosen twice.",
+			"Vertex cannot be a direct neighbor.",
+			"Vertex cannot be at the same diagonal."
+		]
+	},
+	"restrictions-subset": {
+		"title": "Restricted Chaos Game Results",
+		"number-of-sides": "Polygon type"
+	},
+	"random-restrictions": {
+		"title": "Randomly Restricted Chaos Game Generator",
+		"next-randomly": "Next randomly chosen vertice may be away",
+		"from-the-last": "from the last",
+		"from-the-penultimate": "from the penultimate",
+		"number-of-sides": "Polygon type",
+		"random-chaos": "Generate"
+	},
+	"step-rule-values-demo": {
+		"title": "The step value Chaos Game rule effect",
+		"number-of-sides": "Polygon type",
+		"step-factor": "Step factor",
+		"step": "Step value"
+	},
+	"chaos-game-creator": {
+		"title": "Chaos Game Creator",
+		"polygon": "Polygon",
+		"sides": "Number of sides",
+		"scale": "scale",
+		"step": "Step",
+		"factor": "Factor",
+		"value": "Value",
+		"points": "Draw Points",
+		"point-size": "Point size",
+		"draw-points": "Draw point samples",
+		"clear": "Clear"
+	}
+}

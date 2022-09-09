@@ -13,3 +13,11 @@ export function randInt(min: number, max: number) {
 export function randBool(chance = 0.5) {
 	return Math.random() < chance;
 }
+
+/**
+ * Returns a random item from a list.
+ */
+export function randItem<T>(items: T[]): [T, number] {
+	const randIndex = randInt(0, items.length - 1);
+	return [ items[randIndex], randIndex ];
+}

@@ -2,7 +2,6 @@
 	--range-thumb-size: var(--space-m);
 	--range-thumb-border: 3px;
 	--range-track-size: var(--space-xs);
-	--range-tooltip-color: white;
 
 	--range-range: calc(var(--range-max) - var(--range-min));
 	--range-progress: calc((var(--range-value) - var(--range-min)) / var(--range-range));
@@ -24,7 +23,9 @@
 .output {
 	grid-row: 1;
 	grid-column: 2;
+	align-self: center;
 	visibility: hidden;
+	height: min-content;
 	padding-inline: var(--space-s);
 	border: 1px solid var(--range-thumb-focus-color);
 	border-radius: var(--radius-xs);
@@ -124,6 +125,14 @@
 	outline-offset: 7px;
 	outline-color: var(--range-thumb-focus-color);
 }
+
+.range::-webkit-slider-thumb:active {
+  cursor: grabbing;
+}
+
+/* .range::-webkit-slider-thumb:hover {
+  cursor: grab;
+} */
 
 /* track */
 

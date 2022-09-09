@@ -1,0 +1,63 @@
+.wrapper {
+	--canvas-height: auto;
+	--canvas-width: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-l);
+	width: min(100% - var(--space-m), 960px);
+	font-size: var(--font-size-s);
+}
+
+.figure {
+	width: 100%;
+	height: min-content;
+	aspect-ratio: 1 / 1;
+	border: 2px solid var(--color-border);
+	border-radius: var(--radius-l);
+	background-color: var(--surface-2);
+
+	flex-basis: 0;
+	flex-grow: 999;
+	/* ↓ Wrap when the elements are of equal width */
+	min-inline-size: 60%;
+}
+
+.form {
+	display: grid;
+	grid-auto-rows: min-content;
+	gap: var(--space-m);
+	flex-basis: min(100% - var(--space-m), 275px);
+	flex-grow: 1;
+}
+
+.form > fieldset {
+	border: none;
+	display: flex;
+	flex-flow: column nowrap;
+	background-color: var(--surface-4);
+	border-radius: var(--radius-s);
+	border: 1px solid var(--color-border);
+}
+
+.form fieldset > * {
+	margin: var(--space-s) var(--space-m);
+}
+
+.form fieldset {
+	padding-bottom: var(--space-m);
+}
+
+.form legend {
+	display: block;
+	float: left;
+	border-bottom: 1px solid var(--color-border);
+	font-weight: 700;
+	font-size: var(--font-size-m);
+	margin: 0;
+	padding: var(--space-s) var(--space-m);
+}
+
+.form fieldset > button {
+	margin-block-start: var(--space-m);
+}

@@ -1,0 +1,20 @@
+.illustration {
+	width: min(100% - var(--space-m), 85vw);
+	max-height: 50vh;
+}
+
+.form {
+	width: min(450px, 85vw);
+	margin-top: var(--space-m);
+}
+
+.outer {
+	stroke-width: 2px;
+	stroke: rgb(112 130 209 / 0.5);
+	fill: none;
+}
+
+.inner {
+	stroke-width: 0;
+	fill: rgb(112 130 209 / 0.5);
+}

@@ -11,8 +11,6 @@
 
 	width: auto;
 	height: auto;
-	min-width: 5em;
-	min-height: 1em;
 	padding: var(--space-m);
 	border-radius: 0.25em;
 	background-color: var(--button-accent);
@@ -60,7 +58,7 @@
 /* State */
 
 .button:disabled {
-	opacity: 0.75;
+	opacity: 0.35;
 	cursor: not-allowed;
 	pointer-events: none;
 }
@@ -75,8 +73,6 @@
 .button:global(.icon) {
 	aspect-ratio: 1 / 1;
 	padding: var(--space-s);
-	min-width: 1.5em;
-	min-height: 1.5em;
 }
 
 .wide {

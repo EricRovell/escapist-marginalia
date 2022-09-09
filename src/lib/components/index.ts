@@ -21,6 +21,9 @@ export { ThemeSelect } from "./theme-select";
 export { NavLocale } from "./nav-locale";
 export { Button } from "./button";
 export { MathExp } from "./math";
+export { Canvas, CanvasLayer } from "./canvas";
+export { Pagination } from "./pagination";
+export { InputNumber } from "./input-number";
 
 export * as Timeline from "./timeline";
 export * as Menu from "./menu";

@@ -1,0 +1,20 @@
+.label {
+	display: grid;
+	gap: var(--space-s);
+}
+
+.input {
+	background-color: var(--surface-4);
+	border: 2px solid var(--color-border);
+	border-radius: var(--radius-xs);
+	padding: var(--space-xs) var(--space-s);
+	color: inherit;
+}
+
+/* .input:valid {
+
+}
+
+.input:invalid {
+
+} */
