@@ -15,10 +15,10 @@
 <section class="wide">
 	<h3>{t["title"]}</h3>
 	<ChaosGame
-		points="{2500}"
+		points="{3500}"
 		polygon="{n}"
 		scale="{factor ? 150 : 100}"
-		pointSize="{1.5}"
+		pointSize="{1}"
 		step="{{ value, factor }}"
 	/>
 	<form on:submit|preventDefault>
