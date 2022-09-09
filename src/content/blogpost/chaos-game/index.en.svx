@@ -1,0 +1,180 @@
+---
+created: 2022-09-08T02:09:00.000Z
+description: "Can be anything deterministic hidden behind the random?"
+keywords: [ "generative art", "math" ]
+lang: en
+layout: blogpost
+published: false
+slug: "the-chaos-game"
+title: "The Chaos Game: The randomness against determinism"
+updated: 2022-09-08T02:09:00.000Z
+---
+
+<script>
+	import { ChaosGame } from "./components";
+	import * as Interactive from "./interactive";
+	import t from "./translations/en.json";
+</script>
+
+Fractals - one of the most interesting and mindbreaking mathematical objects. Frsctals are self-similar patters. In other words, the part of a fractal looks exactly or partially the same as whole. It may seem that randomness and fractals cannot have anything in commmon, the rich structure looks deterministic.
+
+## Chaos Game and the rules
+
+The Chaos Game - is a method to generate iterative fractals with the help of polygons.
+
+Let's look at basic the rules, using the example of a triangle:
+
+1. Enumirate the vertices;
+2. Mark the random point within the triangle;
+3. Randomly choose the vertex;
+4. Move and mark a point in between the current point and the randomly chosen vertex;
+5. Repeat the steps (3-4) many times.
+
+Thus, the inner area of the triangle is successively filled with points in a chaotic manner. The first thing comes to mind - all these points should fill the area uniformly. Let’s review the rules by example using the interactive section below and get the result:
+
+<Interactive.ChaosGameRulesDemo
+	origin="{{ y: 50 }}"
+	t="{t["game-rules-demo"]}"
+/>
+
+It is striking that some areas of the triangle cannot be reached in later steps, no matter how many iterations would be done. These “empty” areas form a fractal pattern. The result is a fractal, the so called [Sierpinski triangle][sierpinski-triangle] that was described by the Polish mathematician Waclaw Sierpinski in 1915:
+
+<ChaosGame
+	origin="{{ y: 35 }}"
+	points="{7500}"
+	scale="{175}"
+	palette="red"
+	pointSize="{0.75}"
+>
+	Sierpinski triangle, Chaos Game at 7500 iterations
+</ChaosGame>
+
+The "Chaos Game" described by [https://en.wikipedia.org/wiki/Banach_fixed-point_theorem][banach-fixed-point-theorem]. We won't go into the rabbit hole here and will try to explore the game as it is, experimenting with rules. In case you want more math, feel free to watch a [VisualMath lecture][visual-math-chaos-game-lecture] about this theorem.
+
+## A bit of colors
+
+Before we dive in into the Chaos Game, let’s correct rules just a bit. It won’t change the results, but will help us see the structures and even help to interpret the results. Let’s color each point based on the randomly chosen vertex it jumps towards to. Colors themselves can be random, but the most straightforward way is to use color wheel to connect the vertex and the angle:
+
+<ChaosGame
+	origin="{{ y: 35 }}"
+	points="{7500}"
+	scale="{175}"
+	pointSize="{1}"
+>
+	Colored Chaos Game, sierpinski triangle at 7500 iterations
+</ChaosGame>
+
+## Generalization to arbitrary polygons and the boring case
+
+Let’s explore the game by generalization of some rules. The most simple way is to use another polygon. This is what we will get for the next case - a square:
+
+<ChaosGame
+	points="{7500}"
+	polygon="{4}"
+	scale="{200}"
+	pointSize="{0.75}"
+>
+	Chaos Game, square at 7500 iterations
+</ChaosGame>
+
+Alas, the square do not demonstrate anything interesting. Points uniformly covers the area, the same way it usually expected from the basic triangle case. Nevertheless, the square - is the only “boring” polygon in this game. And there are an explanation for that behaviour.
+
+If one assumes we have some random points inside the polygon, and ones maps all those points towards just one of the vertices - we get a scaled down version of the original polygon. Doing so for all of the vertices and combining the results, we get a points “density map”. If there are holes in this “density map”, the assumption of having uniform density at the start was false, we should repeat the procedure repeatedly turning it into a fractal:
+
+<Interactive.PolygonDensityMap
+	n="{4}"
+	t="{t["polygon-density-map"]}"
+/>
+
+There are two outstanding cases: the triangle and the “boring” square. Now we can exaplain this behaviour with interpreting the “density map”: they are the two only cases where each vertex density areas do not intersect. Colors helps us visually to confirm the idea. But the square is special, it’s area can be filled up completely using four copies of itself (k = 0.5). Well, same is possible for a triangle case, but the number of vertices play a crutial role here.
+
+“Density maps” not only explains some weirds cases, but also allows to predict the form of a result.
+
+## Not quite random
+
+Up till this moment fractals looked quite “reqularly”. The interesting part begins should we intervene into the process of random. Polygon vertices will be chosen randomly as before, but there will be some process moderation: we define some set of restrictions of how the next vertex can or cannot be chosen. Let’s use the “boring” square as the example:
+
+<Interactive.SquareRestrictionsDemo
+	t="{t["square-restrictions-demonstration"]}"
+/>
+
+The results are amazing. The “boring” case is not “boring” anymore! We can formulate such restriction rulse, quite a lot of them:
+
+- If a vertex has been selected, none of its neighbors may be selected in the next step.
+- If the same vertex was selected twice in succession, the vertex selected in the next step must at least be 2 vertices away.
+
+And more and more! Moderate the random we can get more different fractals. Despite the seemingly completely different restriction rules, there is a better way to generate them using the sets. As we are restricting some vertices to be chosen (or not to be), we can condense everything into a set of steps possible (forbidden) for the next choice.
+
+For example, the restriction rule “Vertex cannot be choosen twice in a row” can be described as { 1, 2, 3 } set: the set contains the allowed steps for the next choice. If we have chosen vertex 1, the next possible choices are 2 (1 + 1), 3 (1 + 2), and 4 (1 + 3), we won’t get the same again. Same way we can describe using the forbiding! { 4 } set.
+
+Of course, sets are not always human readable, but this way it is possible to answer a question: “How many possibilities there are using such restrictions?”. To count the possibilities we can calculate the [number of subsets of a given set][set-size] using the course of the Set Theory bases: there are as many combinations as twice the square of elements in the set.
+
+We won’t count the empty set, we have to move somewhere. For example, there are so many possibilities for a:
+
+- Triangle: 7,
+- Square: 15,
+- Pentagon: 31.
+
+As we can see, each new side double the number of combinations. You can review all the possibilities for some polygons below, just choose the polygon and explore a vast number of new fractals:
+
+<Interactive.ChaosRestrictionSubsetsDemo
+	n="{4}"
+	t="{t["restrictions-subset"]}"
+/>
+
+In fact, it is not over. There is one more parameter that slipped away. The restrictions do not depend on vertices only, we should restrict it relatively to some choice in the past! This is what makes some restriction rule quite more sophisticated. Let's see what can we get, restricting the same “boring” case as { 1 } for the last choice and { 3 } for penultimate:
+
+<Interactive.ChaosGameRandomRestriction
+	t="{t["random-restrictions"]}"
+/>
+
+With the penultimate rules (we are not restricted here, the restrictions can go deep into the past choices), the number of combinations expands much more: each new restriction multiplies the number of previously possible number of choices for each vertex:
+
+- Triangle: 7 ^ 3= 343,
+- Square: 15 ^ 4 = 50 625,
+- Pentagon: 31 ^ 5 = 28 623 151.
+
+## Changing the step
+
+Now it time to generalize another rule: the step. Up till now each point moved halfway to the next randomly chosen vertex. Why should it be halfway? Well, it is simple and it gives the desired result for basic triangle case. Let’s define the step value using coefficient “r”: “r = 0” means no movement at all, “r = 1” means going all the way to the vertex, and “r = 0.5” - the default we used all this time. Coefficient value is not restricted, negative value just reverse the direction, and values greater than one makes points move away from polygon's inner area.
+
+Let's experiment and see, how the step factor affects the result:
+
+<Interactive.ChaosGameStepsDemo
+	t="{t["step-rule-values-demo"]}"
+/>
+
+Changing the coefficient we can see how scales up “the figure” looking like polygonal flower with the same number of petals as the number of polygon sides. At some point all these “petals” intersects and mixes up. The coefficient value to get the “flower” depends on the polygon as *r = 3 / (n + 3)*, where n - is the number of sides. This way we can set up more natural step for each Chaos Game depending on the polygon and… yeah, again, “boring” sqaure won’t be boring anymore.
+
+Coefficient is quite practical way to describe the step value, and still, not the only way as it is a relative value. We can freely use absolute value, in other words, move in any direction to any desired distance.
+
+<Interactive.ChaosGameStepsDemo
+	factor={false}
+	t="{t["step-rule-values-demo"]}"
+/>
+
+## Summing up the adventure
+
+There is no doubt despite the simplicity of the rules there are still a lot of possibilities to explore. We can add more rules, like additional movement or managing the colors. The Chaos Game is a fun mathematical entertainment, yet it is just a simplification of some more interesting mathematical ideas as [attractors][attractor].
+
+Feel free to explore the Chaos Game using the creator tool below. New features will be added over time for sure.
+
+<Interactive.ChaosGameCreator
+	t="{t["chaos-game-creator"]}"
+/>
+
+## Useful links and references
+
+- [Sierpinski Triangle][sierpinski-triangle]
+- [The Chaos Game: Sierpinski triangles and beyond, part 1](https://community.wolfram.com/groups/-/m/t/1025180)
+- [Numberphile: Chaos Game](https://www.youtube.com/watch?v=kbKtFN71Lfs&loop=0)
+- [The Chaos Game](https://beltoforion.de/en/recreational_mathematics/chaos_game.php)
+- [What is the Chaos Game?][visual-math-chaos-game-lecture]
+
+<!-- Reference Links -->
+
+[visual-math-chaos-game-lecture]: https://www.youtube.com/watch?v=T_CmYqolWsM
+[banach-fixed-point-theorem]: https://en.wikipedia.org/wiki/Banach_fixed-point_theorem
+[sierpinski-triangle]: https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle
+[set-size]: https://www.onlinemath4all.com/number-of-subsets-of-a-set.html
+[attractor]: https://en.wikipedia.org/wiki/Attractor
