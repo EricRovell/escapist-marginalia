@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Range } from "@components";
 	import { ChaosGame } from "../components";
+	import styles from "./chaos-game-steps-demo.module.css";
 
 	export let factor = true;
 	export let t: Record<string, string>;
@@ -21,7 +22,7 @@
 		pointSize="{1}"
 		step="{{ value, factor }}"
 	/>
-	<form on:submit|preventDefault>
+	<form class="{styles.form}" on:submit|preventDefault>
 		<Range bind:value={n} min={3} max={9} output>
 			{t["number-of-sides"]}
 		</Range>
@@ -36,12 +37,3 @@
 		{/if}
 	</form>
 </section>
-
-<style>
-	form {
-		display: flex;
-		flex-flow: column nowrap;
-		gap: var(--space-m);
-		width: min(100% - var(--space-m), 450px);
-	}
-</style>

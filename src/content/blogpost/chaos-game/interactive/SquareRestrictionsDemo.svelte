@@ -1,5 +1,6 @@
 <script>
 	import { ChaosGame } from "../components";
+	import styles from "./square-restrictions-demo.module.css";
 
 	export let t;
 
@@ -12,7 +13,7 @@
 
 <section class="wide">
 	<h3>{t["title"]}</h3>
-	<div class="wrapper">
+	<div class="{styles.wrapper}">
 		{#each items as restriction, i}
 			<ChaosGame
 				points="{2500}"
@@ -26,18 +27,3 @@
 		{/each}
 	</div>
 </section>
-
-<style>
-	.wrapper {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: flex-start;
-		gap: var(--space-l);
-		width: min(100% - var(--space-m), 75vw);
-	}
-
-	.wrapper :global(figure) {
-		width: min-content;
-	}
-</style>

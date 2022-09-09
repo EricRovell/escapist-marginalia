@@ -1,0 +1,12 @@
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	gap: var(--space-l);
+	width: min(100% - var(--space-m), 75vw);
+}
+
+.wrapper figure {
+	width: min-content;
+}

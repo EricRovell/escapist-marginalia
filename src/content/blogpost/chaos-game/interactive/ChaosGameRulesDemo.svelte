@@ -46,8 +46,8 @@
 	Simplistic vector based "Chaos Game" for rules demonstration purposes.
 -->
 <section class="wide">
+	<h3>{t["title"]}</h3>
 	<article class="{styles.root}">
-		<h3>{t["title"]}</h3>
 		<aside class="{styles.steps}">
 			<span>
 				{t["step-count"]}: <output>{points.length}</output>
