@@ -1,6 +1,6 @@
 .canvas {
 	display: block;
-	height: var(--canvas-height, 250px);
-	width: var(--canvas-width, 250px);
+	height: var(--canvas-height, 350px);
+	width: var(--canvas-width, 350px);
 	background-color: var(--canvas-bg, transparent);
 }
