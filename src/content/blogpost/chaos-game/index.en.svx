@@ -1,13 +1,13 @@
 ---
-created: 2022-09-08T02:09:00.000Z
+created: 2022-09-10T01:34:00.000Z
 description: "Can be anything deterministic hidden behind the random?"
 keywords: [ "generative art", "math" ]
 lang: en
 layout: blogpost
-published: false
+published: true
 slug: "the-chaos-game"
 title: "The Chaos Game: The randomness against determinism"
-updated: 2022-09-08T02:09:00.000Z
+updated: 2022-09-10T01:34:00.000Z
 ---
 
 <script>

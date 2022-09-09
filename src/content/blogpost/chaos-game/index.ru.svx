@@ -1,13 +1,13 @@
 ---
-created: 2022-09-08T02:09:00.000Z
+created: 2022-09-10T01:34:00.000Z
 description: "Может ли что-то детерменистичное скрываться за случайностью?"
 keywords: [ "generative art", "math" ]
 lang: ru
 layout: blogpost
-published: false
+published: true
 slug: "игра-хаоса"
 title: "Игра Хаоса: случайность против детерменизма"
-updated: 2022-09-08T02:09:00.000Z
+updated: 2022-09-10T01:34:00.000Z
 ---
 
 <script>
