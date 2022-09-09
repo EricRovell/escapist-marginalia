@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { Canvas, CanvasLayer } from "@components";
 	import { Chaos, Point, Polygon } from "../chaos";
+	import styles from "./chaos-game.module.css";
 	import type { PolygonOrigin, ChaosOptions } from "../chaos/chaos.types";
 
 	export let distances = [];
-	export let height = 350;
+	export let height = 450;
 	export let origin: PolygonOrigin = undefined;
 	export let palette: ChaosOptions["palette"] | undefined = undefined;
 	export let points = 2500;
@@ -12,10 +13,11 @@
 	export let polygon = 3;
 	export let scale = 250;
 	export let step = { value: 0.5, factor: true };
-	export let width = 350;
+	export let style: string | undefined = undefined;
+	export let width = 450;
 </script>
 
-<figure>
+<figure class="{styles.figure}" {style}>
 	<Canvas {width} {height} autoclear>
 		<CanvasLayer
 			id="chaos-game"
@@ -44,25 +46,3 @@
 		</figcaption>
 	{/if}
 </figure>
-
-<style>
-	figure {
-		--canvas-bg: var(--surface-2);
-
-		display: grid;
-		gap: var(--space-s);
-		justify-items: center;
-		/* width: min-content; */
-	}
-
-	figure :global(canvas) {
-		/* width: 350px; */
-		justify-self: center;
-		border: 2px solid var(--color-border);
-		border-radius: var(--radius-l);
-	}
-
-	figure figcaption {
-		text-align: center;
-	}
-</style>

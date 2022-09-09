@@ -1,0 +1,19 @@
+.figure {
+	--canvas-bg: var(--surface-2);
+
+	display: grid;
+	gap: var(--space-s);
+	justify-items: center;
+	max-width: 100%;
+	/* width: min-content; */
+}
+
+.figure canvas {
+	justify-self: center;
+	border: 2px solid var(--color-border);
+	border-radius: var(--radius-l);
+}
+
+.figure figcaption {
+	text-align: center;
+}
