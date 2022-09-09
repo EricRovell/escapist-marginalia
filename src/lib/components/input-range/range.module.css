@@ -23,7 +23,9 @@
 .output {
 	grid-row: 1;
 	grid-column: 2;
+	align-self: center;
 	visibility: hidden;
+	height: min-content;
 	padding-inline: var(--space-s);
 	border: 1px solid var(--range-thumb-focus-color);
 	border-radius: var(--radius-xs);
