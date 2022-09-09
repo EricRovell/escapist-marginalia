@@ -44,8 +44,7 @@
 	}
 
 	a:focus-visible {
-		outline: 2px dashed var(--color-link-hover, currentColor);
-		outline-offset: calc(var(--space-xs) / 2);
+		outline-color: var(--color-link-hover, currentColor);
 	}
 
 	a:active {

@@ -1,19 +1,71 @@
 .fieldset {
-	--border-color: var(--color-3);
-	--border-radius: var(--radius-small);
-	
+	--radio-button-bg: var(--surface-4);
+	--radio-button-border-size: 3px;
+	--radio-button-border-color: var(--color-blue-400);
+	--radio-button-focus-ring-color: #999EEB60;
+
 	display: flex;
-	gap: 0.5em;
-	padding: 0.75em;
-	border-radius: 5px;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--space-m);
+	border: none;
+}
+
+.fieldset > legend {
+	margin-bottom: var(--space-s);
 }
 
 .label {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	
-	position: relative;
 	user-select: none;
 	cursor: pointer;
 }
+
+.radio {
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.radio:focus-visible {
+	outline: none;
+}
+
+.radio:checked:focus-visible + span {
+	outline: 2px dashed var(--focus-ring-color);
+	outline-offset: calc(0.75 * var(--space-xs));
+}
+
+.radio:hover + span {
+	--radio-button-focus-ring-size: 1px;
+}
+
+.radio + span {
+	padding: var(--space-xs) var(--space-m);
+	border: 1px solid var(--radio-button-focus-ring-color);
+	border-radius: var(--radius-xs);
+	background-color: var(--radio-button-bg);
+	box-shadow:	0 0 0 var(--radio-button-focus-ring-size) var(--radio-button-focus-ring-color);
+	transition: box-shadow 0.25s ease-in-out;
+}
+
+.radio:checked + span {
+	background-color: var(--surface-1);
+}
+
+
+
+/* 
+
+.radio input:checked + span {
+	background-color: var(--surface-4);
+}
+
+.radio input:focus-visible + span {
+	outline: 1px dashed var(--color-blue-400);
+}
+
+.radio input:hover + span {
+	background-color: var(--surface-4);
+} */

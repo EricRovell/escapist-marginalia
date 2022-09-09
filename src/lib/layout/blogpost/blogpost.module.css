@@ -151,5 +151,12 @@
 	gap: var(--space-m);
 	background-color: var(--surface-3);
 	padding-block: var(--space-l);
-	margin-block: var(--space-m);
+	margin-block: var(--space-l);
+}
+
+.article :global(.wide) :is(h2, h3, h4, h5, h6) {
+	text-align: center;
+	max-inline-size: min(40ch, 100% - var(--space-m));
+	margin-top: 0;
+	padding-bottom: 0;
 }

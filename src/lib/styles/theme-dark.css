@@ -23,11 +23,11 @@
 
     --color-border: var(--color-blue-800);
 
-    --focus-ring-color: #999EEB60;
+    --focus-ring-color: var(--color-blue-300);
 
     --button-accent: var(--color-blue-500);
     --button-color: var(--color-blue-200);
-    --button-focus-ring-color: var(--focus-ring-color);
+    --button-focus-ring-color: #999EEB60;
     --button-border-color: var(--color-blue-400);
 
     --switch-track-color: var(--color-gray-600);
@@ -36,6 +36,7 @@
     --switch-thumb-color-highlight: var(--color-blue-900);
 
     --range-thumb-color: var(--color-blue-400);
+    --range-thumb-focus-color: #999EEB60;
     --range-thumb-min-color: rgb(34, 32, 32);
     --range-track-color: var(--color-gray-600);
     --range-track-focus-color: var(--color-gray-500);
@@ -113,11 +114,11 @@
 
   --color-border: var(--color-blue-800);
 
-  --focus-ring-color: #999EEB60;
+  --focus-ring-color: var(--color-blue-300);
 
   --button-accent: var(--color-blue-500);
   --button-color: var(--color-blue-200);
-  --button-focus-ring-color: var(--focus-ring-color);
+  --button-focus-ring-color: #999EEB60;
   --button-border-color: var(--color-blue-400);
 
   --switch-track-color: var(--color-gray-600);
@@ -126,6 +127,7 @@
   --switch-thumb-color-highlight: var(--color-blue-900);
 
   --range-thumb-color: var(--color-blue-400);
+  --range-thumb-focus-color: #999EEB60;
   --range-thumb-min-color: rgb(34, 32, 32);
   --range-track-color: var(--color-gray-600);
   --range-track-focus-color: var(--color-gray-500);
