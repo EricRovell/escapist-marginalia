@@ -41,7 +41,7 @@
 }
 
 .form fieldset > * {
-	padding: var(--space-s) var(--space-m);
+	margin: var(--space-s) var(--space-m);
 }
 
 .form fieldset {
@@ -56,13 +56,6 @@
 	font-size: var(--font-size-m);
 }
 
-.form > fieldset button {
-	font-size: var(--font-size-xs);
-	padding: var(--space-s);
-}
-
-.button-group {
-	display: flex;
-	justify-content: flex-start;
-	gap: var(--space-s);
+.form fieldset > button {
+	margin-block-start: var(--space-m);
 }

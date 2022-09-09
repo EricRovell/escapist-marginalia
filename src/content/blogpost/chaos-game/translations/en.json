@@ -47,6 +47,8 @@
 		"factor": "Factor",
 		"value": "Value",
 		"points": "Draw Points",
+		"point-size": "Point size",
+		"draw-points": "Draw point samples",
 		"clear": "Clear"
 	}
 }

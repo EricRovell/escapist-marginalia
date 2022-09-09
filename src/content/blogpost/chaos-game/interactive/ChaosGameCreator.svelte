@@ -9,7 +9,8 @@
 	export let polygon = 3;
 	export let origin: PolygonOrigin = undefined;
 	export let step = { value: 0.5, factor: true };
-	export let pointSize = 1;
+	export let samples = 1;
+	export let sampleSize = 1;
 	export let scale = 800;
 	export let distances = [];
 	export let t: Record<string, string>;
@@ -46,7 +47,7 @@
 						for (const { position, color } of moves) {
 							context.fillStyle = color;
 							context.beginPath();
-							context.arc(position.x, position.y, pointSize, 0, 2 * Math.PI, false);
+							context.arc(position.x, position.y, sampleSize, 0, 2 * Math.PI, false);
 							context.closePath();
 							context.fill();
 						}
@@ -81,15 +82,19 @@
 			</fieldset>
 			<fieldset class="points">
 				<legend>{t.points}</legend>
-				<div class="{styles["button-group"]}">
-					<Button on:click={() => handleClick(1)}>+1</Button>
-					<Button on:click={() => handleClick(100)}>+100</Button>
-					<Button on:click={() => handleClick(500)}>+500</Button>
-					<Button on:click={() => handleClick(1000)}>+1000</Button>
-					<Button on:click={() => handleClick(5000)}>+5000</Button>
-				</div>
+				<Range bind:value="{sampleSize}" min="{0.5}" max="{7.5}" step="{0.25}" output>
+					{t["point-size"]}
+				</Range>
+				<Range bind:value="{samples}" min="{1}" max="{10000}" output>
+					{t["points"]}
+				</Range>
+				<Button on:click={() => handleClick(samples)}>
+					{t["draw-points"]}
+				</Button>
 			</fieldset>
-			<Button on:click={handleReset}>{t.clear}</Button>
+			<Button on:click={handleReset}>
+				{t.clear}
+			</Button>
 		</form>
 	</article>
 </section>

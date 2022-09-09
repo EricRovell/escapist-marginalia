@@ -15,3 +15,7 @@
 .form legend {
 	text-align: center;
 }
+
+.wrapper span {
+	font-variant-numeric: tabular-nums;
+}
