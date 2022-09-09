@@ -9,10 +9,6 @@
 	place-self: center;
 }
 
-.steps {
-	/* padding: var(--space-m); */
-}
-
 .form {
 	display: grid;
 	gap: var(--space-m);
@@ -26,6 +22,7 @@
 .controls-render,
 .controls-actions {
 	display: flex;
+	flex-wrap: wrap;
 	gap: var(--space-m);
 	justify-content: center;
 }

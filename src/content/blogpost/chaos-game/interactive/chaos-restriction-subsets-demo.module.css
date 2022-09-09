@@ -17,3 +17,18 @@
 	gap: var(--space-l);
 	width: min(100% - var(--space-m), 450px);
 }
+
+@media screen and (max-width: 400px) {
+	.wrapper {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		width: 100%;
+		padding-inline: var(--space-m);
+	}
+
+	.wrapper canvas {
+		--canvas-width: 85vw;
+		--canvas-height: 85vw;
+	}
+}

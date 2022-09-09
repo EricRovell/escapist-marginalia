@@ -1,11 +1,13 @@
 .figure {
 	--canvas-bg: var(--surface-2);
+	--canvas-height: auto;
+	--canvas-width: 100%;
 
 	display: grid;
 	gap: var(--space-s);
 	justify-items: center;
-	max-width: 100%;
-	/* width: min-content; */
+	width: min(100% - var(--space-m), 350px);
+	margin-inline: auto;
 }
 
 .figure canvas {
@@ -16,4 +18,7 @@
 
 .figure figcaption {
 	text-align: center;
+	font-style: italic;
+	font-size: var(--font-size-s);
+	max-inline-size: 30ch;
 }
