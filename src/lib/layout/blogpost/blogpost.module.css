@@ -21,10 +21,17 @@
 	grid-column: 1 / 4;
 }
 
+/* headings */
+
 .article :is(h2, h3, h4, h5, h6):not([class]) {
 	color: var(--color-heading);
 	margin-top: var(--space-m);
 	padding-bottom: var(--space-s);
+}
+
+.article :is(h2, h3, h4, h5, h6):not([class]) a {
+	margin-inline-start: 0.25em;
+	font-size: 0.85em;
 }
 
 .article :global(.katex-display) {
