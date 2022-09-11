@@ -16,9 +16,9 @@ updated: 2022-08-18T00:40:00.000Z
 	import "katex/dist/katex.min.css";
 </script>
 
-Mastering the exposure triangle, a photographer usually puzzled by aperture. The evolution of knowledge that most photographers experience usually starts with question how the elements of exposure works and wondering why some lenses are better that others. From time to time the "f-stop" term appears. Later, the photographer finds out that the smaller the f-number is, the more light the lens lets in. This knowledge gives you more latitude with exposure settings.
+Mastering the exposure triangle, a photographer usually puzzled by aperture. The evolution of knowledge that most photographers experience usually starts with question how the elements of exposure works and wondering why some lenses are better that others. From time to time the “f-stop” term appears. Later, the photographer finds out that the smaller the f-number is, the more light the lens lets in. This knowledge gives you more latitude with exposure settings.
 
-This is where a lot of photographers stop when it comes to learning about aperture. This is more than enough to know how to make gear decisions and set the correct exposure. And that is enough. This post is for people like me who want to know more: why exactly these values and where do they come from. 
+This is where a lot of photographers stop when it comes to learning about aperture. This is more than enough to know how to make gear decisions and set the correct exposure. And that is enough. This post is for people like me who want to know more: why exactly these values and where do they come from.
 
 ## Aperture Number
 
@@ -36,16 +36,16 @@ Once you start shoot in manual mode, you will meet the f-numbers numbers in your
 
 </p>
 
-Thats where questions arise: 
+Thats where questions arise:
 
-- "Where do these values come from?"
-- "Why the series are getting smaller?"
+- “Where do these values come from?”
+- “Why the series are getting smaller?”
 
-Taking the device in your hands you may find out some usefull information. Setting the lower f-number, you will get more bright photo. Should you look in front of the lens and you will notice that the aperture opens up the entrance pupil more and more. All these facts leads to conclusion: the lower f-numbers results in more light getting in. Using this information let's find out where do the values come from.
+Taking the device in your hands you may find out some usefull information. Setting the lower f-number, you will get more bright photo. Should you look in front of the lens and you will notice that the aperture opens up the entrance pupil more and more. All these facts leads to conclusion: the lower f-numbers results in more light getting in. Using this information let’s find out where do the values come from.
 
 ## Area and light flow
 
-Aperture number has a connection with amount of light getting in. Let's think, how can we measure it up quantitatively. The practical way is to cut up the flow twice. That's where a circle area formula needed:
+Aperture number has a connection with amount of light getting in. Let’s think, how can we measure it up quantitatively. The practical way is to cut up the flow twice. That’s where a circle area formula needed:
 
 ```math
 S = \pi R^2,
@@ -73,7 +73,7 @@ Consequtive doubling the amount of light requires a hole radius increase in acco
 
 <FNumbers {dict} fstopsControls />
 
-What a surprise, is it now? The calculated series values form exactly <a href="#f-stops">the same values</a> a photographer usually see tuning the aperture. Thats where do these values come from and that is the reason why they called "the f-stops", as one step results results in doubling the amount of light.
+What a surprise, is it now? The calculated series values form exactly <a href="#f-stops">the same values</a> a photographer usually see tuning the aperture. Thats where do these values come from and that is the reason why they called “the f-stops”, as one step results results in doubling the amount of light.
 
 <DiaphragmFNumber {dict} />
 
