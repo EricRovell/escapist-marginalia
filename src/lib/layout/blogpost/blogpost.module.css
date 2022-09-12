@@ -34,6 +34,14 @@
 	font-size: 0.85em;
 }
 
+.article h2:not([class]) {
+	font-size: var(--font-size-xl);
+}
+
+.article h3:not([class]) {
+	font-size: var(--font-size-l);
+}
+
 .article :global(.katex-display) {
 	margin: 0;
 }
