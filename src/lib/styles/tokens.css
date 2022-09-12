@@ -60,8 +60,8 @@
   --font-size-s: calc(0.65 * var(--font-size-base));
   --font-size-m: calc(0.7 * var(--font-size-base));
   --font-size-l: calc(1 * var(--font-size-base));
-  --font-size-xl: calc(2 * var(--font-size-base));
-  --font-size-xxl: calc(3 * var(--font-size-base));
+  --font-size-xl: calc(1.25 * var(--font-size-base));
+  --font-size-xxl: calc(1.5 * var(--font-size-base));
   
   /* space values & inset */
   --space-xs: calc(0.25 * 1rem);

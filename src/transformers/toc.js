@@ -1,30 +1,28 @@
+import { visit } from "unist-util-visit";
+import { toString as treeToString } from "mdast-util-to-string";
+
 /**
-* Custom remark plugin for injecting information about `headings` into frontmatter.
-*/
-export const transformerTOC = () => {
-	let visit;
-	let tree_to_string;
-	return async function transformer(tree, vFile) {
-		if (!visit) {
-			tree_to_string = (await import("mdast-util-to-string")).toString;
-			visit = (await import("unist-util-visit")).visit;
-		}
+ * Custom remark plugin for injecting information about `headings` into frontmatter.
+ * 
+ * TODO: Refactor this into rehype plugin to get the heading ID within HTML for better sync.
+ * Right now rehype cannot change the frontmatter
+ * https://github.com/pngwn/MDsveX/issues/353
+ */
+export const transformerTOC = () => (tree, vFile) => {
+	const toc = [];
 
-		vFile.data.toc = [];
-		
-		visit(tree, "heading", (node) => {
-			const title = tree_to_string(node);
-			vFile.data.toc.push({
-				level: node.depth,
-				title,
-				id: title.toLowerCase().replace(/\s/g, "-")
-			});
+	visit(tree, "heading", (node) => {
+		const title = treeToString(node);
+		toc.push({
+			level: node.depth,
+			title,
+			id: title.toLowerCase().replace(/\s/g, "-")
 		});
+	});
 
-		if (!vFile.data.fm) {
-			vFile.data.fm = {};
-		}
+	if (!vFile.data.fm) {
+		vFile.data.fm = {};
+	}
 
-		vFile.data.fm.toc = vFile.data.toc;
-	};
+	vFile.data.fm.toc = toc;
 };
