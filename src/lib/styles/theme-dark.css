@@ -13,7 +13,7 @@
     --surface-text-3: var(--color-gray-500);
     --surface-text-4: var(--color-gray-500);
 
-    --color-heading: var(--color-blue-400);
+    --color-heading: var(--color-blue-300);
     --color-text-primary: var(--color-gray-400);
     --color-text-secondary: var(--color-gray-500);
     --color-link: var(--color-blue-400);
@@ -104,7 +104,7 @@
   --surface-text-3: var(--color-gray-500);
   --surface-text-4: var(--color-gray-500);
 
-  --color-heading: var(--color-blue-400);
+  --color-heading: var(--color-blue-300);
   --color-text-primary: var(--color-gray-400);
   --color-text-secondary: var(--color-gray-500);
   --color-link: var(--color-blue-400);

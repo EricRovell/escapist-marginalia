@@ -10,13 +10,14 @@ import slug from "rehype-slug";
 
 import {
 	correct_hast_tree,
+	transformerAnchor,
 	transformerMath,
 	transformerTOC
 } from "./src/transformers/index.js";
 
 export const mdsvexConfig = {
 	remarkPlugins: [ transformerTOC, math, transformerMath ],
-	rehypePlugins: [ correct_hast_tree, rehype_katex, slug ],
+	rehypePlugins: [ correct_hast_tree, rehype_katex, slug, transformerAnchor ],
 	layout: {
 		"blogpost": "./src/lib/layout/blogpost/Blogpost.svelte"
 	}
