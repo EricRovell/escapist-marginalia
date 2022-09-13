@@ -1,0 +1,24 @@
+.wrapper form {
+	width: min(100% - var(--space-m), 350px)
+}
+
+.wrapper form > *:not(:last-child) {
+	margin-bottom: var(--space-m);
+}
+
+.wrapper fieldset {
+	display: flex;
+	justify-content: stretch;
+	gap: var(--space-s);
+	border: none;
+	width: 100%;
+}
+
+.wrapper legend {
+	margin-bottom: var(--space-s);
+}
+
+.wrapper fieldset button {
+	width: 100%;
+	padding: var(--space-s);
+}
