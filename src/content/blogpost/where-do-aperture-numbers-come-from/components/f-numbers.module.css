@@ -1,7 +1,8 @@
 .wrapper {
 	display: grid;
-	grid-template: repeat(3, auto) / repeat(var(--f-number-items), 1fr);
-	column-gap: 1em;
+	grid-template: repeat(3, auto) / repeat(var(--f-number-items), auto);
+	column-gap: 1.5em;
+	row-gap: 0.5em;
 	align-items: center;
 	text-align: center;
 	overflow-x: auto;
@@ -18,6 +19,10 @@
 .wrapper header {
 	position: sticky;
 	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 	margin-inline-end: 1em;
 	background-color: var(--surface-3);
 	font-weight: 600;
@@ -40,16 +45,10 @@
 }
 
 .f-number {
-	font-size: 1.25em;
-	border: 2px dashed var(--color-border);
+	border: 3px solid var(--color-border);
 	border-radius: var(--radius-m);
 }
 
 .f-number:global(.intermediate) {
-	border: 1px dashed var(--color-border);
-}
-
-.f-number-intermidiate {
-	font-size: 0.85em;
-	opacity: 0.85;
+	border-style: dashed;
 }
