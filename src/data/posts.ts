@@ -1,5 +1,5 @@
 import { find } from "@utils/query";
-import type { Blogpost, BlogpostMetadata } from "../types";
+import type { Blogpost, BlogpostMetadata, Locale } from "../types";
 import type { QueryItem } from "@utils/query";
 
 async function fetchBlogposts(): Promise<Blogpost[]> {
@@ -45,7 +45,7 @@ export async function getBlogposts({ slug, lang, keywords, published }: Partial<
 	type Query<T> = {
 		"slug": QueryItem<string, T>;
 		"published": QueryItem<boolean, T>;
-		"lang": QueryItem<"en" | "ru", T>;
+		"lang": QueryItem<Locale, T>;
 		"keywords": QueryItem<string[], T>;
 	};
 
