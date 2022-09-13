@@ -1,0 +1,35 @@
+{
+	"diaphragm": {
+		"title": "The diaphragm",
+		"angle": "Diaphragm blade angle"
+	},
+	"diaphragm-f-stop": {
+		"title": "The f-stop effect on the diaphragm",
+		"aperture-number": "Aperture number"
+	},
+	"f-stops": {
+		"title": "f-stops scale",
+		"f-numbers": "f-numbers",
+		"f-number": "f-number",
+		"value": "Value",
+		"progression": "Progression"
+	},
+	"f-stops-steps": {
+		"title": "Intermediate f-stops",
+		"step": "Step",
+		"f-stop": "f-stop",
+		"previous": "Previous",
+		"next": "Next",
+		"f-number": "f-number",
+		"value": "Value",
+		"progression": "Progression"
+	},
+	"aperture-number": "Aperture Number",
+	"calculated": "Calculated",
+	"f-number": "f-number",
+	"f-numbers": "f-numbers",
+	"prev-f-stop": "Previous f-stop",
+	"next-f-stop": "Next f-stop",
+	"progression": "Progression",
+	"step": "Step"
+}

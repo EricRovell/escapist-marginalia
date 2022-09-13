@@ -1,25 +1,4 @@
-.root > article section,
-.root > article ol {
-	/* make a grid */
-	display: contents;
-}
-
-.root {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.root form {
-	margin-bottom: var(--space-m);
-	width: min(450px, 85vw);
-}
-
-.root > article {
-	width: min(100% - var(--space-m), 85vw);
-}
-
-.root > article {
+.wrapper {
 	display: grid;
 	grid-template: repeat(3, auto) / repeat(var(--f-number-items), 1fr);
 	column-gap: 1em;
@@ -30,50 +9,47 @@
 	max-width: calc(100% - var(--space-l));
 }
 
-.f-number {
-	font-size: 1.25em;
+.wrapper > section,
+.wrapper > section > ol {
+	/* make a grid */
+	display: contents;
 }
 
-.item {
-	padding-block: var(--space-s);
-}
-
-.calculated li,
-.progression li,
-.f-number-intermidiate {
-	font-size: 0.85em;
-	color: var(--color-gray-500);
-	opacity: 0.85;
-}
-
-.root header {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
+.wrapper header {
 	position: sticky;
 	left: 0;
+	margin-inline-end: 1em;
 	background-color: var(--surface-3);
-	padding-inline: var(--space-s);
-	height: 100%;
+	font-weight: 600;
 	z-index: 1;
 }
 
-.root ol {
-	list-style: none;
+.wrapper header::after {
+	content: "";
+	position: absolute;
+	width: 2em;
+	height: 100%;
+	right: -2em;
+	top: 0;
+	background-image: linear-gradient(to right, var(--surface-3), rgb(0 0 0 / 0.01));
 }
 
-/* step controls view */
-.root :global(.step-controls) {
-	display: grid;
-	grid-template: 1fr 1fr / 1fr 1fr;
-	gap: var(--space-m);
+.item {
+	position: relative;
+	padding-block: 0.5em;
 }
 
-.root :global(.step-controls) button {
+.f-number {
+	font-size: 1.25em;
+	border: 2px dashed var(--color-border);
+	border-radius: var(--radius-m);
+}
+
+.f-number:global(.intermediate) {
+	border: 1px dashed var(--color-border);
+}
+
+.f-number-intermidiate {
 	font-size: 0.85em;
-}
-
-.root :global(.step-controls) label {
-	grid-row: 2;
-	grid-column: 1 / span 2;
+	opacity: 0.85;
 }
