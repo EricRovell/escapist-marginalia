@@ -2,12 +2,15 @@ import { error } from "@sveltejs/kit";
 import { getBlogposts } from "@data/posts";
 import { getGalleryItems } from "@data/photos";
 import { getProjects } from "@data/projects";
+import type { Locale } from "@types";
 import type { PageLoad } from "./$types";
 
-export const load: PageLoad = async () => {
+export const load: PageLoad = async ({ params }) => {
+	const { locale = "en"} = params as { locale: Locale };
+
 	try {
 		const [	blogposts, photos, projects ] = await Promise.all([
-			getBlogposts(),
+			getBlogposts({ lang: locale }),
 			getGalleryItems(),
 			getProjects()
 		]);

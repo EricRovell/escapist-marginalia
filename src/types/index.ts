@@ -1,5 +1,7 @@
 export type Variant = "neutral" | "primary" | "success" | "danger" | "warning" | "info" | "link";
 
+export type Locale = "ru" | "en";
+
 /**
  * Describes the metadata object from the blogpost's frontmatter.
  */
@@ -8,7 +10,7 @@ export interface BlogpostMetadata {
 	description: string;
 	filepath: string;
 	keywords: string[];
-	lang: "ru" | "en";
+	lang: Locale;
 	layout?: string;
 	published?: boolean;
 	series: string;
@@ -68,7 +70,7 @@ export interface Project {
 /**
  * Defines a Project data used to render the view.
  */
-export interface Project extends Omit<GithubRepo, "html_url"> {
+export interface Project extends Omit<GithubAPIRepo, "html_url"> {
 	type: "app" | "package" | "website";
 	github: string;
 	npm?: string;
