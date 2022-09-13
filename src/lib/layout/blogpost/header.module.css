@@ -7,7 +7,7 @@
 }
 
 .wrapper > h1 {
-	font-size: var(--font-size-xxl);
+	font-size: calc(2 * var(--font-size-xxl));
 	font-family: var(--font-secondary);
 	font-variation-settings: "wght" 350;
 	color: var(--color-heading);
