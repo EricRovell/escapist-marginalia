@@ -5,7 +5,7 @@
 	import styles from "./chaos-game-rules-demo.module.css";
 
 	export let height = 350;
-	export let limit = 2000;
+	export let limit = 3000;
 	export let polygon = 3;
 	export let scale = 350;
 	export let strokeWidth = 0.5;
