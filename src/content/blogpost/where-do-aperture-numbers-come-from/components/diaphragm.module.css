@@ -1,6 +1,6 @@
 .illustration {
-	width: min(100% - var(--space-m), 350px);
-	height: min(100% - var(--space-m), 350px);
+	width: min(100% - var(--space-3), 350px);
+	height: min(100% - var(--space-3), 350px);
 	fill: var(--color-gray-900);
 }
 

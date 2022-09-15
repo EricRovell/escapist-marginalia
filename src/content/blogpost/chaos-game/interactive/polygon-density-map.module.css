@@ -1,11 +1,11 @@
 .illustration {
-	width: min(100% - var(--space-m), 85vw);
+	width: min(100% - var(--space-3), 85vw);
 	max-height: 50vh;
 }
 
 .form {
 	width: min(450px, 85vw);
-	margin-top: var(--space-m);
+	margin-top: var(--space-3);
 }
 
 .outer {

@@ -31,9 +31,8 @@
 
 <style>
 	a {
-		display: inline-flex;
 		align-items: baseline;
-		gap: var(--space-xs);
+		gap: var(--space-1-rel);
 		color: var(--color-link);
 		font-size: inherit;
 	}

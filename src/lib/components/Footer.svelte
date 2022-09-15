@@ -80,11 +80,11 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: var(--space-m);
+		gap: var(--space-3);
 		width: 100%;
 		height: 100%;
-		padding-top: var(--space-l);
-		padding-bottom: var(--space-l);
+		padding-top: var(--space-7);
+		padding-bottom: var(--space-7);
 
 		justify-self: center;
 	}
@@ -93,9 +93,9 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
-		gap: var(--space-m);
+		gap: var(--space-3-rel);
 		width: 100%;
-		font-size: var(--font-size-m);
+		font-size: var(--font-size-0);
 	}
 
 	.socials {
@@ -108,13 +108,13 @@
 		justify-content: center;
 		align-items: flex-end;
 		text-transform: capitalize;
-		gap: var(--space-m);
+		gap: var(--space-3-rel);
 	}
 
 	p {
 		display: flex;
 		flex-flow: column nowrap;
-		gap: var(--space-s);
+		gap: var(--space-2);
 	}
 
 	p :global(time) {

@@ -6,20 +6,20 @@
 	align-self: end;
 }
 
-.card-article time {
-	margin-bottom: var(--space-xs);
+.card-article h3 {
+	font-size: var(--font-size-2);
 }
 
-.card-article p {
-	font-size: var(--font-size-m);
+.card-article time {
+	margin-bottom: var(--space-1);
 }
 
 .keywords {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: var(--space-s);
-	font-size: var(--font-size-s);
+	gap: var(--space-2-rel);
+	font-size: var(--font-size-1);
 }
 
 .keywords > li {
@@ -29,6 +29,6 @@
 .keyword {
 	border: 2px solid var(--color-border);
 	border-radius: var(--radius-s);
-	padding: var(--space-xs) var(--space-s);
+	padding: var(--space-1) var(--space-2);
 	white-space: wrap;
 }

@@ -3,6 +3,6 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: flex-start;
-	gap: var(--space-l);
+	gap: var(--space-7);
 	max-width: 1200px;
 }

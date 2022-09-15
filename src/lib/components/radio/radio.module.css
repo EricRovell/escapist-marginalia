@@ -7,12 +7,12 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: var(--space-m);
+	gap: var(--space-3-rel);
 	border: none;
 }
 
 .fieldset > legend {
-	margin-bottom: var(--space-s);
+	margin-bottom: var(--space-2-rel);
 }
 
 .label {
@@ -34,7 +34,7 @@
 
 .radio:checked:focus-visible + span {
 	outline: 2px dashed var(--focus-ring-color);
-	outline-offset: calc(0.75 * var(--space-xs));
+	outline-offset: calc(0.75 * var(--space-1-rel));
 }
 
 .radio:hover + span {
@@ -42,7 +42,7 @@
 }
 
 .radio + span {
-	padding: var(--space-xs) var(--space-m);
+	padding: var(--space-1-rel) var(--space-3-rel);
 	border: 1px solid var(--radio-button-focus-ring-color);
 	border-radius: var(--radius-xs);
 	background-color: var(--radio-button-bg);
@@ -53,19 +53,3 @@
 .radio:checked + span {
 	background-color: var(--surface-1);
 }
-
-
-
-/* 
-
-.radio input:checked + span {
-	background-color: var(--surface-4);
-}
-
-.radio input:focus-visible + span {
-	outline: 1px dashed var(--color-blue-400);
-}
-
-.radio input:hover + span {
-	background-color: var(--surface-4);
-} */

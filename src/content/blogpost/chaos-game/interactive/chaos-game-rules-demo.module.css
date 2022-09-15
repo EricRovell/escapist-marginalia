@@ -1,6 +1,6 @@
 .root  {
 	display: grid;
-	gap: var(--space-m);
+	gap: var(--space-3);
 	justify-items: center;
 }
 
@@ -11,8 +11,8 @@
 
 .form {
 	display: grid;
-	gap: var(--space-m);
-	margin-top: var(--space-m);
+	gap: var(--space-3);
+	margin-top: var(--space-3);
 }
 
 .form fieldset {
@@ -23,6 +23,6 @@
 .controls-actions {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--space-m);
+	gap: var(--space-3);
 	justify-content: center;
 }

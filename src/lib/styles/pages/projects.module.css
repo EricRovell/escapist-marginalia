@@ -3,30 +3,21 @@
 
 	display: flex;
 	flex-direction: column;
-	gap: var(--space-xl);
+	gap: var(--space-9);
 	width: 100%;
 }
 
 .layout h2 {
-	font-family: var(--font-secondary);
-	font-size: var(--font-size-xl);
-	font-variation-settings: "wght" 200;
-	margin-bottom: var(--space-l);
 	text-transform: capitalize;
 }
 
 .projects {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-	gap: var(--space-m);
+	gap: var(--space-3);
 	align-content: stretch;
 }
 
 .project {
 	display: contents;
-}
-
-.project p {
-	font-size: var(--font-size-m);
-  color: var(--color-text-primary);
 }

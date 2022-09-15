@@ -15,14 +15,14 @@
 	align-items: center;
 	width: 100%;
 	height: min-content;
-	padding: var(--space-l);
+	padding: var(--space-7);
 }
 
 .image img {
 	width: auto;
 	/* save space for action controls */
 	max-width: calc(100vw - 6 * var(--icon-size));
-	max-height: calc(75vh - 2 * var(--space-l));
+	max-height: calc(75vh - 2 * var(--space-7));
 	object-fit: contain;
 }
 
@@ -43,13 +43,13 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: var(--space-s);
+	gap: var(--space-2-rel);
 	padding: calc(0.5 * var(--icon-size));
 	height: 100%;
 }
 
 .actions a {
-	padding: var(--space-s);
+	padding: var(--space-2-rel);
 }
 
 .actions button:last-child {
@@ -62,7 +62,7 @@
 	}
 
 	.image img {
-		max-width: calc(100vw - 2 * 1.75em - var(--space-m));
+		max-width: calc(100vw - 2 * 1.75em - var(--space-3-rel));
 	}
 
 	.actions {
@@ -73,7 +73,7 @@
 		left: 0;
 		bottom: 0;
 		height: fit-content;
-		padding: var(--space-s);
+		padding: var(--space-2-rel);
 	}
 
 	.actions button:last-child {
@@ -86,7 +86,7 @@
 .title {
 	color: var(--color-heading);
 	text-align: center;
-	padding-block: var(--space-l);
+	padding-block: var(--space-7);
 }
 
 /* metadata */
@@ -97,32 +97,32 @@
 	justify-content: space-between;
 	align-items: flex-start;
 	justify-items: center;
-	gap: var(--space-l);
-	width: calc(min(100%, 85ch) - var(--space-l));
+	gap: var(--space-7);
+	width: calc(min(100%, 85ch) - var(--space-7));
 	margin: 0 auto;
 }
 
 .metadata dl {
 	display: flex;
 	flex-flow: column nowrap;
-	gap: var(--space-xs);
+	gap: var(--space-1);
 }
 
 .metadata dt,
 .metadata .keywords h3 {
-	font-size: var(--font-size-m);
+	font-size: var(--font-size-1);
 	color: var(--color-gray-600);
 	font-weight: 400;
 }
 
 .metadata dd:not(:last-child) {
-	margin-bottom: var(--space-s);
+	margin-bottom: var(--space-2-rel);
 }
 
 .metadata section {
 	display: flex;
 	flex-flow: column wrap;
-	gap: var(--space-m);
+	gap: var(--space-3-rel);
 }
 
 /* params */
@@ -135,19 +135,15 @@
 
 /* keywords */
 
-.keywords h3 {
-	margin-bottom: var(--space-s);
-}
-
 .keywords ul {
 	display: flex;
 	flex-flow: row wrap;
-	gap: var(--space-s);
+	gap: var(--space-2);
 }
 
 .keywords li {
-	padding: var(--space-s);
+	padding: var(--space-2);
 	border: 2px solid var(--color-border);
-	border-radius: var(--space-s);
-	font-size: var(--font-size-m);
+	border-radius: var(--space-2);
+	font-size: var(--font-size-1);
 }

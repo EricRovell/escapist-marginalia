@@ -25,7 +25,7 @@
 	.euler-problem > section {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-s);
+		gap: var(--space-2);
 	}
 
 	.euler-problem > footer {
@@ -33,11 +33,11 @@
 		align-items: center;
 		border-top: var(--border);
 		justify-content: flex-end;
-		padding-top: var(--space-s);
-		padding-bottom: var(--space-s);
+		padding-top: var(--space-2);
+		padding-bottom: var(--space-2);
 	}
 
 	.euler-problem > * {
-		padding: var(--space-m);
+		padding: var(--space-3);
 	}
 </style>
