@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let block = false;
 	export let className: string | undefined = undefined;
 	export let download: undefined | string = undefined;
 	export let href: string;
@@ -16,6 +17,7 @@
 
 <a
 	class={className}
+	class:block
 	{download}
 	{href}
 	{target}
@@ -32,7 +34,6 @@
 <style>
 	a {
 		align-items: baseline;
-		gap: var(--space-1-rel);
 		color: var(--color-link);
 		font-size: inherit;
 	}
@@ -59,5 +60,11 @@
 
 	a[aria-disabled="true"]:active {
 		pointer-events: none;
+	}
+
+	a.block {
+		display: flex;
+		align-items: center;
+		gap: var(--space-1-rel);
 	}
 </style>
