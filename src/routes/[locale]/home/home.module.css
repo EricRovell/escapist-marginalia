@@ -9,6 +9,10 @@
 	width: 100%;
 }
 
+.layout h2 {
+	font-size: var(--font-size-5);
+}
+
 .layout section > div > header {
 	margin-bottom: var(--space-7);
 }
