@@ -12,6 +12,7 @@
 
 .card-article time {
 	margin-bottom: var(--space-1);
+	font-size: var(--font-size-0);
 }
 
 .keywords {
@@ -24,6 +25,7 @@
 
 .keywords > li {
 	display: flex;
+	font-size: var(--font-size-0);
 }
 
 .keyword {
