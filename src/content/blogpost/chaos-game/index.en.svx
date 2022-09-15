@@ -16,7 +16,7 @@ updated: 2022-09-10T01:34:00.000Z
 	import t from "./translations/en.json";
 </script>
 
-Fractals - one of the most interesting and mindbreaking mathematical objects. Frsctals are self-similar patters. In other words, the part of a fractal looks exactly or partially the same as whole. It may seem that randomness and fractals cannot have anything in commmon, the rich structure looks deterministic.
+Fractals - one of the most interesting and mindbreaking mathematical objects. Fractals are self-similar patters. In other words, the part of a fractal looks exactly or partially the same as whole. It may seem that randomness and fractals cannot have anything in commmon, the rich structure looks deterministic.
 
 ## Chaos Game and the rules
 
@@ -49,7 +49,7 @@ It is striking that some areas of the triangle cannot be reached in later steps,
 	Sierpinski triangle, Chaos Game at 7500 iterations
 </ChaosGame>
 
-The "Chaos Game" described by [https://en.wikipedia.org/wiki/Banach_fixed-point_theorem][banach-fixed-point-theorem]. We won't go into the rabbit hole here and will try to explore the game as it is, experimenting with rules. In case you want more math, feel free to watch a [VisualMath lecture][visual-math-chaos-game-lecture] about this theorem.
+The "Chaos Game" described by [Banach fixed point theorem][banach-fixed-point-theorem]. We won't go into the rabbit hole here and will try to explore the game as it is, experimenting with rules. In case you want more math, feel free to watch a [VisualMath lecture][visual-math-chaos-game-lecture] about this theorem.
 
 ## A bit of colors
 

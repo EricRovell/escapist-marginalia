@@ -27,7 +27,7 @@
 		padding-inline: var(--space-3);
 	}
 
-	.wrapper canvas {
+	.wrapper > figure {
 		--canvas-width: 85vw;
 		--canvas-height: 85vw;
 	}
