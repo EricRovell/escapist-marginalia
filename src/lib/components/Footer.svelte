@@ -47,7 +47,7 @@
 			<ul>
 				{#each icons as { label, href, icon }}
 					<li>
-						<Link {href}>
+						<Link block {href}>
 							<Icon path={icon} title={$t(`sections.${label}`)} />
 						</Link>
 					</li>
