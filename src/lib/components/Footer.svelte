@@ -118,7 +118,7 @@
 	}
 
 	p :global(time) {
-		color: var(--color-gray-300);
+		color: var(--surface-2-text-contrast);
 	}
 
 	@media (max-width: 540px) {

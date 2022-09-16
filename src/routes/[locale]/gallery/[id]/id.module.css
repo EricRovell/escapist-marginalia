@@ -110,9 +110,10 @@
 
 .metadata dt,
 .metadata .keywords h3 {
-	font-size: var(--font-size-1);
-	color: var(--color-gray-600);
-	font-weight: 400;
+	margin-block-end: var(--space-1-rel);
+	font-size: var(--font-size-0);
+	color: var(--surface-1-text-less-contrast);
+	font-weight: 500;
 }
 
 .metadata dd:not(:last-child) {
@@ -135,6 +136,13 @@
 
 /* keywords */
 
+.keywords {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: var(--space-1);
+	max-inline-size: 45ch;
+}
+
 .keywords ul {
 	display: flex;
 	flex-flow: row wrap;
@@ -145,5 +153,5 @@
 	padding: var(--space-2);
 	border: 2px solid var(--color-border);
 	border-radius: var(--space-2);
-	font-size: var(--font-size-1);
+	font-size: var(--font-size-0);
 }

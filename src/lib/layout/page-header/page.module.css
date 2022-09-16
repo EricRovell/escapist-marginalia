@@ -39,4 +39,5 @@
 .banner > p:global(.headline) {
 	text-align: center;
 	font-size: var(--font-size-2);
+	color: var(--surface-2-text-less-contrast);
 }

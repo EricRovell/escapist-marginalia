@@ -175,3 +175,9 @@
 	text-align: center;
 	margin-block-start: 0;
 }
+
+/* katext expressions */
+
+.article :global(.katex) {
+	color: var(--surface-1-text-contrast);
+}
