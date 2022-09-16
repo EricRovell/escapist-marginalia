@@ -80,22 +80,22 @@
 
 .surface-1 {
 	background-color: var(--surface-1);
-	color: var(--surface-text-1);
+	color: var(--surface-1-text);
 }
 
 .surface-2 {
 	background-color: var(--surface-2);
-	color: var(--surface-text-2);
+	color: var(--surface-2-text);
 }
 
 .surface-3 {
 	background-color: var(--surface-3);
-	color: var(--surface-text-3);
+	color: var(--surface-3-text);
 }
 
 .surface-4 {
 	background-color: var(--surface-4);
-	color: var(--surface-text-4);
+	color: var(--surface-4-text);
 }
 
 .visually-hidden {
