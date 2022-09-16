@@ -4,7 +4,9 @@
 	import { LayoutPage } from "@layout";
 	import type { PageData } from "./$types";
 
-	export let data: PageData = [];
+	export let data: PageData = {
+		items: []
+	};
 </script>
 
 <PageMeta route="gallery" />
@@ -18,5 +20,5 @@
 			{$t("pages.gallery.description")}
 		</p>
 	</svelte:fragment>
-	<Gallery items={data}	/>
+	<Gallery items={data.items}	/>
 </LayoutPage>
