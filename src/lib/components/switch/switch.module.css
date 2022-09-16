@@ -33,6 +33,7 @@
   background: var(--switch-track-color);
 	outline-offset: 5px;
 	transition: box-shadow var(--switch-transition-duration) linear;
+	cursor: pointer;
 
   -webkit-tap-highlight-color: transparent;
 	touch-action: pan-y;

@@ -1,5 +1,5 @@
 .fieldset {
-	font-size: var(--font-size-1);
+	font-size: inherit;
 }
 
 .legend {
