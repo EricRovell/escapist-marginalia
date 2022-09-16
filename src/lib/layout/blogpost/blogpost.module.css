@@ -1,15 +1,23 @@
 .toc {
-	margin-bottom: var(--space-l);
+	margin-bottom: var(--space-7);
 }
 
 .article {
 	grid-area: article;
 
 	display: grid;
-	grid-template-columns: 1fr min(calc(100% - 2 * var(--space-m)), 65ch) 1fr;
+	grid-template-columns: 1fr min(calc(100% - 2 * var(--space-3)), 60ch) 1fr;
 	justify-self: center;
-	gap: var(--space-m);
-	line-height: 1.5;
+	line-height: 1.7;
+	font-size: var(--font-size-1);
+}
+
+.article ol,
+.article ul,
+.article p,
+.article figure,
+.article :global(.katex-display) {
+	margin-block-end: var(--space-3-rel);
 }
 
 .article > * {
@@ -25,32 +33,26 @@
 
 .article :is(h2, h3, h4, h5, h6):not([class]) {
 	color: var(--color-heading);
-	margin-top: var(--space-m);
-	padding-bottom: var(--space-s);
+	margin-block: var(--space-3-rel) var(--space-2-rel);
 }
 
 .article :is(h2, h3, h4, h5, h6):not([class]) a {
 	margin-inline-start: 0.25em;
 	font-size: 0.85em;
+	opacity: 0;
+	transition: opacity 0.125s linear;
 }
 
-.article h2:not([class]) {
-	font-size: var(--font-size-xl);
-}
-
-.article h3:not([class]) {
-	font-size: var(--font-size-l);
-}
-
-.article :global(.katex-display) {
-	margin: 0;
+.article :is(h2, h3, h4, h5, h6):not([class]):hover a,
+.article :is(h2, h3, h4, h5, h6):not([class]):focus a {
+	opacity: 1;
 }
 
 .article dl {
 	display: flex;
 	flex-flow: column nowrap;
-	gap: var(--space-s);
-	padding: var(--space-m);
+	gap: var(--space-2);
+	padding: var(--space-3);
 	border: solid 1px hsl(var(--gray-h) var(--gray-s-600) var(--gray-l-600) / 0.5);
 }
 
@@ -60,7 +62,7 @@
 }
 
 .article dd {
-	margin-left: var(--space-s);
+	margin-left: var(--space-2);
 }
 
 .article ul:not([class]) {
@@ -89,7 +91,7 @@
 }
 
 .article ol li:not([class]):not(:last-child) {
-	margin-bottom: var(--space-xs);
+	margin-bottom: var(--space-1-rel);
 }
 
 .article ol li:not([class])::marker {
@@ -98,11 +100,11 @@
 
 .article abbr {
 	text-decoration: green dashed underline;
-	text-underline-offset: var(--space-xs);
+	text-underline-offset: var(--space-1-rel);
 }
 
 .article pre {
-	margin: var(--space-m) 0;
+	margin: var(--space-3) 0;
 }
 
 /* table */
@@ -146,7 +148,7 @@
 .article th,
 .article td {
 	text-align: center;
-	padding: var(--space-s);
+	padding: var(--space-2-rel);
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -163,15 +165,19 @@
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
-	gap: var(--space-m);
+	gap: var(--space-3);
 	background-color: var(--surface-3);
-	padding-block: var(--space-l);
-	margin-block: var(--space-l);
+	padding-block: var(--space-8);
+	margin-block: var(--space-7) var(--space-8);
 }
 
 .article :global(.wide) :is(h2, h3, h4, h5, h6) {
 	text-align: center;
-	max-inline-size: min(40ch, 100% - var(--space-m));
-	margin-top: 0;
-	padding-bottom: 0;
+	margin-block-start: 0;
+}
+
+/* katext expressions */
+
+.article :global(.katex) {
+	color: var(--surface-1-text-contrast);
 }

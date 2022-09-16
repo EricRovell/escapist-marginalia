@@ -3,8 +3,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: var(--space-m);
-	padding: var(--space-xl) var(--space-s);
+	padding: var(--space-9) var(--space-2);
 }
 
 .page {
@@ -22,9 +21,9 @@
 	display: flex;
 	justify-content: center;
 	align-self: center;
-	width: min(100%, calc(var(--max-width) + 2 * var(--space-m)));
-	padding: var(--space-m);
-	margin-top: var(--space-xl);
+	width: min(100% - var(--space-3), var(--max-width));
+	padding: var(--space-3);
+	margin-top: var(--space-9);
 }
 
 .content:global(.no-banner) {
@@ -34,4 +33,11 @@
 .banner > h1:global(.headline) {
 	font-family: var(--font-secondary);
 	color: var(--color-heading);
+	text-align: center;
+}
+
+.banner > p:global(.headline) {
+	text-align: center;
+	font-size: var(--font-size-2);
+	color: var(--surface-2-text-less-contrast);
 }

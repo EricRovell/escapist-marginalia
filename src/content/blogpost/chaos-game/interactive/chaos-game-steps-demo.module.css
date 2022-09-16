@@ -1,6 +1,6 @@
 .form {
 	display: flex;
 	flex-flow: column nowrap;
-	gap: var(--space-m);
-	width: min(100% - var(--space-m), 450px);
+	gap: var(--space-3);
+	width: min(100% - var(--space-3), 450px);
 }

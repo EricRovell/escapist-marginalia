@@ -4,7 +4,7 @@
 		"step-count": "Step count",
 		"show-paths": "Show paths",
 		"show-points": "Show points",
-		"make-move": "Make move",
+		"make-move": "Make a move",
 		"make-move-100": "Make 100 moves",
 		"reset": "Reset"
 	},
@@ -42,7 +42,7 @@
 		"title": "Chaos Game Creator",
 		"polygon": "Polygon",
 		"sides": "Number of sides",
-		"scale": "scale",
+		"scale": "Scale",
 		"step": "Step",
 		"factor": "Factor",
 		"value": "Value",

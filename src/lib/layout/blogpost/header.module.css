@@ -2,33 +2,30 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: var(--space-m);
-	width: min(100%, calc(1440px + 2 * var(--space-s)));
+	gap: var(--space-3);
+	width: min(100% - var(--space-3), 1440px);
 }
 
 .wrapper > h1 {
-	font-size: calc(2 * var(--font-size-xxl));
 	font-family: var(--font-secondary);
-	font-variation-settings: "wght" 350;
-	color: var(--color-heading);
 	text-align: center;
 }
 
 .wrapper > p {
-	font-size: var(--font-size-l);
-	font-style: italic;
+	font-size: var(--font-size-2);
 	text-align: center;
-	width: min(100%, calc(65ch + 2 * var(--space-s)));
+	max-inline-size: 65ch;
+	line-height: 1.4;
 }
 
 .wrapper > footer {
 	display: contents;
-	font-size: var(--font-size-m);
+	font-size: var(--font-size-1);
 }
 
 .wrapper ul {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--space-s);
+	gap: var(--space-2-rel);
 	color: var(--color-info);
 }

@@ -39,7 +39,7 @@
 		<ul class={styles.links}>
 			{#each links as { property, title, icon }}
 				<li>
-					<Link href={property} {title}>
+					<Link block href={property} {title}>
 						<Icon path={icon} />
 						{title}
 					</Link>

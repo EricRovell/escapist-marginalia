@@ -1,5 +1,5 @@
 .wrapper {
-	--size: min(100% - var(--space-m), 350px);
+	--size: min(100% - var(--space-3), 350px);
 
 	--canvas-width: var(--size);
 	--canvas-height: var(--size);
@@ -8,8 +8,8 @@
 .form {
 	display: flex;
 	flex-flow: column nowrap;
-	gap: var(--space-l);
-	width: min(100% - var(--space-m), 450px);
+	gap: var(--space-7);
+	width: min(100% - var(--space-3), 450px);
 }
 
 .form legend {

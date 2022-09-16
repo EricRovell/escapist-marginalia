@@ -59,29 +59,28 @@
 </script>
 
 <!--
-  @component
-  DateTime component.
-  Renders the date in readable format.
-  
-  Props:
-    | Props name | type                   | default      | description                     |
-    |------------|------------------------|--------------|---------------------------------|
-    | date       | Date or string         | current date | date string or object to render |
-    | options    | Intl.DateFormatOptions | undefined    | date options                    |
-    | relative   | boolean                | false        | showing relative date           |  
+	@component
+	DateTime component.
+	Renders the date in readable format.
+	
+	Props:
+		| Props name | type                   | default      | description                     |
+		|------------|------------------------|--------------|---------------------------------|
+		| date       | Date or string         | current date | date string or object to render |
+		| options    | Intl.DateFormatOptions | undefined    | date options                    |
+		| relative   | boolean                | false        | showing relative date           |  
 -->
 <time datetime={renderedDate}>
-  {renderedDate}
+	{renderedDate}
 </time>
 
 <style>
-  time {
-    display: inline-flex;
-    justify-content: flex-start;
-    align-items: center;
+	time {
+		display: inline-flex;
+		justify-content: flex-start;
+		align-items: center;
 
-    font-size: var(--datetime-font-size, inherit);
-    color: var(--datetime-color, inherit);
-    user-select: none;
-  }
+		font-size: var(--datetime-font-size, inherit);
+		color: var(--datetime-color, inherit);
+	}
 </style>

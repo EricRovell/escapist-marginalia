@@ -8,7 +8,7 @@
 	padding: 0.1em;
 	border: 2px solid var(--color-border);
 	border-radius: var(--radius-s);
-	padding: calc(0.75 * var(--space-xs));
+	padding: calc(0.75 * var(--space-1-rel));
 	font-size: inherit;
 	font-family: inherit;
 	text-transform: capitalize;
@@ -19,12 +19,6 @@
 	background-color: var(--surface-2);
 }
 
-.switcher:focus-visible {
-	outline: 2px dashed var(--color-link-hover, currentColor);
-	outline-offset: calc(var(--space-xs) / 2);
-	border-radius: var(--radius-s);
-}
-
 .switcher:global(.labeled) {
 	width: 100%;
 
@@ -32,15 +26,10 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: var(--space-s);
+	padding: var(--space-2-rel);
 	width: 100%;
 	border: 2px solid var(--color-border);
 	border-radius: var(--radius-s);
-}
-
-.switcher:global(.labeled):focus-visible {
-	outline: 2px dashed var(--color-link-hover, currentColor);
-	outline-offset: calc(var(--space-xs) / 2);
 }
 
 .switcher:global(.labeled):active {

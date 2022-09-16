@@ -1,6 +1,6 @@
 .controls {
 	width: min(450px, 85vw);
-	margin-top: var(--space-m);
+	margin-top: var(--space-3);
 }
 
 .camera-aperture {

@@ -25,7 +25,6 @@ export { Canvas, CanvasLayer } from "./canvas";
 export { Pagination } from "./pagination";
 export { InputNumber } from "./input-number";
 
-export * as Timeline from "./timeline";
 export * as Menu from "./menu";
 export * from "./gallery";
 export * as Radio from "./radio";

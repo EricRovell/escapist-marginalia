@@ -60,7 +60,7 @@ pre[class*="language-"] ::selection {
 /* Code blocks */
 pre[class*="language-"] {
 	position: relative;
-	padding: calc(1.5 * var(--space-m));
+	padding: var(--space-3-rel) var(--space-4-rel);
 	overflow: auto;
 	border-radius: var(--radius-m);
 	box-shadow: 0px 0px 2px #7A82E3;
@@ -76,7 +76,7 @@ pre[class*="language-"] {
 :not(pre) > code {
 	color: var(--code-color);
 	background: var(--code-background);
-	padding: var(--space-xs) var(--space-s);
+	padding: var(--space-1-rel) var(--space-2-rel);
 	border-radius: var(--radius-s);
 	box-shadow: 0px 0px 2px #7A82E3;
 }
