@@ -20,6 +20,11 @@
 	margin-block-end: var(--space-3-rel);
 }
 
+.article pre {
+	/* code has a bit smaller font-size */
+	margin-block-end: var(--space-4-rel);
+}
+
 .article > * {
 	grid-column: 2;
 }
@@ -101,10 +106,6 @@
 .article abbr {
 	text-decoration: green dashed underline;
 	text-underline-offset: var(--space-1-rel);
-}
-
-.article pre {
-	margin: var(--space-3) 0;
 }
 
 /* table */
