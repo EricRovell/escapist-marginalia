@@ -11,6 +11,11 @@
 	flex-flow: column nowrap;
 	gap: var(--space-3);
 	height: min-content;
+	font-size: var(--font-size-0);
+}
+
+.sidebar legend {
+	font-size: var(--font-size-1);
 }
 
 @media screen and (max-width: 640px) {
