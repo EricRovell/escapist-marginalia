@@ -29,4 +29,5 @@
 
 .locale-route:global(.labeled) a {
 	padding: var(--space-2-rel);
+	font-size: var(--font-size-1);
 }
