@@ -7,14 +7,22 @@
 		--surface-1: #0e1625;
 		--surface-2: #090e19;
 		--surface-3: #172137;
-		--surface-4: #202e4d;  
-		--surface-text-1: var(--color-gray-600);
-		--surface-text-2: var(--color-gray-400);
-		--surface-text-3: var(--color-gray-500);
-		--surface-text-4: var(--color-gray-500);
+		--surface-4: #202e4d;
+		--surface-1-text: var(--color-gray-400);
+		--surface-1-text-contrast : var(--color-gray-200);
+		--surface-1-text-less-contrast : var(--color-gray-500);
+		--surface-2-text: var(--color-gray-300);
+		--surface-2-text-contrast : var(--color-gray-100);
+		--surface-2-text-less-contrast : var(--color-gray-500);
+		--surface-3-text: var(--color-gray-300);
+		--surface-3-text-contrast : var(--color-gray-200);
+		--surface-3-text-less-contrast : var(--color-gray-400);
+		--surface-4-text: var(--color-gray-300);
+		--surface-4-text-contrast : var(--color-gray-200);
+		--surface-4-text-less-contrast : var(--color-gray-400);
 
 		--color-heading: var(--color-blue-300);
-		--color-text-primary: var(--color-gray-400);
+
 		--color-text-secondary: var(--color-gray-500);
 		--color-link: var(--color-blue-400);
 		--color-link-hover: var(--color-blue-300);
@@ -98,14 +106,22 @@
 	--surface-1: #0e1625;
 	--surface-2: #090e19;
 	--surface-3: #172137;
-	--surface-4: #202e4d;  
-	--surface-text-1: var(--color-gray-600);
-	--surface-text-2: var(--color-gray-500);
-	--surface-text-3: var(--color-gray-500);
-	--surface-text-4: var(--color-gray-500);
+	--surface-4: #202e4d;
+	--surface-1-text: var(--color-gray-400);
+	--surface-1-text-contrast : var(--color-gray-200);
+	--surface-1-text-less-contrast : var(--color-gray-500);
+	--surface-2-text: var(--color-gray-300);
+	--surface-2-text-contrast : var(--color-gray-100);
+	--surface-2-text-less-contrast : var(--color-gray-500);
+	--surface-3-text: var(--color-gray-300);
+	--surface-3-text-contrast : var(--color-gray-200);
+	--surface-3-text-less-contrast : var(--color-gray-400);
+	--surface-4-text: var(--color-gray-300);
+	--surface-4-text-contrast : var(--color-gray-200);
+	--surface-4-text-less-contrast : var(--color-gray-400);
 
 	--color-heading: var(--color-blue-300);
-	--color-text-primary: var(--color-gray-400);
+
 	--color-text-secondary: var(--color-gray-500);
 	--color-link: var(--color-blue-400);
 	--color-link-hover: var(--color-blue-300);
