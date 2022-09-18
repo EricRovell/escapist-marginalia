@@ -24,6 +24,7 @@ export { Canvas, CanvasLayer } from "./canvas";
 export { Pagination } from "./pagination";
 export { InputNumber } from "./input-number";
 export { MenuIndicator } from "./menu-indicator";
+export { Drawer } from "./drawer";
 
 export * as Menu from "./menu";
 export * from "./gallery";
