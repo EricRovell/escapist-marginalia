@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { PageMeta, CardArticle, SwitchGroup } from "@components";
+	import { Button, Drawer, PageMeta, CardArticle, SwitchGroup } from "@components";
 	import { LayoutPage } from "@layout";
 	import { t, locale } from "@core/i18n";
 	import { find } from "@utils/query";
 	import { iconPi, iconImg, iconNumberE, iconGlobe } from "@lib/components/icons/default";
-	import styles from "./blog.module.css";	
+	import styles from "./blog.module.css";
 
 	import type { Blogpost } from "../../../types";
 	import type { QueryItem } from "@utils/query";
 	import type { PageLoad } from "./$types";
 
-	export let data: PageLoad = [];
+	export let data: PageLoad = {};
 
 	type Query<T> = {
 		"content-lang": QueryItem<string[], T>;
@@ -35,6 +35,9 @@
 	};
 
 	$: content = find(data.items, queryOptions);
+
+	// show filters drawer for small screens
+	let show = false;
 </script>
 
 <PageMeta route="blog" />
@@ -49,7 +52,7 @@
 		</p>
 	</svelte:fragment>
 	<div class={styles.layout}>
-		<main class="grid-flexible">
+		<main class="grid-flexible" style="--item-size: 25ch">
 			{#each content as { created, description, keywords, title, slug }}
 				<CardArticle
 					{created}
@@ -60,34 +63,47 @@
 				/>
 			{/each}
 		</main>
-		<aside class="{styles.sidebar}">
-			<SwitchGroup
-				legend={$t("dict.language")}
-				name="content-lang"
-				options={[
-					{ label: "English", value: "en", checked: $locale === "en" },
-					{ label: "Русский", value: "ru", checked: $locale === "ru" }
-				]}
-				bind:group={queryOptions["content-lang"].value}
-			/>
-			<SwitchGroup
-				legend={$t("dict.topics")}
-				name="content-topics"
-				options={[
-					{ label: $t("dict.math"), value: "math", icon: iconPi },
-					{ label: $t("dict.photo"), value: "photo", icon: iconImg },
-					{ label: $t("dict.web"), value: "web", icon: iconGlobe }
-				]}
-				bind:group={queryOptions["content-topics"].value}
-			/>
-			<SwitchGroup
-				legend={$t("dict.series")}
-				name="content-series"
-				options={[
-					{ label: $t("dict.project-euler"), value: "project-euler", icon: iconNumberE },
-				]}
-				bind:group={queryOptions["content-series"].value}
-			/>
-		</aside>
+		<Button
+			appearance="outline"
+			className="{styles["filters-toggle"]}"
+			on:click="{() => show = !show}"
+		>
+			{$t("dict.blogpost-filters")}
+		</Button>
+		<Drawer bind:show>
+			<svelte:fragment slot="label">
+				Filters
+			</svelte:fragment>
+			<form class="{styles.sidebar}" on:submit|preventDefault>
+				<h3>Filters</h3>
+				<SwitchGroup
+					legend={$t("dict.language")}
+					name="content-lang"
+					options={[
+						{ label: "English", value: "en", checked: $locale === "en" },
+						{ label: "Русский", value: "ru", checked: $locale === "ru" }
+					]}
+					bind:group={queryOptions["content-lang"].value}
+				/>
+				<SwitchGroup
+					legend={$t("dict.topics")}
+					name="content-topics"
+					options={[
+						{ label: $t("dict.math"), value: "math", icon: iconPi },
+						{ label: $t("dict.photo"), value: "photo", icon: iconImg },
+						{ label: $t("dict.web"), value: "web", icon: iconGlobe }
+					]}
+					bind:group={queryOptions["content-topics"].value}
+				/>
+				<SwitchGroup
+					legend={$t("dict.series")}
+					name="content-series"
+					options={[
+						{ label: $t("dict.project-euler"), value: "project-euler", icon: iconNumberE },
+					]}
+					bind:group={queryOptions["content-series"].value}
+				/>
+			</form>
+		</Drawer>
 	</div>
 </LayoutPage>

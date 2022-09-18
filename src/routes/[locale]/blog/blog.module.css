@@ -7,20 +7,42 @@
 }
 
 .sidebar {
-	display: flex;
-	flex-flow: column nowrap;
-	gap: var(--space-3);
+	display: grid;
+	gap: var(--space-4-rel);
 	height: min-content;
 	font-size: var(--font-size-0);
+	width: 100%;
+}
+
+.sidebar h3 {
+	margin: 0;
 }
 
 .sidebar legend {
 	font-size: var(--font-size-1);
 }
 
-@media screen and (max-width: 640px) {
+.filters-toggle {
+	display: none;
+}
+
+@media screen and (max-width: 48em) {
 	.layout {
 		grid-template: min-content auto / 1fr;
+		gap: var(--space-5);
+
+		--side-menu-switch-z-index: 47;
+		--side-menu-z-index: 53;
+	}
+
+	.sidebar h3 {
+		margin-block: var(--space-2-rel);
+		text-align: center;
+	}
+
+	.filters-toggle {
+		display: initial;
+		border-radius: var(--radius-m);
 	}
 
 	.layout > main {

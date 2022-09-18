@@ -28,7 +28,8 @@
 		"entire-gallery": "Вся галерея",
 		"pinned-projects": "Закреплённые проекты",
 		"all-projects": "Все проекты",
-		"menu": "Меню"
+		"menu": "Меню",
+		"blogpost-filters": "Фильтры публикаций"
   },
   "tooltip": {
     "change-theme": "Сменить тему оформления",
