@@ -1,9 +1,26 @@
 .fieldset {
-	font-size: inherit;
+	border: none;
+	display: flex;
+	flex-flow: column nowrap;
+	border-radius: var(--radius-m);
+	border: 1px solid var(--color-border);
+	padding-bottom: var(--space-2);
+}
+
+.fieldset > * {
+	margin: var(--space-2) var(--space-3);
+}
+
+.legend + * {
+	padding-top: var(--space-2);
 }
 
 .legend {
 	text-transform: capitalize;
-	padding: 0 5px;
-	white-space: nowrap;
+	display: block;
+	float: left;
+	border-bottom: 1px solid var(--color-border);
+	font-weight: 700;
+	margin: 0;
+	padding: var(--space-2) var(--space-3);
 }
