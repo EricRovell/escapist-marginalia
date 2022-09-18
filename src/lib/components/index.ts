@@ -16,7 +16,6 @@ export { Switch, SwitchGroup } from "./switch";
 export { Card, CardArticle, CardProject } from "./card";
 export { Details } from "./details";
 export { Range } from "./input-range";
-export { SideMenu } from "./side-menu";
 export { ThemeSelect } from "./theme-select";
 export { NavLocale } from "./nav-locale";
 export { Button } from "./button";
@@ -24,6 +23,7 @@ export { MathExp } from "./math";
 export { Canvas, CanvasLayer } from "./canvas";
 export { Pagination } from "./pagination";
 export { InputNumber } from "./input-number";
+export { MenuIndicator } from "./menu-indicator";
 
 export * as Menu from "./menu";
 export * from "./gallery";
