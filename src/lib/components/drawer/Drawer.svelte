@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { afterNavigate } from "$app/navigation";
 	import { preventPageScroll } from "$lib/utils/helpers";
-	import { swipable, type SwipeEvent } from "$lib/actions";
+	import { shortcut, swipable, type SwipeEvent } from "$lib/actions";
 	import styles from "./drawer.module.css";
 
 	export let className = "";
@@ -11,9 +11,9 @@
 	export let hidden = false;
 	export let show = false;
 
-	export const toggle = () => {
-		show = !show;
-	};
+	export const close = () => show = false;
+	export const open = () => show = true;
+	export const toggle = () => show = !show;
 
 	const handleSwipe = (event: CustomEvent<SwipeEvent>) => {
 		if (event.detail.direction === "down") {
@@ -33,6 +33,10 @@
 	class:show
 	class:hidden
 	use:swipable={{ threshold: 50, timeout: 1000 }}
+	use:shortcut={{
+		code: "Escape",
+		callback: close
+	}}
 	on:swipe-down={handleSwipe}
 >
 	<div
