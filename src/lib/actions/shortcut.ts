@@ -46,24 +46,31 @@ export const shortcut: Action<ShortcutOptions> = (node, options) => {
 		event.preventDefault();
 		(options.callback || callbackDefault)(node);
 	};
-
+	
 	const activate = () => {
 		window.addEventListener("keydown", handleKeyboard);
 	};
 
-	const diactivate = () => {
+	const deactivate = () => {
 		window.removeEventListener("keydown", handleKeyboard);
 	};
 
-	options.active && activate();
+	const init = () => {
+		const { active = true } = options;
+		active
+			? activate()
+			: deactivate();
+	};
+
+	init();
 
 	return {
 		update(updatedOptions) {
 			options = updatedOptions;
-			options.active ? activate() : diactivate();
+			init();
 		},
 		destroy() {
-			diactivate();
+			deactivate();
 		}
 	};
 };
