@@ -71,9 +71,6 @@
 			{$t("dict.blogpost-filters")}
 		</Button>
 		<Drawer bind:show>
-			<svelte:fragment slot="label">
-				Filters
-			</svelte:fragment>
 			<form class="{styles.sidebar}" on:submit|preventDefault>
 				<h3>Filters</h3>
 				<SwitchGroup
