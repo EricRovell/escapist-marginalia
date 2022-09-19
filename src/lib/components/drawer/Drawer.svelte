@@ -34,6 +34,7 @@
 	class:hidden
 	use:swipable={{ threshold: 50, timeout: 1000 }}
 	use:shortcut={{
+		active: show,
 		code: "Escape",
 		callback: close
 	}}

@@ -1,6 +1,7 @@
 import type { Action } from "./types";
 
 export interface ShortcutOptions {
+	active?: boolean;
 	alt?: boolean;
 	callback?: (node : HTMLElement) => void;
 	/**
@@ -46,14 +47,23 @@ export const shortcut: Action<ShortcutOptions> = (node, options) => {
 		(options.callback || callbackDefault)(node);
 	};
 
-	window.addEventListener("keydown", handleKeyboard);
+	const activate = () => {
+		window.addEventListener("keydown", handleKeyboard);
+	};
+
+	const diactivate = () => {
+		window.removeEventListener("keydown", handleKeyboard);
+	};
+
+	options.active && activate();
 
 	return {
 		update(updatedOptions) {
 			options = updatedOptions;
+			options.active ? activate() : diactivate();
 		},
 		destroy() {
-			window.removeEventListener("keydown", handleKeyboard);
+			diactivate();
 		}
 	};
 };
