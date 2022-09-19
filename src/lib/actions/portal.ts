@@ -1,4 +1,5 @@
 import { tick } from "svelte";
+import type { ActionAsync } from "./types";
 
 /**
  * Portal action
@@ -30,7 +31,7 @@ import { tick } from "svelte";
  * |:--------|:----------------------|:--------|:--------------------|
  * | target  | string OR HTMLElement | body    | The target element. |
  */
-export function portal(element: HTMLElement, target: string | HTMLElement = "body") {
+export const portal: ActionAsync<string | HTMLElement> = (element, target = "body") => {
 	let targetElement: HTMLElement;
 	
 	async function update(nextTarget: HTMLElement | string) {
@@ -70,4 +71,4 @@ export function portal(element: HTMLElement, target: string | HTMLElement = "bod
 		update,
 		destroy
 	};
-}
+};

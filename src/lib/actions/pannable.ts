@@ -1,9 +1,9 @@
-import type { Action } from "../../types";
+import type { Action } from "./types";
 
 /**
  * Creates panStart, panMove, panEnd events so you can drag elements.
  */
-export function pannable(node: HTMLElement): ReturnType<Action> {
+export const pannable: Action = (node) => {
 	let scale = 1;
 	let x = 0;
 	let y = 0;
@@ -210,4 +210,4 @@ export function pannable(node: HTMLElement): ReturnType<Action> {
 			node.removeEventListener("touchend", handleTouchend);
 		}
 	};
-}
+};
