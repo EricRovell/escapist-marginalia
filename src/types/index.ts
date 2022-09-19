@@ -77,8 +77,3 @@ export interface Project extends Omit<GithubAPIRepo, "html_url"> {
 }
 
 export type { GalleryItem } from "@components";
-
-export type Action = (node: HTMLElement, parameters: unknown) => {
-	update?: (parameters: unknown) => void,
-	destroy?: () => void
-}

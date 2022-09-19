@@ -29,9 +29,14 @@
 	margin: 0 0 25vh 0;
 }
 
-/* let bottom menu be full width */
-@media screen and (max-width: 640px) {
-	#app {
-		padding: 0;
-	}
+/* override sidenav control to show it all the time */
+.menu-switch {
+	position: fixed;
+	bottom: var(--space-7);
+	padding: var(--space-2-rel);
+	z-index: 50;
+}
+
+.sidemenu {
+	justify-content: center;
 }

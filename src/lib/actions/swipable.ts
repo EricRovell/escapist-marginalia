@@ -1,4 +1,4 @@
-import type { Action } from "../../types";
+import type { Action } from "./types";
 
 type Direction = "up" | "right" | "down" | "left";
 type EventName = `swipe-${Direction}`;
@@ -24,7 +24,7 @@ const defaults: Options = {
 /**
  * Creates panStart, panMove, panEnd events so you can drag elements.
  */
-export function swipable(node: HTMLElement, { threshold = 25, timeout = 750 }: Partial<Options> = defaults): ReturnType<Action> {
+export const swipable: Action<Partial<Options>> = (node, { threshold = 25, timeout = 750 } = defaults) => {
 	let x: number | null = null;
 	let y: number | null = null;
 	let dx: number | null = null;
@@ -105,4 +105,4 @@ export function swipable(node: HTMLElement, { threshold = 25, timeout = 750 }: P
 			node.removeEventListener("touchend", handleTouchend);
 		}
 	};
-}
+};

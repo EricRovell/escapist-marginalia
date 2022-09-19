@@ -28,7 +28,8 @@
 		"entire-gallery": "Entire gallery",
 		"pinned-projects": "Pinned Projects",
 		"all-projects": "All projects",
-		"menu": "Menu"
+		"menu": "Menu",
+		"blogpost-filters": "Blogpost filters"
   },
   "tooltip": {
     "change-theme": "Change theme",
