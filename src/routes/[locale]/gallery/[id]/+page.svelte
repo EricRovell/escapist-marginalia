@@ -15,11 +15,11 @@
 		const files = [];
 
 		try {
-			const request = await fetch(image.src);
+			const request = await fetch(data.src);
 			const blob = await request.blob();
 
 			files.push(
-				new File([ blob ], `${image.title}.webp`, {
+				new File([ blob ], `${data.title}.webp`, {
 					type: blob.type
 				})
 			);
@@ -30,8 +30,8 @@
 		await share({
 			files,
 			url: $webpage,
-			title: image.title,
-			text: image.description
+			title: data.title,
+			text: data.description
 		});
 	};
 </script>
