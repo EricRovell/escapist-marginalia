@@ -29,7 +29,7 @@
 			<Navigation.Item href={$pathGallery} pattern={/\/gallery/}>
 				{$t("sections.gallery")}
 			</Navigation.Item>
-			<Navigation.Item href={$pathProjects}>
+			<Navigation.Item href={$pathProjects} pattern={/\/projects/}>
 				{$t("sections.projects")}
 			</Navigation.Item>
 			<Navigation.Item href={$pathAbout} disabled>
