@@ -11,7 +11,7 @@
 <!--
 	Iris Diaphragm Mechanism Demonstration.
 -->
-<section class="wide">
+<section class="wide interactive">
 	<h3>{t["title"]}</h3>
 	<Diaphragm bind:angle />
 	<form class="{styles.controls}">

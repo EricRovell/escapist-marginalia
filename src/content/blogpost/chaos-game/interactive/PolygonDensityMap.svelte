@@ -26,7 +26,7 @@
 	Explains why the `square` Chaos Game is not fractal,
 	and hints where how the fractal pattern build from the polygon itself. 
 -->
-<section class="wide">
+<section class="wide interactive">
 	<h3>{t["title"]}</h3>
 	<svg class="{styles.illustration}" viewBox="-{width / 2} -{height / 2} {width} {height}">
 		<polygon

@@ -45,7 +45,7 @@
 <!--
 	Simplistic vector based "Chaos Game" for rules demonstration purposes.
 -->
-<section class="wide">
+<section class="wide interactive">
 	<h3>{t["title"]}</h3>
 	<article class="{styles.root}">
 		<aside class="{styles.steps}">

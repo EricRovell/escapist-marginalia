@@ -11,7 +11,7 @@
 	];
 </script>
 
-<section class="wide">
+<section class="wide interactive">
 	<h3>{t["title"]}</h3>
 	<div class="{styles.wrapper}">
 		{#each items as restriction, i}

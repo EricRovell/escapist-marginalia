@@ -40,7 +40,7 @@
 	As the are too many possibilities when more than one lasly used vertice is restrictied,
 	this demonstration just generates random ones.
 -->
-<section class="wide {styles.wrapper}">
+<section class="wide {styles.wrapper} interactive">
 	<h3>{t.title}</h3>
 	<ChaosGame
 		height="{450}"

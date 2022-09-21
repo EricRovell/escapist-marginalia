@@ -8,6 +8,7 @@
 	overflow-x: auto;
 	width: fit-content;
 	max-width: calc(100% - var(--space-3));
+	font-size: var(--font-size-0);
 }
 
 .wrapper > section,

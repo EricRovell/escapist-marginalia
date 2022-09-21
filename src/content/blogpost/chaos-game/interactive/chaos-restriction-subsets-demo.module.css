@@ -18,17 +18,23 @@
 	width: min(100% - var(--space-3), 450px);
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 48em) {
 	.wrapper {
+		grid-column: 1 / span 3 !important;
+
 		display: flex;
 		flex-wrap: nowrap;
+		gap: 4vw;
 		overflow-x: auto;
 		width: 100%;
 		padding-inline: var(--space-3);
+		scroll-snap-type: x mandatory;
 	}
 
 	.wrapper > figure {
-		--canvas-width: 85vw;
-		--canvas-height: 85vw;
+		--canvas-width: min(35ch, 85vw);
+		--canvas-height: min(35ch, 85vw);
+
+		scroll-snap-align: center;
 	}
 }

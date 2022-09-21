@@ -13,7 +13,7 @@
 <!--
 	"Chaos Game" step value rule demonstration.
 -->
-<section class="wide">
+<section class="wide interactive">
 	<h3>{t["title"]}</h3>
 	<ChaosGame
 		points="{3500}"

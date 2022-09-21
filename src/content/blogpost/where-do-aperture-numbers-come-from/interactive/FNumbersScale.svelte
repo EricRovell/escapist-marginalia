@@ -21,7 +21,7 @@
 <!--
 	Demonstrates the f-numbers scale.
 -->
-<section class="wide {styles.wrapper}">
+<section class="wide {styles.wrapper} interactive">
 	<h3>{t["title"]}</h3>
 	<FNumbers
 		{fstopFrom}

@@ -6,7 +6,7 @@
 	grid-area: article;
 
 	display: grid;
-	grid-template-columns: 1fr min(calc(100% - 2 * var(--space-3)), 60ch) 1fr;
+	grid-template-columns: 1fr min(100% - 2 * var(--space-3), 60ch) 1fr;
 	justify-self: center;
 	line-height: 1.7;
 	font-size: var(--font-size-1);
@@ -15,9 +15,12 @@
 .article ol,
 .article ul,
 .article p,
-.article figure,
-.article :global(.katex-display) {
+.article figure{
 	margin-block-end: var(--space-3-rel);
+}
+
+.article :global(.katex-display) {
+	margin-block: 0 var(--space-3-rel);
 }
 
 .article pre {
@@ -160,24 +163,28 @@
 	border: 0.5px solid var(--color-border);
 }
 
-/* Wide Sections */
+/* Interactive Sections */
 
-.article :global(.wide) {
-	display: flex;
-	flex-flow: column nowrap;
-	align-items: center;
-	gap: var(--space-3);
+.article :global(.interactive) {
+	display: grid;
+	grid-template-columns: 1fr min(100% - var(--space-4), var(--interactive-inline-size, 80ch)) 1fr;
+	justify-items: center;
+	row-gap: var(--space-3-rel);
 	background-color: var(--surface-3);
 	padding-block: var(--space-8);
 	margin-block: var(--space-7) var(--space-8);
 }
 
-.article :global(.wide) :is(h2, h3, h4, h5, h6) {
+.article :global(.interactive) > * {
+	grid-column: 2;
+}
+
+.article :global(.interactive) :is(h2, h3, h4, h5, h6) {
 	text-align: center;
 	margin-block-start: 0;
 }
 
-/* katext expressions */
+/* katex expressions */
 
 .article :global(.katex) {
 	color: var(--surface-1-text-contrast);
