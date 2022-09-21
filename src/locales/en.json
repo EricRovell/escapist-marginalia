@@ -45,7 +45,8 @@
     "toc": "Table of contents",
     "created-at": "Created at",
     "last-updated-at": "Last updated at",
-		"build-at": "Build at"
+		"build-at": "Build at",
+		"blogpost-counter": "Showing %s blogposts of %s"
   },
   "pages": {
 		"home": {

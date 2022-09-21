@@ -6,6 +6,14 @@
 	justify-self: center;
 }
 
+.counter {
+	grid-row: 1;
+	grid-column: 1 / -1;
+	margin-block-end: var(--space-2-rel);
+	font-size: var(--font-size-2);
+	font-variant-numeric: tabular-nums;
+}
+
 .sidebar {
 	display: grid;
 	gap: var(--space-4-rel);

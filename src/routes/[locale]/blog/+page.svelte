@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button, Drawer, PageMeta, CardArticle, SwitchGroup } from "@components";
 	import { LayoutPage } from "@layout";
-	import { t, locale } from "@core/i18n";
+	import { t, locale, i18nTemplate } from "@core/i18n";
 	import { find } from "@utils/query";
 	import { iconPi, iconImg, iconNumberE, iconGlobe } from "@lib/components/icons/default";
 	import styles from "./blog.module.css";
@@ -53,6 +53,9 @@
 	</svelte:fragment>
 	<div class={styles.layout}>
 		<main class="grid-flexible" style="--item-size: 25ch">
+			<aside class={styles.counter}>
+				{i18nTemplate($t("message.blogpost-counter"), [ content.length, data.items.length ])}:
+			</aside>
 			{#each content as { created, description, keywords, title, slug }}
 				<CardArticle
 					{created}
