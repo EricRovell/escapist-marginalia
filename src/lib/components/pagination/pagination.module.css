@@ -3,18 +3,16 @@
 
 	display: flex;
 	flex-flow: row wrap;
-	gap: calc(var(--pagination-item-size, 1.25rem) * 0.75);
+	gap: var(--pagination-item-size, 1rem);
 	place-content: center;
 	width: 100%;
 	height: 100%;
-	padding: 4px;
 	z-index: 1;
 }
 
-.arrow {
+.pagination-item.arrow {
 	/* set the item size the same as padding from Button component to show icon */
-	--pagination-item-size: calc(2 * var(--space-m));
-	--icon-size: calc(0.6 * var(--pagination-item-size, 1.25rem));
+	--pagination-item-size: calc(2 * var(--space-3));
 	padding: 0;
 }
 
@@ -30,8 +28,8 @@
 	aspect-ratio: 1 / 1;
 	background-color: var(--pagination-item-bg, currentColor);
 	opacity: 0.5;
-	width: var(--pagination-item-size, 1.25rem);
-	height: var(--pagination-item-size, 1.25rem);
+	width: var(--pagination-item-size, 1rem);
+	height: var(--pagination-item-size, 1rem);
 	cursor: pointer;
 }
 
@@ -43,10 +41,10 @@
 /* ordinality */
 
 .pagination-item:global(.ordinal) {
-	font-size: calc(var(--pagination-item-size, 1.25rem) * 0.5);
+	font-size: var(--pagination-item-size, 1rem);
 	color: white;
 	font-weight: 600;
-	line-height: calc(var(--pagination-item-size, 1.25rem) * 0.5);;
+	line-height: var(--pagination-item-size, 1rem);
 }
 
 /* vertical mode */

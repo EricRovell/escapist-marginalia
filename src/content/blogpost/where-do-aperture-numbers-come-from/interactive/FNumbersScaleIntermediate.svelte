@@ -32,7 +32,7 @@
 <!--
 	Demonstrates the intermediate f-stop values within a scale.
 -->
-<section class="wide {styles.wrapper}">
+<section class="wide {styles.wrapper} interactive">
 	<h3>{t["title"]}</h3>
 	<FNumbers
 		{fstopFrom}

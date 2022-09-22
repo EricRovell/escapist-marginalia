@@ -1,23 +1,23 @@
 /* variation fonts */
 @font-face {
-  font-family: "fira-code-vf";
-  src: url("/fonts/fira-code-vf.woff2") format("woff2-variations");
+	font-family: "fira-code-vf";
+	src: url("/fonts/fira-code-vf.woff2") format("woff2-variations");
 }
 
 /* fallbacks, regular */
 @font-face {
-  font-family: "fira-code-regular";
-  src: url("/fonts/fira-code-regular.woff2") format("woff2");
+	font-family: "fira-code-regular";
+	src: url("/fonts/fira-code-regular.woff2") format("woff2");
 }
 
 :root {
-  --font-monospace: "fira-code-regular", Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+	--font-monospace: "fira-code-regular", Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
 }
 
 @supports (font-variation-settings: normal) {
-  :root {
-    --font-monospace: "fira-code-vf", Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
-  }
+	:root {
+		--font-monospace: "fira-code-vf", Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+	}
 }
 
 code[class*="language-"],
@@ -59,11 +59,52 @@ pre[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
+	display: grid;
 	position: relative;
-	padding: calc(1.5 * var(--space-m));
 	overflow: auto;
 	border-radius: var(--radius-m);
-	box-shadow: 0px 0px 2px #7A82E3;
+	border: 2px solid #7a83e35b;
+	font-size: 0.85em;
+}
+
+/* labels */
+
+pre[class*="language-"]::before {
+	content: "Code";
+	position: sticky;
+	left: 0;
+	width: fit-content;
+	padding: var(--space-2-rel) var(--space-4-rel);
+	color: var(--surface-2-text-contrast);
+}
+
+pre[class*="language-"] > code {
+	padding: var(--space-3-rel) var(--space-4-rel);
+	border-top: 1.5px solid #7a83e35b;
+}
+
+pre[class="language-python"]::before {
+	content: "Python";
+}
+
+pre[class="language-js"]::before {
+	content: "JavaScript";
+}
+
+pre[class="language-html"]::before {
+	content: "HTML";
+}
+
+pre[class="language-css"]::before {
+	content: "CSS";
+}
+
+pre[class="language-ts"]::before {
+	content: "TypeScript";
+}
+
+pre[class="language-svelte"]::before {
+	content: "Svelte";
 }
 
 :not(pre) > code[class*="language-"],
@@ -76,29 +117,29 @@ pre[class*="language-"] {
 :not(pre) > code {
 	color: var(--code-color);
 	background: var(--code-background);
-	padding: var(--space-xs) var(--space-s);
+	padding: var(--space-1-rel) var(--space-2-rel);
 	border-radius: var(--radius-s);
 	box-shadow: 0px 0px 2px #7A82E3;
 }
 
 /* scroll */
 pre[class*="language-"] {
-  scrollbar-width: 4px;
-  scrollbar-color: var(--scroll-thumb-color) var(--scroll-track-color);
+	scrollbar-width: 4px;
+	scrollbar-color: var(--scroll-thumb-color) var(--scroll-track-color);
 }
 
 /* Works on Chrome, Edge, and Safari */
 pre[class*="language-"]::-webkit-scrollbar {
-  width: 4px;
+	width: 4px;
 }
 
 pre[class*="language-"]::-webkit-scrollbar-track {
-  background: var(--scroll-track-color);
+	background: var(--scroll-track-color);
 	border-radius: var(--scroll-thumb-radius);
 }
 
 pre[class*="language-"]::-webkit-scrollbar-thumb {
-  background-color: var(--scroll-thumb-color);
+	background-color: var(--scroll-thumb-color);
 	border-radius: var(--scroll-thumb-radius);
 	border: 4px solid var(--scroll-track-color);
 }

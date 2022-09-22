@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import { locale, t } from "@core/i18n";
-	import Link from "../Link.svelte";
+	import { Link } from "../link";
 	import styles from "./nav-locale.module.css";
 
 	export let labeled = false;

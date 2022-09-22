@@ -7,13 +7,13 @@
 	box-shadow: 0px 0px 2px #7A82E3;
 }
 
-.details:hover {
+.details:hover > summary {
 	box-shadow: 0px 0px 2px #7A82E3, 0 0 0 2px var(--focus-ring-color);
 }
 
 .details > summary:focus-visible {
 	outline: 2px dashed var(--focus-ring-color);
-	outline-offset: calc(0.75 * var(--space-xs));
+	outline-offset: var(--space-1);
 }
 
 .details > summary {
@@ -22,7 +22,7 @@
 	align-items: center;
 	width: 100%;
 	max-width: 100%;
-	padding: var(--space-s);
+	padding: var(--space-2-rel);
 	border-radius: var(--radius-m);	
 
 	user-select: none;
@@ -30,7 +30,7 @@
 }
 
 .content {
-	padding: var(--space-m) var(--space-l) var(--space-m) calc(var(--space-s) * 4);
+	padding: var(--space-3) var(--space-7) var(--space-2) var(--space-7);
 }
 
 .details[open] > summary .default-icon {
@@ -47,9 +47,9 @@
 
 .default-icon {
 	fill: currentColor;
-	width: var(--space-s);
-	height: var(--space-s);
-	margin: 0 var(--space-s);
+	width: var(--space-2);
+	height: var(--space-2);
+	margin-inline: var(--space-2);
 	
 	transition: transform 0.15s ease-in-out;
 }

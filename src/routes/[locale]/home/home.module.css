@@ -5,29 +5,28 @@
 
 .layout {
 	display: grid;
-	gap: var(--space-l);
+	gap: var(--space-7);
 	width: 100%;
 }
 
 .layout h2 {
-	font-size: var(--font-size-xl);
+	font-size: var(--font-size-5);
 }
 
 .layout section > div > header {
-	margin-bottom: var(--space-l);
+	margin-bottom: var(--space-7);
 }
 
 .layout > section {
 	display: flex;
 	justify-content: center;
-	padding: var(--space-xl) 0;
+	padding-block: var(--space-9);
 }
 
 .layout > section div {
 	display: flex;
 	flex-direction: column;
-	width: min(100%, calc(var(--max-width) + 2 * var(--space-m)));
-	padding: var(--space-m);
+	width: min(100% - var(--space-5), var(--max-width));
 }
 
 .layout > section[label="recent-photos"] img {

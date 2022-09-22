@@ -3,10 +3,10 @@
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
-	gap: var(--space-s);
+	gap: var(--space-2);
 	background-color: var(--surface-3);
-	padding-block: var(--space-m);
-	margin-block: var(--space-l);
+	padding-block: var(--space-3);
+	margin-block: var(--space-7);
 }
 
 /* common cell styles */
@@ -24,7 +24,7 @@
 
 /* Demo: "Shift Grid to get Masonry" */
 .shift-demo > * {
-	width: min(calc(100% - var(--space-m)), 85ch);
+	width: min(calc(100% - var(--space-3)), 85ch);
 }
 
 .shift-demo > form label {
@@ -34,11 +34,11 @@
 .shift-demo > ul {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	gap: var(--space-m);
+	gap: var(--space-3);
 
 	list-style: none;
-	margin-block: var(--space-m);
-	width: min(calc(100% - var(--space-m)), 85ch);
+	margin-block: var(--space-3);
+	width: min(calc(100% - var(--space-3)), 85ch);
 }
 
 .shift-demo ul > li {
@@ -47,20 +47,20 @@
 
 /* Demo: "Masonry-like Grid" */
 .masonry > * {
-	width: min(calc(100% - var(--space-m)), 85ch);
+	width: min(calc(100% - var(--space-3)), 85ch);
 }
 
 .masonry .wrapper {
 	max-height: 85vh;
 	overflow-y: auto;
-	padding: 0 var(--space-s);
+	padding: 0 var(--space-2);
 }
 
 .masonry form {
 	display: flex;
 	flex-flow: column nowrap;
-	gap: var(--space-s);
-	margin-bottom: var(--space-m);
+	gap: var(--space-2);
+	margin-bottom: var(--space-3);
 }
 
 .masonry ul li {
@@ -78,14 +78,14 @@
 	grid-template-rows: repeat(auto-fit, minmax(var(--masonry-item-min-height), var(--masonry-item-size, 100px)));
 	grid-auto-flow: dense;
 	place-items: stretch;
-	gap: calc(1.5 * var(--space-s));
+	gap: calc(1.5 * var(--space-2));
 	width: 100%;
-	padding: var(--space-s) 0;
+	padding: var(--space-2) 0;
 }
 
 /* Demo: "Grid Cells" */
 .grid-cells > * {
-	width: min(calc(100% - var(--space-m)), 85ch);
+	width: min(calc(100% - var(--space-3)), 85ch);
 }
 
 .grid-cells label {
@@ -99,7 +99,7 @@
 	grid-template-rows: repeat(auto-fit, var(--masonry-scale, 50px));
 	grid-auto-flow: dense;
 	grid-gap: 1rem;
-	margin-block: var(--space-l);
+	margin-block: var(--space-7);
 	height: fit-content;
 }
 
@@ -112,7 +112,7 @@
 
 /* Demo: "Grid Items Span" */
 .grid-span > * {
-	width: min(calc(100% - var(--space-m)), 85ch);
+	width: min(calc(100% - var(--space-3)), 85ch);
 }
 
 .grid-span label {
@@ -126,7 +126,7 @@
 	grid-template-rows: repeat(auto-fit, var(--masonry-scale, 50px));
 	grid-auto-flow: dense;
 	grid-gap: 1rem;
-	margin-block: var(--space-l);
+	margin-block: var(--space-7);
 	height: fit-content;
 }
 

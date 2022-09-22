@@ -1,0 +1,33 @@
+.wrapper {
+	position: absolute;
+	top: var(--scroll-to-top-length, 150vh);
+	right: var(--space-2);
+	/* negate the footer margin */
+	bottom: calc(var(--scroll-link-size, 2em) - 25vh);
+}
+
+.link {
+	position: fixed;
+	position: sticky;
+	pointer-events: all;
+	top: calc(100vh - 2 * var(--space-7));
+	display: flex;
+	flex-flow: wrap;
+	align-content: center;
+	justify-content: center;
+	width: var(--scroll-link-size, 2em);
+	height: var(--scroll-link-size, 2em);
+	padding: var(--space-1-rel);
+	border-radius: var(--radius-m);
+	border: 2px solid currentColor;
+	opacity: 0.6;
+}
+
+.wrapper,
+.link > svg {
+	pointer-events: none;
+}
+
+.link > svg {
+	fill: currentColor;
+}

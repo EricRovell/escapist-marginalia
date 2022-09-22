@@ -3,9 +3,9 @@
 	grid-template-columns: repeat(auto-fill, minmax(var(--item-size, 15ch), 1fr));
 	grid-auto-rows: min-content;
 	place-items: center;
-	gap: var(--space-m);
+	gap: var(--space-3);
 	width: min(65ch, 85vw);
-	margin-block: var(--space-m);
+	margin-block: var(--space-3);
 
 	--canvas-width: 15ch;
 	--canvas-height: 15ch;
@@ -14,21 +14,27 @@
 .form {
 	display: flex;
 	flex-flow: column nowrap;
-	gap: var(--space-l);
-	width: min(100% - var(--space-m), 450px);
+	gap: var(--space-7);
+	width: min(100% - var(--space-3), 450px);
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 48em) {
 	.wrapper {
+		grid-column: 1 / span 3 !important;
+
 		display: flex;
 		flex-wrap: nowrap;
+		gap: 4vw;
 		overflow-x: auto;
 		width: 100%;
-		padding-inline: var(--space-m);
+		padding-inline: var(--space-3);
+		scroll-snap-type: x mandatory;
 	}
 
-	.wrapper canvas {
-		--canvas-width: 85vw;
-		--canvas-height: 85vw;
+	.wrapper > figure {
+		--canvas-width: min(35ch, 85vw);
+		--canvas-height: min(35ch, 85vw);
+
+		scroll-snap-align: center;
 	}
 }

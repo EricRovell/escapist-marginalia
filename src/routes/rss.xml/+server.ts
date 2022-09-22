@@ -1,5 +1,7 @@
 import { buildRSSFeed } from "@data/rss";
 
+export const prerender = true;
+
 export const GET = async ({ url }) => {
 	const rssFeed = await buildRSSFeed({
 		origin: url.origin

@@ -29,3 +29,12 @@ export function validateLocale(locale: string, fallback = "en"): string {
 		? locale
 		: fallback;
 }
+
+export const i18nTemplate = (input: string, values: string[]) => {
+	let result = input;
+	for (const value of values) {
+		result = result.replace("%s", value);
+	}
+	
+	return result;
+};

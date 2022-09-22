@@ -1,33 +1,56 @@
 .layout {
 	display: grid;
 	grid-template: 1fr / 5fr 1fr;
-	gap: var(--space-xl);
+	gap: var(--space-9);
 	width: 100%;
 	justify-self: center;
 }
 
+.counter {
+	grid-row: 1;
+	grid-column: 1 / -1;
+	margin-block-end: var(--space-2-rel);
+	font-size: var(--font-size-2);
+	font-variant-numeric: tabular-nums;
+}
+
 .sidebar {
-	display: flex;
-	flex-flow: column nowrap;
-	gap: var(--space-m);
+	display: grid;
+	gap: var(--space-4-rel);
 	height: min-content;
+	font-size: var(--font-size-0);
+	width: 100%;
 }
 
-.layout > main h2 {
-	font-family: var(--font-secondary);
-	font-size: var(--font-size-xl);
-	font-variation-settings: "wght" 200;
-	margin-bottom: var(--space-l);
-	text-transform: capitalize;
+.sidebar h3 {
+	margin: 0;
 }
 
-.posts h3 {
-	font-size: var(--font-size-m);
+.sidebar legend {
+	font-size: var(--font-size-1);
 }
 
-@media screen and (max-width: 640px) {
+.filters-toggle {
+	display: none;
+}
+
+@media screen and (max-width: 48em) {
 	.layout {
 		grid-template: min-content auto / 1fr;
+		gap: var(--space-5);
+
+		--side-menu-switch-z-index: 47;
+		--side-menu-z-index: 53;
+	}
+
+	.sidebar h3 {
+		margin-block: var(--space-2-rel);
+		text-align: center;
+	}
+
+	.filters-toggle {
+		display: initial;
+		border-radius: var(--radius-m);
 	}
 
 	.layout > main {

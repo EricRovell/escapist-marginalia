@@ -32,7 +32,7 @@
 	As there are many of them and rendering so much would be
 	bad for performance, the pagination is used.
 -->
-<section class="wide">
+<section class="wide interactive">
 	<h3>{t["title"]}</h3>
 	<div class="{styles.wrapper}">
 		{#each items.slice(from, from + perPage) as subset}

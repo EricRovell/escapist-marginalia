@@ -6,7 +6,7 @@
 	import Icon from "../icons/Icon.svelte";
 	import { ThemeSelect } from "../theme-select";
 	import LocaleRoute from "../nav-locale/NavLocale.svelte";
-	import Link from "../Link.svelte";
+	import { Link } from "../link";
 	import { logo } from "@components/icons/logo";
 
 	import styles from "./masthead.module.css";
@@ -14,7 +14,7 @@
 
 <header class={`container ${styles.masthead}`}>
 	<section label="logo">
-		<Link href={$pathHome}>
+		<Link block href={$pathHome}>
 			<Icon path={logo} />
 		</Link>
 	</section>
@@ -29,7 +29,7 @@
 			<Navigation.Item href={$pathGallery} pattern={/\/gallery/}>
 				{$t("sections.gallery")}
 			</Navigation.Item>
-			<Navigation.Item href={$pathProjects}>
+			<Navigation.Item href={$pathProjects} pattern={/\/projects/}>
 				{$t("sections.projects")}
 			</Navigation.Item>
 			<Navigation.Item href={$pathAbout} disabled>

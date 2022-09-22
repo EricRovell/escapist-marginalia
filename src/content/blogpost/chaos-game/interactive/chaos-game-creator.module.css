@@ -4,9 +4,9 @@
 
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--space-l);
-	width: min(100% - var(--space-m), 960px);
-	font-size: var(--font-size-s);
+	gap: var(--space-7);
+	width: min(100% - var(--space-3), 960px);
+	font-size: var(--font-size-0);
 }
 
 .figure {
@@ -26,8 +26,8 @@
 .form {
 	display: grid;
 	grid-auto-rows: min-content;
-	gap: var(--space-m);
-	flex-basis: min(100% - var(--space-m), 275px);
+	gap: var(--space-3);
+	flex-basis: min(100% - var(--space-3), 275px);
 	flex-grow: 1;
 }
 
@@ -41,11 +41,11 @@
 }
 
 .form fieldset > * {
-	margin: var(--space-s) var(--space-m);
+	margin: var(--space-2) var(--space-3);
 }
 
 .form fieldset {
-	padding-bottom: var(--space-m);
+	padding-bottom: var(--space-3);
 }
 
 .form legend {
@@ -53,11 +53,11 @@
 	float: left;
 	border-bottom: 1px solid var(--color-border);
 	font-weight: 700;
-	font-size: var(--font-size-m);
+	font-size: var(--font-size-1);
 	margin: 0;
-	padding: var(--space-s) var(--space-m);
+	padding: var(--space-2) var(--space-3);
 }
 
 .form fieldset > button {
-	margin-block-start: var(--space-m);
+	margin-block-start: var(--space-3);
 }

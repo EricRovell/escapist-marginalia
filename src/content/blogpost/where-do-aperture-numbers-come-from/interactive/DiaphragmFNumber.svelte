@@ -20,7 +20,7 @@
 <!--
 	Demonstrates the diaphragm movement within f-stop change.
 -->
-<section class="wide wrapper">
+<section class="wide wrapper interactive">
 	<h3>{t["title"]}</h3>
 	<Diaphragm bind:angle={$angle} />
 	<form on:submit|preventDefault style="text-align: center">

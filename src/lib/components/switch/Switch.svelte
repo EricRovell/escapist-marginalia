@@ -11,6 +11,7 @@
 <label class={`${styles.switch} ${className}`} class:disabled>
 	<slot />
 	<input
+		aria-checked="{checked}"
 		class={styles.input}
 		bind:checked
 		bind:value

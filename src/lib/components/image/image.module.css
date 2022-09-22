@@ -20,7 +20,7 @@
 	text-align: center;
 	width: 100%;
 	height: 100%;
-	padding: var(--space-m);
+	padding: var(--space-3);
 	border: 2px solid var(--color-border);
 	/* todo: broken icon image showoed up behind curved border... */
 	border-radius: 0 0 var(--radius-l) var(--radius-l);

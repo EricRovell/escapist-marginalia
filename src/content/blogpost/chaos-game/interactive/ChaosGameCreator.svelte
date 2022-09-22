@@ -33,7 +33,7 @@
 	};
 </script>
 
-<section class="wide">
+<section class="wide interactive">
 	<h3>{t.title}</h3>
 	<article class="{styles.wrapper}">
 		<figure class="{styles.figure}">

@@ -1,15 +1,14 @@
-import { dev } from "$app/env";
+import { dev } from "$app/environment";
 import { getBlogposts } from "@data/posts";
-import type { RequestHandler } from "$types";
+import type { RequestHandler } from "@sveltejs/kit/types";
 import type { Blogpost } from "@types";
 
-export const GET: RequestHandler = async ({ url }) => {
+export const GET: RequestHandler = async () => {
 	const published = !dev
 		? { published: true }
 		: {};
 
 	const data: Blogpost[] = await getBlogposts({
-		lang: url.searchParams.get("lang"),
 		...published
 	});
 

@@ -5,7 +5,7 @@
 
 <script>
 	import { webpage } from "@core/paths";
-	import { Meta, TOC } from "@components";
+	import { Meta, TOC, ScrollToTop } from "@components";
 	import Header from "./Header.svelte";
 	import { LayoutPage } from "../page-header";
 	import styles from "./blogpost.module.css";
@@ -65,4 +65,7 @@
 		<slot />
 		<slot name="post-content" />
 	</article>
+	<ScrollToTop
+		id="root"
+	/>
 </LayoutPage>

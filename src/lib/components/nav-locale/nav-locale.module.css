@@ -2,7 +2,7 @@
 .locale-route {
 	border: 2px solid var(--color-border);
 	border-radius: var(--radius-s);
-	font-size: var(--font-size-m);
+	font-size: inherit;
 	text-transform: capitalize;
 }
 
@@ -19,7 +19,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: var(--space-s);
+	padding: var(--space-2-rel);
 	width: 100%;
 }
 
@@ -27,6 +27,13 @@
 	text-transform: uppercase;
 }
 
+.locale-route:global(.labeled) {
+	display: flex;
+	align-items: center;
+}
+
 .locale-route:global(.labeled) a {
-	padding: calc(1.5 * var(--space-s));
+	display: flex;
+	align-items: center;
+	padding: var(--space-2-rel);
 }

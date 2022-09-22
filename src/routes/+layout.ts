@@ -2,6 +2,8 @@ import { redirect } from "@sveltejs/kit";
 import { init, loadMessages, validateLocale, supportedLocales } from "@core/i18n";
 import type { LayoutLoad } from "./$types";
 
+export const prerender = true;
+
 export const load: LayoutLoad = ({ params, url }) => {
 	loadMessages();
 

@@ -18,7 +18,6 @@ const config = {
 			precompress: false
 		}),
 		prerender: {
-			default: true,
 			entries: [
 				"*",
 				"/rss.xml"
