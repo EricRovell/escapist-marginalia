@@ -26,7 +26,6 @@
 	justify-content: center;
 	width: 100%;
 	min-height: calc(100vh - 50px);
-	margin: 0 0 25vh 0;
 }
 
 /* override sidenav control to show it all the time */
