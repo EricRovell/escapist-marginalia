@@ -5,7 +5,7 @@
 <script lang="ts">
 	import Card from "./Card.svelte";
 	import Datetime from "../Datetime.svelte";
-	import Link from "../Link.svelte";
+	import { Link } from "../link";
 
 	import { pathBlogpost } from "@core/paths";
 	import styles from "./card-article.module.css";

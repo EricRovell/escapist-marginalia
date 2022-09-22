@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Link from "./Link.svelte";
+	import { Link } from "./link";
 	import Datetime from "./Datetime.svelte";
 	import NavLocale from "./nav-locale/NavLocale.svelte";
 	import Icon from "./icons/Icon.svelte";
@@ -20,7 +20,7 @@
 		{ label: "blog", href: $pathBlog },
 		{ label: "gallery", href: $pathGallery },
 		{ label: "licence", href: pathLicence },
-		{ label: "privacy", href: pathPrivacy, disabled: true },    
+		{ label: "privacy", href: pathPrivacy, disabled: true },
 		{ label: "about", href: $pathAbout, disabled: true }
 	];
 

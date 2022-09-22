@@ -5,7 +5,7 @@
 <script lang="ts">
 	import Card from "./Card.svelte";
 	import Icon from "../icons/Icon.svelte";
-	import Link from "../Link.svelte";
+	import { Link } from "../link";
 
 	import { iconGithub, iconNpm, iconURL } from "../icons/default";
 	import styles from "./card-project.module.css";

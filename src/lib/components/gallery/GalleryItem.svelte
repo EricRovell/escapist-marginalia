@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	import Link from "../Link.svelte";
+	import { Link } from "../link";
 </script>
 
 <script lang="ts">

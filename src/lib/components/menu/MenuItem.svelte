@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getContext } from "svelte";
-	import Link from "../Link.svelte"; 
+	import { Link } from "../link";
 	import { current } from "$lib/actions";
 	import styles from "./menu.module.css";
 

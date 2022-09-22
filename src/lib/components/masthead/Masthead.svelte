@@ -6,7 +6,7 @@
 	import Icon from "../icons/Icon.svelte";
 	import { ThemeSelect } from "../theme-select";
 	import LocaleRoute from "../nav-locale/NavLocale.svelte";
-	import Link from "../Link.svelte";
+	import { Link } from "../link";
 	import { logo } from "@components/icons/logo";
 
 	import styles from "./masthead.module.css";
