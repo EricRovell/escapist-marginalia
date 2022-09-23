@@ -13,11 +13,6 @@
 	position: relative;
 }
 
-.page:global(.wide) > .content {
-	width: 100%;
-	padding: 0;
-}
-
 .content {
 	display: flex;
 	justify-content: center;
@@ -29,6 +24,11 @@
 
 .content:global(.no-banner) {
 	margin-top: 15vh;
+}
+
+.page:global(.wide) > .content {
+	width: 100%;
+	padding: 0;
 }
 
 .banner > h1:global(.headline) {

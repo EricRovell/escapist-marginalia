@@ -1,25 +1,27 @@
+/* stylelint-disable custom-property-empty-line-before */
+
 @media (prefers-color-scheme: light) {
-	:root:not([theme=dark]) {
+	:root:not([theme="dark"]) {
 		color-scheme: light dark;
 
 		--accent: var(--color-primary-500);
 
-		--surface-1: hsl(240 40% 97%);
-		--surface-2: hsl(240 75% 100%);
-		--surface-3: hsl(235 20% 92%);
-		--surface-4: hsl(235 20% 85%);
+		--surface-1: hsl(240deg 40% 97%);
+		--surface-2: hsl(240deg 75% 100%);
+		--surface-3: hsl(235deg 20% 92%);
+		--surface-4: hsl(235deg 20% 85%);
 		--surface-1-text: var(--color-gray-700);
-		--surface-1-text-contrast : var(--color-gray-1000);
-		--surface-1-text-less-contrast : var(--color-gray-500);
+		--surface-1-text-contrast: var(--color-gray-1000);
+		--surface-1-text-less-contrast: var(--color-gray-500);
 		--surface-2-text: var(--color-gray-700);
-		--surface-2-text-contrast : var(--color-gray-1000);
-		--surface-2-text-less-contrast : var(--color-gray-500);
+		--surface-2-text-contrast: var(--color-gray-1000);
+		--surface-2-text-less-contrast: var(--color-gray-500);
 		--surface-3-text: var(--color-gray-800);
-		--surface-3-text-contrast : var(--color-gray-1000);
-		--surface-3-text-less-contrast : var(--color-gray-500);
+		--surface-3-text-contrast: var(--color-gray-1000);
+		--surface-3-text-less-contrast: var(--color-gray-500);
 		--surface-4-text: var(--color-gray-800);
-		--surface-4-text-contrast : var(--color-gray-1000);
-		--surface-4-text-less-contrast : var(--color-gray-600);
+		--surface-4-text-contrast: var(--color-gray-1000);
+		--surface-4-text-less-contrast: var(--color-gray-600);
 
 		--color-heading: var(--color-blue-500);
 		--color-text-primary: var(--color-gray-300);
@@ -45,7 +47,7 @@
 
 		--range-thumb-color: var(--color-blue-400);
 		--range-thumb-focus-color: #7A82E33F;
-		--range-thumb-min-color: rgb(238, 228, 228);
+		--range-thumb-min-color: rgb(238 228 228);
 		--range-track-color: var(--color-gray-400);
 		--range-track-focus-color: var(--color-gray-500);
 		--range-track-active-color: var(--color-blue-500);
@@ -54,71 +56,71 @@
 		--scroll-track-color: var(--surface-2);
 		--scroll-thumb-color: #253758;
 
-		--code-atrule: #7c4dff;
-		--code-attr-name: #39adb5;
-		--code-attr-value: #f6a434;
-		--code-attribute: #f6a434;
-		--code-background: #fafafa;
-		--code-boolean: #7c4dff;
-		--code-builtin: #39adb5;
-		--code-cdata: #39adb5;
-		--code-char: #39adb5;
-		--code-class: #39adb5;
-		--code-class-name: #6182b8;
-		--code-color: #90a4ae;
-		--code-comment: #aabfc9;
-		--code-constant: #7c4dff;
-		--code-deleted: #e53935;
-		--code-doctype: #aabfc9;
-		--code-entity: #e53935;
-		--code-function: #7c4dff;
-		--code-hexcode: #f76d47;
-		--code-id: #7c4dff;
-		--code-important: #7c4dff;
-		--code-inserted: #39adb5;
-		--code-keyword: #7c4dff;
-		--code-number: #f76d47;
-		--code-operator: #39adb5;
-		--code-prolog: #aabfc9;
-		--code-property: #39adb5;
-		--code-pseudo-class: #f6a434;
-		--code-pseudo-element: #f6a434;
-		--code-punctuation: #39adb5;
-		--code-regex: #6182b8;
-		--code-selection-bg: #cceae7;
+		--code-atrule: #7C4DFF;
+		--code-attr-name: #39ADB5;
+		--code-attr-value: #F6A434;
+		--code-attribute: #F6A434;
+		--code-background: #FAFAFA;
+		--code-boolean: #7C4DFF;
+		--code-builtin: #39ADB5;
+		--code-cdata: #39ADB5;
+		--code-char: #39ADB5;
+		--code-class: #39ADB5;
+		--code-class-name: #6182B8;
+		--code-color: #90A4AE;
+		--code-comment: #AABFC9;
+		--code-constant: #7C4DFF;
+		--code-deleted: #E53935;
+		--code-doctype: #AABFC9;
+		--code-entity: #E53935;
+		--code-function: #7C4DFF;
+		--code-hexcode: #F76D47;
+		--code-id: #7C4DFF;
+		--code-important: #7C4DFF;
+		--code-inserted: #39ADB5;
+		--code-keyword: #7C4DFF;
+		--code-number: #F76F47;
+		--code-operator: #39ADB5;
+		--code-prolog: #AABFC9;
+		--code-property: #39ADB5;
+		--code-pseudo-class: #F6A434;
+		--code-pseudo-element: #F6A434;
+		--code-punctuation: #39ADB5;
+		--code-regex: #6182B8;
+		--code-selection-bg: #CCEAE7;
 		--code-selection-color: #263238;
-		--code-selector: #e53935;
-		--code-string: #f6a434;
-		--code-symbol: #7c4dff;
-		--code-tag: #e53935;
-		--code-unit: #f76d47;
-		--code-url: #e53935;
-		--code-variable: #e53935;
+		--code-selector: #E53935;
+		--code-string: #F6A434;
+		--code-symbol: #7C4DFF;
+		--code-tag: #E53935;
+		--code-unit: #F76F47;
+		--code-url: #E53935;
+		--code-variable: #E53935;
 	}
 }
 
-[theme=light],
-:root[theme=light] {
+[theme="light"],
+:root[theme="light"] {
 	color-scheme: light dark;
 
 	--accent: var(--color-primary-500);
 
-	--surface-1: hsl(240 40% 97%);
-	--surface-2: hsl(240 75% 100%);
-	--surface-3: hsl(235 20% 92%);
-	--surface-4: hsl(235 20% 85%);
+	--surface-1: hsl(240deg 40% 97%);
+	--surface-2: hsl(240deg 75% 100%);
+	--surface-3: hsl(235deg 20% 92%);
+	--surface-4: hsl(235deg 20% 85%);
 	--surface-1-text: var(--color-gray-700);
-	--surface-1-text-contrast : var(--color-gray-1000);
-	--surface-1-text-less-contrast : var(--color-gray-500);
+	--surface-1-text-contrast: var(--color-gray-1000);
+	--surface-1-text-less-contrast: var(--color-gray-500);
 	--surface-2-text: var(--color-gray-700);
-	--surface-2-text-contrast : var(--color-gray-1000);
-	--surface-2-text-less-contrast : var(--color-gray-500);
+	--surface-2-text-contrast: var(--color-gray-1000);
+	--surface-2-text-less-contrast: var(--color-gray-500);
 	--surface-3-text: var(--color-gray-800);
-	--surface-3-text-contrast : var(--color-gray-1000);
-	--surface-3-text-less-contrast : var(--color-gray-500);
+	--surface-3-text-contrast: var(--color-gray-1000);
+	--surface-3-text-less-contrast: var(--color-gray-500);
 	--surface-4-text: var(--color-gray-800);
-	--surface-4-text-contrast : var(--color-gray-1000);
-	--surface-4-text-less-contrast : var(--color-gray-600);
+	--surface-4-text-contrast: var(--color-gray-1000);
+	--surface-4-text-less-contrast: var(--color-gray-600);
 
 	--color-heading: var(--color-blue-500);
 	--color-text-primary: var(--color-gray-900);
@@ -144,53 +146,53 @@
 
 	--range-thumb-color: var(--color-blue-400);
 	--range-thumb-focus-color: #7A82E33F;
-	--range-thumb-min-color: rgb(238, 228, 228);
+	--range-thumb-min-color: rgb(238 228 228);
 	--range-track-color: var(--color-gray-400);
 	--range-track-focus-color: var(--color-gray-500);
 	--range-track-active-color: var(--color-blue-500);
 	--range-tooltip-bg: var(--color-blue-500);
 
 	--scroll-track-color: var(--surface-2);
-	--scroll-thumb-color: rgb(76, 101, 146);
+	--scroll-thumb-color: rgb(76 101 146);
 
-	--code-atrule: #7c4dff;
-	--code-attr-name: #39adb5;
-	--code-attr-value: #f6a434;
-	--code-attribute: #f6a434;
-	--code-background: var(--surface-2) /* #fafafa */;
-	--code-boolean: #7c4dff;
-	--code-builtin: #39adb5;
-	--code-cdata: #39adb5;
-	--code-char: #39adb5;
-	--code-class: #39adb5;
-	--code-class-name: #6182b8;
-	--code-color: #90a4ae;
-	--code-comment: #aabfc9;
-	--code-constant: #7c4dff;
-	--code-deleted: #e53935;
-	--code-doctype: #aabfc9;
-	--code-entity: #e53935;
-	--code-function: #7c4dff;
-	--code-hexcode: #f76d47;
-	--code-id: #7c4dff;
-	--code-important: #7c4dff;
-	--code-inserted: #39adb5;
-	--code-keyword: #7c4dff;
-	--code-number: #f76d47;
-	--code-operator: #39adb5;
-	--code-prolog: #aabfc9;
-	--code-property: #39adb5;
-	--code-pseudo-class: #f6a434;
-	--code-pseudo-element: #f6a434;
-	--code-punctuation: #39adb5;
-	--code-regex: #6182b8;
-	--code-selection-bg: #cceae7;
+	--code-atrule: #7C4DFF;
+	--code-attr-name: #39ADB5;
+	--code-attr-value: #F6A434;
+	--code-attribute: #F6A434;
+	--code-background: #FAFAFA;
+	--code-boolean: #7C4DFF;
+	--code-builtin: #39ADB5;
+	--code-cdata: #39ADB5;
+	--code-char: #39ADB5;
+	--code-class: #39ADB5;
+	--code-class-name: #6182B8;
+	--code-color: #90A4AE;
+	--code-comment: #AABFC9;
+	--code-constant: #7C4DFF;
+	--code-deleted: #E53935;
+	--code-doctype: #AABFC9;
+	--code-entity: #E53935;
+	--code-function: #7C4DFF;
+	--code-hexcode: #F76D47;
+	--code-id: #7C4DFF;
+	--code-important: #7C4DFF;
+	--code-inserted: #39ADB5;
+	--code-keyword: #7C4DFF;
+	--code-number: #F76F47;
+	--code-operator: #39ADB5;
+	--code-prolog: #AABFC9;
+	--code-property: #39ADB5;
+	--code-pseudo-class: #F6A434;
+	--code-pseudo-element: #F6A434;
+	--code-punctuation: #39ADB5;
+	--code-regex: #6182B8;
+	--code-selection-bg: #CCEAE7;
 	--code-selection-color: #263238;
-	--code-selector: #e53935;
-	--code-string: #f6a434;
-	--code-symbol: #7c4dff;
-	--code-tag: #e53935;
-	--code-unit: #f76d47;
-	--code-url: #e53935;
-	--code-variable: #e53935;
+	--code-selector: #E53935;
+	--code-string: #F6A434;
+	--code-symbol: #7C4DFF;
+	--code-tag: #E53935;
+	--code-unit: #F76F47;
+	--code-url: #E53935;
+	--code-variable: #E53935;
 }

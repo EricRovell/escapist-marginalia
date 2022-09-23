@@ -10,57 +10,59 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 1ch;
-
 	cursor: pointer;
 	user-select: none;
 }
 
 .input {
 	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-
 	flex-shrink: 0;
-  display: grid;
-  align-items: center;
+	display: grid;
+	align-items: center;
 	margin-left: auto;
-  grid: [track] 1fr / [track] 1fr;
+	grid: [track] 1fr / [track] 1fr;
 	inline-size: var(--switch-track-size);
-  block-size: var(--switch-thumb-size);
+	block-size: var(--switch-thumb-size);
 	border: none;
 	border-radius: var(--switch-border-radius);
-  padding: var(--switch-track-padding);
-  background: var(--switch-track-color);
+	padding: var(--switch-track-padding);
+	background: var(--switch-track-color);
 	outline-offset: 5px;
 	transition: box-shadow var(--switch-transition-duration) linear;
 	cursor: pointer;
-
-  -webkit-tap-highlight-color: transparent;
 	touch-action: pan-y;
 }
 
 /* thumb */
 .input::after {
 	content: "";
-  grid-area: track;
-  inline-size: calc(var(--switch-thumb-size) - 2 * var(--switch-track-padding));
-  block-size: calc(var(--switch-thumb-size) - 2 * var(--switch-track-padding));;
+	grid-area: track;
+	inline-size: calc(var(--switch-thumb-size) - 2 * var(--switch-track-padding));
+	block-size: calc(var(--switch-thumb-size) - 2 * var(--switch-track-padding));
 	background-color: var(--switch-thumb-color);
 	border-radius: var(--switch-border-radius);
 	transform: translateX(var(--switch-thumb-position, 0%));
-	
 	transition:
 		transform var(--switch-transition-duration) ease,
 		background-color 0.25s ease;
 }
 
 .input:checked {
+	--switch-thumb-position: calc(var(--switch-track-size) - 100% - 2 * var(--switch-track-padding));
+
 	background-color: var(--switch-track-color-active);
-  --switch-thumb-position: calc(var(--switch-track-size) - 100% - 2 * var(--switch-track-padding));
+}
+
+.input:focus-visible {
+	outline: 2px dashed var(--color-blue-500);
 }
 
 .input:hover:not(:disabled) {
 	box-shadow: 0 0 0 var(--switch-highlight-size) var(--switch-thumb-color-highlight);
+}
+
+.switch:global(.disabled) {
+	cursor: not-allowed;
 }
 
 .switch:hover:not(:disabled) {
@@ -73,14 +75,6 @@
 }
 
 .switch .input:disabled {
-	cursor: not-allowed;
-}
-
-.input:focus-visible {
-	outline: 2px dashed var(--color-blue-500);
-}
-
-.switch:global(.disabled) {
 	cursor: not-allowed;
 }
 

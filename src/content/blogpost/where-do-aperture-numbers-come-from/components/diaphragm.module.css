@@ -8,7 +8,7 @@
 	fill: var(--surface-4);
 }
 
-.illustration path { 
+.illustration path {
 	transform-box: fill-box;
 	fill: var(--color-blue-900);
 	stroke: var(--color-blue-400);

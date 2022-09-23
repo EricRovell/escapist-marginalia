@@ -4,7 +4,6 @@
 
 .article {
 	grid-area: article;
-
 	display: grid;
 	grid-template-columns: 1fr min(100% - 2 * var(--space-3), 60ch) 1fr;
 	justify-self: center;
@@ -15,7 +14,7 @@
 .article ol,
 .article ul,
 .article p,
-.article figure{
+.article figure {
 	margin-block-end: var(--space-3-rel);
 }
 
@@ -61,7 +60,6 @@
 	flex-flow: column nowrap;
 	gap: var(--space-2);
 	padding: var(--space-3);
-	border: solid 1px hsl(var(--gray-h) var(--gray-s-600) var(--gray-l-600) / 0.5);
 }
 
 .article dt {
@@ -98,7 +96,7 @@
 	margin-left: 1.5ch;
 }
 
-.article ol li:not([class]):not(:last-child) {
+.article ol li:not([class]:last-child) {
 	margin-bottom: var(--space-1-rel);
 }
 
@@ -123,6 +121,26 @@
 	border-radius: var(--radius-m);
 }
 
+.article th,
+.article td {
+	text-align: center;
+	padding: var(--space-2-rel);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	border: 0.5px solid var(--color-border);
+}
+
+.article thead th {
+	background-color: var(--surface-2);
+}
+
+.article thead,
+.article tbody,
+.article tr {
+	display: contents;
+}
+
 .article tr:last-child td:first-child {
 	border-bottom-left-radius: var(--radius-m);
 }
@@ -137,30 +155,6 @@
 
 .article thead th:last-child {
 	border-top-right-radius: var(--radius-m);
-}
-
-.article thead th {
-	background-color: var(--surface-2);
-}
-
-.article thead,
-.article tbody,
-.article tr {
-	display: contents;
-}
-
-.article th,
-.article td {
-	text-align: center;
-	padding: var(--space-2-rel);
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
-.article th,
-.article td {
-	border: 0.5px solid var(--color-border);
 }
 
 /* Interactive Sections */

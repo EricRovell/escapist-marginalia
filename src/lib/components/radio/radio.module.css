@@ -24,7 +24,6 @@
 }
 
 .radio {
-	-webkit-appearance: none;
 	appearance: none;
 }
 
@@ -32,24 +31,24 @@
 	outline: none;
 }
 
-.radio:checked:focus-visible + span {
-	outline: 2px dashed var(--focus-ring-color);
-	outline-offset: calc(0.75 * var(--space-1-rel));
+.radio + span {
+	padding: var(--space-1-rel) var(--space-3-rel);
+	border: 1px solid var(--radio-button-focus-ring-color);
+	border-radius: var(--radius-xs);
+	background-color: var(--radio-button-bg);
+	box-shadow: 0 0 0 var(--radio-button-focus-ring-size) var(--radio-button-focus-ring-color);
+	transition: box-shadow 0.25s ease-in-out;
 }
 
 .radio:hover + span {
 	--radio-button-focus-ring-size: 1px;
 }
 
-.radio + span {
-	padding: var(--space-1-rel) var(--space-3-rel);
-	border: 1px solid var(--radio-button-focus-ring-color);
-	border-radius: var(--radius-xs);
-	background-color: var(--radio-button-bg);
-	box-shadow:	0 0 0 var(--radio-button-focus-ring-size) var(--radio-button-focus-ring-color);
-	transition: box-shadow 0.25s ease-in-out;
-}
-
 .radio:checked + span {
 	background-color: var(--surface-1);
+}
+
+.radio:checked:focus-visible + span {
+	outline: 2px dashed var(--focus-ring-color);
+	outline-offset: calc(0.75 * var(--space-1-rel));
 }

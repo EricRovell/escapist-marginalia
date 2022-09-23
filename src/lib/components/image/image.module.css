@@ -6,14 +6,12 @@
 
 /* broken image state */
 .picture img::before {
-	content: 'Image failed to load: \a' '\0022' attr(alt) '\0022';
+	content: "Image failed to load: \a' '\0022' attr(alt) '\0022";
 	white-space: pre-wrap;
-
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 5;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -22,6 +20,7 @@
 	height: 100%;
 	padding: var(--space-3);
 	border: 2px solid var(--color-border);
+
 	/* todo: broken icon image showoed up behind curved border... */
 	border-radius: 0 0 var(--radius-l) var(--radius-l);
 	background-color: var(--surface-2);

@@ -21,14 +21,15 @@
 }
 
 @media only screen and (max-width: 720px) {
-  .gallery {
+	.gallery {
 		--grid-item-size: 175px;
+
 		gap: var(--space-2);
-  }
+	}
 }
 
 @media only screen and (max-width: 560px) {
-  .gallery {
+	.gallery {
 		--grid-item-size: 125px;
-  }
+	}
 }

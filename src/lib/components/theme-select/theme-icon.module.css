@@ -41,14 +41,11 @@
 
 .icon:global(.dark) > .center {
 	fill: gold;
+	transform: scale(1.5);
 }
 
 .icon:global(.dark) .mask circle {
 	transform: scale(2) translate(6%, -5%);
-}
-
-.icon:global(.dark) > .center {
-	transform: scale(1.5);
 }
 
 /* auto theme */
@@ -60,14 +57,6 @@
 
 .icon:global(.auto) .mask circle {
 	transform: scale(1.5);
-}
-
-.icon:global(.auto) .mask circle {
-	transform: scale(1.5);
-}
-
-.icon:global(.auto) .mask circle {
-	transform: scale(0);
 }
 
 .icon:global(.auto) .mask path {

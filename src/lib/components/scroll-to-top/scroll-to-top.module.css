@@ -2,6 +2,7 @@
 	position: absolute;
 	top: var(--scroll-to-top-length, 150vh);
 	right: var(--space-2);
+
 	/* negate the footer margin */
 	bottom: calc(var(--scroll-link-size, 2em) - 25vh);
 }
@@ -19,7 +20,7 @@
 	height: var(--scroll-link-size, 2em);
 	padding: var(--space-1-rel);
 	border-radius: var(--radius-m);
-	border: 2px solid currentColor;
+	border: 2px solid currentcolor;
 	opacity: 0.6;
 }
 
@@ -29,5 +30,5 @@
 }
 
 .link > svg {
-	fill: currentColor;
+	fill: currentcolor;
 }

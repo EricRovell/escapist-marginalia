@@ -10,11 +10,11 @@
 .indicator > span {
 	display: block;
 	width: 100%;
-	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.3);
+	box-shadow: 0 2px 10px 0 rgba(0 0 0 / 30%);
 	border-radius: 3px;
 	height: var(--indicator-height);
-	background: #fff;
-	transition: all .3s;
+	background: #FFF;
+	transition: all 0.3s;
 	position: relative;
 }
 
@@ -22,28 +22,28 @@
 	margin-top: var(--indicator-offset);
 }
 
-.indicator:global(.active) span:nth-child(1) {
-	animation: ease .7s top forwards;
-}
-
 .indicator span:nth-child(1) {
-	animation: ease .7s top-2 forwards;
-}
-
-.indicator:global(.active) span:nth-child(2) {
-	animation: ease .7s scaled forwards;
+	animation: ease 0.7s top-2 forwards;
 }
 
 .indicator span:nth-child(2) {
-	animation: ease .7s scaled-2 forwards;
-}
-
-.indicator:global(.active) span:nth-child(3) {
-	animation: ease .7s bottom forwards;
+	animation: ease 0.7s scaled-2 forwards;
 }
 
 .indicator span:nth-child(3) {
-	animation: ease .7s bottom-2 forwards;
+	animation: ease 0.7s bottom-2 forwards;
+}
+
+.indicator:global(.active) span:nth-child(3) {
+	animation: ease 0.7s bottom forwards;
+}
+
+.indicator:global(.active) span:nth-child(1) {
+	animation: ease 0.7s top forwards;
+}
+
+.indicator:global(.active) span:nth-child(2) {
+	animation: ease 0.7s scaled forwards;
 }
 
 @keyframes top {
@@ -51,10 +51,12 @@
 		top: 0;
 		transform: rotate(0);
 	}
+
 	50% {
 		top: var(--indicator-offset-calc);
 		transform: rotate(0);
 	}
+
 	100% {
 		top: var(--indicator-offset-calc);
 		transform: rotate(45deg);
@@ -66,10 +68,12 @@
 		top: var(--indicator-offset-calc);
 		transform: rotate(45deg);
 	}
+
 	50% {
 		top: var(--indicator-offset-calc);
 		transform: rotate(0deg);
 	}
+
 	100% {
 		top: 0;
 		transform: rotate(0deg);
@@ -81,10 +85,12 @@
 		bottom: 0;
 		transform: rotate(0);
 	}
+
 	50% {
 		bottom: var(--indicator-offset-calc);
 		transform: rotate(0);
 	}
+
 	100% {
 		bottom: var(--indicator-offset-calc);
 		transform: rotate(135deg);
@@ -96,10 +102,12 @@
 		bottom: var(--indicator-offset-calc);
 		transform: rotate(135deg);
 	}
+
 	50% {
 		bottom: var(--indicator-offset-calc);
 		transform: rotate(0);
 	}
+
 	100% {
 		bottom: 0;
 		transform: rotate(0);
@@ -110,6 +118,7 @@
 	50% {
 		transform: scale(0);
 	}
+
 	100% {
 		transform: scale(0);
 	}
@@ -119,9 +128,11 @@
 	0% {
 		transform: scale(0);
 	}
+
 	50% {
 		transform: scale(0);
 	}
+
 	100% {
 		transform: scale(1);
 	}

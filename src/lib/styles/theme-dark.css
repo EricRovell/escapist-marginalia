@@ -1,25 +1,27 @@
+/* stylelint-disable custom-property-empty-line-before */
+
 @media (prefers-color-scheme: dark) {
-	:root:not([theme=light]) {
+	:root:not([theme="light"]) {
 		color-scheme: dark light;
 
 		--accent: var(--color-primary-500);
 
-		--surface-1: #0e1625;
-		--surface-2: #090e19;
+		--surface-1: #0E1625;
+		--surface-2: #090E19;
 		--surface-3: #172137;
-		--surface-4: #202e4d;
+		--surface-4: #202E4D;
 		--surface-1-text: var(--color-gray-400);
-		--surface-1-text-contrast : var(--color-gray-200);
-		--surface-1-text-less-contrast : var(--color-gray-500);
+		--surface-1-text-contrast: var(--color-gray-200);
+		--surface-1-text-less-contrast: var(--color-gray-500);
 		--surface-2-text: var(--color-gray-300);
-		--surface-2-text-contrast : var(--color-gray-100);
-		--surface-2-text-less-contrast : var(--color-gray-500);
+		--surface-2-text-contrast: var(--color-gray-100);
+		--surface-2-text-less-contrast: var(--color-gray-500);
 		--surface-3-text: var(--color-gray-300);
-		--surface-3-text-contrast : var(--color-gray-200);
-		--surface-3-text-less-contrast : var(--color-gray-400);
+		--surface-3-text-contrast: var(--color-gray-200);
+		--surface-3-text-less-contrast: var(--color-gray-400);
 		--surface-4-text: var(--color-gray-300);
-		--surface-4-text-contrast : var(--color-gray-200);
-		--surface-4-text-less-contrast : var(--color-gray-400);
+		--surface-4-text-contrast: var(--color-gray-200);
+		--surface-4-text-less-contrast: var(--color-gray-400);
 
 		--color-heading: var(--color-blue-300);
 
@@ -45,7 +47,7 @@
 
 		--range-thumb-color: var(--color-blue-400);
 		--range-thumb-focus-color: #999EEB60;
-		--range-thumb-min-color: rgb(34, 32, 32);
+		--range-thumb-min-color: rgb(34 32 32);
 		--range-track-color: var(--color-gray-600);
 		--range-track-focus-color: var(--color-gray-500);
 		--range-track-active-color: var(--color-blue-600);
@@ -59,22 +61,22 @@
 		--code-attr-value: #F9EE98;
 		--code-attribute: #F9EE98;
 		--code-background: var(--surface-2);
-		--code-boolean: #99CC99;
+		--code-boolean: #9C9;
 		--code-builtin: #A8FF60;
 		--code-cdata: #7C7C7C;
 		--code-class: #FFFFB6;
 		--code-char: #A8FF60;
 		--code-class-name: #E9C062;
-		--code-color: #c5c8c6;
+		--code-color: #C5C8C6;
 		--code-comment: #7C7C7C;
-		--code-constant: #99CC99;
+		--code-constant: #9C9;
 		--code-deleted: #FFFFB6;
 		--code-doctype: #7C7C7C;
 		--code-entity: #FFFFB6;
 		--code-function: #DAD085;
 		--code-hexcode: #FF73FD;
-		--code-id: #fd971f;
-		--code-important: #fd971f;
+		--code-id: #FD971F;
+		--code-important: #FD971F;
 		--code-inserted: #A8FF60;
 		--code-keyword: #96CBFE;
 		--code-number: #FF73FD;
@@ -83,13 +85,13 @@
 		--code-property: #96CBFE;
 		--code-pseudo-class: #A8FF60;
 		--code-pseudo-element: #A8FF60;
-		--code-punctuation: #c5c8c6;
+		--code-punctuation: #C5C8C6;
 		--code-regex: #E9C062;
-		--code-selection-bg: #cceae7;
+		--code-selection-bg: #CCEAE7;
 		--code-selection-color: #263238;
 		--code-selector: #A8FF60;
 		--code-string: #A8FF60;
-		--code-symbol: #f92672;
+		--code-symbol: #F92672;
 		--code-tag: #96CBFE;
 		--code-unit: #FF73FD;
 		--code-url: #96CBFE;
@@ -97,28 +99,28 @@
 	}
 }
 
-[theme=dark],
-:root[theme=dark] {
+[theme="dark"],
+:root[theme="dark"] {
 	color-scheme: dark light;
 
 	--accent: var(--color-primary-500);
 
-	--surface-1: #0e1625;
-	--surface-2: #090e19;
+	--surface-1: #0E1625;
+	--surface-2: #090E19;
 	--surface-3: #172137;
-	--surface-4: #202e4d;
+	--surface-4: #202E4D;
 	--surface-1-text: var(--color-gray-400);
-	--surface-1-text-contrast : var(--color-gray-200);
-	--surface-1-text-less-contrast : var(--color-gray-500);
+	--surface-1-text-contrast: var(--color-gray-200);
+	--surface-1-text-less-contrast: var(--color-gray-500);
 	--surface-2-text: var(--color-gray-300);
-	--surface-2-text-contrast : var(--color-gray-100);
-	--surface-2-text-less-contrast : var(--color-gray-500);
+	--surface-2-text-contrast: var(--color-gray-100);
+	--surface-2-text-less-contrast: var(--color-gray-500);
 	--surface-3-text: var(--color-gray-300);
-	--surface-3-text-contrast : var(--color-gray-200);
-	--surface-3-text-less-contrast : var(--color-gray-400);
+	--surface-3-text-contrast: var(--color-gray-200);
+	--surface-3-text-less-contrast: var(--color-gray-400);
 	--surface-4-text: var(--color-gray-300);
-	--surface-4-text-contrast : var(--color-gray-200);
-	--surface-4-text-less-contrast : var(--color-gray-400);
+	--surface-4-text-contrast: var(--color-gray-200);
+	--surface-4-text-less-contrast: var(--color-gray-400);
 
 	--color-heading: var(--color-blue-300);
 
@@ -144,7 +146,7 @@
 
 	--range-thumb-color: var(--color-blue-400);
 	--range-thumb-focus-color: #999EEB60;
-	--range-thumb-min-color: rgb(34, 32, 32);
+	--range-thumb-min-color: rgb(34 32 32);
 	--range-track-color: var(--color-gray-600);
 	--range-track-focus-color: var(--color-gray-500);
 	--range-track-active-color: var(--color-blue-600);
@@ -158,22 +160,22 @@
 	--code-attr-value: #F9EE98;
 	--code-attribute: #F9EE98;
 	--code-background: var(--surface-2);
-	--code-boolean: #99CC99;
+	--code-boolean: #9C9;
 	--code-builtin: #A8FF60;
 	--code-cdata: #7C7C7C;
 	--code-class: #FFFFB6;
 	--code-char: #A8FF60;
 	--code-class-name: #E9C062;
-	--code-color: #c5c8c6;
+	--code-color: #C5C8C6;
 	--code-comment: #7C7C7C;
-	--code-constant: #99CC99;
+	--code-constant: #9C9;
 	--code-deleted: #FFFFB6;
 	--code-doctype: #7C7C7C;
 	--code-entity: #FFFFB6;
 	--code-function: #DAD085;
 	--code-hexcode: #FF73FD;
-	--code-id: #fd971f;
-	--code-important: #fd971f;
+	--code-id: #FD971F;
+	--code-important: #FD971F;
 	--code-inserted: #A8FF60;
 	--code-keyword: #96CBFE;
 	--code-number: #FF73FD;
@@ -182,13 +184,13 @@
 	--code-property: #96CBFE;
 	--code-pseudo-class: #A8FF60;
 	--code-pseudo-element: #A8FF60;
-	--code-punctuation: #c5c8c6;
+	--code-punctuation: #C5C8C6;
 	--code-regex: #E9C062;
-	--code-selection-bg: #cceae7;
+	--code-selection-bg: #CCEAE7;
 	--code-selection-color: #263238;
 	--code-selector: #A8FF60;
 	--code-string: #A8FF60;
-	--code-symbol: #f92672;
+	--code-symbol: #F92672;
 	--code-tag: #96CBFE;
 	--code-unit: #FF73FD;
 	--code-url: #96CBFE;
