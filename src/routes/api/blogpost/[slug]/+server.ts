@@ -1,6 +1,6 @@
 import { error } from "@sveltejs/kit";
 import { getBlogposts } from "@data/posts";
-import type { RequestHandler } from "$types";
+import type { RequestHandler } from "./$types";
 import type { Blogpost } from "@types";
 
 export const GET: RequestHandler = async ({ params }) => {
