@@ -12,7 +12,7 @@ updated: 2022-05-24T00:20:00.000Z
 ---
 
 <script>
-  import { EulerProblem } from "@components/blogpost";
+  import { EulerProblem } from "../components";
 	import "katex/dist/katex.min.css";
 </script>
 
