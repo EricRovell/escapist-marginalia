@@ -6,14 +6,6 @@
 	text-transform: capitalize;
 }
 
-.locale-route:hover {
-	background-color: var(--surface-2);
-}
-
-.locale-route:hover > a:not(:global(.disabled)) {
-	text-decoration: unset;
-}
-
 .locale-route a {
 	border-radius: var(--radius-s);
 	display: flex;
@@ -23,6 +15,20 @@
 	width: 100%;
 }
 
+.locale-route:hover {
+	background-color: var(--surface-2);
+}
+
+.locale-route:global(.labeled) a {
+	display: flex;
+	align-items: center;
+	padding: var(--space-2-rel);
+}
+
+.locale-route:hover > a:not(:global(.disabled)) {
+	text-decoration: unset;
+}
+
 .locale {
 	text-transform: uppercase;
 }
@@ -30,10 +36,4 @@
 .locale-route:global(.labeled) {
 	display: flex;
 	align-items: center;
-}
-
-.locale-route:global(.labeled) a {
-	display: flex;
-	align-items: center;
-	padding: var(--space-2-rel);
 }

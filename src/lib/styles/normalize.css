@@ -23,7 +23,8 @@ a {
 	text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
 	list-style: none;
 }
 
@@ -49,11 +50,16 @@ sup {
 	top: -0.5em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	max-inline-size: 45ch;
 	margin-block: var(--space-2-rel);
 	font-weight: 600;
-	color: var(--color-heading)
+	color: var(--color-heading);
 }
 
 h1 {
@@ -80,23 +86,20 @@ h6 {
 	font-size: var(--font-size-1);
 }
 
+:focus-visible {
+	outline: 2px dashed var(--focus-ring-color);
+	outline-offset: calc(0.75 * var(--space-1));
+}
+
 @media (prefers-reduced-motion: no-preference) {
 	:focus-visible {
 		transition: outline-offset 0.25s ease;
-	}
-
-	:focus-visible {
-		outline-width: 2px;
-		outline-style: dashed;
-		outline-offset: calc(0.75 * var(--space-1));
-		outline-color: var(--focus-ring-color);
 	}
 
 	:focus-visible:active {
 		outline-width: 0;
 	}
 }
-
 
 .katex-display > .katex {
 	white-space: unset;

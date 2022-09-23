@@ -1,8 +1,6 @@
 .container {
 	width: min(100%, calc(var(--max-width) + 2 * var(--space-3)));
 	padding: var(--space-3);
-	/* margin-left: auto;
-	margin-right: auto; */
 }
 
 .grid-flexible {
@@ -15,7 +13,7 @@
 .flex-center {
 	display: flex;
 	align-items: center;
-  justify-content: center;
+	justify-content: center;
 }
 
 .card {
@@ -32,15 +30,15 @@
 	height: auto;
 	max-width: 85vw;
 	max-height: 85vh;
-	
 	object-fit: contain;
 }
 
 .line-clamp {
-  display: -webkit-box;
-  -webkit-line-clamp: var(--line-count, 3);
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+	/* stylelint-disable-next-line value-no-vendor-prefix */
+	display: -webkit-box;
+	-webkit-line-clamp: var(--line-count, 3);
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
 .ellipsis {
@@ -56,24 +54,24 @@
 
 /* scrollbar */
 .custom-scroll {
-  scrollbar-width: var(--scroll-width);
-  scrollbar-color: var(--scroll-thumb-color) var(--scroll-track-color);
+	scrollbar-width: var(--scroll-width);
+	scrollbar-color: var(--scroll-thumb-color) var(--scroll-track-color);
 }
 
 /* Works on Chrome, Edge, and Safari */
 .custom-scroll::-webkit-scrollbar {
-  width: var(--scroll-width);
+	width: var(--scroll-width);
 }
 
 .custom-scroll::-webkit-scrollbar-track {
-  background: var(--scroll-track-color);
-	border-radius:var(--scroll-thumb-radius);
+	background: var(--scroll-track-color);
+	border-radius: var(--scroll-thumb-radius);
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-  background-color: var(--scroll-thumb-color);
+	background-color: var(--scroll-thumb-color);
 	border-radius: var(--scroll-thumb-radius);
-  border: var(--scroll-thumb-padding) solid var(--scroll-track-color);
+	border: var(--scroll-thumb-padding) solid var(--scroll-track-color);
 }
 
 /* surfaces */
@@ -99,14 +97,14 @@
 }
 
 .visually-hidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	margin: -1px;
 }

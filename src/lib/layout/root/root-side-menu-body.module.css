@@ -23,7 +23,7 @@
 }
 
 .nav li:not(:last-child) {
-	border-bottom: 1px solid #999feb42;
+	border-bottom: 1px solid #999FEB42;
 }
 
 .nav a {

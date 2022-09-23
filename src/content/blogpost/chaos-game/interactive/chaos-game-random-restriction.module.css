@@ -1,6 +1,5 @@
 .wrapper {
 	--size: min(100% - var(--space-3), 350px);
-
 	--canvas-width: var(--size);
 	--canvas-height: var(--size);
 }

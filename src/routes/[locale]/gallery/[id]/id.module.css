@@ -19,10 +19,10 @@
 }
 
 .image img {
-	width: auto;
 	/* save space for action controls */
 	max-width: calc(100vw - 6 * var(--icon-size));
 	max-height: calc(75vh - 2 * var(--space-7));
+	width: auto;
 	object-fit: contain;
 }
 
@@ -34,11 +34,9 @@
 
 .actions {
 	align-self: flex-end;
-
 	position: absolute;
 	top: 0;
 	right: 0;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

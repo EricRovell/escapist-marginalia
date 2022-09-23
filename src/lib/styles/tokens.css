@@ -1,3 +1,5 @@
+/* stylelint-disable custom-property-empty-line-before */
+
 :root {
 	/* palette */
 	--color-primary-50: #FFF9F9;
@@ -43,7 +45,7 @@
 	--scroll-width: 8px;
 	--scroll-thumb-radius: 10px;
 	--scroll-thumb-padding: 1px;
-	
+
 	/* z-index */
 	--z-index-under: -1;
 	--z-index-default: 0;
