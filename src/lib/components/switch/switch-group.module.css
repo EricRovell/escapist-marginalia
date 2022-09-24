@@ -1,5 +1,4 @@
 .fieldset {
-	border: none;
 	display: flex;
 	flex-flow: column nowrap;
 	border-radius: var(--radius-m);

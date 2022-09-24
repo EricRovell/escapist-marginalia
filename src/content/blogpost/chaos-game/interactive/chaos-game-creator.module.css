@@ -16,9 +16,9 @@
 	border: 2px solid var(--color-border);
 	border-radius: var(--radius-l);
 	background-color: var(--surface-2);
-
 	flex-basis: 0;
 	flex-grow: 999;
+
 	/* ↓ Wrap when the elements are of equal width */
 	min-inline-size: 60%;
 }
@@ -32,7 +32,6 @@
 }
 
 .form > fieldset {
-	border: none;
 	display: flex;
 	flex-flow: column nowrap;
 	background-color: var(--surface-4);

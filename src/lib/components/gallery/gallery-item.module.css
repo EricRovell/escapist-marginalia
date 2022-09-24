@@ -30,7 +30,6 @@
 	z-index: 1;
 	opacity: 0;
 	overflow: hidden;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -38,12 +37,10 @@
 	padding-top: var(--space-3-rel);
 	width: 100%;
 	height: 100%;
-
 	background-color: var(--dominant);
 	font-size: var(--font-size-3);
 	font-family: var(--font-secondary);
 	color: white;
-	
 	transition: opacity 0.25s ease-in-out;
 	pointer-events: none;
 }

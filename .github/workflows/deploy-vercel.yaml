@@ -29,7 +29,13 @@ jobs:
         run: |
           npm i pnpm -g
           pnpm i
+      - name: Prepare
+        run: |
           pnpm run img:process
+      - name: Lint
+        run: |
+          pnpm run lint
+          pnpm run stylelint
       - name: build
         run: |
           pnpm run build

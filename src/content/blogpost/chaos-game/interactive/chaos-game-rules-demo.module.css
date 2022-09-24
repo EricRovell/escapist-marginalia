@@ -1,4 +1,4 @@
-.root  {
+.root {
 	display: grid;
 	gap: var(--space-3);
 	justify-items: center;

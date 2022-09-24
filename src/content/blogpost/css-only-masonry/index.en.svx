@@ -7,17 +7,18 @@ layout: blogpost
 published: true
 slug: "masonry-image-gallery-with-almost-pure-css"
 title: "Masonry Image Gallery Layout with (almost) pure CSS"
-updated: 2022-05-11T15:30:00.000Z
+updated: 2022-09-22T03:16:00.000Z
 ---
 
 <script>
   import { Details } from "@components";
-  import { GridDense, GridCells, MasonryDemo, MasonryShift } from "./components";
+  import * as Interactive from "./interactive";
+  import t from "./translations/en.json";
 </script>
 
 A masonry layout is in some sense a grid layout based on columns: grid is arranged according to the columns, and lacks fixed height rows. Masonry is also known as "Tile Grid", "Cascading Grid", or most-commonly as "Pinterest layout". It's name comes from the word *mason*, as the layout looks like a stone lay. The purpose of a masonry layout is to minimize the use of space by removing the unnecessary gaps:
 
-<MasonryShift />
+<Interactive.MasonryDifference t="{t["grid-into-masonry"]}" />
 
 <Details>
   <svelte:fragment slot="title">
@@ -49,7 +50,7 @@ We will attempt to implement masonry layout approximation using modern <abbr tit
 
 The approximation will look like this:
 
-<MasonryDemo />
+<Interactive.MasonryDemo t="{t["masonry-demo"]}" />
 
 ## Implementation
 
@@ -66,7 +67,7 @@ The core idea is to break the grid into many equal cells. Knowing the cell and i
 
 As the items sizes may diffirentiate a lot, most commonly there will be gaps. Using `grid-auto-flow: dense` the grid layout will try to pack these gaps if possible:
 
-<GridDense items={30} />
+<Interactive.GridDense items={30} t="{t["grid-dense"]}" />
 
 ### Styles
 
@@ -89,7 +90,7 @@ Let's define styles first:
 
 As the result the `.masonry` will be a flexible responsive grid broken into square-like cells:
 
-<GridCells />
+<Interactive.GridCells t="{t["grid-cells"]}" />
 
 Read more about the idea [here][no-media-css-grid].
 

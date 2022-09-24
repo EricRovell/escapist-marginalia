@@ -4,11 +4,6 @@
 	font-size: inherit;
 }
 
-.link:not(.disabled):hover {
-	color: var(--color-link-hover, currentColor);
-	text-decoration: underline;
-}
-
 .link:focus-visible {
 	outline-color: var(--color-link-hover, currentColor);
 }
@@ -16,6 +11,11 @@
 .link:active {
 	color: var(--color-link-active);
 	background-color: var(--color-link-active-bg);
+}
+
+.link:not(.disabled):hover {
+	color: var(--color-link-hover, currentColor);
+	text-decoration: underline;
 }
 
 .link[aria-disabled="true"] {

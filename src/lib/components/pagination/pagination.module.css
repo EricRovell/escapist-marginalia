@@ -1,6 +1,5 @@
 .pagination {
 	place-self: center;
-
 	display: flex;
 	flex-flow: row wrap;
 	gap: var(--pagination-item-size, 1rem);
@@ -13,15 +12,16 @@
 .pagination-item.arrow {
 	/* set the item size the same as padding from Button component to show icon */
 	--pagination-item-size: calc(2 * var(--space-3));
-	padding: 0;
-}
 
-.arrow:last-of-type svg {
-	transform: rotate(0.5turn);
+	padding: 0;
 }
 
 .arrow svg {
 	pointer-events: none;
+}
+
+.arrow:last-of-type svg {
+	transform: rotate(0.5turn);
 }
 
 .pagination-item {

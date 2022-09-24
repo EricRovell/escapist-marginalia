@@ -1,22 +1,22 @@
 /* variation fonts */
 @font-face {
-	font-family: "fira-code-vf";
+	font-family: fira-code-vf;
 	src: url("/fonts/fira-code-vf.woff2") format("woff2-variations");
 }
 
 /* fallbacks, regular */
 @font-face {
-	font-family: "fira-code-regular";
+	font-family: fira-code-regular;
 	src: url("/fonts/fira-code-regular.woff2") format("woff2");
 }
 
 :root {
-	--font-monospace: "fira-code-regular", Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+	--font-monospace: "fira-code-regular", inconsolata, monaco, consolas, "courier new", courier, monospace;
 }
 
 @supports (font-variation-settings: normal) {
 	:root {
-		--font-monospace: "fira-code-vf", Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+		--font-monospace: "fira-code-vf", inconsolata, monaco, consolas, "courier new", courier, monospace;
 	}
 }
 
@@ -30,29 +30,22 @@ pre[class*="language-"] {
 	word-spacing: normal;
 	word-break: normal;
 	line-height: 1.5;
-
-	-moz-tab-size: 2;
-	-o-tab-size: 2;
 	tab-size: 2;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
 	hyphens: none;
 }
 
-code[class*="language-"]::-moz-selection,
-pre[class*="language-"]::-moz-selection,
-code[class*="language-"] ::-moz-selection,
-pre[class*="language-"] ::-moz-selection {
-	background: var(--code-selection-bg);
-	color: var(--code-selection-color);
+/* Inline code */
+:not(pre) > code[class*="language-"],
+:not(pre) > code {
+	color: var(--code-color);
+	background: var(--code-background);
+	padding: var(--space-1-rel) var(--space-2-rel);
+	border-radius: var(--radius-s);
+	box-shadow: 0 0 2px #7A82E3;
 }
 
 code[class*="language-"]::selection,
-pre[class*="language-"]::selection,
-code[class*="language-"] ::selection,
-pre[class*="language-"] ::selection {
+pre[class*="language-"]::selection {
 	background: var(--code-selection-bg);
 	color: var(--code-selection-color);
 }
@@ -63,8 +56,11 @@ pre[class*="language-"] {
 	position: relative;
 	overflow: auto;
 	border-radius: var(--radius-m);
-	border: 2px solid #7a83e35b;
+	border: 2px solid #7A83E35B;
 	font-size: 0.85em;
+	background: var(--code-background);
+	scrollbar-width: 4px;
+	scrollbar-color: var(--scroll-thumb-color) var(--scroll-track-color);
 }
 
 /* labels */
@@ -80,7 +76,7 @@ pre[class*="language-"]::before {
 
 pre[class*="language-"] > code {
 	padding: var(--space-3-rel) var(--space-4-rel);
-	border-top: 1.5px solid #7a83e35b;
+	border-top: 1.5px solid #7A83E35B;
 }
 
 pre[class="language-python"]::before {
@@ -107,25 +103,8 @@ pre[class="language-svelte"]::before {
 	content: "Svelte";
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > code[class*="language-"] {
 	background: var(--code-background);
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"],
-:not(pre) > code {
-	color: var(--code-color);
-	background: var(--code-background);
-	padding: var(--space-1-rel) var(--space-2-rel);
-	border-radius: var(--radius-s);
-	box-shadow: 0px 0px 2px #7A82E3;
-}
-
-/* scroll */
-pre[class*="language-"] {
-	scrollbar-width: 4px;
-	scrollbar-color: var(--scroll-thumb-color) var(--scroll-track-color);
 }
 
 /* Works on Chrome, Edge, and Safari */
@@ -294,7 +273,7 @@ pre[class*="language-"]::-webkit-scrollbar-thumb {
 }
 
 .namespace {
-	opacity: .7;
+	opacity: 0.7;
 }
 
 .token.bold {

@@ -1,18 +1,15 @@
 .switcher {
 	color: var(--color-link);
-
 	display: flex;
 	place-items: center;
 	height: auto;
-	height: auto;
-	padding: 0.1em;
 	border: 2px solid var(--color-border);
 	border-radius: var(--radius-s);
 	padding: calc(0.75 * var(--space-1-rel));
 	font-size: inherit;
 	font-family: inherit;
 	text-transform: capitalize;
-	cursor: pointer;	
+	cursor: pointer;
 }
 
 .switcher:hover {
@@ -20,9 +17,6 @@
 }
 
 .switcher:global(.labeled) {
-	width: 100%;
-
-	border-radius: var(--radius-s);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -40,4 +34,3 @@
 .switcher:global(.labeled):hover {
 	background-color: var(--surface-2);
 }
-

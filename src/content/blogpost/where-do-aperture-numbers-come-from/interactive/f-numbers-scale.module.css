@@ -1,5 +1,5 @@
 .wrapper form {
-	width: min(100% - var(--space-3), 350px)
+	width: min(100% - var(--space-3), 350px);
 }
 
 .wrapper form > *:not(:last-child) {

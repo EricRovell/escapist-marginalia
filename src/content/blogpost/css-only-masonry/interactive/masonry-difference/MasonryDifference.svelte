@@ -7,9 +7,11 @@
 
 <script lang="ts">
 	import { Switch } from "@components";
-	import styles from "./styles.module.css";
+	import { cell } from "../../components/cell.module.css";
+	import styles from "./masonry-difference.module.css";
 
 	export let masonry = false;
+	export let t: Record<string, string>;
 
 	const items: Array<Item[]> = [
 		[
@@ -38,22 +40,23 @@
 
 	Demo for `Grid` -> `Masonry` transformation.
 -->
-<section class="{styles.wide} wide {styles["shift-demo"]}">
-	<form class="controls">
-		<Switch bind:checked={masonry}>
-			Masonry
-		</Switch>
-	</form>
+<section class="wide interactive {styles["shift-demo"]}">
+	<h3>{t["title"]}</h3>
 	<ul>
 		{#each items as row}
 			{#each row as { h, d = 0}}
 				{@const shift = masonry ? d : 0}
 				<li
-					class="{styles["grid-item"]}"
+					class="{cell}"
 					style:height="{h}px"
 					style:transform="translateY(-{shift}px)"
 				/>
 			{/each}
 		{/each}
 	</ul>
+	<form>
+		<Switch bind:checked={masonry}>
+			{t["masonry"]}
+		</Switch>
+	</form>
 </section>

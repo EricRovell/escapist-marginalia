@@ -1,6 +1,5 @@
 .masthead {
 	grid-area: masthead;
-	
 	display: grid;
 	grid-template: 1fr / repeat(3, 1fr);
 	grid-template-areas: "logo navigation controls";
@@ -8,7 +7,6 @@
 	gap: var(--space-3);
 	min-height: var(--header-height, 50px);
 	z-index: var(--z-index-navigation);
-
 	background-color: var(--masthead-bg, transparent);
 }
 
@@ -19,17 +17,16 @@
 	justify-self: start;
 }
 
-.masthead >section[label="navigation"] {
+.masthead > section[label="navigation"] {
 	grid-area: navigation;
 	font-size: var(--font-size-0);
 }
 
-.masthead >section[label="controls"] {
+.masthead > section[label="controls"] {
 	--theme-toggle-size: 1.5em;
 
 	grid-area: controls;
 	justify-self: end;
-	
 	display: grid;
 	grid-auto-flow: column;
 	grid-auto-columns: auto;

@@ -10,11 +10,11 @@
 
 .outer {
 	stroke-width: 2px;
-	stroke: rgb(112 130 209 / 0.5);
+	stroke: rgb(112 130 209 / 50%);
 	fill: none;
 }
 
 .inner {
 	stroke-width: 0;
-	fill: rgb(112 130 209 / 0.5);
+	fill: rgb(112 130 209 / 50%);
 }
