@@ -1,0 +1,17 @@
+.shift-demo > ul {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: var(--space-3);
+	width: min(100% - var(--space-3), 50ch);
+	margin-block: var(--space-3);
+	list-style: none;
+}
+
+.shift-demo ul > li {
+	transition: transform 0.15s ease-in-out;
+}
+
+.shift-demo form {
+	display: flex;
+	justify-content: center;
+}

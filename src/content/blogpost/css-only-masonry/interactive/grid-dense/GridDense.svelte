@@ -4,9 +4,11 @@
 
 <script lang="ts">
 	import { Range } from "@components";
-	import styles from "./styles.module.css";
+	import { cell } from "../../components/cell.module.css";
+	import styles from "./grid-dense.module.css";
 
 	export let items = 20;
+	export let t: Record<string, string>;
 
 	const getSpan = () => {
 		const spanned = randBool(0.2);
@@ -21,17 +23,20 @@
 
 	Demo for `CSS Grid` width dense flow and spanned items.
 -->
-<section class="{styles.wide} wide {styles["grid-span"]}">
-	<Range bind:value={items} min={1} max={50} step={1} tooltip>
-		Items
-	</Range>
-	<ul class="grid">
+<section class="wide interactive">
+	<h3>{t["title"]}</h3>
+	<form class="{styles.form}" on:submit|preventDefault>
+		<Range bind:value={items} min={1} max={50} step={1} output>
+			{t["items"]}
+		</Range>
+	</form>
+	<ul class="{styles["grid-span"]}">
 		{#each { length: items } as _, i}
 			{@const [ row, column ] = getSpan()}
 			{@const spanned = row !== 1 || column !== 1}
 			{@const aspect = spanned ? `${row} / ${column}` : ""}
 			<li
-				class={styles["grid-item"]}
+				class="{cell}"
 				style:grid-column="span {row}"
 				style:grid-row="span {column}"
 			>
