@@ -18,6 +18,7 @@
 	export let updated;
 	export let series;
 	export let toc = [];
+	export let translation = null;
 </script>
 
 <Meta
@@ -55,6 +56,7 @@
 		{keywords}
 		{created}
 		{updated}
+		{translation}
 		slot="banner"
 	/>
 	<article class={styles.article}>

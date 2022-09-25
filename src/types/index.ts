@@ -16,6 +16,10 @@ export interface BlogpostMetadata {
 	series: string;
 	slug: string;
 	title: string;
+	translation: {
+		lang: Locale;
+		slug: string;
+	};
 	toc: {
 		id: string;
 		level: number;

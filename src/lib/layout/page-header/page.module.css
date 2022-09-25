@@ -3,7 +3,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: var(--space-9) var(--space-2);
+	padding: var(--space-9) var(--space-4);
 }
 
 .page {
@@ -35,6 +35,7 @@
 	font-family: var(--font-secondary);
 	color: var(--color-heading);
 	text-align: center;
+	margin-block-start: 0;
 }
 
 .banner > p:global(.headline) {
