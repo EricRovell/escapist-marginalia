@@ -6,10 +6,10 @@
 
 		--accent: var(--color-primary-500);
 
-		--surface-1: hsl(240deg 40% 97%);
-		--surface-2: hsl(240deg 75% 100%);
-		--surface-3: hsl(235deg 20% 92%);
-		--surface-4: hsl(235deg 20% 85%);
+		--surface-1: hsl(240deg 35% 100%);
+		--surface-2: hsl(240deg 35% 98%);
+		--surface-3: hsl(240deg 35% 96%);
+		--surface-4: hsl(240deg 35% 93%);
 		--surface-1-text: var(--color-gray-700);
 		--surface-1-text-contrast: var(--color-gray-1000);
 		--surface-1-text-less-contrast: var(--color-gray-500);
@@ -21,10 +21,10 @@
 		--surface-3-text-less-contrast: var(--color-gray-500);
 		--surface-4-text: var(--color-gray-800);
 		--surface-4-text-contrast: var(--color-gray-1000);
-		--surface-4-text-less-contrast: var(--color-gray-600);
+		--surface-4-text-less-contrast: var(--color-gray-500);
 
 		--color-heading: var(--color-blue-500);
-		--color-text-primary: var(--color-gray-300);
+		--color-text-primary: var(--color-gray-900);
 		--color-text-secondary: var(--color-gray-400);
 		--color-link: var(--color-blue-500);
 		--color-link-hover: var(--color-blue-400);
@@ -33,28 +33,28 @@
 
 		--color-border: var(--color-blue-300);
 
-		--focus-ring-color: var(--color-blue-100);
+		--focus-ring-color: var(--color-blue-300);
 
 		--button-accent: var(--color-blue-500);
 		--button-color: var(--color-blue-200);
 		--button-focus-ring-color: #7A82E33F;
 		--button-border-color: var(--color-blue-400);
 
-		--switch-track-color: var(--color-gray-600);
-		--switch-track-color-active: var(--color-blue-700);
-		--switch-thumb-color: var(--color-gray-200);
-		--switch-thumb-color-highlight: var(--color-blue-900);
+		--switch-track-color: var(--color-gray-300);
+		--switch-track-color-active: var(--color-blue-500);
+		--switch-thumb-color: var(--color-gray-100);
+		--switch-thumb-color-highlight: var(--color-blue-200);
 
 		--range-thumb-color: var(--color-blue-400);
 		--range-thumb-focus-color: #7A82E33F;
 		--range-thumb-min-color: rgb(238 228 228);
-		--range-track-color: var(--color-gray-400);
-		--range-track-focus-color: var(--color-gray-500);
+		--range-track-color: var(--color-gray-200);
+		--range-track-focus-color: var(--color-gray-300);
 		--range-track-active-color: var(--color-blue-500);
 		--range-tooltip-bg: var(--color-blue-500);
 
 		--scroll-track-color: var(--surface-2);
-		--scroll-thumb-color: #253758;
+		--scroll-thumb-color: rgb(76 101 146);
 
 		--code-atrule: #7C4DFF;
 		--code-attr-name: #39ADB5;
@@ -67,7 +67,7 @@
 		--code-char: #39ADB5;
 		--code-class: #39ADB5;
 		--code-class-name: #6182B8;
-		--code-color: #90A4AE;
+		--code-color: var(--surface-2-text-contrast);
 		--code-comment: #AABFC9;
 		--code-constant: #7C4DFF;
 		--code-deleted: #E53935;
@@ -105,10 +105,10 @@
 
 	--accent: var(--color-primary-500);
 
-	--surface-1: hsl(240deg 40% 97%);
-	--surface-2: hsl(240deg 75% 100%);
-	--surface-3: hsl(235deg 20% 92%);
-	--surface-4: hsl(235deg 20% 85%);
+	--surface-1: hsl(240deg 35% 100%);
+	--surface-2: hsl(240deg 35% 98%);
+	--surface-3: hsl(240deg 35% 96%);
+	--surface-4: hsl(240deg 35% 93%);
 	--surface-1-text: var(--color-gray-700);
 	--surface-1-text-contrast: var(--color-gray-1000);
 	--surface-1-text-less-contrast: var(--color-gray-500);
@@ -120,7 +120,7 @@
 	--surface-3-text-less-contrast: var(--color-gray-500);
 	--surface-4-text: var(--color-gray-800);
 	--surface-4-text-contrast: var(--color-gray-1000);
-	--surface-4-text-less-contrast: var(--color-gray-600);
+	--surface-4-text-less-contrast: var(--color-gray-500);
 
 	--color-heading: var(--color-blue-500);
 	--color-text-primary: var(--color-gray-900);
@@ -139,16 +139,16 @@
 	--button-focus-ring-color: #7A82E33F;
 	--button-border-color: var(--color-blue-400);
 
-	--switch-track-color: var(--color-gray-500);
+	--switch-track-color: var(--color-gray-300);
 	--switch-track-color-active: var(--color-blue-500);
-	--switch-thumb-color: var(--color-gray-200);
+	--switch-thumb-color: var(--color-gray-100);
 	--switch-thumb-color-highlight: var(--color-blue-200);
 
 	--range-thumb-color: var(--color-blue-400);
 	--range-thumb-focus-color: #7A82E33F;
 	--range-thumb-min-color: rgb(238 228 228);
-	--range-track-color: var(--color-gray-400);
-	--range-track-focus-color: var(--color-gray-500);
+	--range-track-color: var(--color-gray-200);
+	--range-track-focus-color: var(--color-gray-300);
 	--range-track-active-color: var(--color-blue-500);
 	--range-tooltip-bg: var(--color-blue-500);
 
@@ -166,7 +166,7 @@
 	--code-char: #39ADB5;
 	--code-class: #39ADB5;
 	--code-class-name: #6182B8;
-	--code-color: #90A4AE;
+	--code-color: var(--surface-2-text-contrast);
 	--code-comment: #AABFC9;
 	--code-constant: #7C4DFF;
 	--code-deleted: #E53935;

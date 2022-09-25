@@ -10,7 +10,7 @@
 	gap: var(--space-2-rel, 0.5em);
 	width: auto;
 	height: auto;
-	padding: var(--space-3-rel);
+	padding: var(--space-2-rel) var(--space-3-rel);
 	border-radius: 0.25em;
 	background-color: var(--button-accent);
 	color: var(--button-color, inherit);

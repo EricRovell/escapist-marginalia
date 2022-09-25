@@ -6,15 +6,15 @@
 
 		--accent: var(--color-primary-500);
 
-		--surface-1: #0E1625;
-		--surface-2: #090E19;
+		--surface-1: #090E19;
+		--surface-2: #0E1625;
 		--surface-3: #172137;
 		--surface-4: #202E4D;
-		--surface-1-text: var(--color-gray-400);
-		--surface-1-text-contrast: var(--color-gray-200);
+		--surface-1-text: var(--color-gray-300);
+		--surface-1-text-contrast: var(--color-gray-100);
 		--surface-1-text-less-contrast: var(--color-gray-500);
-		--surface-2-text: var(--color-gray-300);
-		--surface-2-text-contrast: var(--color-gray-100);
+		--surface-2-text: var(--color-gray-400);
+		--surface-2-text-contrast: var(--color-gray-200);
 		--surface-2-text-less-contrast: var(--color-gray-500);
 		--surface-3-text: var(--color-gray-300);
 		--surface-3-text-contrast: var(--color-gray-200);
@@ -105,15 +105,15 @@
 
 	--accent: var(--color-primary-500);
 
-	--surface-1: #0E1625;
-	--surface-2: #090E19;
+	--surface-1: #090E19;
+	--surface-2: #0E1625;
 	--surface-3: #172137;
 	--surface-4: #202E4D;
-	--surface-1-text: var(--color-gray-400);
-	--surface-1-text-contrast: var(--color-gray-200);
+	--surface-1-text: var(--color-gray-300);
+	--surface-1-text-contrast: var(--color-gray-100);
 	--surface-1-text-less-contrast: var(--color-gray-500);
-	--surface-2-text: var(--color-gray-300);
-	--surface-2-text-contrast: var(--color-gray-100);
+	--surface-2-text: var(--color-gray-400);
+	--surface-2-text-contrast: var(--color-gray-200);
 	--surface-2-text-less-contrast: var(--color-gray-500);
 	--surface-3-text: var(--color-gray-300);
 	--surface-3-text-contrast: var(--color-gray-200);
