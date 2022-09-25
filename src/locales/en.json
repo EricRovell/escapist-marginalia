@@ -1,24 +1,24 @@
 {
-  "sections": {
-    "home": "home",
-    "blog": "blog",
-    "gallery": "gallery",
-    "projects": "projects",
-    "about": "about",
-    "source": "source",
-    "licence": "licence",
-    "privacy": "privacy",
+	"sections": {
+		"home": "home",
+		"blog": "blog",
+		"gallery": "gallery",
+		"projects": "projects",
+		"about": "about",
+		"source": "source",
+		"licence": "licence",
+		"privacy": "privacy",
 		"rss": "RSS Feed"
-  },
-  "dict": {
+	},
+	"dict": {
 		"language": "language",
 		"theme": "theme",
 		"topics": "topics",
 		"series": "series",
-    "project-euler": "project euler",
-    "algorithms": "algorithms",
-    "library": "libraries",
-    "app": "web applications",
+		"project-euler": "project euler",
+		"algorithms": "algorithms",
+		"library": "libraries",
+		"app": "web applications",
 		"math": "math",
 		"photo": "photography",
 		"web": "web",
@@ -30,25 +30,26 @@
 		"all-projects": "All projects",
 		"menu": "Menu",
 		"blogpost-filters": "Blogpost filters"
-  },
-  "tooltip": {
-    "change-theme": "Change theme",
-    "change-locale": "Change language",
+	},
+	"tooltip": {
+		"change-theme": "Change theme",
+		"change-locale": "Change language",
 		"share": "Share",
 		"download": "Download",
 		"fullscreen": "Fullscreen"
-  },
-  "message": {
-    "blogpost": "blogpost",
-    "reference-list": "Reference List",
-    "content-language": "content language",
-    "toc": "Table of contents",
-    "created-at": "Created at",
-    "last-updated-at": "Last updated at",
+	},
+	"message": {
+		"blogpost": "blogpost",
+		"reference-list": "Reference List",
+		"content-language": "content language",
+		"toc": "Table of contents",
+		"published": "Published at",
+		"updated": "updated at",
+		"available-translation": "Blogpost also available in",
 		"build-at": "Build at",
 		"blogpost-counter": "Showing %s blogposts of %s"
-  },
-  "pages": {
+	},
+	"pages": {
 		"home": {
 			"title": "Eric Rovell",
 			"description": "Personal blog about math, programming, photography, and more...",

@@ -1,24 +1,24 @@
 {
-  "sections": {
-    "home": "главная",
-    "blog": "блог",
-    "gallery": "галерея",
-    "projects": "проекты",
-    "about": "о себе",
-    "source": "Исходный код",
-    "licence": "Лицензия",
-    "privacy": "Приватность",
+	"sections": {
+		"home": "главная",
+		"blog": "блог",
+		"gallery": "галерея",
+		"projects": "проекты",
+		"about": "о себе",
+		"source": "Исходный код",
+		"licence": "Лицензия",
+		"privacy": "Приватность",
 		"rss": "Лента RSS"
-  },
-  "dict": {
+	},
+	"dict": {
 		"language": "язык",
 		"theme": "тема оформления",
 		"topics": "тема",
 		"series": "серия",
-    "project-euler": "проект эйлера",
-    "algorithms": "алгоритмы",
-    "library": "библиотека",
-    "app": "веб приложение",
+		"project-euler": "проект эйлера",
+		"algorithms": "алгоритмы",
+		"library": "библиотека",
+		"app": "веб приложение",
 		"math": "математика",
 		"photo": "фотография",
 		"web": "веб",
@@ -30,25 +30,26 @@
 		"all-projects": "Все проекты",
 		"menu": "Меню",
 		"blogpost-filters": "Фильтры публикаций"
-  },
-  "tooltip": {
-    "change-theme": "Сменить тему оформления",
-    "change-locale": "Сменить язык",
+	},
+	"tooltip": {
+		"change-theme": "Сменить тему оформления",
+		"change-locale": "Сменить язык",
 		"share": "Поделиться",
 		"download": "Скачать",
 		"fullscreen": "Полноэкранный просмотр"
-  },
-  "message": {
-    "blogpost": "статья",
-    "reference-list": "Ссылки по теме",
-    "content-language": "язык публикаций",
-    "toc": "Содержание",
-    "created-at": "Опубликовано",
-    "last-updated-at": "Последнее обновление",
+	},
+	"message": {
+		"blogpost": "статья",
+		"reference-list": "Ссылки по теме",
+		"content-language": "язык публикаций",
+		"toc": "Содержание",
+		"published": "Опубликовано",
+		"updated": "обновлено",
+		"available-translation": "Публикация также доступна на",
 		"build-at": "Сборка от",
 		"blogpost-counter": "Отображено %s публикаций из %s"
-  },
-  "pages": {
+	},
+	"pages": {
 		"home": {
 			"title": "Эрик Ровелл",
 			"description": "Личный сайт о математике, программировании, фотографии и обо всём интересном мне.",

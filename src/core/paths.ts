@@ -14,7 +14,7 @@ export const pathAbout = derived(root, $root => `${$root}/about`);
 export const pathRSS = derived(root, $root => `${$root}/rss.xml`);
 export const pathRSSMultilang = derived(webpage, $webpage => `${$webpage}/rss.xml`);
 
-export const pathBlogpost = derived(root, $root => (slug: string) => `${$root}/blog/${slug}`);
+export const pathBlogpost = derived(root, $root => (slug: string) => `${$root}/blog/${encodeURI(slug)}`);
 export const pathGalleryImage = derived(pathGallery, $root => (id: string) => `${$root}/${id}`);
 
 export const pathLicence = "https://github.com/EricRovell/ericrovell.me/blob/main/LICENSE";

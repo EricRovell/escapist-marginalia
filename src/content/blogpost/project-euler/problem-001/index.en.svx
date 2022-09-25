@@ -8,7 +8,7 @@ published: true
 series: "project-euler"
 slug: "project-euler-1"
 title: "Project Euler #1: Multiples of 3 or 5"
-updated: 2022-05-24T00:20:00.000Z
+translation: { lang: "русский", slug: "проект-эйлера-1" }
 ---
 
 <script>
