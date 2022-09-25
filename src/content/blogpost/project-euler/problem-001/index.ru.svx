@@ -8,6 +8,7 @@ published: true
 series: "project-euler"
 slug: "проект-эйлера-1"
 title: "Проект Эйлера #1: Числа, кратные 3 или 5"
+translation: { lang: "english", slug: "project-euler-1" }
 updated: 2022-05-24T00:20:00.000Z
 ---
 

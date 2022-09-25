@@ -7,6 +7,7 @@ layout: blogpost
 published: true
 slug: "галерея-изображений-в-раскладке-masonry-на-почти-чистом-css"
 title: "Галерея изображений в раскладке Masonry на (почти) чистом CSS"
+translation: { lang: "english", slug: "masonry-image-gallery-with-almost-pure-css" }
 updated: 2022-09-22T03:16:00.000Z
 ---
 
