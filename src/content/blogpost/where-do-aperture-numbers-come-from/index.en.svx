@@ -7,6 +7,7 @@ layout: blogpost
 published: true
 slug: "where-do-aperture-numbers-come-from"
 title: "Where do aperture numbers come from?"
+translation: { lang: "русский", slug: "откуда-берутся-числа-диафрагмы" }
 updated: 2022-09-13T20:34:00.000Z
 ---
 

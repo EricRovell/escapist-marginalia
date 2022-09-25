@@ -7,6 +7,7 @@ layout: blogpost
 published: true
 slug: "the-chaos-game"
 title: "The Chaos Game: The randomness against determinism"
+translation: { lang: "русский", slug: "откуда-берутся-числа-диафрагмы" }
 updated: 2022-09-10T01:34:00.000Z
 ---
 
