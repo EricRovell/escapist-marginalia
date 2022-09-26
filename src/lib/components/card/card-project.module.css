@@ -1,27 +1,50 @@
-.card-project {
+.card {
+	display: grid;
 	grid-template-rows: min-content;
+	height: 100%;
+	border: 2px solid var(--color-border);
+	border-radius: var(--radius-l);
+	padding: var(--space-3-rel);
 }
 
-.card-project > :last-child {
-	align-self: end;
+.card > p {
+	margin-block-end: var(--space-3-rel);
 }
 
-.card-project h3 {
+.card h3 {
 	font-size: var(--font-size-2);
+	color: var(--color-heading);
 }
 
 .links {
+	--icon-size: 1.5em;
+
 	display: flex;
 	flex-wrap: wrap;
+	place-content: flex-end;
 	align-items: center;
-	gap: var(--space-2-rel);
 	font-size: var(--font-size-0);
+	width: fit-content;
+	margin-inline: auto 0;
+	height: 100%;
+}
+
+.card footer {
+	display: flex;
+	flex-flow: column;
+	gap: var(--space-2-rel);
 }
 
 .links a {
-	white-space: nowrap;
 	display: flex;
-	border: 2px solid var(--color-border);
 	border-radius: var(--radius-s);
-	padding: var(--space-1) var(--space-2);
+	padding: var(--space-2-rel);
+}
+
+.techstack {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-2-rel);
+	color: var(--surface-2-text-less-contrast);
+	font-size: var(--font-size-0);
 }

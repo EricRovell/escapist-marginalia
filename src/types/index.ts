@@ -50,34 +50,25 @@ export interface GithubAPIRepo {
 	topics: string[];
 }
 
+/**
+ * Additional project data interface.
+ */
 export interface ProjectData {
+	featured?: boolean;
 	name: string;
-	type: "library" | "app";
-	repository: string;
 	npm?: string;
+	repository: string;
+	techstack: string[];
+	type: "string";
 	website?: string;
 }
 
-export interface Project {
-	name: string;
+export interface Project extends ProjectData {
 	description: string;
-	homepage: string;
 	github: string;
+	homepage: string;
 	language: string;
 	topics: string[];
-	type: "library" | "app";
-	repository: string;
-	npm?: string;
-	website?: string;
-}
-
-/**
- * Defines a Project data used to render the view.
- */
-export interface Project extends Omit<GithubAPIRepo, "html_url"> {
-	type: "app" | "package" | "website";
-	github: string;
-	npm?: string;
 }
 
 export type { GalleryItem } from "@components";

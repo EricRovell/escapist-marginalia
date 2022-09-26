@@ -64,14 +64,15 @@
 					</Link>
 				</header>
 				<ul class="grid-flexible" style="--item-size: 250px">
-					{#each data.projects as { title, description, github, npm, homepage }}
+					{#each data.projects as { name, description, github, npm, homepage, techstack }}
 						<li>
 							<CardProject
 								{description}
 								{github}
 								{homepage}
 								{npm}
-								{title}
+								{name}
+								{techstack}
 							/>
 						</li>
 					{/each}

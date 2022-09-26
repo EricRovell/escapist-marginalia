@@ -3,25 +3,31 @@ import data from "./projects.json";
 import type { Project, ProjectData, GithubAPIRepo } from "../types";
 
 async function fetchProjectData({ repository, ...rest }: ProjectData): Promise<Project> {
-	const {
-		name,
-		description,
-		homepage,
-		html_url: github,
-		language,
-		topics
-	} = await fetchJSON<GithubAPIRepo>(`https://api.github.com/repos/${repository}`);
+	try {
+		const data = await fetchJSON<GithubAPIRepo>(`https://api.github.com/repos/${repository}`);
 
-	return {
-		...rest,
-		repository,
-		title: name,
-		description,
-		homepage,
-		github,
-		language,
-		topics
-	};
+		const {
+			name,
+			description,
+			homepage,
+			html_url: github,
+			language,
+			topics,
+		} = data;
+
+		return {
+			...rest,
+			description,
+			github,
+			homepage,
+			language,
+			name,
+			repository,
+			topics
+		};
+	} catch (error) {
+		console.error(error.message);
+	}
 }
 
 export async function getProjects(): Promise<Project[]> {

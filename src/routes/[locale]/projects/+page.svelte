@@ -2,14 +2,12 @@
 	import { t } from "@core/i18n";
 	import { PageMeta, CardProject } from "@components";
 	import { LayoutPage } from "@layout";
-	import { groupBy } from "@utils/helpers";
 	import styles from "@styles/pages/projects.module.css";
-	import type { Project } from "@types";
 	import type { PageLoad } from "./$types";
 
 	export let data: PageLoad = [];
 
-	$: groupedProjects = Object.entries<Project[]>(groupBy(data.items, project => project.type));
+	console.log(data);
 </script>
 
 <PageMeta route="projects" />
@@ -23,26 +21,21 @@
 			{$t("pages.projects.description")}
 		</p>
 	</svelte:fragment>
-	<div class={styles.layout}>
-		{#each groupedProjects as [ category, projects ]}
-			<section>
-				<h2 class="heading">
-					{$t(`dict.${category}`)}
-				</h2>
-				<ul class={styles.projects}>
-					{#each projects as { title, description, github, npm, homepage }}
-						<li class={styles.project}>
-							<CardProject 
-								{description}
-								{github}
-								{homepage}
-								{npm}
-								{title}
-							/>
-						</li>
-					{/each}
-				</ul>
-			</section>
-		{/each}
-	</div>
+	<article class={styles.layout}>
+		<ul class={styles.projects}>
+			{#each data.items as { name, description, github, npm, homepage, techstack, type }}
+				<li class={styles.project}>
+					<CardProject 
+						{description}
+						{github}
+						{homepage}
+						{npm}
+						{name}
+						{techstack}
+						{type}
+					/>
+				</li>
+			{/each}
+		</ul>
+	</article>
 </LayoutPage>
