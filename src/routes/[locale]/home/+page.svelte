@@ -29,7 +29,7 @@
 						&#x2192; {$t("dict.all-posts")}
 					</Link>
 				</header>
-				<ul class="grid-flexible" style="--item-size: 25ch">
+				<ul class="grid-flexible" style="--item-size: 28ch">
 					{#each data.blogposts as { created, description, keywords, title, slug }}
 						<li>
 							<CardArticle

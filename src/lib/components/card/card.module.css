@@ -1,6 +1,0 @@
-.card header {
-	display: flex;
-	flex-flow: column nowrap;
-	font-size: var(--font-size-1);
-	color: var(--color-gray-400);
-}

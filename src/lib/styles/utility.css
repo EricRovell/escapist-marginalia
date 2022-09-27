@@ -39,6 +39,7 @@
 	-webkit-line-clamp: var(--line-count, 3);
 	-webkit-box-orient: vertical;
 	overflow: hidden;
+	max-height: calc(var(--line-count, 3) * 1em);
 }
 
 .ellipsis {
