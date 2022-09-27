@@ -1,4 +1,5 @@
 .wrapper {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -22,6 +23,7 @@
 	text-align: center;
 	max-inline-size: 50ch;
 	line-height: 1.4;
+	margin-block-end: var(--space-7-rel);
 }
 
 .wrapper > footer {
@@ -58,7 +60,14 @@
 
 .share {
 	position: absolute;
-	top: var(--space-3);
-	right: var(--space-3);
+	bottom: calc(-3 * var(--space-3));
+	right: calc(-1 * var(--space-3));
 	opacity: 0.65;
+}
+
+@media screen and (max-width: 48em) {
+	.share {
+		right: calc(50% - 1.5em);
+		bottom: calc(-3 * var(--space-4));
+	}
 }

@@ -1,11 +1,11 @@
 .title {
-	font-size: var(--font-size-1);
+	font-size: var(--font-size-0);
 	margin: 0;
 }
 
 .toc {
-	font-size: var(--font-size-1);
 	height: min-content;
+	font-size: var(--font-size-0);
 }
 
 .toc-items {
