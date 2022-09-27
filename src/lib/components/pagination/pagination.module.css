@@ -30,6 +30,7 @@
 	opacity: 0.5;
 	width: var(--pagination-item-size, 1rem);
 	height: var(--pagination-item-size, 1rem);
+	padding: var(--space-3-rel);
 	cursor: pointer;
 }
 
