@@ -39,7 +39,7 @@ export interface Blogpost extends Omit<BlogpostMetadata, "created" | "updated" |
 }
 
 /**
- * Defines a used `repo` object subset from `Github Rest API`
+ * `Github Rest API` Project data interface.
  */
 export interface GithubAPIRepo {
 	name: string;
@@ -51,10 +51,13 @@ export interface GithubAPIRepo {
 }
 
 /**
- * Additional project data interface.
+ * Project Page Frontmatter data interface.
  */
-export interface ProjectData {
+export interface ProjectPageData {
+	description: string;
 	featured?: boolean;
+	lang: Locale;
+	layout: string | false;
 	name: string;
 	npm?: string;
 	repository: string;
@@ -63,12 +66,8 @@ export interface ProjectData {
 	website?: string;
 }
 
-export interface Project extends ProjectData {
-	description: string;
+export interface Project extends ProjectPageData, Omit<GithubAPIRepo, "html_url"> {
 	github: string;
-	homepage: string;
-	language: string;
-	topics: string[];
 }
 
 export type { GalleryItem } from "@components";
