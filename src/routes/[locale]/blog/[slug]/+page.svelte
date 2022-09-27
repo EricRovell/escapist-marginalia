@@ -1,7 +1,5 @@
 <script>
 	export let data;
-
-	const Post = data.Post;
 </script>
 
-<Post />
+<svelte:component this={data.Post} />
