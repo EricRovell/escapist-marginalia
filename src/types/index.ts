@@ -1,6 +1,15 @@
-export type Variant = "neutral" | "primary" | "success" | "danger" | "warning" | "info" | "link";
+import type { SvelteComponent } from "svelte";
 
+export type Variant = "neutral" | "primary" | "success" | "danger" | "warning" | "info" | "link";
 export type Locale = "ru" | "en";
+
+/**
+ * The MDSvex page interface.
+ */
+export interface Page<T> {
+	metadata: T;
+	default: SvelteComponent;
+}
 
 /**
  * Describes the metadata object from the blogpost's frontmatter.

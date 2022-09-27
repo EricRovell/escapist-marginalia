@@ -1,5 +1,5 @@
 import { find } from "@utils/query";
-import type { Blogpost, BlogpostMetadata, Locale } from "../types";
+import type { Blogpost, BlogpostMetadata, Locale, Page } from "../types";
 import type { QueryItem } from "@utils/query";
 
 async function fetchBlogposts(): Promise<Blogpost[]> {
@@ -9,7 +9,7 @@ async function fetchBlogposts(): Promise<Blogpost[]> {
 	const modules = import.meta.glob("/src/content/blogpost/**/*.svx");
 
 	for await (const [ filename, module ] of Object.entries(modules)) {
-		const { metadata } = await module();
+		const { metadata } = await module() as Page<BlogpostMetadata>;
 		const {
 			created,
 			updated,

@@ -1,8 +1,7 @@
 import { find } from "@utils/query";
 import { fetchJSON } from "@utils/helpers";
-import type { SvelteComponent } from "svelte";
 import type { QueryItem } from "@utils/query";
-import type { Project, ProjectPageData, GithubAPIRepo } from "../types";
+import type { Project, ProjectPageData, GithubAPIRepo, Page } from "../types";
 
 interface Options {
 	limit?: number;
@@ -28,8 +27,8 @@ const getProjectPageData = async () => {
 
 		// the key is filename, we do not need it here
 		for await (const [ , module ] of Object.entries(modules)) {
-			const { metadata } = await module() as Promise<SvelteComponent>;
-			projects.push(metadata as ProjectPageData);
+			const { metadata } = await module() as Page<ProjectPageData>;
+			projects.push(metadata);
 		}
 
 		return projects;
