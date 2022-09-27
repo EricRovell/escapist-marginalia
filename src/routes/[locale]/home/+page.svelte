@@ -29,7 +29,7 @@
 						&#x2192; {$t("dict.all-posts")}
 					</Link>
 				</header>
-				<ul class="grid-flexible" style="--item-size: 250px">
+				<ul class="grid-flexible" style="--item-size: 25ch">
 					{#each data.blogposts as { created, description, keywords, title, slug }}
 						<li>
 							<CardArticle
@@ -55,16 +55,16 @@
 				<Gallery items={data.photos} />
 			</div>
 		</section>
-		<section label="recent-projects">
+		<section label="featured-projects">
 			<div>
 				<header>
-					<h2 class="heading">{$t("dict.pinned-projects")}</h2>
+					<h2 class="heading">{$t("dict.featured-projects")}</h2>
 					<Link href={$pathProjects}>
 						&#x2192; {$t("dict.all-projects")}
 					</Link>
 				</header>
-				<ul class="grid-flexible" style="--item-size: 250px">
-					{#each data.projects as { name, description, github, npm, homepage, techstack }}
+				<ul class="grid-flexible" style="--item-size: 25ch">
+					{#each data.projects as { name, description, github, npm, homepage, techstack, type }}
 						<li>
 							<CardProject
 								{description}
@@ -73,6 +73,7 @@
 								{npm}
 								{name}
 								{techstack}
+								{type}
 							/>
 						</li>
 					{/each}
