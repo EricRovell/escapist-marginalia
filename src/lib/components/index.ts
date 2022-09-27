@@ -1,6 +1,6 @@
 export { Button } from "./button";
 export { Canvas, CanvasLayer } from "./canvas";
-export { Card, CardArticle, CardProject } from "./card";
+export { CardArticle, CardProject } from "./card";
 export { default as Code } from "./code/Code.svelte";
 export { default as Datetime } from "./Datetime.svelte";
 export { Details } from "./details";

@@ -25,7 +25,7 @@
 	align-items: center;
 	height: 100%;
 	margin-inline-end: 1em;
-	background-color: var(--surface-3);
+	background-color: var(--surface-2);
 	font-weight: 600;
 	z-index: 1;
 }
@@ -37,7 +37,11 @@
 	height: 100%;
 	right: -2em;
 	top: 0;
-	background-image: linear-gradient(to right, var(--surface-3), rgb(0 0 0 / 1%));
+	background-image: linear-gradient(to right, var(--surface-2), rgb(0 0 0 / 1%));
+}
+
+.wrapper :global(.katex) {
+	color: inherit;
 }
 
 .item {

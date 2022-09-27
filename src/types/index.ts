@@ -1,6 +1,15 @@
-export type Variant = "neutral" | "primary" | "success" | "danger" | "warning" | "info" | "link";
+import type { SvelteComponent } from "svelte";
 
+export type Variant = "neutral" | "primary" | "success" | "danger" | "warning" | "info" | "link";
 export type Locale = "ru" | "en";
+
+/**
+ * The MDSvex page interface.
+ */
+export interface Page<T> {
+	metadata: T;
+	default: SvelteComponent;
+}
 
 /**
  * Describes the metadata object from the blogpost's frontmatter.
@@ -39,7 +48,7 @@ export interface Blogpost extends Omit<BlogpostMetadata, "created" | "updated" |
 }
 
 /**
- * Defines a used `repo` object subset from `Github Rest API`
+ * `Github Rest API` Project data interface.
  */
 export interface GithubAPIRepo {
 	name: string;
@@ -50,34 +59,24 @@ export interface GithubAPIRepo {
 	topics: string[];
 }
 
-export interface ProjectData {
-	name: string;
-	type: "library" | "app";
-	repository: string;
-	npm?: string;
-	website?: string;
-}
-
-export interface Project {
-	name: string;
-	description: string;
-	homepage: string;
-	github: string;
-	language: string;
-	topics: string[];
-	type: "library" | "app";
-	repository: string;
-	npm?: string;
-	website?: string;
-}
-
 /**
- * Defines a Project data used to render the view.
+ * Project Page Frontmatter data interface.
  */
-export interface Project extends Omit<GithubAPIRepo, "html_url"> {
-	type: "app" | "package" | "website";
-	github: string;
+export interface ProjectPageData {
+	description: string;
+	featured?: boolean;
+	lang: Locale;
+	layout: string | false;
+	name: string;
 	npm?: string;
+	repository: string;
+	techstack: string[];
+	type: "string";
+	website?: string;
+}
+
+export interface Project extends ProjectPageData, Omit<GithubAPIRepo, "html_url"> {
+	github: string;
 }
 
 export type { GalleryItem } from "@components";

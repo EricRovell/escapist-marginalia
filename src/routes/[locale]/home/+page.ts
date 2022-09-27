@@ -12,7 +12,7 @@ export const load: PageLoad = async ({ params }) => {
 		const [	blogposts, photos, projects ] = await Promise.all([
 			getBlogposts({ lang: locale }),
 			getGalleryItems(),
-			getProjects()
+			getProjects({ featured: true }, { limit: 4 })
 		]);
 
 		return {

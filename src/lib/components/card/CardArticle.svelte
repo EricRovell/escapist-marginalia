@@ -3,7 +3,6 @@
 </script>
 
 <script lang="ts">
-	import Card from "./Card.svelte";
 	import Datetime from "../Datetime.svelte";
 	import { Link } from "../link";
 
@@ -17,22 +16,20 @@
 	export let slug: Blogpost["slug"];
 </script>
 
-<Card className={`surface-2 ${styles["card-article"]}`}>
-	<svelte:fragment slot="header">
-		<Datetime
-			date={created}
-			options={{ month: "long", day: "numeric", year: "numeric" }}
-		/>
-		<Link	href={$pathBlogpost(slug)}>
-			<h3>
-				{title}
-			</h3>
-		</Link>
-	</svelte:fragment>
+<article class="surface-2 {styles["card"]}">
+	<Datetime
+		date={created}
+		options={{ month: "long", day: "numeric", year: "numeric" }}
+	/>
+	<Link	href={$pathBlogpost(slug)}>
+		<h3>
+			{title}
+		</h3>
+	</Link>
 	<p class="line-clamp" style="--line-count: 3">
 		{description}
 	</p>
-	<svelte:fragment slot="footer">
+	<footer>
 		<ul class={styles.keywords}>
 			{#each keywords as keyword}
 				<li>
@@ -42,5 +39,5 @@
 				</li>
 			{/each}
 		</ul>
-	</svelte:fragment>
-</Card>
+	</footer>
+</article>
