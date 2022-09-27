@@ -6,8 +6,6 @@
 	import type { PageLoad } from "./$types";
 
 	export let data: PageLoad = [];
-
-	console.log(data);
 </script>
 
 <PageMeta route="projects" />
