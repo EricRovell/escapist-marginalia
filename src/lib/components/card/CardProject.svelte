@@ -3,6 +3,7 @@
 </script>
 
 <script lang="ts">
+	import { pathProject } from "@core/paths";
 	import Icon from "../icons/Icon.svelte";
 	import { Link } from "../link";
 
@@ -25,7 +26,9 @@
 </script>
 
 <article class="surface-2 {styles["card"]}">
-	<h3>{name}</h3>
+	<Link href="{$pathProject(name)}">
+		<h3>{name}</h3>
+	</Link>
 	<p class="line-clamp" style="--line-count: 3">
 		{description}
 	</p>

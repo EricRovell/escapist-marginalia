@@ -1,14 +1,11 @@
 .card {
 	display: grid;
 	grid-template-rows: min-content;
+	gap: var(--space-3-rel);
 	height: 100%;
 	border: 2px solid var(--color-border);
 	border-radius: var(--radius-l);
 	padding: var(--space-3-rel);
-}
-
-.card > p {
-	margin-block-end: var(--space-3-rel);
 }
 
 .card h3 {
