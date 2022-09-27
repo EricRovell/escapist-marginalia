@@ -1,12 +1,13 @@
 ---
-"description": "Blossom is a JS library tool for colour manipulations and transformations."
-"featured": true
+description: "Blossom is a JS library tool for colour manipulations and transformations."
+featured: true
+lang: "en"
 layout: false
-"name": "blossom"
-"npm": "https://www.npmjs.com/package/@ericrovell/blossom"
-"type": "library"
-"repository": "EricRovell/blossom"
-"techstack": [ "TypeScript" ]
+name: "blossom"
+npm: "https://www.npmjs.com/package/@ericrovell/blossom"
+repository: "EricRovell/blossom"
+techstack: [ "TypeScript" ]
+type: "library"
 ---
 
 This page is currently in development

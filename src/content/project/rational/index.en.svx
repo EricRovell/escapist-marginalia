@@ -1,13 +1,13 @@
 ---
-"description": "Rational is rational numbers library written in TypeScript"
-"featured": true
+description: "Rational is rational numbers library written in TypeScript"
+featured: true
+lang: "en"
 layout: false
-"name": "rational"
-"npm": "https://www.npmjs.com/package/@ericrovell/rational"
-"repository": "EricRovell/rational"
-"techstack": [ "TypeScript" ]
-"type": "lib"
-
+name: "rational"
+npm: "https://www.npmjs.com/package/@ericrovell/rational"
+repository: "EricRovell/rational"
+techstack: [ "TypeScript" ]
+type: "lib"
 ---
 
 This page is currently in development

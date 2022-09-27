@@ -1,14 +1,14 @@
 ---
-"description": "Radix is a JS library for radix number transformations and manipulations."
-"featured": true
+description: "Radix is a JS library for radix number transformations and manipulations."
+featured: true
+lang: en
 layout: false
-"name": "radix"
-"npm": "https://www.npmjs.com/package/@ericrovell/radix"
-"type": "app"
-"repository": "EricRovell/radix"
-"techstack": [ "Svelte", "TypeScript" ]
-"website": "https://radix.vercel.app/"
-
+name: "radix"
+npm: "https://www.npmjs.com/package/@ericrovell/radix"
+repository: "EricRovell/radix"
+techstack: [ "Svelte", "TypeScript" ]
+type: "app"
+website: "https://radix.vercel.app/"
 ---
 
 This page is currently in development
