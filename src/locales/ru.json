@@ -44,7 +44,7 @@
 		"content-language": "язык публикаций",
 		"toc": "Содержание",
 		"published": "Опубликовано",
-		"updated": "обновлено",
+		"updated": "Обновлялось",
 		"available-translation": "Публикация также доступна на",
 		"build-at": "Сборка от",
 		"blogpost-counter": "Отображено %s публикаций из %s"

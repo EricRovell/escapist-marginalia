@@ -50,9 +50,13 @@
 			{/each}
 		</ul>
 		<span class="{styles.date}">
-			{$t("message.published")} <Datetime date={created} locale={$locale} options={dateOptions} relative />
+			<span>
+				{$t("message.published")} <Datetime date={created} locale={$locale} options={dateOptions} relative />
+			</span>
 			{#if updated}
-				, {$t("message.updated")} <Datetime date={updated} locale={$locale} options={dateOptions} relative />
+				<span>
+					{$t("message.updated")} <Datetime date={updated} locale={$locale} options={dateOptions} relative />
+				</span>
 			{/if}
 		</span>
 		{#if translation}
