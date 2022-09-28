@@ -44,8 +44,8 @@
 		"content-language": "content language",
 		"toc": "Table of contents",
 		"published": "Published at",
-		"updated": "updated at",
-		"available-translation": "Blogpost also available in",
+		"updated": "Updated at",
+		"available-translation": "Blogpost is also available in",
 		"build-at": "Build at",
 		"blogpost-counter": "Showing %s blogposts of %s"
 	},

@@ -4,6 +4,7 @@
 	flex-direction: column;
 	align-items: center;
 	width: min(100% - var(--space-3), 1440px);
+	text-align: center;
 }
 
 .wrapper > *,
@@ -31,9 +32,14 @@
 	font-size: var(--font-size-1);
 }
 
+.wrapper time {
+	color: var(--surface-2-text-contrast);
+}
+
 .keywords {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	gap: var(--space-2-rel);
 	color: var(--color-info);
 }
@@ -45,6 +51,9 @@
 }
 
 .date {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2-rel);
 	font-size: var(--font-size-0);
 	color: var(--surface-2-text-less-contrast);
 }
@@ -67,7 +76,11 @@
 
 @media screen and (max-width: 48em) {
 	.share {
-		right: calc(50% - 1.5em);
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
 		bottom: calc(-3 * var(--space-4));
+		height: 2em;
 	}
 }
