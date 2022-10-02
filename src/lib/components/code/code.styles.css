@@ -42,6 +42,7 @@ pre[class*="language-"] {
 	padding: var(--space-1-rel) var(--space-2-rel);
 	border-radius: var(--radius-s);
 	box-shadow: 0 0 2px #7A82E3;
+	font-size: 0.85em;
 }
 
 code[class*="language-"]::selection,
