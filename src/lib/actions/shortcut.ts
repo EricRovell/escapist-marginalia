@@ -6,7 +6,7 @@ export interface ShortcutOptions {
 	callback?: (node : HTMLElement) => void;
 	/**
 	 * The code of the key to listen for.
-	 * 
+	 *
 	 * https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
 	 */
 	code: KeyboardEventInit["code"];
@@ -21,6 +21,8 @@ const callbackDefault = (node: HTMLElement) => node.click();
  * If callback is not provided, clicks on the node it was put on.
  */
 export const shortcut: Action<ShortcutOptions> = (node, options) => {
+	// holds whether listener is added or not to prevent adding more
+	let listenerStatus = false;
 
 	const validate = (event: KeyboardEvent) => {
 		const {
@@ -46,13 +48,15 @@ export const shortcut: Action<ShortcutOptions> = (node, options) => {
 		event.preventDefault();
 		(options.callback || callbackDefault)(node);
 	};
-	
+
 	const activate = () => {
-		window.addEventListener("keydown", handleKeyboard);
+		!listenerStatus && window.addEventListener("keydown", handleKeyboard);
+		listenerStatus = true;
 	};
 
 	const deactivate = () => {
-		window.removeEventListener("keydown", handleKeyboard);
+		listenerStatus && window.removeEventListener("keydown", handleKeyboard);
+		listenerStatus = false;
 	};
 
 	const init = () => {
