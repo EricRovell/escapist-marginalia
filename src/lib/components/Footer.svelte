@@ -69,7 +69,7 @@
 <style>
 	footer {
 		grid-area: footer;
-		
+
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -86,6 +86,7 @@
 		height: 100%;
 		padding-top: var(--space-7);
 		padding-bottom: var(--space-7);
+		border-top: 2px solid var(--color-border);
 
 		justify-self: center;
 	}
