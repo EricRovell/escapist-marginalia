@@ -46,7 +46,7 @@
 		title: data.title,
 		description: data.description,
 		url: $webpage,
-		image: `${$webpageRoot}${data.thumb.cover}`,
+		image: `${$webpageRoot}${data.thumb.cover}`
 	}}
 	twitter={{
 		card: "summary",

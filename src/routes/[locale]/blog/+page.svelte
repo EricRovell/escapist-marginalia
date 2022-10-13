@@ -99,7 +99,7 @@
 					legend={$t("dict.series")}
 					name="content-series"
 					options={[
-						{ label: $t("dict.project-euler"), value: "project-euler", icon: iconNumberE },
+						{ label: $t("dict.project-euler"), value: "project-euler", icon: iconNumberE }
 					]}
 					bind:group={queryOptions["content-series"].value}
 				/>

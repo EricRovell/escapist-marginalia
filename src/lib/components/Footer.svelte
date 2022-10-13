@@ -26,7 +26,7 @@
 
 	$: icons = [
 		{ label: "source", href: pathSource, icon: iconGithub },
-		{ label: "rss", href: $pathRSS, icon: iconRSS },
+		{ label: "rss", href: $pathRSS, icon: iconRSS }
 	];
 </script>
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button, Switch } from "@components";
 	import { Chaos, Polygon } from "../chaos";
-	import type { Coords, Move, PolygonOrigin,  } from "../chaos";
+	import type { Coords, Move, PolygonOrigin } from "../chaos";
 	import styles from "./chaos-game-rules-demo.module.css";
 
 	export let height = 350;

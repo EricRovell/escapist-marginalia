@@ -15,7 +15,6 @@
 	export let github: Project["github"];
 	export let npm: Project["npm"];
 	export let homepage: Project["homepage"];
-	export let type: Project["type"];
 	export let techstack: Project["techstack"] = [];
 
 	const links = [
