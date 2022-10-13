@@ -38,10 +38,10 @@ export class Chaos {
 
 	/**
 	 * "steps" restricts the vertices are available for the next move.
-	 * 
+	 *
 	 * { index: -1, steps: [ 1, 2, 3] } means that the lastly chosen vertice index
 	 * should be any of steps away from the next chosen vertex.
-	 * 
+	 *
 	 * Optional `forbidden` flag marks steps as forbidden distances.
 	 */
 	initDistances(distances: VerticeRestrictionRule[]) {
@@ -53,7 +53,7 @@ export class Chaos {
 			if (!forbidden) {
 				this.distances.push({ index, values });
 			} else {
-				const vertices = new Set(range(0, this.polygon.n - 1));
+				const vertices = new Set(range(this.polygon.n));
 				for (const value of values) {
 					vertices.delete(value);
 				}

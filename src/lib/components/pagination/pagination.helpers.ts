@@ -10,7 +10,7 @@ export const generateIndexes: IndexGenerator = ({ current, start = 0, end, limit
 
 	// Case: all items are visible
 	if (items <= limit) {
-		return range(start, end);
+		return Array.from(range(start, end + 1));
 	}
 
 	// Calculate left/right sibling indexes at the edge:
@@ -27,22 +27,22 @@ export const generateIndexes: IndexGenerator = ({ current, start = 0, end, limit
 	// Case: ellipsis only at the end:
 	// 1st, sibling, current, sibling, ..., last
 	if (!leftDots && rightDots) {
-		const leftRange = range(start, 3 + 2 * siblings);
-		return [...leftRange, -1, end];
+		const leftRange = range(start, 3 + 2 * siblings + 1);
+		return [...leftRange, -1, end ];
 	}
 
 	// Case: ellipsis only at the end:
 	// 1st, ..., sibling, current, sibling, last
 	if (leftDots && !rightDots) {
 		const rightItems = 3 + 2 * siblings;
-		const rightRange = range(end - rightItems + 1, end);
+		const rightRange = range(end - rightItems + 1, end + 1);
 		return [start, -1, ...rightRange];
 	}
 
 	// Case: ellipsis at both ends:
 	// 1st, ..., sibling, current, sibling, ..., last
 	if (leftDots && rightDots) {
-		const middleRange = range(siblingLeftIndex, siblingRightIndex);
+		const middleRange = range(siblingLeftIndex, siblingRightIndex + 1);
 		return [start, -1, ...middleRange, -1, end];
 	}
 

@@ -12,7 +12,7 @@
 	let penultimate: number[] = [ 3 ];
 
 	const getRandomRestrictionRule = (n: number) => {
-		const vertices = new Set(range(1, n));
+		const vertices = new Set(range(1, n + 1));
 		const rule = [];
 
 		for (let i = 0; i < randInt(1, n); i++) {
