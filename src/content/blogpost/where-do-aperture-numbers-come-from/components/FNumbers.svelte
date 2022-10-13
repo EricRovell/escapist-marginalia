@@ -20,12 +20,12 @@
 	export let step = 1;
 
 	const rows: FStop[] = [ "f-number", "value", "progression" ];
-	
+
 	/**
 	 * number of columns: header + f-numbers + steps in between
 	 */
 	$: items = fstopTo - fstopFrom + 1 + ((step > 1) ? (fstopTo - fstopFrom) * (step - 1) : 0) + 1;
-	$: fstops = range(fstopFrom, fstopTo);
+	$: fstops = Array.from(range(fstopFrom, fstopTo + 1));
 	$: intermediate = step > 1;
 </script>
 
@@ -39,7 +39,7 @@
 						<FNumber {type} {fstop} />
 					</li>
 					{#if intermediate && fstop < fstopTo}
-						{#each range(1, step - 1) as fstopStep}
+						{#each Array.from(range(1, step)) as fstopStep}
 							<li class="{styles.item} {styles[type]}" class:intermediate>
 								<FNumber {type} {fstop} step={[ fstopStep, step ]} />
 							</li>

@@ -11,10 +11,10 @@
 
 	let currentPage = 1;
 
-	$: items = subsets(range(1, n), false);
+	$: items = subsets(Array.from(range(1, n + 1)), false);
 	$: pages = Math.ceil(((n ** 2) - 1) / perPage);
 	$: from = (currentPage - 1) * perPage;
-	
+
 	$: {
 		/**
 		 * reset pagination on "n" change
