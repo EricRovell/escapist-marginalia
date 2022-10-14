@@ -4,5 +4,9 @@
 		"number": "Number",
 		"radix": "Radix",
 		"power": "Power"
+	},
+	"roman-numerals": {
+		"title": "Arabic to Roman Numerals",
+		"arabic": "Arabic"
 	}
 }

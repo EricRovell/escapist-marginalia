@@ -50,4 +50,12 @@ describe("Arabic to Romans numerals conversion", () => {
 			expect(arabic2romans(input)).toBe(output);
 		});
 	}
+
+	it("Do not parse invalid input", () => {
+		expect(arabic2romans(0)).toBe("");
+		expect(arabic2romans(-5)).toBe("");
+		expect(arabic2romans(2.3)).toBe("");
+		expect(arabic2romans(4000)).toBe("");
+		expect(arabic2romans(1000000)).toBe("");
+	});
 });

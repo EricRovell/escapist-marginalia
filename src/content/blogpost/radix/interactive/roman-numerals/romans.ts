@@ -21,7 +21,7 @@ const dict: Array<[ arabic: number, roman: string ]> = [
 export const arabic2romans = (number: number): string => {
 	let result = "";
 
-	if (!Number.isInteger(number) && number < 1 && number > 3999) {
+	if (!Number.isInteger(number) || number < 1 || number > 3999) {
 		return result;
 	}
 
