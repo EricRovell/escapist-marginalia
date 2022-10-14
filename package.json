@@ -73,6 +73,7 @@
 		"pre-push": "npm run lint && npm run stylelint"
 	},
 	"dependencies": {
+		"@ericrovell/radix": "^1.0.2",
 		"svelte-intl-precompile": "^0.12.0"
 	}
 }
