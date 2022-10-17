@@ -1,4 +1,9 @@
 {
+	"decimal-conversion-stages": {
+		"title": "Decimal number conversion stages",
+		"number": "Number",
+		"radix": "Radix"
+	},
 	"disassembling-number": {
 		"title": "Disassembling the number",
 		"number": "Number",
