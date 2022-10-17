@@ -4,7 +4,7 @@
 	export let math: string;
 	export let inline = false;
 
-	const rendered = katex.renderToString(math, {
+	$: rendered = katex.renderToString(math, {
 		throwOnError: false,
 		displayMode: inline
 	});
