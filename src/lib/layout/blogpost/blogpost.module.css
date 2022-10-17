@@ -78,9 +78,15 @@
 	margin-left: var(--space-2);
 }
 
+.article ul:not([class]),
+.article ol:not([class]) {
+	list-style-position: outside;
+	margin-inline-start: 1.5ch;
+	font-size: 0.9em;
+}
+
 .article ul:not([class]) {
 	list-style: initial;
-	list-style-position: outside;
 }
 
 .article ul li:not([class]) {
@@ -96,7 +102,6 @@
 
 .article ol:not([class]) {
 	list-style: decimal;
-	list-style-position: outside;
 }
 
 .article ol li:not([class]) {
@@ -188,6 +193,7 @@
 .article :global(.interactive) :is(h2, h3, h4, h5, h6) {
 	text-align: center;
 	margin-block-start: 0;
+	max-inline-size: 35ch;
 }
 
 /* katex expressions */
