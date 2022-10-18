@@ -10,6 +10,11 @@
 		"radix": "Radix",
 		"power": "Power"
 	},
+	"number-into-decimal": {
+		"title": "Number into decimal conversion",
+		"number": "Number",
+		"radix": "Radix"
+	},
 	"roman-numerals": {
 		"title": "Arabic to Roman Numerals",
 		"arabic": "Arabic"
