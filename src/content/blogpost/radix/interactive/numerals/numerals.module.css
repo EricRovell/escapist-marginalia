@@ -1,7 +1,7 @@
 .numerals {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-evenly;
+	justify-content: center;
 	color: var(--surface-1-text-less-contrast);
 }
 
