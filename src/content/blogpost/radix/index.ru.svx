@@ -1,10 +1,10 @@
 ---
 created: 2022-10-14T17:24:00.000Z
 description: "Разберёмся в том, как устроена система обозначения чисел и как мы к этому пришли."
+draft: true
 keywords: [ "math", "radix", "numbers" ]
 lang: ru
 layout: blogpost
-published: false
 slug: "системы-счисления"
 title: "Системы счисления"
 ---

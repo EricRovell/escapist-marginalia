@@ -4,7 +4,6 @@ description: "Решаем Проект Эйлера, проблема №2: Ч�
 keywords: [ "project euler", "math" ]
 lang: ru
 layout: blogpost
-published: true
 series: "project-euler"
 slug: "проект-эйлера-2"
 title: "Проект Эйлера #2: Чётные числа Фибоначчи"
@@ -23,7 +22,7 @@ updated: 2021-06-13T00:00:00.000Z
 ```math
 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 ```
-	
+
 Найти сумму всех чётных членов последовательности, значения которых не превышают четыре миллиона.
 
 </EulerProblem>
@@ -44,7 +43,7 @@ def fibonacci_sequence(limit: int) -> int:
   while a < limit:
     yield a
     a, b = b, a + b
-    
+
 def even_fib_sum(limit: int) -> int:
   return sum([ item for item in fibonacci_sequence(limit) if item % 2 == 0 ])
 ```
@@ -101,7 +100,7 @@ def fibonacci_sequence_even(limit: int) -> int:
   while a < limit:
     yield a
     a, b = b, 4 * b + a
-    
+
 def even_fib_sum(limit: int) -> int:
   return sum([ item for item in fibonacci_sequence_even(limit) ])
 ```

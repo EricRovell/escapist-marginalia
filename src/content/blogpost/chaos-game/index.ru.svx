@@ -4,7 +4,6 @@ description: "Может ли что-то детерменистичное ск�
 keywords: [ "generative art", "math" ]
 lang: ru
 layout: blogpost
-published: true
 slug: "игра-хаоса"
 title: "Игра Хаоса: случайность против детерменизма"
 translation: { lang: "english", slug: "the-chaos-game" }
