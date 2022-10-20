@@ -1,0 +1,11 @@
+.romans {
+	border: 2px dashed var(--color-border);
+	border-radius: var(--radius-s);
+	padding: var(--space-1-rel) var(--space-3-rel);
+	font-family: monospace;
+	font-size: min(4vw + 1rem, 2rem);
+}
+
+.form label {
+	text-align: center;
+}

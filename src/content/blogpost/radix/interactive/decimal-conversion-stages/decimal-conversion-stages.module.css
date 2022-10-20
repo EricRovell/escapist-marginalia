@@ -1,0 +1,19 @@
+.form {
+	display: flex;
+	gap: var(--space-3);
+	margin-block-end: var(--space-3);
+}
+
+.form input {
+	width: 15ch;
+}
+
+.table {
+	margin-block-end: var(--space-3);
+}
+
+.math {
+	display: flex;
+	justify-content: space-between;
+	width: min(100%, 30ch);
+}
