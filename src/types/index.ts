@@ -17,11 +17,11 @@ export interface Page<T> {
 export interface BlogpostMetadata {
 	created: string;
 	description: string;
+	draft?: boolean;
 	filepath: string;
 	keywords: string[];
 	lang: Locale;
 	layout?: string;
-	published?: boolean;
 	series: string;
 	slug: string;
 	title: string;

@@ -4,7 +4,6 @@ description: "Let's find out, why aperture numbers are as they are and where do 
 keywords: [ "photography", "aperture", "f-number" ]
 lang: en
 layout: blogpost
-published: true
 slug: "where-do-aperture-numbers-come-from"
 title: "Where do aperture numbers come from?"
 translation: { lang: "русский", slug: "откуда-берутся-числа-диафрагмы" }

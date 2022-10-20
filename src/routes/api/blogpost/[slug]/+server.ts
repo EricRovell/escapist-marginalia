@@ -11,7 +11,8 @@ export const GET: RequestHandler = async ({ params }) => {
 	}
 
 	const data: Blogpost[] = await getBlogposts({
-		slug: decodeURI(slug)
+		slug: decodeURI(slug),
+		draft: false
 	}, { limit: 1 });
 
 	return new Response(

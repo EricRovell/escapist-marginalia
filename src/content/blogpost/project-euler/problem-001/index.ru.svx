@@ -4,7 +4,6 @@ description: "Решаем Проект Эйлера, проблема №1: Ч�
 keywords: [ "project euler", "math" ]
 lang: ru
 layout: blogpost
-published: true
 series: "project-euler"
 slug: "проект-эйлера-1"
 title: "Проект Эйлера #1: Числа, кратные 3 или 5"

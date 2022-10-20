@@ -4,7 +4,6 @@ description: "The Project Euler #1 solution."
 keywords: [ "project euler", "math" ]
 lang: en
 layout: blogpost
-published: true
 series: "project-euler"
 slug: "project-euler-1"
 title: "Project Euler #1: Multiples of 3 or 5"
