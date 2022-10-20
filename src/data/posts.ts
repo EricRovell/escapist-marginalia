@@ -12,6 +12,7 @@ async function fetchBlogposts(): Promise<Blogpost[]> {
 		const { metadata } = await module() as Page<BlogpostMetadata>;
 		const {
 			created,
+			draft = false,
 			updated,
 			title,
 			...rest
@@ -19,6 +20,7 @@ async function fetchBlogposts(): Promise<Blogpost[]> {
 
 		posts.push({
 			created: new Date(created),
+			draft,
 			updated: new Date(updated),
 			title,
 			/**
@@ -39,12 +41,12 @@ interface Options {
 	limit?: number;
 }
 
-export async function getBlogposts({ slug, lang, keywords, published }: Partial<Blogpost> = {}, { limit }: Options = {}): Promise<Blogpost[]> {
+export async function getBlogposts({ slug, lang, keywords, draft }: Partial<Blogpost> = {}, { limit }: Options = {}): Promise<Blogpost[]> {
 	const blogposts = await fetchBlogposts();
 
 	type Query<T> = {
 		"slug": QueryItem<string, T>;
-		"published": QueryItem<boolean, T>;
+		"draft": QueryItem<boolean, T>;
 		"lang": QueryItem<Locale, T>;
 		"keywords": QueryItem<string[], T>;
 	};
@@ -55,10 +57,10 @@ export async function getBlogposts({ slug, lang, keywords, published }: Partial<
 			validator: slug => typeof slug === "string",
 			matcher: slug => blogpost => blogpost.slug === slug
 		},
-		published: {
-			value: published,
-			validator: value => value,
-			matcher: value => blogpost => blogpost.published === value
+		draft: {
+			value: draft,
+			validator: value => typeof value === "boolean",
+			matcher: value => blogpost => blogpost.draft === value
 		},
 		lang: {
 			value: lang,
@@ -67,7 +69,7 @@ export async function getBlogposts({ slug, lang, keywords, published }: Partial<
 		},
 		keywords: {
 			value: keywords,
-			validator: value => value.length > 0,
+			validator: value => Array.isArray(keywords) && value.length > 0,
 			matcher: value => blogpost => value.every(keyword => blogpost.keywords.includes(keyword))
 		}
 	};
