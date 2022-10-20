@@ -11,6 +11,7 @@ export { Gallery, ImageFullscreen } from "./gallery";
 export { default as Icon } from "./icons/Icon.svelte";
 export { Image } from "./image";
 export { InputNumber } from "./input-number";
+export { InputText } from "./input-text";
 export { Link } from "./link";
 export { Masthead } from "./masthead";
 export { MathExp } from "./math";
