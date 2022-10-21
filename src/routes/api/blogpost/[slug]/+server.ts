@@ -1,3 +1,4 @@
+import { dev } from "$app/environment";
 import { error } from "@sveltejs/kit";
 import { getBlogposts } from "@data/posts";
 import type { RequestHandler } from "./$types";
@@ -12,7 +13,7 @@ export const GET: RequestHandler = async ({ params }) => {
 
 	const data: Blogpost[] = await getBlogposts({
 		slug: decodeURI(slug),
-		draft: false
+		draft: dev
 	}, { limit: 1 });
 
 	return new Response(
