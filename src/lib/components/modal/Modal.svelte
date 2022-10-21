@@ -15,7 +15,7 @@
 		open = false;
 		dispatch("close");
 	};
-	
+
 	$: preventPageScroll(open);
 </script>
 
@@ -34,6 +34,7 @@
 			callback: closeModal
 		}}
 	>
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div class={styles.backdrop} on:click={closeModal} />
 		<!-- svelte-ignore a11y-autofocus -->
 		<button shape="square" on:click={closeModal} autofocus>

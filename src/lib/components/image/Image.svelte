@@ -12,6 +12,7 @@
 	let error = false;
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <picture class={styles.picture} {style} on:click>
 	<img
 		{alt}
