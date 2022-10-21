@@ -80,3 +80,11 @@ export interface Project extends ProjectPageData, Omit<GithubAPIRepo, "html_url"
 }
 
 export type { GalleryItem } from "@components";
+
+export interface Bookmark {
+	category: string;
+	description: string;
+	title: string;
+	topics: string[];
+	url: string;
+}
