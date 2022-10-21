@@ -10,6 +10,7 @@ export const pathHome = derived(root, $root => `${$root}/home`);
 export const pathBlog = derived(root, $root => `${$root}/blog`);
 export const pathGallery = derived(root, $root => `${$root}/gallery`);
 export const pathProjects = derived(root, $root => `${$root}/projects`);
+export const pathBookmarks = derived(root, $root => `${$root}/bookmarks`);
 export const pathAbout = derived(root, $root => `${$root}/about`);
 export const pathRSS = derived(root, $root => `${$root}/rss.xml`);
 export const pathRSSMultilang = derived(webpage, $webpage => `${$webpage}/rss.xml`);
