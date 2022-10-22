@@ -28,13 +28,13 @@
 		</div>
 		<div class="{styles["ranks-wrapper"]}">
 			<ol class="{styles.ranks}">
-				{#each number.getRanks() as rank, index (`${index}/${rank}`)}
+				{#each [ ...number ] as [ rank, power ] (`${power}/${rank}`)}
 					<li class="{styles.rank}" class:zero={rank === 0}>
 						<span class="{styles["mult"]}">
 							{rank}
 						</span>
 						<span>
-							{radixInput}<sup>{number.getRanks().length - 1 - index}</sup>
+							{radixInput}<sup>{power}</sup>
 						</span>
 					</li>
 				{/each}

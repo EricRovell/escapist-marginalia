@@ -5,7 +5,7 @@
 
 	export let radixOutput = 10;
 	export let inputNumber = 1234;
-	export let power = false;
+	export let showPower = false;
 	export let t: Record<string, string>;
 
 	$: number = radix(inputNumber, 10);
@@ -22,9 +22,23 @@
 	</output>
 	<div class="{styles["ranks-wrapper"]}">
 		<ol class="{styles.ranks}">
-			{#each numberOutput.getRanks() as rank, index (`${index}/${rank}`)}
+			{#each [ ...numberOutput ] as [ rank, power ] (`${power}/${rank}`)}
 				{#if rank}
 					<li class="{styles.rank}">
+						{#if rank > 1}
+							<span class="{styles["mult"]}">
+								{rank}
+							</span>
+						{/if}
+						<span>
+							{#if showPower}
+								{radixOutput}<sup>{power}</sup>
+							{:else}
+								{radixOutput ** power}
+							{/if}
+						</span>
+					</li>
+<!-- 					<li class="{styles.rank}">
 						{#if rank > 1}
 							<span class="{styles["mult"]}">
 								{rank}
@@ -37,7 +51,7 @@
 								{radixOutput ** (numberOutput.getRanks().length - 1 - index)}
 							{/if}
 						</span>
-					</li>
+					</li> -->
 				{/if}
 			{/each}
 		</ol>
@@ -49,7 +63,7 @@
 		<InputNumber bind:value="{radixOutput}" min="{2}" max="{64}">
 			{t.radix}
 		</InputNumber>
-		<Switch bind:checked="{power}">
+		<Switch bind:checked="{showPower}">
 			{t.power}
 		</Switch>
 	</form>
