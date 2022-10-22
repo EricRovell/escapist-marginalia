@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@ericrovell/radix': ^1.0.3
+  '@ericrovell/radix': ^1.1.0
   '@rollup/plugin-replace': ^5.0.1
   '@sveltejs/adapter-static': 1.0.0-next.46
   '@sveltejs/kit': 1.0.0-next.522
@@ -34,7 +34,7 @@ specifiers:
   vitest: ^0.24.3
 
 dependencies:
-  '@ericrovell/radix': 1.0.3
+  '@ericrovell/radix': 1.1.0
   svelte-intl-precompile: 0.12.0_svelte@3.52.0
 
 devDependencies:
@@ -287,8 +287,8 @@ packages:
       postcss-selector-parser: 6.0.10
     dev: true
 
-  /@ericrovell/radix/1.0.3:
-    resolution: {integrity: sha512-O4b/8plcHMPQbLAKKlpewOLtHDDSyDiNtl3B2cQ9qh5sMpBwF2cv2eKPcR0GJymvOfL7tBl8f+2GQZUo/97Zgw==}
+  /@ericrovell/radix/1.1.0:
+    resolution: {integrity: sha512-Tq1o0fotrUiUMsgO6SdoiNmbN2ROpfMmkSdOBpF3a18GFt4cVsDzDt+BHt98m+LXdBOoE8M1it94YTBcQNMbQw==}
     engines: {node: '>=10.4'}
     dev: false
 
