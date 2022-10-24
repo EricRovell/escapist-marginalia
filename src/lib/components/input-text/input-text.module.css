@@ -11,6 +11,11 @@
 	color: inherit;
 }
 
-.input:invalid {
-	border-color: rgb(255 0 0 / 75%);
+.input:global(.invalid) {
+	border-color: var(--color-danger);
+}
+
+.error-message {
+	margin-block-start: var(--space-2);
+	color: var(--color-danger);
 }
