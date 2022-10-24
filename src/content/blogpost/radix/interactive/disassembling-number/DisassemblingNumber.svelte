@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { radix } from "@ericrovell/radix";
 	import { Switch } from "@components";
-	import { FormNumerals } from "../../components";
+	import { FormNumerals, Numerals } from "../../components";
 	import styles from "./disassembling-number.module.css";
 
 	export let radixOutput = 10;
-	export let inputNumber = 1234;
+	export let inputNumber = "1234";
 	export let showPower = false;
 	export let t: Record<string, string>;
 
@@ -21,28 +21,11 @@
 	<output class="{styles.number}">
 		{number}<sub>{radixOutput}</sub>
 	</output>
-	<div class="{styles["ranks-wrapper"]}">
-		<ol class="{styles.ranks}">
-			{#each [ ...numberOutput ] as [ rank, power ] (`${power}/${rank}`)}
-				{#if rank}
-					<li class="{styles.rank}">
-						{#if rank > 1}
-							<span class="{styles["mult"]}">
-								{rank}
-							</span>
-						{/if}
-						<span>
-							{#if showPower}
-								{radixOutput}<sup>{power}</sup>
-							{:else}
-								{radixOutput ** power}
-							{/if}
-						</span>
-					</li>
-				{/if}
-			{/each}
-		</ol>
-	</div>
+	<Numerals
+		numerals="{[ ...numberOutput ]}"
+		radix="{radixOutput}"
+		{showPower}
+	/>
 	<FormNumerals
 		bind:number="{inputNumber}"
 		bind:radix="{radixOutput}"

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { radix } from "@ericrovell/radix";
 	import { MathExp } from "@components";
-	import { FormNumerals } from "../../components";
+	import { FormNumerals, Numerals } from "../../components";
 	import { decoder } from "../../util";
 	import styles from "./number-into-decimal.module.css";
 
@@ -29,20 +29,12 @@
 				{numberOutput.decimal}<sub>10</sub>
 			</output>
 		</div>
-		<div class="{styles["ranks-wrapper"]}">
-			<ol class="{styles.ranks}">
-				{#each [ ...number ] as [ rank, power ] (`${power}/${rank}`)}
-					<li class="{styles.rank}" class:zero={rank === 0}>
-						<span class="{styles["mult"]}">
-							{rank}
-						</span>
-						<span>
-							{radixInput}<sup>{power}</sup>
-						</span>
-					</li>
-				{/each}
-			</ol>
-		</div>
+		<Numerals
+			numerals="{[ ...number ]}"
+			radix="{radixInput}"
+			showZeroRanks
+			showPower
+		/>
 	{:else}
 		<span>Invalid input</span>
 	{/if}
