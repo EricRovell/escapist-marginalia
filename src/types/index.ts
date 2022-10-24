@@ -88,3 +88,11 @@ export interface Bookmark {
 	topics: string[];
 	url: string;
 }
+
+/**
+ * Input field value validator.
+ */
+export type Validator<T> = (value: T) => ({
+	valid: boolean,
+	message: string
+});
