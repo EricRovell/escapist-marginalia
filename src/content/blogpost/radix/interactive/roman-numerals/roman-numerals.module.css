@@ -6,6 +6,10 @@
 	font-size: min(4vw + 1rem, 2rem);
 }
 
+.form {
+	width: min(100%, 25ch);
+}
+
 .form label {
 	text-align: center;
 }

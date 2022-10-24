@@ -17,6 +17,7 @@
 	},
 	"roman-numerals": {
 		"title": "Arabic to Roman Numerals",
-		"arabic": "Arabic"
+		"arabic": "Arabic",
+		"invalid-value-message": "Roman number should be in range between 1 ... 3999"
 	}
 }
