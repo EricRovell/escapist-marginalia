@@ -1,13 +1,16 @@
 <script lang="ts">
 	import { radix } from "@ericrovell/radix";
-	import { InputNumber, InputText, MathExp } from "@components";
+	import { MathExp } from "@components";
+	import { FormNumerals } from "../../components";
+	import { decoder } from "../../util";
 	import styles from "./number-into-decimal.module.css";
 
 	export let radixInput = 2;
 	export let inputNumber = "10010";
 	export let t: Record<string, string>;
+	export let valid = true;
 
-	$: number = radix(inputNumber.split(""), radixInput);
+	$: number = radix(inputNumber.split(""), radixInput, { decode: decoder });
 	$: numberOutput = number.setRadix(10);
 </script>
 
@@ -16,7 +19,7 @@
 -->
 <section class="wide interactive {styles.wrapper}">
 	<h4>{t.title}</h4>
-	{#if number.valid}
+	{#if valid && number.valid}
 		<div class="{styles["number-wrapper"]}">
 			<output class="{styles.number}">
 				{number.toString()}<sub>{radixInput}</sub>
@@ -40,13 +43,13 @@
 				{/each}
 			</ol>
 		</div>
+	{:else}
+		<span>Invalid input</span>
 	{/if}
-	<form on:submit|preventDefault class="{styles.form}">
-		<InputText bind:value="{inputNumber}" pattern="[0-{radixInput - 1}]+" maxlength="{16}">
-			{t.number}
-		</InputText>
-		<InputNumber bind:value="{radixInput}" min="{2}" max="{64}">
-			{t.radix}
-		</InputNumber>
-	</form>
+	<FormNumerals
+		bind:number="{inputNumber}"
+		bind:radix="{radixInput}"
+		bind:valid
+		{t}
+	/>
 </section>

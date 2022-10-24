@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { InputNumber, MathExp } from "@components";
+	import { MathExp } from "@components";
+	import { FormNumerals } from "../../components";
 	import { getConversionStages, getRanks } from "./decimal-conversion-stages.helpers";
 	import { buildMathDifferences, buildMathPowerInequalities, buildMathRanks } from "./decimal-conversion-stages.katex";
 	import styles from "./decimal-conversion-stages.module.css";
@@ -16,14 +17,11 @@
 -->
 <section class="wide interactive {styles.wrapper}">
 	<h4>{t.title}</h4>
-	<form class="{styles.form}" on:submit|preventDefault>
-		<InputNumber bind:value="{number}" min="{0}" max="{10 ** 6}">
-			{t.number}
-		</InputNumber>
-		<InputNumber bind:value="{outputRadix}" min="{2}" max="{1024}">
-			{t.radix}
-		</InputNumber>
-	</form>
+	<FormNumerals
+		bind:number
+		bind:radix="{outputRadix}"
+		{t}
+	/>
 	<div class="{styles.table}">
 		<MathExp math={buildMathRanks(getRanks(number, outputRadix), outputRadix)} />
 	</div>
