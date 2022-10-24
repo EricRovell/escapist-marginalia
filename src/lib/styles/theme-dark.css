@@ -23,6 +23,8 @@
 		--surface-4-text-contrast: var(--color-gray-200);
 		--surface-4-text-less-contrast: var(--color-gray-400);
 
+		--color-danger: var(--color-red-500);
+
 		--color-heading: var(--color-blue-300);
 
 		--color-text-secondary: var(--color-gray-500);
@@ -122,6 +124,8 @@
 	--surface-4-text: var(--color-gray-300);
 	--surface-4-text-contrast: var(--color-gray-200);
 	--surface-4-text-less-contrast: var(--color-gray-400);
+
+	--color-danger: var(--color-red-500);
 
 	--color-heading: var(--color-blue-300);
 
