@@ -5,7 +5,7 @@
 	export let checked = false;
 	export let disabled = false;
 	export let name: string | undefined = undefined;
-	export let value: string | undefined = undefined;
+	export let value: string | undefined = "on";
 </script>
 
 <label class={`${styles.switch} ${className}`} class:disabled>
