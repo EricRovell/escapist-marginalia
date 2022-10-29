@@ -87,7 +87,7 @@ I & V & X & L & C & D & M\\ \hline
 
 Итого, в позиционной системе с основанием $r$ число $N$ может быть записано однозначной комбинацией:
 
-<p id="positional-number-formula">
+<p id="positional-number-formula" style="margin: 0">
 
 ```math
 \begin{aligned}
