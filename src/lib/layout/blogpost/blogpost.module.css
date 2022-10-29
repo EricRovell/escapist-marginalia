@@ -11,8 +11,8 @@
 	font-size: var(--font-size-1);
 }
 
-.article ol,
-.article ul,
+.article ol:not([class]),
+.article ul:not([class]),
 .article p,
 .article figure {
 	margin-block-end: var(--space-3-rel);
@@ -104,15 +104,15 @@
 	list-style: decimal;
 }
 
-.article ol li:not([class]) {
+.article ol:not([class]) li:not([class]) {
 	margin-left: 1.5ch;
 }
 
-.article ol li:not([class]:last-child) {
+.article ol:not([class]) li:not([class]:last-child) {
 	margin-bottom: var(--space-1-rel);
 }
 
-.article ol li:not([class])::marker {
+.article ol:not([class]) li:not([class])::marker {
 	color: var(--color-blue-400);
 }
 
