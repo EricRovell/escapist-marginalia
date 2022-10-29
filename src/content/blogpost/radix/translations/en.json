@@ -19,5 +19,21 @@
 		"title": "Arabic to Roman Numerals",
 		"arabic": "Arabic",
 		"invalid-value-message": "Roman number should be in range between 1 ... 3999"
+	},
+	"exercise": {
+		"title": "Exercise",
+		"setup": "Setup",
+		"number-min": "Minimum number",
+		"number-max": "Maximum number",
+		"radix-from": "From Radix",
+		"radix-to": "To Radix",
+		"begin": "Begin",
+		"numerals-placeholder": "Use the keyboard below to type the number",
+		"undo": "Undo",
+		"reset": "Reset",
+		"check": "Check",
+		"new-exercise": "New Exercise",
+		"correct": "Amazing! That's correct!",
+		"incorrect": "Unfortunately, incorrect. Please, try again!"
 	}
 }

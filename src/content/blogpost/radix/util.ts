@@ -1,3 +1,4 @@
+import { range } from "@utils/helpers";
 import type { Decoder } from "@ericrovell/radix";
 
 /**
@@ -32,4 +33,19 @@ export const buildPattern = (radix: number) => {
 	} else {
 		return null;
 	}
+};
+
+/**
+ * Generates a latin-letter (base 36) alphabet for a given radix.
+ */
+export const radix36 = (radix: number) => {
+	if (radix < 2 || radix > 36) {
+		return [];
+	}
+
+	return Array.from(range(0, radix))
+		.map(value => {
+			if (value < 10) return value;
+			return String.fromCharCode(value + 55);
+		});
 };
