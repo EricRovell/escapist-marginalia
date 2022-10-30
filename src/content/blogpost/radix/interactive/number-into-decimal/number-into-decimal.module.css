@@ -19,9 +19,3 @@
 	align-items: center;
 	gap: var(--space-3);
 }
-
-.number {
-	border-radius: var(--radius-s);
-	border: 2px dashed var(--color-border);
-	padding: var(--space-2-rel);
-}

@@ -1,0 +1,11 @@
+.number {
+	font-variant-numeric: tabular-nums;
+	border-radius: var(--radius-s);
+	border: 2px dashed var(--color-border);
+	padding: var(--space-2-rel);
+	color: var(--surface-2-text-contrast);
+}
+
+.number sub {
+	color: var(--surface-2-text-less-contrast);
+}

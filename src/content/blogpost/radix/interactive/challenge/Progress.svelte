@@ -6,6 +6,7 @@
 	import { createEventDispatcher, getContext } from "svelte";
 	import { fade } from "svelte/transition";
 	import { Button, MathExp } from "@components";
+	import { Number } from "../../components";
 	import Keyboard from "./Keyboard.svelte";
 	import { randInt } from "@utils/random";
 	import { radix } from "@ericrovell/radix";
@@ -43,19 +44,17 @@
 </script>
 
 <section class="{styles.numbers}">
-	<span class="{styles.number}">
-		{radix(number).setRadix(settings.radixFrom).toString()}<sub>{settings.radixFrom}</sub>
-	</span>
+	<Number
+		number="{radix(number).setRadix(settings.radixFrom).toString()}"
+		radix="{settings.radixFrom}"
+	/>
 	<MathExp
 		math={!dirty ? String.raw`\to` : valid ? "=" : String.raw`\neq`}
 	/>
-	<span class="{styles.number}">
-		{#if dirty}
-			{value.join("")}<sub>{settings.radixTo}</sub>
-		{:else}
-			?<sub>{settings.radixTo}</sub>
-		{/if}
-	</span>
+	<Number
+		number="{dirty ? value.join("") : "?"}"
+		radix="{settings.radixTo}"
+	/>
 </section>
 <section class="{styles["numerals-wrapper"]}">
 	<ol class="{styles.numerals} custom-scroll inline">

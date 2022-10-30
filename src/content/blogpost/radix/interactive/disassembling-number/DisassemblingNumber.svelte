@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { radix } from "@ericrovell/radix";
 	import { Switch } from "@components";
-	import { FormNumerals, Numerals } from "../../components";
+	import { FormNumerals, Number, Numerals } from "../../components";
 	import styles from "./disassembling-number.module.css";
 
 	export let radixOutput = 10;
@@ -18,9 +18,10 @@
 -->
 <section class="wide interactive {styles.wrapper}">
 	<h4>{t.title}</h4>
-	<output class="{styles.number}">
-		{number}<sub>{radixOutput}</sub>
-	</output>
+	<Number
+		number="{number.toString()}"
+		radix="{radixOutput}"
+	/>
 	<Numerals
 		numerals="{[ ...numberOutput ]}"
 		radix="{radixOutput}"

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { radix } from "@ericrovell/radix";
 	import { MathExp } from "@components";
-	import { FormNumerals, Numerals } from "../../components";
+	import { FormNumerals, Number, Numerals } from "../../components";
 	import { decoder } from "../../util";
 	import styles from "./number-into-decimal.module.css";
 
@@ -21,13 +21,15 @@
 	<h4>{t.title}</h4>
 	{#if valid && number.valid}
 		<div class="{styles["number-wrapper"]}">
-			<output class="{styles.number}">
-				{number.toString()}<sub>{radixInput}</sub>
-			</output>
+			<Number
+				number="{number.toString()}"
+				radix="{radixInput}"
+			/>
 			<MathExp math={String.raw`\to`} />
-			<output class="{styles.number}">
-				{numberOutput.decimal}<sub>10</sub>
-			</output>
+			<Number
+				number="{numberOutput.toString()}"
+				radix="{10}"
+			/>
 		</div>
 		<Numerals
 			numerals="{[ ...number ]}"
