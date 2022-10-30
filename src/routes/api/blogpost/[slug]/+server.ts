@@ -11,9 +11,14 @@ export const GET: RequestHandler = async ({ params }) => {
 		throw error(404, "Not found am items with specified slug.");
 	}
 
+	// expose drafts only in dev
+	const type = dev
+		? {}
+		: { draft: false };
+
 	const data: Blogpost[] = await getBlogposts({
 		slug: decodeURI(slug),
-		draft: dev
+		...type
 	}, { limit: 1 });
 
 	return new Response(
