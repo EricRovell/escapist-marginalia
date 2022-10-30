@@ -11,7 +11,7 @@
 	Disassembling the number into radix powers demonstration.
 -->
 <div class="{styles.wrapper}">
-	<ol class="{styles.ranks}">
+	<ol class="{styles.ranks} custom-scroll inline">
 		{#each numerals as [ rank, power ] (`${power}/${rank}`)}
 			{#if showZeroRanks || rank}
 				<li class="{styles.rank}" class:zero={rank === 0}>
