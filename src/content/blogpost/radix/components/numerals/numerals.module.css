@@ -52,9 +52,3 @@
 .rank .mult {
 	border-color: var(--color-border);
 }
-
-@media screen and (max-width: 48em) {
-	.ranks-wrapper {
-		grid-column: 1 / span 3 !important;
-	}
-}

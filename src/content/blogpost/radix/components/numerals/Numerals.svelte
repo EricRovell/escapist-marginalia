@@ -10,7 +10,7 @@
 <!--
 	Disassembling the number into radix powers demonstration.
 -->
-<div class="{styles.wrapper}">
+<div class="{styles.wrapper} wide">
 	<ol class="{styles.ranks} custom-scroll inline">
 		{#each numerals as [ rank, power ] (`${power}/${rank}`)}
 			{#if showZeroRanks || rank}

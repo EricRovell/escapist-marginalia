@@ -31,9 +31,9 @@
 	grid-column: 2;
 }
 
-.article > :global(.wide) {
+.article :global(.wide) {
 	width: 100%;
-	grid-column: 1 / 4;
+	grid-column: 1 / -1;
 }
 
 /* headings */
@@ -187,6 +187,9 @@
 }
 
 .article :global(.interactive) form {
+	border-radius: var(--radius-s);
+	padding: var(--space-5) var(--space-6);
+	background-color: var(--surface-3);
 	font-size: var(--font-size-0);
 }
 

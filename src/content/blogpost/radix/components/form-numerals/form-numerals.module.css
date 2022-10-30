@@ -3,9 +3,6 @@
 	flex-wrap: wrap;
 	gap: var(--space-3);
 	width: min(100%, 30ch);
-	background-color: var(--surface-3);
-	border-radius: var(--radius-s);
-	padding: var(--space-5) var(--space-6);
 }
 
 .form input[type="number"] {

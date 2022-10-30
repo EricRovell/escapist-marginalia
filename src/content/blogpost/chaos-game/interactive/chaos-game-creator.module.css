@@ -29,6 +29,8 @@
 	gap: var(--space-3);
 	flex-basis: min(100% - var(--space-3), 275px);
 	flex-grow: 1;
+	background-color: unset !important;
+	padding: 0 !important;
 }
 
 .form > fieldset {

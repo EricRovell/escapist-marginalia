@@ -9,7 +9,3 @@
 .form {
 	width: min(100%, 25ch);
 }
-
-.form label {
-	text-align: center;
-}

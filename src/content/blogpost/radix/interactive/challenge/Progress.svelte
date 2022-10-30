@@ -56,7 +56,7 @@
 		radix="{settings.radixTo}"
 	/>
 </section>
-<section class="{styles["numerals-wrapper"]}">
+<section class="{styles["numerals-wrapper"]} wide">
 	<ol class="{styles.numerals} custom-scroll inline">
 		{#each value as char}
 			<li class="{styles.numeral}">
