@@ -15,12 +15,17 @@
 	export let settings: Settings;
 
 	let dirty = false;
-	let number = randInt(settings.numberMin, settings.numberMax);
+	let number = generateNumber();
 	let valid = false;
 	let value: string[] = [];
 
 	const dispatch = createEventDispatcher();
 	const t = getContext<Record<string, string>>("t");
+
+	function generateNumber() {
+		dirty = false;
+		return randInt(settings.numberMin, settings.numberMax);
+	}
 
 	const handleInput = (e: CustomEvent<{ key: string }>) => {
 		dirty = false;
@@ -81,9 +86,11 @@
 	on:input={handleInput}
 	radix="{settings.radixTo}"
 />
-<Button
-	className="{styles["button-new-exercise"]}"
-	on:click={handleFinish}
->
-	{t["new-exercise"]}
-</Button>
+<section class="{styles.actions}">
+	<Button on:click={handleFinish}>
+		{t["new-exercise"]}
+	</Button>
+	<Button on:click={() => number = generateNumber()}>
+		{t["another-number"]}
+	</Button>
+</section>

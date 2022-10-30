@@ -33,6 +33,7 @@
 		"reset": "Reset",
 		"check": "Check",
 		"new-exercise": "New Exercise",
+		"another-number": "Another Number",
 		"correct": "Amazing! That's correct!",
 		"incorrect": "Unfortunately, incorrect. Please, try again!"
 	}
