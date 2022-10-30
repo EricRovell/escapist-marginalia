@@ -1,8 +1,8 @@
 ---
-created: 2022-10-14T17:24:00.000Z
-description: "Разберёмся в том, как устроена система обозначения чисел и как мы к этому пришли."
+created: 2022-10-31T00:58:00.000Z
+description: "Разберёмся в устройстве систем обозначения чисел."
 draft: true
-keywords: [ "math", "radix", "numbers" ]
+keywords: [ "math", "radix", "numbers", "numeral bases" ]
 lang: ru
 layout: blogpost
 slug: "системы-счисления"
