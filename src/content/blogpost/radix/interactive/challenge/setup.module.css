@@ -1,0 +1,17 @@
+.form {
+	display: grid;
+	gap: var(--space-3);
+	grid-template: repeat(4, fit-content) / repeat(2, 1fr);
+	padding: var(--space-5);
+	border-radius: var(--radius-s);
+	background-color: var(--surface-3);
+}
+
+.form h4,
+.form :nth-child(6) {
+	grid-column: 1 / span 2;
+}
+
+.form :nth-child(6) {
+	margin-block-start: var(--space-2);
+}

@@ -4,7 +4,6 @@ description: "Solving the Project Euler problem #6."
 keywords: [ "project euler", "math" ]
 lang: en
 layout: blogpost
-published: true
 series: "project-euler"
 slug: "project-euler-6"
 title: "Project Euler #6: Sum square difference"

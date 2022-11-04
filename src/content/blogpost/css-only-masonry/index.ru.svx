@@ -4,7 +4,6 @@ description: "Реализуем компонент для галереи изо
 keywords: [ "css", "web" ]
 lang: ru
 layout: blogpost
-published: true
 slug: "галерея-изображений-в-раскладке-masonry-на-почти-чистом-css"
 title: "Галерея изображений в раскладке Masonry на (почти) чистом CSS"
 translation: { lang: "english", slug: "masonry-image-gallery-with-almost-pure-css" }
@@ -112,7 +111,7 @@ const calcMasonryItemSpan = (size, scale) => Math.floor(size / scale);
 ```css
 .masonry > .masonry-item {
   grid-row-end: span var(--masonry-item-row);
-  grid-column-end: span var(--masonry-item-column); 
+  grid-column-end: span var(--masonry-item-column);
 }
 ```
 
@@ -161,14 +160,14 @@ const calcMasonryItemSpan = (size, scale) => Math.floor(size / scale);
 
   .masonry > .item {
     grid-row-end: span var(--masonry-item-row);
-    grid-column-end: span var(--masonry-item-column); 
+    grid-column-end: span var(--masonry-item-column);
   }
 </style>
 ```
 
 ## Выводы
 
-Сложно назвать это приближение действительно достойной заменой полноценной раскладки Masonry, со свойственными ему ограничениями. Нарушение визуального порядка элементов является серьёзной проблемой. В зависимости от вариативности размеров элементов всё также могут наблюдаться пробелы, которые сетка не сможет заполнить. 
+Сложно назвать это приближение действительно достойной заменой полноценной раскладки Masonry, со свойственными ему ограничениями. Нарушение визуального порядка элементов является серьёзной проблемой. В зависимости от вариативности размеров элементов всё также могут наблюдаться пробелы, которые сетка не сможет заполнить.
 
 В сравнении с другими аналогичными решениями оно отзывчиво, имеет отличную производительность благодаря небольшому использованию JavaScript. Идея хорошо показала себя при использовании разметки фотогалереи, изображения сохраняют свои пропорции, эффективно заполняя доступное пространство. Идея кажется простой, а простота всегда является плюсом.
 

@@ -2,7 +2,7 @@ type Matcher<T> = (value: T) => boolean;
 
 /**
  * Describes a query option:
- * 
+ *
  * - value;
  * - validator: validates a query option value;
  * - matcher: a curried function to match an item.
@@ -31,7 +31,7 @@ export function find<T>(items: T[], query: Query<T>, { limit, sort }: QueryOptio
 
 	for (const key of Object.keys(query)) {
 		const { value, validator, matcher } = query[key];
-		if (value && validator(value)) {
+		if (validator(value)) {
 			matchers.push(matcher(value));
 		}
 	}

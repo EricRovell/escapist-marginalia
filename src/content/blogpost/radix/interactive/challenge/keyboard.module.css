@@ -1,0 +1,42 @@
+.keyboard {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	justify-items: center;
+	gap: var(--space-2-rel);
+	font-variant-numeric: tabular-nums;
+	font-size: var(--font-size-0);
+	width: min(100% - var(--space-3), 60ch);
+	border: 0.25px solid var(--color-border);
+	font-family: monospace;
+}
+
+.keyboard button {
+	--button-border-size: 1px;
+
+	padding: var(--space-2-rel);
+	background-color: var(--surface-4);
+	color: var(--surface-3-text-contrast);
+}
+
+.keyboard .char {
+	aspect-ratio: 1 / 1;
+	width: 2.5em;
+	height: 2.5em;
+}
+
+.keyboard button:last-child {
+	--button-border-color: var(--color-success);
+
+	color: var(--color-success);
+}
+
+.keyboard button:nth-last-child(2) {
+	--button-border-color: var(--color-danger);
+
+	color: var(--color-danger);
+}
+
+.keyboard svg {
+	pointer-events: none;
+}

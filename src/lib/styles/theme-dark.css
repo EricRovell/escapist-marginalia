@@ -23,6 +23,9 @@
 		--surface-4-text-contrast: var(--color-gray-200);
 		--surface-4-text-less-contrast: var(--color-gray-400);
 
+		--color-danger: var(--color-red-500);
+		--color-success: var(--color-green-400);
+
 		--color-heading: var(--color-blue-300);
 
 		--color-text-secondary: var(--color-gray-500);
@@ -32,6 +35,7 @@
 		--color-link-active-bg: #3B3562;
 
 		--color-border: var(--color-blue-800);
+		--color-border-50: #48447F80;
 
 		--focus-ring-color: var(--color-blue-300);
 
@@ -122,6 +126,9 @@
 	--surface-4-text-contrast: var(--color-gray-200);
 	--surface-4-text-less-contrast: var(--color-gray-400);
 
+	--color-danger: var(--color-red-500);
+	--color-success: var(--color-green-400);
+
 	--color-heading: var(--color-blue-300);
 
 	--color-text-secondary: var(--color-gray-500);
@@ -131,6 +138,7 @@
 	--color-link-active-bg: #3B3562;
 
 	--color-border: var(--color-blue-800);
+	--color-border-50: #48447F80;
 
 	--focus-ring-color: var(--color-blue-300);
 

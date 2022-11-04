@@ -75,6 +75,10 @@
 	border: var(--scroll-thumb-padding) solid var(--scroll-track-color);
 }
 
+.custom-scroll.inline::-webkit-scrollbar {
+	height: var(--scroll-height);
+}
+
 /* surfaces */
 
 .surface-1 {

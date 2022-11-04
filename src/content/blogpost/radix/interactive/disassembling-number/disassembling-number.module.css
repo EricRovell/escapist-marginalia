@@ -1,0 +1,15 @@
+.wrapper {
+	font-variant-numeric: tabular-nums;
+}
+
+.form {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: var(--space-3);
+	max-width: min(100%, 30ch);
+}
+
+.form input[type="number"] {
+	width: 15ch;
+}

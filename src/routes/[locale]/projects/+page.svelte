@@ -2,8 +2,8 @@
 	import { t } from "@core/i18n";
 	import { PageMeta, CardProject } from "@components";
 	import { LayoutPage } from "@layout";
-	import styles from "@styles/pages/projects.module.css";
 	import type { PageLoad } from "./$types";
+	import styles from "./projects.module.css";
 
 	export let data: PageLoad = [];
 </script>
@@ -23,7 +23,7 @@
 		<ul class={styles.projects}>
 			{#each data.items as { name, description, github, npm, homepage, techstack, type }}
 				<li class={styles.project}>
-					<CardProject 
+					<CardProject
 						{description}
 						{github}
 						{homepage}

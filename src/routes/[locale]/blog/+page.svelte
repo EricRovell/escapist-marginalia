@@ -21,15 +21,15 @@
 	const queryOptions: Query<Blogpost> = {
 		"content-lang": {
 			value: [ $locale ],
-			validator: (value) => value.length > 0,
+			validator: (value) => Array.isArray(value) && value.length > 0,
 			matcher: (value) => (item) => value.includes(item.lang)
 		},
 		"content-topics": {
-			validator: (value) => value.length > 0,
+			validator: (value) => Array.isArray(value) && value.length > 0,
 			matcher: (value) => (item) => value.every(keyword => item.keywords.includes(keyword))
 		},
 		"content-series": {
-			validator: (value) => value.length > 0,
+			validator: (value) => Array.isArray(value) && value.length > 0,
 			matcher: (value) => (item) => item.series === value[0]
 		}
 	};
@@ -99,7 +99,7 @@
 					legend={$t("dict.series")}
 					name="content-series"
 					options={[
-						{ label: $t("dict.project-euler"), value: "project-euler", icon: iconNumberE },
+						{ label: $t("dict.project-euler"), value: "project-euler", icon: iconNumberE }
 					]}
 					bind:group={queryOptions["content-series"].value}
 				/>

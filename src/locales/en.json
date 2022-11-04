@@ -4,6 +4,7 @@
 		"blog": "blog",
 		"gallery": "gallery",
 		"projects": "projects",
+		"bookmarks": "bookmarks",
 		"about": "about",
 		"source": "source",
 		"licence": "licence",
@@ -74,6 +75,12 @@
 			"keywords": "portfolio, web development, programming",
 			"subject": "web developer portfolio"
 		},
+		"bookmarks": {
+			"title": "Bookmarks",
+			"description": "Useful links to different resources on related interests I follow and get inspired by.",
+			"keywords": "useful resources, useful links, interests, inspiration",
+			"subject": "inspiration"
+		},
 		"about": {
 			"title": "About",
 			"description": "Hi! My name is Eric Rovell, this page tells a bit of my story, interests and motivation.",
@@ -84,5 +91,5 @@
 			"author": "Eric Rovell",
 			"language": "en"
 		}
-	}	
+	}
 }

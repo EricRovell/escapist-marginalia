@@ -9,7 +9,7 @@
 <Meta
 	meta={{
 		author: "Eric Rovell",
-		language: $locale,
+		language: $locale
 	}}
 />
 

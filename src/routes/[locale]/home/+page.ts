@@ -9,8 +9,8 @@ export const load: PageLoad = async ({ params }) => {
 	const { locale = "en"} = params as { locale: Locale };
 
 	try {
-		const [	blogposts, photos, projects ] = await Promise.all([
-			getBlogposts({ lang: locale }),
+		const [ blogposts, photos, projects ] = await Promise.all([
+			getBlogposts({ lang: locale, draft: false }),
 			getGalleryItems(),
 			getProjects({ featured: true }, { limit: 4 })
 		]);

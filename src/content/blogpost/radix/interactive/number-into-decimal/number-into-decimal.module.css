@@ -1,0 +1,21 @@
+.wrapper {
+	font-variant-numeric: tabular-nums;
+}
+
+.form {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: var(--space-3);
+	max-width: min(100%, 45ch);
+}
+
+.form input[type="number"] {
+	width: 15ch;
+}
+
+.number-wrapper {
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+}

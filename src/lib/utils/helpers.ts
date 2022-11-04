@@ -1,3 +1,5 @@
+import type { Validator } from "@types";
+
 /**
  * Fetches a JSON from specific URL.
  */
@@ -18,9 +20,9 @@ export async function fetchJSON<T>(url: string, options: RequestInit = {}): Prom
 
 /**
  * Groups list of objects by common key.
- * 
+ *
  * This implementation:
- * 
+ *
  * - The key getter function used for TS inferring capabilities inorder to avoid typing the generic every use.
  * - By using the `K extends keyof any` type constraint, we are telling the TS
  * 	 that the key being used needs to be something that can be a `key string | number | symbol`;
@@ -44,7 +46,7 @@ export function groupBy<T, K extends keyof unknown>(items: T[], getKey: (item: T
 export function preventPageScroll(condition: boolean) {
 	// SSR check
 	if (!globalThis.window) return;
-		
+
 	if (condition) {
 		// prevent page scroll, mostly for safari hack
 		document.body.style.cssText = `
@@ -86,12 +88,22 @@ export async function share(data: ShareData): Promise<boolean> {
 }
 
 /**
- * Derives an array of sequental numbers.
+ * Generates a number sequence: [ a; b ).
  */
-export const range = (start: number, end: number) => {
-	const size = end - start + 1;
-	return [...Array(size).keys()].map((i) => i + start);
-};
+export function* range(start: number, end?: number, step = 1): Generator<number> {
+	if (typeof end === "undefined") {
+		end = start;
+		start = 0;
+	}
+
+	if ((step > 0 && start >= end) || (step < 0 && start <= end)) {
+		return [];
+	}
+
+	for (let i = start; step > 0 ? (i < end) : (i > end); i += step) {
+		yield i;
+	}
+}
 
 /**
  * Clamps a value between an upper and lower bound.
@@ -106,7 +118,7 @@ export function clamp(number: number, min = 0, max = 1): number {
 }
 
 /**
- * 
+ *
  */
 export function encodeTitleId(title: string) {
 	const id = title
@@ -115,3 +127,33 @@ export function encodeTitleId(title: string) {
 
 	return encodeURI(id);
 }
+
+/**
+ * Validates the input field value.
+ */
+export const validate = <T>(value: T, ...validators: Validator<T>[]) => {
+	const state = {
+		dirty: false,
+		valid: true,
+		message: ""
+	};
+
+	if (!validators || !validators.length) {
+		return state;
+	}
+
+	for (const validator of validators) {
+		const result = validator(value);
+		if (!result.valid) {
+			return {
+				...result,
+				dirty: true
+			};
+		}
+	}
+
+	return {
+		...state,
+		dirty: true
+	};
+};

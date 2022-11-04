@@ -4,7 +4,6 @@ description: "Build Masonry-like layout image gallery component using the modern
 keywords: [ "css", "web" ]
 lang: en
 layout: blogpost
-published: true
 slug: "masonry-image-gallery-with-almost-pure-css"
 title: "Masonry Image Gallery Layout with (almost) pure CSS"
 translation: { lang: "русский", slug: "галерея-изображений-в-раскладке-masonry-на-почти-чистом-css" }
@@ -108,7 +107,7 @@ The output is passed down into using custom properties.
 ```css
 .masonry > .masonry-item {
   grid-row-end: span var(--masonry-item-row);
-  grid-column-end: span var(--masonry-item-column); 
+  grid-column-end: span var(--masonry-item-column);
 }
 ```
 
@@ -157,7 +156,7 @@ Basic [Svelte][svelte] component implementation may look like this:
 
   .masonry > .item {
     grid-row-end: span var(--masonry-item-row);
-    grid-column-end: span var(--masonry-item-column); 
+    grid-column-end: span var(--masonry-item-column);
   }
 </style>
 ```

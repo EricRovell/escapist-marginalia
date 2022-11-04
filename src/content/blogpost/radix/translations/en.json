@@ -1,0 +1,40 @@
+{
+	"decimal-conversion-stages": {
+		"title": "Decimal number conversion stages",
+		"number": "Number",
+		"radix": "Radix"
+	},
+	"disassembling-number": {
+		"title": "Disassembling the number",
+		"number": "Number",
+		"radix": "Radix",
+		"power": "Power"
+	},
+	"number-into-decimal": {
+		"title": "Number into decimal conversion",
+		"number": "Number",
+		"radix": "Radix"
+	},
+	"roman-numerals": {
+		"title": "Arabic to Roman Numerals",
+		"arabic": "Arabic",
+		"invalid-value-message": "Roman number should be in range between 1 ... 3999"
+	},
+	"exercise": {
+		"title": "Exercise",
+		"setup": "Setup",
+		"number-min": "Minimum number",
+		"number-max": "Maximum number",
+		"radix-from": "From Radix",
+		"radix-to": "To Radix",
+		"begin": "Begin",
+		"numerals-placeholder": "Use the keyboard below to type the number",
+		"undo": "Undo",
+		"reset": "Reset",
+		"check": "Check",
+		"new-exercise": "New Exercise",
+		"another-number": "Another Number",
+		"correct": "Amazing! That's correct!",
+		"incorrect": "Unfortunately, incorrect. Please, try again!"
+	}
+}

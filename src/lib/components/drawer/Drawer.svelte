@@ -20,7 +20,7 @@
 			show = false;
 		}
 	};
-	
+
 	afterNavigate(() => {
 		show = false;
 	});
@@ -40,6 +40,7 @@
 	}}
 	on:swipe-down={handleSwipe}
 >
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div
 		class={styles.backdrop}
 		class:show

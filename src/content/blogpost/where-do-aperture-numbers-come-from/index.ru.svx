@@ -4,7 +4,6 @@ description: "Попробуем разобраться, почему диафр
 keywords: [ "photography", "aperture", "f-number" ]
 lang: ru
 layout: blogpost
-published: true
 slug: "откуда-берутся-числа-диафрагмы"
 title: "Откуда берутся числа диафрагмы?"
 translation: { lang: "english", slug: "where-do-aperture-numbers-come-from" }

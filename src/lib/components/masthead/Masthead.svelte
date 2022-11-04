@@ -1,5 +1,12 @@
 <script lang="ts">
-	import { pathHome, pathBlog, pathGallery, pathProjects, pathAbout } from "@paths";
+	import {
+		pathHome,
+		pathBlog,
+		pathGallery,
+		pathProjects,
+		pathBookmarks,
+		pathAbout
+	} from "@paths";
 	import { t } from "@core/i18n";
 
 	import * as Navigation from "../menu";
@@ -32,13 +39,16 @@
 			<Navigation.Item href={$pathProjects} pattern={/\/projects/}>
 				{$t("sections.projects")}
 			</Navigation.Item>
+			<Navigation.Item href={$pathBookmarks} pattern={/\/bookmarks/}>
+				{$t("sections.bookmarks")}
+			</Navigation.Item>
 			<Navigation.Item href={$pathAbout} disabled>
 				{$t("sections.about")}
 			</Navigation.Item>
 		</Navigation.Container>
 	</section>
 	<section label="controls">
-		<LocaleRoute />  
+		<LocaleRoute />
 		<ThemeSelect />
 	</section>
 </header>

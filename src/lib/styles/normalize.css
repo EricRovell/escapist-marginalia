@@ -36,10 +36,11 @@ button {
 
 sub,
 sup {
-	font-size: 75%;
+	font-size: 0.65em;
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
+	left: 0.05em;
 }
 
 sub {
@@ -47,7 +48,7 @@ sub {
 }
 
 sup {
-	top: -0.5em;
+	top: -0.75em;
 }
 
 h1,

@@ -82,7 +82,7 @@ export const swipable: Action<Partial<Options>> = (node, { threshold = 25, timeo
 				x1: Math.round(x),
 				y1: Math.round(y),
 				x2,
-				y2,
+				y2
 			};
 
 			node.dispatchEvent(new CustomEvent("swipe", { cancelable: true, detail }));

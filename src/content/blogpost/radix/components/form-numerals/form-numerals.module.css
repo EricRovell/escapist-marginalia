@@ -1,0 +1,10 @@
+.form {
+	display: grid;
+	flex-wrap: wrap;
+	gap: var(--space-3);
+	width: min(100%, 30ch);
+}
+
+.form input[type="number"] {
+	width: 100%;
+}

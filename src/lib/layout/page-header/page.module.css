@@ -3,7 +3,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: var(--space-9) var(--space-4);
+	padding: var(--space-10) var(--space-4);
+	border-block: 2px solid var(--color-border);
 }
 
 .page {

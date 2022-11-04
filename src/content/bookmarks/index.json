@@ -1,0 +1,90 @@
+[
+	{
+		"category": "Personal Blog",
+		"description": "Unique blog filled with interactive blogposts about engineering, physics, math and more!",
+		"title": "Bartosz Ciechanowski",
+		"topics": [
+			"engineering",
+			"physics",
+			"math"
+		],
+		"url": "https://ciechanow.ski/archives/"
+	},
+	{
+		"category": "Personal Blog",
+		"description": "Friendly tutorials for developers. Focus on React, CSS, Animation, and more!",
+		"title": "Josh W Comeau",
+		"topics": [
+			"web development",
+			"react",
+			"css",
+			"tutorials"
+		],
+		"url": "https://www.joshwcomeau.com/"
+	},
+	{
+		"category": "Personal Blog",
+		"description": "Core maintainer of Svelte JS. A lot of high quality Svelte tutorials.",
+		"title": "Tan Li Hau",
+		"topics": [
+			"web development",
+			"svelte",
+			"javascript",
+			"tutorials"
+		],
+		"url": "https://lihautan.com/"
+	},
+	{
+		"category": "Personal Blog",
+		"description": "High quality CSS tutorials from experienced designer.",
+		"title": "Ahmad Shadeed",
+		"topics": [
+			"web development",
+			"accessability",
+			"css",
+			"tutorials"
+		],
+		"url": "https://www.ishadeed.com/"
+	},
+	{
+		"category": "Personal Blog",
+		"description": "Блог Константина Шамина - профессиионального пейзажного фотографа о фотографии, обработке и путешествиях.",
+		"title": "Константин Шамин",
+		"topics": [
+			"photography",
+			"photo editing"
+		],
+		"url": "https://kotovich.biz/"
+	},
+	{
+		"category": "Tools",
+		"description": "CSS clip-path maker: create complex shapes in CSS",
+		"title": "Clippy",
+		"topics": [
+			"CSS",
+			"web-development"
+		],
+		"url": "https://bennettfeely.com/clippy/"
+	},
+	{
+		"category": "Tools",
+		"description": "Regular expression tester with syntax highlighting, explanation, cheat sheet for PHP/PCRE, Python, GO, JavaScript, Java, C#/.NET.",
+		"title": "regex101",
+		"topics": [
+			"regex",
+			"javascript",
+			"python"
+		],
+		"url": "https://regex101.com/"
+	},
+	{
+		"category": "Tools",
+		"description": "Turn your source code into beautiful images.",
+		"title": "Chalk.ist",
+		"topics": [
+			"programming",
+			"code"
+		],
+		"url": "https://chalk.ist/"
+	}
+]

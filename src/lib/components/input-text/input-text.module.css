@@ -1,0 +1,21 @@
+.label {
+	display: grid;
+	gap: var(--space-1);
+}
+
+.input {
+	background-color: var(--surface-4);
+	border: 2px solid var(--color-border);
+	border-radius: var(--radius-xs);
+	padding: var(--space-1-rel) var(--space-2-rel);
+	color: inherit;
+}
+
+.input:global(.invalid) {
+	border-color: var(--color-danger);
+}
+
+.error-message {
+	margin-block-start: var(--space-2);
+	color: var(--color-danger);
+}

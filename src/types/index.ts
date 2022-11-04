@@ -17,11 +17,11 @@ export interface Page<T> {
 export interface BlogpostMetadata {
 	created: string;
 	description: string;
+	draft?: boolean;
 	filepath: string;
 	keywords: string[];
 	lang: Locale;
 	layout?: string;
-	published?: boolean;
 	series: string;
 	slug: string;
 	title: string;
@@ -80,3 +80,19 @@ export interface Project extends ProjectPageData, Omit<GithubAPIRepo, "html_url"
 }
 
 export type { GalleryItem } from "@components";
+
+export interface Bookmark {
+	category: string;
+	description: string;
+	title: string;
+	topics: string[];
+	url: string;
+}
+
+/**
+ * Input field value validator.
+ */
+export type Validator<T> = (value: T) => ({
+	valid: boolean,
+	message: string
+});

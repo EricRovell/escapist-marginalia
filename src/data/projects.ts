@@ -9,10 +9,10 @@ interface Options {
 
 /**
  * There are 3 sources of project data:
- * 
+ *
  * 	1. The locale specific data stored in mdx pages;
  * 	2. The data from Github API;
- * 
+ *
  * I have to use 2 sources as I have to translate some data and cannot store
  * everything locally or via Github.
  */
@@ -51,7 +51,7 @@ const getProjectGithubData = async (items: ProjectPageData[] = []) => {
 				homepage,
 				github,
 				language,
-				topics,
+				topics
 			});
 		}
 

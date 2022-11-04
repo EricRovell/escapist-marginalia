@@ -10,6 +10,7 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 1ch;
+	height: fit-content;
 	cursor: pointer;
 	user-select: none;
 }

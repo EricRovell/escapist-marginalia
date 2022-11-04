@@ -1,0 +1,9 @@
+.table {
+	margin-block: var(--space-5) var(--space-3);
+}
+
+.math {
+	display: flex;
+	justify-content: space-between;
+	width: min(100%, 30ch);
+}

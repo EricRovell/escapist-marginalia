@@ -32,6 +32,7 @@
 	};
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <nav class="{styles.pagination}" class:vertical aria-label="pagination" on:click={handleClick}>
 	<Button
 		appearance="outline"

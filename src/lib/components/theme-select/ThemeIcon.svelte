@@ -10,14 +10,14 @@
   */
 	function verticesCoords(vertices: number, radius: number) {
 		const coords: Coordinate[] = new Array<Coordinate>(vertices);
-    
+
 		for (let i = 0; i < vertices; i++) {
 			coords[i] = {
 				x: radius * Math.cos(2 * Math.PI * i / vertices),
-				y: radius * Math.sin(2 * Math.PI * i / vertices),
+				y: radius * Math.sin(2 * Math.PI * i / vertices)
 			};
 		}
-    
+
 		return coords;
 	}
 </script>
@@ -25,21 +25,21 @@
 <script lang="ts">
   import type { Theme } from "@stores";
   import styles from "./theme-icon.module.css";
-  
+
   export let maskID = Math.random().toString().substr(2, 8);
   export let theme: Theme;
   export let sunSize = 25;
   export let raySize = 5;
   export let rayOffset = 40;
   export let rays = 8;
-  
+
   const cx = 50;
   const cy = 50;
 </script>
 
 <!--
   Props:
-    
+
     | Name      | type | default                   | description                            |
     |:----------|:-------|:------------------------|:---------------------------------------|
     | sunSize   | number | 25                      | The sun's radius                       |
