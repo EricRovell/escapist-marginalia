@@ -1,12 +1,12 @@
 ---
 created: 2022-10-03T00:31:00.000Z
-description: "Solving the Project Euler problem #6."
+description: "Sum square difference."
 keywords: [ "project euler", "math" ]
 lang: en
 layout: blogpost
 series: "project-euler"
 slug: "project-euler-6"
-title: "Project Euler #6: Sum square difference"
+title: "Project Euler #6"
 translation: { lang: "ru", slug: "проект-эйлера-6" }
 ---
 

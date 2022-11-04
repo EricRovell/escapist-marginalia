@@ -1,12 +1,12 @@
 ---
 created: 2022-10-03T00:31:00.000Z
-description: "Решаем задачу Проекта Эйлера #6"
+description: "Разность квадратичных сумм."
 keywords: [ "project euler", "math" ]
 lang: ru
 layout: blogpost
 series: "project-euler"
 slug: "проект-эйлера-6"
-title: "Проект Эйлера #6: Разность квадратичных сумм"
+title: "Проект Эйлера #6"
 translation: { lang: "en", slug: "project-euler-6" }
 ---
 

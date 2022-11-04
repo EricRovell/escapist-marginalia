@@ -1,12 +1,12 @@
 ---
 created: 2022-05-24T00:20:00.000Z
-description: "The Project Euler #1 solution."
+description: "Multiples of 3 or 5."
 keywords: [ "project euler", "math" ]
 lang: en
 layout: blogpost
 series: "project-euler"
 slug: "project-euler-1"
-title: "Project Euler #1: Multiples of 3 or 5"
+title: "Project Euler #1"
 translation: { lang: "русский", slug: "проект-эйлера-1" }
 ---
 
