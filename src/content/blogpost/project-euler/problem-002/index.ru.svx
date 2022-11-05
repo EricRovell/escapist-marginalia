@@ -1,12 +1,12 @@
 ---
 created: 2021-06-11T00:00:00.000Z
-description: "Решаем Проект Эйлера, проблема №2: Чётные числа Фибоначчи."
+description: "Чётные числа Фибоначчи."
 keywords: [ "project euler", "math" ]
 lang: ru
 layout: blogpost
 series: "project-euler"
 slug: "проект-эйлера-2"
-title: "Проект Эйлера #2: Чётные числа Фибоначчи"
+title: "Проект Эйлера #2"
 updated: 2021-06-13T00:00:00.000Z
 ---
 

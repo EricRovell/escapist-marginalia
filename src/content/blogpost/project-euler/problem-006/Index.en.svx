@@ -1,13 +1,14 @@
 ---
 created: 2022-10-03T00:31:00.000Z
-description: "Solving the Project Euler problem #6."
+description: "Sum square difference."
 keywords: [ "project euler", "math" ]
 lang: en
 layout: blogpost
 series: "project-euler"
 slug: "project-euler-6"
-title: "Project Euler #6: Sum square difference"
-translation: { lang: "ru", slug: "проект-эйлера-6" }
+title: "Project Euler #6"
+translation: { lang: "russian", slug: "проект-эйлера-6" }
+updated: 2022-11-05T03:18:00.000Z
 ---
 
 <script>
@@ -76,15 +77,132 @@ The sum of natural numbers can be expressed as the [arethmetic series sum][arith
 
 ### The sum of squares of natural numbers
 
-The sum of squares of natural numbers can be expressed using the [square pyramidal number formula][square-pyramidal-number]:
+Unlike the sum of natural numbers, getting the sum of squares formula is a bit trickier. We will try to derive the formula, but you can jump directly to the [result](#sum-of-squares-formula).
+
+Let's start our investigation by enumerating the sum of squares values:
+
+```math
+\begin{array}{l|cccccc}
+n & 1 & 2 & 3 & 4 & 5 & 6\\ \hline
+\sum_{i=1}^{n} i^2 & 1 & 5 & 14 & 30 & 55 & 91
+\end{array}
+```
+
+Next, let's calculate the function value increments:
+
+```math
+\begin{array}{l|cccccc}
+\sum_{i=1}^{n} i^2 & 1 & 5 & 14 & 30 & 55 & 91\\ \hline
+\Delta_1 & & +4 & +9 & +16 & +25 & +36\\
+\Delta_2 & & & +5 & +7 & +9 & +11\\
+\Delta_3 & & & & +2 & +2 & +2\\
+\end{array}
+```
+
+Only third order increments have linear behavior. It means the function is the 3rd order polynomial:
+
+```math
+ax^3 + bx^2 + cx + d = 0
+```
+
+As the sum of squares equals zero for input zero, the coefficient $d = 0$:
+
+```math
+a * 0^3 + b * 0^2 + c * 0 + d = 0 \Rightarrow d = 0
+```
+
+We have 3 unknown variables $(a, b, c)$, let's define the system of equations:
+
+```math
+\left\{
+\begin{array}{ll}
+a + b + c &= 1 \\
+8a + 4b + 2c &= 5 \\
+27a + 9b + 3c &= 17
+\end{array}
+\right.
+```
+
+And in the matrix form:
+
+```math
+\left[
+	\begin{array}{ccc}
+		1&1&1\\
+		8&4&2\\
+		27&9&3
+	\end{array}
+	\right]
+	\left[
+		\begin{array}{ccc}
+		a\\
+		b\\
+		c
+	\end{array}
+	\right]
+	=
+	\left[
+		\begin{array}{ccc}
+		1\\
+		5\\
+		14
+	\end{array}
+	\right]
+```
+
+Solving the equation we have:
+
+```math
+	\left[
+	\begin{array}{ccc}
+		a\\
+		b\\
+		c
+	\end{array}
+	\right]
+	=
+	\left[
+		\begin{array}{ccc}
+		1/3\\
+		1/2\\
+		1/6
+	\end{array}
+	\right]
+```
+
+So, the function we have been searching for:
+
+```math
+	\begin{aligned}
+	\sum_{n = 1}^{x}n^2 = \frac{1}{3}x^3 + \frac{1}{2}x^2 + \frac{1}{6}x
+	\end{aligned}
+```
+
+Let's refactor a function to get it's well-known form:
+
+```math
+	\begin{aligned}
+		\sum_{n = 1}^{x}n^2 &= \frac{2x^3 + 3x^2 + x}{6} \\
+				&= \frac{x(2x^2 + 3x + 1)}{6} \\
+				&= \frac{x(2x + 1)(x + 1)}{6}
+	\end{aligned}
+```
+
+As the result, the sum of squares of natural numbers can be expressed using the [square pyramidal number formula][square-pyramidal-number]:
+
+<p id="sum-of-squares-formula">
 
 ```math
 \sum_{i=1}^{n} i^2 = \frac{n(n + 1)(2n + 1)}{6}
 ```
 
+</p>
+
+### Sum difference
+
 Let’s find the difference between these formulae:
 
-```math
+	```math
 \begin{aligned}
 	(S_{n})^2 - S_{n}^2 &= \\
 	&= \left(\frac{n(n + 1)}{2}\right)^2 - \frac{n(n + 1)(2n + 1)}{6} \\
