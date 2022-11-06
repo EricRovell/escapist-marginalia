@@ -1,11 +1,13 @@
 .romans {
-	border: 2px dashed var(--color-border);
 	border-radius: var(--radius-s);
-	padding: var(--space-1-rel) var(--space-3-rel);
+	border-block: 2px dashed var(--color-border-50);
+	margin-block-end: var(--space-2);
+	font-variant-numeric: tabular-nums;
+	text-align: center;
 	font-family: monospace;
 	font-size: min(4vw + 1rem, 2rem);
 }
 
 .form {
-	width: min(100%, 25ch);
+	width: min(100%, 35ch);
 }

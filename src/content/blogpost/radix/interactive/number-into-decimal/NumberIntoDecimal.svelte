@@ -37,8 +37,6 @@
 			showZeroRanks
 			showPower
 		/>
-	{:else}
-		<span>Invalid input</span>
 	{/if}
 	<FormNumerals
 		bind:number="{inputNumber}"
