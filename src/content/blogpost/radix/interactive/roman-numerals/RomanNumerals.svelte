@@ -13,7 +13,7 @@
 
 <section class="wide interactive">
 	<h4>{t.title}</h4>
-	<output class="{styles.romans}">
+	<output class="{styles.romans} wide">
 		{#if roman && valid}
 			{roman}
 		{:else}
