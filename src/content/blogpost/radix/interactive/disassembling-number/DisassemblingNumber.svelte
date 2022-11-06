@@ -9,6 +9,8 @@
 	export let showPower = false;
 	export let t: Record<string, string>;
 
+	let valid = true;
+
 	$: number = radix(inputNumber, 10);
 	$: numberOutput = number.setRadix(radixOutput);
 </script>
@@ -18,18 +20,21 @@
 -->
 <section class="wide interactive {styles.wrapper}">
 	<h4>{t.title}</h4>
-	<Number
-		number="{number.toString()}"
-		radix="{radixOutput}"
-	/>
-	<Numerals
-		numerals="{[ ...numberOutput ]}"
-		radix="{radixOutput}"
-		{showPower}
-	/>
+	{#if valid}
+		<Number
+			number="{number.toString()}"
+			radix="{radixOutput}"
+		/>
+		<Numerals
+			numerals="{[ ...numberOutput ]}"
+			radix="{radixOutput}"
+			{showPower}
+		/>
+	{/if}
 	<FormNumerals
 		bind:number="{inputNumber}"
 		bind:radix="{radixOutput}"
+		bind:valid
 		{t}
 	>
 		<Switch bind:checked="{showPower}">
