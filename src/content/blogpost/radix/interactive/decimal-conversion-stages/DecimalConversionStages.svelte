@@ -5,11 +5,13 @@
 	import { buildMathDifferences, buildMathPowerInequalities, buildMathRanks } from "./decimal-conversion-stages.katex";
 	import styles from "./decimal-conversion-stages.module.css";
 
-	export let number = 101;
+	export let number = "101";
 	export let outputRadix = 2;
 	export let t: Record<string, string>;
 
-	$: stages = getConversionStages(number, outputRadix);
+	let valid = true;
+
+	$: stages = getConversionStages(+number, outputRadix);
 </script>
 
 <!--
@@ -20,13 +22,16 @@
 	<FormNumerals
 		bind:number
 		bind:radix="{outputRadix}"
+		bind:valid
 		{t}
 	/>
-	<div class="{styles.table}">
-		<MathExp math={buildMathRanks(getRanks(number, outputRadix), outputRadix)} />
-	</div>
-	<div class="{styles.math}">
-		<MathExp math={buildMathPowerInequalities(stages, outputRadix)} />
-		<MathExp math={buildMathDifferences(stages, outputRadix)} />
-	</div>
+	{#if valid}
+		<div class="{styles.table}">
+			<MathExp math={buildMathRanks(getRanks(+number, outputRadix), outputRadix)} />
+		</div>
+		<div class="{styles.math}">
+			<MathExp math={buildMathPowerInequalities(stages, outputRadix)} />
+			<MathExp math={buildMathDifferences(stages, outputRadix)} />
+		</div>
+	{/if}
 </section>
