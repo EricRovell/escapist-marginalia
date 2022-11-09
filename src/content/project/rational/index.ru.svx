@@ -1,7 +1,7 @@
 ---
-description: "Rational is rational numbers library written in TypeScript"
+description: "Rational - библиотека, добавляющая поддержку рациональных чисел в JavaScript."
 featured: true
-lang: "en"
+lang: "ru"
 layout: project
 maintained: true
 name: "rational"
@@ -12,4 +12,4 @@ type: "library"
 updated: 2022-11-09T01:29:00.000Z
 ---
 
-This page is currently in development
+Страница в разработке.

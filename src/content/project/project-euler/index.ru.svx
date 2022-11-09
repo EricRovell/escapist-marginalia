@@ -1,0 +1,14 @@
+---
+description: "Проект Эйлера"
+featured: false
+lang: "ru"
+layout: project
+maintained: true
+name: "project-euler"
+repository: "EricRovell/project-euler-ts"
+techstack: [ "TypeScript" ]
+updated: 2022-11-09T01:29:00.000Z
+website: "https://svelte.dev/repl/e9f6a16dfd9a4013b1a0a76347b206eb?version=3"
+---
+
+Страница в разработке.
