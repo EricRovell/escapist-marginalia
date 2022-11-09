@@ -12,15 +12,15 @@
 
 	export let description: Project["description"];
 	export let name: Project["name"];
-	export let github: Project["github"];
 	export let npm: Project["npm"];
-	export let homepage: Project["homepage"];
+	export let repository: Project["repository"];
 	export let techstack: Project["techstack"] = [];
+	export let website: Project["website"];
 
 	const links = [
-		{ href: github, title: "Github", icon: iconGithub },
+		{ href: repository, title: "Github", icon: iconGithub },
 		{ href: npm, title: "NPM", icon: iconNpm },
-		{ href: homepage, title: "Website", icon: iconURL }
+		{ href: website, title: "Website", icon: iconURL }
 	].filter(({ href }) => href);
 </script>
 
