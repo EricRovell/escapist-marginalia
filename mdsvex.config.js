@@ -1,6 +1,6 @@
 /**
  * Setup for including Math in MDsvex files.
- * 
+ *
  * Issue: https://github.com/pngwn/MDsveX/issues/302
  * Example: https://github.com/pngwn/mdsvex-math
 */
@@ -19,6 +19,7 @@ export const mdsvexConfig = {
 	remarkPlugins: [ transformerTOC, math, transformerMath ],
 	rehypePlugins: [ correct_hast_tree, rehype_katex, slug, transformerAnchor ],
 	layout: {
-		"blogpost": "./src/lib/layout/blogpost/Blogpost.svelte"
+		"blogpost": "./src/lib/layout/blogpost/Blogpost.svelte",
+		"project": "./src/lib/layout/project/Project.svelte"
 	}
 };

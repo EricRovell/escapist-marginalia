@@ -1,7 +1,7 @@
 ---
-description: "SvelteJS media queries observer."
+description: "Наблюдатель медиа-выражений для SvelteJS"
 featured: true
-lang: "en"
+lang: "ru"
 layout: project
 maintained: true
 name: "svelte-media-observer"
@@ -13,4 +13,4 @@ updated: 2022-11-09T01:29:00.000Z
 website: "https://svelte.dev/repl/e9f6a16dfd9a4013b1a0a76347b206eb?version=3"
 ---
 
-This page is currently in development
+Страница в разработке.

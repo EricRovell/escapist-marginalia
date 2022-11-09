@@ -5,3 +5,4 @@
 /src/data/gallery.json
 /inspiration
 .vercel
+vite.config.js.timestamp*

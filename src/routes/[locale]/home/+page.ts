@@ -6,13 +6,13 @@ import type { Locale } from "@types";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ params }) => {
-	const { locale = "en"} = params as { locale: Locale };
+	const { locale = "en" } = params as { locale: Locale };
 
 	try {
 		const [ blogposts, photos, projects ] = await Promise.all([
 			getBlogposts({ lang: locale, draft: false }),
 			getGalleryItems(),
-			getProjects({ featured: true }, { limit: 4 })
+			getProjects({ featured: true, lang: locale }, { limit: 4 })
 		]);
 
 		return {

@@ -1,7 +1,7 @@
 ---
-description: "Blossom is a JS library tool for colour manipulations and transformations."
+description: "Blossom - библиотка для конвертации цветов и манипуляций на ними, написанная на TypeScript."
 featured: true
-lang: "en"
+lang: "ru"
 layout: project
 maintained: false
 name: "blossom"
@@ -13,4 +13,4 @@ updated: 2022-11-09T01:29:00.000Z
 website: "https://ericrovell.github.io/blossom-web"
 ---
 
-This page is currently in development
+Страница в разработке
