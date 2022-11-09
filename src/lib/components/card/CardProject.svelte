@@ -25,9 +25,11 @@
 </script>
 
 <article class="surface-2 {styles["card"]}">
-	<Link href="{$pathProject(name)}">
-		<h3>{name}</h3>
-	</Link>
+	<h3>
+		<Link href="{$pathProject(name)}">
+			{name}
+		</Link>
+	</h3>
 	<p class="line-clamp" style="--line-count: 3">
 		{description}
 	</p>
