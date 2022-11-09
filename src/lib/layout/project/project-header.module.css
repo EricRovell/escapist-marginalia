@@ -1,0 +1,65 @@
+.wrapper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: min(100% - var(--space-3), 1440px);
+	text-align: center;
+}
+
+.wrapper > *,
+.wrapper > footer > *:not(:last-child) {
+	margin-block-end: var(--space-5-rel);
+}
+
+.wrapper > h1 {
+	font-family: var(--font-secondary);
+	text-align: center;
+	margin-block: 0 var(--space-1-rel);
+	max-inline-size: 65ch;
+}
+
+.wrapper > p {
+	font-size: var(--font-size-1);
+	text-align: center;
+	max-inline-size: 45ch;
+	line-height: 1.4;
+	margin-block-end: var(--space-7-rel);
+}
+
+.wrapper > footer {
+	display: contents;
+	font-size: var(--font-size-1);
+}
+
+.keywords {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--space-2-rel);
+	color: var(--color-info);
+}
+
+.keywords li {
+	padding: var(--space-2-rel) var(--space-3-rel);
+	border-radius: var(--radius-s);
+	font-size: var(--font-size-0);
+}
+
+.links {
+	--icon-size: 1.5em;
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-content: space-evenly;
+	gap: var(--space-4-rel);
+}
+
+.links a {
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	gap: var(--space-2-rel);
+	font-size: var(--font-size-0);
+}
