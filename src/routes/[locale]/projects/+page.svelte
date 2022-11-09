@@ -1,11 +1,15 @@
 <script lang="ts">
-	import { t } from "@core/i18n";
+	import { t, locale } from "@core/i18n";
 	import { PageMeta, CardProject } from "@components";
 	import { LayoutPage } from "@layout";
+	import type { Project } from "@types";
 	import type { PageLoad } from "./$types";
 	import styles from "./projects.module.css";
 
 	export let data: PageLoad = [];
+
+	let projects: Project[];
+	$: projects = data.items.filter(item => item.lang === $locale);
 </script>
 
 <PageMeta route="projects" />
@@ -21,16 +25,15 @@
 	</svelte:fragment>
 	<article class={styles.layout}>
 		<ul class={styles.projects}>
-			{#each data.items as { name, description, github, npm, homepage, techstack, type }}
+			{#each projects as { name, description, repository, npm, website, techstack }}
 				<li class={styles.project}>
 					<CardProject
 						{description}
-						{github}
-						{homepage}
 						{npm}
 						{name}
+						{repository}
 						{techstack}
-						{type}
+						{website}
 					/>
 				</li>
 			{/each}

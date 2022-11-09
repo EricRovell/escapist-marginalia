@@ -48,35 +48,21 @@ export interface Blogpost extends Omit<BlogpostMetadata, "created" | "updated" |
 }
 
 /**
- * `Github Rest API` Project data interface.
- */
-export interface GithubAPIRepo {
-	name: string;
-	description: string;
-	homepage: string;
-	html_url: string;
-	language: string;
-	topics: string[];
-}
-
-/**
  * Project Page Frontmatter data interface.
  */
-export interface ProjectPageData {
+export interface Project {
 	description: string;
 	featured?: boolean;
 	lang: Locale;
 	layout: string | false;
+	maintained: boolean;
 	name: string;
 	npm?: string;
 	repository: string;
 	techstack: string[];
 	type: "string";
+	updated: string;
 	website?: string;
-}
-
-export interface Project extends ProjectPageData, Omit<GithubAPIRepo, "html_url"> {
-	github: string;
 }
 
 export type { GalleryItem } from "@components";

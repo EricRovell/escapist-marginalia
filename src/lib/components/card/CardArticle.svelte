@@ -21,11 +21,11 @@
 		date={created}
 		options={{ month: "long", day: "numeric", year: "numeric" }}
 	/>
-	<Link	href={$pathBlogpost(slug)}>
-		<h3>
+	<h3>
+		<Link	href={$pathBlogpost(slug)}>
 			{title}
-		</h3>
-	</Link>
+		</Link>
+	</h3>
 	<p class="line-clamp" style="--line-count: 3">
 		{description}
 	</p>

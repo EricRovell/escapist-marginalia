@@ -24,6 +24,7 @@ const config = {
 		sveltekit(),
 		intlPrecompile("/src/locales"),
 		replace({
+			preventAssignment: true,
 			"__buildTime__": () => new Date().toISOString()
 		})
 	],

@@ -1,14 +1,8 @@
-<script lang="ts" context="module">
-	import type { Project } from "@types";
-</script>
-
 <script lang="ts">
-	import { pathProject } from "@core/paths";
-	import Icon from "../icons/Icon.svelte";
-	import { Link } from "../link";
-
-	import { iconGithub, iconNpm, iconURL } from "../icons/default";
-	import styles from "./card-project.module.css";
+	import { Link, Icon } from "@components";
+	import { iconGithub, iconNpm, iconURL } from "$lib/components/icons/default";
+	import type { Project } from "@types";
+	import styles from "./project-header.module.css";
 
 	export let description: Project["description"];
 	export let name: Project["name"];
@@ -24,19 +18,17 @@
 	].filter(({ href }) => href);
 </script>
 
-<article class="surface-2 {styles["card"]}">
-	<h3>
-		<Link href="{$pathProject(name)}">
-			{name}
-		</Link>
-	</h3>
-	<p class="line-clamp" style="--line-count: 3">
-		{description}
-	</p>
+<div class={styles.wrapper}>
+	<h1>
+		{name}
+	</h1>
+	<p>{description}</p>
 	<footer>
-		<ul class={styles.techstack}>
-			{#each techstack as item}
-				<li>{item}</li>
+		<ul class="{styles.keywords}">
+			{#each techstack as keyword}
+				<li class="surface-4">
+					{keyword}
+				</li>
 			{/each}
 		</ul>
 		<ul class="{styles.links}">
@@ -44,9 +36,10 @@
 				<li>
 					<Link {href} {title}>
 						<Icon path="{icon}" />
+						{title}
 					</Link>
 				</li>
 			{/each}
 		</ul>
 	</footer>
-</article>
+</div>

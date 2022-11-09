@@ -22,7 +22,8 @@ const config = {
 				"*",
 				"/rss.xml"
 			],
-			origin: "https://eric-rovell.vercel.app"
+			origin: "https://eric-rovell.vercel.app",
+			handleMissingId: "ignore"
 		}
 	}
 };

@@ -1,14 +1,87 @@
 ---
 description: "Radix is a JS library for radix number transformations and manipulations."
 featured: true
-lang: en
-layout: false
+lang: "en"
+layout: project
+maintained: true
 name: "radix"
 npm: "https://www.npmjs.com/package/@ericrovell/radix"
 repository: "EricRovell/radix"
-techstack: [ "Svelte", "TypeScript" ]
-type: "app"
+techstack: [ "TypeScript" ]
+type: "library"
+updated: 2022-11-09T01:29:00.000Z
 website: "https://radix.vercel.app/"
 ---
 
-This page is currently in development
+Being in search of yourself, I decided to try myself in programming. The first course I have stumbled upon was Harvard University [CS50][cs50]. The introductory lecture covered some basics, and the binary number system was one of them. In just a few minutes, the topic was explained so simply and accessible that I really understood it. It may sound strange, but at school and my alma mater I could not get it at all as it all boiled down to repeating the steps of the algorithms to get the result, nothing more.
+
+For an explanation a [simple web application][binary-bulbs] was used for demonstration. That time I wanted to write something similar. Only after a while I have chosen the web-development direction and got an opportunity to try to build the same web-application.
+
+This project is a core part of achieving the goal.
+
+## Project History
+
+After learning some basics in web-development, I finally tried to build the web-application to convert numbers in different numeral bases. It is embarassing [to look at][radix-old] now, but it was an attempt and it helps to see the progress over time. The project have a lot of problems, such as:
+
+- Mixed the business logic with the interface view;
+- lack of tests;
+- inaccessible form elements;
+- non-semantic layout.
+
+Unfortunately, this led to inability to support the project.
+
+After a while I decided to start over again. This time this conversion logic was separated into [the independent npm package][npm], which is what this project is.
+
+## General Information
+
+`radix` is a library for radix number transformations and manipulations written in TypeScript.
+
+Advantages:
+
+- Immutability;
+- Dependency-free;
+- Simple chainable API;
+- Typed;
+- Small (about 1.2 kbytes).
+
+## Rationale
+
+The question arises, why would a separate package be needed at all when JavaScript already has the `parseInt(string, radix)` function that can do the trick?
+
+The fact is, the function has a number of limitations:
+
+- The returned value can only be a decimal number;
+- Only values from 2 to 36 inclusive are accepted as input;
+- In JavaScript environment integers (which are not integers) have a safe boundary of [2<sup>53</sup> - 1][safe-int].
+
+It would be interesting to solve these limitations along the way. Otherwise, the project would not make practical sense.
+
+### Radix Input Constrains
+
+`parseInt()` supports radix value from 2 through 36 primarily because it is easy to display a result, since numeral systems above decimal use latin letters to represent digits above 9. Since there are 26 letters and 10 digits it is possible to cover radix value till 36. What symbols to use next? It is really hard to come up with something reasonable.
+
+Using the numbers instead letters leads to confusion; let's say we have the number 116<sub>16</sub>. What ranks does it have? 1 and 16? Or 11 and 6?
+
+To solve the problem it was decided to represent a number as an array, holding it's ranks. Thus, unambiguousness is achieved; there is no need to use other characters but numbers. If there is a necessity to use other characters such as lating letters, the user can easily convert the output.
+
+### Integer Safe Boundary Constrains
+
+JavaScript has no integers. All numbers are floating point numbers, so the "integers" have a safe range up to [2<sup>53</sup> - 1][safe-int]. Despite storing the number as an array of digits there are risks exceeding the limit during the conversion leading to incorrect result.
+
+To solve the problem relatively new data type was used - `BigInt`. It allows to store real integers of arbitrary size. Due to lower performace working with BigInt numbers and their poor coercion with regular numbers it was decided to use BigInt internally for internal calculations.
+
+The only limitation remains is the ranks values exceeding about the safe boundary. As such a huge numbers seems to be impractical, the limitation stays unresolved.
+
+## Usage in Production
+
+You can see the project in action in the [Numeral Bases][blogpost] blogpost. The blogpost explains the numeral bases principle and provides interactive playgrounds to understand the principles better.
+
+Another project uses this package is [numeral systems converter][radix-next]. At the moment it is not maintained, but a major update is planned soon.
+
+[cs50]: https://www.youtube.com/watch?v=o4SGkB_8fFs
+[binary-bulbs]: https://cdn.cs50.net/2016/x/psets/0/pset0/bulbs.html
+[radix-old]: https://numbers-ruby.vercel.app/
+[radix-next]: https://radix.vercel.app/
+[npm]: https://www.npmjs.com/package/@ericrovell/radix
+[safe-int]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger
+[blogpost]: /en/blog/numeral-systems

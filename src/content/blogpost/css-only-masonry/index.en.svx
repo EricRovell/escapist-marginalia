@@ -29,7 +29,7 @@ A masonry layout is in some sense a grid layout based on columns: grid is arrang
 
 </Details>
 
-## Is it possible right now?
+## Is it possible right now
 
 There are a number of ways to get a masonry-like layout:
 
