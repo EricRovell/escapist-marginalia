@@ -67,11 +67,13 @@ export interface ProjectPageData {
 	featured?: boolean;
 	lang: Locale;
 	layout: string | false;
+	maintained: boolean;
 	name: string;
 	npm?: string;
 	repository: string;
 	techstack: string[];
 	type: "string";
+	updated: string;
 	website?: string;
 }
 
