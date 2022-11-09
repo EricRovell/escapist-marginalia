@@ -19,8 +19,6 @@
 	export let techstack = [];
 	export let updated;
 	export let website;
-
-	console.log(name);
 </script>
 
 <Meta
