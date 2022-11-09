@@ -58,13 +58,13 @@ const main = (n: number): number => {
 };
 ```
 
-The brute-force approach is really simple and fast enough. The complexity of the algorithm is linear: $$O (n)$$, as the solution scales linearly with `n`, which is good. Nevertheless, the are some space for improvement in analytical approach.
+The brute-force approach is really simple and fast enough. The complexity of the algorithm is linear: $$O(n)$$, as the solution scales linearly with `n`, which is good. Nevertheless, the are some space for improvement in analytical approach.
 
 ## Analytical approach
 
 Let’s dive in some math to get the problem done.
 
-### The sum of natural numbers sequence
+### The sum of natural numbers sequence
 
 The sum of natural numbers can be expressed as the [arethmetic series sum][arithmetic-series], where $$a_{1} = 1, d = 1$$:
 
@@ -75,7 +75,7 @@ The sum of natural numbers can be expressed as the [arethmetic series sum][arith
 \end{aligned}
 ```
 
-### The sum of squares of natural numbers
+### The sum of squares of natural numbers
 
 Unlike the sum of natural numbers, getting the sum of squares formula is a bit trickier. We will try to derive the formula, but you can jump directly to the [result](#sum-of-squares-formula).
 
@@ -202,7 +202,7 @@ As the result, the sum of squares of natural numbers can be expressed using t
 
 Let’s find the difference between these formulae:
 
-	```math
+```math
 \begin{aligned}
 	(S_{n})^2 - S_{n}^2 &= \\
 	&= \left(\frac{n(n + 1)}{2}\right)^2 - \frac{n(n + 1)(2n + 1)}{6} \\
@@ -222,7 +222,7 @@ const main = (n: number): number => {
 };
 ```
 
-This approach has a constant time complexity $$O (1)$$, which means the execution time is constant as a function of `n`.
+This approach has a constant time complexity $$O(1)$$, which means the execution time is constant as a function of `n`.
 
 ## Results
 
