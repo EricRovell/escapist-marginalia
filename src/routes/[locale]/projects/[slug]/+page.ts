@@ -1,24 +1,35 @@
 import { error } from "@sveltejs/kit";
+import { getProjects } from "@data/projects";
 import type { PageLoad } from "./$types";
-import type { Project } from "@types";
+import type { Locale, Page } from "@types";
 
-export const load: PageLoad = async ({ fetch, params }) => {
+export const load: PageLoad = async ({ params }) => {
 	try {
-		const request = await fetch(`/api/project/${encodeURI(params.slug)}`);
-		const { name }: Project = await request.json();
+		const { locale = "en", slug } = params;
 
-		let post = null;
+		const project = await getProjects({
+			lang: locale as Locale,
+			name: slug
+		}, { limit: 1 });
+
+		if (!project.length) {
+			throw error(404, "There is no such a project.");
+		}
+
+		const filepathName = `${project[0].name}/index.${locale}`;
+
+		let page: Page<typeof project[number]>;
 		const modules = import.meta.glob("/src/content/project/**/*.svx");
 
-		for (const [ filepathName, module ] of Object.entries(modules)) {
-			if (filepathName.includes(name)) {
-				post = await module();
+		for (const [ filepath, module ] of Object.entries(modules)) {
+			if (filepath.includes(filepathName)) {
+				page = await module() as typeof page;
 				break;
 			}
 		}
 
 		return {
-			Post: post.default
+			Post: page.default
 		};
 
 	} catch (err) {

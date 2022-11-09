@@ -62,25 +62,31 @@ const getProjectGithubData = async (items: ProjectPageData[] = []) => {
 	}
 };
 
-export const getProjects = async ({ name, featured }: Partial<Project> = {}, { limit }: Options = {}): Promise<Project[]> => {
+export const getProjects = async ({ lang, name, featured }: Partial<Project> = {}, { limit }: Options = {}): Promise<Project[]> => {
 	const pageData = await getProjectPageData();
 	const projects = await getProjectGithubData(pageData);
 
 	type Query<T> = {
-		"slug": QueryItem<string, T>;
 		"featured": QueryItem<boolean, T>;
+		"lang": QueryItem<string, T>;
+		"slug": QueryItem<string, T>;
 	};
 
 	const query: Query<Project> = {
-		slug: {
-			value: name,
-			validator: name => typeof name === "string",
-			matcher: name => project => project.name === name
-		},
 		featured: {
 			value: featured,
 			validator: featured => typeof featured === "boolean",
 			matcher: value => project => project.featured === value
+		},
+		lang: {
+			value: lang,
+			validator: lang => [ "en", "ru" ].includes(lang),
+			matcher: value => project => project.lang === value
+		},
+		slug: {
+			value: name,
+			validator: name => typeof name === "string",
+			matcher: name => project => project.name === name
 		}
 	};
 
