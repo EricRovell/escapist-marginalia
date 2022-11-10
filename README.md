@@ -10,13 +10,19 @@
 
 This is my personal blog repository. It will be mostly about programming and photography.
 
-## Licence
+## License
 
-This work is licensed under a
-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+### Blogposts
 
-[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
+All my blog posts are licensed under [Creative Commons Attribution NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 
-[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
-[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
-[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
+### Code
+
+All my code in the lab is licensed under [Apache 2.0][apache].
+
+### Photos
+
+My photos and artworks are licensed under [Creative Commons Attribution NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[cc-by-nc-sa]: https://creativecommons.org/licenses/by-nc-sa/4.0/
+[apache]: https://www.apache.org/licenses/LICENSE-2.0
