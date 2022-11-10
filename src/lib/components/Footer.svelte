@@ -8,7 +8,7 @@
 
 	import {
 		pathSource,
-		pathLicence,
+		pathLicense,
 		pathPrivacy,
 		pathBlog,
 		pathGallery,
@@ -21,7 +21,7 @@
 		{ label: "blog", href: $pathBlog },
 		{ label: "gallery", href: $pathGallery },
 		{ label: "bookmarks", href: $pathBookmarks },
-		{ label: "licence", href: $pathLicence },
+		{ label: "license", href: $pathLicense },
 		{ label: "privacy", href: pathPrivacy, disabled: true },
 		{ label: "about", href: $pathAbout, disabled: true }
 	];

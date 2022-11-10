@@ -12,7 +12,7 @@ export const pathGallery = derived(root, $root => `${$root}/gallery`);
 export const pathProjects = derived(root, $root => `${$root}/projects`);
 export const pathBookmarks = derived(root, $root => `${$root}/bookmarks`);
 export const pathAbout = derived(root, $root => `${$root}/about`);
-export const pathLicence = derived(root, $root => `${$root}/licence`);
+export const pathLicense = derived(root, $root => `${$root}/license`);
 export const pathRSS = derived(root, $root => `${$root}/rss.xml`);
 export const pathRSSMultilang = derived(webpage, $webpage => `${$webpage}/rss.xml`);
 
