@@ -1,0 +1,23 @@
+---
+description: "Types of licence for content on this website."
+keywords: [ "licence" ]
+lang: "en"
+slug: "/en/licence"
+title: "Licence"
+updated: 2022-11-11T01:23:00.000Z
+---
+
+## Blogposts
+
+All my blog posts are licensed under [Creative Commons Attribution NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+## Code
+
+All my code in the lab is licensed under [Apache 2.0][apache].
+
+## Photos
+
+My photos and artworks are licensed under [Creative Commons Attribution NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[cc-by-nc-sa]: https://creativecommons.org/licenses/by-nc-sa/4.0/
+[apache]: https://www.apache.org/licenses/LICENSE-2.0
