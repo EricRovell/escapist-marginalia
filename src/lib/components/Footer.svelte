@@ -8,10 +8,11 @@
 
 	import {
 		pathSource,
-		pathLicence,
+		pathLicense,
 		pathPrivacy,
 		pathBlog,
 		pathGallery,
+		pathBookmarks,
 		pathRSS,
 		pathAbout
 	} from "@core/paths";
@@ -19,7 +20,8 @@
 	$: links = [
 		{ label: "blog", href: $pathBlog },
 		{ label: "gallery", href: $pathGallery },
-		{ label: "licence", href: pathLicence },
+		{ label: "bookmarks", href: $pathBookmarks },
+		{ label: "license", href: $pathLicense },
 		{ label: "privacy", href: pathPrivacy, disabled: true },
 		{ label: "about", href: $pathAbout, disabled: true }
 	];

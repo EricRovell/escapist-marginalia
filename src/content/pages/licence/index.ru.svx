@@ -1,0 +1,23 @@
+---
+description: "Типы лицензий для различного контента на данном сайте."
+keywords: [ "лицензия" ]
+lang: "ru"
+slug: "/ru/license"
+title: "Лицензия"
+updated: 2022-11-11T01:23:00.000Z
+---
+
+## Публикации
+
+Публикации на сайте лицензированы в соответствии с [Creative Commons Attribution NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+## Исходный код
+
+Исходный код сайта лицензирован в соответствии с [Apache 2.0][apache].
+
+## Фотографии и графические материалы
+
+Фотографии и графические материалы лицензированы в соответствии с [Creative Commons Attribution NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[cc-by-nc-sa]: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+[apache]: https://www.apache.org/licenses/LICENSE-2.0

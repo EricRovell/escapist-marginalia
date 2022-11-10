@@ -1,26 +1,21 @@
-<div align="center" height="50px">
-	<img
-		src="/media/logo-compound.svg"
-		alt="Personal Logo"
-		height="50px"
-	/>
-</div>
+---
+description: "Types of license for content on this website."
+keywords: [ "license" ]
+lang: "en"
+slug: "/en/license"
+title: "License"
+updated: 2022-11-11T01:23:00.000Z
+---
 
-# Hi!
-
-This is my personal blog repository. It will be mostly about programming and photography.
-
-## License
-
-### Blogposts
+## Blogposts
 
 All my blog posts are licensed under [Creative Commons Attribution NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 
-### Code
+## Code
 
 All my code in the lab is licensed under [Apache 2.0][apache].
 
-### Photos
+## Photos
 
 My photos and artworks are licensed under [Creative Commons Attribution NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 
