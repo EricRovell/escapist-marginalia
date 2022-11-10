@@ -12,6 +12,7 @@ export const pathGallery = derived(root, $root => `${$root}/gallery`);
 export const pathProjects = derived(root, $root => `${$root}/projects`);
 export const pathBookmarks = derived(root, $root => `${$root}/bookmarks`);
 export const pathAbout = derived(root, $root => `${$root}/about`);
+export const pathLicense = derived(root, $root => `${$root}/license`);
 export const pathRSS = derived(root, $root => `${$root}/rss.xml`);
 export const pathRSSMultilang = derived(webpage, $webpage => `${$webpage}/rss.xml`);
 
@@ -19,6 +20,5 @@ export const pathBlogpost = derived(pathBlog, $root => (slug: string) => `${$roo
 export const pathGalleryImage = derived(pathGallery, $root => (id: string) => `${$root}/${id}`);
 export const pathProject = derived(pathProjects, $root => (slug: string) => `${$root}/${encodeURI(slug)}`);
 
-export const pathLicence = "https://github.com/EricRovell/ericrovell.me/blob/main/LICENSE";
 export { homepage as pathSource } from "../../package.json";
 export const pathPrivacy = "";
