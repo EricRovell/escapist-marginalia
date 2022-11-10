@@ -1,9 +1,9 @@
 ---
-description: "Types of licence for content on this website."
-keywords: [ "licence" ]
+description: "Types of license for content on this website."
+keywords: [ "license" ]
 lang: "en"
-slug: "/en/licence"
-title: "Licence"
+slug: "/en/license"
+title: "License"
 updated: 2022-11-11T01:23:00.000Z
 ---
 
