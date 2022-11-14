@@ -34,6 +34,7 @@ export const transformerAnchor = () => (tree) => {
 				tagName: "Components.a",
 				properties: {
 					href: `#${encodeURI(node.properties.id)}`,
+					"data-type": "hash",
 					rel: [ "nofollow" ]
 				},
 				children: [{
