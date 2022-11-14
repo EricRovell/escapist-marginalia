@@ -1,0 +1,28 @@
+---
+description: "About this website and it's purpose."
+keywords: [ "blog", "web development", "photography", "portfolio" ]
+lang: "en"
+slug: "/en/about"
+title: "About"
+updated: 2022-11-14T22:37:00.000Z
+---
+
+Welcome to my personal "digital garden", a place where I share my interests. Mostly it is natural sciences, web-development, and photography, but not are not limited to them.
+
+## [Blog](/en/blog)
+
+Here you can find interactive publications on variety of topics. There was an idea that the text as a medium for educational purposes is becoming less and less attractive due to competition with media resources. Nevertheless the text remains the most effective way to convey the material. To make the experience more attractive the reader should be able to "participate" in the process, the experience should be more interactive. It will be interesting to see how it all turns out to be.
+
+Also, you can find analysis of some problems that seemed interesting to me.
+
+## [Gallery](/en/gallery)
+
+In this section of the "digital garden" you can see some photographs. Quite unlikely they represent any value in terms of art. Mostly, I shoot because I like the process and the idea of "capturing" the moment seems so usefull for me.
+
+## [Projects](/en/projects)
+
+Here you can see personal projects and the history of their creation. Currently, there are mainly web-development projects.
+
+## [Bookmarks](/en/bookmarks)
+
+Inside the "personal garden" this section is like a shelf full of "favourite books", represents selected inspirational resources such as personal blogs of people on related topics, books, applications, and more. The subject of everything presented does not extends way beyound the topics presented on this website.

@@ -42,7 +42,7 @@
 			<Navigation.Item href={$pathBookmarks} pattern={/\/bookmarks/}>
 				{$t("sections.bookmarks")}
 			</Navigation.Item>
-			<Navigation.Item href={$pathAbout} disabled>
+			<Navigation.Item href={$pathAbout} pattern={/\/about/}>
 				{$t("sections.about")}
 			</Navigation.Item>
 		</Navigation.Container>

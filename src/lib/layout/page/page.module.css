@@ -38,15 +38,15 @@
 	margin-block: var(--space-3-rel) var(--space-2-rel);
 }
 
-.article :is(h2, h3, h4, h5, h6):not([class]) a {
+.article :is(h2, h3, h4, h5, h6):not([class]) a[data-type="hash"] {
 	margin-inline-start: 0.25em;
 	font-size: 0.85em;
 	opacity: 0;
 	transition: opacity 0.125s linear;
 }
 
-.article :is(h2, h3, h4, h5, h6):not([class]):hover a,
-.article :is(h2, h3, h4, h5, h6):not([class]):focus a {
+.article :is(h2, h3, h4, h5, h6):not([class]):hover a[data-type="hash"],
+.article :is(h2, h3, h4, h5, h6):not([class]):focus a[data-type="hash"] {
 	opacity: 1;
 }
 

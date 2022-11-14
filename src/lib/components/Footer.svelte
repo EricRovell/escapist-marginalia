@@ -23,7 +23,7 @@
 		{ label: "bookmarks", href: $pathBookmarks },
 		{ label: "license", href: $pathLicense },
 		{ label: "privacy", href: pathPrivacy, disabled: true },
-		{ label: "about", href: $pathAbout, disabled: true }
+		{ label: "about", href: $pathAbout }
 	];
 
 	$: icons = [
