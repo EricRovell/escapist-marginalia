@@ -21,6 +21,7 @@ export const mdsvexConfig = {
 	layout: {
 		"_": "./src/lib/layout/page/Page.svelte",
 		"blogpost": "./src/lib/layout/blogpost/Blogpost.svelte",
-		"project": "./src/lib/layout/project/Project.svelte"
+		"project": "./src/lib/layout/project/Project.svelte",
+		"sketch": "./src/lib/layout/sketch/Sketch.svelte"
 	}
 };
