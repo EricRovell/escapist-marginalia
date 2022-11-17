@@ -67,6 +67,13 @@ export interface Project {
 
 export type { GalleryItem } from "@components";
 
+export interface Sketch {
+	cover: string;
+	description: string;
+	title: string;
+	url: string;
+}
+
 export interface Bookmark {
 	category: string;
 	description: string;
