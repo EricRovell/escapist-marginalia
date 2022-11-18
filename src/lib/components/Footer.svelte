@@ -134,7 +134,7 @@
 		}
 	}
 
-	@media (max-width: 650px) {
+	@media (max-width: 48em) {
 		.wrapper {
 			/* floating button offset */
 			padding-bottom: 6rem;
