@@ -21,12 +21,12 @@
 	</svelte:fragment>
 		<div class="{styles.layout}">
 			<main class="grid-flexible" style="--item-size: 25ch">
-				{#each data.items as { title, slug, cover, description }}
+				{#each data.items as { title, url, cover, description }}
 					<CardSketch
 						{cover}
 						{description}
 						{title}
-						url="{slug}"
+						{url}
 					/>
 				{/each}
 			</main>

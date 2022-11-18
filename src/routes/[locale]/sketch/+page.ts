@@ -2,15 +2,18 @@ import { error } from "@sveltejs/kit";
 import type { Page, Sketch } from "@types";
 import type { PageLoad } from "./$types";
 
-export const load: PageLoad = async () => {
+export const load: PageLoad = async ({ params }) => {
 	try {
+		const { locale = "en" } = params;
 		const sketches = [];
 
 		const modules = import.meta.glob("/src/content/sketch/**/*.svx");
 
 		for (const [ , module ] of Object.entries(modules)) {
 			const { metadata } = await module() as Page<Sketch>;
-			sketches.push(metadata);
+			if (metadata.lang === locale) {
+				sketches.push(metadata);
+			}
 		}
 
 		return {

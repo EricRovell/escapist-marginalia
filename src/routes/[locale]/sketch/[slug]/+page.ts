@@ -3,14 +3,14 @@ import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ params }) => {
 	try {
-		const { slug } = params;
+		const { locale = "en", slug } = params;
 
 		let page = null;
 
 		const modules = import.meta.glob("/src/content/sketch/**/*.svx");
 
 		for (const [ filepathName, module ] of Object.entries(modules)) {
-			if (filepathName.includes(slug)) {
+			if (filepathName.includes(`${slug}/index.${locale}`)) {
 				page = await module();
 			}
 		}
