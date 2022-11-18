@@ -1,0 +1,7 @@
+.layout {
+	display: grid;
+	grid-template: 1fr / 1fr;
+	gap: var(--space-9);
+	width: 100%;
+	justify-self: center;
+}

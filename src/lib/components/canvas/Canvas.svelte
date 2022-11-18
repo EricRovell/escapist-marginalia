@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { afterUpdate, onMount } from "svelte";
+	import { afterUpdate, createEventDispatcher, onMount } from "svelte";
 	import Context from "../Context.svelte";
 	import { RenderManager } from "./canvas.manager";
 	import styles from "./canvas.module.css";
@@ -7,11 +7,13 @@
 	export let autoclear = false;
 	export let className = "";
 	export let height = 150;
+	export let loop = false;
 	export let pixelRatio: number | undefined = undefined;
 	export let width = 300;
 
 	let canvas: HTMLCanvasElement;
 	let context: CanvasRenderingContext2D;
+	const dispatch = createEventDispatcher();
 	const manager = new RenderManager();
 
 	if (globalThis.window && !pixelRatio) {
@@ -19,9 +21,34 @@
 	}
 
 	onMount(() => {
+		const resizeObserver = new ResizeObserver((entries) => {
+			for (const entry of entries) {
+				dispatch("resize", {
+					height: entry.borderBoxSize[0].blockSize,
+					width: entry.borderBoxSize[0].inlineSize
+				});
+			}
+
+			manager.resize();
+		});
+
+		resizeObserver.observe(canvas);
+
+		return () => {
+			resizeObserver.disconnect();
+		};
+	});
+
+	onMount(() => {
 		context = canvas.getContext("2d");
-		manager.setParams({ autoclear, context, height, pixelRatio, width });
-		manager.render();
+		manager.setParams({
+			autoclear,
+			context,
+			height,
+			loop,
+			pixelRatio,
+			width
+		});
 
 		return () => {
 			manager.stop();
@@ -29,7 +56,14 @@
 	});
 
 	afterUpdate(() => {
-		manager.setParams({ autoclear, context, height, pixelRatio, width });
+		manager.setParams({
+			autoclear,
+			context,
+			height,
+			loop,
+			pixelRatio,
+			width
+		});
 	});
 
 	/* component methods */
@@ -39,7 +73,7 @@
 	};
 
 	export const resize = () => {
-		manager.resize({ context, pixelRatio });
+		manager.resize();
 	};
 </script>
 

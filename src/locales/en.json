@@ -4,6 +4,7 @@
 		"blog": "blog",
 		"gallery": "gallery",
 		"projects": "projects",
+		"sketch": "sketch",
 		"bookmarks": "bookmarks",
 		"about": "about",
 		"source": "source",
@@ -74,6 +75,12 @@
 			"description": "Portfolio of my web development projects and contributions.",
 			"keywords": "portfolio, web development, programming",
 			"subject": "web developer portfolio"
+		},
+		"sketch": {
+			"title": "Sketch",
+			"description": "Generative art sketch and various visualizations using Canvas API and SVG.",
+			"keywords": "generative art, sketch, experiments",
+			"subject": "generative-art"
 		},
 		"bookmarks": {
 			"title": "Bookmarks",

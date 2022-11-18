@@ -1,6 +1,7 @@
 <script>
 	import styles from "./page.module.css";
 
+	export let className = "";
 	export let classNameBanner = "";
 	export let classNameContent = "";
 	export let wide = false;
@@ -14,7 +15,7 @@
 
 	h1.headline and p.headline inside banner slot have some predefined styling.
 -->
-<main class={styles.page} class:wide>
+<main class="{styles.page} {className}" class:wide>
 	{#if banner}
 		<header class={`surface-2 ${styles.banner} ${classNameBanner}`}>
 			<slot name="banner" />
