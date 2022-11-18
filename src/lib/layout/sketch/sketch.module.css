@@ -1,58 +1,28 @@
-.main {
-	display: grid;
-	grid-template: min-content calc(3 * var(--space-10)) auto / 1fr;
-	min-height: 125vh;
-}
-
-.main > header {
-	grid-row: 1 / span 2;
-	grid-column: 1;
-	padding: var(--space-10);
-	padding-block-end: calc(2.5 * var(--space-10));
-	height: min-content;
-}
-
-.article {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	width: min(940px, 100%);
-	height: 75vh;
-
+.sketch {
 	--canvas-width: 100%;
 	--canvas-height: 100%;
 	--canvas-bg: var(--surface-3);
-}
 
-.main > section {
-	grid-row: 2 / span 2;
-	grid-column: 1;
-	margin: 0;
-	padding: 0;
-}
-
-.article > * {
-	grid-column: 2;
-}
-
-.article > :global(canvas) {
-	--canvas-width: 100%;
-	--canvas-height: 100%;
-
+	width: 100%;
+	height: 75vh;
 	border-radius: var(--radius-m);
 	border: 2px solid var(--color-border);
+	overflow: hidden;
 }
 
-.article :global(.sketch-pause) {
-	position: absolute;
-	top: var(--space-2);
-	right: var(--space-2);
-	opacity: 0;
-	transition: opacity 0.25s ease-in-out;
+.controls {
+	--icon-size: 0.75em;
+
+	justify-self: flex-end;
+	display: flex;
+	gap: var(--space-3);
+	margin-block: var(--space-2);
 }
 
-.article :global(.sketch-pause):hover,
-.article :global(.sketch-pause):focus-visible,
-.article canvas:hover ~ :global(.sketch-pause) {
-	opacity: 1;
+.fullscreen {
+	--canvas-height: 100%;
+	--canvas-width: 100%;
+
+	width: 100%;
+	height: 100%;
 }

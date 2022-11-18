@@ -1,56 +1,45 @@
-<script context="module">
-	import { Link as a } from "@components";
-	export { a };
-</script>
-
-<script>
-	import { webpage } from "@core/paths";
-	import { Meta } from "@components";
-	import Header from "./SketchHeader.svelte";
-	import { LayoutPage } from "../page-header";
+<script lang="ts">
+	import { Button, Icon, Modal } from "@components";
+	import { iconPause, iconPlay, iconFullscreen } from "$lib/components/icons/default";
 	import styles from "./sketch.module.css";
+	import type { SvelteComponentTyped } from "svelte/internal";
 
-	export let description;
-	export let keywords = [];
-	export let lang;
-	export let title;
-	export let updated;
+	export let loop = true;
+	export let fullscreen = false;
+	export let sketch: typeof SvelteComponentTyped;
+
+	const handleToggle = () => loop = !loop;
+	const handleFullscreen = () => fullscreen = !fullscreen;
 </script>
 
-<Meta
-	title="{title}"
-	meta={{
-		description,
-		keywords,
-		language: lang
-	}}
-	openGraph={{
-		title,
-		description,
-		locale: lang,
-		type: "article",
-		tag: keywords,
-		section: "project",
-		site_name: "Eric Rovell",
-		author: "Eric Rovell",
-		url: $webpage,
-		"article:modified_time": updated
-	}}
-	twitter={{
-		card: "summary",
-		title,
-		description,
-		url: $webpage
-	}}
-/>
-
-<LayoutPage className="{styles.main}" wide>
-	<Header
-		{description}
-		{title}
-		slot="banner"
+<!--
+	Passes `loop` and `fullscreen` state into the sketch and provides the controls.
+-->
+<figure class="{styles.sketch}">
+	<svelte:component
+		this="{sketch}"
+		loop="{fullscreen ? false : loop}"
 	/>
-	<article class={styles.article}>
-		<slot />
-	</article>
-</LayoutPage>
+</figure>
+<form on:submit|preventDefault class="{styles.controls}">
+	<Button on:click="{handleFullscreen}" icon appearance="outline">
+		<Icon
+			path="{iconFullscreen}"
+			title="Fullscreen View"
+		/>
+	</Button>
+	<Button on:click="{handleToggle}" icon appearance="outline">
+		<Icon
+			path="{loop ? iconPause : iconPlay}"
+			title="{loop ? "Pause" : "Play"}"
+		/>
+	</Button>
+</form>
+
+<Modal bind:open="{fullscreen}" className="{styles.fullscreen}">
+	<svelte:component
+		this="{sketch}"
+		loop
+		{fullscreen}
+	/>
+</Modal>
