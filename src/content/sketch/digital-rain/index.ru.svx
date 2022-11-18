@@ -1,12 +1,12 @@
 ---
-description: "Виртуальный дождь, известный как Код Матрицы, можно часто встретить в серии вселенной Матрицы."
 cover: "/img/cover-digital-rain.jpg"
+description: "Виртуальный дождь, известный как Код Матрицы, можно часто встретить в серии вселенной Матрицы."
 keywords: [ "виртуальный дождь", "матрица", "код", "canvas", "генеративное искусство" ]
 lang: "ru"
 layout: "sketch"
-slug: "/ru/sketch/digital-rain"
 title: "Виртуальный дождь"
 updated: 2022-11-19T00:09:00.000Z
+url: "/ru/sketch/digital-rain"
 ---
 
 <script>

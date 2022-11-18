@@ -1,12 +1,12 @@
 ---
-description: "Matrix digital rain, Matrix code or sometimes green rain, is the computer code featured in the Matrix series."
 cover: "/img/cover-digital-rain.jpg"
+description: "Matrix digital rain, Matrix code or sometimes green rain, is the computer code featured in the Matrix series."
 keywords: [ "digital rain", "the matrix", "matrix code", "canvas animation", "generative art" ]
 lang: "en"
 layout: "sketch"
-slug: "/en/sketch/digital-rain"
 title: "Digital Rain"
 updated: 2022-11-19T00:09:00.000Z
+url: "/en/sketch/digital-rain"
 ---
 
 <script>
