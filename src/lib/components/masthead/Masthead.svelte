@@ -5,6 +5,7 @@
 		pathGallery,
 		pathProjects,
 		pathBookmarks,
+		pathSketch,
 		pathAbout
 	} from "@paths";
 	import { t } from "@core/i18n";
@@ -39,10 +40,13 @@
 			<Navigation.Item href={$pathProjects} pattern={/\/projects/}>
 				{$t("sections.projects")}
 			</Navigation.Item>
+			<Navigation.Item href={$pathSketch} pattern={/\/sketch/}>
+				{$t("sections.sketch")}
+			</Navigation.Item>
 			<Navigation.Item href={$pathBookmarks} pattern={/\/bookmarks/}>
 				{$t("sections.bookmarks")}
 			</Navigation.Item>
-			<Navigation.Item href={$pathAbout} disabled>
+			<Navigation.Item href={$pathAbout} pattern={/\/about/}>
 				{$t("sections.about")}
 			</Navigation.Item>
 		</Navigation.Container>

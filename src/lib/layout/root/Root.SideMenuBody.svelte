@@ -1,5 +1,5 @@
 <script>
-	import { pathHome, pathBlog, pathGallery, pathProjects, pathBookmarks, pathAbout } from "@paths";
+	import { pathHome, pathBlog, pathGallery, pathProjects, pathSketch, pathBookmarks, pathAbout } from "@paths";
 	import { t } from "@core/i18n";
 	import { Menu as Navigation, NavLocale, ThemeSelect } from "@components";
 	import styles from "./root-side-menu-body.module.css";
@@ -18,6 +18,9 @@
 		</Navigation.Item>
 		<Navigation.Item href={$pathProjects}>
 			{$t("sections.projects")}
+		</Navigation.Item>
+		<Navigation.Item href={$pathSketch}>
+			{$t("sections.sketch")}
 		</Navigation.Item>
 		<Navigation.Item href={$pathBookmarks}>
 			{$t("sections.bookmarks")}

@@ -1,0 +1,23 @@
+---
+cover: "/img/cover-digital-rain.jpg"
+description: "Matrix digital rain, Matrix code or sometimes green rain, is the computer code featured in the Matrix series."
+keywords: [ "digital rain", "the matrix", "matrix code", "canvas animation", "generative art" ]
+lang: "en"
+layout: "sketch"
+title: "Digital Rain"
+updated: 2022-11-19T00:09:00.000Z
+url: "/en/sketch/digital-rain"
+---
+
+<script>
+	import Layout from "@layout/sketch/Sketch.svelte";
+	import { default as Sketch } from "./src/DigitalRain.svelte";
+</script>
+
+<svelte:fragment slot="sketch">
+	<Layout sketch="{Sketch}" />
+</svelte:fragment>
+
+## How it works?
+
+The "illusion" of rain is achieved bby painting with an extremely transparent color over the canvas. Due to background transparency the characters dim over time.

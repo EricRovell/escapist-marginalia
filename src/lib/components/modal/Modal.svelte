@@ -7,6 +7,7 @@
 	import { preventPageScroll } from "@utils/helpers";
 	import styles from "./modal.module.css";
 
+	export let className = "";
 	export let open = false;
 
 	const dispatch = createEventDispatcher();
@@ -40,7 +41,7 @@
 		<button shape="square" on:click={closeModal} autofocus>
 			<Icon path={iconCancel} />
 		</button>
-		<div class={styles.contents}>
+		<div class="{styles.contents} {className}">
 			<slot />
 		</div>
 	</div>

@@ -12,6 +12,7 @@
 		pathPrivacy,
 		pathBlog,
 		pathGallery,
+		pathSketch,
 		pathBookmarks,
 		pathRSS,
 		pathAbout
@@ -20,10 +21,11 @@
 	$: links = [
 		{ label: "blog", href: $pathBlog },
 		{ label: "gallery", href: $pathGallery },
+		{ label: "sketch", href: $pathSketch },
 		{ label: "bookmarks", href: $pathBookmarks },
 		{ label: "license", href: $pathLicense },
 		{ label: "privacy", href: pathPrivacy, disabled: true },
-		{ label: "about", href: $pathAbout, disabled: true }
+		{ label: "about", href: $pathAbout }
 	];
 
 	$: icons = [
@@ -132,7 +134,7 @@
 		}
 	}
 
-	@media (max-width: 650px) {
+	@media (max-width: 48em) {
 		.wrapper {
 			/* floating button offset */
 			padding-bottom: 6rem;

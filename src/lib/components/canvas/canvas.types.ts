@@ -6,6 +6,7 @@ export interface RenderArguments {
 
 export interface CanvasRender extends RenderArguments {
 	autoclear: boolean;
+	loop: boolean;
 	pixelRatio: number;
 }
 
