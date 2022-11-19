@@ -30,7 +30,7 @@
 				});
 				const poly = new Polygon(polygon, scale, origin);
 				const chaos = new Chaos(poly, { palette, step, distances });
-				
+
 				for (let i = 0; i <= points; i++) {
 					const { position, color } = chaos.move();
 					context.fillStyle = color;

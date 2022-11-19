@@ -41,14 +41,6 @@
 
 	onMount(() => {
 		context = canvas.getContext("2d");
-		manager.setParams({
-			autoclear,
-			context,
-			height,
-			loop,
-			pixelRatio,
-			width
-		});
 
 		return () => {
 			manager.stop();

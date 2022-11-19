@@ -1,0 +1,26 @@
+---
+cover: "/img/cover-the-attractor.jpg"
+description: "The attractor field flow visualization."
+keywords: [ "the attractor", "turbulence", "canvas animation", "generative art" ]
+lang: "en"
+layout: "sketch"
+title: "The Attractor"
+updated: 2022-11-20T00:37:00.000Z
+url: "/en/sketch/the-attractor"
+---
+
+<script>
+	import Layout from "@layout/sketch/Sketch.svelte";
+	import { default as Sketch } from "./src/TheAttractor.svelte";
+</script>
+
+<svelte:fragment slot="sketch">
+	<Layout sketch="{Sketch}" />
+</svelte:fragment>
+
+## Reference
+
+Inspired by the work titled as ["A colourful world of Turbulence"][original] from [Dillon][author].
+
+[original]: https://codepen.io/Dillo/pen/eYOegjY
+[author]: https://codepen.io/Dillo
