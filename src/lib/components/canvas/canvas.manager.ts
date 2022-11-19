@@ -49,7 +49,7 @@ export class RenderManager {
 		}
 
 		this.shouldRedraw = true;
-		this.render(this.params);
+		this.frameId = requestAnimationFrame(() => this.render(this.params));
 	}
 
 	render({ autoclear, context, loop, height, pixelRatio, width }: CanvasRender) {
@@ -59,7 +59,7 @@ export class RenderManager {
 			this.shouldResize = false;
 		}
 
-		if (autoclear) {
+		if (this.shouldRedraw && autoclear) {
 			this.clear({ context, height, pixelRatio, width });
 		}
 
@@ -89,7 +89,8 @@ export class RenderManager {
 
 	setParams(params: CanvasRender) {
 		this.params = params;
-		this.render(this.params);
+		this.shouldRedraw = true;
+		this.frameId = requestAnimationFrame(() => this.render(this.params));
 	}
 
 	setup({ context, height, width }) {
@@ -111,6 +112,6 @@ export class RenderManager {
 		this.setupMap.delete(id);
 		this.drawMap.delete(id);
 		this.shouldRedraw = true;
-		this.render(this.params);
+		this.frameId = requestAnimationFrame(() => this.render(this.params));
 	}
 }

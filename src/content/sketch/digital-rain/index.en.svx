@@ -20,4 +20,4 @@ url: "/en/sketch/digital-rain"
 
 ## How it works?
 
-The "illusion" of rain is achieved bby painting with an extremely transparent color over the canvas. Due to background transparency the characters dim over time.
+The "illusion" of rain is achieved by painting with an extremely transparent color over the canvas. Due to background transparency the characters dim over time.

@@ -1,0 +1,26 @@
+---
+cover: "/img/cover-the-attractor.jpg"
+description: "Визуализация течения частиц в поле аттрактора."
+keywords: [ "аттрактор", "турбулентность", "canvas", "генеративное искусство" ]
+lang: "ru"
+layout: "sketch"
+title: "Аттрактор"
+updated: 2022-11-20T00:37:00.000Z
+url: "/ru/sketch/the-attractor"
+---
+
+<script>
+	import Layout from "@layout/sketch/Sketch.svelte";
+	import { default as Sketch } from "./src/TheAttractor.svelte";
+</script>
+
+<svelte:fragment slot="sketch">
+	<Layout sketch="{Sketch}" />
+</svelte:fragment>
+
+## Ссылки
+
+Вдохновлено работой ["A colourful world of Turbulence"][original] от [Dillon][author].
+
+[original]: https://codepen.io/Dillo/pen/eYOegjY
+[author]: https://codepen.io/Dillo
