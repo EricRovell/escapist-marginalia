@@ -89,7 +89,8 @@ export class RenderManager {
 
 	setParams(params: CanvasRender) {
 		this.params = params;
-		this.render(this.params);
+		this.shouldRedraw = true;
+		this.frameId = requestAnimationFrame(() => this.render(this.params));
 	}
 
 	setup({ context, height, width }) {
