@@ -1,4 +1,15 @@
 /**
+ * Generates a random float in range [ min, max ).
+ */
+export function randFloat(min: number, max: number) {
+	if (max === undefined) {
+		return Math.random() * min;
+	}
+
+	return Math.random() * (max - min) + min;
+}
+
+/**
  * Generates a random integer in range: [ min, max ].
  */
 export function randInt(min: number, max: number) {
