@@ -48,6 +48,8 @@ export class RenderManager {
 			this.drawMap.set(id, draw);
 		}
 
+		cancelAnimationFrame(this.frameId);
+
 		this.shouldRedraw = true;
 		this.frameId = requestAnimationFrame(() => this.render(this.params));
 	}
@@ -85,6 +87,7 @@ export class RenderManager {
 	resize() {
 		this.shouldResize = true;
 		this.shouldSetup = true;
+		cancelAnimationFrame(this.frameId);
 	}
 
 	setParams(params: CanvasRender) {
@@ -112,6 +115,7 @@ export class RenderManager {
 		this.setupMap.delete(id);
 		this.drawMap.delete(id);
 		this.shouldRedraw = true;
+		cancelAnimationFrame(this.frameId);
 		this.frameId = requestAnimationFrame(() => this.render(this.params));
 	}
 }
