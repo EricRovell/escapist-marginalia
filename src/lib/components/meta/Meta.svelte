@@ -1,11 +1,5 @@
 <script context="module" lang="ts">
-	import type { 
-		MetaTags,
-		Alternate,
-		Twitter,
-		OpenGraph
-	} from "./types";
-	export type { MetaProps } from "./types";
+	import type { MetaTags, Alternate, Twitter, OpenGraph } from "./meta.types";
 </script>
 
 <script lang="ts">
