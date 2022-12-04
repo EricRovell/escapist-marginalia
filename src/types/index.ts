@@ -22,6 +22,7 @@ export interface BlogpostMetadata {
 	keywords: string[];
 	lang: Locale;
 	layout?: string;
+	published?: boolean;
 	series: string;
 	slug: string;
 	title: string;

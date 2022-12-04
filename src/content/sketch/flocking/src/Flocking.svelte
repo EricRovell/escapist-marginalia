@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Canvas, CanvasLayer } from "@components";
-	import { sketch } from "./the-attractor.render";
-	import { options } from "./the-attractor.options";
+	import { sketch } from "./flocking.render";
+	import { options } from "./flocking.options";
 
 	let canvasHeight = 350;
 	let canvasWidth = 500;
@@ -19,11 +19,13 @@
 
 <Canvas
 	{loop}
+	autoclear
 	height="{canvasHeight}"
+	style="--canvas-bg: var(--surface-2);"
 	width="{canvasWidth}"
 	on:resize="{handleResize}"
 >
 	{#key render}
-		<CanvasLayer id="the-attractor" {...render} />
+		<CanvasLayer id="boids" {...render} />
 	{/key}
 </Canvas>

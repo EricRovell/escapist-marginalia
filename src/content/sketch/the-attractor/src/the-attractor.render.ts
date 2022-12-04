@@ -34,14 +34,14 @@ export const sketch = (options: Options = optionsDefault) => {
 
 		for (let i = 0; i < options.particles; i++) {
 			const particle = makeParticle(width, height, options.lifetime);
-			// to avoid too many deaths / births in firts generations
+			// to avoid too many deaths / births in first generations
 			particle.lifetime = randInt(0, options.lifetime);
 			particles.push(particle);
 		}
 	};
 
 	const draw = ({ context, width, height }) => {
-		for (let k = 0; k < options.particles; k++) {
+		for (let k = 0; k < particles.length; k++) {
 			let particle = particles[k];
 
 			if (particle.lifetime <= 0) {

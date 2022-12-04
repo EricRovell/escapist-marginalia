@@ -1,0 +1,34 @@
+---
+cover: "/img/cover-flocking.jpg"
+description: Моделирование поведения стаи на основе алгоритма Крейга Рейнольдса."
+keywords: [ "стая", "canvas animation", "моделирование" ]
+lang: "ru"
+layout: "sketch"
+title: "Стая"
+updated: 2022-12-04T15:18:00.000Z
+url: "/ru/sketch/flocking"
+---
+
+<script>
+	import Layout from "@layout/sketch/Sketch.svelte";
+	import { default as Sketch } from "./src/Flocking.svelte";
+</script>
+
+<svelte:fragment slot="sketch">
+	<Layout sketch="{Sketch}" />
+</svelte:fragment>
+
+Моделирование стаи на основе алгоритма Крейга Рейнольдса ["Boids"][boids].
+
+Базовое поведение основано на трёх направляющих поведения:
+
+- **Сепарация**: направляет для избегания столкновения с соседями стаи;
+- **Выравнивание**: направляет вдоль усреднённого направления движения соседей стаи;
+- **Сплочённость**: направляет вдоль усреднённого местоположения соседей стаи;
+
+The basic flocking model consists of three streering behaviours:
+
+Данная модель разработанна на основе и благодаря [испытанию Coding Train][coding-train].
+
+[coding-train]: https://www.youtube.com/watch?v=mhjuuHl6qHM
+[boids]: https://www.red3d.com/cwr/boids/
