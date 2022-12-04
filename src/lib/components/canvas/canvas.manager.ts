@@ -48,10 +48,10 @@ export class RenderManager {
 			this.drawMap.set(id, draw);
 		}
 
-		cancelAnimationFrame(this.frameId);
-
 		this.shouldRedraw = true;
-		this.frameId = requestAnimationFrame(() => this.render(this.params));
+
+		this.stop();
+		this.start();
 	}
 
 	render({ autoclear, context, loop, height, pixelRatio, width }: CanvasRender) {
@@ -78,22 +78,21 @@ export class RenderManager {
 		}
 
 		if (loop) {
-			this.frameId = requestAnimationFrame(() => {
-				this.render(this.params);
-			});
+			this.start();
 		}
 	}
 
 	resize() {
 		this.shouldResize = true;
 		this.shouldSetup = true;
-		cancelAnimationFrame(this.frameId);
+		this.stop();
 	}
 
 	setParams(params: CanvasRender) {
 		this.params = params;
 		this.shouldRedraw = true;
-		this.frameId = requestAnimationFrame(() => this.render(this.params));
+		this.stop();
+		this.start();
 	}
 
 	setup({ context, height, width }) {
@@ -104,10 +103,16 @@ export class RenderManager {
 		this.shouldSetup = false;
 	}
 
+	start() {
+		this.frameId = requestAnimationFrame(() => {
+			this.render(this.params);
+		});
+	}
+
 	stop() {
-		this.clear(this.params);
 		if (this.frameId) {
 			cancelAnimationFrame(this.frameId);
+			this.frameId = null;
 		}
 	}
 
@@ -115,7 +120,7 @@ export class RenderManager {
 		this.setupMap.delete(id);
 		this.drawMap.delete(id);
 		this.shouldRedraw = true;
-		cancelAnimationFrame(this.frameId);
-		this.frameId = requestAnimationFrame(() => this.render(this.params));
+		this.stop();
+		this.start();
 	}
 }
