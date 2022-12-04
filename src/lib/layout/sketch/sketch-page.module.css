@@ -56,3 +56,57 @@
 .article :is(h2, h3, h4, h5, h6):not([class]):focus a[data-type="hash"] {
 	opacity: 1;
 }
+
+.article ol:not([class]),
+.article ul:not([class]),
+.article p,
+.article figure {
+	margin-block-end: var(--space-3-rel);
+}
+
+.article :global(.katex-display) {
+	margin-block: 0 var(--space-3-rel);
+}
+
+.article pre {
+	/* code has a bit smaller font-size */
+	margin-block-end: var(--space-4-rel);
+}
+
+.article ul:not([class]),
+.article ol:not([class]) {
+	list-style-position: outside;
+	margin-inline-start: 1.5ch;
+	font-size: 0.9em;
+}
+
+.article ul:not([class]) {
+	list-style: initial;
+}
+
+.article ul li:not([class]) {
+	padding-inline-start: 1ch;
+	margin-left: 1ch;
+}
+
+.article ul li:not([class])::marker {
+	content: "»";
+	color: var(--color-blue-400);
+	font-size: 1.5em;
+}
+
+.article ol:not([class]) {
+	list-style: decimal;
+}
+
+.article ol:not([class]) li:not([class]) {
+	margin-left: 1.5ch;
+}
+
+.article ol:not([class]) li:not([class]:last-child) {
+	margin-bottom: var(--space-1-rel);
+}
+
+.article ol:not([class]) li:not([class])::marker {
+	color: var(--color-blue-400);
+}
