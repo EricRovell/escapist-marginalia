@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@ericrovell/radix': ^1.1.0
+  '@ericrovell/vector': ^0.12.0
   '@rollup/plugin-replace': ^5.0.1
   '@sveltejs/adapter-static': 1.0.0-next.48
   '@sveltejs/kit': 1.0.0-next.539
@@ -35,6 +36,7 @@ specifiers:
 
 dependencies:
   '@ericrovell/radix': 1.1.0
+  '@ericrovell/vector': 0.12.0
   svelte-intl-precompile: 0.12.0_svelte@3.52.0
 
 devDependencies:
@@ -290,6 +292,11 @@ packages:
   /@ericrovell/radix/1.1.0:
     resolution: {integrity: sha512-Tq1o0fotrUiUMsgO6SdoiNmbN2ROpfMmkSdOBpF3a18GFt4cVsDzDt+BHt98m+LXdBOoE8M1it94YTBcQNMbQw==}
     engines: {node: '>=10.4'}
+    dev: false
+
+  /@ericrovell/vector/0.12.0:
+    resolution: {integrity: sha512-pKoA4yFkL8ONnPvz8Au1xUoH94UWaYfq4x6cneIOgYUG9fANQvxHnzhm+kNoUPtCMe6wYOMBBmc0u3185yLYig==}
+    requiresBuild: true
     dev: false
 
   /@esbuild/android-arm/0.15.12:
