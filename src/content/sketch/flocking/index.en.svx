@@ -1,0 +1,30 @@
+---
+cover: "/img/cover-flocking.jpg"
+description: Flocking simulation based on Craig Reynolds \"boids\" algorithm."
+keywords: [ "boids", "flocking", "canvas animation", "simulation" ]
+lang: "en"
+layout: "sketch"
+title: "Flocking"
+updated: 2022-12-04T15:18:00.000Z
+url: "/en/sketch/flocking"
+---
+
+<script>
+	import Layout from "@layout/sketch/Sketch.svelte";
+	import { default as Sketch } from "./src/Flocking.svelte";
+</script>
+
+<svelte:fragment slot="sketch">
+	<Layout sketch="{Sketch}" />
+</svelte:fragment>
+
+Flocking simulation based on Craig Reynolds ["Boids" algorithm][boids]. The basic flocking model consists of three steering behaviours:
+
+- **Separation**: steer to avoids crowding local flockmates;
+- **Alignment**: steer towards the average heading of local flockmates;
+- **Cohesion**: steer toward the average position of local flockmates.
+
+This simulation was done thanks to [Coding Train Challenge][coding-train].
+
+[coding-train]: https://www.youtube.com/watch?v=mhjuuHl6qHM
+[boids]: https://www.red3d.com/cwr/boids/

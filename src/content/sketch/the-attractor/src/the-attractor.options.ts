@@ -5,7 +5,7 @@ export interface Options {
 }
 
 export const options: Options = {
-	attractors: 3,
-	particles: 1200,
+	attractors: 5,
+	particles: 1500,
 	lifetime: 1200
 };
