@@ -9,6 +9,7 @@
 	export let height = 150;
 	export let loop = false;
 	export let pixelRatio: number | undefined = undefined;
+	export let style = "";
 	export let width = 300;
 
 	let canvas: HTMLCanvasElement;
@@ -73,6 +74,7 @@
 	bind:this="{canvas}"
 	class="{styles.canvas} {className}"
 	height="{pixelRatio * height}"
+	{style}
 	width="{pixelRatio * width}"
 >
 	{#if context}
