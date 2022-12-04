@@ -8,11 +8,12 @@
 
 	export let loop = true;
 
-	let { draw, setup } = sketch(options);
+	let render = sketch(options);
 
 	const handleResize = (e: CustomEvent<{ height: number, width: number }>) => {
 		canvasHeight = e.detail.height;
 		canvasWidth = e.detail.width;
+		render = sketch(options);
 	};
 </script>
 
@@ -22,9 +23,7 @@
 	width="{canvasWidth}"
 	on:resize="{handleResize}"
 >
-	<CanvasLayer
-		id="the-matrix"
-		{setup}
-		{draw}
-	/>
+	{#key render}
+		<CanvasLayer id="the-attractor" {...render} />
+	{/key}
 </Canvas>
