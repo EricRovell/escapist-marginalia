@@ -74,7 +74,7 @@
 	},
 	"dependencies": {
 		"@ericrovell/radix": "^1.1.0",
-		"@ericrovell/vector": "^0.12.1",
+		"@ericrovell/vector": "^0.15.0",
 		"svelte-intl-precompile": "^0.12.0"
 	}
 }
