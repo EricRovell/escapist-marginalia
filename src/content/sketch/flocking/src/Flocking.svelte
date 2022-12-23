@@ -5,6 +5,7 @@
 </script>
 
 <Sketch
+	autoclear
 	name="flocking"
 	controls="{Controls}"
 	{sketch}
