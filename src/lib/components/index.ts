@@ -24,6 +24,7 @@ export { Pagination } from "./pagination";
 export * as Radio from "./radio";
 export { Range } from "./input-range";
 export { ScrollToTop } from "./scroll-to-top";
+export { Sketch, SketchControls } from "./sketch";
 export { default as SVG } from "./SVG.svelte";
 export { Switch, SwitchGroup } from "./switch";
 export { ThemeSelect } from "./theme-select";
