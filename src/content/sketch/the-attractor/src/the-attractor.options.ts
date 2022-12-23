@@ -9,3 +9,9 @@ export const options: Options = {
 	particles: 1500,
 	lifetime: 1200
 };
+
+export const optionsImmutable: Set<keyof Options> = new Set([
+	"attractors",
+	"particles",
+	"lifetime"
+]);

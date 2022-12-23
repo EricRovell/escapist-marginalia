@@ -10,12 +10,11 @@ url: "/en/sketch/the-attractor"
 ---
 
 <script>
-	import Layout from "@layout/sketch/Sketch.svelte";
 	import { default as Sketch } from "./src/TheAttractor.svelte";
 </script>
 
 <svelte:fragment slot="sketch">
-	<Layout sketch="{Sketch}" />
+	<Sketch />
 </svelte:fragment>
 
 ## Reference
