@@ -1,8 +1,9 @@
 import { randomNumberFromRanges } from "@utils/random";
-import type { Renderer } from "@components/canvas";
 import { options as optionsDefault, type Options } from "./digital-rain.options";
+import type { Renderer } from "@components/canvas";
+import type { Sketch } from "@components/sketch/sketch.types";
 
-export const sketch = (options: Options = optionsDefault) => {
+export const sketch: Sketch<Options> = (options = optionsDefault) => {
 	let columns = [];
 
 	const setup: Renderer = ({ width }) => {
@@ -25,6 +26,12 @@ export const sketch = (options: Options = optionsDefault) => {
 
 	return {
 		draw,
-		setup
+		setup,
+		update(newOptions: Options) {
+			options = {
+				...options,
+				...newOptions
+			};
+		}
 	};
 };

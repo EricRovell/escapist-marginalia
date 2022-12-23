@@ -19,3 +19,10 @@ export const options: Options = {
 		[ 8704, 8959 ]  // math symbols
 	]
 };
+
+export const optionsImmutable: Set<keyof Options> = new Set([
+	"scale",
+	"background",
+	"color",
+	"depthRange"
+]);

@@ -1,4 +1,17 @@
 <script lang="ts">
+	import { Sketch } from "@components";
+	import { sketch } from "./digital-rain.render";
+	import { default as Controls } from "./DigitalRain.form.svelte";
+</script>
+
+<Sketch
+	name="digital-rain"
+	controls="{Controls}"
+	{sketch}
+/>
+
+
+<!-- <script lang="ts">
 	import { onMount } from "svelte";
 	import { Canvas, CanvasLayer } from "@components";
 	import { sketch } from "./digital-rain.render";
@@ -55,4 +68,4 @@
 		{setup}
 		{draw}
 	/>
-</Canvas>
+</Canvas> -->
