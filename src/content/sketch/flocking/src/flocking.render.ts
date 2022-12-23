@@ -3,7 +3,7 @@ import { randInt } from "@utils/random";
 import type { Renderer } from "@components/canvas";
 import { QuadTree, Rectangle, Point, Circle } from "@utils/quad-tree";
 import { options as optionsDefault, type Options } from "./flocking.options";
-import type { Sketch } from "@layout/sketch/sketch.types";
+import type { Sketch } from "@components/sketch/sketch.types";
 
 export const sketch: Sketch<Options> = (options = optionsDefault) => {
 	const boids: Boid[] = [];
