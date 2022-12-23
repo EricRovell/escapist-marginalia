@@ -8,6 +8,7 @@
 
 	type Options = $$Generic;
 
+	export let autoclear = false;
 	export let controls: typeof SvelteComponent | undefined = undefined;
 	export let loop = true;
 	export let fullscreen = false;
@@ -33,7 +34,7 @@
 	<figure class="{styles.sketch}">
 		{#key sketch}
 			<Canvas
-				autoclear
+				{autoclear}
 				loop="{fullscreen ? false : loop}"
 				{name}
 				{sketch}
@@ -80,7 +81,7 @@
 
 <Modal bind:open="{fullscreen}" className="{styles.fullscreen}">
 	<Canvas
-		autoclear
+		{autoclear}
 		loop
 		{name}
 		{sketch}
