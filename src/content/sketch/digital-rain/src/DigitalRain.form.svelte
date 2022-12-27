@@ -2,6 +2,7 @@
 	import { Range, SketchControls, Switch, InputColor } from "@components";
 	import { options, optionsImmutable } from "./digital-rain.options";
 
+	export let t: Record<string, string>;
 	export let state: typeof options = {
 		...options
 	};
@@ -32,50 +33,50 @@
 <SketchControls bind:state on:reset {optionsImmutable} {options} on:change="{handleChange}">
 	<fieldset>
 		<legend>
-			Letters
+			{t.general}
 		</legend>
 		<Range output bind:value="{state.scale}" name="scale" min="{1}" max="{25}">
-			Font Size
+			{t["font-size"]}
 		</Range>
 		<Range output bind:value="{state.depth}" name="depth" min="{0.01}" max="{1}" step="{0.01}">
-			Rain depth
+			{t.depth}
 		</Range>
 		<InputColor bind:value="{state.color}">
-			Color
+			{t.color}
 		</InputColor>
 		<InputColor bind:value="{state.background}">
-			Background
+			{t.background}
 		</InputColor>
 	</fieldset>
 	<fieldset>
 		<legend>
-			Behaviour
+			{t.behavior}
 		</legend>
 		<Range output bind:value="{state.fade}" name="fade" min="{0.05}" max="{0.25}" step="{0.001}">
-			Fading
+			{t.fade}
 		</Range>
 		<Switch bind:checked="{state.distributed}" name="distributed">
-			Distributed
+			{t.distributed}
 		</Switch>
 		<Switch bind:checked="{state.randomColors}" name="randomColors">
-			Random Colors
+			{t["random-colors"]}
 		</Switch>
 	</fieldset>
 	<fieldset>
 		<legend>
-			Symbols
+			{t.symbols}
 		</legend>
 		<Switch name="digits" checked>
-			Digits
+			{t.digits}
 		</Switch>
 		<Switch name="katakana" checked>
-			Katakana
+			{t.katakana}
 		</Switch>
 		<Switch name="math" checked>
-			Math Symbols
+			{t["math"]}
 		</Switch>
 		<Switch name="uppercaseLetters" checked>
-			Uppercase Letters
+			{t["uppercase"]}
 		</Switch>
 	</fieldset>
 </SketchControls>

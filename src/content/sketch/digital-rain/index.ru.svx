@@ -11,10 +11,11 @@ url: "/ru/sketch/digital-rain"
 
 <script>
 	import { default as Sketch } from "./src/DigitalRain.svelte";
+	import t from "./translation/ru.json"
 </script>
 
 <svelte:fragment slot="sketch">
-	<Sketch />
+	<Sketch {t} />
 </svelte:fragment>
 
 ## Как это устроено
