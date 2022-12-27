@@ -1,0 +1,25 @@
+.label {
+	display: grid;
+	gap: var(--space-2);
+	height: fit-content;
+}
+
+.input {
+	appearance: none;
+	background-color: unset;
+	color: inherit;
+	height: 1.5rem;
+	width: 2.5rem;
+	cursor: pointer;
+}
+
+.input::-webkit-color-swatch-wrapper {
+	padding: 0;
+	border-radius: var(--radius-xs);
+}
+
+.input::-webkit-color-swatch {
+	border-radius: calc(4px + var(--radius-xs));
+	border: none;
+	outline: 4px solid var(--surface-4);
+}
