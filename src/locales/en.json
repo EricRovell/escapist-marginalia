@@ -31,7 +31,9 @@
 		"featured-projects": "Featured Projects",
 		"all-projects": "All projects",
 		"menu": "Menu",
-		"blogpost-filters": "Blogpost filters"
+		"blogpost-filters": "Blogpost filters",
+		"settings": "Settings",
+		"reset": "Reset"
 	},
 	"tooltip": {
 		"change-theme": "Change theme",
