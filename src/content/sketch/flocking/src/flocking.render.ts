@@ -1,10 +1,11 @@
 import { Boid } from "./boid";
 import { randInt } from "@utils/random";
 import type { Renderer } from "@components/canvas";
-import { QuadTree, Rectangle, Point } from "@utils/quad-tree";
+import { QuadTree, Rectangle, Point, Circle } from "@utils/quad-tree";
 import { options as optionsDefault, type Options } from "./flocking.options";
+import type { Sketch } from "@components/sketch/sketch.types";
 
-export const sketch = (options: Options = optionsDefault) => {
+export const sketch: Sketch<Options> = (options = optionsDefault) => {
 	const boids: Boid[] = [];
 
 	const setup: Renderer = ({ width, height }) => {
@@ -36,7 +37,11 @@ export const sketch = (options: Options = optionsDefault) => {
 
 		for (let i = 0; i < boids.length; i++) {
 			if (options.qtree) {
-				const range = new Rectangle(boids[i].position.x, boids[i].position.y, options.perception, options.perception);
+				const range = new Circle(
+					boids[i].position.x,
+					boids[i].position.y,
+					options.perception
+				);
 				const points = qtree.query(range);
 				const neighbours: Boid[] = [];
 
@@ -52,7 +57,7 @@ export const sketch = (options: Options = optionsDefault) => {
 					separate: options.separate
 				});
 				boids[i].move();
-				boids[i].render({ context, width, height });
+				boids[i].render({ context, width, height }, options.showPerception, options.perception);
 			} else {
 				boids[i].handleBorders(width, height, options.bound);
 				boids[i].applyBehaviours(boids, {
@@ -69,6 +74,12 @@ export const sketch = (options: Options = optionsDefault) => {
 
 	return {
 		draw,
-		setup
+		setup,
+		update(newOptions: Options) {
+			options = {
+				...options,
+				...newOptions
+			};
+		}
 	};
 };

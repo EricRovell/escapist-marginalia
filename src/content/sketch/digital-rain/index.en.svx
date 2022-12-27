@@ -10,12 +10,12 @@ url: "/en/sketch/digital-rain"
 ---
 
 <script>
-	import Layout from "@layout/sketch/Sketch.svelte";
 	import { default as Sketch } from "./src/DigitalRain.svelte";
+	import t from "./translation/en.json"
 </script>
 
 <svelte:fragment slot="sketch">
-	<Layout sketch="{Sketch}" />
+	<Sketch {t} />
 </svelte:fragment>
 
 ## How it works?

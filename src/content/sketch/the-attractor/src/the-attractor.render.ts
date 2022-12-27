@@ -90,6 +90,12 @@ export const sketch = (options: Options = optionsDefault) => {
 
 	return {
 		draw,
-		setup
+		setup,
+		update(newOptions: Options) {
+			options = {
+				...options,
+				...newOptions
+			};
+		}
 	};
 };

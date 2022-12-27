@@ -1,31 +1,15 @@
 <script lang="ts">
-	import { Canvas, CanvasLayer } from "@components";
+	import { Sketch } from "@components";
 	import { sketch } from "./flocking.render";
-	import { options } from "./flocking.options";
+	import { default as Controls } from "./Flocking.form.svelte";
 
-	let canvasHeight = 350;
-	let canvasWidth = 500;
-
-	export let loop = true;
-
-	let render = sketch(options);
-
-	const handleResize = (e: CustomEvent<{ height: number, width: number }>) => {
-		canvasHeight = e.detail.height;
-		canvasWidth = e.detail.width;
-		render = sketch(options);
-	};
+	export let t: Record<string, string>;
 </script>
 
-<Canvas
-	{loop}
+<Sketch
 	autoclear
-	height="{canvasHeight}"
-	style="--canvas-bg: var(--surface-2);"
-	width="{canvasWidth}"
-	on:resize="{handleResize}"
->
-	{#key render}
-		<CanvasLayer id="boids" {...render} />
-	{/key}
-</Canvas>
+	name="flocking"
+	controls="{Controls}"
+	{sketch}
+	{t}
+/>
