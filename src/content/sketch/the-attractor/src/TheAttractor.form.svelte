@@ -2,6 +2,7 @@
 	import { Range, SketchControls } from "@components";
 	import { options, optionsImmutable } from "./the-attractor.options";
 
+	export let t: Record<string, string>;
 	export let state: typeof options = {
 		...options
 	};
@@ -10,21 +11,21 @@
 <SketchControls bind:state on:reset {optionsImmutable} {options}>
 	<fieldset>
 		<legend>
-			Field
+			{t.field}
 		</legend>
 		<Range output bind:value="{state.attractors}" name="attractors" min="{1}" max="{15}">
-			Attractors
+			{t.attractors}
 		</Range>
 	</fieldset>
 	<fieldset>
 		<legend>
-			Particles
+			{t.particles}
 		</legend>
 		<Range output bind:value="{state.particles}" name="particles" min="{500}" max="{2500}">
-			Particles
+			{t.count}
 		</Range>
 		<Range output bind:value="{state.lifetime}" name="lifetime" min="{250}" max="{3000}">
-			Lifetime
+			{t.lifetime}
 		</Range>
 	</fieldset>
 </SketchControls>

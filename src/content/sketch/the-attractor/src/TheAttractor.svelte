@@ -2,10 +2,13 @@
 	import { Sketch } from "@components";
 	import { sketch } from "./the-attractor.render";
 	import { default as Controls } from "./TheAttractor.form.svelte";
+
+	export let t: Record<string, string>;
 </script>
 
 <Sketch
 	name="the-attractor"
 	controls="{Controls}"
 	{sketch}
+	{t}
 />
