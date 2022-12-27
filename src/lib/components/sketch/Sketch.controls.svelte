@@ -12,6 +12,7 @@
 
 	const handleReset = () => {
 		state = { ...options };
+		dispatch("reset");
 	};
 
 	const handleChange = (event: Event) => {
