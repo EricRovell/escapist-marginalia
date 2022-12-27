@@ -51,3 +51,12 @@ export const randomNumberFromRanges = (...items: Array<number[]>) => {
 		randomInt -= max - min + 1;
 	}
 };
+
+/**
+ * Generates a random HEX Color string in #RRGGBB format.
+ */
+export const randColor = (): string => {
+	return "#" + [ randInt(0, 255), randInt(0, 255), randInt(0, 255) ]
+		.map(item => item.toString(16).toUpperCase())
+		.join("");
+};
