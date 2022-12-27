@@ -11,10 +11,11 @@ url: "/en/sketch/flocking"
 
 <script>
 	import { default as Sketch } from "./src/Flocking.svelte";
+	import t from "./translation/en.json";
 </script>
 
 <svelte:fragment slot="sketch">
-	<Sketch />
+	<Sketch {t} />
 </svelte:fragment>
 
 Flocking simulation based on Craig Reynolds ["Boids" algorithm][boids]. The basic flocking model consists of three steering behaviours:

@@ -1,0 +1,15 @@
+{
+	"alignment": "Выравнивание курса",
+	"appearance": "Внешний вид",
+	"behavior": "Поведение",
+	"cohesion": "Группировка",
+	"boids": "Существа",
+	"bound": "Границы",
+	"scale": "Размер",
+	"separation": "Отталкивание",
+	"perception": "Чутьё",
+	"perception-appearance": "Отображать чутьё",
+	"qtree": "Quad Tree",
+	"qtree-optimization": "Quad Tree оптимизация",
+	"qtree-appearance": "Отображать Quad Tree"
+}

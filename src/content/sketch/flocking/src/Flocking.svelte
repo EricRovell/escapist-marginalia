@@ -2,6 +2,8 @@
 	import { Sketch } from "@components";
 	import { sketch } from "./flocking.render";
 	import { default as Controls } from "./Flocking.form.svelte";
+
+	export let t: Record<string, string>;
 </script>
 
 <Sketch
@@ -9,4 +11,5 @@
 	name="flocking"
 	controls="{Controls}"
 	{sketch}
+	{t}
 />
