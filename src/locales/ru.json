@@ -31,7 +31,9 @@
 		"featured-projects": "Закреплённые проекты",
 		"all-projects": "Все проекты",
 		"menu": "Меню",
-		"blogpost-filters": "Фильтры публикаций"
+		"blogpost-filters": "Фильтры публикаций",
+		"settings": "Настройки",
+		"reset": "Сбросить"
 	},
 	"tooltip": {
 		"change-theme": "Сменить тему оформления",

@@ -30,7 +30,7 @@ export class Boid {
 	x: BoidOptions["x"];
 	y: BoidOptions["y"];
 
-	constructor({ forceLimit = 0.1, mass = 1, scale = 5, separation, speedLimit = 3.5, x, y }: BoidOptions) {
+	constructor({ forceLimit = 0.05, mass = 1, scale = 5, separation, speedLimit = 1.5, x, y }: BoidOptions) {
 		this.acceleration = vector(0, 0);
 		this.forceLimit = forceLimit;
 		this.mass = mass;
@@ -134,7 +134,16 @@ export class Boid {
 		}
 	}
 
-	render({ context }: RenderArguments) {
+	render({ context }: RenderArguments, showPerception = false, perception?: number): void {
+		if (showPerception) {
+			context.beginPath();
+			context.strokeStyle = "rgb(200 200 200 / 0.2)";
+			context.lineWidth = 0.5;
+			context.arc(this.position.x, this.position.y, perception, 0, 2 * Math.PI, false);
+			context.closePath();
+			context.stroke();
+		}
+
 		const phi = this.speed.getPhi() + Math.PI / 2;
 
 		context.fillStyle = "rgb(127 127 127)";

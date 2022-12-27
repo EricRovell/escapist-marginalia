@@ -10,12 +10,12 @@ url: "/ru/sketch/flocking"
 ---
 
 <script>
-	import Layout from "@layout/sketch/Sketch.svelte";
 	import { default as Sketch } from "./src/Flocking.svelte";
+	import t from "./translation/ru.json"
 </script>
 
 <svelte:fragment slot="sketch">
-	<Layout sketch="{Sketch}" />
+	<Sketch {t} />
 </svelte:fragment>
 
 Моделирование стаи на основе алгоритма Крейга Рейнольдса ["Boids"][boids].

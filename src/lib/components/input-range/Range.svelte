@@ -4,6 +4,7 @@
 	export let disabled = false;
 	export let max = 100;
 	export let min = 0;
+	export let name = "";
 	export let output = false;
 	export let step = 1;
 	export let value: number;
@@ -31,6 +32,7 @@
 		class={styles.range}
 		class:min={value === min}
 		{disabled}
+		{name}
 		{min}
 		{max}
 		{step}

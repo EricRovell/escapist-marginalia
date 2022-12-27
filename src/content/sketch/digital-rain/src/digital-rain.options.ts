@@ -1,21 +1,28 @@
 export interface Options {
-	scale: number;
 	background: string;
+	chars: Array<"digits" | "katakana" | "math" | "uppercaseLetters">;
 	color: string;
-	frameRate: number;
-	depthRange: [ number, number ],
-	charcodes: Array<[ number, number ]>;
+	depth: number;
+	distributed: boolean;
+	fade: number;
+	randomColors: boolean;
+	scale: number;
 }
 
 export const options: Options = {
-	scale: 10,
-	background: "rgb(0 0 0 / 0.05)",
+	background: "#000000",
 	color: "#00FA00",
-	frameRate: 15,
-	depthRange: [ 50, 10000 ],
-	charcodes: [
-		[ 48, 57 ],     // digits
-		[ 65, 90 ],     // capital letters
-		[ 8704, 8959 ]  // math symbols
-	]
+	chars: [ "digits", "katakana", "math", "uppercaseLetters" ],
+	depth: 0.25,
+	distributed: true,
+	fade: 0.1,
+	randomColors: false,
+	scale: 10
 };
+
+export const optionsImmutable: Set<keyof Options> = new Set([
+	"scale",
+	"background",
+	"color",
+	"depth"
+]);

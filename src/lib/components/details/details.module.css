@@ -4,7 +4,6 @@
 	max-width: 100%;
 	border-radius: var(--radius-m);
 	font-size: inherit;
-	box-shadow: 0 0 2px #7A82E3;
 }
 
 .details > summary {
@@ -14,22 +13,20 @@
 	width: 100%;
 	max-width: 100%;
 	padding: var(--space-2-rel);
+	padding-inline: var(--space-1-rel) var(--space-3-rel);
 	border-radius: var(--radius-m);
+	border: 1px solid var(--color-border);
 	user-select: none;
 	cursor: pointer;
 }
 
 .details > summary:focus-visible {
 	outline: 2px dashed var(--focus-ring-color);
-	outline-offset: var(--space-1);
+	outline-offset: var(--space-2);
 }
 
 .details:hover > summary {
-	box-shadow: 0 0 2px #7A82E3, 0 0 0 2px var(--focus-ring-color);
-}
-
-.content {
-	padding: var(--space-3) var(--space-7) var(--space-2) var(--space-7);
+	box-shadow: 0 0 1px #7A82E3, 0 0 0 1px var(--focus-ring-color);
 }
 
 .default-icon {
@@ -45,7 +42,9 @@
 }
 
 .details[open] > .content {
-	box-shadow: inset -1px 2px 2px -2px #7A82E3;
+	margin-block-start: var(--space-4);
+	padding-block: var(--space-6);
+	border-block: 1px solid var(--color-border-50);
 }
 
 .details > summary::marker {
