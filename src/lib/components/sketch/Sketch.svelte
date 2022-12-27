@@ -2,6 +2,7 @@
 	import { Button, Details, Icon, Modal } from "@components";
 	import { default as Canvas } from "./Sketch.canvas.svelte";
 	import { iconPause, iconPlay, iconFullscreen, iconReset } from "../icons/default";
+	import { t as tr } from "@core/i18n";
 	import type { SvelteComponent } from "svelte";
 	import type { Sketch } from "./sketch.types";
 	import styles from "./sketch.module.css";
@@ -10,10 +11,11 @@
 
 	export let autoclear = false;
 	export let controls: typeof SvelteComponent | undefined = undefined;
-	export let loop = true;
 	export let fullscreen = false;
-	export let sketch: Sketch<Options>;
+	export let loop = true;
 	export let name: string;
+	export let sketch: Sketch<Options>;
+	export let t: Record<string, string> | undefined = undefined;
 
 	let options: Options | undefined = undefined;
 
@@ -47,12 +49,13 @@
 		{#if controls}
 			<Details className="{styles.settings}">
 				<p slot="title">
-					Settings
+					{$tr("dict.settings")}
 				</p>
 				<svelte:component
 					this="{controls}"
 					bind:state="{options}"
 					on:reset="{handleReset}"
+					{t}
 				/>
 			</Details>
 		{/if}

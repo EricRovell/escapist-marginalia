@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from "svelte";
 	import { Button } from "../button";
+	import { t } from "@core/i18n";
 
 	type Options = $$Generic;
 
@@ -32,6 +33,6 @@
 >
 	<slot />
 	<Button on:click="{handleReset}">
-		Reset
+		{$t("dict.reset")}
 	</Button>
 </form>
