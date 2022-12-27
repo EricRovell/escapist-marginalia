@@ -43,6 +43,9 @@
 		<InputColor bind:value="{state.color}">
 			Color
 		</InputColor>
+		<InputColor bind:value="{state.background}">
+			Background
+		</InputColor>
 	</fieldset>
 	<fieldset>
 		<legend>
@@ -53,6 +56,9 @@
 		</Range>
 		<Switch bind:checked="{state.distributed}" name="distributed">
 			Distributed
+		</Switch>
+		<Switch bind:checked="{state.randomColors}" name="randomColors">
+			Random Colors
 		</Switch>
 	</fieldset>
 	<fieldset>

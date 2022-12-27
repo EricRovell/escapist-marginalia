@@ -1,4 +1,4 @@
-import { randFloat, randInt } from "@utils/random";
+import { randFloat, randInt, randColor } from "@utils/random";
 import { options as optionsDefault, type Options } from "./digital-rain.options";
 import { getRandomChar } from "./digital-rain.util";
 import type { Renderer } from "@components/canvas";
@@ -23,12 +23,16 @@ export const sketch: Sketch<Options> = (options = optionsDefault) => {
 			return;
 		}
 
-		context.fillStyle = `rgb(${options.background} / ${options.fade})`;
+		context.fillStyle = `${options.background}${Math.floor(options.fade * 255).toString(16)}`;
 		context.fillRect(0, 0, width, height);
 		context.fillStyle = options.color;
 
 		// (x, y) as (index * scale, value * scale)
 		for (let i = 0; i < columns; i++) {
+			if (options.randomColors) {
+				context.fillStyle = randColor();
+			}
+
 			const value = data[i];
 			const char = getRandomChar(options.chars);
 			const depth = height * 2 * randFloat(0, options.depth);

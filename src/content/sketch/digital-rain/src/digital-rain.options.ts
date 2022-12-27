@@ -1,20 +1,22 @@
 export interface Options {
 	background: string;
-	color: string;
-	distributed: boolean;
 	chars: Array<"digits" | "katakana" | "math" | "uppercaseLetters">;
+	color: string;
 	depth: number;
+	distributed: boolean;
 	fade: number;
+	randomColors: boolean;
 	scale: number;
 }
 
 export const options: Options = {
-	background: "0 0 0",
+	background: "#000000",
 	color: "#00FA00",
-	distributed: true,
 	chars: [ "digits", "katakana", "math", "uppercaseLetters" ],
 	depth: 0.25,
+	distributed: true,
 	fade: 0.1,
+	randomColors: false,
 	scale: 10
 };
 
