@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Range, SketchControls, Switch } from "@components";
+	import { Range, SketchControls, Switch, InputColor } from "@components";
 	import { options, optionsImmutable } from "./digital-rain.options";
 
 	export let state: typeof options = {
@@ -40,6 +40,9 @@
 		<Range output bind:value="{state.depth}" name="depth" min="{0.01}" max="{1}" step="{0.01}">
 			Rain depth
 		</Range>
+		<InputColor bind:value="{state.color}">
+			Color
+		</InputColor>
 	</fieldset>
 	<fieldset>
 		<legend>
