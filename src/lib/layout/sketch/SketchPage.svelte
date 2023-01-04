@@ -4,12 +4,13 @@
 </script>
 
 <script>
-	import { webpage } from "@core/paths";
+	import { webpage, webpageRoot } from "@core/paths";
 	import { t } from "@core/i18n";
 	import { Meta } from "@components";
 	import { LayoutPage } from "../page-header";
 	import styles from "./sketch-page.module.css";
 
+	export let cover;
 	export let description;
 	export let keywords = [];
 	export let lang;
@@ -30,17 +31,19 @@
 		locale: lang,
 		type: "article",
 		tag: keywords,
-		section: "project",
+		section: "sketch",
 		site_name: "Eric Rovell",
 		author: "Eric Rovell",
 		url: $webpage,
-		"article:modified_time": updated
+		"article:modified_time": updated,
+		image: `${$webpageRoot}${cover}`
 	}}
 	twitter={{
 		card: "summary",
 		title,
 		description,
-		url: $webpage
+		url: $webpage,
+		image: `${$webpageRoot}${cover}`
 	}}
 />
 
