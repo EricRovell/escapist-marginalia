@@ -9,3 +9,4 @@
 vite.config.js.timestamp*
 
 !/static/img/cover-*.jpg
+!/static/img/cover-*.png
