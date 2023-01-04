@@ -5,6 +5,7 @@
 
 <script>
 	import { webpage } from "@core/paths";
+	import { t } from "@core/i18n";
 	import { Meta } from "@components";
 	import { LayoutPage } from "../page-header";
 	import styles from "./sketch-page.module.css";
@@ -47,6 +48,22 @@
 	<div slot="banner" class="{styles.banner}" />
 	<article class={styles.wrapper}>
 		<slot name="sketch" />
+		<aside class="{styles["shortcuts-wrapper"]}">
+			<ul class="{styles.shortcuts}">
+				<li>
+					<kbd>Space</kbd>
+					<span>{$t("dict.animation")}</span>
+				</li>
+				<li>
+					<kbd>F11</kbd>
+					<span>{$t("dict.fullscreen")}</span>
+				</li>
+				<li>
+					<kbd>R</kbd>
+					<span>{$t("dict.restart")}</span>
+				</li>
+			</ul>
+		</aside>
 		<header class="{styles.header}">
 			<h1>{title}</h1>
 			<p>{description}</p>
