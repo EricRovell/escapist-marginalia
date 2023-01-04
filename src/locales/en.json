@@ -33,7 +33,10 @@
 		"menu": "Menu",
 		"blogpost-filters": "Blogpost filters",
 		"settings": "Settings",
-		"reset": "Reset"
+		"reset": "Reset",
+		"restart": "Restart",
+		"fullscreen": "Fullscreen",
+		"animation": "Animation"
 	},
 	"tooltip": {
 		"change-theme": "Change theme",

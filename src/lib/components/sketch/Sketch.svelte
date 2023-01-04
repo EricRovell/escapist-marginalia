@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Button, Details, Icon, Modal } from "@components";
 	import { default as Canvas } from "./Sketch.canvas.svelte";
+	import { shortcut } from "$lib/actions";
 	import { iconPause, iconPlay, iconFullscreen, iconReset } from "../icons/default";
 	import { t as tr } from "@core/i18n";
 	import type { SvelteComponent } from "svelte";
@@ -32,7 +33,12 @@
 	};
 </script>
 
-<article class="{styles.wrapper}">
+<article
+	class="{styles.wrapper}"
+	use:shortcut={{ code: "Space", callback: handleToggle }}
+	use:shortcut={{ code: "F11", callback: handleFullscreen }}
+	use:shortcut={{ code: "KeyR", callback: handleReset }}
+>
 	<figure class="{styles.sketch}">
 		{#key sketch}
 			<Canvas
