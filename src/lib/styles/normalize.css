@@ -87,6 +87,19 @@ h6 {
 	font-size: var(--font-size-1);
 }
 
+kbd {
+	display: inline;
+	width: min-content;
+	font-size: 0.9em;
+	padding: var(--space-1-rel) var(--space-2-rel);
+	border-radius: var(--radius-xs);
+	margin: 0 var(--space-2-rel);
+	font-family: monospace;
+	border: 1px solid var(--color-blue-400);
+	box-shadow: 1px 1px 0 var(--color-blue-400), 2px 2px 0 var(--color-blue-400);
+	color: var(--color-blue-400);
+}
+
 :focus-visible {
 	outline: 2px dashed var(--focus-ring-color);
 	outline-offset: calc(0.75 * var(--space-1));
