@@ -20,7 +20,7 @@
 		</p>
 	</svelte:fragment>
 		<div class="{styles.layout}">
-			<main class="grid-flexible" style="--item-size: 25ch">
+			<main class="grid-flexible" style="--item-size: 15rem">
 				{#each data.items as { title, url, cover, description }}
 					<CardSketch
 						{cover}
