@@ -1,32 +1,31 @@
 .card {
-	border-radius: var(--radius-l);
-	aspect-ratio: 1 / 1;
+	border-radius: var(--radius-m);
 	width: fit-content;
 	justify-self: center;
 }
 
 .card h3 {
-	font-size: var(--font-size-2);
+	font-size: var(--font-size-1);
 	color: var(--color-heading);
 }
 
 .card a {
 	display: flex;
+}
+
+.card img {
 	aspect-ratio: 1 / 1;
+	width: var(--item-size);
+	height: var(--item-size);
 }
 
 .card figure {
-	position: relative;
 	overflow: hidden;
 	border: 3px solid var(--color-border);
-	border-radius: var(--radius-l);
-	aspect-ratio: 1 / 1;
+	border-radius: var(--radius-m);
 }
 
 .card figcaption {
-	position: absolute;
-	bottom: 0;
 	width: 100%;
 	padding: var(--space-2) var(--space-3);
-	background-color: rgb(0 0 0 / 50%);
 }

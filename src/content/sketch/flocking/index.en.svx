@@ -1,5 +1,5 @@
 ---
-cover: "/img/cover-flocking.jpg"
+cover: "/img/cover-flocking.png"
 description: Flocking simulation based on Craig Reynolds \"boids\" algorithm."
 keywords: [ "boids", "flocking", "canvas animation", "simulation" ]
 lang: "en"
