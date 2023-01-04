@@ -4,6 +4,7 @@
 /static/img/*
 /src/data/gallery.json
 /inspiration
+/illustrations
 .vercel
 vite.config.js.timestamp*
 
