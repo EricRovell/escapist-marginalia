@@ -1,5 +1,5 @@
 ---
-cover: "/img/cover-the-attractor.jpg"
+cover: "/img/cover-the-attractor.png"
 description: "Визуализация течения частиц в поле аттрактора."
 keywords: [ "аттрактор", "турбулентность", "canvas", "генеративное искусство" ]
 lang: "ru"

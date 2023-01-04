@@ -1,5 +1,5 @@
 ---
-cover: "/img/cover-digital-rain.jpg"
+cover: "/img/cover-digital-rain.png"
 description: "Виртуальный дождь, известный как Код Матрицы, можно часто встретить в серии вселенной Матрицы."
 keywords: [ "виртуальный дождь", "матрица", "код", "canvas", "генеративное искусство" ]
 lang: "ru"

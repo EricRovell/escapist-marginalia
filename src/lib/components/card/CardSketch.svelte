@@ -16,7 +16,7 @@
 <article class="surface-2 {styles["card"]}">
 	<Link href="{url}">
 		<figure>
-			<Image alt="{description}" src="{cover}" width="{300}" height="{300}" />
+			<Image alt="{description}" src="{cover}" width="{500}" height="{500}" />
 			<figcaption>
 				<h3>{title}</h3>
 			</figcaption>
