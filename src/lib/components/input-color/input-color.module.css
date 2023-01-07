@@ -14,6 +14,11 @@
 	cursor: pointer;
 }
 
+.input:disabled::-webkit-color-swatch {
+	filter: grayscale(0.75);
+	cursor: not-allowed;
+}
+
 .input::-webkit-color-swatch-wrapper {
 	padding: 0;
 	border-radius: var(--radius-xs);
