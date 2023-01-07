@@ -1,4 +1,4 @@
 export { Chaos } from "./chaos";
-export { Polygon } from "./polygon";
+export { createPolygon } from "./polygon";
 
-export type { Coords, Move, PolygonOrigin, Vertice } from "./chaos.types";
+export type { Coords, Move, PolygonOrigin, Vertice, Polygon } from "./chaos.types";

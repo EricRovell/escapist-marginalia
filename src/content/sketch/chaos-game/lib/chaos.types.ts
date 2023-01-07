@@ -1,8 +1,11 @@
-export type { Polygon } from "./polygon";
-
 export interface Coords {
 	x: number;
 	y: number;
+}
+
+export interface CoordsPolar {
+	phi: number;
+	r: number;
 }
 
 /**
@@ -22,7 +25,15 @@ export interface PolygonOrigin extends Coords {
 	angle: number;
 }
 
-export type PolygonVerticesConstructor = (n: number, scale: number, origin?: Partial<PolygonOrigin>) => Vertice[];
+export interface Polygon {
+	origin: PolygonOrigin;
+	scale: number;
+	sides: number;
+	vertices: Coords[];
+	verticesPolar: CoordsPolar[];
+}
+
+export type PolygonConstructor = (sides: number, scale: number, origin?: Partial<PolygonOrigin>) => Polygon;
 
 /**
  * Polygon vertice randomness restriction rule.

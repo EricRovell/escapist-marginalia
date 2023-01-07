@@ -53,7 +53,7 @@ export class Chaos {
 			if (!forbidden) {
 				this.distances.push({ index, values });
 			} else {
-				const vertices = new Set(range(this.polygon.n));
+				const vertices = new Set(range(this.polygon.sides));
 				for (const value of values) {
 					vertices.delete(value);
 				}
@@ -67,8 +67,8 @@ export class Chaos {
 	 */
 	initPalette(colors: ChaosOptions["palette"] = "color-wheel") {
 		if (colors === "color-wheel") {
-			this.palette = this.polygon.vertices.map(({ alpha }) => {
-				return `hsl(${Math.round(alpha * 180 / Math.PI)} 75% 50%)`;
+			this.palette = this.polygon.verticesPolar.map(({ phi }) => {
+				return `hsl(${Math.round(phi * 180 / Math.PI)} 75% 50%)`;
 			});
 		}
 
@@ -78,12 +78,12 @@ export class Chaos {
 			});
 		}
 
-		else if (Array.isArray(colors) && colors.length !== this.polygon.n) {
-			this.palette = new Array(this.polygon.n).fill(colors);
+		else if (Array.isArray(colors) && colors.length !== this.polygon.sides) {
+			this.palette = new Array(this.polygon.sides).fill(colors);
 		}
 
 		else if (typeof colors === "string") {
-			this.palette = new Array(this.polygon.n).fill(colors);
+			this.palette = new Array(this.polygon.sides).fill(colors);
 		}
 	}
 
@@ -93,11 +93,11 @@ export class Chaos {
 	 */
 	updateHistory(vertice: number) {
 		this.history.push(vertice);
-		this.history = this.history.slice(-this.polygon.n);
+		this.history = this.history.slice(-this.polygon.sides);
 	}
 
 	get randVerticeCoords(): Coords {
-		const [ coords, index ] = this.polygon.random;
+		const [ coords, index ] = randItem(this.polygon.vertices);
 		this.updateHistory(index);
 		return coords;
 	}
@@ -112,7 +112,7 @@ export class Chaos {
 		for (const { index, values } of this.distances) {
 			const vertice = this.history.at(index);
 			if (vertice >= 0) {
-				const vertices = getValidVertices(vertice, this.polygon.n, values);
+				const vertices = getValidVertices(vertice, this.polygon.sides, values);
 				allowed.push(new Set(vertices));
 			}
 		}
@@ -125,7 +125,7 @@ export class Chaos {
 		}
 
 		this.updateHistory(index);
-		return this.polygon.vertice(index);
+		return this.polygon.vertices[index];
 	}
 
 	get moveData(): Move {
@@ -133,7 +133,7 @@ export class Chaos {
 		return {
 			position: this.position,
 			verticeIndex: index,
-			verticeCoords: this.polygon.vertice(index),
+			verticeCoords: this.polygon.vertices[index],
 			color: this.palette[index]
 		};
 	}

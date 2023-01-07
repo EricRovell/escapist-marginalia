@@ -1,31 +1,4 @@
-import type { PolygonVerticesConstructor, Coords, Vertice } from "./chaos.types";
-
-/**
- * Generates the polygon's vertices coordinates.
- */
-export const constructPolygon: PolygonVerticesConstructor = (n = 3, scale = 1, origin = {}) => {
-	const vertices: Vertice[] = [];
-	const polygonOrigin = {
-		x: 0,
-		y: 0,
-		angle: Math.PI * (n - 2) / n / 2, // half the polygons vertice angle
-		...origin
-	};
-
-	for (let i = 0; i < n; i++) {
-		const angle = polygonOrigin.angle + 2 * Math.PI * i / n;
-		vertices.push({
-			x0: origin.x,
-			y0: origin.y,
-			x: polygonOrigin.x + scale * Math.cos(angle),
-			y: polygonOrigin.y + scale * Math.sin(angle),
-			alpha: angle,
-			r: scale
-		});
-	}
-
-	return vertices;
-};
+import type { Coords } from "./chaos.types";
 
 /**
  * Generates a set of valid polygon vertices for the next move in one direction

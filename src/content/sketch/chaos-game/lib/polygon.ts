@@ -1,29 +1,39 @@
-import { randItem } from "@utils/random";
-import { constructPolygon } from "./chaos.utils";
-import type { PolygonOrigin, Vertice } from "./chaos.types";
+import type { PolygonConstructor } from "./chaos.types";
 
-export class Polygon {
-	n: number;
-	vertices: Vertice[];
-	origin: Partial<PolygonOrigin>;
+const originDefault = {
+	x: 0,
+	y: 0,
+	angle: 0
+};
 
-	constructor(n: number, scale: number, origin: Partial<PolygonOrigin>) {
-		this.n = n;
-		this.origin = origin;
-		this.vertices = constructPolygon(n, scale, origin);
+/**
+ * Generates the polygon's vertices coordinates.
+ */
+export const createPolygon: PolygonConstructor = (sides = 3, scale = 1, { x = 0, y = 0, angle = 0 } = originDefault) => {
+	const polygon: ReturnType<PolygonConstructor> = {
+		origin: {
+			x,
+			y,
+			// half the polygons vertice angle
+			angle: Math.PI * (sides - 2) / sides / 2 + angle
+		},
+		scale,
+		sides,
+		vertices: [],
+		verticesPolar: []
+	};
+
+	for (let i = 0; i < sides; i++) {
+		const angle = polygon.origin.angle + 2 * Math.PI * i / sides;
+		polygon.vertices.push({
+			x: polygon.origin.x + scale * Math.cos(angle),
+			y: polygon.origin.y + scale * Math.sin(angle)
+		});
+		polygon.verticesPolar.push({
+			phi: angle,
+			r: scale
+		});
 	}
 
-	vertice(index: number): Vertice {
-		return this.vertices[index];
-	}
-
-	get random(): [ Vertice, number ] {
-		return randItem(this.vertices);
-	}
-
-	get points() {
-		return this.vertices
-			.map(({ x, y }) => `${x},${y}`)
-			.join(" ");
-	}
-}
+	return polygon;
+};
