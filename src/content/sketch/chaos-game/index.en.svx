@@ -1,0 +1,21 @@
+---
+cover: "/img/cover-chaos-game.png"
+description: "Vizualizing a fractals from simple rules and a randomness."
+keywords: [ "chaos-game", "randomness", "fractals", "generative art" ]
+lang: "en"
+layout: "sketch"
+title: "Chaos Game"
+updated: 2023-01-05T20:12:00.000Z
+url: "/en/sketch/chaos-game"
+---
+
+<script>
+	import { default as Sketch } from "./src/ChaosGame.svelte";
+	import t from "./translation/en.json";
+</script>
+
+<svelte:fragment slot="sketch">
+	<Sketch {t} />
+</svelte:fragment>
+
+You can read more about the Chaos Game in my [blogpost](/en/blog/the-chaos-game).

@@ -1,0 +1,14 @@
+{
+	"point-scale": "Size",
+	"points-limit": "Limit",
+	"polygon-color": "Color",
+	"polygon-color-opacity": "Color opacity",
+	"polygon-line-width": "Line width",
+	"polygon-origin-theta": "Rotate",
+	"polygon-scale": "Size",
+	"polygon-sides": "Number of sides",
+	"polygon-visible": "Visibility",
+	"speed": "Painting speed",
+	"step-factor": "Factored step",
+	"step-value": "Step value"
+}

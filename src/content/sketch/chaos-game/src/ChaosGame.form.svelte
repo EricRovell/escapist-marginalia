@@ -1,0 +1,102 @@
+<script lang="ts">
+	import { InputColor, Range, SketchControls, Switch } from "@components";
+	import { options, optionsImmutable } from "./chaos-game.options";
+
+	export let t: Record<string, string>;
+	export let state: typeof options = {
+		...options
+	};
+</script>
+
+<SketchControls bind:state on:reset {optionsImmutable} {options}>
+	<fieldset>
+		<legend>
+			Polygon
+		</legend>
+		<Range
+			output
+			bind:value="{state["polygon-sides"]}"
+			name="polygon-sides"
+			min="{3}"
+			max="{12}"
+		>
+			{t["polygon-sides"]}
+		</Range>
+		<Range
+			output
+			bind:value="{state["polygon-scale"]}"
+			name="polygon-scale"
+			min="{0.1}"
+			max="{2}"
+			step="{0.01}"
+		>
+			{t["polygon-scale"]}
+		</Range>
+		<Range
+			output
+			bind:value="{state["polygon-origin-theta"]}"
+			name="polygon-origin-theta"
+			min="{0}"
+			max="{360}"
+		>
+			{t["polygon-origin-theta"]}
+		</Range>
+		<Range
+			output
+			bind:value="{state["polygon-line-width"]}"
+			name="polygon-line-width"
+			min="{0.5}"
+			max="{5}"
+			step="{0.5}"
+			disabled="{!state["polygon-visible"]}"
+		>
+			{t["polygon-line-width"]}
+		</Range>
+		<Switch
+			bind:checked="{state["polygon-visible"]}"
+			name="polygon-visible"
+		>
+			{t["polygon-visible"]}
+		</Switch>
+		<InputColor
+			bind:value="{state["polygon-color"]}"
+			name="polygon-color"
+			disabled="{!state["polygon-visible"]}"
+		>
+			{t["polygon-color"]}
+		</InputColor>
+	</fieldset>
+	<fieldset>
+		<legend>
+			Marks
+		</legend>
+		<Range
+			output
+			bind:value="{state["points-limit"]}"
+			name="points-limit"
+			min="{1}"
+			max="{100000}"
+		>
+			{t["points-limit"]}
+		</Range>
+		<Range
+			output
+			bind:value="{state["point-scale"]}"
+			name="point-scale"
+			min="{0.1}"
+			max="{5}"
+			step="{0.1}"
+		>
+			{t["point-scale"]}
+		</Range>
+		<Range
+			output
+			bind:value="{state["speed"]}"
+			name="speed"
+			min="{1}"
+			max="{100}"
+		>
+			{t["speed"]}
+		</Range>
+	</fieldset>
+</SketchControls>
