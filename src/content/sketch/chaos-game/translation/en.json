@@ -1,4 +1,7 @@
 {
+	"points-color-wheel": "Color Wheel",
+	"points-color": "Color",
+	"points-color-opacity": "Opacity",
 	"point-scale": "Size",
 	"points-limit": "Limit",
 	"polygon-color": "Color",

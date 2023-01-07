@@ -1,4 +1,7 @@
 export interface Options {
+	"points-color-wheel": boolean;
+	"points-color": string;
+	"points-color-opacity": number;
 	"point-scale": number;
 	"points-limit": number;
 	"polygon-color": string;
@@ -14,6 +17,9 @@ export interface Options {
 }
 
 export const options: Options = {
+	"points-color-wheel": true,
+	"points-color": "#FAFAFA",
+	"points-color-opacity": 1,
 	"point-scale": 1,
 	"points-limit": 2500,
 	"polygon-color": "#FF0000",
@@ -29,6 +35,8 @@ export const options: Options = {
 };
 
 export const optionsImmutable: Set<keyof Options> = new Set([
+	"points-color-wheel",
+	"points-color-opacity",
 	"polygon-color",
 	"polygon-color-opacity",
 	"polygon-line-width",

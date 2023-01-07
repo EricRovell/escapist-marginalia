@@ -98,5 +98,18 @@
 		>
 			{t["speed"]}
 		</Range>
+		<Switch
+			bind:checked="{state["points-color-wheel"]}"
+			name="points-color-wheel"
+		>
+			{t["points-color-wheel"]}
+		</Switch>
+		<InputColor
+			bind:value="{state["points-color"]}"
+			name="points-color"
+			disabled="{state["points-color-wheel"]}"
+		>
+			{t["polygon-color"]}
+		</InputColor>
 	</fieldset>
 </SketchControls>

@@ -1,4 +1,7 @@
 {
+	"points-color-wheel": "Цветовой круг",
+	"points-color": "Цвет",
+	"points-color-opacity": "Прозрачность",
 	"point-scale": "Размер",
 	"points-limit": "Количество",
 	"polygon-color": "Цвет",
