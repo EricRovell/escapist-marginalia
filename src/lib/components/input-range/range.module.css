@@ -9,6 +9,7 @@
 	display: grid;
 	grid-template: auto auto / 1fr auto;
 	gap: var(--space-3);
+	margin-block-end: var(--space-1);
 }
 
 .container > div {
