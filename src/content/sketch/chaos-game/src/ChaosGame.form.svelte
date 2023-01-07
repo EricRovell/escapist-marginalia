@@ -75,7 +75,7 @@
 			bind:value="{state["points-limit"]}"
 			name="points-limit"
 			min="{1}"
-			max="{100000}"
+			max="{500000}"
 		>
 			{t["points-limit"]}
 		</Range>
@@ -94,7 +94,7 @@
 			bind:value="{state["speed"]}"
 			name="speed"
 			min="{1}"
-			max="{100}"
+			max="{150}"
 		>
 			{t["speed"]}
 		</Range>
@@ -111,5 +111,38 @@
 		>
 			{t["polygon-color"]}
 		</InputColor>
+	</fieldset>
+	<fieldset>
+		<legend>
+			Step
+		</legend>
+		<Switch
+			bind:checked="{state["step-factor"]}"
+			name="step-factor"
+		>
+			{t["step-factor"]}
+		</Switch>
+		<Range
+			output
+			bind:value="{state["step-coef"]}"
+			disabled="{!state["step-factor"]}"
+			name="step-coef"
+			min="{0.01}"
+			max="{1.5}"
+			step="{0.01}"
+		>
+			{t["step-coef"]}
+		</Range>
+		<Range
+			output
+			bind:value="{state["step-distance"]}"
+			disabled="{state["step-factor"]}"
+			name="step-distance"
+			min="{0.1}"
+			max="{1000}"
+			step="{0.1}"
+		>
+			{t["step-distance"]}
+		</Range>
 	</fieldset>
 </SketchControls>

@@ -12,8 +12,9 @@ export interface Options {
 	"polygon-sides": number;
 	"polygon-visible": boolean;
 	"speed": number;
+	"step-coef": number;
+	"step-distance": number;
 	"step-factor": boolean;
-	"step-value": number;
 }
 
 export const options: Options = {
@@ -21,7 +22,7 @@ export const options: Options = {
 	"points-color": "#FAFAFA",
 	"points-color-opacity": 1,
 	"point-scale": 1,
-	"points-limit": 2500,
+	"points-limit": 5000,
 	"polygon-color": "#FF0000",
 	"polygon-color-opacity": 0.5,
 	"polygon-line-width": 2,
@@ -29,9 +30,10 @@ export const options: Options = {
 	"polygon-scale": 0.45,
 	"polygon-sides": 3,
 	"polygon-visible": true,
-	"speed": 5,
-	"step-factor": true,
-	"step-value": 0.5
+	"speed": 10,
+	"step-coef": 0.5,
+	"step-distance": 1,
+	"step-factor": true
 };
 
 export const optionsImmutable: Set<keyof Options> = new Set([
@@ -44,6 +46,7 @@ export const optionsImmutable: Set<keyof Options> = new Set([
 	"polygon-scale",
 	"polygon-sides",
 	"polygon-visible",
-	"step-factor",
-	"step-value"
+	"step-coef",
+	"step-distance",
+	"step-factor"
 ]);

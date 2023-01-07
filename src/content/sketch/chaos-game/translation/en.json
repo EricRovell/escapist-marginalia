@@ -12,6 +12,7 @@
 	"polygon-sides": "Number of sides",
 	"polygon-visible": "Visibility",
 	"speed": "Painting speed",
-	"step-factor": "Factored step",
-	"step-value": "Step value"
+	"step-coef": "Step coefficient",
+	"step-distance": "Absolute distance step",
+	"step-factor": "Factored steps"
 }

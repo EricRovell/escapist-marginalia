@@ -17,7 +17,12 @@ export const sketch = (options: Options = optionsDefault) => {
 			{ angle: options["polygon-origin-theta"] / 180 * Math.PI }
 		);
 
-		chaos = new Chaos(polygon);
+		chaos = new Chaos(polygon, {
+			step: {
+				factor: options["step-factor"],
+				value: options["step-factor"] ? options["step-coef"] : options["step-distance"]
+			}
+		});
 
 		for (const { phi } of polygon.verticesPolar) {
 			colorWheel.push(`hsl(${Math.round(phi * 180 / Math.PI)} 75% 50%)`);
