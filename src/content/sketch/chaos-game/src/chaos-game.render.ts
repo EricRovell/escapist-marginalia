@@ -6,6 +6,7 @@ export const sketch = (options: Options = optionsDefault) => {
 	let polygon: Polygon;
 	let chaos: Chaos;
 	let counter = 0;
+	const colorWheel: string[] = [];
 
 	const setup: Renderer = ({ context, width, height }) => {
 		context.translate(width / 2, height / 2);
@@ -17,6 +18,10 @@ export const sketch = (options: Options = optionsDefault) => {
 		);
 
 		chaos = new Chaos(polygon);
+
+		for (const { phi } of polygon.verticesPolar) {
+			colorWheel.push(`hsl(${Math.round(phi * 180 / Math.PI)} 75% 50%)`);
+		}
 
 		if (options["polygon-visible"]) {
 			context.strokeStyle = options["polygon-color"];
@@ -38,8 +43,8 @@ export const sketch = (options: Options = optionsDefault) => {
 			return;
 		}
 
-		for (const { position, color } of chaos.moves(options.speed)) {
-			context.fillStyle = color;
+		for (const { position, verticeIndex } of chaos.moves(options.speed)) {
+			context.fillStyle = colorWheel[verticeIndex];
 			context.beginPath();
 			context.arc(position.x, position.y, options["point-scale"], 0, 2 * Math.PI, false);
 			context.closePath();

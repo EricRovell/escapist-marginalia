@@ -5,7 +5,6 @@ import type { ChaosOptions, Coords, Move, Polygon, VerticeRestrictionRule } from
 
 const defaults: ChaosOptions = {
 	distances: [],
-	palette: "color-wheel",
 	step: {
 		value: 0.5,
 		factor: true
@@ -22,7 +21,6 @@ export class Chaos {
 		factor: boolean;
 	};
 	distances: Array<Omit<VerticeRestrictionRule, "forbidden">>;
-	palette: string[];
 
 	constructor(polygon: Polygon, options: Partial<ChaosOptions> = defaults) {
 		this.counter = 0;
@@ -32,7 +30,6 @@ export class Chaos {
 		this.position = { x: 0, y: 0 };
 		this.step = options.step || defaults.step;
 
-		this.initPalette(options.palette);
 		this.initDistances(options.distances || []);
 	}
 
@@ -59,31 +56,6 @@ export class Chaos {
 				}
 				this.distances.push({ index, values: Array.from(vertices) });
 			}
-		}
-	}
-
-	/**
-	 * Defines the Chaos Game palette.
-	 */
-	initPalette(colors: ChaosOptions["palette"] = "color-wheel") {
-		if (colors === "color-wheel") {
-			this.palette = this.polygon.verticesPolar.map(({ phi }) => {
-				return `hsl(${Math.round(phi * 180 / Math.PI)} 75% 50%)`;
-			});
-		}
-
-		else if (colors === "random") {
-			this.palette = this.polygon.vertices.map(() => {
-				return `rgb(${randInt(0, 255)} ${randInt(0, 255)} ${randInt(0, 255)})`;
-			});
-		}
-
-		else if (Array.isArray(colors) && colors.length !== this.polygon.sides) {
-			this.palette = new Array(this.polygon.sides).fill(colors);
-		}
-
-		else if (typeof colors === "string") {
-			this.palette = new Array(this.polygon.sides).fill(colors);
 		}
 	}
 
@@ -133,8 +105,7 @@ export class Chaos {
 		return {
 			position: this.position,
 			verticeIndex: index,
-			verticeCoords: this.polygon.vertices[index],
-			color: this.palette[index]
+			verticeCoords: this.polygon.vertices[index]
 		};
 	}
 
