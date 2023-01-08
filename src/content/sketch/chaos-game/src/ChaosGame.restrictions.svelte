@@ -16,7 +16,7 @@
 		}
 
 		input = [ ...input, {
-			index: value.length + 1,
+			index: -1 - 1 * input.length,
 			values: [],
 			forbidden
 		}];
@@ -61,6 +61,16 @@
 	<legend>
 		<slot />
 	</legend>
+	{#if !input.length}
+		<aside class="message">
+			<p class="message">
+				{t["restrictions-message-1"]}
+			</p>
+			<p>
+				{t["restrictions-message-2"]}
+			</p>
+		</aside>
+	{/if}
 	{#if input.length}
 		<div class="rule labels">
 			<span>{t.vertice}</span>
@@ -68,9 +78,9 @@
 			<span>{t.forbidden}</span>
 		</div>
 	{/if}
-	{#each input as _, i (i)}
+	{#each input as _, i}
 		<div class="rule">
-			<InputNumber value="{-1 - 1 * (i)}" name="restrictions" data-index="{i}" min="{-sides}" max="{-1}" />
+			<InputNumber value="{-1 - 1 * i}" name="restrictions" data-index="{i}" min="{-sides}" max="{-1}" />
 			<InputText name="restrictions" data-index="{i}" placeholder="{t["distances-placeholder"]}" />
 			<Switch name="restrictions" data-index="{i}" />
 		</div>
@@ -106,5 +116,11 @@
 		width: fit-content;
 		margin-block-start: var(--space-2-rel);
 		font-size: var(--font-size-00);
+	}
+
+	.message {
+		display: grid;
+		gap: var(--space-2-rel);
+		color: var(--surface-2-text-less-contrast);
 	}
 </style>

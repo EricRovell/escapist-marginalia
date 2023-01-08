@@ -17,6 +17,8 @@
 	"polygon-visible": "Visibility",
 	"reset": "Reset",
 	"restrictions": "Vertice randomness restrictions",
+	"restrictions-message-1": "Restrict what distance allowed (restricted) the next randomly chosen vertice may have relative to previous ones.",
+	"restrictions-message-2": "Provide the relative index: -1 - means the last, -2 - the penultimate, etc; and the list of distances separated by comma.",
 	"speed": "Painting speed",
 	"step-coef": "Step coefficient",
 	"step-distance": "Absolute distance step",
