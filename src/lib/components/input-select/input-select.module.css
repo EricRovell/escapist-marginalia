@@ -1,0 +1,25 @@
+.wrapper {
+	display: grid;
+	gap: var(--space-2);
+}
+
+.select {
+	background-color: var(--surface-3);
+	border-radius: var(--radius-s);
+	padding: var(--space-2-rel);
+	border: 1px solid var(--color-border);
+	font-family: inherit;
+	color: inherit;
+	transition: box-shadow 0.125s ease-in-out;
+}
+
+.select:hover {
+	box-shadow: 0 0 0 2px var(--focus-ring-color);
+	color: var(--surface-3-text-contrast);
+	cursor: pointer;
+}
+
+.select:disabled {
+	opacity: 0.75;
+	cursor: not-allowed;
+}

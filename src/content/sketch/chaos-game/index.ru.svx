@@ -1,0 +1,21 @@
+---
+cover: "/img/cover-chaos-game.png"
+description: "Выстраиваем фрактальные геометрические фигуры на основе простых правил и случайности."
+keywords: [ "игра хаоса", "случайность", "фракталы", "генеративное искусство" ]
+lang: "ru"
+layout: "sketch"
+title: "Игра Хаоса"
+updated: 2023-01-05T20:12:00.000Z
+url: "/ru/sketch/chaos-game"
+---
+
+<script>
+	import { default as Sketch } from "./src/ChaosGame.svelte";
+	import t from "./translation/ru.json";
+</script>
+
+<svelte:fragment slot="sketch">
+	<Sketch {t} />
+</svelte:fragment>
+
+Ознакомиться с Игрой Хаоса поближе можно в [блогпосте](/ru/blog/игра-хаоса).

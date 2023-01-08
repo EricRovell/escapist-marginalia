@@ -2,6 +2,7 @@
 	import styles from "./input-color.module.css";
 
 	export let className = "";
+	export let disabled = false;
 	export let id: string | undefined = undefined;
 	export let list: string | undefined = undefined;
 	export let name: string | undefined = undefined;
@@ -14,6 +15,7 @@
 	<input
 		bind:value
 		class="{styles.input}"
+		{disabled}
 		{id}
 		{list}
 		{name}

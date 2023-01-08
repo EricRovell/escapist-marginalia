@@ -59,6 +59,7 @@
 		{size}
 		{spellcheck}
 		type="text"
+		{...$$restProps}
 	/>
 	{#if validity.dirty && !validity.valid}
 		<span class="{styles["error-message"]}">

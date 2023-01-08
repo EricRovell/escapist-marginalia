@@ -9,6 +9,7 @@
 	display: grid;
 	grid-template: auto auto / 1fr auto;
 	gap: var(--space-3);
+	margin-block-end: var(--space-1);
 }
 
 .container > div {
@@ -81,7 +82,8 @@
 	transition: box-shadow 0.25s ease-in-out;
 }
 
-.range:global(.min)::-webkit-slider-thumb {
+.range:global(.min)::-webkit-slider-thumb,
+.range:disabled::-webkit-slider-thumb {
 	background-color: var(--range-thumb-min-color);
 	border-color: var(--range-track-color);
 }

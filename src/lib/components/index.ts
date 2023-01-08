@@ -13,6 +13,7 @@ export { Image } from "./image";
 export { InputColor } from "./input-color";
 export { InputNumber } from "./input-number";
 export { InputText } from "./input-text";
+export { InputSelect } from "./input-select";
 export { Link } from "./link";
 export { Masthead } from "./masthead";
 export { MathExp } from "./math";
