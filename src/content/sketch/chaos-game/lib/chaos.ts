@@ -1,6 +1,6 @@
 import { getValidVertices, jump, move, getSetIntersection  } from "./chaos.utils";
 import { range } from "@utils/helpers";
-import { randItem, randInt } from "@utils/random";
+import { randItem } from "@utils/random";
 import type { ChaosOptions, Coords, Move, Polygon, VerticeRestrictionRule } from "./chaos.types";
 
 const defaults: ChaosOptions = {
