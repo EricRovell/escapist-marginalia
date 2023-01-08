@@ -1,4 +1,8 @@
 {
+	"add-rule": "Добавить правило",
+	"distances": "Расстояния",
+	"distances-placeholder": "Расстояния через запятую",
+	"forbidden": "Запрет",
 	"points-color-wheel": "Цветовой круг",
 	"points-color": "Цвет",
 	"points-color-opacity": "Прозрачность",
@@ -11,11 +15,11 @@
 	"polygon-scale": "Размер",
 	"polygon-sides": "Количество сторон",
 	"polygon-visible": "Видимость",
+	"reset": "Сбросить",
+	"restrictions": "Ограничения выбора вершин",
 	"speed": "Скорость игры",
 	"step-coef": "Коэффициент относительного шага",
 	"step-distance": "Абсолютная величина шага",
-	"step-factor": "Относительный шаг"
+	"step-factor": "Относительный шаг",
+	"vertice": "Предыдущая вершина"
 }
-
-
-

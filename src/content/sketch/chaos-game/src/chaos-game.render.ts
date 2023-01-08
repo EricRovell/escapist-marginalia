@@ -21,7 +21,8 @@ export const sketch = (options: Options = optionsDefault) => {
 			step: {
 				factor: options["step-factor"],
 				value: options["step-factor"] ? options["step-coef"] : options["step-distance"]
-			}
+			},
+			distances: options["restrictions"]
 		});
 
 		for (const { phi } of polygon.verticesPolar) {

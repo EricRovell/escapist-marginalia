@@ -92,7 +92,7 @@ export class Chaos {
 		const [ index ] = randItem(Array.from(getSetIntersection(allowed)));
 
 		if (index !== 0 && !index) {
-			console.warn("Could not generate random vertice due the restriction rules.");
+			//console.warn("Could not generate random vertice due the restriction rules.");
 			return this.randVerticeCoords;
 		}
 

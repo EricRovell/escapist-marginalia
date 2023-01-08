@@ -1,4 +1,5 @@
 <script lang="ts">
+	import InputRestrictions from "./ChaosGame.restrictions.svelte";
 	import { InputColor, Range, SketchControls, Switch } from "@components";
 	import { options, optionsImmutable } from "./chaos-game.options";
 
@@ -145,4 +146,11 @@
 			{t["step-distance"]}
 		</Range>
 	</fieldset>
+	<InputRestrictions
+		bind:value="{state["restrictions"]}"
+		sides="{state["polygon-sides"]}"
+		{t}
+	>
+		{t["restrictions"]}
+	</InputRestrictions>
 </SketchControls>

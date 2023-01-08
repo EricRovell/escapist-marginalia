@@ -1,3 +1,5 @@
+import type { VerticeRestrictionRule } from "../lib/chaos.types";
+
 export interface Options {
 	"points-color-wheel": boolean;
 	"points-color": string;
@@ -11,6 +13,7 @@ export interface Options {
 	"polygon-scale": number;
 	"polygon-sides": number;
 	"polygon-visible": boolean;
+	"restrictions": VerticeRestrictionRule[];
 	"speed": number;
 	"step-coef": number;
 	"step-distance": number;
@@ -30,6 +33,7 @@ export const options: Options = {
 	"polygon-scale": 0.45,
 	"polygon-sides": 3,
 	"polygon-visible": true,
+	"restrictions": [],
 	"speed": 10,
 	"step-coef": 0.5,
 	"step-distance": 1,
@@ -46,6 +50,7 @@ export const optionsImmutable: Set<keyof Options> = new Set([
 	"polygon-scale",
 	"polygon-sides",
 	"polygon-visible",
+	"restrictions",
 	"step-coef",
 	"step-distance",
 	"step-factor"

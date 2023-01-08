@@ -1,4 +1,8 @@
 {
+	"add-rule": "Add rule",
+	"distances": "Distances",
+	"distances-placeholder": "Distances separated by comma",
+	"forbidden": "Forbidden",
 	"points-color-wheel": "Color Wheel",
 	"points-color": "Color",
 	"points-color-opacity": "Opacity",
@@ -11,8 +15,11 @@
 	"polygon-scale": "Size",
 	"polygon-sides": "Number of sides",
 	"polygon-visible": "Visibility",
+	"reset": "Reset",
+	"restrictions": "Vertice randomness restrictions",
 	"speed": "Painting speed",
 	"step-coef": "Step coefficient",
 	"step-distance": "Absolute distance step",
-	"step-factor": "Factored steps"
+	"step-factor": "Factored steps",
+	"vertice": "Previous vertice"
 }
