@@ -14,13 +14,18 @@
 	cursor: pointer;
 }
 
-.input::-webkit-color-swatch-wrapper {
-	padding: 0;
-	border-radius: var(--radius-xs);
-}
-
 .input::-webkit-color-swatch {
 	border-radius: calc(4px + var(--radius-xs));
 	border: none;
 	outline: 4px solid var(--surface-4);
+}
+
+.input:disabled::-webkit-color-swatch {
+	filter: grayscale(0.75);
+	cursor: not-allowed;
+}
+
+.input::-webkit-color-swatch-wrapper {
+	padding: 0;
+	border-radius: var(--radius-xs);
 }

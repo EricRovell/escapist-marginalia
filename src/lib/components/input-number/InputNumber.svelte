@@ -55,6 +55,7 @@
 		{required}
 		{step}
 		type="number"
+		{...$$restProps}
 	/>
 	{#if validity.dirty && !validity.valid && validity.message}
 		<span class="{styles["error-message"]}">

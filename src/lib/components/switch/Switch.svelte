@@ -20,5 +20,6 @@
 		type="checkbox"
 		role="switch"
 		on:change
+		{...$$restProps}
 	/>
 </label>
