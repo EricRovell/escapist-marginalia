@@ -3,5 +3,4 @@ export { default as ChaosRestrictionSubsetsDemo } from "./chaos-game-restriction
 export { default as PolygonDensityMap } from "./polygon-density-map/PolygonDensityMap.svelte";
 export { default as ChaosGameRandomRestriction } from "./chaos-game-random-restriction/ChaosGameRandomRestriction.svelte";
 export { default as ChaosGameStepsDemo } from "./chaos-game-steps/ChaosGameStepsDemo.svelte";
-export { default as ChaosGameCreator } from "./chaos-game-creator/ChaosGameCreator.svelte";
 export { default as SquareRestrictionsDemo } from "./chaos-game-square-restrictions/SquareRestrictionsDemo.svelte";

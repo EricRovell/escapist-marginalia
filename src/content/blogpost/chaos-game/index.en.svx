@@ -7,7 +7,7 @@ layout: blogpost
 slug: "the-chaos-game"
 title: "The Chaos Game: The randomness against determinism"
 translation: { lang: "русский", slug: "игра-хаоса" }
-updated: 2022-09-10T01:34:00.000Z
+updated: 2023-01-09T15:20:00.000Z
 ---
 
 <script>
@@ -157,11 +157,7 @@ Coefficient is quite practical way to describe the step value, and still, not th
 
 There is no doubt despite the simplicity of the rules there are still a lot of possibilities to explore. We can add more rules, like additional movement or managing the colors. The Chaos Game is a fun mathematical entertainment, yet it is just a simplification of some more interesting mathematical ideas as [attractors][attractor].
 
-Feel free to explore the Chaos Game using the creator tool below. New features will be added over time for sure.
-
-<Interactive.ChaosGameCreator
-	t="{t["chaos-game-creator"]}"
-/>
+Feel free to explore all the possibilities hidden in the [fully interactive Chaos Game][sketch].
 
 ## Useful links and references
 
@@ -178,3 +174,4 @@ Feel free to explore the Chaos Game using the creator tool below. New features w
 [sierpinski-triangle]: https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle
 [set-size]: https://www.onlinemath4all.com/number-of-subsets-of-a-set.html
 [attractor]: https://en.wikipedia.org/wiki/Attractor
+[sketch]: /en/sketch/chaos-game
