@@ -7,11 +7,11 @@ layout: blogpost
 slug: "the-chaos-game"
 title: "The Chaos Game: The randomness against determinism"
 translation: { lang: "русский", slug: "игра-хаоса" }
-updated: 2022-09-10T01:34:00.000Z
+updated: 2023-01-09T15:20:00.000Z
 ---
 
 <script>
-	import { ChaosGame } from "./components";
+	import { ChaosGame } from "./components/chaos-game";
 	import * as Interactive from "./interactive";
 	import t from "./translations/en.json";
 </script>
@@ -40,11 +40,13 @@ Thus, the inner area of the triangle is successively filled with points in a cha
 It is striking that some areas of the triangle cannot be reached in later steps, no matter how many iterations would be done. These “empty” areas form a fractal pattern. The result is a fractal, the so called [Sierpinski triangle][sierpinski-triangle] that was described by the Polish mathematician Waclaw Sierpinski in 1915:
 
 <ChaosGame
+	id="chaos-game-triangle-demo"
 	origin="{{ y: 35 }}"
-	points="{7500}"
-	scale="{175}"
-	palette="red"
-	pointSize="{0.75}"
+	options={{
+		"points-color-wheel": false,
+		"point-scale": 0.75,
+		"points-limit": 7500
+	}}
 >
 	Sierpinski triangle, Chaos Game at 7500 iterations
 </ChaosGame>
@@ -56,10 +58,12 @@ The "Chaos Game" described by [Banach fixed point theorem][banach-fixed-point-th
 Before we dive in into the Chaos Game, let’s correct rules just a bit. It won’t change the results, but will help us see the structures and even help to interpret the results. Let’s color each point based on the randomly chosen vertex it jumps towards to. Colors themselves can be random, but the most straightforward way is to use color wheel to connect the vertex and the angle:
 
 <ChaosGame
+	id="chaos-game-triangle-with-color-wheel"
 	origin="{{ y: 35 }}"
-	points="{7500}"
-	scale="{175}"
-	pointSize="{1}"
+	options={{
+		"point-scale": 0.75,
+		"points-limit": 7500
+	}}
 >
 	Colored Chaos Game, sierpinski triangle at 7500 iterations
 </ChaosGame>
@@ -69,10 +73,13 @@ Before we dive in into the Chaos Game, let’s correct rules just a bit. It won�
 Let’s explore the game by generalization of some rules. The most simple way is to use another polygon. This is what we will get for the next case - a square:
 
 <ChaosGame
+	id="chaos-game-square-example"
 	points="{7500}"
-	polygon="{4}"
-	scale="{200}"
-	pointSize="{0.75}"
+	options={{
+		"point-scale": 0.75,
+		"points-limit": 7500,
+		"polygon-sides": 4
+	}}
 >
 	Chaos Game, square at 7500 iterations
 </ChaosGame>
@@ -157,11 +164,7 @@ Coefficient is quite practical way to describe the step value, and still, not th
 
 There is no doubt despite the simplicity of the rules there are still a lot of possibilities to explore. We can add more rules, like additional movement or managing the colors. The Chaos Game is a fun mathematical entertainment, yet it is just a simplification of some more interesting mathematical ideas as [attractors][attractor].
 
-Feel free to explore the Chaos Game using the creator tool below. New features will be added over time for sure.
-
-<Interactive.ChaosGameCreator
-	t="{t["chaos-game-creator"]}"
-/>
+Feel free to explore all the possibilities hidden in the [fully interactive Chaos Game][sketch].
 
 ## Useful links and references
 
@@ -178,3 +181,4 @@ Feel free to explore the Chaos Game using the creator tool below. New features w
 [sierpinski-triangle]: https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle
 [set-size]: https://www.onlinemath4all.com/number-of-subsets-of-a-set.html
 [attractor]: https://en.wikipedia.org/wiki/Attractor
+[sketch]: /en/sketch/chaos-game

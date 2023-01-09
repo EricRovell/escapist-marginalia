@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Pagination, Range } from "@components";
-	import { ChaosGame } from "../components";
-	import { subsets } from "../chaos/chaos.utils";
+	import { ChaosGame } from "../../components/chaos-game";
+	import { subsets } from "@content/sketch/chaos-game/lib/chaos.utils";
 	import { range } from "@utils/helpers";
 	import styles from "./chaos-restriction-subsets-demo.module.css";
 
@@ -35,20 +35,21 @@
 <section class="wide interactive">
 	<h3>{t["title"]}</h3>
 	<div class="{styles.wrapper}">
-		{#each items.slice(from, from + perPage) as subset}
-			<ChaosGame
-				points="{3500}"
-				polygon="{n}"
-				scale="{175}"
-				pointSize="{1.5}"
-				distances="{[
-					{ index: -1, values: subset }
-				]}"
-				step="{{ value: 0.5, factor: true }}"
-			>
-				{`{ ${subset.map(i => i.toString()).join(", ")} }`}
-			</ChaosGame>
-		{/each}
+		{#key currentPage}
+			{#each items.slice(from, from + perPage) as subset}
+				<ChaosGame
+					id="chaos-game-restriction-subsets"
+					options={{
+						"points-limit": 4500,
+						"polygon-sides": n,
+						"polygon-visible": false,
+						"restrictions": [{ index: -1, values: subset }]
+					}}
+				>
+					{`{ ${subset.map(i => i.toString()).join(", ")} }`}
+				</ChaosGame>
+			{/each}
+		{/key}
 	</div>
 	<form class="{styles.form}" on:submit|preventDefault>
 		<Pagination

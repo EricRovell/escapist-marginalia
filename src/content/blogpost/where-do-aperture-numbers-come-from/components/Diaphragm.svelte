@@ -1,5 +1,5 @@
 <script>
-	import { constructPolygon } from "../../chaos-game/chaos/chaos.utils";
+	import { createPolygon } from "@content/sketch/chaos-game/lib/polygon";
 	import styles from "./diaphragm.module.css";
 
 	export let angle = 45;
@@ -20,7 +20,7 @@
 		</mask>
 	</defs>
 	<circle cx="0" cy="0" r="{scale / 2}" mask="url(#{maskID})" />
-	{#each constructPolygon(blades, 23) as { x, y }, i}
+	{#each createPolygon(blades, 23).vertices as { x, y }, i}
 		<path
 			stroke-width="0.1"
 			transform="translate({x} {y}) rotate({angle + 360 / blades * i + 210} 1.54 19.65)"
