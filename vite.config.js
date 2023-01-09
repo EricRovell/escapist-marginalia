@@ -7,6 +7,7 @@ const aliasList = [
 	{ name: "$lib", path: "src/lib" },
 	{ name: "@data", path: "./src/data" },
 	{ name: "@components", path: "./src/lib/components" },
+	{ name: "@content", path: "./src/content" },
 	{ name: "@layout", path: "./src/lib/layout" },
 	{ name: "@lib", path: "./src/lib" },
 	{ name: "@styles", path: "./src/lib/styles" },

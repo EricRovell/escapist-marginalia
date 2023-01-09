@@ -1,5 +1,5 @@
 <script>
-	import { ChaosGame } from "../components";
+	import { ChaosGame } from "../../components/chaos-game";
 	import styles from "./square-restrictions-demo.module.css";
 
 	export let t;
@@ -16,11 +16,14 @@
 	<div class="{styles.wrapper}">
 		{#each items as restriction, i}
 			<ChaosGame
-				points="{2500}"
-				polygon="{4}"
-				scale="{200}"
-				pointSize="{0.75}"
-				distances="{[ restriction ]}"
+				id="square-restrictions-demo"
+				options={{
+					"points-scale": 0.75,
+					"points-limit": 7500,
+					"polygon-sides": 4,
+					"polygon-visible": false,
+					"restrictions": [ restriction ]
+				}}
 			>
 				{t["rules"][i]}
 			</ChaosGame>

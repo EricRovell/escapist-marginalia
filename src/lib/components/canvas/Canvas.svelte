@@ -12,6 +12,9 @@
 	export let style = "";
 	export let width = 300;
 
+	// should be a prop to trigger `afterUpdate`
+	export let visible = false;
+
 	let canvas: HTMLCanvasElement;
 	let context: CanvasRenderingContext2D;
 	const dispatch = createEventDispatcher();
@@ -33,10 +36,16 @@
 			manager.resize();
 		});
 
+		const intersectionObserver = new IntersectionObserver((entries) => {
+			visible = entries[0].isIntersecting;
+		});
+
 		resizeObserver.observe(canvas);
+		intersectionObserver.observe(canvas);
 
 		return () => {
 			resizeObserver.disconnect();
+			intersectionObserver.disconnect();
 		};
 	});
 
@@ -53,7 +62,7 @@
 			autoclear,
 			context,
 			height,
-			loop,
+			loop: visible && loop,
 			pixelRatio,
 			width
 		});
