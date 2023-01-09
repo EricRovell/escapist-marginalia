@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Range } from "@components";
-	import { ChaosGame } from "../../components";
+	import { ChaosGame } from "../../components/chaos-game";
 	import styles from "./chaos-game-steps-demo.module.css";
 
 	export let factor = true;
@@ -16,11 +16,15 @@
 <section class="wide interactive">
 	<h3>{t["title"]}</h3>
 	<ChaosGame
-		points="{3500}"
-		polygon="{n}"
-		scale="{factor ? 150 : 100}"
-		pointSize="{1}"
-		step="{{ value, factor }}"
+		id="chaos-game-step-demo"
+		options={{
+			"points-limit": 10000,
+			"polygon-sides": n,
+			"polygon-visible": false,
+			"step-coef": value,
+			"step-factor": factor,
+			"step-distance": value
+		}}
 	/>
 	<form class="{styles.form}" on:submit|preventDefault>
 		<Range bind:value={n} min={3} max={9} output>

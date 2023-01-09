@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button, Switch } from "@components";
-	import { Chaos, Polygon } from "../../chaos";
-	import type { Coords, Move, PolygonOrigin } from "../../chaos";
+	import { Chaos, createPolygon } from "@content/sketch/chaos-game/index";
+	import type { Coords, Move, PolygonOrigin } from "@content/sketch/chaos-game/lib/chaos.types";
 	import styles from "./chaos-game-rules-demo.module.css";
 
 	export let height = 350;
@@ -16,7 +16,7 @@
 	export let width = 350;
 	export let step = { value: 0.5, factor: true };
 
-	const poly = new Polygon(polygon, scale / 2, origin);
+	const poly = createPolygon(polygon, scale / 2, origin);
 	const chaos = new Chaos(poly, { step });
 
 	let points: Move[] = [];
@@ -40,6 +40,13 @@
 	const handlePointsVisibility = () => {
 		showPoints = !showPoints;
 	};
+
+	const constructCoords = (polygon: typeof poly) => {
+		return polygon
+			.vertices
+			.map(({ x, y }) => `${x},${y}`)
+			.join(" ");
+	};
 </script>
 
 <!--
@@ -56,7 +63,7 @@
 		<section class="{styles.polygon}">
 			<svg viewBox="-{width / 2} -{height / 2} {width} {height}">
 				<polygon
-					points="{poly.points}"
+					points="{constructCoords(poly)}"
 					stroke-width="{strokeWidth}px"
 					stroke="white"
 					opacity="0.5"

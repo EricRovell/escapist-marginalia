@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button, Range } from "@components";
-	import { ChaosGame } from "../../components";
+	import { ChaosGame } from "../../components/chaos-game";
 	import { range } from "@utils/helpers";
 	import { randInt, randItem } from "@utils/random";
 	import styles from "./chaos-game-random-restriction.module.css";
@@ -43,14 +43,17 @@
 <section class="wide {styles.wrapper} interactive">
 	<h3>{t.title}</h3>
 	<ChaosGame
+		id="chaos-game-random-restriction"
+		options={{
+			"points-limit": 12000,
+			"polygon-sides": n,
+			"polygon-visible": false,
+			"restrictions": [
+				{ index: -1, values: last, forbidden: true },
+				{ index: -2, values: penultimate, forbidden: true }
+			]
+		}}
 		height="{450}"
-		points="{7500}"
-		polygon="{n}"
-		scale="{200}"
-		distances="{[
-			{ index: -1, values: last, forbidden: true },
-			{ index: -2, values: penultimate, forbidden: true }
-		]}"
 		width="{450}"
 	>
 	<p>{t["next-randomly"]}:</p>
