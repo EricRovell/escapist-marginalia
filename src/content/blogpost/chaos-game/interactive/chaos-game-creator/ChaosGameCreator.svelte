@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { Button, InputNumber, Range, Switch } from "@components";
 	import { Canvas, CanvasLayer } from "@components";
-	import { Chaos, Polygon } from "../chaos";
+	import { Chaos, Polygon } from "../../chaos";
 	import styles from "./chaos-game-creator.module.css";
-	import type { PolygonOrigin } from "../chaos";
+	import type { PolygonOrigin } from "../../chaos";
 	import type { SvelteComponent } from "svelte";
 
 	export let polygon = 3;

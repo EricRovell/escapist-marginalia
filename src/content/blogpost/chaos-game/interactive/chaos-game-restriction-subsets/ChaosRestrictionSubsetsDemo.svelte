@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Pagination, Range } from "@components";
-	import { ChaosGame } from "../components";
-	import { subsets } from "../chaos/chaos.utils";
+	import { ChaosGame } from "../../components";
+	import { subsets } from "../../chaos/chaos.utils";
 	import { range } from "@utils/helpers";
 	import styles from "./chaos-restriction-subsets-demo.module.css";
 

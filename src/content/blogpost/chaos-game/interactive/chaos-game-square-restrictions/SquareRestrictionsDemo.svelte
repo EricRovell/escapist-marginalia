@@ -1,5 +1,5 @@
 <script>
-	import { ChaosGame } from "../components";
+	import { ChaosGame } from "../../components";
 	import styles from "./square-restrictions-demo.module.css";
 
 	export let t;

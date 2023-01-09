@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Range } from "@components";
-	import { ChaosGame } from "../components";
+	import { ChaosGame } from "../../components";
 	import styles from "./chaos-game-steps-demo.module.css";
 
 	export let factor = true;

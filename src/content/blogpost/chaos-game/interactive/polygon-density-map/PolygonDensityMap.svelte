@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { Range } from "@components";
-	import { Polygon, type PolygonOrigin } from "../chaos";
+	import { Polygon, type PolygonOrigin } from "../../chaos";
 	import styles from "./polygon-density-map.module.css";
 
 	export let height = 375;
-	export let n = 5;	
+	export let n = 5;
 	export let r = 40;
 	export let t: Record<string, string>;
 	export let width = 375;
@@ -24,7 +24,7 @@
 <!--
 	Shows the random points "density-map".
 	Explains why the `square` Chaos Game is not fractal,
-	and hints where how the fractal pattern build from the polygon itself. 
+	and hints where how the fractal pattern build from the polygon itself.
 -->
 <section class="wide interactive">
 	<h3>{t["title"]}</h3>

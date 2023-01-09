@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button, Range } from "@components";
-	import { ChaosGame } from "../components";
+	import { ChaosGame } from "../../components";
 	import { range } from "@utils/helpers";
 	import { randInt, randItem } from "@utils/random";
 	import styles from "./chaos-game-random-restriction.module.css";
