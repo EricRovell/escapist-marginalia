@@ -1,6 +1,6 @@
 .layout {
 	display: grid;
-	grid-template: 1fr / 5fr 1fr;
+	grid-template: 1fr / 4fr 1fr;
 	gap: var(--space-9);
 	width: 100%;
 	justify-self: center;

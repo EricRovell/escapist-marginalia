@@ -1,4 +1,5 @@
 ---
+cover: "/img/cover-masonry.png"
 created: 2022-05-11T15:30:00.000Z
 description: "Реализуем компонент для галереи изображений в стиле раскладки Masonry, используя возможности CSS."
 keywords: [ "css", "web" ]
