@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/await-thenable */
 import { readdir, rename } from "fs/promises";
 import path, { extname } from "path";
 import ExifReader from "exifreader";
@@ -25,7 +26,7 @@ async function renameImages() {
 
 	try {
 		const files = await readdir(inputDir);
-		
+
 		for (const file of files) {
 			const filePath = path.join(inputDir, file);
 			const id =  await getID(filePath);
