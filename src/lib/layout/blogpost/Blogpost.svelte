@@ -4,7 +4,7 @@
 </script>
 
 <script>
-	import { webpage } from "@core/paths";
+	import { webpage, webpageRoot } from "@core/paths";
 	import { Meta, TOC, ScrollToTop } from "@components";
 	import Header from "./Header.svelte";
 	import { LayoutPage } from "../page-header";
@@ -14,6 +14,7 @@
 	export let description;
 	export let keywords;
 	export let lang;
+	export let cover;
 	export let created;
 	export let updated;
 	export let series;
@@ -39,7 +40,8 @@
 		author: "Eric Rovell",
 		url: $webpage,
 		"article:published_time": created,
-		"article:modified_time": updated
+		"article:modified_time": updated,
+		image: `${$webpageRoot}${cover}`
 	}}
 	twitter={{
 		card: "summary",

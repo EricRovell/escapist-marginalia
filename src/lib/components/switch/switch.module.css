@@ -33,6 +33,7 @@
 	transition: box-shadow var(--switch-transition-duration) linear;
 	cursor: pointer;
 	touch-action: pan-y;
+	transform: translateX(calc(-50% - 0.5 * var(--switch-thumb-size)));
 }
 
 /* thumb */

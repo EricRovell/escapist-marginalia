@@ -5,10 +5,12 @@
 <script lang="ts">
 	import Datetime from "../Datetime.svelte";
 	import { Link } from "../link";
+	import { Image } from "../image";
 
 	import { pathBlogpost } from "@core/paths";
 	import styles from "./card-article.module.css";
 
+	export let cover: Blogpost["cover"];
 	export let created: Blogpost["created"];
 	export let description: Blogpost["description"];
 	export let keywords: Blogpost["keywords"];
@@ -17,6 +19,13 @@
 </script>
 
 <article class="surface-2 {styles["card"]}">
+	<Image
+		alt="The article cover image"
+		height="{500}"
+		lazy
+		src="{cover}"
+		width="{500}"
+	/>
 	<Datetime
 		date={created}
 		options={{ month: "long", day: "numeric", year: "numeric" }}

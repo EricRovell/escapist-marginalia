@@ -4,7 +4,16 @@
 	height: 100%;
 	border: 2px solid var(--color-border);
 	border-radius: var(--radius-l);
-	padding: var(--space-5-rel) var(--space-3-rel);
+	padding-block-end: var(--space-5);
+	overflow: hidden;
+}
+
+.card > picture {
+	background-color: var(--surface-1);
+}
+
+.card > :not(picture) {
+	padding-inline: var(--space-3);
 }
 
 .card h3 {
@@ -24,7 +33,7 @@
 }
 
 .card time {
-	margin-bottom: var(--space-1);
+	margin-block: var(--space-3) var(--space-1);
 	font-size: var(--font-size-0);
 }
 

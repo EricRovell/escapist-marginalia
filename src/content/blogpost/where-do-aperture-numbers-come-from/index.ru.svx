@@ -1,4 +1,5 @@
 ---
+cover: "/img/cover-diaphragm.png"
 created: 2022-08-16T14:41:00.000Z
 description: "Попробуем разобраться, почему диафрагменные числа такие какие они есть и каков в этом смысл."
 keywords: [ "photography", "aperture", "f-number" ]

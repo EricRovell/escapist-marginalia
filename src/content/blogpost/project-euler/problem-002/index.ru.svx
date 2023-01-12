@@ -1,4 +1,5 @@
 ---
+cover: "/img/cover-project-euler-2.png"
 created: 2021-06-11T00:00:00.000Z
 description: "Чётные числа Фибоначчи."
 keywords: [ "project euler", "math" ]

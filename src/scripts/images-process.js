@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/await-thenable */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { readdir, mkdir, writeFile } from "fs/promises";
 import path from "path";
@@ -54,7 +55,7 @@ async function processImage({ filePath, pathOutput, id }) {
 		.resize({ width: 350 })
 		.toFile(path.join(pathOutput, `${id}.thumb.webp`));
 
-	/** TODO: 
+	/** TODO:
 	 * Some services do not support WEBP for OG:IMAGE
 	 * Remove when they will do.
 	 *  */
@@ -90,7 +91,7 @@ async function processImages() {
 
 	try {
 		const files = await readdir(pathInput);
-		
+
 		for (const file of files) {
 			const filePath = path.join(pathInput, file);
 			const metadata =  await parseMetadata(filePath, pathOutput);

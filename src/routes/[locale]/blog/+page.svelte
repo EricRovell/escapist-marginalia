@@ -52,12 +52,13 @@
 		</p>
 	</svelte:fragment>
 	<div class={styles.layout}>
-		<main class="grid-flexible" style="--item-size: 25ch">
+		<main class="grid-flexible" style="--item-size: 24ch">
 			<aside class={styles.counter}>
 				{i18nTemplate($t("message.blogpost-counter"), [ content.length, data.items.length ])}:
 			</aside>
-			{#each content as { created, description, keywords, title, slug }}
+			{#each content as { cover, created, description, keywords, title, slug }}
 				<CardArticle
+					{cover}
 					{created}
 					{description}
 					{keywords}

@@ -15,6 +15,7 @@ export interface Page<T> {
  * Describes the metadata object from the blogpost's frontmatter.
  */
 export interface BlogpostMetadata {
+	cover: string;
 	created: string;
 	description: string;
 	draft?: boolean;
