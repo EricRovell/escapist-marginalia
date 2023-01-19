@@ -41,7 +41,7 @@
 		class="{styles.container}"
 		on:touchmove|preventDefault
 		on:panmove={handlePanMove}
-    on:zoomchange={handleZoom}
+		on:zoomchange={handleZoom}
 		on:swipe-down={() => {
 			if ($imageScale === 1) {
 				close();
