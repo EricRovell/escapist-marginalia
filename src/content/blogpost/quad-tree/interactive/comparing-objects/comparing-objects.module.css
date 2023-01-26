@@ -1,0 +1,39 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-3);
+	justify-self: center;
+	width: min(35ch, 100% - 2 * var(--space-3));
+	margin-block: var(--space-4);
+}
+
+.root form {
+	border-radius: var(--radius-s);
+	padding: var(--space-2) var(--space-3);
+	background-color: var(--surface-3);
+	font-size: var(--font-size-0);
+	width: min(25ch, 100% - 2 * var(--space-3));
+}
+
+.connection {
+	fill: none;
+	stroke: var(--surface-4);
+	stroke-width: 3px;
+}
+
+.closest-area {
+	stroke-width: 3px;
+	stroke: var(--surface-4);
+	fill: none;
+}
+
+.object {
+	fill: var(--surface-4);
+}
+
+.object > :global(.current) {
+	stroke-width: 3px;
+	fill: var(--surface-1);
+	stroke: var(--surface-4);
+}
