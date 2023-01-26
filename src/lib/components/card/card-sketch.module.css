@@ -2,6 +2,7 @@
 	border-radius: var(--radius-m);
 	width: fit-content;
 	justify-self: center;
+	width: 100%;
 }
 
 .card h3 {
@@ -15,8 +16,9 @@
 
 .card img {
 	aspect-ratio: 1 / 1;
-	width: var(--item-size);
-	height: var(--item-size);
+	width: 100%;
+	height: min-content;
+	background-color: var(--surface-1);
 }
 
 .card figure {
