@@ -1,5 +1,4 @@
 import { Circle, Point, Rectangle } from "./quad-tree.geometry";
-import type { Boundary } from ".";
 
 /**
  * Class representing a `QuadTree` Node.
