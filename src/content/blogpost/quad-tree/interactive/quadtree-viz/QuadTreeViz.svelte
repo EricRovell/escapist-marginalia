@@ -3,6 +3,7 @@
 	import { QuadTreeGrid } from "../../components";
 	import { QuadTree, Rectangle } from "@utils/quad-tree";
 	import { randFloat } from "@utils/random";
+	import { getBoundaries } from "../../utils";
 	import styles from "./quadtree-viz.module.css";
 
 	let element: SVGElement;
@@ -28,7 +29,7 @@
 			y: point.y
 		});
 
-		bounds = quadtree.getBoundaries();
+		bounds = getBoundaries(quadtree);
 	};
 
 	const handleReset = () => {
@@ -51,7 +52,7 @@
 		}
 
 		points = items;
-		bounds = quadtree.getBoundaries();
+		bounds = getBoundaries(quadtree);
 	};
 
 	$: show = points.length > 0;

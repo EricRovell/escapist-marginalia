@@ -4,7 +4,7 @@ import type { Boundary } from ".";
 /**
  * Class representing a `QuadTree` Node.
  */
-export class QuadTree<Item extends Point> {
+export class QuadTree<Item extends Point = Point> {
 	readonly boundary: Rectangle;
 	readonly capacity: number;
 	readonly depth: number;
@@ -175,25 +175,5 @@ export class QuadTree<Item extends Point> {
 				quadrant.render(context);
 			}
 		}
-	}
-
-	/**
-	 * Returns the boundaries coordinates that have children.
-	 */
-	getBoundaries(items: Boundary[] = []): Boundary[] {
-		items.push({
-			x: this.x,
-			y: this.y,
-			width: this.width,
-			height: this.height
-		});
-
-		if (this.hasChildren) {
-			for (const quadrant of this.quadrants) {
-				quadrant.getBoundaries(items);
-			}
-		}
-
-		return items;
 	}
 }

@@ -5,6 +5,7 @@
 	import { QuadTree, Circle, Rectangle } from "@utils/quad-tree";
 	import { randFloat } from "@utils/random";
 	import { clamp } from "@utils/helpers";
+	import { getBoundaries } from "../../utils";
 	import styles from "./quadtree-query.module.css";
 
 	let element: SVGElement;
@@ -73,7 +74,7 @@
 		}
 
 		points = items;
-		bounds = quadtree.getBoundaries();
+		bounds = getBoundaries(quadtree);
 	};
 
 	handleRandomPlacement();
