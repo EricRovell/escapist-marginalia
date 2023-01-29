@@ -13,6 +13,17 @@
 	grid-column: 1;
 }
 
+.wrapper > p {
+	font-size: var(--font-size-3);
+	align-self: center;
+	text-align: center;
+	height: fit-content;
+	z-index: 1;
+	margin: 0;
+	pointer-events: none;
+	opacity: 0;
+}
+
 .wrapper:not(:global(.show)) > svg {
 	opacity: 0.45;
 }
@@ -22,17 +33,6 @@
 }
 
 .wrapper:not(:global(.show)) circle {
-	opacity: 0;
-}
-
-.wrapper > p {
-	font-size: var(--font-size-3);
-	align-self: center;
-	text-align: center;
-	height: fit-content;
-	z-index: 1;
-	margin: 0;
-	pointer-events: none;
 	opacity: 0;
 }
 

@@ -1,6 +1,5 @@
 .card {
 	border-radius: var(--radius-m);
-	width: fit-content;
 	justify-self: center;
 	width: 100%;
 }

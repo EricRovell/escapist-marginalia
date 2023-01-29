@@ -13,14 +13,6 @@
 	grid-column: 1;
 }
 
-.wrapper:not(:global(.show)) > svg {
-	opacity: 0.45;
-}
-
-.wrapper:not(:global(.show)) > p {
-	opacity: 1;
-}
-
 .wrapper > p {
 	font-size: var(--font-size-3);
 	align-self: center;
@@ -31,6 +23,14 @@
 	pointer-events: none;
 	opacity: 0;
 	width: 100%;
+}
+
+.wrapper:not(:global(.show)) > svg {
+	opacity: 0.45;
+}
+
+.wrapper:not(:global(.show)) > p {
+	opacity: 1;
 }
 
 .quadtree {
