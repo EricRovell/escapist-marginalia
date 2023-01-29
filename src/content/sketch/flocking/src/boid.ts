@@ -110,11 +110,23 @@ export class Boid {
 
 	handleBorders(width: number, height: number, bound = false) {
 		if (bound) {
-			if (this.position.x > width || this.position.x < 0) {
+			if (this.position.x > width) {
+				this.position.x = width;
 				this.speed.x *= -1;
 			}
 
-			if (this.position.y > height || this.position.y < 0) {
+			if (this.position.x < 0) {
+				this.position.x = 0;
+				this.speed.x *= -1;
+			}
+
+			if (this.position.y > height) {
+				this.position.y = height;
+				this.speed.y *= -1;
+			}
+
+			if (this.position.y < 0) {
+				this.position.y = 0;
 				this.speed.y *= -1;
 			}
 		} else {
