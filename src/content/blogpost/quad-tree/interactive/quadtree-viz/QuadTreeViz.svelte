@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { Button } from "@components";
 	import { QuadTreeGrid } from "../../components";
 	import { QuadTree, Rectangle } from "@utils/quad-tree";
@@ -10,6 +11,8 @@
 	let points = [];
 	let quadtree = new QuadTree(4, new Rectangle(0, 0, 1000, 1000));
 	let bounds = [];
+
+	const t = getContext<Record<string, string>>("t");
 
 	const handleClick = (e: PointerEvent) => {
 		// @ts-expect-error: it works
@@ -59,6 +62,9 @@
 </script>
 
 <section class="interactive wide">
+	<h3>
+		{t["title:viz"]}
+	</h3>
 	<div class="{styles.wrapper}" class:show>
 		<QuadTreeGrid
 			bind:element="{element}"
@@ -69,15 +75,15 @@
 			on:pointerdown="{handleClick}"
 		/>
 		<p>
-			Touch to add points
+			{t["touch-to-add"]}
 		</p>
 	</div>
 	<form on:submit|preventDefault>
 		<Button on:click="{handleRandomPlacement}">
-			Random 100
+			{t["add-100"]}
 		</Button>
 		<Button on:click="{handleReset}">
-			Reset
+			{t["reset"]}
 		</Button>
 	</form>
 </section>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { onDestroy } from "svelte";
 	import { QuadTreeGrid } from "../../components";
 	import { Button, InputSelect, Range } from "@components";
@@ -22,6 +23,8 @@
 	let x = 0;
 	let y = 0;
 	let r = 150;
+
+	const t = getContext<Record<string, string>>("t");
 
 	const handlePointerEnter = () => {
 		element && element.addEventListener("pointermove", handlePointerMove);
@@ -85,6 +88,9 @@
 </script>
 
 <section class="interactive wide">
+	<h2>
+		{t["title:query"]}
+	</h2>
 	<div class="{styles.wrapper}" class:show>
 		<QuadTreeGrid
 			bind:element="{element}"
@@ -124,23 +130,23 @@
 			{/if}
 		</QuadTreeGrid>
 		<p>
-			Point over the area
+			{t["point-over"]}
 		</p>
 	</div>
 	<form on:submit|preventDefault>
 		<Button on:click="{handleRandomPlacement}">
-			Random 100
+			{t["add-100"]}
 		</Button>
 		<InputSelect
 			options="{[
-				{ label: "Rectangle", value: "rect", selected: rect === true },
-				{ label: "Circle", value: "circle", selected: rect === false }
+				{ label: t["rect"], value: "rect", selected: rect === true },
+				{ label: t["circle"], value: "circle", selected: rect === false }
 			]}"
 			on:change="{e => {
 				rect = e.target.value === "rect";
 			}}"
 		>
-			Boundary
+			{t["boundary"]}
 		</InputSelect>
 		{#if rect}
 			<Range
@@ -149,7 +155,7 @@
 				max="{500}"
 				output
 			>
-				Boundary width
+				{t["width"]}
 			</Range>
 			<Range
 				bind:value="{height}"
@@ -157,7 +163,7 @@
 				max="{500}"
 				output
 			>
-				Boundary height
+				{t["height"]}
 			</Range>
 		{:else}
 			<Range
@@ -166,7 +172,7 @@
 				max="{500}"
 				output
 			>
-				Boundary radius
+				{t["radius"]}
 			</Range>
 		{/if}
 	</form>

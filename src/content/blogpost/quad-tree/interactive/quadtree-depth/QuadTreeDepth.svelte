@@ -1,10 +1,12 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { Range } from "@components";
 	import { QuadTreeGrid } from "../../components";
 
 	export let depth = 1;
 
 	const TREE_DEPTH_MAX = 5;
+	const t = getContext<Record<string, string>>("t");
 
 	const getBounds = (depth: number) => {
 		const bounds = [];
@@ -27,6 +29,9 @@
 </script>
 
 <section class="interactive wide">
+	<h3>
+		{t["title:depth"]}
+	</h3>
 	<QuadTreeGrid
 		bounds="{getBounds(depth)}"
 	/>
@@ -37,7 +42,7 @@
 			max="{TREE_DEPTH_MAX}"
 			output
 		>
-			Depth
+			{t.depth}
 		</Range>
 	</form>
 </section>

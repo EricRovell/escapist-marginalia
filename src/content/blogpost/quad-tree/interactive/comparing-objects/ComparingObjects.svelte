@@ -1,8 +1,11 @@
-<script>
+<script lang="ts">
+	import { getContext } from "svelte";
 	import { Switch } from "@components";
 	import styles from "./comparing-objects.module.css";
 
 	export let closest = false;
+
+	const t = getContext<Record<string, string>>("t");
 </script>
 
 <div class="{styles.root}">
@@ -36,7 +39,7 @@
 	</svg>
 	<form>
 		<Switch bind:checked="{closest}">
-			Compare closest
+			{t["compare-closest"]}
 		</Switch>
 	</form>
 </div>
