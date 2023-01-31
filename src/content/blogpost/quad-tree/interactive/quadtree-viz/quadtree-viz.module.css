@@ -1,7 +1,7 @@
 .wrapper {
 	display: grid;
 	grid-template: 1fr / 1fr;
-	width: min(100% - 2 * var(--space-3), 40ch);
+	width: min(100% - 2 * var(--space-3), 70vh);
 }
 
 .wrapper > svg {
@@ -35,4 +35,9 @@
 
 .quadtree {
 	transition: opacity 0.25s linear;
+}
+
+.form {
+	display: flex;
+	gap: var(--space-3);
 }

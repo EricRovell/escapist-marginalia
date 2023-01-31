@@ -4,9 +4,8 @@
 	import { QuadTreeGrid } from "../../components";
 	import { Button, InputSelect, Range } from "@components";
 	import { QuadTree, Circle, Rectangle } from "@utils/quad-tree";
-	import { randFloat } from "@utils/random";
 	import { clamp } from "@utils/helpers";
-	import { getBoundaries } from "../../utils";
+	import { getBoundaries, getRandomPoints } from "../../utils";
 	import styles from "./quadtree-query.module.css";
 
 	let element: SVGElement;
@@ -23,6 +22,7 @@
 	let x = 0;
 	let y = 0;
 	let r = 150;
+	let pointsSize = 5;
 
 	const t = getContext<Record<string, string>>("t");
 
@@ -67,11 +67,7 @@
 		quadtree.clear();
 		const items = [];
 
-		for (let i = 0; i < 100; i++) {
-			const point = {
-				x: randFloat(0, 1000),
-				y: randFloat(0, 1000)
-			};
+		for (const point of getRandomPoints(100, 1000, 1000, 2 * pointsSize)) {
 			items.push(point);
 			quadtree.insert(point);
 		}
@@ -88,15 +84,16 @@
 </script>
 
 <section class="interactive wide">
-	<h2>
+	<h3>
 		{t["title:query"]}
-	</h2>
+	</h3>
 	<div class="{styles.wrapper}" class:show>
 		<QuadTreeGrid
 			bind:element="{element}"
 			{bounds}
 			height="{1000}"
 			{points}
+			{pointsSize}
 			{pointsQuery}
 			width="{1000}"
 			on:pointerleave="{handlePointerLeave}"
@@ -133,11 +130,9 @@
 			{t["point-over"]}
 		</p>
 	</div>
-	<form on:submit|preventDefault>
-		<Button on:click="{handleRandomPlacement}">
-			{t["add-100"]}
-		</Button>
+	<form on:submit|preventDefault class="{styles.form}">
 		<InputSelect
+			name="quadtree-boundary-shape"
 			options="{[
 				{ label: t["rect"], value: "rect", selected: rect === true },
 				{ label: t["circle"], value: "circle", selected: rect === false }
@@ -175,5 +170,8 @@
 				{t["radius"]}
 			</Range>
 		{/if}
+		<Button on:click="{handleRandomPlacement}">
+			{t["add-100"]}
+		</Button>
 	</form>
 </section>

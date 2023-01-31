@@ -3,12 +3,13 @@
 	import { Button } from "@components";
 	import { QuadTreeGrid } from "../../components";
 	import { QuadTree, Rectangle } from "@utils/quad-tree";
-	import { randFloat } from "@utils/random";
-	import { getBoundaries } from "../../utils";
+	import { getBoundaries, getRandomPoints } from "../../utils";
 	import styles from "./quadtree-viz.module.css";
 
 	let element: SVGElement;
 	let points = [];
+	let pointsSize = 5;
+	let pointsLimit = 200;
 	let quadtree = new QuadTree(4, new Rectangle(0, 0, 1000, 1000));
 	let bounds = [];
 
@@ -25,7 +26,7 @@
 		points = [ ...points, {
 			x: point.x,
 			y: point.y
-		} ];
+		} ].slice(-pointsLimit);
 
 		quadtree.insert({
 			x: point.x,
@@ -45,11 +46,7 @@
 		handleReset();
 		const items = [];
 
-		for (let i = 0; i < 100; i++) {
-			const point = {
-				x: randFloat(0, 1000),
-				y: randFloat(0, 1000)
-			};
+		for (const point of getRandomPoints(100, 1000, 1000, 2 * pointsSize)) {
 			items.push(point);
 			quadtree.insert(point);
 		}
@@ -71,6 +68,7 @@
 			{bounds}
 			height="{1000}"
 			{points}
+			{pointsSize}
 			width="{1000}"
 			on:pointerdown="{handleClick}"
 		/>
@@ -78,7 +76,7 @@
 			{t["touch-to-add"]}
 		</p>
 	</div>
-	<form on:submit|preventDefault>
+	<form on:submit|preventDefault class="{styles.form}">
 		<Button on:click="{handleRandomPlacement}">
 			{t["add-100"]}
 		</Button>

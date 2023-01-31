@@ -2,9 +2,10 @@
 	import styles from "./quadtree-grid.module.css";
 
 	export let bounds = [];
-	export let element: SVGElement;
+	export let element: SVGElement | undefined = undefined;
 	export let height = 1000;
 	export let points = [];
+	export let pointsSize = 5;
 	export let pointsQuery = [];
 	export let width = 1000;
 </script>
@@ -35,7 +36,7 @@
 			class="{styles.point}"
 			cx="{x}"
 			cy="{y}"
-			r="{5}"
+			r="{pointsSize}"
 		/>
 	{/each}
 	{#each pointsQuery as { x, y }}
@@ -43,7 +44,7 @@
 			class="{styles.point} query"
 			cx="{x}"
 			cy="{y}"
-			r="{6}"
+			r="{pointsSize + 2}"
 			fill="yellow"
 		/>
 	{/each}
