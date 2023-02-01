@@ -19,26 +19,40 @@
 
 	let width = 300;
 	let height = 200;
-	let x = 0;
-	let y = 0;
+	let x = 500;
+	let y = 500;
 	let r = 150;
 	let pointsSize = 5;
+
+	let draggable = false;
 
 	const t = getContext<Record<string, string>>("t");
 
 	const handlePointerEnter = () => {
-		element && element.addEventListener("pointermove", handlePointerMove);
-		element && element.style.setProperty("cursor", "move");
+		element.addEventListener("pointermove", handlePointerMove);
+		element.style.setProperty("cursor", "move");
 		show = true;
 	};
 
+	const handlePointerDown = () => {
+		draggable = true;
+	};
+
+	const handlePointerUp = () => {
+		draggable = false;
+	};
+
 	const handlePointerLeave = () => {
-		element && element.removeEventListener("pointermove", handlePointerMove);
-		element && element.style.removeProperty("cursor");
+		element.removeEventListener("pointermove", handlePointerMove);
+		element.style.removeProperty("cursor");
 		show = false;
 	};
 
 	const handlePointerMove = (e: PointerEvent) => {
+		if (!draggable) {
+			return;
+		}
+
 		// @ts-expect-error: it works
 		let point = DOMPoint.fromPoint(element);
 		point.x = e.clientX;
@@ -83,53 +97,37 @@
 	});
 </script>
 
-<section class="interactive wide">
+<section class="interactive wide {styles.wrapper}">
 	<h3>
 		{t["title:query"]}
 	</h3>
-	<div class="{styles.wrapper}" class:show>
-		<QuadTreeGrid
-			bind:element="{element}"
-			{bounds}
-			height="{1000}"
-			{points}
-			{pointsSize}
-			{pointsQuery}
-			width="{1000}"
-			on:pointerleave="{handlePointerLeave}"
+	<QuadTreeGrid
+		{bounds}
+		height="{1000}"
+		{points}
+		{pointsSize}
+		{pointsQuery}
+		width="{1000}"
+	>
+		<g
+			bind:this="{element}"
+			class="{styles.boundary}"
+			stroke="var(--surface-1)"
+			stroke-width="5px"
+			stroke-opacity="0.5"
+			fill="rgb(0 0 0 / 0.15)"
 			on:pointerenter="{handlePointerEnter}"
+			on:pointerleave="{handlePointerLeave}"
+			on:pointerdown="{handlePointerDown}"
+			on:pointerup="{handlePointerUp}"
 		>
-			{#if show}
-				{#if rect}
-					<rect
-						class="{styles.boundary}"
-						x="{x}"
-						y="{y}"
-						{height}
-						{width}
-						stroke="var(--surface-1)"
-						stroke-width="5px"
-						stroke-opacity="0.5"
-						fill="rgb(0 0 0 / 0.15)"
-					/>
-				{:else}
-					<circle
-						class="{styles.boundary}"
-						cx="{x}"
-						cy="{y}"
-						{r}
-						stroke="var(--surface-1)"
-						stroke-width="5px"
-						stroke-opacity="0.5"
-						fill="rgb(0 0 0 / 0.15)"
-					/>
-				{/if}
+			{#if rect}
+				<rect x="{x}" y="{y}" {height} {width} />
+			{:else}
+				<circle cx="{x}" cy="{y}" {r} />
 			{/if}
-		</QuadTreeGrid>
-		<p>
-			{t["point-over"]}
-		</p>
-	</div>
+		</g>
+	</QuadTreeGrid>
 	<form on:submit|preventDefault class="{styles.form}">
 		<InputSelect
 			name="quadtree-boundary-shape"
