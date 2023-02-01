@@ -116,6 +116,22 @@
 	text-underline-offset: var(--space-1-rel);
 }
 
+/* pictures */
+
+.article > figure {
+	grid-column: 1 / -1;
+	display: grid;
+	gap: var(--space-3);
+	max-height: 85vh;
+}
+
+.article > figure figcaption {
+	text-align: center;
+	color: var(--surface-2-text-less-contrast);
+	font-style: italic;
+	font-size: 0.9em;
+}
+
 /* table */
 
 .article table {
