@@ -246,91 +246,91 @@ describe("Circle Intersection", () => {
 		return a.intersects(b);
 	};
 
-	const circle = fn(-4, 3, 8, 6);
+	const circle = fn(-4, -3, 8, 6);
 
 	it("Does not intersect: too far, up", () => {
-		expect(circle(-2, 6, 2)).toBe(false);
-		expect(circle(0, 6, 2)).toBe(false);
-		expect(circle(2, 6, 2)).toBe(false);
+		expect(circle(-2, -6, 2)).toBe(false);
+		expect(circle(0, -6, 2)).toBe(false);
+		expect(circle(2, -6, 2)).toBe(false);
 	});
 	it("Does not intersect: too far, right", () => {
-		expect(circle(7, 1, 2)).toBe(false);
-		expect(circle(7, 0, 2)).toBe(false);
 		expect(circle(7, -1, 2)).toBe(false);
+		expect(circle(7, 0, 2)).toBe(false);
+		expect(circle(7, 1, 2)).toBe(false);
 	});
 	it("Does not intersect: too far, bottom", () => {
-		expect(circle(2, -6, 2)).toBe(false);
-		expect(circle(0, -6, 2)).toBe(false);
-		expect(circle(-2, -6, 2)).toBe(false);
+		expect(circle(2, 6, 2)).toBe(false);
+		expect(circle(0, 6, 2)).toBe(false);
+		expect(circle(-2, 6, 2)).toBe(false);
 	});
 	it("Does not intersect: too far, left", () => {
-		expect(circle(-8, 2, 2)).toBe(false);
-		expect(circle(-8, 0, 2)).toBe(false);
 		expect(circle(-8, -2, 2)).toBe(false);
+		expect(circle(-8, 0, 2)).toBe(false);
+		expect(circle(-8, 2, 2)).toBe(false);
 	});
 	it("Does not intersect: at the edge, up", () => {
-		expect(circle(-2, 6, 3)).toBe(false);
-		expect(circle(0, 6, 3)).toBe(false);
-		expect(circle(2, 6, 3)).toBe(false);
+		expect(circle(-2, -6, 3)).toBe(false);
+		expect(circle(0, -6, 3)).toBe(false);
+		expect(circle(2, -6, 3)).toBe(false);
 	});
 	it("Does not intersect: at the edge, right", () => {
-		expect(circle(7, 1, 3)).toBe(false);
-		expect(circle(7, 0, 3)).toBe(false);
 		expect(circle(7, -1, 3)).toBe(false);
+		expect(circle(7, 0, 3)).toBe(false);
+		expect(circle(7, 1, 3)).toBe(false);
 	});
 	it("Does not intersect: at the edge, bottom", () => {
-		expect(circle(2, -6, 3)).toBe(false);
-		expect(circle(0, -6, 3)).toBe(false);
-		expect(circle(-2, -6, 3)).toBe(false);
+		expect(circle(2, 6, 3)).toBe(false);
+		expect(circle(0, 6, 3)).toBe(false);
+		expect(circle(-2, 6, 3)).toBe(false);
 	});
 	it("Does not intersect: at the edge, left", () => {
-		expect(circle(-8, 2, 3)).toBe(false);
-		expect(circle(-8, 0, 3)).toBe(false);
 		expect(circle(-8, -2, 3)).toBe(false);
+		expect(circle(-8, 0, 3)).toBe(false);
+		expect(circle(-8, 2, 3)).toBe(false);
 	});
 	it("Does not intersect: at the corner top-right", () => {
-		expect(circle(6, 5, 2 * Math.SQRT2 * 0.999)).toBe(false);
-		expect(circle(5, 4, Math.SQRT2 * 0.999)).toBe(false);
+		expect(circle(-6, -5, 2 * Math.SQRT2 * 0.999)).toBe(false);
+		expect(circle(-5, -4, Math.SQRT2 * 0.999)).toBe(false);
 	});
 	it("Does not intersect: at the corner bottom-right", () => {
 		expect(circle(6, -5, 2 * Math.SQRT2 * 0.999)).toBe(false);
 		expect(circle(5, -4, Math.SQRT2 * 0.999)).toBe(false);
 	});
 	it("Does not intersect: at the corner bottom-left", () => {
+		expect(circle(6, -5, 2 * Math.SQRT2 * 0.999)).toBe(false);
+		expect(circle(5, -4, Math.SQRT2 * 0.999)).toBe(false);
+	});
+	it("Does not intersect: at the corner top-left", () => {
 		expect(circle(-6, -5, 2 * Math.SQRT2 * 0.999)).toBe(false);
 		expect(circle(-5, -4, Math.SQRT2 * 0.999)).toBe(false);
 	});
-	it("Does not intersect: at the corner top-left", () => {
-		expect(circle(-6, 5, 2 * Math.SQRT2 * 0.999)).toBe(false);
-		expect(circle(-5, 4, Math.SQRT2 * 0.999)).toBe(false);
-	});
 	it("Does intersect: circle is inside entirely, center is inside at 1st quadrant", () => {
-		expect(circle(2, 1.5, 1)).toBe(true);
-	});
-	it("Does intersect: circle is inside entirely, center is inside at 2nd quadrant", () => {
-		expect(circle(-2, 1.5, 1)).toBe(true);
-	});
-	it("Does intersect: circle is inside entirely, center is inside at 3rd quadrant", () => {
-		expect(circle(-2, -1.5, 1)).toBe(true);
-	});
-	it("Does intersect: circle is inside entirely, center is inside at 4th quadrant", () => {
 		expect(circle(2, -1.5, 1)).toBe(true);
 	});
+	it("Does intersect: circle is inside entirely, center is inside at 2nd quadrant", () => {
+		expect(circle(-2, -1.5, 1)).toBe(true);
+	});
+	it("Does intersect: circle is inside entirely, center is inside at 3rd quadrant", () => {
+		expect(circle(-2, 1.5, 1)).toBe(true);
+	});
+	it("Does intersect: circle is inside entirely, center is inside at 4th quadrant", () => {
+		expect(circle(2, 1.5, 1)).toBe(true);
+	});
 	it("Does intersect: circle is inside entirely, center touches the edge at 1st quadrant", () => {
-		expect(circle(2, 1.5, 1.5)).toBe(true);
-		expect(circle(2, 1.5, 2)).toBe(true);
+		expect(circle(2, -1.5, 1.5)).toBe(true);
+		expect(circle(2, -1.5, 2)).toBe(true);
 	});
 	it("Does intersect: circle is inside entirely, center touches the edge at 2nd quadrant", () => {
-		expect(circle(-2, 1.5, 1.5)).toBe(true);
-		expect(circle(-2, 1.5, 2)).toBe(true);
-	});
-	it("Does intersect: circle is inside entirely, center touches the edge at 3rd quadrant", () => {
 		expect(circle(-2, -1.5, 1.5)).toBe(true);
 		expect(circle(-2, -1.5, 2)).toBe(true);
 	});
+	it("Does intersect: circle is inside entirely, center touches the edge at 3rd quadrant", () => {
+		expect(circle(-2, 1.5, 1.5)).toBe(true);
+		expect(circle(-2, 1.5, 2)).toBe(true);
+	});
 	it("Does intersect: circle is inside entirely, center touches the edge at 4th quadrant", () => {
-		expect(circle(2, -1.5, 1.5)).toBe(true);
-		expect(circle(2, -1.5, 2)).toBe(true);
+		expect(circle(2, 1.5, 1.5)).toBe(true);
+		expect(circle(2, 1.5, 2)).toBe(true);
 	});
 	it("Does intersect: circle's center is inside, but it is larger than boundary", () => {
 		expect(circle(2, 1.5, 4)).toBe(true);

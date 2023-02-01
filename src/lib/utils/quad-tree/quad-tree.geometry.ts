@@ -91,7 +91,7 @@ export class Circle {
 	intersects(range: Rectangle): boolean {
 		const [ hw, hh ] = [ range.w / 2, range.h / 2 ];
 		const circleDistX = Math.abs(this.x - range.x - hw);
-		const circleDistY = Math.abs(this.y - range.y + hh);
+		const circleDistY = Math.abs(this.y - range.y - hh);
 
 		if (circleDistX >= hw + this.r || circleDistY >= hh + this.r) {
 			return false;

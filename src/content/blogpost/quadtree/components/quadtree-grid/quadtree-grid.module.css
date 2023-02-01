@@ -1,0 +1,25 @@
+.quadtree {
+	position: relative;
+	aspect-ratio: 1 / 1;
+	background-color: var(--surface-4);
+	transition: opacity 0.25s linear;
+	width: min(100% - var(--space-3), 60vh);
+	border-radius: var(--radius-m);
+}
+
+.bound {
+	stroke: var(--surface-1);
+	stroke-opacity: 0.5;
+	stroke-width: 3px;
+	fill: none;
+}
+
+.point {
+	fill: var(--surface-2-text-less-contrast);
+	opacity: 0.75;
+}
+
+.point:global(.query) {
+	fill: var(--color-blue-500);
+	opacity: 1;
+}

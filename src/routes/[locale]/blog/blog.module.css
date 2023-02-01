@@ -16,14 +16,9 @@
 
 .sidebar {
 	display: grid;
-	gap: var(--space-4-rel);
 	height: min-content;
 	font-size: var(--font-size-0);
 	width: 100%;
-}
-
-.sidebar h3 {
-	margin: 0;
 }
 
 .sidebar legend {

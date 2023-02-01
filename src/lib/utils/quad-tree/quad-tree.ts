@@ -3,7 +3,7 @@ import { Circle, Point, Rectangle } from "./quad-tree.geometry";
 /**
  * Class representing a `QuadTree` Node.
  */
-export class QuadTree<Item extends Point> {
+export class QuadTree<Item extends Point = Point> {
 	readonly boundary: Rectangle;
 	readonly capacity: number;
 	readonly depth: number;

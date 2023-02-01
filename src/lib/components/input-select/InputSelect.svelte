@@ -2,6 +2,7 @@
 	export interface Option {
 		label: string;
 		value: string;
+		selected?: boolean;
 	}
 </script>
 
@@ -11,7 +12,8 @@
 	export let disabled = false;
 	export let name: string;
 	export let options: Option[];
-	export let value: string;
+	export let value: string = options
+		.find(item => item.selected === true).value || "";
 </script>
 
 <label class="{styles.wrapper}">
@@ -21,9 +23,12 @@
 		class="{styles.select}"
 		{disabled}
 		{name}
+		on:change
 	>
-		{#each options as { value, label }}
-			<option {value}>{label}</option>
+		{#each options as { value, label, selected }}
+			<option {value} {selected}>
+				{label}
+			</option>
 		{/each}
 	</select>
 </label>
