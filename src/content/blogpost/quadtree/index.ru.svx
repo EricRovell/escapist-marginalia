@@ -1,8 +1,7 @@
 ---
 cover: "/img/cover-quadtree.png"
-created: 2023-01-17T15:19:00.000Z
+created: 2023-02-01T15:53:00.000Z
 description: "Познакомимся со структурой данных, индексирующую данные на плоскости."
-draft: true
 keywords: [ "data structure", "javascript", "computer science" ]
 lang: ru
 layout: blogpost
