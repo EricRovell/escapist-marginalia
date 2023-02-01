@@ -37,7 +37,7 @@
 			{t.scale}
 		</Range>
 	</fieldset>
-	<!-- <fieldset>
+	<fieldset>
 		<legend>
 			{t.quadtree}
 		</legend>
@@ -53,5 +53,5 @@
 		<Range output bind:value="{state.perception}" disabled="{!state.qtree}" name="perception" min="{50}" max="{250}">
 			{t.perception}
 		</Range>
-	</fieldset> -->
+	</fieldset>
 </SketchControls>

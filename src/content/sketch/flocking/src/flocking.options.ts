@@ -25,7 +25,7 @@ export const options: Options = {
 	separate: 1,
 	showQTree: false,
 	showPerception: false,
-	qtree: false
+	qtree: true
 };
 
 export const optionsImmutable: Set<keyof Options> = new Set([
