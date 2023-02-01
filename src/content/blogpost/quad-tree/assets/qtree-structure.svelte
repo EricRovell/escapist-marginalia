@@ -48,6 +48,7 @@
 		<circle cx="200" cy="150" r="2.2"/>
 		<circle cx="500" cy="150" r="2.2"/>
 		<circle cx="350" cy="150" r="2.2"/>
+		<circle cx="350" cy="250" r="2.2"/>
 		<circle cx="125" cy="300" r="2.2"/>
 		<circle cx="275" cy="300" r="2.2"/>
 		<circle cx="575" cy="300" r="2.2"/>

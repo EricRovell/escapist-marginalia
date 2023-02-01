@@ -18,22 +18,16 @@
 
 .connection {
 	fill: none;
-	stroke: var(--surface-4);
+	stroke: var(--color-blue-500);
 	stroke-width: 3px;
 }
 
 .closest-area {
 	stroke-width: 3px;
-	stroke: var(--surface-4);
+	stroke: var(--color-blue-500);
 	fill: none;
 }
 
 .object {
-	fill: var(--surface-4);
-}
-
-.object > :global(.current) {
-	stroke-width: 3px;
-	fill: var(--surface-1);
-	stroke: var(--surface-4);
+	fill: var(--color-blue-500);
 }
