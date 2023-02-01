@@ -34,4 +34,4 @@ export function* getRandomPoints(points: number, width: number, height: number, 
 			y: randFloat(offset, height - offset)
 		};
 	}
-};
+}
