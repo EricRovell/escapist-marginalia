@@ -1,6 +1,5 @@
 .wrapper svg {
 	width: min(100% - var(--space-3), 65vh);
-	
 }
 
 .quadtree {
