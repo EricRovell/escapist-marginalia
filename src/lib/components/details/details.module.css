@@ -6,39 +6,41 @@
 	font-size: inherit;
 }
 
-.details > summary {
+.summary {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 	max-width: 100%;
 	padding: var(--space-2-rel);
-	padding-inline: var(--space-1-rel) var(--space-3-rel);
+	padding-inline: var(--space-3-rel) var(--space-2-rel);
 	border-radius: var(--radius-m);
 	border: 1px solid var(--color-border);
+	list-style: none;
 	user-select: none;
 	cursor: pointer;
 }
 
-.details > summary:focus-visible {
+.summary::marker {
+	display: none;
+}
+
+.summary:focus-visible {
 	outline: 2px dashed var(--focus-ring-color);
 	outline-offset: var(--space-2);
 }
 
-.details:hover > summary {
+.summary:focus .icon {
+	outline: 1px solid var(--focus-ring-color);
+	background-color: var(--surface-4);
+}
+
+.details:hover > .summary {
 	box-shadow: 0 0 1px #7A82E3, 0 0 0 1px var(--focus-ring-color);
 }
 
-.default-icon {
-	fill: currentcolor;
-	width: var(--space-2);
-	height: var(--space-2);
-	margin-inline: var(--space-2);
-	transition: transform 0.15s ease-in-out;
-}
-
-.details[open] > summary .default-icon {
-	transform: rotate(90deg);
+.details[open] .icon polygon {
+	transform: scaleY(-1);
 }
 
 .details[open] > .content {
@@ -47,6 +49,15 @@
 	border-block: 1px solid var(--color-border-50);
 }
 
-.details > summary::marker {
-	display: none;
+.icon {
+	width: 1.5em;
+	height: 1.5em;
+	padding: 0.3em;
+	border-radius: var(--radius-m);
+}
+
+.icon polygon {
+	fill: currentcolor;
+	transform-origin: center;
+	transition: transform 0.125s ease-in-out;
 }
