@@ -191,6 +191,11 @@
 	color: var(--surface-2-text);
 	padding-block: var(--space-8);
 	margin-block: var(--space-7) var(--space-8);
+
+	/* background-size: 1.25em 1.25em;
+	background-image:
+		linear-gradient(var(--paper-grid-color) 1px, transparent 0),
+		linear-gradient(90deg, var(--paper-grid-color) 1px, transparent 0); */
 }
 
 .article :global(.wide) {
