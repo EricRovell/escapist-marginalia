@@ -8,7 +8,7 @@ layout: blogpost
 slug: "дерево-квадрантов"
 title: "Дерево квадрантов"
 translation: { lang: "english", slug: "quadtree" }
-created: 2023-02-17T1:30:00.000Z
+updated: 2023-02-17T1:30:00.000Z
 ---
 
 <script>
