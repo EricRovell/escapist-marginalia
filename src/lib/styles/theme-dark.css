@@ -60,6 +60,8 @@
 		--scroll-track-color: var(--surface-2);
 		--scroll-thumb-color: #253758;
 
+		--paper-grid-color: #172137CC;
+
 		--code-atrule: #F9EE98;
 		--code-attr-name: #A8FF60;
 		--code-attr-value: #F9EE98;
@@ -162,6 +164,8 @@
 
 	--scroll-track-color: var(--surface-2);
 	--scroll-thumb-color: #253758;
+
+	--paper-grid-color: #172137CC;
 
 	--code-atrule: #F9EE98;
 	--code-attr-name: #A8FF60;

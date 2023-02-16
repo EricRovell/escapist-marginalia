@@ -108,20 +108,22 @@ pre[class="language-svelte"]::before {
 	background: var(--code-background);
 }
 
-/* Works on Chrome, Edge, and Safari */
-pre[class*="language-"]::-webkit-scrollbar {
-	width: 4px;
-}
+@media screen and (min-width: 36em) {
+	/* Works on Chrome, Edge, and Safari */
+	pre[class*="language-"]::-webkit-scrollbar {
+		width: 4px;
+	}
 
-pre[class*="language-"]::-webkit-scrollbar-track {
-	background: var(--scroll-track-color);
-	border-radius: var(--scroll-thumb-radius);
-}
+	pre[class*="language-"]::-webkit-scrollbar-track {
+		background: var(--scroll-track-color);
+		border-radius: var(--scroll-thumb-radius);
+	}
 
-pre[class*="language-"]::-webkit-scrollbar-thumb {
-	background-color: var(--scroll-thumb-color);
-	border-radius: var(--scroll-thumb-radius);
-	border: 4px solid var(--scroll-track-color);
+	pre[class*="language-"]::-webkit-scrollbar-thumb {
+		background-color: var(--scroll-thumb-color);
+		border-radius: var(--scroll-thumb-radius);
+		border: 4px solid var(--scroll-track-color);
+	}
 }
 
 /* tokens */
