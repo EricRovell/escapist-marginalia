@@ -18,6 +18,14 @@
 	};
 
 	$: preventPageScroll(open);
+	$: {
+		if (globalThis.window) {
+			const root = document.querySelector("#app");
+			open
+				? root.setAttribute("inert", "inert")
+				: root.removeAttribute("inert");
+		}
+	}
 </script>
 
 {#if open}
