@@ -1,2 +1,2 @@
-export { theme } from "./theme";
-export type { Theme } from "./theme";
+export { theme, type Theme } from "./theme";
+export { media } from "./media";
