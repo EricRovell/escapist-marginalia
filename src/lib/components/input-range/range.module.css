@@ -27,6 +27,7 @@
 	visibility: hidden;
 	height: min-content;
 	padding-inline: var(--space-2);
+	padding-top: 0.05em;
 	border: 1px solid var(--range-thumb-focus-color);
 	border-radius: var(--radius-xs);
 	font-variant-numeric: tabular-nums;
@@ -82,11 +83,10 @@
 	transition: box-shadow 0.25s ease-in-out;
 }
 
-.range:global(.min)::-webkit-slider-thumb,
+/* .range:global(.min)::-webkit-slider-thumb,
 .range:disabled::-webkit-slider-thumb {
 	background-color: var(--range-thumb-min-color);
-	border-color: var(--range-track-color);
-}
+} */
 
 .range::-webkit-slider-thumb:active {
 	cursor: grabbing;
@@ -128,12 +128,10 @@
 	height: var(--range-track-size);
 	cursor: pointer;
 	border-radius: var(--radius-s);
-	background:
-		linear-gradient(
+	background: var(--range-track-bg, linear-gradient(
 			var(--range-track-active-color),
 			var(--range-track-active-color)
-		)
-		0 / var(--range-dx) 100% no-repeat var(--range-track-color);
+		) 0 / var(--range-dx) 100% no-repeat var(--range-track-color));
 }
 
 .range:hover::-webkit-slider-runnable-track,
@@ -147,6 +145,7 @@
 	cursor: pointer;
 	border-radius: var(--radius-s);
 	background: var(--range-track-color);
+	background-image: var(--range-track-bg, none);
 }
 
 .range::-moz-range-progress {
