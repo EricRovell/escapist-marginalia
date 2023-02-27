@@ -45,28 +45,28 @@
 	font-size: var(--font-size-0);
 }
 
-.settings summary {
+.settings > summary {
 	width: fit-content;
 }
 
-.settings form {
+.form {
 	display: grid;
 	gap: var(--space-3);
 	justify-items: center;
 }
 
-.settings form > * {
+.form > * {
 	width: min(45ch, 100%);
 }
 
-.settings fieldset {
+.form > fieldset {
 	display: grid;
 	gap: var(--space-3);
 	border: none;
 	padding-block: var(--space-4) var(--space-6);
 }
 
-.settings fieldset:not(:last-child) {
+.form > fieldset:not(:last-child) {
 	border-bottom: 1px solid var(--color-border-50);
 }
 
@@ -76,6 +76,6 @@
 	font-size: var(--font-size-1);
 }
 
-.settings form button {
+.form > button {
 	margin-block-end: var(--space-2);
 }

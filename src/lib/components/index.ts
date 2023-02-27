@@ -20,7 +20,7 @@ export { MathExp } from "./math";
 export * as Menu from "./menu";
 export { MenuIndicator } from "./menu-indicator";
 export { Meta, PageMeta, type MetaProps } from "./meta";
-export { default as Modal } from "./modal/Modal.svelte";
+export { Modal } from "./modal";
 export { NavLocale } from "./nav-locale";
 export { Pagination } from "./pagination";
 export * as Radio from "./radio";
