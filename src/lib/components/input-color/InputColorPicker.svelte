@@ -4,7 +4,7 @@
 </script>
 
 <script lang="ts">
-	import { afterUpdate, createEventDispatcher } from "svelte";
+	import { createEventDispatcher } from "svelte";
 	import { Range } from "../input-range";
 	import { Button } from "../button";
 	import { trapFocus } from "$lib/actions";
@@ -19,23 +19,14 @@
 	export let value = "hsl(0 50% 50% / 1)";
 	export let valueAsObject: Color = colorDefault;
 
-	// stores the picked color in order to restore the state on cancel
-	let tempValue: Color = { ...valueAsObject };
-
 	const dispatch = createEventDispatcher();
-
-	const reset = () => {
-		valueAsObject = { ...tempValue };
-	};
 
 	const handleCancel = () => {
 		dispatch("cancel");
-		reset();
 	};
 
-	const handleSubmit = () => {
-		dispatch("pick", valueAsObject);
-		tempValue = { ...valueAsObject };
+	const handleSelect = () => {
+		dispatch("select", valueAsObject);
 	};
 
 	const handleChange = (e: Event) => {
@@ -43,19 +34,13 @@
 	};
 
 	$: value = convertColorToString(valueAsObject);
-
-	afterUpdate(() => {
-		if (!open) {
-			reset();
-		}
-	});
 </script>
 
 <form
 	bind:this="{element}"
 	class="{styles.form} {className}"
 	on:change
-	on:submit|preventDefault="{handleSubmit}"
+	on:submit|preventDefault="{handleSelect}"
 	style="
 		--input-color-hue: {valueAsObject.hue};
 		--input-color-saturation: {valueAsObject.saturation}%;
@@ -115,7 +100,7 @@
 	</fieldset>
 	<fieldset>
 		<Button type="submit" appearance="ghost">
-			{$t("component.color-input.pick")}
+			{$t("component.color-input.select")}
 		</Button>
 		<Button type="button" on:click="{handleCancel}" appearance="ghost">
 			{$t("component.color-input.cancel")}
