@@ -20,8 +20,6 @@
 	export let value = "hsl(0 50% 50% / 1)";
 	export let valueAsObject: Color = parseColorString(value);
 
-	console.log(valueAsObject);
-
 	let picker: HTMLFormElement;
 	let swatch: HTMLOutputElement;
 	let position = "bottom";
