@@ -20,6 +20,9 @@
 	export let value = "hsl(0 50% 50% / 1)";
 	export let valueAsObject: Color = parseColorString(value);
 
+	// stores the picked color in order to restore the state on cancel
+	let temporalValue: Color = { ...valueAsObject };
+
 	let picker: HTMLFormElement;
 	let swatch: HTMLOutputElement;
 	let position = "bottom";
@@ -29,13 +32,14 @@
 	export const close = () => open = false;
 
 	const handleCancel = () => {
-		valueAsObject = valueAsObject;
+		temporalValue = { ...valueAsObject };
 		close();
 	};
 
-	const handleSubmit = (e: CustomEvent<Color>) => {
+	const handleSelect = (e: CustomEvent<Color>) => {
 		valueAsObject = e.detail;
 		value = convertColorToString(e.detail);
+		valueAsObject = { ...temporalValue };
 
 		hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
 		close();
@@ -74,13 +78,13 @@
 	class:disabled
 	use:clickOutside={{
 		active: !$media["mobile"] && open,
-		callback: close
+		callback: handleCancel
 	}}
 	use:shortcut={{
 		active: !$media["mobile"] && open,
 		code: "Escape",
 		callback: node => {
-			close();
+			handleCancel();
 			node.querySelector("summary").focus();
 		}
 	}}
@@ -101,30 +105,33 @@
 	{#if !$media["mobile"]}
 		<Picker
 			bind:element="{picker}"
+			bind:valueAsObject="{temporalValue}"
 			focusTrap
 			{name}
-			on:change
-			on:pick="{handleSubmit}"
 			on:cancel="{handleCancel}"
+			on:cancel
+			on:change
+			on:select="{handleSelect}"
+			on:select
 			{open}
-			{value}
-			{valueAsObject}
 		/>
 	{/if}
 	<input type="text" {name} bind:value bind:this="{hiddenInput}" class="{styles.hidden}" />
 </details>
 
 {#if $media["mobile"]}
-	<Modal bind:open>
+	<Modal bind:open on:close="{handleCancel}">
 		<Picker
+			bind:element="{picker}"
+			bind:valueAsObject="{temporalValue}"
 			className="{styles.modal}"
 			{name}
-			on:change
-			on:pick="{handleSubmit}"
 			on:cancel="{handleCancel}"
+			on:cancel
+			on:change
+			on:select="{handleSelect}"
+			on:select
 			{open}
-			{value}
-			{valueAsObject}
 		/>
 	</Modal>
 {/if}

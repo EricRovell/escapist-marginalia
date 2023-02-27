@@ -111,8 +111,8 @@
 			"hue": "Hue",
 			"lightness": "Lightness",
 			"opacity": "Opacity",
-			"pick": "Pick",
-			"saturation": "Saturation"
+			"saturation": "Saturation",
+			"select": "Select"
 		}
 	}
 }
