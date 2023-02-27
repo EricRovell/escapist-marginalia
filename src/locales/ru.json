@@ -103,5 +103,16 @@
 			"author": "Эрик Ровелл",
 			"language": "ru"
 		}
+	},
+	"component": {
+		"color-input": {
+			"cancel": "Отмена",
+			"header": "Выберите цвет: ",
+			"hue": "Оттенок",
+			"lightness": "Яркость",
+			"opacity": "Прозрачность",
+			"pick": "Выбрать",
+			"saturation": "Насыщенность"
+		}
 	}
 }

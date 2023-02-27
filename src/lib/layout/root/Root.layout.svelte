@@ -13,7 +13,7 @@
 	import styles from "./root.module.css";
 </script>
 
-<div class={styles.app}>
+<div class={styles.app} id="app">
 	<Masthead />
 	<Drawer
 		className="{styles.sidemenu}"

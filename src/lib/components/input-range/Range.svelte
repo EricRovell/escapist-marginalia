@@ -1,7 +1,9 @@
 <script lang="ts">
 	import styles from "./range.module.css";
 
+	export let className = "";
 	export let disabled = false;
+	export let element: HTMLInputElement | null = null;
 	export let max = 100;
 	export let min = 0;
 	export let name = "";
@@ -11,7 +13,7 @@
 </script>
 
 <label
-	class={styles.container}
+	class="{styles.container} {className}"
 	style:--range-max="{max}"
 	style:--range-min="{min}"
 	style:--range-value="{value}"
@@ -28,6 +30,7 @@
 		</slot>
 	</output>
 	<input
+		bind:this="{element}"
 		bind:value
 		class={styles.range}
 		class:min={value === min}
@@ -38,5 +41,6 @@
 		{step}
 		type="range"
 		on:change
+		on:blur
 	/>
 </label>
