@@ -4,18 +4,16 @@ export interface Options {
 	color: string;
 	depth: number;
 	distributed: boolean;
-	fade: number;
 	randomColors: boolean;
 	scale: number;
 }
 
 export const options: Options = {
-	background: "#000000",
-	color: "#00FA00",
+	background: "hsl(0 0% 0% / 0.1)",
+	color: "hsl(120 100% 50% / 1)",
 	chars: [ "digits", "katakana", "math", "uppercaseLetters" ],
 	depth: 0.25,
 	distributed: true,
-	fade: 0.1,
 	randomColors: false,
 	scale: 10
 };

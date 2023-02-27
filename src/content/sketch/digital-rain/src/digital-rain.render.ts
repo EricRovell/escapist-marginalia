@@ -23,7 +23,7 @@ export const sketch: Sketch<Options> = (options = optionsDefault) => {
 			return;
 		}
 
-		context.fillStyle = `${options.background}${Math.floor(options.fade * 255).toString(16)}`;
+		context.fillStyle = `${options.background}`;
 		context.fillRect(0, 0, width, height);
 		context.fillStyle = options.color;
 

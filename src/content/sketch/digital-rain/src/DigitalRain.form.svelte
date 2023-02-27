@@ -41,10 +41,10 @@
 		<Range output bind:value="{state.depth}" name="depth" min="{0.01}" max="{1}" step="{0.01}">
 			{t.depth}
 		</Range>
-		<InputColor bind:value="{state.color}">
+		<InputColor bind:value="{state.color}" name="color">
 			{t.color}
 		</InputColor>
-		<InputColor bind:value="{state.background}">
+		<InputColor bind:value="{state.background}" name="background">
 			{t.background}
 		</InputColor>
 	</fieldset>
@@ -52,9 +52,6 @@
 		<legend>
 			{t.behavior}
 		</legend>
-		<Range output bind:value="{state.fade}" name="fade" min="{0.05}" max="{0.25}" step="{0.001}">
-			{t.fade}
-		</Range>
 		<Switch bind:checked="{state.distributed}" name="distributed">
 			{t.distributed}
 		</Switch>
