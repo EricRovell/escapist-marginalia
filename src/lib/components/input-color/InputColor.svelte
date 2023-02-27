@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	import type { Color, ColorString } from "./input-color.types";
+	import type { Color } from "./input-color.types";
 	import {
 		convertColorToString,
 		getContrast,
@@ -17,7 +17,7 @@
 	export let disabled = false;
 	export let name: string;
 	export let open = false;
-	export let value: string = "hsl(0 50% 50% / 1)";
+	export let value = "hsl(0 50% 50% / 1)";
 	export let valueAsObject: Color = parseColorString(value);
 
 	console.log(valueAsObject);
