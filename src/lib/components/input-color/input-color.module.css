@@ -1,31 +1,183 @@
-.label {
+/* input */
+
+.color-picker {
+	position: relative;
+	display: flex;
+	height: fit-content;
+	width: 100%;
+	cursor: pointer;
+	user-select: none;
+}
+
+.color-picker:global(.disabled) {
+	pointer-events: none;
+}
+
+.color-picker:global(.disabled) summary span {
+	opacity: 0.75;
+}
+
+.color-picker:global(.disabled) .swatch {
+	overflow: hidden;
+	background-color: var(--surface-2);
+	background-image: url('data:image/svg+xml;utf8,<svg preserveAspectRatio="none" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><line x1="2" y1="2" x2="8" y2="8" stroke="red" /><line x1="8" y1="2" x2="2" y2="8" stroke="red" /></svg>');
+}
+
+.color-picker summary {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: fit-content;
+	list-style: none;
 }
 
-.input {
-	appearance: none;
-	background-color: unset;
-	color: inherit;
-	height: 1.5rem;
-	width: 2.5rem;
-	cursor: pointer;
+.color-picker summary:focus-visible,
+.color-picker:hover summary span {
+	color: var(--surface-2-text-contrast);
 }
 
-.input::-webkit-color-swatch {
-	border-radius: calc(4px + var(--radius-xs));
+.color-picker:focus-visible,
+.color-picker summary:focus-visible {
+	outline: none;
+}
+
+.color-picker:hover summary .swatch {
+	box-shadow: inset 0 0 0 2px var(--input-color-contrast);
+}
+
+.color-picker summary:active .swatch {
+	transform: scale(0.9);
+}
+
+.color-picker summary:focus-visible .swatch {
+	outline: 2px dashed var(--focus-ring-color);
+	outline-offset: calc(0.75 * var(--space-1));
+	transition: outline-offset 0.25s ease;
+}
+
+.hidden {
+	position: absolute;
+	transform: scale(0);
+	pointer-events: none;
+}
+
+/* input :: popover */
+
+.color-picker .form {
+	position: absolute;
+	top: calc(100% + 1em);
+	right: 0%;
+	z-index: var(--z-index-popup);
+}
+
+.color-picker:global(.top) .form {
+	top: unset;
+	bottom: calc(100% + 0.75em);
+}
+
+.color-picker:global(.right) .form {
+	right: unset;
+	left: calc(100% - 2.25em);
+}
+
+/* picker controls :: popup */
+
+.form {
+	--range-thumb-min-color: hsl(var(--input-color-hue) 50% 50%);
+
+	font-size: calc(var(--font-size-0) * 0.85);
+	font-family: monospace;
+	
+	width: 45ch;
+	border-radius: var(--radius-s);
+	border: 1px solid var(--color-border-50);
+	background-color: var(--surface-1);
+	overflow: hidden;
+}
+
+.form header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--space-2) var(--space-4);
+}
+
+.form .swatch {
+	width: 5ch;
+}
+
+.form fieldset {
+	display: grid;
+	gap: var(--space-3);
+	padding: var(--space-3) var(--space-4);
 	border: none;
-	outline: 4px solid var(--surface-4);
 }
 
-.input:disabled::-webkit-color-swatch {
-	filter: grayscale(0.75);
-	cursor: not-allowed;
+.form fieldset:first-of-type {
+	background-color: var(--surface-2);
 }
 
-.input::-webkit-color-swatch-wrapper {
-	padding: 0;
-	border-radius: var(--radius-xs);
+.form fieldset:last-of-type {
+	--button-color: var(--surface-2-text-contrast);
+
+	font-size: calc(var(--font-size-0) * 0.7);
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: var(--space-3);
+	padding: var(--space-2) var(--space-4);
+}
+
+/* picker controls :: modal */
+
+.modal {
+	font-size: var(--font-size-1);
+	width: 85vw;
+	height: auto;
+	max-height: 85vh;
+}
+
+/* swatch */
+
+.swatch {
+	display: flex;
+	width: 1.75em;
+	height: 1.75em;
+	border-radius: var(--radius-s);
+	border: 2px solid var(--color-border-50);
+	background-color: var(--input-color-value);
+	transition: transform 0.15s ease-in-out;
+	pointer-events: none;
+}
+
+.swatch::marker {
+	display: none;
+}
+
+/* slider */
+
+.hue {
+	--range-thumb-color: hsl(var(--input-color-hue) 50% 50%);
+	--range-track-bg: linear-gradient(90deg,red 0,#ff0 17%,#0f0 33%,#0ff 50%,#00f 67%,#f0f 83%,red);
+}
+
+.saturation {
+	--range-thumb-color: hsl(var(--input-color-hue) var(--input-color-saturation) 50%);
+	--range-track-bg: linear-gradient(to right, #808080, hsl(var(--input-color-hue), 100%, 50%));
+}
+
+.lightness {
+	--range-thumb-color: hsl(var(--input-color-hue) 50% var(--input-color-lightness));
+	--range-track-bg: linear-gradient(to right, #000, hsl(var(--input-color-hue), 100%, 50%), #FFF);
+}
+
+.opacity {
+	--range-thumb-color: hsl(var(--input-color-hue) 50% 50%);
+	--range-track-bg: linear-gradient(
+		to right, transparent, hsl(var(--input-color-hue), 100%, 50%)),
+		url('data:image/svg+xml;utf8,<svg preserveAspectRatio="none" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="5" height="5" fill="grey" /><rect x="5" y="5" width="5" height="5" fill="grey" /><rect x="5" y="0" width="5" height="5" fill="white" /><rect x="0" y="5" width="5" height="5" fill="white" /></svg>');
+}
+
+.opacity input::-webkit-slider-runnable-track {
+	background-position: 0 0;
+	background-size: cover, 0.75rem 0.75rem;
 }

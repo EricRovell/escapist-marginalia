@@ -103,5 +103,16 @@
 			"author": "Eric Rovell",
 			"language": "en"
 		}
+	},
+	"component": {
+		"color-input": {
+			"cancel": "Cancel",
+			"header": "Choose color: ",
+			"hue": "Hue",
+			"lightness": "Lightness",
+			"opacity": "Opacity",
+			"pick": "Pick",
+			"saturation": "Saturation"
+		}
 	}
 }
