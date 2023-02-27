@@ -89,7 +89,7 @@
 } */
 
 .range::-webkit-slider-thumb:active {
-	cursor: grabbing;
+	cursor: ew-resize;
 }
 
 .range:not(:disabled):focus-visible::-webkit-slider-thumb,
