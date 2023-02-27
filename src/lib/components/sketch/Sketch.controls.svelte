@@ -2,6 +2,7 @@
 	import { createEventDispatcher } from "svelte";
 	import { Button } from "../button";
 	import { t } from "@core/i18n";
+	import styles from "./sketch.module.css";
 
 	type Options = $$Generic;
 
@@ -27,6 +28,7 @@
 </script>
 
 <form
+	class="{styles.form}"
 	on:submit|preventDefault
 	on:change="{handleChange}"
 	on:change
