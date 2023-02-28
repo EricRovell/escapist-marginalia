@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { Range } from "@components";
 	import { Diaphragm } from "../../components";
 	import styles from "./diaphragm.module.css";
 
-	export let t: Record<string, string>;
+	const t: Record<string, string> = getContext("t")["diaphragm"];
 
 	let angle = 45;
 </script>

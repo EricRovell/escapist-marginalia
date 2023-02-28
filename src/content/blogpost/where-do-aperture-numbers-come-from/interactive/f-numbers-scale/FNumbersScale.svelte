@@ -4,9 +4,10 @@
 </script>
 
 <script lang="ts">
+	import { getContext } from "svelte";
 	import styles from "./f-numbers-scale.module.css";
 
-	export let t: Record<string, string>;
+	const t: Record<string, string> = getContext("t")["f-stops"];
 
 	/**
 	 * range of fstops to display

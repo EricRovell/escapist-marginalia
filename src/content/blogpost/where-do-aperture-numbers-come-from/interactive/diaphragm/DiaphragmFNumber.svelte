@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { tweened } from "svelte/motion";
 	import { Radio } from "@components";
 	import { Diaphragm } from "../../components";
 
-	export let t: Record<string, string>;
+	const t: Record<string, string> = getContext("t")["diaphragm-f-stop"];
 
 	let angle = tweened(45);
 
