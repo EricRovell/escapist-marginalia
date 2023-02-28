@@ -12,9 +12,12 @@ updated: 2023-01-09T15:20:00.000Z
 ---
 
 <script>
+	import { setContext } from "svelte";
 	import { ChaosGame } from "./components/chaos-game";
 	import * as Interactive from "./interactive";
 	import t from "./translations/en.json";
+
+	setContext("t", t);
 </script>
 
 Fractals - one of the most interesting and mindbreaking mathematical objects. Fractals are self-similar patters. In other words, the part of a fractal looks exactly or partially the same as whole. It may seem that randomness and fractals cannot have anything in commmon, the rich structure looks deterministic.
@@ -89,10 +92,7 @@ Alas, the square do not demonstrate anything interesting. Points uniformly cover
 
 If one assumes we have some random points inside the polygon, and ones maps all those points towards just one of the vertices - we get a scaled down version of the original polygon. Doing so for all of the vertices and combining the results, we get a points “density map”. If there are holes in this “density map”, the assumption of having uniform density at the start was false, we should repeat the procedure repeatedly turning it into a fractal:
 
-<Interactive.PolygonDensityMap
-	n="{4}"
-	t="{t["polygon-density-map"]}"
-/>
+<Interactive.PolygonDensityMap n="{4}" />
 
 There are two outstanding cases: the triangle and the “boring” square. Now we can exaplain this behaviour with interpreting the “density map”: they are the two only cases where each vertex density areas do not intersect. Colors helps us visually to confirm the idea. But the square is special, it’s area can be filled up completely using four copies of itself (k = 0.5). Well, same is possible for a triangle case, but the number of vertices play a crutial role here.
 
@@ -102,9 +102,7 @@ There are two outstanding cases: the triangle and the “boring” square. Now w
 
 Up till this moment fractals looked quite “reqularly”. The interesting part begins should we intervene into the process of random. Polygon vertices will be chosen randomly as before, but there will be some process moderation: we define some set of restrictions of how the next vertex can or cannot be chosen. Let’s use the “boring” square as the example:
 
-<Interactive.SquareRestrictionsDemo
-	t="{t["square-restrictions-demonstration"]}"
-/>
+<Interactive.SquareRestrictionsDemo />
 
 The results are amazing. The “boring” case is not “boring” anymore! We can formulate such restriction rulse, quite a lot of them:
 
@@ -125,16 +123,11 @@ We won’t count the empty set, we have to move somewhere. For example, there ar
 
 As we can see, each new side double the number of combinations. You can review all the possibilities for some polygons below, just choose the polygon and explore a vast number of new fractals:
 
-<Interactive.ChaosRestrictionSubsetsDemo
-	n="{4}"
-	t="{t["restrictions-subset"]}"
-/>
+<Interactive.ChaosRestrictionSubsetsDemo n="{4}" />
 
 In fact, it is not over. There is one more parameter that slipped away. The restrictions do not depend on vertices only, we should restrict it relatively to some choice in the past! This is what makes some restriction rule quite more sophisticated. Let's see what can we get, restricting the same “boring” case as { 1 } for the last choice and { 3 } for penultimate:
 
-<Interactive.ChaosGameRandomRestriction
-	t="{t["random-restrictions"]}"
-/>
+<Interactive.ChaosGameRandomRestriction t="{t["random-restrictions"]}" />
 
 With the penultimate rules (we are not restricted here, the restrictions can go deep into the past choices), the number of combinations expands much more: each new restriction multiplies the number of previously possible number of choices for each vertex:
 
@@ -148,18 +141,13 @@ Now it time to generalize another rule: the step. Up till now each point moved h
 
 Let's experiment and see, how the step factor affects the result:
 
-<Interactive.ChaosGameStepsDemo
-	t="{t["step-rule-values-demo"]}"
-/>
+<Interactive.ChaosGameStepsDemo	/>
 
 Changing the coefficient we can see how scales up “the figure” looking like polygonal flower with the same number of petals as the number of polygon sides. At some point all these “petals” intersects and mixes up. The coefficient value to get the “flower” depends on the polygon as *r = 3 / (n + 3)*, where n - is the number of sides. This way we can set up more natural step for each Chaos Game depending on the polygon and… yeah, again, “boring” sqaure won’t be boring anymore.
 
 Coefficient is quite practical way to describe the step value, and still, not the only way as it is a relative value. We can freely use absolute value, in other words, move in any direction to any desired distance.
 
-<Interactive.ChaosGameStepsDemo
-	factor={false}
-	t="{t["step-rule-values-demo"]}"
-/>
+<Interactive.ChaosGameStepsDemo factor={false} />
 
 ## Summing up the adventure
 

@@ -1,8 +1,9 @@
-<script>
+<script lang="ts">
+	import { getContext } from "svelte";
 	import { ChaosGame } from "../../components/chaos-game";
 	import styles from "./square-restrictions-demo.module.css";
 
-	export let t;
+	const t = getContext<Record<string, string>>("t")["square-restrictions-demonstration"];
 
 	const items = [
 		{ index: -1, values: [ 1, 2, 3 ] },

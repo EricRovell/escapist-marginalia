@@ -1,11 +1,12 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { Button, Range } from "@components";
 	import { ChaosGame } from "../../components/chaos-game";
 	import { range } from "@utils/helpers";
 	import { randInt, randItem } from "@utils/random";
 	import styles from "./chaos-game-random-restriction.module.css";
 
-	export let t: Record<string, string>;
+	const t = getContext<Record<string, string>>("t")["random-restrictions"];
 
 	let n = 4;
 	let last: number[] = [ 1 ];

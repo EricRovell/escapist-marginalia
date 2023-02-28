@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { Range } from "@components";
 	import { ChaosGame } from "../../components/chaos-game";
 	import styles from "./chaos-game-steps-demo.module.css";
 
 	export let factor = true;
-	export let t: Record<string, string>;
+	const t = getContext<Record<string, string>>("t")["step-rule-values-demo"];
 
 	let n = 4;
 	let value = 0.5;
