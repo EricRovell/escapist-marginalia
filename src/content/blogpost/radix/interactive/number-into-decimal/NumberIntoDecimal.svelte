@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { radix } from "@ericrovell/radix";
 	import { MathExp } from "@components";
 	import { FormNumerals, Number, Numerals } from "../../components";
@@ -7,8 +8,9 @@
 
 	export let radixInput = 2;
 	export let inputNumber = "10010";
-	export let t: Record<string, string>;
 	export let valid = true;
+
+	const t = getContext<Record<string, string>>("t")["number-into-decimal"];
 
 	$: number = radix(inputNumber.split(""), radixInput, { decode: decoder });
 	$: numberOutput = number.setRadix(10);

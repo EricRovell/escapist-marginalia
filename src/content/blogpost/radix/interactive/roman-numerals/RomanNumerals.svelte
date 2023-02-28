@@ -1,10 +1,12 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { InputNumber } from "@components";
 	import { arabic2romans } from "./romans";
 	import styles from "./roman-numerals.module.css";
 
 	export let number = 0;
-	export let t: Record<string, string>;
+
+	const t: Record<string, string> = getContext("t")["roman-numerals"];
 
 	let valid = true;
 
@@ -12,7 +14,7 @@
 </script>
 
 <section class="wide interactive">
-	<h4>{t.title}</h4>
+	<h4>{t["title"]}</h4>
 	<output class="{styles.romans} wide">
 		{#if roman && valid}
 			{roman}
@@ -33,7 +35,7 @@
 				})
 			]}"
 		>
-			{t.arabic}
+			{t["arabic"]}
 		</InputNumber>
 	</form>
 </section>

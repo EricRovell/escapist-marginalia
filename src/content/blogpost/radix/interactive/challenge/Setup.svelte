@@ -4,7 +4,7 @@
 	import type { Settings } from "./challenge.types";
 	import styles from "./setup.module.css";
 
-	const t = getContext<Record<string, string>>("t");
+	const t: Record<string, string> = getContext("t")["exercise"];
 
 	export let settings: Settings = {
 		numberMin: 16,

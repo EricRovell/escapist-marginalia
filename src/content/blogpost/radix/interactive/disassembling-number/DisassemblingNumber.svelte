@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { radix } from "@ericrovell/radix";
 	import { Switch } from "@components";
 	import { FormNumerals, Number, Numerals } from "../../components";
@@ -7,7 +8,8 @@
 	export let radixOutput = 10;
 	export let inputNumber = "1234";
 	export let showPower = false;
-	export let t: Record<string, string>;
+
+	const t: Record<string, string> = getContext("t")["disassembling-number"];
 
 	let valid = true;
 
@@ -19,7 +21,7 @@
 	Disassembling the number into radix powers demonstration.
 -->
 <section class="wide interactive {styles.wrapper}">
-	<h4>{t.title}</h4>
+	<h4>{t["title"]}</h4>
 	{#if valid}
 		<Number
 			number="{number.toString()}"
@@ -38,7 +40,7 @@
 		{t}
 	>
 		<Switch bind:checked="{showPower}">
-			{t.power}
+			{t["power"]}
 		</Switch>
 	</FormNumerals>
 </section>

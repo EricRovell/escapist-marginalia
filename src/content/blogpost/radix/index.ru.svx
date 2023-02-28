@@ -11,9 +11,12 @@ translation: { lang: "english", slug: "numeral-systems" }
 ---
 
 <script>
+	import { setContext } from "svelte";
 	import * as Interactive from "./interactive";
 	import t from "./translations/ru.json";
 	import "katex/dist/katex.min.css";
+
+	setContext("t", t);
 </script>
 
 ## Введение
@@ -72,7 +75,7 @@ I & V & X & L & C & D & M\\ \hline
 
 Несмотря на наличие символов для чисел $50$ и $500$, римская система имеет основание 10. В привычном нам виде римская система позволяет записать числа до $3 999$ включительно, так как один символ не может повторяться более трёх раз:
 
-<Interactive.RomanNumerals t="{t["roman-numerals"]}" />
+<Interactive.RomanNumerals />
 
 ## Позиционные системы счисления
 
@@ -151,9 +154,7 @@ I & V & X & L & C & D & M\\ \hline
 
 К примеру, для десятичной системы это степени числа десять, для двоичной — степени двойки. Именно из этих чисел и формируется число в позиционной системе, попробуйте убедиться сами:
 
-<Interactive.DisassemblingNumber
-	t="{t["disassembling-number"]}"
-/>
+<Interactive.DisassemblingNumber />
 
 По итогу, перевод числа из одной системы в другую сводится к пересчёту самого числа, с учётом используемых групп, которые определяет основание системы.
 
@@ -171,9 +172,7 @@ I & V & X & L & C & D & M\\ \hline
 
 Ниже можно ознакомиться с этапами перевода числа из десятичной системы в произвольную для лучшего понимания:
 
-<Interactive.DecimalConversionStages
-	t="{t["decimal-conversion-stages"]}"
-/>
+<Interactive.DecimalConversionStages />
 
 ### Преобразование из произвольной системы в десятичную
 
@@ -184,9 +183,7 @@ I & V & X & L & C & D & M\\ \hline
 
 Пример расчёта числа можно увидеть ниже:
 
-<Interactive.NumberIntoDecimal
-	t="{t["number-into-decimal"]}"
-/>
+<Interactive.NumberIntoDecimal />
 
 ## Тренажёр
 
@@ -198,9 +195,7 @@ I & V & X & L & C & D & M\\ \hline
 
 В случае ошибки можно продолжать попытку перевода сколь угодно раз.
 
-<Interactive.Challenge
-	t="{t["exercise"]}"
-/>
+<Interactive.Challenge />
 
 ## Другие ресурсы на тему
 

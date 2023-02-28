@@ -1,12 +1,10 @@
 <script lang="ts">
-	import { setContext } from "svelte";
+	import { getContext } from "svelte";
 	import Setup from "./Setup.svelte";
 	import Progress from "./Progress.svelte";
 	import type { Settings } from "./challenge.types";
 
-	export let t: Record<string, string>;
-
-	setContext("t", t);
+	const t: Record<string, string> = getContext("t")["exercise"];
 
 	let state: "setup" | "in-progress" = "setup";
 	let settings: Settings;

@@ -11,9 +11,12 @@ translation: { lang: "русский", slug: "системы-счисления"
 ---
 
 <script>
+	import { setContext } from "svelte";
 	import * as Interactive from "./interactive";
 	import t from "./translations/en.json";
 	import "katex/dist/katex.min.css";
+
+	setContext("t", t);
 </script>
 
 ## Preface
@@ -72,7 +75,7 @@ I & V & X & L & C & D & M\\ \hline
 
 Despite symbols for numbers $50$ and $500$, Roman Numerals have the base of 10.
 
-<Interactive.RomanNumerals t="{t["roman-numerals"]}" />
+<Interactive.RomanNumerals />
 
 ## Positional Numeral Systems
 
@@ -165,9 +168,7 @@ The structure of a number is like a molecule. Molecule is a unique combina
 
 In other words, to represent any number in positional system with radix $r$, the number should be broken into special size groups, and each group can be used $r - 1$ times before a bigger group - rank appears.
 
-<Interactive.DisassemblingNumber
-	t="{t["disassembling-number"]}"
-/>
+<Interactive.DisassemblingNumber />
 
 As the result, converting the number from some radix to another boils down to constructing or breaking it down into groups.
 
@@ -185,9 +186,7 @@ It is important not to skip unused powers while recording the result. All ran
 
 You can see how the arbitrary decimal number converted into arbitrary radix number step-by-step below:
 
-<Interactive.DecimalConversionStages
-	t="{t["decimal-conversion-stages"]}"
-/>
+<Interactive.DecimalConversionStages />
 
 ### Converting the number in arbitrary radix to decimal
 
@@ -198,9 +197,7 @@ There is no extra work need to be done because we do calculations using us
 1. Break down the number into ranks $a_n, ... a_2, a_1, a_0$, where $a$ - is the value, and $n$ is it’s power;
 2. Find the sum using the [the formula](#positional-number-formula);
 
-<Interactive.NumberIntoDecimal
-	t="{t["number-into-decimal"]}"
-/>
+<Interactive.NumberIntoDecimal />
 
 ## Exercise
 
@@ -212,9 +209,7 @@ You can use the provided virtual keyboard for input. Focusing (for example, on t
 
 A failed attempt does not carry any penalty, you can try again and again as many times as you want to.
 
-<Interactive.Challenge
-	t="{t["exercise"]}"
-/>
+<Interactive.Challenge />
 
 ## Related resources
 
