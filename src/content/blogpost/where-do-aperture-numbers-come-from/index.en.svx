@@ -45,7 +45,7 @@ Thats where questions arise:
 - “Where do these values come from?”
 - “Why the series are getting smaller?”
 
-Taking the device in your hands you may find out some usefull information. Setting the lower f-number, you will get more bright photo. Should you look in front of the lens and you will notice that the aperture opens up the entrance pupil more and more. All these facts leads to conclusion: the lower f-numbers results in more light getting in. Using this information let’s find out where do the values come from.
+Taking the device in your hands you may find out some useful information. Setting the lower f-number, you will get more bright photo. Should you look in front of the lens and you will notice that the aperture opens up the entrance pupil more and more. All these facts leads to conclusion: the lower f-numbers results in more light getting in. Using this information let’s find out where do the values come from.
 
 ## Area and light flow
 
@@ -63,7 +63,7 @@ Formula tells us, that area is proportional to the radius to the second degree:
 S \propto R^2
 ```
 
-It means should we double the circle radius the area will increate four times. We need the opposite as we are trying to change the area in order to change the flow of light:
+It means should we double the circle radius the area will increase four times. We need the opposite as we are trying to change the area in order to change the flow of light:
 
 ```math
 R \propto \sqrt{S}
@@ -73,7 +73,7 @@ Now we have an explanation: to double the area the radius must increase by $$\sq
 
 ## f-stops scale
 
-Consequtive doubling the amount of light requires a hole radius increase in accordance with geometric series where $$\sqrt{2}$$ is the common ratio:
+Consecutive doubling the amount of light requires a hole radius increase in accordance with geometric series where $$\sqrt{2}$$ is the common ratio:
 
 <Interactive.FNumbersScale />
 

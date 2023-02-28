@@ -39,7 +39,7 @@ There are a number of ways to get a masonry-like layout:
 
 - the `column-count` is the most common candidate, but this approach has the vertical flow, it is hard to impelement a responsive solution without some "magic numbers";
 - the `flexbox` layout with vertical flow can handle the visual order, but it has problems with responsiveness and overall it feels hacky. Read about this approach in more detail [here][css-masonry-flex];
-- the CSS Grid container with `grid-auto-flow: dense` property may be used, but the same ussue again: visual order, even partially, is broken, and it is still a grid with fixed row height.
+- the CSS Grid container with `grid-auto-flow: dense` property may be used, but the same issue again: visual order, even partially, is broken, and it is still a grid with fixed row height.
 
 Getting the real masonry will be possible in the future:
 
@@ -58,7 +58,7 @@ The approximation will look like this:
 
 ## Implementation
 
-This is the CSS Grid based approach. Grid has fixed row height, but it is still possible to pack items efficiently, as the grid items can span accross the rows and columns:
+This is the CSS Grid based approach. Grid has fixed row height, but it is still possible to pack items efficiently, as the grid items can span across the rows and columns:
 
 ```css
 .grid-item {
@@ -69,7 +69,7 @@ This is the CSS Grid based approach. Grid has fixed row height, but it is still 
 
 The core idea is to break the grid into many equal cells. Knowing the cell and item sizes it is possible to calculate the number of cells required to place the item into the grid preserving it's aspect-ratio. The smaller the cells - the better the aspect-ratio will be preserved.
 
-As the items sizes may diffirentiate a lot, most commonly there will be gaps. Using `grid-auto-flow: dense` the grid layout will try to pack these gaps if possible:
+As the items sizes may differentiate a lot, most commonly there will be gaps. Using `grid-auto-flow: dense` the grid layout will try to pack these gaps if possible:
 
 <Interactive.GridDense items={30} />
 
@@ -77,7 +77,7 @@ As the items sizes may diffirentiate a lot, most commonly there will be gaps. Us
 
 Let's define styles first:
 
-1. Set `display: grid` to change the behaviour of the `.masonry` element to be a grid container, all the element inside the `.masonry` are now grid items.
+1. Set `display: grid` to change the behavior of the `.masonry` element to be a grid container, all the element inside the `.masonry` are now grid items.
 2. Set template columns dynamically using `repeat()` function with `auto-fill` option to fill grid container with columns of predefined size as much as possible. Define the columns size with `--masonry-scale` custom property.
 3. Set template rows just like the columns, but with `auto-fit` option, as we want as much rows as we actually need to fit the content. Define the rows size with the same `--masonry-scale` custom property.
 4. Set grid flow to `dense` in order to fill the possible gaps.
@@ -123,7 +123,7 @@ Putting the picture together:
 
 1. A component gets gets items' sizes and the cell scale value;
 2. Cell size passed into styles within `--masonry-scale` custom property;
-2. Item's dimentions defines a vertical and horizontal span to place it within the grid. Span values are passed down as `--masonry-item-row` and `--masonry-item-column` custom properties.
+2. Item's dimensions defines a vertical and horizontal span to place it within the grid. Span values are passed down as `--masonry-item-row` and `--masonry-item-column` custom properties.
 
 Basic [Svelte][svelte] component implementation may look like this:
 

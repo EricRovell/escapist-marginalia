@@ -443,7 +443,7 @@ class Point<Data = unknown> {
 }
 
 /**
- * Axis-aligned rectangle defined by top-left vertex coordinate and it's dimentions.
+ * Axis-aligned rectangle defined by top-left vertex coordinate and it's dimensions.
  */
 export class Rectangle {
 	readonly x: number;

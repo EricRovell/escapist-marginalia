@@ -67,7 +67,7 @@ Let’s dive in some math to get the problem done.
 
 ### The sum of natural numbers sequence
 
-The sum of natural numbers can be expressed as the [arethmetic series sum][arithmetic-series], where $$a_{1} = 1, d = 1$$:
+The sum of natural numbers can be expressed as the [arithmetic series sum][arithmetic-series], where $$a_{1} = 1, d = 1$$:
 
 ```math
 \begin{aligned}
@@ -227,7 +227,7 @@ This approach has a constant time complexity $$O(1)$$, which means the executio
 
 ## Results
 
-Brute-force for this problem works rather well, we have to increase `n` significantly before there will be problems with execution time. Despite the effectiveness of brute-force solution, there is a much more interesting solution should we dive in into math, which will be only limited by the size of the initeger storage we use.
+Brute-force for this problem works rather well, we have to increase `n` significantly before there will be problems with execution time. Despite the effectiveness of brute-force solution, there is a much more interesting solution should we dive in into math, which will be only limited by the size of the integer storage we use.
 
 The source code can be found [here][source-code].
 
@@ -237,7 +237,7 @@ The source code can be found [here][source-code].
 - [Arithmetic series][arithmetic-series]
 - [Square pyramidal number][square-pyramidal-number]
 
-<!-- Rederence Links -->
+<!-- Reference Links -->
 
 [source-code]: https://github.com/EricRovell/project-euler-ts/tree/main/src/solutions/006
 [arithmetic-series]: https://en.wikipedia.org/wiki/Arithmetic_progression#Sum
