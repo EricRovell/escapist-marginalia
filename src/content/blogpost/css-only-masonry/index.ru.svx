@@ -12,23 +12,26 @@ updated: 2022-09-22T03:16:00.000Z
 ---
 
 <script>
-  import { Details } from "@components";
-  import * as Interactive from "./interactive";
-  import t from "./translations/ru.json";
+	import { setContext } from "svelte";
+	import { Details } from "@components";
+	import * as Interactive from "./interactive";
+	import t from "./translations/ru.json";
+
+	setContext("t", t);
 </script>
 
 Раскладка Masonry, известная под множеством имён: *плиточная вёрстка*, *Каскадная сетка*, "раскладка как в Pinterest", является в каком-то смысле привычной сеткой, но без фиксированной высоты строк. Основной смысл в использовании раскладки - максимильно эффективно использовать доступное пространство, избавляясь от лишних пробелов:
 
-<Interactive.MasonryDifference t="{t["grid-into-masonry"]}" />
+<Interactive.MasonryDifference />
 
 Своим названием раскладка обязана слову "каменщик", внешне она напоминает укладку каменной стены. Таким образом, Masonry позволяет заполнять пространство эффективно элементами абсолютно различных размеров.
 
 <Details>
-  <svelte:fragment slot="title">
-    Что такое Masonry?
-  </svelte:fragment>
+	<svelte:fragment slot="title">
+		Что такое Masonry?
+	</svelte:fragment>
 
-  В раскладке Masonry элементы располагаются друг за другом в строчном направлении. В отличие от привычной табличной раскладки при переносе на новую строку элементы смещаются в вертикальном направлении, заполняя доступное пространство за элементом в предыдущей строке соответственной колонки.
+	В раскладке Masonry элементы располагаются друг за другом в строчном направлении. В отличие от привычной табличной раскладки при переносе на новую строку элементы смещаются в вертикальном направлении, заполняя доступное пространство за элементом в предыдущей строке соответственной колонки.
 
 </Details>
 
@@ -55,7 +58,7 @@ updated: 2022-09-22T03:16:00.000Z
 
 Результат будет выглядеть следующим образом:
 
-<Interactive.MasonryDemo t="{t["masonry-demo"]}" />
+<Interactive.MasonryDemo />
 
 ## Реализация
 
@@ -63,8 +66,8 @@ updated: 2022-09-22T03:16:00.000Z
 
 ```css
 .grid-item {
-  grid-row-end: span 3;
-  grid-column-end: span 2;
+	grid-row-end: span 3;
+	grid-column-end: span 2;
 }
 ```
 
@@ -72,7 +75,7 @@ updated: 2022-09-22T03:16:00.000Z
 
 В зависимости от вариативности размеров элементов, в сетке будут появляться пробелы. Используя свойство `grid-auto-flow: dense`, сетка попытается их заполнить по возможности:
 
-<Interactive.GridDense items={30} t="{t["grid-dense"]}" />
+<Interactive.GridDense items={30} />
 
 ### Стили
 
@@ -85,17 +88,17 @@ updated: 2022-09-22T03:16:00.000Z
 
 ```css
 .masonry {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--masonry-scale, 100px), 1fr));
-  grid-template-rows: repeat(auto-fit, var(--masonry-scale, 100px));
-  grid-auto-flow: dense;
-  grid-gap: 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(var(--masonry-scale, 100px), 1fr));
+	grid-template-rows: repeat(auto-fit, var(--masonry-scale, 100px));
+	grid-auto-flow: dense;
+	grid-gap: 1rem;
 }
 ```
 
 В итоге, получаем динамическую  отзывчивую сетку, заполненную околоквадратными ячейками заданного размера:
 
-<Interactive.GridCells t="{t["grid-cells"]}" />
+<Interactive.GridCells />
 
 Подробнее об этом приёме можно прочесть [здесь][no-media-css-grid].
 
@@ -111,8 +114,8 @@ const calcMasonryItemSpan = (size, scale) => Math.floor(size / scale);
 
 ```css
 .masonry > .masonry-item {
-  grid-row-end: span var(--masonry-item-row);
-  grid-column-end: span var(--masonry-item-column);
+	grid-row-end: span var(--masonry-item-row);
+	grid-column-end: span var(--masonry-item-column);
 }
 ```
 
@@ -130,39 +133,39 @@ const calcMasonryItemSpan = (size, scale) => Math.floor(size / scale);
 
 ```svelte
 <script context="module">
-  const calcMasonryItemSpan = (size, scale) => Math.floor(size / scale);
+	const calcMasonryItemSpan = (size, scale) => Math.floor(size / scale);
 </script>
 
 <script>
-  export let scale = 100;
-  export let items = [];
+	export let scale = 100;
+	export let items = [];
 </script>
 
 <ul class="masonry" style:--masonry-scale="{scale}px">
-  {#each items as { height, width }}
-    <li
-      class="item"
-      style:--masonry-item-row={getMasonryItemSpan(height, scale)}
-      style:--masonry-item-column={getMasonryItemSpan(width, scale)}
-    >
-      <slot />
-    </li>
-  {/each}
+	{#each items as { height, width }}
+		<li
+			class="item"
+			style:--masonry-item-row={getMasonryItemSpan(height, scale)}
+			style:--masonry-item-column={getMasonryItemSpan(width, scale)}
+		>
+			<slot />
+		</li>
+	{/each}
 </ul>
 
 <style>
-  .masonry {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--masonry-scale, 100px), 1fr));
-    grid-template-rows: repeat(auto-fit, var(--masonry-scale, 100px));
-    grid-auto-flow: dense;
-    grid-gap: 1rem;
-  }
+	.masonry {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(var(--masonry-scale, 100px), 1fr));
+		grid-template-rows: repeat(auto-fit, var(--masonry-scale, 100px));
+		grid-auto-flow: dense;
+		grid-gap: 1rem;
+	}
 
-  .masonry > .item {
-    grid-row-end: span var(--masonry-item-row);
-    grid-column-end: span var(--masonry-item-column);
-  }
+	.masonry > .item {
+		grid-row-end: span var(--masonry-item-row);
+		grid-column-end: span var(--masonry-item-column);
+	}
 </style>
 ```
 

@@ -3,12 +3,14 @@
 </script>
 
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { Range } from "@components";
 	import { cell } from "../../components/cell.module.css";
 	import styles from "./grid-dense.module.css";
 
 	export let items = 20;
-	export let t: Record<string, string>;
+
+	const t = getContext<Record<string, string>>("t")["grid-dense"];
 
 	const getSpan = () => {
 		const spanned = randBool(0.2);

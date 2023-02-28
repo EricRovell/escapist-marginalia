@@ -3,13 +3,15 @@
 </script>
 
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { Button, Range } from "@components";
 	import { cell } from "../../components/cell.module.css";
 	import styles from "./masonry-demo.module.css";
 
 	export let items = 20;
 	export let scale = 40;
-	export let t: Record<string, string>;
+
+	const t = getContext<Record<string, string>>("t")["masonry-demo"];
 
 	let minItems = 5;
 	let maxItems = 25;
