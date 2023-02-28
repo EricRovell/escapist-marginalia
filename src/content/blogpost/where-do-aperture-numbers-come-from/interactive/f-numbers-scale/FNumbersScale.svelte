@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import { Range } from "@components";
-	import FNumbers from "../components/FNumbers.svelte";
+	import { FNumbers } from "../../components";
 </script>
 
 <script lang="ts">

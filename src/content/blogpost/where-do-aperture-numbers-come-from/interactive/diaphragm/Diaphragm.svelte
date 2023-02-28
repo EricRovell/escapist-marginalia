@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Range } from "@components";
-	import { Diaphragm } from "../components";
+	import { Diaphragm } from "../../components";
 	import styles from "./diaphragm.module.css";
 
 	export let t: Record<string, string>;

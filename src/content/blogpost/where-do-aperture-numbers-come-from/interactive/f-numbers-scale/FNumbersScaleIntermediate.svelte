@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	import { Button, Range } from "@components";
 	import { clamp } from "@utils/helpers";
-	import FNumbers from "../components/FNumbers.svelte";
+	import { FNumbers } from "../../components";
 </script>
 
 <script lang="ts">

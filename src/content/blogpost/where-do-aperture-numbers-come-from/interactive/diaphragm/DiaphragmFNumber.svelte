@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { tweened } from "svelte/motion";
 	import { Radio } from "@components";
-	import { Diaphragm } from "../components";
+	import { Diaphragm } from "../../components";
 
 	export let t: Record<string, string>;
 
