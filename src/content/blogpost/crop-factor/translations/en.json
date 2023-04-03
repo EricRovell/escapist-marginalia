@@ -1,6 +1,15 @@
 {
+	"crop-factor-comparison": {
+		"title": "Different manufatures common crop-factor comparison",
+		"option": "Option"
+	},
 	"field-of-view-comparison": {
 		"title": "Smaller sensor and resulting field of view",
 		"size": "Sensor size"
+	},
+	"sensor-projection": {
+		"title": "Sensor projection",
+		"focal-length": "Focal Length",
+		"crop-factor": "Crop Factor"
 	}
 }
