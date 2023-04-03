@@ -6,18 +6,3 @@
 .camera {
 	fill: var(--surface-3);
 }
-
-.projection {
-	clip-path: circle(50% at 50% 50%);
-	filter: blur(3px);
-	opacity: 75%;
-}
-
-.fullframe {
-	fill: none;
-	stroke: #231f20;
-	stroke-miterlimit: 10;
-	stroke-width: 2px;
-	stroke-dasharray: 7;
-	opacity: 0.5;
-}
