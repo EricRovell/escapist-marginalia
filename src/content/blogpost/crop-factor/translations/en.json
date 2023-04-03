@@ -9,7 +9,14 @@
 	},
 	"sensor-projection": {
 		"title": "Sensor projection",
-		"focal-length": "Focal Length",
-		"crop-factor": "Crop Factor"
+		"focal-length": "Focal length",
+		"crop-factor": "Crop factor"
+	},
+	"equivalent-focal-length": {
+		"title": "Equivalent Focal Length",
+		"focal-length": "Focal length",
+		"crop-factor": "Crop factor",
+		"match": "Equivalent field of view",
+		"not-match": "Non-equivalent field of view"
 	}
 }
