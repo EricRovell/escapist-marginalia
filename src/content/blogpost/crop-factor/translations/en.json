@@ -1,7 +1,8 @@
 {
 	"crop-factor-comparison": {
 		"title": "Different manufatures common crop-factor comparison",
-		"option": "Option"
+		"reference": "Reference",
+		"comparable": "Comparable"
 	},
 	"field-of-view-comparison": {
 		"title": "Smaller sensor and resulting field of view",

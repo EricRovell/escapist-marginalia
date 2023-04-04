@@ -1,7 +1,8 @@
 {
 	"crop-factor-comparison": {
 		"title": "Сравнение кроп-факторов различных производителей",
-		"option": "Опция"
+		"reference": "Эталон",
+		"comparable": "Сравниваемое"
 	},
 	"field-of-view-comparison": {
 		"title": "Поле обзора при использовании сенсора меньших размеров",
