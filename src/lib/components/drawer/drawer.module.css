@@ -35,7 +35,7 @@
 	transition: bottom 0.25s ease-in-out;
 }
 
-@media screen and (max-width: 48em) {
+@media screen and (width <= 48em) {
 	.wrapper {
 		visibility: visible;
 	}

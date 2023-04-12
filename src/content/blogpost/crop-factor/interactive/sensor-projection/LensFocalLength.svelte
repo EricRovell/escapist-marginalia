@@ -31,7 +31,7 @@
 		r: 0.25
 	};
 	$: coefSimilarity = (viewBox.width - focalLength + 2 * depth) / focalLength;
-	$: initialRaysOffset = sensorCrop.height / 2 * coefSimilarity
+	$: initialRaysOffset = sensorCrop.height / 2 * coefSimilarity;
 </script>
 
 <svg

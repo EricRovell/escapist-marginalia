@@ -15,7 +15,7 @@
 		x: -18 - padding,
 		y: -12 - padding,
 		width: 36 + 2 * padding,
-		height: 24 + 2 * padding,
+		height: 24 + 2 * padding
 	};
 
 	let reference = {
