@@ -11,7 +11,7 @@
 	"sensor-projection": {
 		"title": "Проекция света на сенсор",
 		"focal-length": "Фокусное расстояние",
-		"crop-factor": "Величина кроп-фактора"
+		"crop-factor": "Размер сенсора (кроп-фактор)"
 	},
 	"equivalent-focal-length": {
 		"title": "Эквивалентное фокусное расстояние",

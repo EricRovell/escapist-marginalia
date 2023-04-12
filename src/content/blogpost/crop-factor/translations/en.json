@@ -11,7 +11,7 @@
 	"sensor-projection": {
 		"title": "Sensor projection",
 		"focal-length": "Focal length",
-		"crop-factor": "Crop factor"
+		"crop-factor": "Sensor size (crop factor)"
 	},
 	"equivalent-focal-length": {
 		"title": "Equivalent Focal Length",
