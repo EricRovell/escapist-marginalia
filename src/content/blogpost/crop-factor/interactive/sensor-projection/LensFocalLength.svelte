@@ -79,6 +79,22 @@
 		stroke-width="0.1"
 		stroke-dashoffset="0.1"
 	/>
+	<!-- Full frame rays fill -->
+	<polygon
+		points="
+			{sensorFull.x},{sensorFull.y}
+			{sensorFull.x},{sensorFull.y + sensorFull.height}
+			{focalPoint.x},{focalPoint.y}"
+		fill="rgb(200 50 0 / 0.25)"
+	/>
+	<polygon
+		points="
+			{0},{viewBox.height / 2 + coefSimilarity * sensorFull.height / 2}
+			{0},{viewBox.height / 2 - coefSimilarity * sensorFull.height / 2}
+			{focalPoint.x},{focalPoint.y}"
+		fill="rgb(200 50 0 / 0.25)"
+	/>
+	<!-- Cropped frame rays fill -->
 	<polygon
 		points="
 			{sensorCrop.x},{sensorCrop.y}
