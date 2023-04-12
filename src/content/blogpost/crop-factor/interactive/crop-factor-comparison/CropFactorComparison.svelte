@@ -112,7 +112,10 @@
 			y="{reference.y}"
 			width="{reference.width}"
 			height="{reference.height}"
-			opacity="0.15"
+			stroke="yellow"
+			stroke-width="0.1px"
+			stroke-dasharray="0.5px"
+			fill="none"
 		/>
 		<rect
 			class="{styles.compared}"
