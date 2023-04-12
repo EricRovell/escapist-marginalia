@@ -79,7 +79,7 @@
 	height: var(--scroll-height);
 }
 
-@media only screen and (max-width: 48em) {
+@media only screen and (width < 48em) {
 	.custom-scroll.inline::-webkit-scrollbar {
 		height: auto;
 	}

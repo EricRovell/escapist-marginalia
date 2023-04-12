@@ -1,0 +1,41 @@
+.root {
+	width: min(auto, 100% - var(--space-3));
+	height: 65vh;
+	justify-self: center;
+}
+
+.rect-transition {
+	transition:
+		x ease-in-out 0.15s,
+		y ease-in-out 0.15s,
+		width ease-in-out 0.15s,
+		height ease-in-out 0.15s;
+}
+
+.projection {
+	composes: rect-transition;
+	border-radius: 1px;
+}
+
+.form {
+	display: grid;
+	gap: var(--space-3);
+}
+
+.mask {
+	composes: rect-transition;
+	fill: white;
+	stroke: black;
+	stroke-dasharray: 25;
+	stroke-width: 0.2px;
+}
+
+.compared {
+	composes: rect-transition;
+}
+
+.text {
+	transition:
+		x ease-in-out 0.15s,
+		y ease-in-out 0.15s;
+}

@@ -74,7 +74,7 @@
 	opacity: 0.65;
 }
 
-@media screen and (max-width: 48em) {
+@media screen and (width <= 48em) {
 	.share {
 		margin-left: auto;
 		margin-right: auto;

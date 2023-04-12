@@ -1,0 +1,48 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.content {
+	display: grid;
+	grid-template: auto / calc(55vh) calc(55vh);
+	place-items: center;
+	padding: var(--space-2);
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+}
+
+.content > svg {
+	height: 100%;
+	width: fit-content;
+}
+
+.content > div {
+	scroll-snap-align: center;
+}
+
+.content:global(.match) svg > rect {
+	stroke-dasharray: none;
+}
+
+.form {
+	display: grid;
+	gap: var(--space-2);
+	margin-block-start: var(--space-3);
+	min-width: 50vh;
+}
+
+.output {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--color-red-500);
+	padding: var(--space-2-rel);
+	font-size: var(--font-size-0);
+}
+
+.output:global(.match) {
+	color: var(--color-green-500);
+}

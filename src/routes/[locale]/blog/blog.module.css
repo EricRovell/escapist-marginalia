@@ -29,7 +29,7 @@
 	display: none;
 }
 
-@media screen and (max-width: 48em) {
+@media screen and (width <= 48em) {
 	.layout {
 		grid-template: min-content auto / 1fr;
 		gap: var(--space-5);

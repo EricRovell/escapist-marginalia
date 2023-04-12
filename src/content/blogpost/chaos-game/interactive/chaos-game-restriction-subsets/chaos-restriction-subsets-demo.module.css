@@ -18,7 +18,7 @@
 	width: min(100% - var(--space-3), 450px);
 }
 
-@media screen and (max-width: 48em) {
+@media screen and (width <= 48em) {
 	.wrapper {
 		grid-column: 1 / span 3 !important;
 		display: flex;
