@@ -1,7 +1,7 @@
 {
 	"sections": {
 		"home": "home",
-		"blog": "blog",
+		"writing": "writing",
 		"gallery": "gallery",
 		"projects": "projects",
 		"sketch": "sketch",
@@ -58,14 +58,14 @@
 	},
 	"pages": {
 		"home": {
-			"title": "Eric Rovell",
-			"description": "Personal blog about math, programming, photography, and more...",
+			"title": "Escapist Marginalia",
+			"description": "Some escapist's corner about math, programming, photography, and more...",
 			"keywords": "blog, math, web development, photography, portfolio",
 			"subject": "personal website"
 		},
 		"blog": {
-			"title": "Blog",
-			"description": "List of published articles.",
+			"title": "Writing",
+			"description": "List of published articles, notes, and problem solving.",
 			"keywords": "blog, web development, photography, portfolio",
 			"subject": "personal blog"
 		},
