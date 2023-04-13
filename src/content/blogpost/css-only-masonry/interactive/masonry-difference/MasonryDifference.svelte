@@ -6,12 +6,14 @@
 </script>
 
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { Switch } from "@components";
 	import { cell } from "../../components/cell.module.css";
 	import styles from "./masonry-difference.module.css";
 
 	export let masonry = false;
-	export let t: Record<string, string>;
+
+	const t = getContext<Record<string, string>>("t")["grid-into-masonry"];
 
 	const items: Array<Item[]> = [
 		[

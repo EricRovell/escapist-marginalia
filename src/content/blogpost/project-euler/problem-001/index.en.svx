@@ -24,9 +24,9 @@ translation: { lang: "русский", slug: "проект-эйлера-1" }
 
 </EulerProblem>
 
-## Bruteforce
+## Brute force
 
-The first idea how to solve this problem is actually to brootforce is. One thousand numbers divisibility tests is not a time-consuming task. We need to iterate over all natural numbers till one thousand and test every one of them.
+The first idea how to solve this problem is actually to brute-force is. One thousand numbers divisibility tests is not a time-consuming task. We need to iterate over all natural numbers till one thousand and test every one of them.
 
 Divisibility test may be implemented using [modulo operator][modulo-operator]. The modulo operator calculates the remainder of the integer division. If for a given number and a divisor the remainder is equals zero the number is divisible:
 
@@ -51,9 +51,9 @@ Or just the same idea, but using list comprehension:
 result = lambda limit: sum([ i for i in range(limit) if i % 3 == 0 or i % 5 == 0 ])
 ```
 
-## Arithmeric approach
+## Arithmetic approach
 
-Even though the brootforce solution is simple and fast enough, there is some space for improvement. Let's look closely at all natural numbers divisible by 3, for example:
+Even though the brute-force solution is simple and fast enough, there is some space for improvement. Let's look closely at all natural numbers divisible by 3, for example:
 
 ```math
 3, 6, 9, 12, 15, 18...
@@ -86,7 +86,7 @@ def main(limit):
   return arithmetic_series(3, limit) + arithmetic_series(5, limit)
 ```
 
-Well, not exactly. There is still a problem: with this approach we have dublicates. Some numbers like 15 are divisible by 3 *and* 5, so we must take this into account by subtracting all these numbers from the result. The final solution will look like this:
+Well, not exactly. There is still a problem: with this approach we have duplicates. Some numbers like 15 are divisible by 3 *and* 5, so we must take this into account by subtracting all these numbers from the result. The final solution will look like this:
 
 ```python
 def arithmetic_series(divisor, limit):
@@ -99,7 +99,7 @@ def main(limit):
 
 ## Comparison
 
-Since we are testing each number in brootforce solution the algorithm scales linearly which can be expessed using Big O Notation as *O(n)*, not bad actually. The arithmetic approach algorithm has a constant computation time, which is expressed as *O(1)*, which is much better.
+Since we are testing each number in brute-force solution the algorithm scales linearly which can be expressed using Big O Notation as *O(n)*, not bad actually. The arithmetic approach algorithm has a constant computation time, which is expressed as *O(1)*, which is much better.
 
 ## References
 

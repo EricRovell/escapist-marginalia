@@ -9,7 +9,7 @@
 	export let maxlength = 32;
 	export let value: string[] = [];
 
-	const t = getContext<Record<string, string>>("t");
+	const t: Record<string, string> = getContext("t")["exercise"];
 	const dispatch = createEventDispatcher();
 
 	$: pattern = buildPattern(radix);

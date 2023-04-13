@@ -18,4 +18,4 @@ url: "/en/sketch/chaos-game"
 	<Sketch {t} />
 </svelte:fragment>
 
-You can read more about the Chaos Game in my [blogpost](/en/blog/the-chaos-game).
+You can read more about the Chaos Game in my [blogpost](/en/writing/the-chaos-game).

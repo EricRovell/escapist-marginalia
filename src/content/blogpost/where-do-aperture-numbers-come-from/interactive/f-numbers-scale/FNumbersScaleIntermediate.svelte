@@ -1,13 +1,14 @@
 <script lang="ts" context="module">
 	import { Button, Range } from "@components";
 	import { clamp } from "@utils/helpers";
-	import FNumbers from "../components/FNumbers.svelte";
+	import { FNumbers } from "../../components";
 </script>
 
 <script lang="ts">
+	import { getContext } from "svelte";
 	import styles from "./f-numbers-scale.module.css";
 
-	export let t: Record<string, string>;
+	const t: Record<string, string> = getContext("t")["f-stops-steps"];
 
 	/**
 	 * range of fstops to display

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { Range } from "@components";
 	import { createPolygon } from "@content/sketch/chaos-game/index";
 	import type { PolygonOrigin } from "@content/sketch/chaos-game/lib/chaos.types";
@@ -7,8 +8,9 @@
 	export let height = 375;
 	export let n = 5;
 	export let r = 40;
-	export let t: Record<string, string>;
 	export let width = 375;
+
+	const t = getContext<Record<string, string>>("t")["polygon-density-map"];
 
 	$: origin = {	x: 0,	y: 0, angle: 0 };
 

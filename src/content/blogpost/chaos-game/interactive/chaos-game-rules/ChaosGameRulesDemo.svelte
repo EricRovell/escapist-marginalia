@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { Button, Switch } from "@components";
 	import { Chaos, createPolygon } from "@content/sketch/chaos-game/index";
 	import type { Coords, Move, PolygonOrigin } from "@content/sketch/chaos-game/lib/chaos.types";
@@ -12,9 +13,10 @@
 	export let showLines = true;
 	export let showPoints = true;
 	export let origin: Partial<PolygonOrigin> = undefined;
-	export let t: Record<string, string>;
 	export let width = 350;
 	export let step = { value: 0.5, factor: true };
+
+	const t = getContext<Record<string, string>>("t")["game-rules-demo"];
 
 	const poly = createPolygon(polygon, scale / 2, origin);
 	const chaos = new Chaos(poly, { step });

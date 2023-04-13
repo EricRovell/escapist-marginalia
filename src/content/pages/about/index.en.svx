@@ -4,25 +4,29 @@ keywords: [ "blog", "web development", "photography", "portfolio" ]
 lang: "en"
 slug: "/en/about"
 title: "About"
-updated: 2022-11-14T22:37:00.000Z
+updated: 2023-04-13T13:39:00.000Z
 ---
 
-Welcome to my personal "digital garden", a place where I share my interests. Mostly it is natural sciences, web-development, and photography, but not are not limited to them.
+Welcome to the “Escapist Marginalia” - personal escapism corner of mine; a place where I surround myself with interesting things; a place where I create, store, and share my interests. Mostly it is natural sciences, web-development, and photography, but are not limited to them.
 
-## [Blog](/en/blog)
+## [Writing](/en/writing)
 
-Here you can find interactive publications on variety of topics. There was an idea that the text as a medium for educational purposes is becoming less and less attractive due to competition with media resources. Nevertheless the text remains the most effective way to convey the material. To make the experience more attractive the reader should be able to "participate" in the process, the experience should be more interactive. It will be interesting to see how it all turns out to be.
+Mostly you will find here interactive publications on variety of topics. There was an idea that the text as a medium for educational purposes is becoming less and less attractive due to competition with media resources. Nevertheless the text remains the most effective way to convey the material. To make the experience more attractive the reader should be able to "participate" in the process, the experience should be more interactive. It will be interesting to see how it all turns out to be.
 
-Also, you can find analysis of some problems that seemed interesting to me.
+Also, you can find some notes and analysis for some problems that seemed interesting to me.
 
 ## [Gallery](/en/gallery)
 
-In this section of the "digital garden" you can see some photographs. Quite unlikely they represent any value in terms of art. Mostly, I shoot because I like the process and the idea of "capturing" the moment seems so usefull for me.
+In this part of my escapism corner you will find photographs - little visual pieces of the real world I feel attached to and that are filled with memories and feeling of the past. Quite unlikely they represent any value in terms of art. I like photography as it allows me to "capture" the moment and fill the escapism corner like a mosaic.
 
 ## [Projects](/en/projects)
 
-Here you can see personal projects and the history of their creation. Currently, there are mainly web-development projects.
+Here you can find some personal projects of mine and history of their creation. Currently, there are mostly web-development projects.
+
+## [Sketch](/en/sketch)
+
+This part of the escapism corner is like laboratory where I create small visualizations using math and such tools like Canvas API and SVG, trying to understand interesting parts of the real world.
 
 ## [Bookmarks](/en/bookmarks)
 
-Inside the "personal garden" this section is like a shelf full of "favourite books", represents selected inspirational resources such as personal blogs of people on related topics, books, applications, and more. The subject of everything presented does not extends way beyound the topics presented on this website.
+This part of the escapism corner is like a place to find some inspiration; this place is like a shelf full of "favourite books", represents selected inspirational resources such as personal blogs of people on related topics, books, applications, and more. The subject of everything presented does not extends way beyound the topics presented on this website.

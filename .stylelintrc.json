@@ -5,6 +5,11 @@
 		"selector-pseudo-class-no-unknown": [ true,	{
 				"ignorePseudoClasses": [ "global" ]
 		}],
-		"color-hex-case": "upper"
+		"color-hex-case": "upper",
+		"property-no-unknown": [ true, {
+			"ignoreProperties": [
+				"composes"
+			]
+		}]
 	}
 }

@@ -232,7 +232,7 @@
 	font-size: inherit;
 }
 
-@media screen and (max-width: 75ch) {
+@media screen and (width <= 75ch) {
 	.article pre[class*="language-"] {
 		grid-column: -1 / 1;
 		border-inline: none;

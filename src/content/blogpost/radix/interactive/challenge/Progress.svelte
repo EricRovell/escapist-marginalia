@@ -21,7 +21,7 @@
 	let value: string[] = [];
 
 	const dispatch = createEventDispatcher();
-	const t = getContext<Record<string, string>>("t");
+	const t: Record<string, string> = getContext("t")["exercise"];
 
 	function generateNumber() {
 		dirty = false;

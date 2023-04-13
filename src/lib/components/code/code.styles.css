@@ -108,7 +108,7 @@ pre[class="language-svelte"]::before {
 	background: var(--code-background);
 }
 
-@media screen and (min-width: 36em) {
+@media screen and (width >= 36em) {
 	/* Works on Chrome, Edge, and Safari */
 	pre[class*="language-"]::-webkit-scrollbar {
 		width: 4px;

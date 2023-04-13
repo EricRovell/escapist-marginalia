@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { Pagination, Range } from "@components";
 	import { ChaosGame } from "../../components/chaos-game";
 	import { subsets } from "@content/sketch/chaos-game/lib/chaos.utils";
@@ -7,7 +8,8 @@
 
 	export let n = 3;
 	export let perPage = 8;
-	export let t: Record<string, string>;
+
+	const t = getContext<Record<string, string>>("t")["restrictions-subset"];
 
 	let currentPage = 1;
 

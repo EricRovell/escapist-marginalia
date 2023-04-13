@@ -11,9 +11,12 @@ translation: { lang: "русский", slug: "системы-счисления"
 ---
 
 <script>
+	import { setContext } from "svelte";
 	import * as Interactive from "./interactive";
 	import t from "./translations/en.json";
 	import "katex/dist/katex.min.css";
+
+	setContext("t", t);
 </script>
 
 ## Preface
@@ -26,19 +29,19 @@ The thing is - the decimal system is not that special. There are numerous numb
 
 A numeral system is a writing system for expressing numbers. This is a mathematical notation for representing numbers of a given set, using symbols in a consistent manner.
 
-## Nonpositional numeral systems
+## Non-positional numeral systems
 
-Nonpositional numeral systems are systems of numerations in which the placement of a numeral symbol does not change it’s value.
+Non-positional numeral systems are systems of numerations in which the placement of a numeral symbol does not change it’s value.
 
-Nonpositional systems are the most simple and ancient ones. The most primitive way to represent a number in written form is tallying. Counting using strokes as |, ||, |||, and so on, using a single symbol and repeat it as many times as the number we need. This is the example of nonpositional system.
+Non-positional systems are the most simple and ancient ones. The most primitive way to represent a number in written form is tallying. Counting using strokes as |, ||, |||, and so on, using a single symbol and repeat it as many times as the number we need. This is the example of non-positional system.
 
-This approach is quite simple going as far as the simple needs of people required. But we have infinitely many natural numbers and representing large ones are quite inpractical. It would take a lot of time and effort to write a number just as small as one million.
+This approach is quite simple going as far as the simple needs of people required. But we have infinitely many natural numbers and representing large ones are quite impractical. It would take a lot of time and effort to write a number just as small as one million.
 
 As life became more and more complicated, the need for group numbers became apparent. It was a little step forward to something more practical with the further naming of some special numbers.
 
 ### Ancient Egyptian Numerals
 
-The earliest example of nonpositional numeral system is the scheme encountered in hieroglyphs, which Egyptians used for writing on stone. The system used groups formed by the number $10$ as it’s base. Each power of $10$ required a new symbol:
+The earliest example of non-positional numeral system is the scheme encountered in hieroglyphs, which Egyptians used for writing on stone. The system used groups formed by the number $10$ as it’s base. Each power of $10$ required a new symbol:
 
 <!-- Egyptian Unicode HTML Codes -->
 <Interactive.Numerals
@@ -53,11 +56,11 @@ The earliest example of nonpositional numeral system is the scheme encountered
 	]}"
 />
 
-The intermidiate numbers are then formed by addition, each symbol repeated the required number of times. Usually the symbols were placed in ascending order, but the order did not matter.
+The intermediate numbers are then formed by addition, each symbol repeated the required number of times. Usually the symbols were placed in ascending order, but the order did not matter.
 
 ### Roman Numerals
 
-Another well-known nonpositional numeral system is Roman numerals. The direct influence of Rome for such a long period, the superiority of this numeral system over any other simple ones that had been known in Europe before 10th century explains the strong position that the system maintained for nearly 2 000 years in scientific and theological literature.
+Another well-known non-positional numeral system is Roman numerals. The direct influence of Rome for such a long period, the superiority of this numeral system over any other simple ones that had been known in Europe before 10th century explains the strong position that the system maintained for nearly 2 000 years in scientific and theological literature.
 
 Roman numerals had the great advantage - simplicity; memorizing the values of only five letters was necessary: $I, V, X, L$, and $C$. Moreover, it was easier to see three in $III$ than in $3$ or to see seven in $VII$ than in 7.
 
@@ -72,13 +75,13 @@ I & V & X & L & C & D & M\\ \hline
 
 Despite symbols for numbers $50$ and $500$, Roman Numerals have the base of 10.
 
-<Interactive.RomanNumerals t="{t["roman-numerals"]}" />
+<Interactive.RomanNumerals />
 
 ## Positional Numeral Systems
 
 Positional numeral systems are systems of numerations in which the placement of a numeral symbol does change it’s value. These systems are the next major step in numeral systems development. The decimal number system is an example of a positional system.
 
-It is the only one of the systems that can be used for describing large numbers, since each of other systems before gives special names to various numbers bigger than some large number, and an infinite number of names would be required for all the numbers. Nonpositional systems used a new symbol for each threshold, positional systems reuse the set of symbols to represent a number of any value no matter how big it is.
+It is the only one of the systems that can be used for describing large numbers, since each of other systems before gives special names to various numbers bigger than some large number, and an infinite number of names would be required for all the numbers. Non-positional systems used a new symbol for each threshold, positional systems reuse the set of symbols to represent a number of any value no matter how big it is.
 
 Let’s try to figure it out how number is constructed in positional system.
 
@@ -86,7 +89,7 @@ Any positional system has it’s radix value (also known as numeral base); this
 
 Counting one by one with a given set we are limited with a value $r - 1$ as a threshold, after this the positional system reuse the same symbols placing them ahead, that’s how the ranks are formed: $r_n… r_2 r_1 r_0$. Each time the next threshold is met, new rank is appended.
 
-The first rank has $r$ values, the next one has $r * r = r^2$. Appeding a new rank increases the number of values by $r$ times. For example, in decimal system in every thousand there are ten hundreds, in every hundred there are ten tens, in every ten there are ten units.
+The first rank has $r$ values, the next one has $r * r = r^2$. Appending a new rank increases the number of values by $r$ times. For example, in decimal system in every thousand there are ten hundreds, in every hundred there are ten tens, in every ten there are ten units.
 
 As a result, in positional system with an arbitrary radix $r$, any number $N$ can be written in a unique fashion in the form:
 
@@ -145,13 +148,13 @@ Is is much easier to construct a machine to distinguish between two possibi
 
 ### Hexadecimal system
 
-Another positional system widely used in computer technologies is hexadecimal (base-16). Since there are no traditional numerals to represent the quantitites from ten to fifteen, alphabetic letters is used as a substitute. The system uses the same set of symbols as the decimal: $0, 1, ... , 9$, and the sequence continues as $A, B, ..., F$ to represent numbers $10, 11, ..., 15$ respectively.
+Another positional system widely used in computer technologies is hexadecimal (base-16). Since there are no traditional numerals to represent the quantities from ten to fifteen, alphabetic letters is used as a substitute. The system uses the same set of symbols as the decimal: $0, 1, ... , 9$, and the sequence continues as $A, B, ..., F$ to represent numbers $10, 11, ..., 15$ respectively.
 
 The most common usage is low-level programming to represent memory address as two hexadecimal numbers. Another widespread use case is <abbr title="Red Green Blue">RGB</abbr> color notation as three hexadecimal numbers.
 
 ## Converting number from one radix to another
 
-There are a lot of algorithms to convert a number from one numeral base to another. The thing is, for practial purposes two algorithms is enough: from arbitrary radix into decimal and vice versa. Using the decimal system as an intermidiate value, we can convert numbers in two steps.
+There are a lot of algorithms to convert a number from one numeral base to another. The thing is, for practical purposes two algorithms is enough: from arbitrary radix into decimal and vice versa. Using the decimal system as an intermediate value, we can convert numbers in two steps.
 
 It is important to note, usually you won’t do conversion on your own. Let’s leave this job for a computer. Understanding how conversion works is the main purpose why we may convert the numbers ourselves.
 
@@ -165,9 +168,7 @@ The structure of a number is like a molecule. Molecule is a unique combina
 
 In other words, to represent any number in positional system with radix $r$, the number should be broken into special size groups, and each group can be used $r - 1$ times before a bigger group - rank appears.
 
-<Interactive.DisassemblingNumber
-	t="{t["disassembling-number"]}"
-/>
+<Interactive.DisassemblingNumber />
 
 As the result, converting the number from some radix to another boils down to constructing or breaking it down into groups.
 
@@ -179,15 +180,13 @@ The resulting ranks should be formed using the “greedy algorithm” approach:
 
 1. Determine the largest $r^n$ value not exceeding the input value;
 2. Subtract the largest $r^n$ value as many times as possible; the power $n$ marks the rank order and the number of subtractions define the rank value;
-3. Repeat steps $1, 2$ ubtil the input turns into zero.
+3. Repeat steps $1, 2$ until the input turns into zero.
 
 It is important not to skip unused powers while recording the result. All ranks should be in place in order. If some power was unused - zero is placed on it’s place.
 
 You can see how the arbitrary decimal number converted into arbitrary radix number step-by-step below:
 
-<Interactive.DecimalConversionStages
-	t="{t["decimal-conversion-stages"]}"
-/>
+<Interactive.DecimalConversionStages />
 
 ### Converting the number in arbitrary radix to decimal
 
@@ -198,9 +197,7 @@ There is no extra work need to be done because we do calculations using us
 1. Break down the number into ranks $a_n, ... a_2, a_1, a_0$, where $a$ - is the value, and $n$ is it’s power;
 2. Find the sum using the [the formula](#positional-number-formula);
 
-<Interactive.NumberIntoDecimal
-	t="{t["number-into-decimal"]}"
-/>
+<Interactive.NumberIntoDecimal />
 
 ## Exercise
 
@@ -212,9 +209,7 @@ You can use the provided virtual keyboard for input. Focusing (for example, on t
 
 A failed attempt does not carry any penalty, you can try again and again as many times as you want to.
 
-<Interactive.Challenge
-	t="{t["exercise"]}"
-/>
+<Interactive.Challenge />
 
 ## Related resources
 

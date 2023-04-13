@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { MathExp } from "@components";
 	import { FormNumerals } from "../../components";
 	import { getConversionStages, getRanks } from "./decimal-conversion-stages.helpers";
@@ -7,7 +8,8 @@
 
 	export let number = "101";
 	export let outputRadix = 2;
-	export let t: Record<string, string>;
+
+	const t: Record<string, string> = getContext("t")["decimal-conversion-stages"];
 
 	let valid = true;
 

@@ -36,7 +36,7 @@
 	width: max-content;
 }
 
-@media screen and (max-width: 48em) {
+@media screen and (width <= 48em) {
 	.masthead {
 		--header-height: fit-content;
 
