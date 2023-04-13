@@ -78,4 +78,4 @@ website: "https://radix.vercel.app/"
 [radix-next]: https://radix.vercel.app/
 [npm]: https://www.npmjs.com/package/@ericrovell/radix
 [safe-int]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger
-[blogpost]: /ru/blog/%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F
+[blogpost]: /ru/writing/%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F

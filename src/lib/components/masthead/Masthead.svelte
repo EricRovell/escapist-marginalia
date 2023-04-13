@@ -1,7 +1,7 @@
 <script lang="ts">
 	import {
 		pathHome,
-		pathBlog,
+		pathWriting,
 		pathGallery,
 		pathProjects,
 		pathBookmarks,
@@ -31,8 +31,8 @@
 			<Navigation.Item href={$pathHome} pattern={/\/home/}>
 				{$t("sections.home")}
 			</Navigation.Item>
-			<Navigation.Item href={$pathBlog} pattern={/\/blog|\/content/}>
-				{$t("sections.blog")}
+			<Navigation.Item href={$pathWriting} pattern={/\/blog|\/content/}>
+				{$t("sections.writing")}
 			</Navigation.Item>
 			<Navigation.Item href={$pathGallery} pattern={/\/gallery/}>
 				{$t("sections.gallery")}

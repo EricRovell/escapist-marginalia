@@ -1,7 +1,7 @@
 {
-	"name": "ericrovell.me",
-	"version": "0.6.0",
-	"description": "Personal blog about programming and photography",
+	"name": "escapist-marginalia",
+	"version": "0.0",
+	"description": "Some escapist's corner about math, programming, photography, and more...",
 	"scripts": {
 		"lint": "eslint src/**/*.{ts,js,svelte}",
 		"stylelint": "npx stylelint src/**/*.css",
@@ -16,7 +16,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ericrovell/ericrovell.me.git"
+		"url": "git+https://github.com/ericrovell/escapist-marginalia.git"
 	},
 	"keywords": [
 		"blog",
@@ -26,7 +26,7 @@
 	],
 	"author": "Eric Rovell",
 	"types": "index.d.ts",
-	"homepage": "https://github.com/ericrovell/ericrovell.me#readme",
+	"homepage": "https://github.com/ericrovell/escapist-marginalia#readme",
 	"directories": {
 		"test": "tests"
 	},

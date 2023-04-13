@@ -22,7 +22,7 @@ const config = {
 				"*",
 				"/rss.xml"
 			],
-			origin: "https://eric-rovell.vercel.app",
+			origin: "https://escapist-marginalia.vercel.app",
 			handleMissingId: "ignore"
 		}
 	}

@@ -4,7 +4,7 @@
 	import { t, locale, i18nTemplate } from "@core/i18n";
 	import { find } from "@utils/query";
 	import { iconPi, iconImg, iconNumberE, iconGlobe } from "@lib/components/icons/default";
-	import styles from "./blog.module.css";
+	import styles from "./writing.module.css";
 
 	import type { Blogpost } from "../../../types";
 	import type { QueryItem } from "@utils/query";

@@ -10,7 +10,7 @@
 		pathSource,
 		pathLicense,
 		pathPrivacy,
-		pathBlog,
+		pathWriting,
 		pathGallery,
 		pathSketch,
 		pathBookmarks,
@@ -19,7 +19,7 @@
 	} from "@core/paths";
 
 	$: links = [
-		{ label: "blog", href: $pathBlog },
+		{ label: "writing", href: $pathWriting },
 		{ label: "gallery", href: $pathGallery },
 		{ label: "sketch", href: $pathSketch },
 		{ label: "bookmarks", href: $pathBookmarks },

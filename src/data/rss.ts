@@ -17,7 +17,7 @@ const renderHead: RenderHead = (origin, locale = "en", buildDate = new Date()) =
 };
 
 const renderItem = ({ title, slug, description, created, lang }: Blogpost, origin: string) => {
-	const itemURL = `${origin}/${lang}/blog/${slug}`;
+	const itemURL = `${origin}/${lang}/writing/${slug}`;
 
 	return `
 		<item>
