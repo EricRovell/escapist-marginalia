@@ -84,4 +84,4 @@ Another project uses this package is [numeral systems converter][radix-next]. At
 [radix-next]: https://radix.vercel.app/
 [npm]: https://www.npmjs.com/package/@ericrovell/radix
 [safe-int]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger
-[blogpost]: /en/blog/numeral-systems
+[blogpost]: /en/writing/numeral-systems
