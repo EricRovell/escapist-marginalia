@@ -10,3 +10,5 @@ vite.config.js.timestamp*
 
 !/static/img/cover-*.jpg
 !/static/img/cover-*.png
+!/static/img/blogpost-*.jpg
+!/static/img/blogpost-*.png
