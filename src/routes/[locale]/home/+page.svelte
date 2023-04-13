@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { pathBlog, pathGallery, pathProjects } from "@paths";
+	import { pathWriting, pathGallery, pathProjects } from "@paths";
 	import { PageMeta, Link, CardArticle, CardProject, Gallery } from "@components";
 	import { LayoutPage } from "@layout";
 	import { t } from "@core/i18n";
@@ -25,7 +25,7 @@
 			<div>
 				<header>
 					<h2 class="heading">{$t("dict.recent-posts")}</h2>
-					<Link href={$pathBlog}>
+					<Link href={$pathWriting}>
 						&#x2192; {$t("dict.all-posts")}
 					</Link>
 				</header>
