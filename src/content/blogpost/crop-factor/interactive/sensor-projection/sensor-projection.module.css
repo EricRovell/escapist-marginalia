@@ -9,7 +9,6 @@
 	display: grid;
 	grid-template: 40vh / calc(60vh + var(--space-4)) calc(40vh + var(--space-4));
 	place-items: center;
-	gap: var(--space-4);
 	margin-bottom: var(--space-4);
 	padding: var(--space-2);
 	overflow-x: auto;
@@ -18,6 +17,7 @@
 
 .content > svg {
 	height: 100%;
+	max-width: 90vw;
 	width: fit-content;
 	scroll-snap-align: center;
 }
