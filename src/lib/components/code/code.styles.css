@@ -66,6 +66,11 @@ pre[class*="language-"] {
 
 /* labels */
 
+/* no label */
+pre[class*="language-undefined"]::before {
+	display: none;
+}
+
 pre[class*="language-"]::before {
 	content: "Code";
 	position: sticky;
@@ -77,6 +82,9 @@ pre[class*="language-"]::before {
 
 pre[class*="language-"] > code {
 	padding: var(--space-3-rel) var(--space-4-rel);
+}
+
+pre:not([class*="language-"]) > code {
 	border-top: 1.5px solid #7A83E35B;
 }
 

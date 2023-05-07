@@ -3,9 +3,17 @@ name: Vercel Deployment
 
 on:
   push:
-    branches: [ main, prod ]
+    branches: 
+      - main
+      - prod
+    paths-ignore:
+      - "**/README.md"
   pull_request:
-    branches: [ main, prod ]
+    branches: 
+      - main
+      - prod
+    paths-ignore:
+      - "**/README.md"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -42,6 +50,7 @@ jobs:
 
   push_to_vercel:
 
+    needs: build_test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

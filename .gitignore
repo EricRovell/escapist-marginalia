@@ -3,8 +3,7 @@
 /node_modules
 /static/img/*
 /src/data/gallery.json
-/inspiration
-/illustrations
+/workfiles
 .vercel
 vite.config.js.timestamp*
 
