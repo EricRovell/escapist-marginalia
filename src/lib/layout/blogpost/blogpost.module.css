@@ -41,8 +41,12 @@
 	color: var(--surface-1-text-contrast);
 }
 
-.article :is(h2, h3, h4, h5, h6):not([class]) {
-	margin-block: var(--space-3-rel) var(--space-2-rel);
+.article h2:not([class]) {
+	margin-block: var(--space-3-rel) var(--space-1-rel);
+}
+
+.article :is(h3, h4, h5, h6):not([class]) {
+	margin-block-end: var(--space-1-rel);
 }
 
 .article :is(h2, h3, h4, h5, h6):not([class]) a {
