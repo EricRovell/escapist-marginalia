@@ -4,7 +4,6 @@
 
 <script lang="ts">
 	import { theme } from "@stores";
-	import { t } from "@core/i18n";
 	import ThemeIcon from "./ThemeIcon.svelte";
 	import styles from "./theme-select.module.css";
 
