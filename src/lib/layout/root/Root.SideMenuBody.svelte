@@ -31,6 +31,12 @@
 	</Navigation.Container>
 </section>
 <section label="controls" class="{styles.controls}">
-	<ThemeSelect labeled />
-	<NavLocale labeled />
+	<div>
+		<span>{$t("dict.theme")}:</span>
+		<ThemeSelect labeled />
+	</div>
+	<div>
+		<span>{$t("dict.language")}:</span>
+		<NavLocale />
+	</div>
 </section>
