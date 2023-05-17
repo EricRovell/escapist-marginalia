@@ -38,11 +38,23 @@
 }
 
 .controls {
-	--theme-toggle-size: 1.5em;
-
 	display: grid;
-	grid-template: 1fr / repeat(2, 1fr);
-	gap: var(--space-2-rel);
-	margin-block: var(--space-3) var(--space-9);
+	grid-template: 2rem / repeat(2, 1fr);
+	gap: var(--space-4-rel);
+	margin-block: var(--space-4) var(--space-10);
 	font-size: var(--font-size-0);
+}
+
+.controls > div > span {
+	display: inline-flex;
+	margin-block-end: var(--space-2-rel);
+	text-transform: capitalize;
+}
+
+.controls nav {
+	height: 100%;
+}
+
+.controls a[aria-current] {
+	background-color: var(--surface-4);
 }

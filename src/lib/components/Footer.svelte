@@ -65,7 +65,10 @@
 				</span>
 				<span>{$t("message.build-at")} <Datetime date={"__buildTime__"} /></span>
 			</p>
-			<NavLocale labeled />
+			<div class="locale">
+				<span>{$t("dict.language")}:</span>
+				<NavLocale />
+			</div>
 		</section>
 	</div>
 </footer>
@@ -125,6 +128,12 @@
 
 	p :global(time) {
 		color: var(--surface-2-text-contrast);
+	}
+
+	.locale span {
+		display: flex;
+		text-transform: capitalize;
+		margin-block-end: var(--space-2-rel);
 	}
 
 	@media (max-width: 540px) {
