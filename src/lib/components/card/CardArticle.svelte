@@ -6,8 +6,8 @@
 	import Datetime from "../Datetime.svelte";
 	import { Link } from "../link";
 	import { Image } from "../image";
-
 	import { pathBlogpost } from "@core/paths";
+	import stylesCard from "./card.module.css";
 	import styles from "./card-article.module.css";
 
 	export let cover: Blogpost["cover"];
@@ -18,7 +18,7 @@
 	export let slug: Blogpost["slug"];
 </script>
 
-<article class="surface-2 {styles["card"]}">
+<article class="surface-2 {stylesCard.card} {styles.card}">
 	<Image
 		alt="The article cover image"
 		height="{500}"

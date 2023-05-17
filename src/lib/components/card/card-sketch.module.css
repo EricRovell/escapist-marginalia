@@ -1,5 +1,4 @@
 .card {
-	border-radius: var(--radius-m);
 	justify-self: center;
 	width: 100%;
 }
@@ -18,12 +17,6 @@
 	width: 100%;
 	height: min-content;
 	background-color: var(--surface-1);
-}
-
-.card figure {
-	overflow: hidden;
-	border: 3px solid var(--color-border);
-	border-radius: var(--radius-m);
 }
 
 .card figcaption {

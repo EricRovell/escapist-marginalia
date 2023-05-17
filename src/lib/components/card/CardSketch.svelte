@@ -5,6 +5,7 @@
 <script lang="ts">
 	import { Link } from "../link";
 	import { Image } from "../image";
+	import stylesCard from "./card.module.css";
 	import styles from "./card-sketch.module.css";
 
 	export let cover: string;
@@ -13,7 +14,7 @@
 	export let url: Sketch["url"];
 </script>
 
-<article class="surface-2 {styles["card"]}">
+<article class="surface-2 {stylesCard.card} {styles.card}">
 	<Link href="{url}">
 		<figure>
 			<Image alt="{description}" src="{cover}" width="{500}" height="{500}" />

@@ -3,8 +3,6 @@
 	grid-template-rows: repeat(2, min-content) 1fr;
 	gap: var(--space-3-rel);
 	height: 100%;
-	border: 2px solid var(--color-border);
-	border-radius: var(--radius-l);
 	padding: var(--space-3-rel);
 }
 
@@ -13,34 +11,17 @@
 	color: var(--color-heading);
 }
 
-.links {
-	--icon-size: 1.5em;
-
-	display: flex;
-	flex-wrap: wrap;
-	place-content: flex-end;
-	align-items: center;
-	font-size: var(--font-size-0);
-	width: fit-content;
-	margin-inline: auto 0;
-	height: 100%;
-}
-
 .card footer {
 	display: flex;
 	flex-flow: column;
+	justify-content: flex-end;
 	gap: var(--space-2-rel);
-}
-
-.links a {
-	display: flex;
-	border-radius: var(--radius-s);
-	padding: var(--space-2-rel);
 }
 
 .techstack {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: flex-end;
 	gap: var(--space-2-rel);
 	color: var(--surface-2-text-less-contrast);
 	font-size: var(--font-size-0);
