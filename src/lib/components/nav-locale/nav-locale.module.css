@@ -1,39 +1,24 @@
-/* not:labeled */
-.locale-route {
+.nav {
+	display: grid;
+	grid-template: 1fr / 1fr 1fr;
+	height: 100%;
 	border: 2px solid var(--color-border);
 	border-radius: var(--radius-s);
 	font-size: inherit;
 	text-transform: capitalize;
 }
 
-.locale-route a {
-	border-radius: var(--radius-s);
+.nav > a {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	padding: var(--space-2-rel);
-	width: 100%;
+	padding: var(--space-1-rel);
 }
 
-.locale-route:hover {
-	background-color: var(--surface-2);
+.nav > a:hover {
+	outline: 3px solid var(--color-border);
 }
 
-.locale-route:global(.labeled) a {
-	display: flex;
-	align-items: center;
-	padding: var(--space-2-rel);
-}
-
-.locale-route:hover > a:not(:global(.disabled)) {
-	text-decoration: unset;
-}
-
-.locale {
-	text-transform: uppercase;
-}
-
-.locale-route:global(.labeled) {
-	display: flex;
-	align-items: center;
+.nav > a[aria-current] {
+	background-color: var(--surface-3);
 }
