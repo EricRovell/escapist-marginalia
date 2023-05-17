@@ -4,30 +4,29 @@
 	import { Link } from "../link";
 	import styles from "./nav-locale.module.css";
 
-	export let labeled = false;
-
 	const regex = /^\/(ru|en)\//;
 
 	$: pathname = $page.url.pathname;
-	$: route = $locale === "ru"	? "en" : "ru";
+	$: route = $locale === "ru" ? "en" : "ru";
 	$: href = (regex.test(pathname))
 		? pathname.replace(regex, "")
 		: "home";
 </script>
 
-<nav class={styles["locale-route"]} class:labeled>
+<nav
+	class={styles.nav}
+	title={$t("tooltip.change-locale")}
+>
 	<Link
-		active={$locale === route}
-		href={`/${route}/${href}`}
-		title={$t("tooltip.change-locale")}
+		aria-current={$locale === "en" ? true : undefined}
+		href={`/en/${href}`}
 	>
-		{#if labeled}
-			<span>
-				{$t("dict.language")}:
-			</span>
-		{/if}
-		<span class="{styles.locale}">
-			{route}
-		</span>
+		<span>EN</span>
+	</Link>
+	<Link
+		aria-current={$locale === "ru" ? true : undefined}
+		href={`/ru/${href}`}
+	>
+		<span>RU</span>
 	</Link>
 </nav>

@@ -1,5 +1,30 @@
+.nav {
+	display: grid;
+	grid-template: 1fr / 1fr 1fr;
+	height: 100%;
+	border: 2px solid var(--color-border);
+	border-radius: var(--radius-s);
+	font-size: inherit;
+	text-transform: capitalize;
+}
+
+.nav > a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: var(--space-1-rel);
+}
+
+.nav > a:hover {
+	outline: 3px solid var(--color-border);
+}
+
+.nav > a[aria-current] {
+	background-color: var(--surface-3);
+}
+
 /* not:labeled */
-.locale-route {
+/* .locale-route {
 	border: 2px solid var(--color-border);
 	border-radius: var(--radius-s);
 	font-size: inherit;
@@ -36,4 +61,4 @@
 .locale-route:global(.labeled) {
 	display: flex;
 	align-items: center;
-}
+} */
