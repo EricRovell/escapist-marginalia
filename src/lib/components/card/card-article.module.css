@@ -2,10 +2,7 @@
 	display: grid;
 	grid-template-rows: repeat(3, min-content) 1fr;
 	height: 100%;
-	border: 2px solid var(--color-border);
-	border-radius: var(--radius-l);
 	padding-block-end: var(--space-5);
-	overflow: hidden;
 }
 
 .card > picture {

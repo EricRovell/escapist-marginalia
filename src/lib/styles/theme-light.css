@@ -35,6 +35,7 @@
 		--color-link-active-bg: var(--color-blue-700);
 
 		--color-border: var(--color-blue-300);
+		--color-border-accent: var(--color-blue-600);
 		--color-border-50: #B4B8F180;
 
 		--focus-ring-color: var(--color-blue-300);
@@ -140,6 +141,7 @@
 	--color-link-active-bg: var(--color-blue-700);
 
 	--color-border: var(--color-blue-300);
+	--color-border-accent: var(--color-blue-600);
 	--color-border-50: #B4B8F180;
 
 	--focus-ring-color: var(--color-blue-300);
