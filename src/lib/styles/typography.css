@@ -21,22 +21,26 @@
 @font-face {
 	font-family: Montserrat-VF;
 	src: url("/fonts/Montserrat-VF.woff2") format("woff2-variations");
+	font-display: swap;
 }
 
 @font-face {
 	font-family: yanone-kaffeesatz-variable;
 	src: url("/fonts/yanone-kaffeesatz-variable-wght.woff2") format("woff2-variations");
+	font-display: swap;
 }
 
 /* fallbacks, regular */
 @font-face {
 	font-family: Montserrat-Medium-Regular;
 	src: url("/fonts/Montserrat-Medium-Regular.woff2") format("woff2");
+	font-display: swap;
 }
 
 @font-face {
 	font-family: yanone-kaffeesatz-regular;
 	src: url("/fonts/yanone-kaffeesatz-variable-wght.ttf") format("ttf");
+	font-display: swap;
 }
 
 @supports (font-variation-settings: normal) {

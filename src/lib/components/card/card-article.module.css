@@ -9,6 +9,11 @@
 	background-color: var(--surface-1);
 }
 
+.card img {
+	aspect-ratio: 2 / 1;
+	object-fit: contain;
+}
+
 .card > :not(picture) {
 	padding-inline: var(--space-3);
 }

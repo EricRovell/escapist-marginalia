@@ -10,19 +10,19 @@
 	background-color: var(--masthead-bg, transparent);
 }
 
-.masthead > section[label="logo"] {
+.masthead > section[data-label="logo"] {
 	--icon-size: 1.5em;
 
 	grid-area: logo;
 	justify-self: start;
 }
 
-.masthead > section[label="navigation"] {
+.masthead > section[data-label="navigation"] {
 	grid-area: navigation;
 	font-size: var(--font-size-0);
 }
 
-.masthead > section[label="controls"] {
+.masthead > section[data-label="controls"] {
 	--theme-toggle-size: 1.5em;
 
 	grid-area: controls;
@@ -44,12 +44,12 @@
 		grid-template-areas: "logo";
 	}
 
-	.masthead > section[label="logo"] {
+	.masthead > section[data-label="logo"] {
 		place-self: center;
 	}
 
-	.masthead > section[label="navigation"],
-	.masthead > section[label="controls"] {
+	.masthead > section[data-label="navigation"],
+	.masthead > section[data-label="controls"] {
 		display: none;
 	}
 }
