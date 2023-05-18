@@ -22,7 +22,6 @@
 	<Image
 		alt="The article cover image"
 		height="{500}"
-		lazy
 		src="{cover}"
 		width="{500}"
 	/>
