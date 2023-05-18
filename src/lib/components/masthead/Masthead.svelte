@@ -21,12 +21,12 @@
 </script>
 
 <header class={`container ${styles.masthead}`}>
-	<section label="logo">
-		<Link block href={$pathHome}>
+	<section data-label="logo">
+		<Link block href={$pathHome} aria-label="Escapist Marginalia Logo">
 			<Icon path={logo} />
 		</Link>
 	</section>
-	<section label="navigation">
+	<section data-label="navigation">
 		<Navigation.Container>
 			<Navigation.Item href={$pathHome} pattern={/\/home/}>
 				{$t("sections.home")}
@@ -51,7 +51,7 @@
 			</Navigation.Item>
 		</Navigation.Container>
 	</section>
-	<section label="controls">
+	<section data-label="controls">
 		<LocaleRoute />
 		<ThemeSelect />
 	</section>
