@@ -92,7 +92,7 @@
 		</aside>
 	</section>
 	<h1 class="{styles.title}">
-		&ldquo{data.title}&rdquo
+		{data.title}
 	</h1>
 	<div class="{styles.metadata}">
 		<section>
