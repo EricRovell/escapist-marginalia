@@ -59,6 +59,7 @@ pre[class*="language-"] {
 	border-radius: var(--radius-m);
 	border: 2px solid #7A83E35B;
 	font-size: 0.85em;
+	font-family: inherit;
 	background: var(--code-background);
 	scrollbar-width: 4px;
 	scrollbar-color: var(--scroll-thumb-color) var(--scroll-track-color);
@@ -84,8 +85,8 @@ pre[class*="language-"] > code {
 	padding: var(--space-3-rel) var(--space-4-rel);
 }
 
-pre:not([class*="language-"]) > code {
-	border-top: 1.5px solid #7A83E35B;
+pre:not([class*="language-undefined"]) > code {
+	border-top: 2px solid #7A83E35B;
 }
 
 pre[class="language-python"]::before {

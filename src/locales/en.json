@@ -51,7 +51,7 @@
 		"content-language": "content language",
 		"toc": "Table of contents",
 		"published": "Published at",
-		"updated": "Updated at",
+		"updated": "Last updated at",
 		"available-translation": "Blogpost is also available in",
 		"build-at": "Build at",
 		"blogpost-counter": "Showing %s blogposts of %s"

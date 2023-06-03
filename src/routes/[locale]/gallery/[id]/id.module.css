@@ -1,6 +1,5 @@
 .container {
 	width: 100%;
-	height: min-content;
 }
 
 /* img section */
@@ -14,7 +13,7 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: min-content;
+	height: 75vh;
 	padding: var(--space-7);
 }
 

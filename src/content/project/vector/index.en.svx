@@ -1,0 +1,119 @@
+---
+description: "Euclidian vector library written in TypeScript."
+featured: true
+lang: "en"
+layout: project
+maintained: true
+name: "vector"
+npm: https://www.npmjs.com/package/@ericrovell/vector
+repository: "EricRovell/vector"
+techstack: [ "TypeScript" ]
+type: "library"
+updated: 2023-06-04T00:25:00.000Z
+---
+
+## Motivation
+
+Since my university days, I have been fascinated by various mathematical visualizations. At that time it looked terribly complicated to create. There was not even tiny though I could do something like this myself.
+
+Much later having become interested in programming, I came across a wonderful channel [The Coding Train][the-coding-train]. The channel is hosted by Daniel Shiffman, he delivers engaging lectures on a wide variery of topics using JavaScript and Processing, including [a series of challenges][challenges] in which Daniel implements ideas submitted by subscribers while streaming.
+
+Repeating challenge after challenge, I have learned a lot. When using JavaScript as his tool of choice, he uses the [p5js] library. The library itself is like swiss army knife for generative coding in JavaScript. It is really friendly for newcomers, allowing to create generative sketches in shortes time possible.
+
+Over time, having gained experience and having the desire to try to do something on my own, I settled away from the [p5js] into vanilla JavaScript territory. There were quite a few positives to this; for example, I learned the `Canvas API`, and stopped lugging around a bunch of unused library code ([p5js] itself is not that small, almost a whole megabyte *compressed*, and it does not support three-shaking).
+
+By not using the library anymore, I lost access to some essential entities required to create visualizations. One of them is `[P5.Vector][p5-vector]`, which is provided by [p5js] out of the box. Many visualizations use vectors. Well, they are not *required* to use, but using them you can make the code simple and more readable.
+
+It is for these purposes that the [vector] were created. Having studied the available alternatives and gathering all the best together, not I have at hand a convenient and multifunctional tool for my own needs.
+
+## Functionality
+
+[`vector`][vector] is a [euclidian vector][vector-wiki] library written in *TypeScript*.
+
+You can try it out in action using [npm]:
+
+```
+npm i @ericrovell/vector
+```
+
+After the installation you need to import the `vector` constructor function and you are ready for action:
+
+```js
+import { vector } from "@ericrovell/vector";
+
+const v1 = vector(1, 2, 3);
+console.log(vector.toString()); // "(1, 2, 3)"
+```
+
+### Flexibility
+
+One of the advantages of the `[vector]` is the flexibility of user input.
+
+The constructor supports a Cartesian coordinate system to be used as a numeric triplet, an object, or an array. The [polar] and [cylindrical] coordinate systems are also supported. All the required types are already included in the package:
+
+```ts
+import type { Cartesian, Polar, Cylindrical } from "@ericrovell/vector";
+
+// Cartesian
+vector(1, 2, 3);
+vector([ 1, 2, 3]);
+vector({ x: 1, y: 2, z: 3} as Cartesian);
+
+// Polar
+vector({
+	phi: Math.PI,
+	theta: Math.PI / 2,
+	magnitude: 5
+} as Polar);
+
+// Cylindrical
+vector({
+	phi: Math.PI,
+	p: 5,
+	z: 8
+} as Cylindrical);
+
+```
+
+### Methods
+
+All methods that take a vector as an argument have the same flexibility of the constructor and accept the same data types as an input. Of course, other `vector` instances can also be used.
+
+```js
+import { vector } from "@ericrovell/vector";
+
+const v1 = vector(1, 2, 3);
+const v2 = vector({ x: -1, y: -2, z: -3 });
+
+console.log(
+	v1.add({ x: -1, y: -2, z: -3 }).toString()
+); // -> "(0, 0, 0)"
+
+console.log(
+	v1.add(v2).toString()
+); // -> "(0, 0, 0)"
+```
+
+### Immutability
+
+The library provides the ability to work in functional immutable style. However, most methods also have a mutable `twin` method. There are a naming convention used that mutable methods have *self* postfix, like `.add()` and `.addSelf()`.
+
+## What I learned
+
+While working on the libraty I learned a lot of small yet important details needed to publish a high quality [npm] package.
+
+Also I put into practice some new knowledge about symbols that can be used to add functionality into class instances. For example, I used [`Symbol.iterator`][symbol-iterator] to allow `vector` instances to be iterated over using `for ... of` loop, and [`Symbol.toPrimitive`][symbol-to-primitive] to add type coersion. In fact, small little thing the library could be used without, to be honest. Still, that was interesting to me.
+
+In addition to the above, I managed to refresh my linear algebra knowledge a bit.
+
+[the-coding-train]: https://www.youtube.com/@TheCodingTrain
+[challenges]: https://www.youtube.com/watch?v=17WoOqgXsRM&list=PLRqwX-V7Uu6ZiZxtDDRCi6uhfTH4FilpH
+[p5js]: https://p5js.org/
+[p5-vector]: https://p5js.org/reference/#/p5.Vector
+[vector]: https://github.com/EricRovell/vector
+[npm]: https://www.npmjs.com/package/@ericrovell/vector
+[vector-wiki]: https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)
+[polar]: https://en.wikipedia.org/wiki/Polar_coordinate_system
+[cylindrical]: https://en.wikipedia.org/wiki/Cylindrical_coordinate_system
+[symbol-iterator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator
+[symbol-to-primitive]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive

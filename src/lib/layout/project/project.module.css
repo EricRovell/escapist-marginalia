@@ -48,7 +48,8 @@
 }
 
 .article :is(h2, h3, h4, h5, h6):not([class]):hover a,
-.article :is(h2, h3, h4, h5, h6):not([class]):focus a {
+.article :is(h2, h3, h4, h5, h6):not([class]):focus a,
+.article :is(h2, h3, h4, h5, h6):not([class]) a:focus-visible {
 	opacity: 1;
 }
 
