@@ -8,11 +8,6 @@
 	text-align: center;
 }
 
-.wrapper > *,
-.wrapper > footer > *:not(:last-child) {
-	margin-block-end: var(--space-5-rel);
-}
-
 .wrapper > h1 {
 	font-family: var(--font-secondary);
 	text-align: center;
@@ -25,7 +20,13 @@
 	text-align: center;
 	max-inline-size: 45ch;
 	line-height: 1.4;
-	margin-block-end: var(--space-7-rel);
+	margin-block-end: var(--space-1-rel);
+}
+
+.wrapper > p:last-of-type {
+	margin-block-end: var(--space-4-rel);
+	font-size: 1em;
+	color: var(--surface-1-text-less-contrast);
 }
 
 .wrapper > footer {
@@ -39,6 +40,7 @@
 	justify-content: center;
 	gap: var(--space-2-rel);
 	color: var(--color-info);
+	margin-block-end: var(--space-3-rel);
 }
 
 .keywords li {

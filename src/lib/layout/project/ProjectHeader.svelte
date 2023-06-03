@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { Link, Icon } from "@components";
+	import { Link, Icon, Datetime } from "@components";
 	import { iconGithub, iconNpm, iconURL } from "$lib/components/icons/default";
+	import { t } from "@core/i18n";
 	import type { Project } from "@types";
 	import styles from "./project-header.module.css";
 
@@ -10,6 +11,7 @@
 	export let repository: Project["repository"];
 	export let techstack: Project["techstack"] = [];
 	export let website: Project["website"];
+	export let updated: Project["updated"];
 
 	const links = [
 		{ href: repository, title: "Github", icon: iconGithub },
@@ -23,6 +25,7 @@
 		{name}
 	</h1>
 	<p>{description}</p>
+	<p>{$t("message.updated")} <Datetime date="{updated}" /></p>
 	<footer>
 		<ul class="{styles.keywords}">
 			{#each techstack as keyword}
