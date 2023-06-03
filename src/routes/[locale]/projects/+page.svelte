@@ -25,15 +25,12 @@
 	</svelte:fragment>
 	<article class={styles.layout}>
 		<ul class={styles.projects}>
-			{#each projects as { name, description, repository, npm, website, techstack }}
+			{#each projects as { name, description, techstack }}
 				<li class={styles.project}>
 					<CardProject
 						{description}
-						{npm}
 						{name}
-						{repository}
 						{techstack}
-						{website}
 					/>
 				</li>
 			{/each}
