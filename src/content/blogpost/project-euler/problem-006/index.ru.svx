@@ -1,5 +1,5 @@
 ---
-cover: "/img/cover-project-euler-6.png"
+cover: https://storage.yandexcloud.net/escapist-marginalia/covers/project-euler-6.png
 created: 2022-10-03T00:31:00.000Z
 description: "Разность квадратичных сумм."
 keywords: [ "project euler", "math" ]

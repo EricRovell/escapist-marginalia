@@ -1,5 +1,5 @@
 ---
-cover: "/img/cover-chaos-game.png"
+cover: https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png
 created: 2022-09-10T01:34:00.000Z
 description: "Can be anything deterministic hidden behind the random?"
 keywords: [ "generative art", "math" ]

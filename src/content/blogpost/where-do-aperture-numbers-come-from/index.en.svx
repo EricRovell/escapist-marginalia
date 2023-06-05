@@ -1,5 +1,5 @@
 ---
-cover: "/img/cover-diaphragm.png"
+cover: https://storage.yandexcloud.net/escapist-marginalia/covers/diaphragm.png
 created: 2022-08-18T00:40:00.000Z
 description: "Let's find out, why aperture numbers are as they are and where do they come from and what is the point of this."
 keywords: [ "photography", "aperture", "f-number" ]
