@@ -1,10 +1,10 @@
-import { getGalleryItems } from "@data/photos";
+import { getGalleryItems } from "@data/gallery";
 import type { PageLoad } from "./$types";
 
-export const load: PageLoad = () => {
-	//let limit = Number(url.searchParams.get("limit"));
-	//limit = (!Number.isNaN(limit) && limit > 0) ? limit : 50;
+export const load: PageLoad = ({ params }) => {
+	const { locale = "en" } = params;
+
 	return {
-		items: getGalleryItems()
+		items: getGalleryItems({ lang: locale })
 	};
 };
