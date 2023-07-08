@@ -1,0 +1,105 @@
+.article {
+	display: grid;
+	line-height: 1.5;
+	font-size: var(--font-size-1);
+	padding-block: var(--space-7);
+	border-block-end: 1px solid var(--color-border-50);
+}
+
+.article:empty {
+	display: none;
+}
+
+.article > :last-child {
+	margin-block-end: 0;
+}
+
+.article > ol:not([class]),
+.article > ul:not([class]),
+.article > p {
+	margin-block-end: var(--space-3-rel);
+}
+
+/* headings */
+
+.article > h2 {
+	color: var(--color-heading);
+	margin-block: var(--space-3-rel) var(--space-1-rel);
+}
+
+.article > :is(h3, h4, h5, h6) {
+	color: var(--surface-1-text-contrast);
+	margin-block-end: var(--space-1-rel);
+}
+
+.article > :is(h2, h3, h4, h5, h6) a {
+	margin-inline-start: 0.25em;
+	font-size: 0.85em;
+	opacity: 0;
+	transition: opacity 0.125s linear;
+}
+
+.article > :is(h2, h3, h4, h5, h6):hover a,
+.article > :is(h2, h3, h4, h5, h6):focus a,
+.article > :is(h2, h3, h4, h5, h6) a:focus-visible {
+	opacity: 1;
+}
+
+.article > dl {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: var(--space-2);
+	padding: var(--space-3);
+}
+
+.article > dl dt {
+	font-size: 1.15em;
+	font-weight: 600;
+}
+
+.article > dl dd {
+	margin-left: var(--space-2);
+}
+
+.article > ul,
+.article > ol {
+	list-style-position: outside;
+	margin-inline-start: 1.5ch;
+	font-size: 0.9em;
+}
+
+.article > ul {
+	list-style: initial;
+}
+
+.article > ul li {
+	padding-inline-start: 1ch;
+	margin-left: 1ch;
+}
+
+.article > ul li::marker {
+	content: "»";
+	color: var(--color-blue-400);
+	font-size: 1.5em;
+}
+
+.article > ol {
+	list-style: decimal;
+}
+
+.article > ol li {
+	margin-left: 1.5ch;
+}
+
+.article > ol li:not(last-child) {
+	margin-bottom: var(--space-1-rel);
+}
+
+.article > ol li::marker {
+	color: var(--color-blue-400);
+}
+
+.article > abbr {
+	text-decoration: green dashed underline;
+	text-underline-offset: var(--space-1-rel);
+}
