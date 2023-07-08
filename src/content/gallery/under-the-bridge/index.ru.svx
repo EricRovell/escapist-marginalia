@@ -1,0 +1,49 @@
+---
+{
+	"camera": "Canon EOS 77D",
+	"dateCreated": 1688850025313,
+	"dateTaken": 1607517431000,
+	"description": "Зимний закат за мостом на финском заливе.",
+	"dominant": {
+		"b": 40,
+		"g": 120,
+		"r": 232
+	},
+	"fnumber": 13,
+	"focalLength": 300,
+	"fullsize": {
+		"height": 1445,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/under-the-bridge",
+		"width": 1800
+	},
+	"id": "under-the-bridge",
+	"iso": 100,
+	"keywords": [
+		"золотой час",
+		"вантовый мост под корабельным фарватером",
+		"солнце",
+		"закат"
+	],
+	"lang": "ru",
+	"layout": "gallery",
+	"lens": "TAMRON 16-300mm F/3.5-6.3 Di II VC PZD B016",
+	"og": {
+		"height": 630,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/under-the-bridge.og",
+		"width": 1200
+	},
+	"shutter": "1/320",
+	"slug": "золотой-час",
+	"thumbnail": {
+		"height": 361,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/under-the-bridge.thumb",
+		"width": 450
+	},
+	"thumbnailSquare": {
+		"height": 450,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/under-the-bridge.thumbsq",
+		"width": 450
+	},
+	"title": "Золотой час"
+}
+---

@@ -1,0 +1,48 @@
+---
+{
+	"camera": "SM-N960F",
+	"dateCreated": 1688850025285,
+	"dateTaken": 1619972886000,
+	"description": "Высокое дерево посреди леса, обволакивающее предзакатное небо.",
+	"dominant": {
+		"b": 8,
+		"g": 8,
+		"r": 8
+	},
+	"fnumber": 24,
+	"focalLength": 430,
+	"fullsize": {
+		"height": 2725,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/into-the-sky",
+		"width": 1800
+	},
+	"id": "into-the-sky",
+	"iso": 50,
+	"keywords": [
+		"облака",
+		"небо",
+		"деревья"
+	],
+	"lang": "ru",
+	"layout": "gallery",
+	"lens": "Samsung Galaxy Note 9 Rear Camera",
+	"og": {
+		"height": 630,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/into-the-sky.og",
+		"width": 1200
+	},
+	"shutter": "1/2100",
+	"slug": "начало-весны",
+	"thumbnail": {
+		"height": 681,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/into-the-sky.thumb",
+		"width": 450
+	},
+	"thumbnailSquare": {
+		"height": 450,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/into-the-sky.thumbsq",
+		"width": 450
+	},
+	"title": "Начало весны"
+}
+---

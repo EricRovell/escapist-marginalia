@@ -1,0 +1,48 @@
+---
+{
+	"camera": "SM-N960F",
+	"dateCreated": 1688850025288,
+	"dateTaken": 1615145905000,
+	"description": "The warm city lamp and rapidly falling snow.",
+	"dominant": {
+		"b": 24,
+		"g": 40,
+		"r": 72
+	},
+	"fnumber": 15,
+	"focalLength": 430,
+	"fullsize": {
+		"height": 2305,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/loneliness",
+		"width": 1800
+	},
+	"id": "loneliness",
+	"iso": 200,
+	"keywords": [
+		"night",
+		"snow",
+		"warm"
+	],
+	"lang": "en",
+	"layout": "gallery",
+	"lens": "Samsung Galaxy Note 9 Rear Camera",
+	"og": {
+		"height": 630,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/loneliness.og",
+		"width": 1200
+	},
+	"shutter": "1/50",
+	"slug": "loneliness",
+	"thumbnail": {
+		"height": 576,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/loneliness.thumb",
+		"width": 450
+	},
+	"thumbnailSquare": {
+		"height": 450,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/loneliness.thumbsq",
+		"width": 450
+	},
+	"title": "Loneliness"
+}
+---
