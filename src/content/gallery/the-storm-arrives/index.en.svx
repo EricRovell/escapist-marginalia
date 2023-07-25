@@ -1,8 +1,8 @@
 ---
 {
 	"camera": "Canon EOS 77D",
-	"dateCreated": 1688850025303,
-	"dateTaken": 1621446045000,
+	"dateCreated": "2023-07-25T21:07:24.462Z",
+	"dateTaken": "2021-05-19T17:40:45.000Z",
 	"description": "Two ships sailing at the raining sea before the storm.",
 	"dominant": {
 		"b": 88,

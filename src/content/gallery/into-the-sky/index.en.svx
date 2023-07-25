@@ -1,8 +1,8 @@
 ---
 {
 	"camera": "SM-N960F",
-	"dateCreated": 1688850025285,
-	"dateTaken": 1619972886000,
+	"dateCreated": "2023-07-25T21:07:24.450Z",
+	"dateTaken": "2021-05-02T16:28:06.000Z",
 	"description": "The tall tree within a wood under the blue sky covered in clouds.",
 	"dominant": {
 		"b": 8,

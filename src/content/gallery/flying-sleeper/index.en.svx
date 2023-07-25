@@ -1,8 +1,8 @@
 ---
 {
 	"camera": "Canon EOS 77D",
-	"dateCreated": 1688850025283,
-	"dateTaken": 1618594996000,
+	"dateCreated": "2023-07-25T21:07:24.447Z",
+	"dateTaken": "2021-04-16T17:43:16.000Z",
 	"description": "The Moon amongst the trees in the twilight sky.",
 	"dominant": {
 		"b": 120,

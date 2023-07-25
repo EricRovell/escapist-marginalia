@@ -1,8 +1,8 @@
 ---
 {
 	"camera": "Canon EOS 77D",
-	"dateCreated": 1688850025313,
-	"dateTaken": 1607517431000,
+	"dateCreated": "2023-07-25T21:07:24.470Z",
+	"dateTaken": "2020-12-09T12:37:11.000Z",
 	"description": "Зимний закат за мостом на финском заливе.",
 	"dominant": {
 		"b": 40,

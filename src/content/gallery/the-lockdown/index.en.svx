@@ -1,8 +1,8 @@
 ---
 {
 	"camera": "Canon EOS 77D",
-	"dateCreated": 1688850025300,
-	"dateTaken": 1626379401000,
+	"dateCreated": "2023-07-25T21:07:24.459Z",
+	"dateTaken": "2021-07-15T20:03:21.000Z",
 	"description": "The cityscape in summer evening with huge round building at the foreground.",
 	"dominant": {
 		"b": 120,

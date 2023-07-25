@@ -1,8 +1,8 @@
 ---
 {
 	"camera": "F8332",
-	"dateCreated": 1688850025292,
-	"dateTaken": 1534700280000,
+	"dateCreated": "2023-07-25T21:07:24.456Z",
+	"dateTaken": "2018-08-19T17:38:00.000Z",
 	"description": "Sunset at the sea with some rare scarlet clouds.",
 	"dominant": {
 		"b": 40,

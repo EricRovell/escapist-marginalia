@@ -1,8 +1,8 @@
 ---
 {
 	"camera": "Canon EOS 77D",
-	"dateCreated": 1688850025312,
-	"dateTaken": 1607517431000,
+	"dateCreated": "2023-07-25T21:07:24.468Z",
+	"dateTaken": "2020-12-09T12:37:11.000Z",
 	"description": "The sunset under the bridge with flying birds and city silhouette in background.",
 	"dominant": {
 		"b": 40,
