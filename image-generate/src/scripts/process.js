@@ -7,7 +7,7 @@ import ExifReader from "exifreader";
 import sharp from "sharp";
 import matter from "gray-matter";
 
-import { jsonStringifyOrdered, slugify, timestampFromString, resize } from "../helpers/index.js";
+import { jsonStringifyOrdered, slugify, toISOString, resize } from "../helpers/index.js";
 
 import { CONFIG } from "../../config.js";
 
@@ -28,7 +28,7 @@ async function parseImageMetadata(filePath) {
 	const data = {
 		camera: tags["Model"]?.description,
 		fnumber: tags["FNumber"]?.value[0],
-		dateTaken: timestampFromString(
+		dateTaken: toISOString(
 			tags["DateTimeDigitized"]?.description
 		),
 		description: tags["description"]?.description,
@@ -163,7 +163,7 @@ async function updateFrontmatter(data) {
 				lang: page.lang,
 				layout: "gallery",
 				slug: encodeURI(item.id),
-				dateCreated: Date.now(),
+				dateCreated: new Date().toISOString(),
 				...pageData.data
 			};
 
