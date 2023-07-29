@@ -1,5 +1,5 @@
 import { find } from "@utils/query";
-import type { GalleryItem, Locale, Page } from "../types";
+import type { GalleryItem, Page } from "../types";
 import type { QueryItem } from "@utils/query";
 
 async function fetchGalleryItems(): Promise<GalleryItem[]> {

@@ -14,6 +14,21 @@
 	margin-block-end: 0;
 }
 
+.article > ul,
+.article > ol {
+	list-style-position: outside;
+	margin-inline-start: 1.5ch;
+	font-size: 0.9em;
+}
+
+.article > ul {
+	list-style: initial;
+}
+
+.article > ol {
+	list-style: decimal;
+}
+
 .article > ol:not([class]),
 .article > ul:not([class]),
 .article > p {
@@ -61,17 +76,6 @@
 	margin-left: var(--space-2);
 }
 
-.article > ul,
-.article > ol {
-	list-style-position: outside;
-	margin-inline-start: 1.5ch;
-	font-size: 0.9em;
-}
-
-.article > ul {
-	list-style: initial;
-}
-
 .article > ul li {
 	padding-inline-start: 1ch;
 	margin-left: 1ch;
@@ -81,10 +85,6 @@
 	content: "»";
 	color: var(--color-blue-400);
 	font-size: 1.5em;
-}
-
-.article > ol {
-	list-style: decimal;
 }
 
 .article > ol li {

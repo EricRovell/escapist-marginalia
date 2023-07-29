@@ -9,6 +9,12 @@
 	padding-block: var(--space-7);
 }
 
+.header > p {
+	text-align: center;
+	max-inline-size: 50ch;
+	line-height: 1.4;
+}
+
 .header > h1,
 .header > p:first-of-type {
 	text-wrap: balance;
@@ -19,12 +25,6 @@
 	text-align: center;
 	max-inline-size: 65ch;
 	margin-block-end: var(--space-1-rel);
-}
-
-.header > p {
-	text-align: center;
-	max-inline-size: 50ch;
-	line-height: 1.4;
 }
 
 .header > p:first-of-type {
