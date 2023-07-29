@@ -26,21 +26,21 @@ async function parseImageMetadata(filePath) {
 		: [];
 
 	const data = {
-		camera: tags["Model"]?.description,
-		fnumber: tags["FNumber"]?.value[0],
+		camera: tags["Model"]?.description ?? "unknown",
+		fnumber: tags["FNumber"]?.value[0] ?? "unknown",
 		dateTaken: toISOString(
 			tags["DateTimeDigitized"]?.description
-		),
-		description: tags["description"]?.description,
-		focalLength: tags["FocalLength"]?.value[0],
+		) ?? "unknown",
+		description: tags["description"]?.description ?? "unknown",
+		focalLength: tags["FocalLength"]?.value[0] ?? "unknown",
 		id: slugify(
 			path.parse(filePath).name
-		),
-		iso: Number(tags["ISOSpeedRatings"]?.value),
+		) ?? "unknown",
+		iso: Number(tags["ISOSpeedRatings"]?.value) ?? "unknown",
 		keywords,
-		lens: tags["LensModel"]?.description,
-		title: tags["title"]?.description,
-		shutter: tags["ShutterSpeedValue"]?.description
+		lens: tags["LensModel"]?.description ?? "unknown",
+		title: tags["title"]?.description ?? "unknown",
+		shutter: tags["ShutterSpeedValue"]?.description ?? "unknown"
 	};
 
 	return data;
