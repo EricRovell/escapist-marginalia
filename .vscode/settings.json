@@ -1,5 +1,10 @@
 {
 	"files.associations": {
 		"*.svx": "markdown"
-	}
+	},
+	"eslint.validate": [
+		"javascript",
+		"typescript",
+		"svelte"
+	]
 }
