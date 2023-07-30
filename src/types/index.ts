@@ -94,3 +94,32 @@ export type Validator<T> = (value: T) => ({
 	valid: boolean,
 	message: string
 });
+
+interface GalleryImage {
+	height: number;
+	src: string;
+	width: string;
+}
+export interface GalleryItemPage {
+	camera: string;
+	dateCreated: number;
+	dateTaken: number;
+	dateUpdated?: number;
+	description: string;
+	dominant: [ r: number, g: number, b: number ];
+	fnumber: number;
+	focalLength: number;
+	fullsize: GalleryImage;
+	id: string;
+	iso: number;
+	keywords?: string[];
+	lang: "en" | "ru";
+	layout: "gallery";
+	lens: string;
+	og: GalleryImage;
+	shutter: string;
+	slug: string;
+	thumbnail: GalleryImage;
+	thumbnailSquare: GalleryImage;
+	title: string;
+}

@@ -1,11 +1,17 @@
 /.svelte-kit
 /build
 /node_modules
+*/**/node_modules
 /static/img/*
 /src/data/gallery.json
 /workfiles
 .vercel
 vite.config.js.timestamp*
+*/**/.env
+
+/image-generate/**/*.JPG
+/image-generate/**/*.jpeg
+/image-generate/**/*.webp
 
 !/static/img/cover-*.jpg
 !/static/img/cover-*.png

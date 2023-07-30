@@ -84,7 +84,7 @@
 
 	--font-size-00: calc(0.6 * var(--font-base-size));
 	--font-size-0: calc(0.75 * var(--font-base-size));
-	--font-size-1: calc(1 * var(--font-base-size));
+	--font-size-1: calc(0.9 * var(--font-base-size));
 	--font-size-2: calc(1.1 * var(--font-base-size));
 	--font-size-3: calc(1.25 * var(--font-base-size));
 	--font-size-4: calc(1.5 * var(--font-base-size));

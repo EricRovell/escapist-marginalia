@@ -10,8 +10,6 @@
 		"dev:expose": "vite dev --host --port 5555",
 		"build": "vite build",
 		"preview": "vite preview",
-		"img:prepare": "node src/scripts/images-prepare.js",
-		"img:process": "node src/scripts/images-process.js",
 		"test": "vitest run"
 	},
 	"repository": {
@@ -35,13 +33,12 @@
 	},
 	"devDependencies": {
 		"@rollup/plugin-replace": "^5.0.2",
-		"@sveltejs/adapter-static": "2.0.2",
+		"@sveltejs/adapter-static": "2.0.3",
 		"@sveltejs/kit": "1.20.1",
 		"@typescript-eslint/eslint-plugin": "^5.59.8",
 		"@typescript-eslint/parser": "^5.59.8",
 		"eslint": "^8.42.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"exifreader": "^4.12.0",
 		"happy-dom": "^9.20.3",
 		"katex": "^0.16.7",
 		"lint-staged": "^13.2.2",
@@ -50,7 +47,6 @@
 		"rehype-katex": "5",
 		"rehype-slug": "^5.1.0",
 		"remark-math": "2",
-		"sharp": "^0.32.1",
 		"simple-git-hooks": "^2.8.1",
 		"stylelint": "^15.6.3",
 		"stylelint-config-standard": "^33.0.0",

@@ -1,5 +1,5 @@
 ---
-cover: "/img/cover-the-attractor.png"
+cover: https://storage.yandexcloud.net/escapist-marginalia/covers/the-attractor.png
 description: "The attractor field flow visualization."
 keywords: [ "the attractor", "turbulence", "canvas animation", "generative art" ]
 lang: "en"

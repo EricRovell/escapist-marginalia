@@ -24,5 +24,7 @@ export const transformerTOC = () => (tree, vFile) => {
 		vFile.data.fm = {};
 	}
 
-	vFile.data.fm.toc = toc;
+	if (toc.length) {
+		vFile.data.fm.toc = toc;
+	}
 };

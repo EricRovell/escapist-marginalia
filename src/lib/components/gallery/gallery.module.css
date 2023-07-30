@@ -15,14 +15,14 @@
 
 .gallery-item {
 	flex-grow: 1;
-	height: var(--grid-item-size, 250px);
+	height: var(--grid-item-size, 200px);
 	width: auto;
 	position: relative;
 }
 
 @media only screen and (width <= 720px) {
 	.gallery {
-		--grid-item-size: 175px;
+		--grid-item-size: 150px;
 
 		gap: var(--space-2);
 	}
@@ -30,7 +30,7 @@
 
 @media only screen and (width <= 560px) {
 	.gallery {
-		--grid-item-size: 125px;
+		--grid-item-size: 100px;
 	}
 }
 
@@ -44,7 +44,7 @@
 @supports (grid-template-rows: masonry) {
 	.gallery {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(var(--grid-item-size, 275px), 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(var(--grid-item-size, 225px), 1fr));
 		grid-template-rows: masonry;
 		width: 100%;
 	}

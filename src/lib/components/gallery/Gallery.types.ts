@@ -3,26 +3,48 @@ export interface Size {
 	height: number;
 }
 
-export interface GalleryItem extends Size {
-	aperture: `f/${number}`;
+export interface GalleryItem {
 	camera: string;
-	date: string;
+	fnumber: number;
+	date: Date;
 	description: string;
-	dominant: [ number, number, number ];
-	focalLength: `${number} mm`;
-	id: string;
-	iso: number;
-	keywords: string[];
-	lens: string;
-	title: string;
-	shutterSpeed: string;
-	src: string;
-	thumb: {
+	dominant: {
+		r: number;
+		g: number;
+		b: number;
+	};
+	draft: boolean;
+	focalLength: number;
+	fullsize: {
+		srcJpeg: string;
+		srcWebp: string;
 		width: number;
 		height: number;
+	};
+	id: string;
+	iso: string;
+	keywords: string[];
+	lang: string;
+	lens: string;
+	og: {
 		src: string;
-		cover: string;
-	}
+		width: number;
+		height: number;
+	};
+	thumbnail: {
+		src: string;
+		width: number;
+		height: number;
+	};
+	thumbnailSquare: {
+		src: string;
+		width: number;
+		height: number;
+	};
+	title: string;
+	shutter: string;
+	slug: string;
+	updated: Date;
 }
 
 export type GetSrc = (item: GalleryItem) => string;

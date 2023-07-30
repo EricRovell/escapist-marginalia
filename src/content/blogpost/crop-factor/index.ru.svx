@@ -1,5 +1,5 @@
 ---
-cover: "/img/cover-crop-factor.png"
+cover: https://storage.yandexcloud.net/escapist-marginalia/covers/crop-factor.png
 created: 2023-04-14T00:12:00.000Z
 description: "На что влияет размеры сенсора в фотографии и почему это так важно знать фотолюбителю."
 keywords: [ "photography", "crop-factor", "equivalent focal length" ]

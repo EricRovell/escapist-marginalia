@@ -1,5 +1,5 @@
 ---
-cover: "/img/cover-chaos-game.png"
+cover: https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png
 description: "Vizualizing a fractals from simple rules and a randomness."
 keywords: [ "chaos-game", "randomness", "fractals", "generative art" ]
 lang: "en"

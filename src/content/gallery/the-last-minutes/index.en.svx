@@ -1,0 +1,47 @@
+---
+{
+	"camera": "F8332",
+	"dateCreated": "2023-07-25T21:07:24.456Z",
+	"dateTaken": "2018-08-19T17:38:00.000Z",
+	"description": "Sunset at the sea with some rare scarlet clouds.",
+	"dominant": {
+		"b": 40,
+		"g": 40,
+		"r": 40
+	},
+	"fnumber": 2,
+	"focalLength": 423,
+	"fullsize": {
+		"height": 1013,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/the-last-minutes",
+		"width": 1800
+	},
+	"id": "the-last-minutes",
+	"iso": 40,
+	"keywords": [
+		"clouds",
+		"sunset",
+		"the_sun"
+	],
+	"lang": "en",
+	"layout": "gallery",
+	"og": {
+		"height": 630,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/the-last-minutes.og",
+		"width": 1200
+	},
+	"shutter": "1/400",
+	"slug": "the-last-minutes",
+	"thumbnail": {
+		"height": 253,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/the-last-minutes.thumb",
+		"width": 450
+	},
+	"thumbnailSquare": {
+		"height": 450,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/the-last-minutes.thumbsq",
+		"width": 450
+	},
+	"title": "The Last Minutes"
+}
+---

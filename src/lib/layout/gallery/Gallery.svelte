@@ -1,0 +1,212 @@
+<script context="module">
+	import { Link as a, Code as pre } from "@components";
+	export { pre, a };
+</script>
+
+<script>
+	import { t } from "@core/i18n";
+	import { webpage } from "@core/paths";
+	import {
+		Meta,
+		ScrollToTop,
+		Button,
+		Icon,
+		Image,
+		Link,
+		ImageFullscreen,
+		Datetime
+	} from "@components";
+	import { iconShare, iconDownload, iconFullscreen } from "$lib/components/icons/default";
+	import { share } from "@utils/helpers";
+	import styles from "./gallery.module.css";
+	import articleStyles from "./article.module.css";
+	import headerStyles from "./header.module.css";
+
+	let open = false;
+
+	const handleShare = async () => {
+		const files = [];
+
+		try {
+			const request = await fetch(`${fullsize.src}.jpeg`);
+			const blob = await request.blob();
+
+			files.push(
+				new File([ blob ], `${title}.jpeg`, {
+					type: blob.type
+				})
+			);
+		} catch(error) {
+			console.error(`Could not load the image: ${error.message}`);
+		}
+
+		await share({
+			files,
+			url: $webpage,
+			title: title,
+			text: description
+		});
+	};
+
+	export let camera;
+	export let dateCreated;
+	export let dateTaken;
+	export let dateUpdated = undefined;
+	export let description;
+	export let fnumber;
+	export let focalLength;
+	export let fullsize;
+	export let iso;
+	export let keywords;
+	export let lang;
+	export let lens;
+	export let og;
+	export let title;
+	export let shutter;
+	export let updated;
+
+	const metadataList = [
+		{ label: "ISO", value: iso },
+		{ label: "Camera", value: camera },
+		{ label: "Shutter speed", value: shutter },
+		{ label: "Lens", value: lens },
+		{ label: "Aperture", value: `f/${fnumber}` },
+		{ label: "Focal length", value: focalLength },
+		{ label: "Copyright", value: "ERIC_ROVELL" }
+	];
+</script>
+
+<Meta
+	{title}
+	meta={{
+		description,
+		keywords,
+		language: lang
+	}}
+	openGraph={{
+		title,
+		description,
+		locale: lang,
+		type: "article",
+		tag: keywords,
+		section: "gallery",
+		site_name: "Eric Rovell",
+		author: "Eric Rovell",
+		url: $webpage,
+		"article:published_time": new Date(dateCreated),
+		"article:modified_time": updated,
+		image: `${og.src}.jpeg`
+	}}
+	twitter={{
+		card: "summary_large_image",
+		title,
+		description,
+		url: $webpage
+	}}
+/>
+
+<main class={styles.container}>
+	<section
+		class="surface-2
+		{styles["image"]}"
+		label="img"
+	>
+		<Image
+			src="{fullsize.src}.jpeg"
+			sources="{[
+				{
+					srcset: `${fullsize.src}.webp`,
+					type: "image/webp"
+				},
+				{
+					srcset: `${fullsize.src}.jpeg`,
+					type: "image/jpeg"
+				}
+			]}"
+			width={fullsize.width}
+			height={fullsize.height}
+			alt={description}
+			on:click={() => open = !open}
+		/>
+	</section>
+	<div class="{styles.body}">
+		<header class="{headerStyles.header}">
+			<h1>{title}</h1>
+			<p>{description}</p>
+			{#if dateUpdated}
+				<p>{$t("message.updated")} <Datetime date="{dateUpdated}" /></p>
+			{:else}
+				<p>{$t("message.published")} <Datetime date="{dateCreated}" /></p>
+			{/if}
+			<aside class="{styles.actions}">
+				<Button
+					appearance="ghost"
+					icon
+					title="{$t("tooltip.share")}"
+					on:click={handleShare}
+				>
+					<Icon path={iconShare} />
+				</Button>
+				<Link
+					download="{title}"
+					href="{fullsize.src}.jpeg"
+					title="{$t("tooltip.download")}"
+				>
+					<Icon path={iconDownload} />
+				</Link>
+				<Button
+					appearance="ghost"
+					icon
+					title="{$t("tooltip.fullscreen")}"
+					on:click={() => open = true}
+				>
+					<Icon path={iconFullscreen} />
+				</Button>
+			</aside>
+		</header>
+		<article class="{articleStyles.article}">
+			<slot />
+		</article>
+		<aside class="{styles.metadata}">
+			<dl>
+				<dt>Date taken:</dt>
+				<dd>
+					<Datetime date={dateTaken} />
+				</dd>
+			</dl>
+			{#each metadataList as { label, value }}
+				<dl>
+					<dt>{label}:</dt>
+					<dd>{value ? value : "Unknown"}</dd>
+				</dl>
+			{/each}
+		</aside>
+		<aside class="{styles.keywords} {styles.params}">
+			<ul>
+				{#each keywords as keyword}
+					<li class="surface-2">{keyword}</li>
+				{/each}
+			</ul>
+		</aside>
+		<ScrollToTop id="root" />
+	</div>
+</main>
+
+<ImageFullscreen bind:open>
+	<Image
+		src="{fullsize.src}.jpeg"
+		sources="{[
+			{
+				srcset: `${fullsize.src}.webp`,
+				type: "image/webp"
+			},
+			{
+				srcset: `${fullsize.src}.jpeg`,
+				type: "image/jpeg"
+			}
+		]}"
+		width={fullsize.width}
+		height={fullsize.height}
+		alt={description}
+	/>
+</ImageFullscreen>
