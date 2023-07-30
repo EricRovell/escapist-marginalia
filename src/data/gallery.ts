@@ -42,7 +42,7 @@ interface Options {
 }
 
 export async function getGalleryItems({ lang, keywords, draft, slug }: Partial<GalleryItem> = {}, { limit }: Options = {}): Promise<GalleryItem[]> {
-	const blogposts = await fetchGalleryItems();
+	const pages = await fetchGalleryItems();
 
 	type Query<T> = {
 		"slug": QueryItem<string, T>;
@@ -78,5 +78,5 @@ export async function getGalleryItems({ lang, keywords, draft, slug }: Partial<G
 		return new Number(a.id) > new Number(b.id) ? -1 : 1;
 	};
 
-	return find(blogposts, query, { limit, sort: sortByDate });
+	return find(pages, query, { limit, sort: sortByDate });
 }

@@ -4,7 +4,7 @@ import type { GalleryItem } from "@types";
 
 export const load: PageLoad = async ({ fetch, params }) => {
 	try {
-		const request = await fetch(`/api/gallery/${encodeURI(params.slug)}`);
+		const request = await fetch(`/api/gallery-item/${encodeURI(params.slug)}`);
 		const { filepath }: GalleryItem = await request.json();
 
 		let page = null;
