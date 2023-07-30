@@ -22,16 +22,16 @@
 		void imageScale.set(1);
 	};
 
-	function handlePanMove(e) {
+	const handlePanMove = (event: CustomEvent) => {
 		void coords.set(
-			{	x: e.detail.x, y: e.detail.y },
-			{ hard: !e.detail.spring }
+			{	x: event.detail.x, y: event.detail.y },
+			{ hard: !event.detail.spring }
 		);
-	}
+	};
 
-	function handleZoom(e) {
-		void imageScale.set(e.detail.scale, { hard: !e.detail.spring });
-	}
+	const handleZoom = (event: CustomEvent) => {
+		void imageScale.set(event.detail.scale, { hard: !event.detail.spring });
+	};
 </script>
 
 <Modal {open} on:close={close}>

@@ -7,7 +7,6 @@
 	const regex = /^\/(ru|en)\//;
 
 	$: pathname = $page.url.pathname;
-	$: route = $locale === "ru" ? "en" : "ru";
 	$: href = (regex.test(pathname))
 		? pathname.replace(regex, "")
 		: "home";

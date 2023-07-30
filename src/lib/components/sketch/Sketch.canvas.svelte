@@ -11,7 +11,7 @@
 	export let name: string;
 	export let sketch: Sketch<Options>;
 	export let width = 500;
-	export let options: Options | undefined = undefined;
+	export let options: Options = undefined;
 
 	let render = sketch();
 

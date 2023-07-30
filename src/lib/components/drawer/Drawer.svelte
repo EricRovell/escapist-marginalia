@@ -40,16 +40,15 @@
 	}}
 	on:swipe-down={handleSwipe}
 >
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div
 		class={styles.backdrop}
 		class:show
 		on:click={toggle}
+		role="presentation"
 	/>
 	<article
 		class={styles["menu-body"]}
 		class:show
-		label="drawer"
 	>
 		<slot />
 	</article>

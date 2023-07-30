@@ -18,8 +18,7 @@
 	let error = false;
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<picture class={styles.picture} {style} on:click>
+<picture class={styles.picture} {style} on:click role="presentation">
 	<slot />
 	{#each sources as { srcset, type }}
 		<source {srcset} {type} />

@@ -33,7 +33,7 @@
 		</Range>
 	</form>
 	<ul class="{styles["grid-span"]}">
-		{#each { length: items } as _, i}
+		{#each { length: items } as _}
 			{@const [ row, column ] = getSpan()}
 			{@const spanned = row !== 1 || column !== 1}
 			{@const aspect = spanned ? `${row} / ${column}` : ""}
