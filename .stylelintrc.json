@@ -1,11 +1,14 @@
 {
-	"extends": "stylelint-config-standard",
+	"extends": [
+		"stylelint-config-standard",
+		"stylelint-stylistic/config"
+	],
 	"rules": {
-		"indentation": "tab",
+		"stylistic/indentation": "tab",
 		"selector-pseudo-class-no-unknown": [ true,	{
 				"ignorePseudoClasses": [ "global" ]
 		}],
-		"color-hex-case": "upper",
+		"stylistic/color-hex-case": "upper",
 		"property-no-unknown": [ true, {
 			"ignoreProperties": [
 				"composes"
