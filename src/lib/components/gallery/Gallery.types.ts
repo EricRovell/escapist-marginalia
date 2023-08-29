@@ -15,6 +15,7 @@ export interface GalleryItem {
 	};
 	draft: boolean;
 	focalLength: number;
+	filepath?: string;
 	fullsize: {
 		srcJpeg: string;
 		srcWebp: string;

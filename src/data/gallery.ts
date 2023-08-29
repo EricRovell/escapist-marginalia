@@ -24,6 +24,8 @@ async function fetchGalleryItems(): Promise<GalleryItem[]> {
 			updated: new Date(updated),
 			title,
 			/**
+			 * TODO
+			 * 
 			 * All blogpost contents are located as:
 			 * /src/content/blogpost/{blogpost}/{file}.svx
 			 * For vite to analize dynamic imports we strill all but `{blogpost}/{file}`
