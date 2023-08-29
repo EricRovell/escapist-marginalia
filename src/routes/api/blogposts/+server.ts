@@ -1,6 +1,6 @@
 import { dev, building } from "$app/environment";
 import { getBlogposts } from "@data/posts";
-import type { RequestHandler } from "@sveltejs/kit/types";
+import type { RequestHandler } from "@sveltejs/kit";
 import type { Blogpost } from "@types";
 
 export const GET: RequestHandler = async () => {
