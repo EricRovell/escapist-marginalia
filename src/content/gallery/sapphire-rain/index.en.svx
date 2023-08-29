@@ -1,0 +1,60 @@
+---
+{
+	"camera": "Canon EOS R",
+	"dateCreated": "2023-07-25T21:48:31.844Z",
+	"dateTaken": "2023-05-09T18:55:48.000Z",
+	"description": "Fireworks over the evening city",
+	"dominant": {
+		"b": 104,
+		"g": 72,
+		"r": 40
+	},
+	"fnumber": 11,
+	"focalLength": 428,
+	"fullsize": {
+		"height": 1200,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/sapphire-rain",
+		"width": 1800
+	},
+	"id": "sapphire-rain",
+	"iso": 100,
+	"keywords": [
+		"saints peter and paul cathedral",
+		"cityscape",
+		"fireworks",
+		"saint-petersburg",
+		"telephoto photography"
+	],
+	"lang": "en",
+	"layout": "gallery",
+	"lens": "TAMRON SP 150-600mm F/5-6.3 Di VC USD G2 A022",
+	"og": {
+		"height": 630,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/sapphire-rain.og",
+		"width": 1200
+	},
+	"shutter": "5",
+	"slug": "sapphire-rain",
+	"thumbnail": {
+		"height": 300,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/sapphire-rain.thumb",
+		"width": 450
+	},
+	"thumbnailSquare": {
+		"height": 450,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/sapphire-rain.thumbsq",
+		"width": 450
+	},
+	"title": "Sapphire Rain"
+}
+---
+
+Several years ago, just a month before I bought my first camera, a friend of mine called me to see fireworks. I remember that day as it was yesterday. A crowd walking down the streets, waiting for fireworks to begin.
+
+We were looking into the sky. Huge fireballs exploded into a thousand little sparks. Usually they were red or green, but sometimes you could see yellow or even blue. The blue sparks were the most beautiful ones. Each time just for a moment skies changed their colour.
+
+Since then, from time to time I take my camera to capture fireworks. Each year fireworks evoke less and less emotions. It is just the same colours, same shapes, and same atmosphere. It does not feel the same anymore. Still, it is always a challenge to try out a new angle.
+
+Shooting fireworks is kind of lottery. You can change the settings and get a completely different results - often the salute turns into a bright golden ball. Sometimes, getting the parameters just right and releasing the shutter at the right time, it is possible to catch something interesing.
+
+It is still especially joyful when you are lucky enough to catch that special blue color.

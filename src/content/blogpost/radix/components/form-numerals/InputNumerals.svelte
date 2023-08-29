@@ -22,7 +22,7 @@
 	validators="{[
 		(value) => ({
 			valid: pattern && pattern.test(value),
-			message: `Invalid numeral is used`
+			message: "Invalid numeral is used"
 		}),
 		(value) => {
 			const decimal = rx(value.split(""), radix, { decode: decoder }).decimal;

@@ -15,12 +15,12 @@
 		hour12: false
 	};
 
-	function renderDate(date: Date | string = new Date(), locale?: string, params: Intl.DateTimeFormatOptions = defaultOptions) {
+	const renderDate = (date: Date | string = new Date(), locale?: string, params: Intl.DateTimeFormatOptions = defaultOptions) => {
 		const renderDate = new Intl.DateTimeFormat(locale, params);
 		return renderDate.format(new Date(date));
-	}
+	};
 
-	function renderRelativeDate(date: Date | string = new Date(), locale?: string, params: Intl.DateTimeFormatOptions = defaultOptions) {
+	const renderRelativeDate = (date: Date | string = new Date(), locale?: string, params: Intl.DateTimeFormatOptions = defaultOptions) => {
 		const difference = Date.now() - new Date(date).getTime();
 		const rtf = new Intl.RelativeTimeFormat(locale);
 
@@ -41,7 +41,7 @@
 		}
 
 		return renderDate(date, locale, params);
-	}
+	};
 </script>
 
 <script lang="ts">

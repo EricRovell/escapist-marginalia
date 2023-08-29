@@ -28,7 +28,7 @@ export const getContrast = (value: Color = colorDefault): ColorString => {
  */
 export const colorMatcher = /^hsl\(\s*([+-]?\d*\.?\d+)(deg|rad|grad|turn)?\s+([+-]?\d*\.?\d+)%\s+([+-]?\d*\.?\d+)%\s*(?:\/\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i;
 
-export const parseColorString = (input: string | ColorString): Color => {
+export const parseColorString = (input: ColorString): Color => {
 	if (!colorMatcher.test(input)) {
 		return colorDefault;
 	}

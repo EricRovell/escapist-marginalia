@@ -15,6 +15,11 @@
 
 	export let settings: Settings;
 
+	const generateNumber = () => {
+		dirty = false;
+		return randInt(settings.numberMin, settings.numberMax);
+	};
+
 	let dirty = false;
 	let number = generateNumber();
 	let valid = false;
@@ -22,11 +27,6 @@
 
 	const dispatch = createEventDispatcher();
 	const t: Record<string, string> = getContext("t")["exercise"];
-
-	function generateNumber() {
-		dirty = false;
-		return randInt(settings.numberMin, settings.numberMax);
-	}
 
 	const handleInput = (e: CustomEvent<{ key: string }>) => {
 		dirty = false;

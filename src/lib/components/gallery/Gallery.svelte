@@ -7,21 +7,31 @@
 	import Image from "../image/Image.svelte";
 	import styles from "./gallery.module.css";
 
-	export let getSrc: GetSrc = (item: GalleryItemType) => item.thumb.src;
+	export let getSrc: GetSrc = (item: GalleryItemType) => `${item.thumbnail.src}.jpeg`;
 	export let items: GalleryItem[] = [];
 </script>
 
 <ul class={styles.gallery}>
 	{#each items as item}
-	{@const { id, title, description } = item}
+	{@const { title, description, dominant, slug } = item}
 		<li class={styles["gallery-item"]}>
-			<GalleryItem {id} dominant="rgb({item.dominant}, 0.65)">
+			<GalleryItem {slug} dominant="rgb({dominant.r} {dominant.g} {dominant.b} / 0.65)">
 				<Image
 					alt={description}
-					height={item.thumb.height}
+					height={item.thumbnail.height}
 					lazy
-					src={getSrc(item)}
-					width={item.thumb.width}
+					src="{getSrc(item)}"
+					sources="{[
+						{
+							srcset: `${item.thumbnail.src}.webp`,
+							type: "image/webp"
+						},
+						{
+							srcset: `${item.thumbnail.src}.jpeg`,
+							type: "image/jpeg"
+						}
+					]}"
+					width={item.thumbnail.width}
 				/>
 				<svelte:fragment slot="caption">
 					<p class="ellipsis">{title}</p>

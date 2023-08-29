@@ -1,0 +1,50 @@
+---
+{
+	"camera": "Canon EOS R",
+	"dateCreated": "2023-07-29T21:32:53.145Z",
+	"dateTaken": "2023-01-27T19:04:44.000Z",
+	"description": "Вечерний вид на замерзшую Неву.",
+	"dominant": {
+		"b": 24,
+		"g": 24,
+		"r": 24
+	},
+	"fnumber": 11,
+	"focalLength": 30,
+	"fullsize": {
+		"height": 1200,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/starting-point",
+		"width": 1800
+	},
+	"id": "starting-point",
+	"iso": 100,
+	"keywords": [
+		"городской пейзаж",
+		"вечер",
+		"река",
+		"санкт-петербург",
+		"зима"
+	],
+	"lang": "ru",
+	"layout": "gallery",
+	"lens": "TAMRON SP 15-30mm F/2.8 Di VC USD G2 A041",
+	"og": {
+		"height": 630,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/starting-point.og",
+		"width": 1200
+	},
+	"shutter": "13",
+	"slug": "точка-отсчёта",
+	"thumbnail": {
+		"height": 300,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/starting-point.thumb",
+		"width": 450
+	},
+	"thumbnailSquare": {
+		"height": 450,
+		"src": "https://storage.yandexcloud.net/escapist-marginalia/gallery/starting-point.thumbsq",
+		"width": 450
+	},
+	"title": "Точка отсчёта"
+}
+---

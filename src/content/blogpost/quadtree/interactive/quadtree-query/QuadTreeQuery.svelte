@@ -15,7 +15,7 @@
 	let bounds = [];
 
 	let rect = false;
-	let show = false;
+	//let show = false;
 
 	let width = 300;
 	let height = 200;
@@ -31,7 +31,7 @@
 	const handlePointerEnter = () => {
 		element.addEventListener("pointermove", handlePointerMove);
 		element.style.setProperty("cursor", "move");
-		show = true;
+		//show = true;
 	};
 
 	const handlePointerDown = () => {
@@ -45,7 +45,7 @@
 	const handlePointerLeave = () => {
 		element.removeEventListener("pointermove", handlePointerMove);
 		element.style.removeProperty("cursor");
-		show = false;
+		//show = false;
 	};
 
 	const handlePointerMove = (e: PointerEvent) => {

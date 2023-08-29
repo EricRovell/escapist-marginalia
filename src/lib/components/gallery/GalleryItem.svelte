@@ -6,11 +6,11 @@
 	import { pathGalleryImage } from "@core/paths";
 	import styles from "./gallery-item.module.css";
 
-	export let id: string;
 	export let dominant: string;
+	export let slug: string;
 </script>
 
-<Link className={styles.link} href={$pathGalleryImage(id)}>
+<Link className={styles.link} href={$pathGalleryImage(slug)}>
 	<figure class={styles.figure} style:--dominant={dominant}>
 		<slot />
 		<figcaption>

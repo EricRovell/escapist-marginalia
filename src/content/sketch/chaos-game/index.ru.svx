@@ -1,5 +1,5 @@
 ---
-cover: "/img/cover-chaos-game.png"
+cover: https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png
 description: "Выстраиваем фрактальные геометрические фигуры на основе простых правил и случайности."
 keywords: [ "игра хаоса", "случайность", "фракталы", "генеративное искусство" ]
 lang: "ru"

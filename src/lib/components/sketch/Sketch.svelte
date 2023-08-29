@@ -18,7 +18,7 @@
 	export let sketch: Sketch<Options>;
 	export let t: Record<string, string> | undefined = undefined;
 
-	let options: Options | undefined = undefined;
+	let options: Options = undefined;
 
 	const handleToggle = () => {
 		loop = !loop;

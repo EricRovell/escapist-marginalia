@@ -1,5 +1,5 @@
 ---
-cover: "/img/cover-masonry.png"
+cover: https://storage.yandexcloud.net/escapist-marginalia/covers/masonry.png
 created: 2022-05-11T15:30:00.000Z
 description: "Build Masonry-like layout image gallery component using the modern CSS."
 keywords: [ "css", "web" ]
