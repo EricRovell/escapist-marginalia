@@ -128,10 +128,12 @@
 	height: var(--range-track-size);
 	cursor: pointer;
 	border-radius: var(--radius-s);
-	background: var(--range-track-bg, linear-gradient(
-		var(--range-track-active-color),
-		var(--range-track-active-color)
-	) 0 / var(--range-dx) 100% no-repeat var(--range-track-color));
+	background:
+		var(
+			--range-track-bg,
+			linear-gradient(var(--range-track-active-color), var(--range-track-active-color))
+			0 / var(--range-dx) 100% no-repeat var(--range-track-color)
+		);
 }
 
 .range:hover::-webkit-slider-runnable-track,

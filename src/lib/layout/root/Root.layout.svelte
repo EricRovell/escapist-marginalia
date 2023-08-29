@@ -11,15 +11,17 @@
 	import "@styles/typography.css";
 
 	import styles from "./root.module.css";
+
+	let show = false;
+	const toggle = () => show = !show;
 </script>
 
 <div class={styles.app} id="app">
 	<Masthead />
 	<Drawer
+		bind:show
 		className="{styles.sidemenu}"
 		hidden
-		let:toggle
-		let:show
 	>
 		<svelte:fragment slot="label">
 			{$t("dict.menu")}

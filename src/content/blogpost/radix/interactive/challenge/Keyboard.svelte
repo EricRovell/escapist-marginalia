@@ -81,6 +81,8 @@
 </script>
 
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+<!-- eslint-disable-next-line svelte/valid-compile -->
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <form
 	on:click={handleClick}
 	tabindex="0"

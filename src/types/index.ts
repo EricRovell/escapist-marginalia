@@ -1,6 +1,6 @@
 import type { SvelteComponent } from "svelte";
 
-export type Variant = "neutral" | "primary" | "success" | "danger" | "warning" | "info" | "link";
+export type Variant = "neutral" | "primary" | "success" | "danger" | "warning" | "info" | "link" | "";
 export type Locale = "ru" | "en";
 
 /**
