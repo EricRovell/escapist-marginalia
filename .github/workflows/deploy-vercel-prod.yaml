@@ -14,16 +14,18 @@ on:
   workflow_dispatch:
 
 jobs:
-
   build-workflow:
     uses: ./.github/workflows/build.yaml
 
   push_to_vercel:
-
     needs: build-workflow
     runs-on: ubuntu-latest
     steps:
+
+      - name: checkout
       - uses: actions/checkout@v3
+
+      - name: vercel deployment
       - uses: amondnet/vercel-action@v25
         if: github.event_name == 'push' && github.ref == 'refs/heads/prod'
         with:
