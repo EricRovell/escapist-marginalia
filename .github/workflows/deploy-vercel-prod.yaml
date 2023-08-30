@@ -1,0 +1,33 @@
+name: Vercel Deployment
+
+on:
+  push:
+    branches:
+      - prod
+    paths-ignore:
+      - "**/README.md"
+  pull_request:
+    branches: 
+      - prod
+    paths-ignore:
+      - "**/README.md"
+  workflow_dispatch:
+
+jobs:
+
+  build-workflow:
+    uses: ./.github/workflows/build.yaml
+
+  push_to_vercel:
+
+    needs: build-workflow
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: amondnet/vercel-action@v25
+        if: github.event_name == 'push' && github.ref == 'refs/heads/prod'
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
+          vercel-args: "--prod"
