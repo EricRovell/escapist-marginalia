@@ -14,9 +14,23 @@
 	export let updated: Project["updated"];
 
 	const links = [
-		{ href: repository, title: "Github", icon: iconGithub },
-		{ href: npm, title: "NPM", icon: iconNpm },
-		{ href: website, title: "Website", icon: iconURL }
+		{
+			href: repository,
+			title: "Github",
+			icon: iconGithub,
+			builder: (repository: string) => `https://github.com/${repository}`
+		},
+		{
+			href: npm,
+			title: "NPM",
+			icon: iconNpm,
+			builder: (packageName: string) => `https://www.npmjs.com/package/${packageName}`
+		},
+		{
+			href: website,
+			title: "Website",
+			icon: iconURL
+		}
 	].filter(({ href }) => href);
 </script>
 
@@ -35,9 +49,9 @@
 			{/each}
 		</ul>
 		<ul class="{styles.links}">
-			{#each links as { href, icon, title }}
+			{#each links as { href, icon, title, builder }}
 				<li>
-					<Link {href} {title}>
+					<Link href={builder ? builder(href) : href} {title}>
 						<Icon path="{icon}" />
 						{title}
 					</Link>

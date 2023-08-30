@@ -5,7 +5,7 @@ lang: "en"
 layout: project
 maintained: true
 name: "vector"
-npm: https://www.npmjs.com/package/@ericrovell/vector
+npm: "@ericrovell/vector"
 repository: "EricRovell/vector"
 techstack: [ "TypeScript" ]
 type: "library"
