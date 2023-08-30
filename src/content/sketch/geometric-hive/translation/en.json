@@ -1,0 +1,10 @@
+{
+	"field": "Field",
+	"background": "Background color",
+	"gaps": "Gaps",
+	"gap-frequency": "Frequency",
+	"particles": "Particles",
+	"particle-gap": "Gap size",
+	"particle-size": "Size",
+	"particle-speed-base": "Base speed"
+}

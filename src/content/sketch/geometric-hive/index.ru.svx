@@ -1,0 +1,26 @@
+---
+cover: https://storage.yandexcloud.net/escapist-marginalia/covers/geometric-hive.png
+description: "Геометрические фигуры, движующиеся сквозь пустоты."
+keywords: [ "canvas", "генеративное искусство", "геометрия" ]
+lang: "ru"
+layout: "sketch"
+title: "Геометрический улей"
+updated: 2023-08-30T00:02:00.000Z
+url: "/ru/sketch/geometric-hive"
+---
+
+<script>
+	import { default as Sketch } from "./src/geometric-hive.svelte";
+	import t from "./translation/ru.json";
+</script>
+
+<svelte:fragment slot="sketch">
+	<Sketch {t} />
+</svelte:fragment>
+
+## Ссылки
+
+Вдохновлено работой ["Random rhombic movement"][original] от [Amit Sheen][author].
+
+[original]: https://codepen.io/amit_sheen/pen/bGObYJE
+[author]: https://codepen.io/amit_sheen
