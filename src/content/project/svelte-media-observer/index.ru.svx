@@ -5,7 +5,7 @@ lang: "ru"
 layout: project
 maintained: true
 name: "svelte-media-observer"
-npm: "https://www.npmjs.com/package/svelte-media-observer"
+npm: "svelte-media-observer"
 repository: "EricRovell/svelte-media-observer"
 techstack: [ "Svelte", "TypeScript" ]
 type: "library"

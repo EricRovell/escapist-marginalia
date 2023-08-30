@@ -1,11 +1,11 @@
 ---
-description: "Blossom - библиотка для конвертации цветов и манипуляций на ними, написанная на TypeScript."
+description: "Blossom - библиотека для конвертации цветов и манипуляций на ними, написанная на TypeScript."
 featured: true
 lang: "ru"
 layout: project
 maintained: false
 name: "blossom"
-npm: "https://www.npmjs.com/package/@ericrovell/blossom"
+npm: "@ericrovell/blossom"
 repository: "EricRovell/blossom"
 techstack: [ "TypeScript" ]
 type: "library"
