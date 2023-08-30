@@ -5,7 +5,7 @@ lang: "en"
 layout: project
 maintained: true
 name: "rational"
-npm: "https://www.npmjs.com/package/@ericrovell/rational"
+npm: "@ericrovell/rational"
 repository: "EricRovell/rational"
 techstack: [ "TypeScript" ]
 type: "library"

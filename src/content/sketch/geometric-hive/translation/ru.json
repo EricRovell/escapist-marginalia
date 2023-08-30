@@ -1,0 +1,10 @@
+{
+	"field": "Поле",
+	"background": "Цвет фона",
+	"gaps": "Пустоты",
+	"gap-frequency": "Частота",
+	"particles": "Частицы",
+	"particle-gap": "Интервал",
+	"particle-size": "Размер",
+	"particle-speed-base": "Пороговая скорость"
+}
