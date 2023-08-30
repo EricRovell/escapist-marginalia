@@ -41,7 +41,14 @@ const config = {
 		}
 	},
 	test: {
-		environment: "happy-dom"
+		environment: "happy-dom",
+		coverage: {
+			reporter: [
+				"text",
+				"json",
+				"html"
+			]
+		}
 	}
 };
 
