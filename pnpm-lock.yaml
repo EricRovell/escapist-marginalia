@@ -58,6 +58,9 @@ devDependencies:
   mdsvex:
     specifier: ^0.11.0
     version: 0.11.0(svelte@4.2.0)
+  postcss-nesting:
+    specifier: ^12.0.1
+    version: 12.0.1(postcss@8.4.29)
   rehype-katex:
     specifier: '5'
     version: 5.0.0
@@ -84,7 +87,7 @@ devDependencies:
     version: 4.2.0
   svelte-preprocess:
     specifier: ^5.0.4
-    version: 5.0.4(@babel/core@7.17.2)(postcss@8.4.21)(svelte@4.2.0)(typescript@5.2.2)
+    version: 5.0.4(@babel/core@7.17.2)(postcss@8.4.29)(svelte@4.2.0)(typescript@5.2.2)
   tslib:
     specifier: ^2.6.2
     version: 2.6.2
@@ -2921,6 +2924,17 @@ packages:
       postcss-selector-parser: 6.0.13
     dev: true
 
+  /postcss-nesting@12.0.1(postcss@8.4.29):
+    resolution: {integrity: sha512-6LCqCWP9pqwXw/njMvNK0hGY44Fxc4B2EsGbn6xDcxbNRzP8GYoxT7yabVVMLrX3quqOJ9hg2jYMsnkedOf8pA==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
+      '@csstools/selector-specificity': 3.0.0(postcss-selector-parser@6.0.13)
+      postcss: 8.4.29
+      postcss-selector-parser: 6.0.13
+    dev: true
+
   /postcss-resolve-nested-selector@0.1.1:
     resolution: {integrity: sha512-HvExULSwLqHLgUy1rl3ANIqCsvMS0WHss2UOsXhXnQaZ9VCc2oBvIpXrl00IUFT5ZDITME0o6oiXeiHr2SAIfw==}
     dev: true
@@ -3612,7 +3626,7 @@ packages:
       svelte: 4.2.0
     dev: false
 
-  /svelte-preprocess@5.0.4(@babel/core@7.17.2)(postcss@8.4.21)(svelte@4.2.0)(typescript@5.2.2):
+  /svelte-preprocess@5.0.4(@babel/core@7.17.2)(postcss@8.4.29)(svelte@4.2.0)(typescript@5.2.2):
     resolution: {integrity: sha512-ABia2QegosxOGsVlsSBJvoWeXy1wUKSfF7SWJdTjLAbx/Y3SrVevvvbFNQqrSJw89+lNSsM58SipmZJ5SRi5iw==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -3654,7 +3668,7 @@ packages:
       '@types/pug': 2.0.6
       detect-indent: 6.1.0
       magic-string: 0.27.0
-      postcss: 8.4.21
+      postcss: 8.4.29
       sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 4.2.0
