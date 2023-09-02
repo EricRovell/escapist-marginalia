@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-	import Datetime from "../Datetime.svelte";
+	import { Datetime } from "../datetime";
 	import { Link } from "../link";
 	import { Image } from "../image";
 	import { pathBlogpost } from "@core/paths";
