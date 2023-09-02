@@ -3,9 +3,8 @@
 </script>
 
 <script lang="ts">
-	import { theme } from "@stores";
-	import * as Radio from "../../components/radio";
-	import Icon from "../../components/icons/Icon.svelte";
+	import { theme, type ThemeOptions } from "@stores";
+	import { Radio, Icon } from "@components";
 	import { iconMoon, iconSun, iconSunset } from "../../components/icons/default";
 
 	const options = [
@@ -31,7 +30,7 @@
 
 	const handleChange = (event: InputEvent) => {
 		const target = event.target as HTMLInputElement;
-		const value = target.value;
+		const value = target.value as ThemeOptions;
 		theme.set(value);
 	};
 </script>

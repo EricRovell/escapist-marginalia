@@ -1,3 +1,3 @@
-export { theme, type Theme } from "./theme";
+export { theme, type ThemeOptions } from "./theme";
 export { media } from "./media";
 export { uniqueID } from "./unique-id";
