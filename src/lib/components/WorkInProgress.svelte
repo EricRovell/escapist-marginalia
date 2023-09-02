@@ -3,22 +3,33 @@
 	import { illustrationWip } from "@components/icons/illustrations";
 </script>
 
-<div>
+<aside class="wrapper">
 	<SVG
-		size="150px"
 		data={illustrationWip}
 	/>
-	<p>
-		This page is not ready yet.
+	<p class="message">
+		<slot>This page is not ready yet.</slot>
 	</p>
-</div>
+</aside>
 
 <style>
-	div {
+	.wrapper {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		width: 100%;
+		width: min(65ch, 100%);
+		height: fit-content;
+
+		& > svg {
+			aspect-ratio: 1 / 1;
+			width: min(200px, 100%);
+			height: fit-content;
+		}
+	}
+
+	.message {
+		text-align: center;
+		text-wrap: balance;
 	}
 </style>

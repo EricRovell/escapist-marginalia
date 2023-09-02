@@ -13,4 +13,8 @@ updated: 2022-11-09T01:29:00.000Z
 website: "https://ericrovell.github.io/blossom-web"
 ---
 
-This page is currently in development
+<script>
+	import { WorkInProgress } from "@components";
+</script>
+
+<WorkInProgress />
