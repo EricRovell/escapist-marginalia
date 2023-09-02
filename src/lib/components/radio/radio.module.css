@@ -6,13 +6,9 @@
 
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: flex-start;
 	gap: var(--space-3-rel);
 	border: none;
-}
-
-.fieldset > legend {
-	margin-bottom: var(--space-2-rel);
 }
 
 .label {
@@ -21,6 +17,23 @@
 	align-items: center;
 	user-select: none;
 	cursor: pointer;
+
+	& span {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 0.5em;
+		padding: var(--space-2) var(--space-3);
+		border: 1px solid var(--radio-button-focus-ring-color);
+		border-radius: var(--radius-xs);
+		background-color: var(--radio-button-bg);
+		box-shadow: 0 0 0 var(--radio-button-focus-ring-size) var(--radio-button-focus-ring-color);
+		transition: box-shadow 0.25s ease-in-out;
+
+		& svg {
+			margin-block-start: 0.05em;
+		}
+	}
 }
 
 .radio {
@@ -29,15 +42,6 @@
 
 .radio:focus-visible {
 	outline: none;
-}
-
-.radio + span {
-	padding: var(--space-1-rel) var(--space-3-rel);
-	border: 1px solid var(--radio-button-focus-ring-color);
-	border-radius: var(--radius-xs);
-	background-color: var(--radio-button-bg);
-	box-shadow: 0 0 0 var(--radio-button-focus-ring-size) var(--radio-button-focus-ring-color);
-	transition: box-shadow 0.25s ease-in-out;
 }
 
 .radio:hover + span {
