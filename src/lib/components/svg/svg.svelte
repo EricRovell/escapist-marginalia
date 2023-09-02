@@ -4,29 +4,18 @@
     name: string;
     svg: string;
   }
-  
-  //type SVGIconSizes = undefined | 1 | 1.25 | 1.5 | 1.75 | 2;
 </script>
 
 <script lang="ts">
-  export let data: SVGData | undefined = undefined;
-  
+  export let className: string | undefined = undefined;
+	export let data: SVGData | undefined = undefined;
+  export let fill: string | undefined = undefined;
+  export let height: string = "1em";
   export let id: string | undefined = undefined;
+  export let stroke: string | undefined = undefined;
   export let title: string | undefined = data?.name;
   export let viewBox: string | undefined = data?.viewBox ?? "0 0 100 100";
-  
-  export let size: string | undefined = undefined;
-  export let width: string = size ?? "1em";
-  export let height: string = size ?? "1em";
-  
-  export let stroke: string | undefined = undefined;
-  export let fill: string | undefined = undefined;
-  
-  export let icon = false;
-  export let accent = false;
-  
-  export let mr = false;
-  export let ml = false;
+  export let width: string = "1em";
 </script>
 
 <svelte:options namespace="svg" />
@@ -73,17 +62,14 @@
     | ml         | boolean | false         | margin left                         |
 -->
 <svg
-  xmlns="http://www.w3.org/2000/svg"
-  {id}
-  {width}
+aria-labelledby={title}
+	class={className}
   {height}
-  {viewBox}
-  aria-labelledby={title}
+  {id}
   role="presentation"
-  class:icon
-  class:accent
-  class:mr
-  class:ml>
+  {viewBox}
+  {width}
+>
     {#if data}
       <title>
         {title}
@@ -95,27 +81,3 @@
       <slot />
     {/if}
 </svg>
-
-<style>
-  svg {
-    transition: transform 0.25s ease-in-out;
-  }
-  
-  .icon {
-    width: 1em;
-    height: 1em;
-    fill: currentColor;
-  }
-  
-  .accent {
-    fill: var(--color-primary);
-  }
-  
-  .mr {
-    margin-right: 0.4em;
-  }
-  
-  .ml {
-    margin-left: 0.4em;
-  }
-</style>
