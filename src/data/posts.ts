@@ -1,6 +1,6 @@
 import { find } from "@utils/query";
-import type { Blogpost, BlogpostMetadata, Locale, Page } from "../types";
 import type { QueryItem } from "@utils/query";
+import type { Blogpost, BlogpostMetadata, Locale, Page } from "../types";
 
 async function fetchBlogposts(): Promise<Blogpost[]> {
 	const posts: Blogpost[] = [];

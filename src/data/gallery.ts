@@ -1,6 +1,5 @@
-import { find } from "@utils/query";
+import { find, type QueryItem } from "@utils/query";
 import type { GalleryItem, Page } from "../types";
-import type { QueryItem } from "@utils/query";
 
 async function fetchGalleryItems(): Promise<GalleryItem[]> {
 	const items: GalleryItem[] = [];

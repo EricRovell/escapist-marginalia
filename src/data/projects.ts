@@ -1,5 +1,4 @@
-import { find } from "@utils/query";
-import type { QueryItem } from "@utils/query";
+import { find, type QueryItem } from "@utils/query";
 import type { Project, Page } from "../types";
 
 interface Options {
