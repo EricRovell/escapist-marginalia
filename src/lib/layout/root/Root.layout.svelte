@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Button, Drawer, MenuIndicator, Masthead, Footer } from "@components";
+	import { Button, Drawer, MenuIndicator } from "@components";
+	import { Masthead, Footer } from "$lib/views";
 	import MobileNav from "./Root.SideMenuBody.svelte";
 	import { t } from "@core/i18n";
 
