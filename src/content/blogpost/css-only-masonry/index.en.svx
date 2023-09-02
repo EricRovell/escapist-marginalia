@@ -1,14 +1,22 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/masonry.png
-created: 2022-05-11T15:30:00.000Z
-description: "Build Masonry-like layout image gallery component using the modern CSS."
-keywords: [ "css", "web" ]
-lang: en
-layout: blogpost
-slug: "masonry-image-gallery-with-almost-pure-css"
-title: "Masonry Image Gallery Layout with (almost) pure CSS"
-translation: { lang: "русский", slug: "галерея-изображений-в-раскладке-masonry-на-почти-чистом-css" }
-updated: 2022-09-22T03:16:00.000Z
+{
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/masonry.png",
+	"created": "2022-05-11T15:30:00.000Z",
+	"description": "Build Masonry-like layout image gallery component using the modern CSS.",
+	"keywords": [
+		"css",
+		"web"
+	],
+	"lang": "en",
+	"layout": "blogpost",
+	"slug": "masonry-image-gallery-with-almost-pure-css",
+	"title": "Masonry Image Gallery Layout with (almost) pure CSS",
+	"translation": {
+		lang: "русский",
+		slug: "галерея-изображений-в-раскладке-masonry-на-почти-чистом-css"
+	},
+	"updated": "2022-09-22T03:16:00.000Z"
+}
 ---
 
 <script>

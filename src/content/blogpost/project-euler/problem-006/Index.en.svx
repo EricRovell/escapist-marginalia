@@ -1,15 +1,23 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/project-euler-6.png
-created: 2022-10-03T00:31:00.000Z
-description: "Sum square difference."
-keywords: [ "project euler", "math" ]
-lang: en
-layout: blogpost
-series: "project-euler"
-slug: "project-euler-6"
-title: "Project Euler #6"
-translation: { lang: "russian", slug: "проект-эйлера-6" }
-updated: 2022-11-05T03:18:00.000Z
+{
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/project-euler-6.png",
+	"created": "2022-10-03T00:31:00.000Z",
+	"description": "Sum square difference.",
+	"keywords": [
+		"project euler",
+		"math"
+	],
+	"lang": "en",
+	"layout": "blogpost",
+	"series": "project-euler",
+	"slug": "project-euler-6",
+	"title": "Project Euler #6",
+	"translation": {
+		lang: "russian",
+		slug: "проект-эйлера-6"
+	},
+	"updated": "2022-11-05T03:18:00.000Z"
+}
 ---
 
 <script>

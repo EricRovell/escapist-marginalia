@@ -1,14 +1,22 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png
-created: 2022-09-10T01:34:00.000Z
-description: "Может ли что-то детерменистичное скрываться за случайностью?"
-keywords: [ "generative art", "math" ]
-lang: ru
-layout: blogpost
-slug: "игра-хаоса"
-title: "Игра Хаоса: случайность против детерменизма"
-translation: { lang: "english", slug: "the-chaos-game" }
-updated: 2023-01-09T15:20:00.000Z
+{
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png",
+	"created": "2022-09-10T01:34:00.000Z",
+	"description": "Может ли что-то детерменистичное скрываться за случайностью?",
+	"keywords": [
+		"generative art",
+		"math"
+	],
+	"lang": "ru",
+	"layout": "blogpost",
+	"slug": "игра-хаоса",
+	"title": "Игра Хаоса: случайность против детерменизма",
+	"translation": {
+		lang: "english",
+		slug: "the-chaos-game"
+	},
+	"updated": "2023-01-09T15:20:00.000Z"
+}
 ---
 
 <script>
