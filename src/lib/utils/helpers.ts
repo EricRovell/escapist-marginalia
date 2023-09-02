@@ -44,8 +44,9 @@ export function groupBy<T, K extends keyof unknown>(items: T[], getKey: (item: T
  * Prevents the page scroll depending on condition.
  */
 export function preventPageScroll(condition: boolean) {
-	// SSR check
-	if (!globalThis.window) return;
+	if (!globalThis.window) {
+		return;
+	}
 
 	if (condition) {
 		// prevent page scroll, mostly for safari hack
@@ -55,14 +56,16 @@ export function preventPageScroll(condition: boolean) {
 			overflow-y: scroll;
 			overscroll-behavior: none;
 		`;
-	} else {
-		const scrollY: number = parseInt(document.body.style.top || "0");
-		document.body.style.cssText = "";
-		window.scrollTo({
-			top: -1 * scrollY,
-			behavior: "auto"
-		});
+
+		return;
 	}
+
+	const scrollY: number = parseInt(document.body.style.top || "0");
+	document.body.style.cssText = "";
+	window.scrollTo({
+		top: -1 * scrollY,
+		behavior: "auto"
+	});
 }
 
 /**
