@@ -1,1 +1,1 @@
-export { default as InputText } from "./InputText.svelte";
+export { default as InputText } from "./input-text.svelte";

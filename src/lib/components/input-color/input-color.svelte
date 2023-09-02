@@ -8,7 +8,7 @@
 </script>
 
 <script lang="ts">
-	import Picker from "./InputColorPicker.svelte";
+	import Picker from "./input-color.picker.svelte";
 	import { Modal } from "../modal";
 	import { clickOutside, shortcut } from "$lib/actions";
 	import { media } from "$lib/stores";

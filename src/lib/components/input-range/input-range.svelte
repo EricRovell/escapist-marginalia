@@ -1,5 +1,5 @@
 <script lang="ts">
-	import styles from "./range.module.css";
+	import styles from "./input-range.module.css";
 
 	export let className = "";
 	export let disabled = false;
