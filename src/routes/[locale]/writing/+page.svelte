@@ -3,7 +3,7 @@
 	import { LayoutPage } from "@layout";
 	import { t, locale, i18nTemplate } from "@core/i18n";
 	import { find } from "@utils/query";
-	import { iconPi, iconImg, iconNumberE, iconGlobe } from "@lib/components/icons/default";
+	import { iconPi, iconImg, iconNumberE, iconGlobe } from "@icons";
 	import styles from "./writing.module.css";
 
 	import type { Blogpost } from "../../../types";

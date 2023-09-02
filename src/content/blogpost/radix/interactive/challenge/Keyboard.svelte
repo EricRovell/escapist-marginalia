@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher, getContext } from "svelte";
 	import { Button, Icon } from "@components";
-	import { iconDelete } from "@components/icons/default";
+	import { iconDelete } from "@icons";
 	import { radix36, buildPattern } from "../../util";
 	import styles from "./keyboard.module.css";
 

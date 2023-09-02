@@ -11,8 +11,7 @@
 	import { t } from "@core/i18n";
 
 	import { Button, Menu as Navigation, Icon, Link } from "@components";
-	import { iconGear } from "../../components/icons/default";
-	import { logo } from "@components/icons/logo";
+	import { iconGear, iconLogo } from "@icons";
 	import { PreferencesModal } from "..";
 	import styles from "./masthead.module.css";
 
@@ -60,7 +59,7 @@
 <header class={`container ${styles.masthead}`}>
 	<section data-label="logo">
 		<Link block href={$pathHome} aria-label="Escapist Marginalia Logo">
-			<Icon path={logo} />
+			<Icon path={iconLogo} />
 		</Link>
 	</section>
 	<section data-label="navigation">

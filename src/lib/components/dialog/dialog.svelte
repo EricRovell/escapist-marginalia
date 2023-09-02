@@ -2,7 +2,7 @@
 	import { afterUpdate, createEventDispatcher } from "svelte";
 	import { Button } from "../button";
 	import { Icon } from "../svg";
-	import { iconCancel } from "../icons/default";
+	import { iconCancel } from "@icons";
 	import styles from "./dialog.module.css";
 	import { clickOutside, shortcut } from "../../actions";
 	import { preventPageScroll } from "$lib/utils/helpers";

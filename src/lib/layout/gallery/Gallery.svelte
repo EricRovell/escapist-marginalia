@@ -16,7 +16,7 @@
 		ImageFullscreen,
 		Datetime
 	} from "@components";
-	import { iconShare, iconDownload, iconFullscreen } from "$lib/components/icons/default";
+	import { iconShare, iconDownload, iconFullscreen } from "@icons";
 	import { share } from "@utils/helpers";
 	import styles from "./gallery.module.css";
 	import articleStyles from "./article.module.css";

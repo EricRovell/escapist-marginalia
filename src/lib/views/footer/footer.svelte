@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Datetime, Link, Icon } from "@components";
 	import NavLocale from "./footer.locale.svelte";
-	import { iconGithub, iconRSS } from "../../components/icons/default";
+	import { iconGithub, iconRSS } from "@icons";
 	import { t } from "@core/i18n";
 	import styles from "./footer.module.css";
 

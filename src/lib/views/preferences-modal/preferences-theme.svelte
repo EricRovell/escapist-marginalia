@@ -5,7 +5,7 @@
 <script lang="ts">
 	import { theme, type ThemeOptions } from "@stores";
 	import { Radio, Icon } from "@components";
-	import { iconMoon, iconSun, iconSunset } from "../../components/icons/default";
+	import { iconMoon, iconSun, iconSunset } from "@icons";
 
 	const options = [
 		{

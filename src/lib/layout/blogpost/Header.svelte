@@ -2,7 +2,7 @@
 	import { t, locale } from "@core/i18n";
 	import { pathBlogpost, webpage } from "@core/paths";
 	import { Button, Datetime, Icon, Link } from "@components";
-	import { iconShare } from "@components/icons/default";
+	import { iconShare } from "@icons";
 	import { encodeTitleId, share } from "@utils/helpers";
 	import styles from "./header.module.css";
 

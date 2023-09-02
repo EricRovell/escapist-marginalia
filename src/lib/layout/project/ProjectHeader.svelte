@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Link, Icon, Datetime } from "@components";
-	import { iconGithub, iconNpm, iconURL } from "$lib/components/icons/default";
+	import { iconGithub, iconNpm, iconURL } from "@icons";
 	import { t } from "@core/i18n";
 	import type { Project } from "@types";
 	import styles from "./project-header.module.css";

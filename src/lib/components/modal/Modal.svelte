@@ -3,7 +3,7 @@
 	import { fade } from "svelte/transition";
 	import { portal, shortcut } from "@lib/actions";
 	import { Icon } from "../svg";
-	import { iconCancel } from "../icons/default";
+	import { iconCancel } from "@icons";
 	import { preventPageScroll } from "@utils/helpers";
 	import styles from "./modal.module.css";
 

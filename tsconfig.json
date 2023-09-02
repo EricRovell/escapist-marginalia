@@ -22,6 +22,7 @@
 			"@components": [ "src/lib/components/index.ts" ],
 			"@components/*": [ "src/lib/components/*" ],
 			"@content/*": [ "src/content/*" ],
+			"@icons": [ "src/lib/icons/index.ts" ],
 			"@layout": [ "src/lib/layout/index.ts" ],
 			"@layout/*": [ "src/lib/layout/*" ],
 			"@stores": [ "src/lib/stores/index.ts" ],

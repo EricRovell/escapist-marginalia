@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Link } from "../link";
 	import { Icon } from "../svg";
-	import { iconArrowTop } from "../icons/default";
+	import { iconArrowTop } from "@icons";
 	import styles from "./scroll-to-top.module.css";
 
 	export let id: string;
