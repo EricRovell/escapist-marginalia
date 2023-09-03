@@ -8,7 +8,7 @@ export { Dialog } from "./dialog";
 export { Drawer } from "./drawer";
 export * from "./gallery";
 export { Gallery, ImageFullscreen } from "./gallery";
-export { Icon, SVG } from "./svg";
+export { Icon } from "./icon";
 export { Image } from "./image";
 export { InputColor } from "./input-color";
 export { InputNumber } from "./input-number";

@@ -2,7 +2,7 @@
 	import { createEventDispatcher } from "svelte";
 	import { fade } from "svelte/transition";
 	import { portal, shortcut } from "@lib/actions";
-	import { Icon } from "../svg";
+	import { Icon } from "../icon";
 	import { iconCancel } from "@icons";
 	import { preventPageScroll } from "@utils/helpers";
 	import styles from "./modal.module.css";

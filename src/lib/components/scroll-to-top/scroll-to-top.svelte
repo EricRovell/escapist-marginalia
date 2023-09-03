@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Link } from "../link";
-	import { Icon } from "../svg";
+	import { Icon } from "../icon";
 	import { iconArrowTop } from "@icons";
 	import styles from "./scroll-to-top.module.css";
 

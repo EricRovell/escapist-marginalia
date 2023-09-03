@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { afterUpdate, createEventDispatcher } from "svelte";
 	import { Button } from "../button";
-	import { Icon } from "../svg";
+	import { Icon } from "../icon";
 	import { iconCancel } from "@icons";
 	import styles from "./dialog.module.css";
 	import { clickOutside, shortcut } from "../../actions";
