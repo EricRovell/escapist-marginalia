@@ -10,7 +10,6 @@ async function fetchGalleryItems(): Promise<GalleryItem[]> {
 	for await (const [ filename, module ] of Object.entries(modules)) {
 		const { metadata } = await module() as Page<GalleryItem>;
 		const {
-			date,
 			draft = false,
 			updated,
 			title,
@@ -18,7 +17,6 @@ async function fetchGalleryItems(): Promise<GalleryItem[]> {
 		}: GalleryItem = metadata;
 
 		items.push({
-			date: new Date(date),
 			draft,
 			updated: new Date(updated),
 			title,
