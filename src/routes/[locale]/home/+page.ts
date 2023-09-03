@@ -1,39 +1,21 @@
 import { error } from "@sveltejs/kit";
-import { getBlogposts } from "@data/posts";
-import { getGalleryItems } from "@data/gallery";
-import { getProjects } from "@data/projects";
-import type { Locale } from "@types";
+import type { Blogpost, GalleryItem, Project } from "@types";
 import type { PageLoad } from "./$types";
 
-export const load: PageLoad = async ({ params }) => {
-	const { locale = "en" } = params as { locale: Locale };
+interface RecentItems {
+	blogposts: Blogpost[];
+	gallery: GalleryItem[];
+	projects: Project[];
+}
 
+export const load: PageLoad = async ({ fetch, params }) => {
 	try {
-		const [ blogposts, gallery, projects ] = await Promise.all([
-			getBlogposts({
-				lang: locale,
-				draft: false
-			}),
-			getGalleryItems({
-				lang: locale,
-				draft: false
-			}, {
-				limit: 5
-			}),
-			getProjects({
-				featured: true,
-				lang: locale
-			}, {
-				limit: 4
-			})
-		]);
+		const { locale = "en" } = params;
+		const res = await fetch(`/api/recents/${locale}`);
+		const items: RecentItems = await res.json();
 
-		return {
-			blogposts: blogposts.slice(0, 4),
-			photos: gallery.slice(0, 4),
-			projects: projects.slice(0, 4)
-		};
+		return items;
 	} catch (err) {
-		throw error(404, `Something is wrong: ${err.message}`);
+		throw error(404, `Could not load: ${err.message}`);
 	}
 };

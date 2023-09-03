@@ -53,7 +53,7 @@
 						&#x2192; {$t("dict.entire-gallery")}
 					</Link>
 				</header>
-				<Gallery items={data.photos} />
+				<Gallery items={data.gallery} />
 			</div>
 		</section>
 		<section label="featured-projects">
