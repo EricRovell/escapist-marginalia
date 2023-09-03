@@ -1,16 +1,20 @@
 ---
-description: "Blossom - библиотека для конвертации цветов и манипуляций на ними, написанная на TypeScript."
-featured: true
-lang: "ru"
-layout: project
-maintained: false
-name: "blossom"
-npm: "@ericrovell/blossom"
-repository: "EricRovell/blossom"
-techstack: [ "TypeScript" ]
-type: "library"
-updated: 2022-11-09T01:29:00.000Z
-website: "https://ericrovell.github.io/blossom-web"
+{
+	"description": "Blossom - библиотека для конвертации цветов и манипуляций на ними, написанная на TypeScript.",
+	"featured": true,
+	"lang": "ru",
+	"layout": "project",
+	"maintained": false,
+	"name": "blossom",
+	"npm": "@ericrovell/blossom",
+	"repository": "EricRovell/blossom",
+	"techstack": [
+		"TypeScript"
+	],
+	"type": "library",
+	"updated": "2022-11-09T01:29:00.000Z",
+	"website": "https://ericrovell.github.io/blossom-web"
+}
 ---
 
 <script>

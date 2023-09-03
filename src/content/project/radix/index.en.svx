@@ -1,16 +1,20 @@
 ---
-description: "Radix is a JS library for radix number transformations and manipulations."
-featured: true
-lang: "en"
-layout: project
-maintained: true
-name: "radix"
-npm: "@ericrovell/radix"
-repository: "EricRovell/radix"
-techstack: [ "TypeScript" ]
-type: "library"
-updated: 2022-11-09T01:29:00.000Z
-website: "https://radix.vercel.app/"
+{
+	"description": "Radix is a JS library for radix number transformations and manipulations.",
+	"featured": true,
+	"lang": "en",
+	"layout": "project",
+	"maintained": true,
+	"name": "radix",
+	"npm": "@ericrovell/radix",
+	"repository": "EricRovell/radix",
+	"techstack": [
+		"TypeScript"
+	],
+	"type": "library",
+	"updated": "2022-11-09T01:29:00.000Z",
+	"website": "https://radix.vercel.app/"
+}
 ---
 
 Being in search of yourself, I decided to try myself in programming. The first course I have stumbled upon was Harvard University [CS50][cs50]. The introductory lecture covered some basics, and the binary number system was one of them. In just a few minutes, the topic was explained so simply and accessible that I really understood it. It may sound strange, but at school and my alma mater I could not get it at all as it all boiled down to repeating the steps of the algorithms to get the result, nothing more.

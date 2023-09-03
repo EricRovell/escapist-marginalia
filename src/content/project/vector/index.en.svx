@@ -1,15 +1,19 @@
 ---
-description: "Euclidian vector library written in TypeScript."
-featured: true
-lang: "en"
-layout: project
-maintained: true
-name: "vector"
-npm: "@ericrovell/vector"
-repository: "EricRovell/vector"
-techstack: [ "TypeScript" ]
-type: "library"
-updated: 2023-06-04T00:25:00.000Z
+{
+	"description": "Euclidian vector library written in TypeScript.",
+	"featured": true,
+	"lang": "en",
+	"layout": "project",
+	"maintained": true,
+	"name": "vector",
+	"npm": "@ericrovell/vector",
+	"repository": "EricRovell/vector",
+	"techstack": [
+		"TypeScript"
+	],
+	"type": "library",
+	"updated": "2023-06-04T00:25:00.000Z"
+}
 ---
 
 ## Motivation

@@ -1,12 +1,20 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/digital-rain.png
-description: "Matrix digital rain, Matrix code or sometimes green rain, is the computer code featured in the Matrix series."
-keywords: [ "digital rain", "the matrix", "matrix code", "canvas animation", "generative art" ]
-lang: "en"
-layout: "sketch"
-title: "Digital Rain"
-updated: 2022-11-19T00:09:00.000Z
-url: "/en/sketch/digital-rain"
+{
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/digital-rain.png",
+	"description": "Matrix digital rain, Matrix code or sometimes green rain, is the computer code featured in the Matrix series.",
+	"keywords": [
+		"digital rain",
+		"the matrix",
+		"matrix code",
+		"canvas animation",
+		"generative art"
+	],
+	"lang": "en",
+	"layout": "sketch",
+	"title": "Digital Rain",
+	"updated": "2022-11-19T00:09:00.000Z",
+	"url": "/en/sketch/digital-rain"
+}
 ---
 
 <script>

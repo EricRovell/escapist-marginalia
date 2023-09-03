@@ -1,12 +1,19 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/the-attractor.png
-description: "Визуализация течения частиц в поле аттрактора."
-keywords: [ "аттрактор", "турбулентность", "canvas", "генеративное искусство" ]
-lang: "ru"
-layout: "sketch"
-title: "Аттрактор"
-updated: 2022-11-20T00:37:00.000Z
-url: "/ru/sketch/the-attractor"
+{
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/the-attractor.png",
+	"description": "Визуализация течения частиц в поле аттрактора.",
+	"keywords": [
+		"аттрактор",
+		"турбулентность",
+		"canvas",
+		"генеративное искусство"
+	],
+	"lang": "ru",
+	"layout": "sketch",
+	"title": "Аттрактор",
+	"updated": "2022-11-20T00:37:00.000Z",
+	"url": "/ru/sketch/the-attractor"
+}
 ---
 
 <script>
