@@ -6,7 +6,7 @@
 	export let cropFactor = 1;
 	export let height = 24;
 	export let width = 36;
-	export let imageSrc = "/img/blogpost-crop-factor-comparison.jpg";
+	export let imageSrc = "https://storage.yandexcloud.net/escapist-marginalia/writing/crop-factor-comparison.jpg";
 	export let imageFocalLength = 16;
 	export let focalLength = imageFocalLength;
 
