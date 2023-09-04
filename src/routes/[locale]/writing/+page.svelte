@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Drawer, PageMeta, CardArticle, SwitchGroup } from "@components";
+	import { Button, Drawer, PageMeta, CardBlogpost, SwitchGroup } from "@components";
 	import { LayoutPage } from "@layout";
 	import { t, locale, i18nTemplate } from "@core/i18n";
 	import { find } from "@utils/query";
@@ -57,7 +57,7 @@
 				{i18nTemplate($t("message.blogpost-counter"), [ content.length, data.items.length ])}:
 			</aside>
 			{#each content as { cover, dateCreated, description, keywords, title, slug }}
-				<CardArticle
+				<CardBlogpost
 					{cover}
 					{dateCreated}
 					{description}

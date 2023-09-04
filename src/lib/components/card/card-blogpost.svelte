@@ -8,7 +8,7 @@
 	import { Image } from "../image";
 	import { pathBlogpost } from "@core/paths";
 	import stylesCard from "./card.module.css";
-	import styles from "./card-article.module.css";
+	import styles from "./card-blogpost.module.css";
 
 	export let cover: Blogpost["cover"];
 	export let dateCreated: Blogpost["dateCreated"];

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { pathWriting, pathGallery, pathProjects } from "@paths";
-	import { PageMeta, Link, CardArticle, CardProject, Gallery } from "@components";
+	import { PageMeta, Link, CardBlogpost, CardProject, Gallery } from "@components";
 	import { LayoutPage } from "@layout";
 	import { t } from "@core/i18n";
 	import type { PageData } from "./$types";
@@ -32,7 +32,7 @@
 				<ul class="grid-flexible" style="--item-size: 24ch">
 					{#each data.blogposts as { cover, dateCreated, description, keywords, title, slug }}
 						<li>
-							<CardArticle
+							<CardBlogpost
 								{cover}
 								{dateCreated}
 								{description}
