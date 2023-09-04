@@ -1,6 +1,6 @@
 ---
 {
-	"dateUpdated": "2022-11-09T01:29:00.000Z"
+	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Проект Эйлера",
 	"featured": false,
 	"lang": "ru",
