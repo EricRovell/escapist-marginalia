@@ -52,9 +52,9 @@
 	<Header
 		{description}
 		{maintained}
-		{name}
 		{npm}
 		{repository}
+		{title}
 		{techstack}
 		{website}
 		slot="banner"
