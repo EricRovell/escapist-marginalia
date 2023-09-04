@@ -1,6 +1,5 @@
 .footer {
 	grid-area: footer;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -47,11 +46,11 @@
 		flex-flow: column nowrap;
 		gap: var(--space-2);
 	}
-	
-	& p :global(time) {
+
+	& p:global(time) {
 		color: var(--surface-2-text-contrast);
 	}
-	
+
 	& .locale > span {
 		display: flex;
 		text-transform: capitalize;
@@ -84,14 +83,14 @@
 	}
 }
 
-@media (max-width: 540px) {
+@media (width <= 540px) {
 	.wrapper {
 		grid-template: repeat(2, 1fr) / 1fr;
 		justify-items: center;
 	}
 }
 
-@media (max-width: 48em) {
+@media (width <= 48em) {
 	.footer {
 		/* floating button offset */
 		padding-bottom: 6rem;

@@ -2,7 +2,6 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -16,7 +15,7 @@
 }
 
 .dialog::backdrop {
-	background-color: hsl(0 0% 0% / 0.6);
+	background-color: hsl(0deg 0% 0% / 60%);
 }
 
 .modal {
@@ -35,8 +34,6 @@
 	align-items: center;
 	background-color: var(--surface-2);
 	padding-block: var(--space-1);
-	border-top-left-radius: var(--radius-1);
-	border-top-right-radius: var(--radius-1);
 	color: var(--color-500-900);
 	border-radius: var(--radius-s) var(--radius-s) 0 0;
 	border-bottom: 1px solid var(--color-border-50);
