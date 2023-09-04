@@ -1,6 +1,7 @@
 ---
 {
 	"cover": https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png,
+	"dateUpdated": "2023-01-05T20:12:00.000Z",
 	"description": "Vizualizing a fractals from simple rules and a randomness.",
 	"keywords": [
 		"chaos-game",
@@ -11,7 +12,6 @@
 	"lang": "en",
 	"layout": "sketch",
 	"title": "Chaos Game",
-	"updated": "2023-01-05T20:12:00.000Z",
 	"url": "/en/sketch/chaos-game"
 }
 ---

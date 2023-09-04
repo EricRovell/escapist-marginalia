@@ -71,11 +71,11 @@ export type { GalleryItem } from "@components";
 
 export interface Sketch {
 	cover: string;
+	dateUpdated: string;
 	description: string;
 	keywords: string[];
 	lang: string;
 	title: string;
-	updated: string;
 	url: string;
 }
 
@@ -100,6 +100,7 @@ interface GalleryImage {
 	src: string;
 	width: string;
 }
+
 export interface GalleryItemPage {
 	camera: string;
 	dateCreated: number;

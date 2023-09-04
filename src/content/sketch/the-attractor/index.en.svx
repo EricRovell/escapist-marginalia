@@ -1,5 +1,6 @@
 ---
 {
+	"dateUpdated": "2022-11-20T00:37:00.000Z",
 	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/the-attractor.png",
 	"description": "The attractor field flow visualization.",
 	"keywords": [
@@ -11,7 +12,6 @@
 	"lang": "en",
 	"layout": "sketch",
 	"title": "The Attractor",
-	"updated": "2022-11-20T00:37:00.000Z",
 	"url": "/en/sketch/the-attractor"
 }
 ---

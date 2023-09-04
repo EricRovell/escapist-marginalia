@@ -1,5 +1,6 @@
 ---
 {
+	"dateUpdated": "2022-12-04T15:18:00.000Z",
 	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/flocking.png",
 	"description": Flocking simulation based on Craig Reynolds \"boids\" algorithm.",
 	"keywords": [
@@ -11,7 +12,6 @@
 	"lang": "en",
 	"layout": "sketch",
 	"title": "Flocking",
-	"updated": "2022-12-04T15:18:00.000Z",
 	"url": "/en/sketch/flocking"
 }
 ---
