@@ -75,7 +75,7 @@ export async function getBlogposts({ slug, lang, keywords, draft }: Partial<Blog
 	};
 
 	const sortByDate = (a: Blogpost, b: Blogpost) => {
-		return new Date(a.created) > new Date(b.created)
+		return new Date(a.dateCreated) > new Date(b.dateCreated)
 			? -1
 			: 1;
 	};
