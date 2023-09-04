@@ -1,18 +1,18 @@
 ---
 {
+	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Radix — библиотека для перевода чисел в различные системы счисленя, написанная на TypeScript.",
 	"featured": true,
 	"lang": "ru",
 	"layout": "project",
 	"maintained": true,
-	"name": "radix",
 	"npm": "@ericrovell/radix",
 	"repository": "EricRovell/radix",
+	"title": "radix",
 	"techstack": [
 		"TypeScript"
 	],
 	"type": "library",
-	"updated": "2022-11-09T01:29:00.000Z",
 	"website": "https://radix.vercel.app/"
 }
 ---

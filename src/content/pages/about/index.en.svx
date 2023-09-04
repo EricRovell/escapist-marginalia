@@ -1,5 +1,6 @@
 ---
 {
+	"dateUpdated": "2023-04-13T13:39:00.000Z",
 	"description": "About this website and it's purpose.",
 	"keywords": [
 		"blog",
@@ -9,8 +10,7 @@
 	],
 	"lang": "en",
 	"slug": "/en/about",
-	"title": "About",
-	"updated": "2023-04-13T13:39:00.000Z"
+	"title": "About"
 }
 ---
 

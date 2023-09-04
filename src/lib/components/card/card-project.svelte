@@ -9,14 +9,14 @@
 	import styles from "./card-project.module.css";
 
 	export let description: Project["description"];
-	export let name: Project["name"];
+	export let title: Project["title"];
 	export let techstack: Project["techstack"] = [];
 </script>
 
 <article class="surface-2 {stylesCard.card} {styles.card}">
 	<h3>
-		<Link href="{$pathProject(name)}">
-			{name}
+		<Link href="{$pathProject(title)}">
+			{title}
 		</Link>
 	</h3>
 	<p class="line-clamp" style="--line-count: 3">

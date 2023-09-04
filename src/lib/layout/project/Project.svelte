@@ -10,26 +10,26 @@
 	import { LayoutPage } from "../page-header";
 	import styles from "./project.module.css";
 
+	export let dateUpdated;
 	export let description;
 	export let lang;
 	export let maintained;
-	export let name;
 	export let npm;
 	export let repository;
+	export let title;
 	export let techstack = [];
-	export let updated;
 	export let website;
 </script>
 
 <Meta
-	title="{name}"
+	{title}
 	meta={{
 		description,
 		keywords: techstack,
 		language: lang
 	}}
 	openGraph={{
-		title: name,
+		title,
 		description,
 		locale: lang,
 		type: "article",
@@ -38,11 +38,11 @@
 		site_name: "Eric Rovell",
 		author: "Eric Rovell",
 		url: $webpage,
-		"article:modified_time": updated
+		"article:modified_time": dateUpdated
 	}}
 	twitter={{
 		card: "summary",
-		title: name,
+		title,
 		description,
 		url: $webpage
 	}}

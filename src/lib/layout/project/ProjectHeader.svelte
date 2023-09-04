@@ -5,13 +5,13 @@
 	import type { Project } from "@types";
 	import styles from "./project-header.module.css";
 
+	export let dateUpdated: Project["dateUpdated"];
 	export let description: Project["description"];
-	export let name: Project["name"];
+	export let title: Project["title"];
 	export let npm: Project["npm"];
 	export let repository: Project["repository"];
 	export let techstack: Project["techstack"] = [];
 	export let website: Project["website"];
-	export let updated: Project["updated"];
 
 	const links = [
 		{
@@ -36,10 +36,10 @@
 
 <div class={styles.wrapper}>
 	<h1>
-		{name}
+		{title}
 	</h1>
 	<p>{description}</p>
-	<p>{$t("message.updated")} <Datetime date="{updated}" /></p>
+	<p>{$t("message.updated")} <Datetime date="{dateUpdated}" /></p>
 	<footer>
 		<ul class="{styles.keywords}">
 			{#each techstack as keyword}

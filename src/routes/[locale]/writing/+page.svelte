@@ -56,10 +56,10 @@
 			<aside class={styles.counter}>
 				{i18nTemplate($t("message.blogpost-counter"), [ content.length, data.items.length ])}:
 			</aside>
-			{#each content as { cover, created, description, keywords, title, slug }}
+			{#each content as { cover, dateCreated, description, keywords, title, slug }}
 				<CardArticle
 					{cover}
-					{created}
+					{dateCreated}
 					{description}
 					{keywords}
 					{title}

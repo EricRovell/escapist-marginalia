@@ -53,17 +53,17 @@ export interface Blogpost extends Omit<BlogpostMetadata, "dateCreated" | "dateUp
  * Project Page Frontmatter data interface.
  */
 export interface Project {
+	dateUpdated: string;
 	description: string;
 	featured?: boolean;
 	lang: Locale;
 	layout: string | false;
 	maintained: boolean;
-	name: string;
 	npm?: string;
 	repository: string;
+	title: string;
 	techstack: string[];
 	type: "string";
-	updated: string;
 	website?: string;
 }
 

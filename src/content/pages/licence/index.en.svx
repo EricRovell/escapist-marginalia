@@ -1,13 +1,13 @@
 ---
 {
+	"dateUpdated": "2022-11-11T01:23:00.000Z",
 	"description": "Types of license for content on this website.",
 	"keywords": [
 		"license"
 	],
 	"lang": "en",
 	"slug": "/en/license",
-	"title": "License",
-	"updated": "2022-11-11T01:23:00.000Z"
+	"title": "License"
 }
 ---
 

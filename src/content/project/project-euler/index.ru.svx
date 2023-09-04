@@ -1,16 +1,16 @@
 ---
 {
+	"dateUpdated": "2022-11-09T01:29:00.000Z"
 	"description": "Проект Эйлера",
 	"featured": false,
 	"lang": "ru",
 	"layout": "project",
 	"maintained": true,
-	"name": "project-euler",
 	"repository": "EricRovell/project-euler-ts",
+	"title": "project-euler",
 	"techstack": [
 		"TypeScript"
-	],
-	"updated": "2022-11-09T01:29:00.000Z"
+	]
 }
 ---
 

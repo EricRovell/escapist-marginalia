@@ -11,7 +11,7 @@
 	import styles from "./card-article.module.css";
 
 	export let cover: Blogpost["cover"];
-	export let created: Blogpost["created"];
+	export let dateCreated: Blogpost["dateCreated"];
 	export let description: Blogpost["description"];
 	export let keywords: Blogpost["keywords"];
 	export let title: Blogpost["title"];
@@ -26,7 +26,7 @@
 		width="{500}"
 	/>
 	<Datetime
-		date={created}
+		date={dateCreated}
 		options={{ month: "long", day: "numeric", year: "numeric" }}
 	/>
 	<h3>

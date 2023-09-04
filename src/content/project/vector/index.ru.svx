@@ -1,18 +1,18 @@
 ---
 {
+	"dateUpdated": "2023-06-04T00:25:00.000Z",
 	"description": "Библиотека для работы с евклидовыми векторами, написанная на TypeScript.",
 	"featured": true,
 	"lang": "ru",
 	"layout": "project",
 	"maintained": true,
-	"name": "vector",
 	"npm": "@ericrovell/vector",
 	"repository": "EricRovell/vector",
+	"title": "vector",
 	"techstack": [
 		"TypeScript"
 	],
-	"type": "library",
-	"updated": "2023-06-04T00:25:00.000Z"
+	"type": "library"
 }
 ---
 

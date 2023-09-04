@@ -26,7 +26,7 @@ const getProjectPageData = async () => {
 	}
 };
 
-export const getProjects = async ({ lang, name, featured }: Partial<Project> = {}, { limit }: Options = {}): Promise<Project[]> => {
+export const getProjects = async ({ lang, title, featured }: Partial<Project> = {}, { limit }: Options = {}): Promise<Project[]> => {
 	const data = await getProjectPageData();
 
 	type Query<T> = {
@@ -47,9 +47,9 @@ export const getProjects = async ({ lang, name, featured }: Partial<Project> = {
 			matcher: value => project => project.lang === value
 		},
 		slug: {
-			value: name,
-			validator: name => typeof name === "string",
-			matcher: name => project => project.name === name
+			value: title,
+			validator: title => typeof title === "string",
+			matcher: title => project => project.title === title
 		}
 	};
 
