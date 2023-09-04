@@ -16,7 +16,8 @@ export interface Page<T> {
  */
 export interface BlogpostMetadata {
 	cover: string;
-	created: string;
+	dateCreated: string;
+	dateUpdated: string;
 	description: string;
 	draft?: boolean;
 	filepath: string;
@@ -36,15 +37,14 @@ export interface BlogpostMetadata {
 		level: number;
 		title: string;
 	}[];
-	updated: string;
 }
 
 /**
  * Describes the blogpost's metadata.
  */
-export interface Blogpost extends Omit<BlogpostMetadata, "created" | "updated" | "keywords"> {
-	created: Date;
-	updated: Date;
+export interface Blogpost extends Omit<BlogpostMetadata, "dateCreated" | "dateUpdated" | "keywords"> {
+	dateCreated: Date;
+	dateUpdated: Date;
 	keywords: string[];
 	slug: string;
 }

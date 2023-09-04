@@ -11,17 +11,17 @@ async function fetchBlogposts(): Promise<Blogpost[]> {
 	for await (const [ filename, module ] of Object.entries(modules)) {
 		const { metadata } = await module() as Page<BlogpostMetadata>;
 		const {
-			created,
+			dateCreated,
+			dateUpdated,
 			draft = false,
-			updated,
 			title,
 			...rest
 		}: BlogpostMetadata = metadata;
 
 		posts.push({
-			created: new Date(created),
+			dateCreated: new Date(dateCreated),
 			draft,
-			updated: new Date(updated),
+			dateUpdated: new Date(dateUpdated),
 			title,
 			/**
 			 * All blogpost contents are located as:

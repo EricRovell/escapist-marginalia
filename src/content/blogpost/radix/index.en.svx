@@ -1,7 +1,7 @@
 ---
 {
 	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/radix.png",
-	"created": "2022-11-04T02:30:00.000Z",
+	"dateCreated": "2022-11-04T02:30:00.000Z",
 	"description": "The basics you need to know how we represent numbers.",
 	"keywords": [
 		"math",

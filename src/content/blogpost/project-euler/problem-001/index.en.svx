@@ -1,7 +1,7 @@
 ---
 {
 	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/project-euler-1.png",
-	"created": "2022-05-24T00:20:00.000Z",
+	"dateCreated": "2022-05-24T00:20:00.000Z",
 	"description": "Multiples of 3 or 5.",
 	"keywords": [
 		"project euler",
