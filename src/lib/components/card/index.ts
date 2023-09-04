@@ -1,3 +1,3 @@
-export { default as CardArticle } from "./CardArticle.svelte";
-export { default as CardProject } from "./CardProject.svelte";
-export { default as CardSketch } from "./CardSketch.svelte";
+export { default as CardBlogpost } from "./card-blogpost.svelte";
+export { default as CardProject } from "./card-project.svelte";
+export { default as CardSketch } from "./card-sketch.svelte";

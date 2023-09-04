@@ -1,12 +1,19 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png
-description: "Выстраиваем фрактальные геометрические фигуры на основе простых правил и случайности."
-keywords: [ "игра хаоса", "случайность", "фракталы", "генеративное искусство" ]
-lang: "ru"
-layout: "sketch"
-title: "Игра Хаоса"
-updated: 2023-01-05T20:12:00.000Z
-url: "/ru/sketch/chaos-game"
+{
+	"dateUpdated": "2023-01-05T20:12:00.000Z",
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png",
+	"description": "Выстраиваем фрактальные геометрические фигуры на основе простых правил и случайности.",
+	"keywords": [
+		"игра хаоса",
+		"случайность",
+		"фракталы",
+		"генеративное искусство"
+	],
+	"lang": "ru",
+	"layout": "sketch",
+	"title": "Игра Хаоса",
+	"url": "/ru/sketch/chaos-game"
+}
 ---
 
 <script>

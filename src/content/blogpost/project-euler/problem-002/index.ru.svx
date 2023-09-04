@@ -1,14 +1,19 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/project-euler-2.png
-created: 2021-06-11T00:00:00.000Z
-description: "Чётные числа Фибоначчи."
-keywords: [ "project euler", "math" ]
-lang: ru
-layout: blogpost
-series: "project-euler"
-slug: "проект-эйлера-2"
-title: "Проект Эйлера #2"
-updated: 2021-06-13T00:00:00.000Z
+{
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/project-euler-2.png",
+	"dateCreated": "2021-06-11T00:00:00.000Z",
+	"dateUpdated": "2021-06-13T00:00:00.000Z",
+	"description": "Чётные числа Фибоначчи.",
+	"keyword"s: [
+		"project euler",
+		"math"
+	],
+	"lang": "ru",
+	"layout": "blogpost",
+	"series": "project-euler",
+	"slug": "проект-эйлера-2",
+	"title": "Проект Эйлера #2"
+}
 ---
 
 <script>

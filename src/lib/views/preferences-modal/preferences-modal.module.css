@@ -1,0 +1,7 @@
+.settings {
+	font-size: var(--font-size-0);
+
+	& fieldset {
+		border: none;
+	}
+}

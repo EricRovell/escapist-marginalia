@@ -1,16 +1,20 @@
 ---
-description: "Radix — библиотека для перевода чисел в различные системы счисленя, написанная на TypeScript."
-featured: true
-lang: "ru"
-layout: project
-maintained: true
-name: "radix"
-npm: "@ericrovell/radix"
-repository: "EricRovell/radix"
-techstack: [ "TypeScript" ]
-type: "library"
-updated: "2022-11-09T01:29:00.000Z"
-website: "https://radix.vercel.app/"
+{
+	"dateUpdated": "2022-11-09T01:29:00.000Z",
+	"description": "Radix — библиотека для перевода чисел в различные системы счисленя, написанная на TypeScript.",
+	"featured": true,
+	"lang": "ru",
+	"layout": "project",
+	"maintained": true,
+	"npm": "@ericrovell/radix",
+	"repository": "EricRovell/radix",
+	"title": "radix",
+	"techstack": [
+		"TypeScript"
+	],
+	"type": "library",
+	"website": "https://radix.vercel.app/"
+}
 ---
 
 Находившись в "поисках себя" и решив попробовать себя в программировании, наткнулся на онлайн курс [CS50][cs50] Гарвардского Университета. На вводной лекции рассматривались вводные темы, основы, и одной из них было знакомство с двоичными системами счисления. Буквально за несколько миинут тему объяснили так просто и так доступно, что я действительно понял её. Это может прозвучать странно, однако в школе и даже в университете так и не смогли объяснить тему доступно. Всё сводилось к повторению определённых действия для получения результата, не более.

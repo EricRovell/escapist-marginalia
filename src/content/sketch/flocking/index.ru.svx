@@ -1,12 +1,18 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/flocking.png
-description: Моделирование поведения стаи на основе алгоритма Крейга Рейнольдса."
-keywords: [ "стая", "canvas animation", "моделирование" ]
-lang: "ru"
-layout: "sketch"
-title: "Стая"
-updated: 2022-12-04T15:18:00.000Z
-url: "/ru/sketch/flocking"
+{
+	"dateUpdated": "2022-12-04T15:18:00.000Z",
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/flocking.png",
+	"description": "Моделирование поведения стаи на основе алгоритма Крейга Рейнольдса.",
+	"keywords": [
+		"стая",
+		"canvas animation",
+		"моделирование"
+	],
+	"lang": "ru",
+	"layout": "sketch",
+	"title": "Стая",
+	"url": "/ru/sketch/flocking"
+}
 ---
 
 <script>

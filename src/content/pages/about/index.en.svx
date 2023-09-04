@@ -1,10 +1,17 @@
 ---
-description: "About this website and it's purpose."
-keywords: [ "blog", "web development", "photography", "portfolio" ]
-lang: "en"
-slug: "/en/about"
-title: "About"
-updated: 2023-04-13T13:39:00.000Z
+{
+	"dateUpdated": "2023-04-13T13:39:00.000Z",
+	"description": "About this website and it's purpose.",
+	"keywords": [
+		"blog",
+		"web development",
+		"photography",
+		"portfolio"
+	],
+	"lang": "en",
+	"slug": "/en/about",
+	"title": "About"
+}
 ---
 
 Welcome to the “Escapist Marginalia” - personal escapism corner of mine; a place where I surround myself with interesting things; a place where I create, store, and share my interests. Mostly it is natural sciences, web-development, and photography, but are not limited to them.

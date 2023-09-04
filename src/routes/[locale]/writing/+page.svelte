@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Button, Drawer, PageMeta, CardArticle, SwitchGroup } from "@components";
+	import { Button, Drawer, PageMeta, CardBlogpost, SwitchGroup } from "@components";
 	import { LayoutPage } from "@layout";
 	import { t, locale, i18nTemplate } from "@core/i18n";
 	import { find } from "@utils/query";
-	import { iconPi, iconImg, iconNumberE, iconGlobe } from "@lib/components/icons/default";
+	import { iconPi, iconImg, iconNumberE, iconGlobe } from "@icons";
 	import styles from "./writing.module.css";
 
 	import type { Blogpost } from "../../../types";
@@ -56,10 +56,10 @@
 			<aside class={styles.counter}>
 				{i18nTemplate($t("message.blogpost-counter"), [ content.length, data.items.length ])}:
 			</aside>
-			{#each content as { cover, created, description, keywords, title, slug }}
-				<CardArticle
+			{#each content as { cover, dateCreated, description, keywords, title, slug }}
+				<CardBlogpost
 					{cover}
-					{created}
+					{dateCreated}
 					{description}
 					{keywords}
 					{title}

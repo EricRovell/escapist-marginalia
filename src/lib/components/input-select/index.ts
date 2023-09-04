@@ -1,1 +1,1 @@
-export { default as InputSelect } from "./InputSelect.svelte";
+export { default as InputSelect } from "./input-select.svelte";

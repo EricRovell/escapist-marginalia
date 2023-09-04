@@ -1,14 +1,23 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/diaphragm.png
-created: 2022-08-16T14:41:00.000Z
-description: "Попробуем разобраться, почему диафрагменные числа такие какие они есть и каков в этом смысл."
-keywords: [ "photography", "aperture", "f-number" ]
-lang: ru
-layout: blogpost
-slug: "откуда-берутся-числа-диафрагмы"
-title: "Откуда берутся числа диафрагмы?"
-translation: { lang: "english", slug: "where-do-aperture-numbers-come-from" }
-updated: 2022-09-13T20:34:00.000Z
+{
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/diaphragm.png",
+	"dateCreated": "2022-08-16T14:41:00.000Z",
+	"dateUpdated": "2022-09-13T20:34:00.000Z",
+	"description": "Попробуем разобраться, почему диафрагменные числа такие какие они есть и каков в этом смысл.",
+	"keywords": [
+		"photography",
+		"aperture",
+		"f-number"
+	],
+	"lang": "ru",
+	"layout": "blogpost",
+	"slug": "откуда-берутся-числа-диафрагмы",
+	"title": "Откуда берутся числа диафрагмы?",
+	"translation": {
+		lang: "english",
+		slug: "where-do-aperture-numbers-come-from"
+	}
+}
 ---
 
 <script>

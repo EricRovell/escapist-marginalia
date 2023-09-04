@@ -1,1 +1,0 @@
-export { default as NavLocale } from "./NavLocale.svelte";

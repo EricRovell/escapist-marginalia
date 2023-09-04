@@ -2,15 +2,15 @@
 	import { t, locale } from "@core/i18n";
 	import { pathBlogpost, webpage } from "@core/paths";
 	import { Button, Datetime, Icon, Link } from "@components";
-	import { iconShare } from "@components/icons/default";
+	import { iconShare } from "@icons";
 	import { encodeTitleId, share } from "@utils/helpers";
 	import styles from "./header.module.css";
 
-	export let title: string;
+	export let dateCreated: string;
+	export let dateUpdated: string;
 	export let description: string;
 	export let keywords = "";
-	export let created: string;
-	export let updated: string;
+	export let title: string;
 	export let translation = null;
 
 	const dateOptions: Intl.DateTimeFormatOptions = {
@@ -51,11 +51,11 @@
 		</ul>
 		<span class="{styles.date}">
 			<span>
-				{$t("message.published")} <Datetime date={created} locale={$locale} options={dateOptions} relative />
+				{$t("message.published")} <Datetime date={dateCreated} locale={$locale} options={dateOptions} relative />
 			</span>
-			{#if updated}
+			{#if dateUpdated}
 				<span>
-					{$t("message.updated")} <Datetime date={updated} locale={$locale} options={dateOptions} relative />
+					{$t("message.updated")} <Datetime date={dateUpdated} locale={$locale} options={dateOptions} relative />
 				</span>
 			{/if}
 		</span>

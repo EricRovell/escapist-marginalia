@@ -1,1 +1,1 @@
-export { default as ScrollToTop } from "./ScrollToTop.svelte";
+export { default as ScrollToTop } from "./scroll-to-top.svelte";
