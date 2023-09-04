@@ -6,5 +6,9 @@
 		"javascript",
 		"typescript",
 		"svelte"
+	],
+	"cssVariables.lookupFiles": [
+		"src/lib/styles/tokens.css",
+		"src/lib/styles/theme-*.css"
 	]
 }
