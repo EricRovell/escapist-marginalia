@@ -15,7 +15,9 @@
 	import { PreferencesModal } from "..";
 	import styles from "./masthead.module.css";
 
-	const menuItems = [
+	let showModal = false;
+
+	$: menuItems = [
 		{
 			href: $pathHome,
 			pattern: /\/home/,
@@ -52,8 +54,6 @@
 			label: $t("sections.about")
 		}
 	];
-
-	let showModal = false;
 </script>
 
 <header class={`container ${styles.masthead}`}>
