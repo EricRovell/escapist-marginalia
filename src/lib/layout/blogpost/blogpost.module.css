@@ -56,6 +56,11 @@
 	opacity: 1;
 }
 
+.article > :is(h2, h3) {
+	border-bottom: 1px solid var(--color-border-50);
+	padding-block-end: var(--space-2);
+}
+
 .article dl {
 	display: flex;
 	flex-flow: column nowrap;
