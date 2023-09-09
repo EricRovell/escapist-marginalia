@@ -2,6 +2,7 @@
 {
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Project Euler",
+	"draft": true,
 	"featured": false,
 	"lang": "en",
 	"layout": "project",
@@ -13,9 +14,3 @@
 	]
 }
 ---
-
-<script>
-	import { WorkInProgress } from "@components";
-</script>
-
-<WorkInProgress />

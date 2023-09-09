@@ -2,6 +2,7 @@
 {
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Blossom - библиотека для конвертации цветов и манипуляций на ними, написанная на TypeScript.",
+	"draft": true,
 	"featured": true,
 	"lang": "ru",
 	"layout": "project",
@@ -16,11 +17,3 @@
 	"website": "https://ericrovell.github.io/blossom-web"
 }
 ---
-
-<script>
-	import { WorkInProgress } from "@components";
-</script>
-
-<WorkInProgress>
-	Содержимое страницы находится в разработке
-</WorkInProgress>

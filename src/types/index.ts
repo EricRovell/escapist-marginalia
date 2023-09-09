@@ -55,6 +55,7 @@ export interface Blogpost extends Omit<BlogpostMetadata, "dateCreated" | "dateUp
 export interface Project {
 	dateUpdated: string;
 	description: string;
+	draft?: boolean;
 	featured?: boolean;
 	lang: Locale;
 	layout: string | false;

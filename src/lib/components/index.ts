@@ -27,4 +27,3 @@ export { ScrollToTop } from "./scroll-to-top";
 export { Sketch, SketchControls } from "./sketch";
 export { Switch, SwitchGroup } from "./switch";
 export { TOC } from "./toc";
-export { default as WorkInProgress } from "./WorkInProgress.svelte";

@@ -2,6 +2,7 @@
 {
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Blossom is a JS library tool for colour manipulations and transformations.",
+	"draft": true,
 	"featured": true,
 	"lang": "en",
 	"layout": "project",
@@ -16,9 +17,3 @@
 	"website": "https://ericrovell.github.io/blossom-web"
 }
 ---
-
-<script>
-	import { WorkInProgress } from "@components";
-</script>
-
-<WorkInProgress />
