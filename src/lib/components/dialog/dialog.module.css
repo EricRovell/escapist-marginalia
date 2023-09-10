@@ -32,16 +32,10 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: var(--surface-2);
 	padding-block: var(--space-1);
 	color: var(--color-500-900);
 	border-radius: var(--radius-s) var(--radius-s) 0 0;
 	border-bottom: 1px solid var(--color-border-50);
-}
-
-.dialog button {
-	box-shadow: none;
-	border: var(--block-border-1);
 }
 
 .dialog .content {

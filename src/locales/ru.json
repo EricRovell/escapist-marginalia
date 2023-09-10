@@ -10,7 +10,9 @@
 		"source": "Исходный код",
 		"license": "Лицензия",
 		"privacy": "Приватность",
-		"rss": "Лента RSS"
+		"rss": "Лента RSS",
+		"telegram": "Канал Telegram",
+		"instagram": "Instagram"
 	},
 	"dict": {
 		"language": "язык",

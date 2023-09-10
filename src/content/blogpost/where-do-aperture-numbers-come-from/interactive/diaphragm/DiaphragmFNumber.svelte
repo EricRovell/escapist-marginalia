@@ -7,12 +7,15 @@
 	const t: Record<string, string> = getContext("t")["diaphragm-f-stop"];
 
 	let angle = tweened(45);
+	let value = 0;
 
 	const fnumbers = [ 2.8, 4, 5.6, 8, 11 ];
 
 	const handleChange = async (e: InputEvent) => {
 		const target = e.target as HTMLInputElement;
 		const fstop = Number(target.value);
+		value = fstop;
+
 		const dr = 16 - 16 / 2 ** fstop;
 		await angle.set(45 + dr * 2.5);
 	};
@@ -31,7 +34,7 @@
 			legend={t["aperture-number"]}
 		>
 			{#each fnumbers as fnumber, i}
-				<Radio.Button	value="{i.toString()}">
+				<Radio.Button value="{i.toString()}" checked="{i === value}">
 					f/{fnumber}
 				</Radio.Button>
 			{/each}

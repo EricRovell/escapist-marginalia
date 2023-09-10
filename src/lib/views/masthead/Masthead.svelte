@@ -15,7 +15,9 @@
 	import { PreferencesModal } from "..";
 	import styles from "./masthead.module.css";
 
-	const menuItems = [
+	let showModal = false;
+
+	$: menuItems = [
 		{
 			href: $pathHome,
 			pattern: /\/home/,
@@ -52,8 +54,6 @@
 			label: $t("sections.about")
 		}
 	];
-
-	let showModal = false;
 </script>
 
 <header class={`container ${styles.masthead}`}>
@@ -72,7 +72,7 @@
 		</Navigation.Container>
 	</section>
 	<section data-label="controls">
-		<Button on:click={() => showModal = !showModal} icon appearance="outline">
+		<Button on:click={() => showModal = !showModal} icon>
 			<Icon path="{iconGear}" />
 		</Button>
 	</section>

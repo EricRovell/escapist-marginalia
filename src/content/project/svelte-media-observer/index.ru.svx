@@ -2,6 +2,7 @@
 {
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Наблюдатель медиа-выражений для SvelteJS",
+	"draft": true,
 	"featured": true,
 	"lang": "ru",
 	"layout": "project",
@@ -17,11 +18,3 @@
 	"website": "https://svelte.dev/repl/e9f6a16dfd9a4013b1a0a76347b206eb?version=3"
 }
 ---
-
-<script>
-	import { WorkInProgress } from "@components";
-</script>
-
-<WorkInProgress>
-	Содержимое страницы находится в разработке
-</WorkInProgress>

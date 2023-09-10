@@ -10,7 +10,9 @@
 		"source": "source",
 		"license": "license",
 		"privacy": "privacy",
-		"rss": "RSS Feed"
+		"rss": "RSS Feed",
+		"telegram": "Telegram Channel",
+		"instagram": "Instagram"
 	},
 	"dict": {
 		"language": "language",

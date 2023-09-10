@@ -107,11 +107,13 @@
 
 <main class={styles.container}>
 	<section
-		class="surface-2
-		{styles["image"]}"
-		label="img"
+		class="surface-2 {styles["image"]}"
+		data-label="image"
 	>
 		<Image
+			alt={description}
+			height={fullsize.height}
+			on:click={() => open = !open}
 			src="{fullsize.src}.jpeg"
 			sources="{[
 				{
@@ -123,10 +125,8 @@
 					type: "image/jpeg"
 				}
 			]}"
+			style="aspect-ratio: {fullsize.width} / {fullsize.height};"
 			width={fullsize.width}
-			height={fullsize.height}
-			alt={description}
-			on:click={() => open = !open}
 		/>
 	</section>
 	<div class="{styles.body}">
@@ -181,14 +181,16 @@
 				</dl>
 			{/each}
 		</aside>
-		<aside class="{styles.keywords} {styles.params}">
+		<aside class="{styles.keywords}">
 			<ul>
 				{#each keywords as keyword}
 					<li class="surface-2">{keyword}</li>
 				{/each}
 			</ul>
 		</aside>
-		<ScrollToTop id="root" />
+		{#if $$slots.default}
+			<ScrollToTop id="root" />
+		{/if}
 	</div>
 </main>
 

@@ -1,20 +1,22 @@
 <script lang="ts">
 	import { Datetime, Link, Icon } from "@components";
 	import NavLocale from "./footer.locale.svelte";
-	import { iconGithub, iconRSS } from "@icons";
+	import { iconGithub, iconInstagram, iconRSS, iconTelegram } from "@icons";
 	import { t } from "@core/i18n";
 	import styles from "./footer.module.css";
 
 	import {
-		pathSource,
+		pathAbout,
+		pathBookmarks,
+		pathGallery,
+		pathInstagram,
 		pathLicense,
 		pathPrivacy,
-		pathWriting,
-		pathGallery,
-		pathSketch,
-		pathBookmarks,
 		pathRSS,
-		pathAbout
+		pathSketch,
+		pathSource,
+		pathTelegram,
+		pathWriting
 	} from "@core/paths";
 
 	$: links = [
@@ -29,7 +31,9 @@
 
 	$: icons = [
 		{ label: "source", href: pathSource, icon: iconGithub },
-		{ label: "rss", href: $pathRSS, icon: iconRSS }
+		{ label: "rss", href: $pathRSS, icon: iconRSS },
+		{ label: "telegram", href: $pathTelegram, icon: iconTelegram },
+		{ label: "instagram", href: pathInstagram, icon: iconInstagram }
 	];
 </script>
 

@@ -2,6 +2,7 @@
 {
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Проект Эйлера",
+	"draft": true,
 	"featured": false,
 	"lang": "ru",
 	"layout": "project",
@@ -13,11 +14,3 @@
 	]
 }
 ---
-
-<script>
-	import { WorkInProgress } from "@components";
-</script>
-
-<WorkInProgress>
-	Содержимое страницы находится в разработке
-</WorkInProgress>

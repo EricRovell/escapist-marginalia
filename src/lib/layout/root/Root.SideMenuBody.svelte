@@ -4,7 +4,7 @@
 	import { Menu as Navigation } from "@components";
 	import styles from "./root-side-menu-body.module.css";
 
-	const menuItems = [
+	$: menuItems = [
 		{
 			href: $pathHome,
 			pattern: /\/home/,

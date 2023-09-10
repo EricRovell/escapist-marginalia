@@ -17,6 +17,8 @@
 }
 
 .figure {
+	--image-bg: var(--surface-2);
+
 	position: relative;
 	display: flex;
 	overflow: hidden;
@@ -47,7 +49,6 @@
 
 .figure img {
 	object-fit: cover;
-	background-color: var(--surface-2);
 	transition: transform 0.35s ease-in-out;
 }
 
