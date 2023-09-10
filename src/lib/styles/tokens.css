@@ -2,7 +2,7 @@
 
 :root {
 	/* palette */
-	--color-primary-50: #FFF9F9;
+	--color-primary-050: #FFF9F9;
 	--color-primary-100: #FFE9E2;
 	--color-primary-200: #FFC8B8;
 	--color-primary-300: #FFA48C;
@@ -13,18 +13,18 @@
 	--color-primary-800: #723B32;
 	--color-primary-900: #5B2F28;
 
-	--color-blue-50: #F9FAFE;
-	--color-blue-100: #EBEDFC;
-	--color-blue-200: #CFD2F7;
-	--color-blue-300: #B4B8F1;
-	--color-blue-400: #999EEB;
-	--color-blue-500: #7A82E3;
-	--color-blue-600: #6268CA;
-	--color-blue-700: #5656A5;
-	--color-blue-800: #48447F;
-	--color-blue-900: #3B3562;
+	--color-blue-050: #F9FAFE;
+	--color-blue-100: #ECEDFC;
+	--color-blue-200: #D0D2F7;
+	--color-blue-300: #B5B8F2;
+	--color-blue-400: #9A9EEC;
+	--color-blue-500: #7A82E4;
+	--color-blue-600: #6167C9;
+	--color-blue-700: #5756A6;
+	--color-blue-800: #494582;
+	--color-blue-900: #38325D;
 
-	--color-gray-50: #FAFAFA;
+	--color-gray-050: #FAFAFA;
 	--color-gray-100: #EDEDED;
 	--color-gray-200: #D4D4D4;
 	--color-gray-300: #BCBCBC;
@@ -36,7 +36,7 @@
 	--color-gray-900: #3B3B3B;
 	--color-gray-1000: #0D0D0D;
 
-	--color-red-50: #FFF8F8;
+	--color-red-050: #FFF8F8;
 	--color-red-100: #FFE9E6;
 	--color-red-200: #FFC7C0;
 	--color-red-300: #FEA599;
@@ -47,7 +47,7 @@
 	--color-red-800: #7B362D;
 	--color-red-900: #612B23;
 
-	--color-green-50: #F4FCF4;
+	--color-green-050: #F4FCF4;
 	--color-green-100: #D9F5DA;
 	--color-green-200: #9EE5A1;
 	--color-green-300: #5DD462;

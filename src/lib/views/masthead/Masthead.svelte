@@ -72,7 +72,7 @@
 		</Navigation.Container>
 	</section>
 	<section data-label="controls">
-		<Button on:click={() => showModal = !showModal} icon appearance="outline">
+		<Button on:click={() => showModal = !showModal} icon>
 			<Icon path="{iconGear}" />
 		</Button>
 	</section>
