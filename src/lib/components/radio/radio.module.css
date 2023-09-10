@@ -1,13 +1,8 @@
 .fieldset {
-	--radio-button-bg: var(--surface-4);
-	--radio-button-border-size: 3px;
-	--radio-button-border-color: var(--color-blue-400);
-	--radio-button-focus-ring-color: #999EEB60;
-
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	gap: var(--space-3-rel);
+	gap: var(--space-2);
 	border: none;
 }
 
@@ -24,11 +19,9 @@
 		align-items: center;
 		gap: 0.5em;
 		padding: var(--space-2) var(--space-3);
-		border: 1px solid var(--radio-button-focus-ring-color);
-		border-radius: var(--radius-xs);
-		background-color: var(--radio-button-bg);
-		box-shadow: 0 0 0 var(--radio-button-focus-ring-size) var(--radio-button-focus-ring-color);
-		transition: box-shadow 0.25s ease-in-out;
+		border: var(--radio-button-border);
+		border-radius: var(--radio-button-radius);
+		transition: background-color 0.125s linear;
 
 		& svg {
 			margin-block-start: 0.05em;
@@ -38,21 +31,31 @@
 
 .radio {
 	appearance: none;
+
+	&:focus-visible {
+		outline: none;
+
+		& + span {
+			outline: 1px dashed var(--focus-ring-color);
+			outline-offset: 2px;
+		}
+	}
+
+	&:hover + span {
+		background-color: var(--radio-button-bg-hover);
+		color: var(--radio-button-color-hover);
+	}
+
+	&:active + span,
+	&:hover:active + span,
+	&:focus-visible + span {
+		background-color: var(--radio-button-bg-active);
+		color: var(--radio-button-color-active);
+	}
+
+	&:checked + span {
+		background-color: var(--radio-button-checked-bg);
+		color: var(--radio-button-checked-color);
+	}
 }
 
-.radio:focus-visible {
-	outline: none;
-}
-
-.radio:hover + span {
-	--radio-button-focus-ring-size: 1px;
-}
-
-.radio:checked + span {
-	background-color: var(--surface-1);
-}
-
-.radio:checked:focus-visible + span {
-	outline: 2px dashed var(--focus-ring-color);
-	outline-offset: calc(0.75 * var(--space-1-rel));
-}

@@ -63,7 +63,7 @@
 		--radio-button-color-hover: var(--surface-2-text);
 		--radio-button-color-active: var(--surface-2-text);
 		--radio-button-radius: var(--radius-s);
-		--radio-button-checked-bg: var(--surface-3);
+		--radio-button-checked-bg: var(--color-blue-600);
 		--radio-button-checked-color: var(--surface-3-text);
 		--radio-button-border: 1px solid var(--color-border-50);
 
@@ -191,7 +191,7 @@
 	--radio-button-color-hover: var(--surface-2-text);
 	--radio-button-color-active: var(--surface-2-text);
 	--radio-button-radius: var(--radius-s);
-	--radio-button-checked-bg: var(--surface-3);
+	--radio-button-checked-bg: var(--color-blue-600);
 	--radio-button-checked-color: var(--surface-3-text);
 	--radio-button-border: 1px solid var(--color-border-50);
 
