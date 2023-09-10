@@ -46,16 +46,13 @@
 		color: var(--radio-button-color-hover);
 	}
 
-	&:active + span,
-	&:hover:active + span,
-	&:focus-visible + span {
-		background-color: var(--radio-button-bg-active);
-		color: var(--radio-button-color-active);
-	}
-
 	&:checked + span {
 		background-color: var(--radio-button-checked-bg);
 		color: var(--radio-button-checked-color);
 	}
-}
 
+	&:is(:active, :hover:active, :focus-visible) + span {
+		background-color: var(--radio-button-bg-active);
+		color: var(--radio-button-color-active);
+	}
+}

@@ -22,9 +22,6 @@
 	--image-bg: var(--surface-4);
 
 	position: relative;
-	display: grid;
-	place-items: center;
-
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
@@ -67,7 +64,7 @@
 		/* TODO: remove repetition, button styles are used */
 		display: flex;
 		padding: var(--space-2-rel);
-		border: 1px solid rgb(0 0 0 / 0);
+		border: 1px solid rgb(0 0 0 / 0%);
 		color: var(--button-color);
 		aspect-ratio: 1 / 1;
 
@@ -75,11 +72,11 @@
 			background-color: var(--button-bg-hover);
 			color: var(--button-color-hover, inherit);
 		}
-	
+
 		&:active svg {
 			transform: scale(0.9);
 		}
-	
+
 		&:is(:active, :hover:active, :focus-visible) {
 			background-color: var(--button-bg-active);
 			color: var(--button-color-active, inherit);

@@ -16,14 +16,13 @@
 	cursor: pointer;
 	transition: background-color 150ms linear;
 
-	&:hover {
-		background-color: var(--button-bg-hover);
-		color: var(--button-color-hover, inherit);
+	&:global(.icon) {
+		aspect-ratio: 1 / 1;
+		padding: var(--space-2);
 	}
 
-	&:is(:active, :hover:active, :focus-visible) {
-		background-color: var(--button-bg-active);
-		color: var(--button-color-active, inherit);
+	&:global(.wide) {
+		width: 100%;
 	}
 
 	&:disabled {
@@ -32,13 +31,14 @@
 		pointer-events: none;
 	}
 
-	&:global(.icon) {
-		aspect-ratio: 1 / 1;
-		padding: var(--space-2);
+	&:hover {
+		background-color: var(--button-bg-hover);
+		color: var(--button-color-hover, inherit);
 	}
 
-	&:global(.wide) {
-		width: 100%;
+	&:is(:active, :hover:active, :focus-visible) {
+		background-color: var(--button-bg-active);
+		color: var(--button-color-active, inherit);
 	}
 }
 

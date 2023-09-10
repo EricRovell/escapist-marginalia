@@ -227,7 +227,6 @@
 	margin-bottom: var(--space-2);
 }
 
-
 .article :global(.interactive) :is(h2, h3, h4, h5, h6) {
 	text-align: center;
 	margin-block-start: 0;
