@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Button, Drawer, PageMeta, CardBlogpost, SwitchGroup } from "@components";
+	import { Button, Drawer, PageMeta, CardBlogpost } from "@components";
 	import { LayoutPage } from "@layout";
 	import { t, locale, i18nTemplate } from "@core/i18n";
+	import { FilterWriting } from "@views";
 	import { find } from "@utils/query";
-	import { iconPi, iconImg, iconNumberE, iconGlobe } from "@icons";
 	import styles from "./writing.module.css";
 
 	import type { Blogpost } from "../../../types";
@@ -12,29 +12,28 @@
 
 	export let data: PageLoad = {};
 
+	let filterQuery = {
+		"content-lang": [ $locale ],
+		"content-topics": []
+	};
+
 	type Query<T> = {
 		"content-lang": QueryItem<string[], T>;
 		"content-topics": QueryItem<string[], T>;
-		"content-series": QueryItem<string[], T>;
 	}
 
-	const queryOptions: Query<Blogpost> = {
+	$: content = find(data.items, {
 		"content-lang": {
-			value: [ $locale ],
+			value: filterQuery["content-lang"],
 			validator: (value) => Array.isArray(value) && value.length > 0,
 			matcher: (value) => (item) => value.includes(item.lang)
 		},
 		"content-topics": {
+			value: filterQuery["content-topics"],
 			validator: (value) => Array.isArray(value) && value.length > 0,
 			matcher: (value) => (item) => value.every(keyword => item.keywords.includes(keyword))
-		},
-		"content-series": {
-			validator: (value) => Array.isArray(value) && value.length > 0,
-			matcher: (value) => (item) => item.series === value[0]
 		}
-	};
-
-	$: content = find(data.items, queryOptions);
+	} as Query<Blogpost>) ?? [];
 
 	// show filters drawer for small screens
 	let show = false;
@@ -74,37 +73,17 @@
 		>
 			{$t("dict.blogpost-filters")}
 		</Button>
-		<Drawer bind:show>
-			<form class="{styles.sidebar}" on:submit|preventDefault>
-				<h3>Filters</h3>
-				<SwitchGroup
-					legend={$t("dict.language")}
-					name="content-lang"
-					options={[
-						{ label: "English", value: "en", checked: $locale === "en" },
-						{ label: "Русский", value: "ru", checked: $locale === "ru" }
-					]}
-					bind:group={queryOptions["content-lang"].value}
-				/>
-				<SwitchGroup
-					legend={$t("dict.topics")}
-					name="content-topics"
-					options={[
-						{ label: $t("dict.math"), value: "math", icon: iconPi },
-						{ label: $t("dict.photo"), value: "photo", icon: iconImg },
-						{ label: $t("dict.web"), value: "web", icon: iconGlobe }
-					]}
-					bind:group={queryOptions["content-topics"].value}
-				/>
-				<SwitchGroup
-					legend={$t("dict.series")}
-					name="content-series"
-					options={[
-						{ label: $t("dict.project-euler"), value: "project-euler", icon: iconNumberE }
-					]}
-					bind:group={queryOptions["content-series"].value}
-				/>
-			</form>
+		<Drawer bind:show name="filters-writing">
+			<h2 slot="header">Filters</h2>
+			<FilterWriting
+				bind:value="{filterQuery}"
+			/>
 		</Drawer>
+		<aside>
+			<h4>Filters</h4>
+			<FilterWriting
+				bind:value="{filterQuery}"
+			/>
+		</aside>
 	</div>
 </LayoutPage>
