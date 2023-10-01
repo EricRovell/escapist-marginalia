@@ -37,3 +37,9 @@
 .sidemenu {
 	justify-content: center;
 }
+
+@media screen and (width <= 48em) {
+	.app > header:first-of-type {
+		display: none;
+	}
+}

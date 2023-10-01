@@ -14,6 +14,8 @@
 	<h3 slot="title">
 		Preferences
 	</h3>
-	<LanguageRadio />
-	<ThemeRadio />
+	<form on:submit|preventDefault>
+		<LanguageRadio />
+		<ThemeRadio />
+	</form>
 </Dialog>
