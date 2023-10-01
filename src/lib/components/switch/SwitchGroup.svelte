@@ -5,7 +5,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from "svelte";
 	import Switch from "./Switch.svelte";
-	import Icon from "../icons/Icon.svelte";
+	import { Icon } from "../icon";
 	import styles from "./switch-group.module.css";
 
 	export let legend: string;

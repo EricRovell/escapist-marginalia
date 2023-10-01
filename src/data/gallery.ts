@@ -1,6 +1,5 @@
-import { find } from "@utils/query";
+import { find, type QueryItem } from "@utils/query";
 import type { GalleryItem, Page } from "../types";
-import type { QueryItem } from "@utils/query";
 
 async function fetchGalleryItems(): Promise<GalleryItem[]> {
 	const items: GalleryItem[] = [];
@@ -11,7 +10,6 @@ async function fetchGalleryItems(): Promise<GalleryItem[]> {
 	for await (const [ filename, module ] of Object.entries(modules)) {
 		const { metadata } = await module() as Page<GalleryItem>;
 		const {
-			date,
 			draft = false,
 			updated,
 			title,
@@ -19,7 +17,6 @@ async function fetchGalleryItems(): Promise<GalleryItem[]> {
 		}: GalleryItem = metadata;
 
 		items.push({
-			date: new Date(date),
 			draft,
 			updated: new Date(updated),
 			title,

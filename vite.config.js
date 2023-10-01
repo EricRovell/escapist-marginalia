@@ -1,13 +1,17 @@
+import path from "path";
+
 import { sveltekit } from "@sveltejs/kit/vite";
 import intlPrecompile from "svelte-intl-precompile/sveltekit-plugin";
 import replace from "@rollup/plugin-replace";
-import path from "path";
+
+import pluginPostCssNesting from "postcss-nesting";
 
 const aliasList = [
 	{ name: "$lib", path: "src/lib" },
 	{ name: "@data", path: "./src/data" },
 	{ name: "@components", path: "./src/lib/components" },
 	{ name: "@content", path: "./src/content" },
+	{ name: "@icons", path: "./src/lib/icons" },
 	{ name: "@layout", path: "./src/lib/layout" },
 	{ name: "@lib", path: "./src/lib" },
 	{ name: "@styles", path: "./src/lib/styles" },
@@ -29,6 +33,13 @@ const config = {
 			"__buildTime__": () => new Date().toISOString()
 		})
 	],
+	css: {
+		postcss: {
+			plugins: [
+				pluginPostCssNesting
+			]
+		}
+	},
 	resolve: {
 		alias: Object.fromEntries(aliasList.map(alias => (
 			[ alias.name, path.resolve(alias.path) ]
@@ -41,7 +52,14 @@ const config = {
 		}
 	},
 	test: {
-		environment: "happy-dom"
+		environment: "happy-dom",
+		coverage: {
+			reporter: [
+				"text",
+				"json",
+				"html"
+			]
+		}
 	}
 };
 

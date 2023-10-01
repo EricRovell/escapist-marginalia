@@ -1,14 +1,23 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/quadtree.png
-created: 2023-02-01T15:53:00.000Z
-description: "Познакомимся со структурой данных, индексирующую данные на плоскости."
-keywords: [ "data structure", "javascript", "computer science" ]
-lang: ru
-layout: blogpost
-slug: "дерево-квадрантов"
-title: "Дерево квадрантов"
-translation: { lang: "english", slug: "quadtree" }
-updated: 2023-02-17T1:30:00.000Z
+{
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/quadtree.png",
+	"dateCreated": "2023-02-01T15:53:00.000Z",
+	"dateUpdated": "2023-02-17T01:30:00.000Z",
+	"description": "Познакомимся со структурой данных, индексирующую данные на плоскости.",
+	"keywords": [
+		"data structure",
+		"javascript",
+		"computer science"
+	],
+	"lang": "ru",
+	"layout": "blogpost",
+	"slug": "дерево-квадрантов",
+	"title": "Дерево квадрантов",
+	"translation": {
+		lang: "english",
+		slug: "quadtree"
+	}
+}
 ---
 
 <script>

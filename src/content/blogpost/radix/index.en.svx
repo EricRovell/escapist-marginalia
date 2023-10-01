@@ -1,13 +1,23 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/radix.png
-created: "2022-11-04T02:30:00.000Z"
-description: "The basics you need to know how we represent numbers."
-keywords: [ "math", "radix", "numbers", "numeral bases" ]
-lang: en
-layout: blogpost
-slug: "numeral-systems"
-title: "Numeral Systems"
-translation: { lang: "русский", slug: "системы-счисления" }
+{
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/radix.png",
+	"dateCreated": "2022-11-04T02:30:00.000Z",
+	"description": "The basics you need to know how we represent numbers.",
+	"keywords": [
+		"math",
+		"radix",
+		"numbers",
+		"numeral bases"
+	],
+	"lang": "en",
+	"layout": "blogpost",
+	"slug": "numeral-systems",
+	"title": "Numeral Systems",
+	"translation": {
+		lang: "русский",
+		slug: "системы-счисления"
+	}
+}
 ---
 
 <script>

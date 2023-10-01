@@ -11,11 +11,11 @@
 	import styles from "./sketch-page.module.css";
 
 	export let cover;
+	export let dateUpdated;
 	export let description;
 	export let keywords = [];
 	export let lang;
 	export let title;
-	export let updated;
 </script>
 
 <Meta
@@ -35,7 +35,7 @@
 		site_name: "Eric Rovell",
 		author: "Eric Rovell",
 		url: $webpage,
-		"article:modified_time": updated,
+		"article:modified_time": dateUpdated,
 		image: `${$webpageRoot}${cover}`
 	}}
 	twitter={{

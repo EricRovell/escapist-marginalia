@@ -1,12 +1,16 @@
+.picture {
+	position: relative;
+}
+
 .picture img {
+	background-color: var(--image-bg);
 	width: 100%;
 	height: 100%;
-	position: relative;
 }
 
 /* broken image state */
 .picture img::before {
-	content: "Image failed to load: \a' '\0022' attr(alt) '\0022";
+	content: "Image failed to load: \a" attr(alt);
 	white-space: pre-wrap;
 	position: absolute;
 	top: 0;
@@ -20,8 +24,7 @@
 	height: 100%;
 	padding: var(--space-3);
 	border: 2px solid var(--color-border);
-
-	/* todo: broken icon image showoed up behind curved border... */
-	border-radius: 0 0 var(--radius-l) var(--radius-l);
-	background-color: var(--surface-2);
+	background-color: var(--image-bg);
+	border-radius: var(--radius-m);
+	pointer-events: none;
 }

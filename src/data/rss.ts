@@ -16,7 +16,7 @@ const renderHead: RenderHead = (origin, locale = "en", buildDate = new Date()) =
 	`;
 };
 
-const renderItem = ({ title, slug, description, created, lang }: Blogpost, origin: string) => {
+const renderItem = ({ title, slug, description, dateCreated, lang }: Blogpost, origin: string) => {
 	const itemURL = `${origin}/${lang}/writing/${slug}`;
 
 	return `
@@ -24,7 +24,7 @@ const renderItem = ({ title, slug, description, created, lang }: Blogpost, origi
 			<title>${title}</title>
 			<link>${itemURL}</link>
 			<description>${description}</description>
-			<pubDate>${created}</pubDate>
+			<pubDate>${dateCreated}</pubDate>
 			<guid>${itemURL}</guid>
 			<category>article</category>
 		</item>

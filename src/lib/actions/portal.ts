@@ -1,6 +1,11 @@
 import { tick } from "svelte";
 import type { ActionAsync } from "./types";
 
+interface Options {
+	active?: boolean;
+	target?: string | HTMLElement;
+}
+
 /**
  * Portal action
  * 
@@ -31,30 +36,34 @@ import type { ActionAsync } from "./types";
  * |:--------|:----------------------|:--------|:--------------------|
  * | target  | string OR HTMLElement | body    | The target element. |
  */
-export const portal: ActionAsync<string | HTMLElement> = (element, target = "body") => {
+export const portal: ActionAsync<Options> = (element, options = {}) => {
 	let targetElement: HTMLElement;
-	
-	async function update(nextTarget: HTMLElement | string) {
-		target = nextTarget;
-		
+
+	async function update(options: Options = {}) {
+		const { active = true, target = "body" } = options;
+
+		if (!active) {
+			return;
+		}
+
 		if (typeof target === "string") {
 			targetElement = document.querySelector(target);
-			
+
 			if (!targetElement) {
 				await tick();
 				targetElement = document.querySelector(target);
 			}
-			
+
 			if (!targetElement) {
 				throw new Error(`No element found matching css selector: "${target}"`);
 			}
-			
+
 		} else if (target instanceof HTMLElement) {
 			targetElement = target;
 		} else {
 			throw new TypeError("Unknown portal target type. Allowed types: string ot istance of HTMLElement");
 		}
-		
+
 		targetElement.appendChild(element);
 		element.hidden = false;
 	}
@@ -65,10 +74,13 @@ export const portal: ActionAsync<string | HTMLElement> = (element, target = "bod
 		}
 	}
 
-	void update(target);
+	void update(options);
 
 	return {
-		update,
+		update: async (updatedOptions) => {
+			options = updatedOptions;
+			await update(options);
+		},
 		destroy
 	};
 };

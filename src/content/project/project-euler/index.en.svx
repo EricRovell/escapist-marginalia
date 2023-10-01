@@ -1,13 +1,16 @@
 ---
-description: "Project Euler"
-featured: false
-lang: "en"
-layout: project
-maintained: true
-name: "project-euler"
-repository: "EricRovell/project-euler-ts"
-techstack: [ "TypeScript" ]
-updated: 2022-11-09T01:29:00.000Z
+{
+	"dateUpdated": "2022-11-09T01:29:00.000Z",
+	"description": "Project Euler",
+	"draft": true,
+	"featured": false,
+	"lang": "en",
+	"layout": "project",
+	"maintained": true,
+	"repository": "EricRovell/project-euler-ts",
+	"title": "project-euler",
+	"techstack": [
+		"TypeScript"
+	]
+}
 ---
-
-This page is currently in development

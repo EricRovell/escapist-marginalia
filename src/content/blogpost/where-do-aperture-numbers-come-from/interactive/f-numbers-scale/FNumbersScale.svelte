@@ -17,6 +17,11 @@
 
 	const fstopMin = 0;
 	const fstopMax = 12;
+
+	const handleChange = (event: InputEvent) => {
+		const target = event.target as HTMLInputElement;
+		fstopTo = Number(target.value);
+	};
 </script>
 
 <!--
@@ -30,7 +35,12 @@
 		{t}
 	/>
 	<form on:submit|preventDefault>
-		<Range bind:value={fstopTo} min={fstopMin + 1} max={fstopMax}>
+		<Range
+			on:change={handleChange}
+			min={fstopMin + 1}
+			max={fstopMax}
+			value="{fstopTo}"
+		>
 			{t["f-numbers"]}
 		</Range>
 	</form>

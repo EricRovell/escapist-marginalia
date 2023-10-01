@@ -8,6 +8,7 @@
 .vercel
 vite.config.js.timestamp*
 */**/.env
+/coverage
 
 /image-generate/**/*.JPG
 /image-generate/**/*.jpeg

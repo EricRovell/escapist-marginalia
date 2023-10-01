@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { pathWriting, pathGallery, pathProjects } from "@paths";
-	import { PageMeta, Link, CardArticle, CardProject, Gallery } from "@components";
+	import { PageMeta, Link, CardBlogpost, CardProject, Gallery } from "@components";
 	import { LayoutPage } from "@layout";
 	import { t } from "@core/i18n";
 	import type { PageData } from "./$types";
@@ -30,11 +30,11 @@
 					</Link>
 				</header>
 				<ul class="grid-flexible" style="--item-size: 24ch">
-					{#each data.blogposts as { cover, created, description, keywords, title, slug }}
+					{#each data.blogposts as { cover, dateCreated, description, keywords, title, slug }}
 						<li>
-							<CardArticle
+							<CardBlogpost
 								{cover}
-								{created}
+								{dateCreated}
 								{description}
 								{keywords}
 								{title}
@@ -53,7 +53,7 @@
 						&#x2192; {$t("dict.entire-gallery")}
 					</Link>
 				</header>
-				<Gallery items={data.photos} />
+				<Gallery items={data.gallery} />
 			</div>
 		</section>
 		<section label="featured-projects">
@@ -65,16 +65,12 @@
 					</Link>
 				</header>
 				<ul class="grid-flexible" style="--item-size: 25ch">
-					{#each data.projects as { name, description, github, npm, homepage, techstack, type }}
+					{#each data.projects as { description, title, techstack }}
 						<li>
 							<CardProject
 								{description}
-								{github}
-								{homepage}
-								{npm}
-								{name}
+								{title}
 								{techstack}
-								{type}
 							/>
 						</li>
 					{/each}

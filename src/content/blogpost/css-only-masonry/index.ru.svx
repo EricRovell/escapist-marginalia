@@ -1,14 +1,22 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/masonry.png
-created: 2022-05-11T15:30:00.000Z
-description: "Реализуем компонент для галереи изображений в стиле раскладки Masonry, используя возможности CSS."
-keywords: [ "css", "web" ]
-lang: ru
-layout: blogpost
-slug: "галерея-изображений-в-раскладке-masonry-на-почти-чистом-css"
-title: "Галерея изображений в раскладке Masonry на (почти) чистом CSS"
-translation: { lang: "english", slug: "masonry-image-gallery-with-almost-pure-css" }
-updated: 2022-09-22T03:16:00.000Z
+{
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/masonry.png",
+	"dateCreated": "2022-05-11T15:30:00.000Z",
+	"dateUpdated": "2022-09-22T03:16:00.000Z",
+	"description": "Реализуем компонент для галереи изображений в стиле раскладки Masonry, используя возможности CSS.",
+	"keywords": [
+		"css",
+		"web"
+	],
+	"lang": "ru",
+	"layout": "blogpost",
+	"slug": "галерея-изображений-в-раскладке-masonry-на-почти-чистом-css",
+	"title": "Галерея изображений в раскладке Masonry на (почти) чистом CSS",
+	"translation": {
+		lang: "english",
+		slug: "masonry-image-gallery-with-almost-pure-css"
+	}
+}
 ---
 
 <script>

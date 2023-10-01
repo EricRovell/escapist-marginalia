@@ -1,1 +1,1 @@
-export { default as MenuIndicator } from "./MenuIndicator.svelte";
+export { default as MenuIndicator } from "./menu-indicator.svelte";

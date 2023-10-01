@@ -1,12 +1,19 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/the-attractor.png
-description: "The attractor field flow visualization."
-keywords: [ "the attractor", "turbulence", "canvas animation", "generative art" ]
-lang: "en"
-layout: "sketch"
-title: "The Attractor"
-updated: 2022-11-20T00:37:00.000Z
-url: "/en/sketch/the-attractor"
+{
+	"dateUpdated": "2022-11-20T00:37:00.000Z",
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/the-attractor.png",
+	"description": "The attractor field flow visualization.",
+	"keywords": [
+		"the attractor",
+		"turbulence",
+		"canvas animation",
+		"generative art"
+	],
+	"lang": "en",
+	"layout": "sketch",
+	"title": "The Attractor",
+	"url": "/en/sketch/the-attractor"
+}
 ---
 
 <script>

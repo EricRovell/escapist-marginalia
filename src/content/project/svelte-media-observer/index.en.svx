@@ -1,16 +1,20 @@
 ---
-description: "SvelteJS media queries observer."
-featured: true
-lang: "en"
-layout: project
-maintained: true
-name: "svelte-media-observer"
-npm: "svelte-media-observer"
-repository: "EricRovell/svelte-media-observer"
-techstack: [ "Svelte", "TypeScript" ]
-type: "library"
-updated: 2022-11-09T01:29:00.000Z
-website: "https://svelte.dev/repl/e9f6a16dfd9a4013b1a0a76347b206eb?version=3"
+{
+	"dateUpdated": "2022-11-09T01:29:00.000Z",
+	"description": "SvelteJS media queries observer.",
+	"draft": true,
+	"featured": true,
+	"lang": "en",
+	"layout": "project",
+	"maintained": true,
+	"npm": "svelte-media-observer",
+	"repository": "EricRovell/svelte-media-observer",
+	"title": "svelte-media-observer",
+	"techstack": [
+		"Svelte",
+		"TypeScript"
+	],
+	"type": "library",
+	"website": "https://svelte.dev/repl/e9f6a16dfd9a4013b1a0a76347b206eb?version=3"
+}
 ---
-
-This page is currently in development

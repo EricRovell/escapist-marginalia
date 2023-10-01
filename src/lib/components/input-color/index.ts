@@ -1,1 +1,1 @@
-export { default as InputColor } from "./InputColor.svelte";
+export { default as InputColor } from "./input-color.svelte";

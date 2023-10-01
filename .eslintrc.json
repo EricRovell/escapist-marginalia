@@ -32,7 +32,8 @@
 		"svelte3/typescript": true
 	},
 	"plugins": [
-		"@typescript-eslint"
+		"@typescript-eslint",
+		"perfectionist"
 	],
 	"rules": {
 		"no-self-assign": "off",

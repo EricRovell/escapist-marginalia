@@ -28,6 +28,11 @@
 		fstopFrom = clamp(fstopFrom + inc, fstopMin, fstopMax - 1);
 		fstopTo = clamp(fstopTo + inc, fstopMin + 1, fstopMax);
 	};
+
+	const handleChange = (event: InputEvent) => {
+		const target = event.target as HTMLInputElement;
+		step = Number(target.value);
+	};
 </script>
 
 <!--
@@ -57,7 +62,13 @@
 				{t["next"]}
 			</Button>
 		</fieldset>
-		<Range bind:value={step} min={1} max={7} output>
+		<Range
+			min={1}
+			max={7}
+			on:change={handleChange}
+			output
+			value="{step}"
+		>
 			{t["step"]}
 			<svelte:fragment slot="output">
 				1 / {step}

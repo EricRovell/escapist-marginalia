@@ -16,7 +16,8 @@ export interface Page<T> {
  */
 export interface BlogpostMetadata {
 	cover: string;
-	created: string;
+	dateCreated: string;
+	dateUpdated: string;
 	description: string;
 	draft?: boolean;
 	filepath: string;
@@ -36,15 +37,14 @@ export interface BlogpostMetadata {
 		level: number;
 		title: string;
 	}[];
-	updated: string;
 }
 
 /**
  * Describes the blogpost's metadata.
  */
-export interface Blogpost extends Omit<BlogpostMetadata, "created" | "updated" | "keywords"> {
-	created: Date;
-	updated: Date;
+export interface Blogpost extends Omit<BlogpostMetadata, "dateCreated" | "dateUpdated" | "keywords"> {
+	dateCreated: Date;
+	dateUpdated: Date;
 	keywords: string[];
 	slug: string;
 }
@@ -53,17 +53,18 @@ export interface Blogpost extends Omit<BlogpostMetadata, "created" | "updated" |
  * Project Page Frontmatter data interface.
  */
 export interface Project {
+	dateUpdated: string;
 	description: string;
+	draft?: boolean;
 	featured?: boolean;
 	lang: Locale;
 	layout: string | false;
 	maintained: boolean;
-	name: string;
 	npm?: string;
 	repository: string;
+	title: string;
 	techstack: string[];
 	type: "string";
-	updated: string;
 	website?: string;
 }
 
@@ -71,11 +72,11 @@ export type { GalleryItem } from "@components";
 
 export interface Sketch {
 	cover: string;
+	dateUpdated: string;
 	description: string;
 	keywords: string[];
 	lang: string;
 	title: string;
-	updated: string;
 	url: string;
 }
 
@@ -100,6 +101,7 @@ interface GalleryImage {
 	src: string;
 	width: string;
 }
+
 export interface GalleryItemPage {
 	camera: string;
 	dateCreated: number;

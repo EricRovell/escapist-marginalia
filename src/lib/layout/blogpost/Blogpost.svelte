@@ -10,14 +10,13 @@
 	import { LayoutPage } from "../page-header";
 	import styles from "./blogpost.module.css";
 
-	export let title;
+	export let cover;
+	export let dateCreated;
+	export let dateUpdated;
 	export let description;
 	export let keywords;
 	export let lang;
-	export let cover;
-	export let created;
-	export let updated;
-	export let series;
+	export let title;
 	export let toc = [];
 	export let translation = null;
 </script>
@@ -35,12 +34,11 @@
 		locale: lang,
 		type: "article",
 		tag: keywords,
-		section: series,
 		site_name: "Eric Rovell",
 		author: "Eric Rovell",
 		url: $webpage,
-		"article:published_time": created,
-		"article:modified_time": updated,
+		"article:published_time": dateCreated,
+		"article:modified_time": dateUpdated,
 		image: `${$webpageRoot}${cover}`
 	}}
 	twitter={{
@@ -56,8 +54,8 @@
 		{title}
 		{description}
 		{keywords}
-		{created}
-		{updated}
+		{dateCreated}
+		{dateUpdated}
 		{translation}
 		slot="banner"
 	/>

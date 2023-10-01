@@ -2,7 +2,7 @@
 	import { Button, Details, Icon, Modal } from "@components";
 	import { default as Canvas } from "./Sketch.canvas.svelte";
 	import { shortcut } from "$lib/actions";
-	import { iconPause, iconPlay, iconFullscreen, iconReset } from "../icons/default";
+	import { iconPause, iconPlay, iconFullscreen, iconReset } from "@icons";
 	import { t as tr } from "@core/i18n";
 	import type { SvelteComponent } from "svelte";
 	import type { Sketch } from "./sketch.types";

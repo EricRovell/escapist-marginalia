@@ -1,18 +1,9 @@
 .fieldset {
-	--radio-button-bg: var(--surface-4);
-	--radio-button-border-size: 3px;
-	--radio-button-border-color: var(--color-blue-400);
-	--radio-button-focus-ring-color: #999EEB60;
-
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
-	gap: var(--space-3-rel);
+	justify-content: flex-start;
+	gap: var(--space-2);
 	border: none;
-}
-
-.fieldset > legend {
-	margin-bottom: var(--space-2-rel);
 }
 
 .label {
@@ -21,34 +12,47 @@
 	align-items: center;
 	user-select: none;
 	cursor: pointer;
+
+	& span {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 0.5em;
+		padding: var(--space-2) var(--space-3);
+		border: var(--radio-button-border);
+		border-radius: var(--radio-button-radius);
+		transition: background-color 0.125s linear;
+
+		& svg {
+			margin-block-start: 0.05em;
+		}
+	}
 }
 
 .radio {
 	appearance: none;
-}
 
-.radio:focus-visible {
-	outline: none;
-}
+	&:focus-visible {
+		outline: none;
 
-.radio + span {
-	padding: var(--space-1-rel) var(--space-3-rel);
-	border: 1px solid var(--radio-button-focus-ring-color);
-	border-radius: var(--radius-xs);
-	background-color: var(--radio-button-bg);
-	box-shadow: 0 0 0 var(--radio-button-focus-ring-size) var(--radio-button-focus-ring-color);
-	transition: box-shadow 0.25s ease-in-out;
-}
+		& + span {
+			outline: 1px dashed var(--focus-ring-color);
+			outline-offset: 2px;
+		}
+	}
 
-.radio:hover + span {
-	--radio-button-focus-ring-size: 1px;
-}
+	&:hover + span {
+		background-color: var(--radio-button-bg-hover);
+		color: var(--radio-button-color-hover);
+	}
 
-.radio:checked + span {
-	background-color: var(--surface-1);
-}
+	&:checked + span {
+		background-color: var(--radio-button-checked-bg);
+		color: var(--radio-button-checked-color);
+	}
 
-.radio:checked:focus-visible + span {
-	outline: 2px dashed var(--focus-ring-color);
-	outline-offset: calc(0.75 * var(--space-1-rel));
+	&:is(:active, :hover:active, :focus-visible) + span {
+		background-color: var(--radio-button-bg-active);
+		color: var(--radio-button-color-active);
+	}
 }

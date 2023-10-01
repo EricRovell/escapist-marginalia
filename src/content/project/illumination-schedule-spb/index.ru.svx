@@ -1,15 +1,20 @@
 ---
-description: "Веб-приложение для отображения данных графика наружного освещения города Санкт-Петербурга."
-featured: true
-lang: "ru"
-layout: project
-maintained: true
-name: "illumination-schedule-spb"
-repository: "EricRovell/illumination-schedule-spb"
-techstack: [ "Svelte", "TypeScript" ]
-type: "web-application"
-updated: 2023-05-07T2:14:00.000Z
-website: "https://illumination-schedule-spb.vercel.app/"
+{
+	"dateUpdated": "2023-05-07T02:14:00.000Z",
+	"description": "Веб-приложение для отображения данных графика наружного освещения города Санкт-Петербурга.",
+	"featured": true,
+	"lang": "ru",
+	"layout": "project",
+	"maintained": true,
+	"repository": "EricRovell/illumination-schedule-spb",
+	"title": "illumination-schedule-spb",
+	"techstack": [
+		"Svelte",
+		"TypeScript"
+	],
+	"type": "web-application",
+	"website": "https://illumination-schedule-spb.vercel.app/"
+}
 ---
 
 ## Мотивация

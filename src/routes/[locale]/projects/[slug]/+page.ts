@@ -9,14 +9,14 @@ export const load: PageLoad = async ({ params }) => {
 
 		const project = await getProjects({
 			lang: locale as Locale,
-			name: slug
+			title: slug
 		}, { limit: 1 });
 
 		if (!project.length) {
 			throw error(404, "There is no such a project.");
 		}
 
-		const filepathName = `${project[0].name}/index.${locale}`;
+		const filepathName = `${project[0].title}/index.${locale}`;
 
 		let page: Page<typeof project[number]>;
 		const modules = import.meta.glob("/src/content/project/**/*.svx");

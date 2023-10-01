@@ -40,10 +40,32 @@
 
 		--focus-ring-color: var(--color-blue-300);
 
-		--button-accent: var(--color-blue-500);
-		--button-color: var(--color-blue-200);
-		--button-focus-ring-color: #999EEB60;
-		--button-border-color: var(--color-blue-400);
+		--button-bg: var(--surface-2);
+		--button-bg-hover: var(--surface-3);
+		--button-bg-active: var(--surface-4);
+		--button-color: var(--surface-2-text);
+		--button-color-hover: var(--surface-2-text);
+		--button-color-active: var(--surface-2-text);
+		--button-border: 1px solid var(--color-border-50);
+
+		--button-fill-bg: var(--color-blue-600);
+		--button-fill-bg-hover: var(--color-blue-500);
+		--button-fill-bg-active: var(--color-blue-700);
+		--button-fill-color: var(--color-blue-100);
+		--button-fill-color-hover: var(--color-blue-100);
+		--button-fill-color-active: var(--color-blue-100);
+		--button-fill-border: 1px solid transparent;
+
+		--radio-button-bg: var(--surface-2);
+		--radio-button-bg-hover: var(--surface-3);
+		--radio-button-bg-active: var(--surface-4);
+		--radio-button-color: var(--surface-2-text);
+		--radio-button-color-hover: var(--surface-2-text);
+		--radio-button-color-active: var(--surface-2-text);
+		--radio-button-radius: var(--radius-s);
+		--radio-button-checked-bg: var(--color-blue-600);
+		--radio-button-checked-color: var(--surface-3-text);
+		--radio-button-border: 1px solid var(--color-border-50);
 
 		--switch-track-color: var(--color-gray-600);
 		--switch-track-color-active: var(--color-blue-600);
@@ -146,10 +168,32 @@
 
 	--focus-ring-color: var(--color-blue-300);
 
-	--button-accent: var(--color-blue-500);
-	--button-color: var(--color-blue-200);
-	--button-focus-ring-color: #999EEB60;
-	--button-border-color: var(--color-blue-400);
+	--button-bg: var(--surface-2);
+	--button-bg-hover: var(--surface-3);
+	--button-bg-active: var(--surface-4);
+	--button-color: var(--surface-2-text);
+	--button-color-hover: var(--surface-2-text);
+	--button-color-active: var(--surface-2-text);
+	--button-border: 1px solid var(--color-border-50);
+
+	--button-fill-bg: var(--color-blue-600);
+	--button-fill-bg-hover: var(--color-blue-500);
+	--button-fill-bg-active: var(--color-blue-700);
+	--button-fill-color: var(--color-blue-100);
+	--button-fill-color-hover: var(--color-blue-100);
+	--button-fill-color-active: var(--color-blue-100);
+	--button-fill-border: 1px solid transparent;
+
+	--radio-button-bg: var(--surface-2);
+	--radio-button-bg-hover: var(--surface-3);
+	--radio-button-bg-active: var(--surface-4);
+	--radio-button-color: var(--surface-2-text);
+	--radio-button-color-hover: var(--surface-2-text);
+	--radio-button-color-active: var(--surface-2-text);
+	--radio-button-radius: var(--radius-s);
+	--radio-button-checked-bg: var(--color-blue-600);
+	--radio-button-checked-color: var(--surface-3-text);
+	--radio-button-border: 1px solid var(--color-border-50);
 
 	--switch-track-color: var(--color-gray-600);
 	--switch-track-color-active: var(--color-blue-600);

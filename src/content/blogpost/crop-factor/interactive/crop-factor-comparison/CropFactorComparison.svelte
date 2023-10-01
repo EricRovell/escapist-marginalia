@@ -5,7 +5,7 @@
 	import { cropFactorData } from "./crop-factor-data";
 	import styles from "./crop-factor-comparison.module.css";
 
-	export let imageSrc = "/img/blogpost-crop-factor-comparison.jpg";
+	export let imageSrc = "https://storage.yandexcloud.net/escapist-marginalia/writing/crop-factor-comparison.jpg";
 
 	const t = getContext<Record<string, string>>("t")["crop-factor-comparison"];
 	const maskID = uniqueID.get();

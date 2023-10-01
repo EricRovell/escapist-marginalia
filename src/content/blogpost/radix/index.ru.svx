@@ -1,13 +1,23 @@
 ---
-cover: https://storage.yandexcloud.net/escapist-marginalia/covers/radix.png
-created: 2022-11-04T18:20:00.000Z
-description: "Самое важное , что нужно знать про запись чисел."
-keywords: [ "math", "radix", "numbers", "numeral bases" ]
-lang: ru
-layout: blogpost
-slug: "системы-счисления"
-title: "Системы счисления"
-translation: { lang: "english", slug: "numeral-systems" }
+{
+	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/radix.png",
+	"dateCreated": "2022-11-04T18:20:00.000Z",
+	"description": "Самое важное , что нужно знать про запись чисел.",
+	"keywords": [
+		"math",
+		"radix",
+		"numbers",
+		"numeral bases"
+	],
+	"lang": "ru",
+	"layout": "blogpost",
+	"slug": "системы-счисления",
+	"title": "Системы счисления",
+	"translation": {
+		lang: "english",
+		slug: "numeral-systems"
+	}
+}
 ---
 
 <script>

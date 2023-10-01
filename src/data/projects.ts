@@ -1,5 +1,4 @@
-import { find } from "@utils/query";
-import type { QueryItem } from "@utils/query";
+import { find, type QueryItem } from "@utils/query";
 import type { Project, Page } from "../types";
 
 interface Options {
@@ -17,7 +16,8 @@ const getProjectPageData = async () => {
 		// the key is filename, we do not need it here
 		for await (const [ , module ] of Object.entries(modules)) {
 			const { metadata } = await module() as Page<Project>;
-			projects.push(metadata);
+			const { draft = false } = metadata;
+			projects.push({ ...metadata, draft });
 		}
 
 		return projects;
@@ -27,16 +27,22 @@ const getProjectPageData = async () => {
 	}
 };
 
-export const getProjects = async ({ lang, name, featured }: Partial<Project> = {}, { limit }: Options = {}): Promise<Project[]> => {
+export const getProjects = async ({ lang, title, featured, draft }: Partial<Project> = {}, { limit }: Options = {}): Promise<Project[]> => {
 	const data = await getProjectPageData();
 
 	type Query<T> = {
 		"featured": QueryItem<boolean, T>;
+		"draft": QueryItem<boolean, T>;
 		"lang": QueryItem<string, T>;
 		"slug": QueryItem<string, T>;
 	};
 
 	const query: Query<Project> = {
+		draft: {
+			value: draft,
+			validator: draft => typeof draft === "boolean",
+			matcher: value => project => project.draft === value
+		},
 		featured: {
 			value: featured,
 			validator: featured => typeof featured === "boolean",
@@ -48,9 +54,9 @@ export const getProjects = async ({ lang, name, featured }: Partial<Project> = {
 			matcher: value => project => project.lang === value
 		},
 		slug: {
-			value: name,
-			validator: name => typeof name === "string",
-			matcher: name => project => project.name === name
+			value: title,
+			validator: title => typeof title === "string",
+			matcher: title => project => project.title === title
 		}
 	};
 

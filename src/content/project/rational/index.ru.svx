@@ -1,15 +1,18 @@
 ---
-description: "Rational - библиотека, добавляющая поддержку рациональных чисел в JavaScript."
-featured: true
-lang: "ru"
-layout: project
-maintained: true
-name: "rational"
-npm: "@ericrovell/rational"
-repository: "EricRovell/rational"
-techstack: [ "TypeScript" ]
-type: "library"
-updated: 2022-11-09T01:29:00.000Z
+{
+	"dateUpdated": "2022-11-09T01:29:00.000Z",
+	"description": "Rational - библиотека, добавляющая поддержку рациональных чисел в JavaScript.",
+	"draft": true,
+	"featured": true,
+	"lang": "ru",
+	"layout": "project",
+	"maintained": true,
+	"npm": "@ericrovell/rational",
+	"repository": "EricRovell/rational",
+	"title": "rational",
+	"techstack": [
+		"TypeScript"
+	],
+	"type": "library"
+}
 ---
-
-Страница в разработке.

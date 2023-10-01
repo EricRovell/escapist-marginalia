@@ -13,5 +13,5 @@ export interface ActionReturnAsync<Parameter> {
 }
 
 export interface ActionAsync<Parameter = void, Return = ActionReturnAsync<Parameter>> {
-	<Node extends HTMLElement>(node: Node, parameter: Parameter): Return;
+	<Node extends HTMLElement>(node: Node, parameter?: Parameter): Return;
 }
