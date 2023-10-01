@@ -2,7 +2,7 @@
 	import { pathHome, pathWriting, pathGallery, pathProjects, pathSketch, pathBookmarks, pathAbout } from "@paths";
 	import { t } from "@core/i18n";
 	import { Menu as Navigation } from "@components";
-	import styles from "./root-side-menu-body.module.css";
+	import styles from "./root-side-menu.module.css";
 
 	$: menuItems = [
 		{

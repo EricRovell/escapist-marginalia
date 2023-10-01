@@ -93,7 +93,7 @@
 @media (width <= 48em) {
 	.footer {
 		/* floating button offset */
-		padding-bottom: 6rem;
+		padding-bottom: var(--bottom-menu-height);
 	}
 
 	.wrapper {

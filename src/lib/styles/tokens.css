@@ -122,4 +122,7 @@
 	--space-10-rel: calc(5 * var(--space-unit-rel));
 
 	--max-width: 1440px;
+
+	--bottom-menu-height: 40px;
+	--bottom-menu-width: 95%;
 }

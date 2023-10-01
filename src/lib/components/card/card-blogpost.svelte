@@ -13,7 +13,7 @@
 	export let cover: Blogpost["cover"];
 	export let dateCreated: Blogpost["dateCreated"];
 	export let description: Blogpost["description"];
-	export let keywords: Blogpost["keywords"];
+	export let keywords: Blogpost["keywords"] = [];
 	export let title: Blogpost["title"];
 	export let slug: Blogpost["slug"];
 </script>

@@ -1,0 +1,123 @@
+.bottom-menu {
+	--botton-menu-padding-block: var(--space-1);
+	--botton-menu-item-height: calc(var(--bottom-menu-height) - 2 * var(--botton-menu-padding-block));
+
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: calc((100% - var(--bottom-menu-width)) / 2);
+	grid-template: var(--bottom-menu-height) / 1fr repeat(2, var(--botton-menu-item-height));
+	gap: var(--space-2);
+	height: var(--bottom-menu-height);
+	width: var(--bottom-menu-width);
+	padding: var(--botton-menu-padding-block) var(--space-2);
+	border: 1px solid var(--color-border-50);
+	border-radius: var(--radius-s) var(--radius-s) 0 0;
+	background-color: var(--surface-4);
+	background-color: color-mix(in srgb, var(--surface-4) 100%, transparent 10%);
+	z-index: 51;
+
+	& > a {
+		--icon-size: 60%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: var(--space-3);
+		margin-inline-start: var(--space-2);
+		height: var(--botton-menu-item-height);
+		white-space: nowrap;
+		width: fit-content;
+	}
+
+	& > button {
+		height: var(--botton-menu-item-height);
+		width: var(--botton-menu-item-height);
+		aspect-ratio: 1 / 1;
+	}
+}
+
+.nav,
+.controls {
+	width: 100%;
+}
+
+.nav nav {
+	--navigation-height: fit-content;
+
+	display: flex;
+	justify-content: center;
+}
+
+.nav ul,
+.nav li {
+	width: 100%;
+}
+
+.nav ul {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	gap: unset;
+}
+
+.nav li:not(:last-child) {
+	border-bottom: 1px solid var(--color-border-50);
+}
+
+.nav a {
+	width: 100%;
+	padding: var(--space-2) var(--space-3);
+	font-size: var(--font-size-0);
+}
+
+.nav a[aria-current] {
+	outline: none;
+	border: none;
+	background-color: unset;
+}
+
+.controls {
+	display: grid;
+	grid-template: 2rem / repeat(2, 1fr);
+	gap: var(--space-4-rel);
+	margin-block: var(--space-4) var(--space-10);
+	font-size: var(--font-size-0);
+}
+
+.controls > div > span {
+	display: inline-flex;
+	margin-block-end: var(--space-2-rel);
+	text-transform: capitalize;
+}
+
+.controls nav {
+	height: 100%;
+}
+
+.controls a[aria-current] {
+	background-color: var(--surface-4);
+}
+
+.preferences {
+	display: grid;
+	gap: var(--space-2);
+	width: 100%;
+
+	& h4 {
+		font-size: var(--font-size-1);
+		margin-block-end: var(--space-2);
+		color: var(--surface-2-text-contrast);
+		font-weight: 500;
+	}
+
+	& label {
+		font-size: var(--font-size-0);
+	}
+}
+
+@media screen and (width <= 48em) {
+	.bottom-menu {
+		display: grid;
+	}
+}

@@ -5,7 +5,6 @@
 	grid-template-areas: "logo navigation controls";
 	place-items: center;
 	gap: var(--space-3);
-	min-height: var(--header-height, 50px);
 	z-index: var(--z-index-navigation);
 	background-color: var(--masthead-bg, transparent);
 }
