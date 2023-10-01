@@ -43,4 +43,6 @@
 	text-align: center;
 	font-size: var(--font-size-2);
 	color: var(--surface-2-text-less-contrast);
+	max-inline-size: 45ch;
+	text-wrap: balance;
 }
