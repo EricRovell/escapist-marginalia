@@ -1,24 +1,7 @@
-.wrapper {
-	display: none;
-	width: 100%;
-
-	&[data-visible] {
-		.menu-body {
-			transform: translateY(-100%);
-			visibility: visible;
-			transition: transform 0.25s ease-in-out;
-		}
-
-		.backdrop {
-			transform: scale(1);
-		}
-	}
-}
-
 .menu-body {
 	position: fixed;
 	top: 100%;
-	left: calc((100% - var(--bottom-menu-width)) / 2);;
+	left: calc((100% - var(--bottom-menu-width)) / 2);
 	visibility: hidden;
 	max-height: 85vh;
 	min-height: 25vh;
@@ -62,8 +45,6 @@
 	}
 }
 
-/* backdrop */
-
 .backdrop {
 	position: fixed;
 	inset: 0;
@@ -71,6 +52,23 @@
 	z-index: calc(var(--drawer-z-index, 50) - 1);
 	transform: scale(0);
 	transform-origin: 50% 100%;
+}
+
+.wrapper {
+	display: none;
+	width: 100%;
+
+	&[data-visible] {
+		.menu-body {
+			transform: translateY(-100%);
+			visibility: visible;
+			transition: transform 0.25s ease-in-out;
+		}
+
+		.backdrop {
+			transform: scale(1);
+		}
+	}
 }
 
 @media screen and (width <= 48em) {
