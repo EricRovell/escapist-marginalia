@@ -3,6 +3,10 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+
+	& input[type="range"] {
+		touch-action: none;
+	}
 }
 
 .content {
