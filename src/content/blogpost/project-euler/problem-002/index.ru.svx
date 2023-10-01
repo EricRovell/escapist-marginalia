@@ -4,7 +4,7 @@
 	"dateCreated": "2021-06-11T00:00:00.000Z",
 	"dateUpdated": "2021-06-13T00:00:00.000Z",
 	"description": "Чётные числа Фибоначчи.",
-	"keyword"s: [
+	"keywords": [
 		"project euler",
 		"math"
 	],
