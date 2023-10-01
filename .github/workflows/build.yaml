@@ -9,6 +9,7 @@ on:
       - "**/README.md"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  workflow_call:
 
 jobs:
 
