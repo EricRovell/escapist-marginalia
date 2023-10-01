@@ -125,7 +125,7 @@
 					type: "image/jpeg"
 				}
 			]}"
-			style="aspect-ratio: {fullsize.width} / {fullsize.height};"
+			style="--image-aspect-ratio: {fullsize.width} / {fullsize.height};"
 			width={fullsize.width}
 		/>
 	</section>

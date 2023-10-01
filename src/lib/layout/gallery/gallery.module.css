@@ -36,9 +36,9 @@
 	}
 
 	& img {
+		aspect-ratio: var(--image-aspect-ratio);
 		object-fit: contain;
 		border-radius: var(--radius-m);
-		height: 400px;
 		width: 100%;
 		max-width: 90vw;
 		max-height: 60vh;
