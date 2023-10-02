@@ -1,30 +1,48 @@
 <script context="module" lang="ts">
 	import { writable } from "svelte/store";
+	import { preventPageScroll } from "$lib/utils/helpers";
 
-	const current = writable<string>();
+	const createStore = () => {
+		const { subscribe, update } = writable<string>();
+
+		return {
+			subscribe,
+			set: (value?: string) => {
+				update(oldValue => {
+					if (!oldValue && value) {
+						preventPageScroll(true);
+					}
+
+					if (oldValue && !value) {
+						preventPageScroll(false);
+					}
+
+					return value;
+				});
+			}
+		};
+	};
+
+	const current = createStore();
 </script>
 
 <script lang="ts">
 	import { afterUpdate } from "svelte";
 	import { afterNavigate } from "$app/navigation";
-	import { preventPageScroll } from "$lib/utils/helpers";
 	import { shortcut, swipable, portal, type SwipeEvent } from "$lib/actions";
 	import styles from "./drawer.module.css";
 
 	export let className = "";
-	export let name: string | undefined = undefined;
+	export let name: string;
 	export let show = false;
 
-	export const close = () => show = false;
-	export const open = () => show = true;
-
 	export const toggle = () => {
-		show ? close() : open();
+		show = !show;
 	};
 
 	const handleSwipe = (event: CustomEvent<SwipeEvent>) => {
 		if (event.detail.direction === "down") {
-			close();
+			show = false;
 		}
 	};
 
@@ -40,9 +58,9 @@
 		}
 	});
 
-	afterNavigate(() => close());
-
-	$: preventPageScroll(show);
+	afterNavigate(() => {
+		show = false;
+	});
 
 	$: if (name && $current && $current !== name) {
 		show = false;
