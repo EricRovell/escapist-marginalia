@@ -24,7 +24,6 @@
 					bind:cropFactor="{cropFactor[0]}"
 				/>
 				<form
-					class="{styles.form}"
 					on:submit|preventDefault
 				>
 					<Range
@@ -52,7 +51,6 @@
 					bind:cropFactor="{cropFactor[1]}"
 				/>
 				<form
-					class="{styles.form}"
 					on:submit|preventDefault
 				>
 					<Range

@@ -11,31 +11,37 @@
 
 .content {
 	display: grid;
-	grid-template: auto / calc(55vh) calc(55vh);
+	grid-template: auto / repeat(2, auto);
+	gap: var(--space-6);
 	place-items: center;
 	padding: var(--space-2);
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
-}
 
-.content > svg {
-	height: 100%;
-	width: fit-content;
-}
+	& > svg {
+		height: 100%;
+		width: fit-content;
+	}
 
-.content > div {
-	scroll-snap-align: center;
-}
+	& > div {
+		scroll-snap-align: center;
+		width: 100%;
+	}
 
-.content:global(.match) svg > rect {
-	stroke-dasharray: none;
-}
+	& form {
+		display: grid;
+		gap: var(--space-2);
+		margin-block-start: var(--space-3);
+		width: 100% !important;
+	}
 
-.form {
-	display: grid;
-	gap: var(--space-2);
-	margin-block-start: var(--space-3);
-	min-width: 50vh;
+	&:global(.match) svg > rect {
+		stroke-dasharray: none;
+	}
+
+	@media screen and (width < 500px) {
+		grid-template: auto / repeat(2, 80vw);
+	}
 }
 
 .output {
@@ -45,8 +51,8 @@
 	color: var(--color-red-500);
 	padding: var(--space-2-rel);
 	font-size: var(--font-size-0);
-}
 
-.output:global(.match) {
-	color: var(--color-green-500);
+	&:global(.match) {
+		color: var(--color-green-500);
+	}
 }

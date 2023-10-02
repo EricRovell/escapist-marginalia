@@ -230,7 +230,8 @@
 .article :global(.interactive) :is(h2, h3, h4, h5, h6) {
 	text-align: center;
 	margin-block-start: 0;
-	max-inline-size: 35ch;
+	max-inline-size: 25ch;
+	text-wrap: balance;
 }
 
 /* katex expressions */
