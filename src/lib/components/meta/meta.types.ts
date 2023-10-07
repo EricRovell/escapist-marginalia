@@ -1,58 +1,61 @@
 export interface MetaProps {
-  title?: string;
-  alternate?: Alternate;
-  meta?: MetaTags;
-  twitter?: Twitter;
-  openGraph?: OpenGraph;
+	title?: string;
+	alternate?: Alternate;
+	meta?: MetaTags;
+	twitter?: Twitter;
+	openGraph?: OpenGraph;
 }
 
 type MetaKeys =
-  | "title"
-  | "description"
-  | "keywords"
-  | "subject"
-  | "language"
-  | "revised"
-  | "abstract"
-  | "topic"
-  | "summary"
-  | "author"
-  | "url"
-  | "robots";
+	| "title"
+	| "description"
+	| "keywords"
+	| "subject"
+	| "language"
+	| "revised"
+	| "abstract"
+	| "topic"
+	| "summary"
+	| "author"
+	| "url"
+	| "robots";
 
 type TwitterKeys =
-  | "card"
-  | "site"
-  | "creator"
-  | "url"
-  | "title"
-  | "description"
-  | "image:src"
-  | "image:alt"
+	| "card"
+	| "site"
+	| "creator"
+	| "url"
+	| "title"
+	| "description"
+	| "image:src"
+	| "image:alt"
 
 type OpenGraphKeys = 
-  | "title"
-  | "type"
-  | "url"
-  | "image"
-  | "description"
-  | "locale"
-  | "site_name"
-  | "article:published_time"
-  | "article:modified_time"
-  | "article:section"
-  | "article:tag";
+	| "author"
+	| "tag"
+	| "title"
+	| "type"
+	| "url"
+	| "image"
+	| "description"
+	| "locale"
+	| "section"
+	| "site_name"
+	| "article:published_time"
+	| "article:modified_time"
+	| "article:section"
+	| "article:tag";
 
 export type MetaTags = Partial<
-  Record<MetaKeys, string>
+	Record<MetaKeys, string>
 >;
 
 export type Twitter = Partial<
-  Record<TwitterKeys, string>
+	Record<TwitterKeys, string>
 >;
 
 export type OpenGraph = Partial<
-  Record<OpenGraphKeys, string>
+	Record<OpenGraphKeys, string>
 >;
 
 /**
@@ -60,6 +63,6 @@ export type OpenGraph = Partial<
  * need to use an array instead.
  */
 export interface Alternate {
-  href: string;
-  hrefLang: string;
+	href: string;
+	hrefLang: string;
 }
