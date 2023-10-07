@@ -24,7 +24,6 @@
 		"warm"
 	],
 	"lang": "en",
-	"layout": "gallery",
 	"lens": "Samsung Galaxy Note 9 Rear Camera",
 	"og": {
 		"height": 630,
