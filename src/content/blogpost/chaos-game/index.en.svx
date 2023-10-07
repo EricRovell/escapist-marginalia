@@ -9,7 +9,6 @@
 		"math"
 	],
 	"lang": "en",
-	"layout": "blogpost",
 	"slug": "the-chaos-game",
 	"title": "The Chaos Game: The randomness against determinism",
 	"translation": {

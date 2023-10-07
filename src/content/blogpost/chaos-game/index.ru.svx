@@ -9,7 +9,6 @@
 		"math"
 	],
 	"lang": "ru",
-	"layout": "blogpost",
 	"slug": "игра-хаоса",
 	"title": "Игра Хаоса: случайность против детерменизма",
 	"translation": {

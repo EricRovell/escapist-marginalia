@@ -10,7 +10,6 @@
 		"f-number"
 	],
 	"lang": "en",
-	"layout": "blogpost",
 	"slug": "where-do-aperture-numbers-come-from",
 	"title": "Where do aperture numbers come from?",
 	"translation": {

@@ -1,31 +1,31 @@
-<script context="module">
-	import { Link as a, Code as pre } from "@components";
-	export { pre, a };
-</script>
-
-<script>
+<script lang="ts">
 	import { webpage, webpageRoot } from "@core/paths";
 	import { Meta, TOC, ScrollToTop } from "@components";
-	import Header from "./Header.svelte";
+	import Header from "./blogpost.header.svelte";
 	import { LayoutPage } from "../page-header";
-	import styles from "./blogpost.module.css";
+	import styles from "./blogpost.layout.module.css";
+	import type { BlogpostMetadata } from "@types";
 
-	export let cover;
-	export let dateCreated;
-	export let dateUpdated;
-	export let description;
-	export let keywords;
-	export let lang;
-	export let title;
-	export let toc = [];
-	export let translation = null;
+	export let metadata: BlogpostMetadata;
+
+	let {
+		cover,
+		dateCreated,
+		dateUpdated,
+		description,
+		keywords = [],
+		lang,
+		title,
+		toc = [],
+		translation = null
+	} = metadata;
 </script>
 
 <Meta
 	{title}
 	meta={{
 		description,
-		keywords,
+		keywords: keywords.join(","),
 		language: lang
 	}}
 	openGraph={{
@@ -33,7 +33,7 @@
 		description,
 		locale: lang,
 		type: "article",
-		tag: keywords,
+		tag: keywords.join(","),
 		site_name: "Eric Rovell",
 		author: "Eric Rovell",
 		url: $webpage,

@@ -9,7 +9,6 @@
 		"math"
 	],
 	"lang": "en",
-	"layout": "blogpost",
 	"series": "project-euler",
 	"slug": "project-euler-6",
 	"title": "Project Euler #6",

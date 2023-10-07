@@ -10,7 +10,6 @@
 		"numeral bases"
 	],
 	"lang": "ru",
-	"layout": "blogpost",
 	"slug": "системы-счисления",
 	"title": "Системы счисления",
 	"translation": {

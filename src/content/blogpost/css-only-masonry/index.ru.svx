@@ -9,7 +9,6 @@
 		"web"
 	],
 	"lang": "ru",
-	"layout": "blogpost",
 	"slug": "галерея-изображений-в-раскладке-masonry-на-почти-чистом-css",
 	"title": "Галерея изображений в раскладке Masonry на (почти) чистом CSS",
 	"translation": {
