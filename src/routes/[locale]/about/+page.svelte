@@ -1,5 +1,9 @@
 <script>
+	import { PageLayout } from "@layout";
+
 	export let data;
 </script>
 
-<svelte:component this={data.Page} />
+<PageLayout {...data.metadata}>
+	<svelte:component this={data.page} />
+</PageLayout>
