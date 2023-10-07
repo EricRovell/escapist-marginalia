@@ -5,7 +5,6 @@
 	"draft": true,
 	"featured": false,
 	"lang": "en",
-	"layout": "project",
 	"maintained": true,
 	"repository": "EricRovell/project-euler-ts",
 	"title": "project-euler",

@@ -4,7 +4,6 @@
 	"description": "Веб-приложение для отображения данных графика наружного освещения города Санкт-Петербурга.",
 	"featured": true,
 	"lang": "ru",
-	"layout": "project",
 	"maintained": true,
 	"repository": "EricRovell/illumination-schedule-spb",
 	"title": "illumination-schedule-spb",

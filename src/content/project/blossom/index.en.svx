@@ -5,7 +5,6 @@
 	"draft": true,
 	"featured": true,
 	"lang": "en",
-	"layout": "project",
 	"maintained": false,
 	"npm": "@ericrovell/blossom",
 	"repository": "EricRovell/blossom",

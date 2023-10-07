@@ -29,7 +29,8 @@ export const load: PageLoad = async ({ params }) => {
 		}
 
 		return {
-			Post: page.default
+			page: page.default,
+			metadata: page.metadata
 		};
 
 	} catch (err) {

@@ -20,7 +20,6 @@ export const mdsvexConfig = {
 	rehypePlugins: [ correct_hast_tree, rehype_katex, slug, transformerAnchor ],
 	layout: {
 		"_": "./src/lib/layout/default/default.layout.svelte",
-		"project": "./src/lib/layout/project/Project.svelte",
 		"sketch": "./src/lib/layout/sketch/SketchPage.svelte"
 	}
 };

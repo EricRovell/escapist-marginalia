@@ -4,7 +4,6 @@
 	"description": "Provides the illumination schedule data for Saint-Petersburg, Russia.",
 	"featured": true,
 	"lang": "en",
-	"layout": "project",
 	"maintained": true,
 	"repository": "EricRovell/illumination-schedule-spb",
 	"title": "illumination-schedule-spb",

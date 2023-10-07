@@ -1,31 +1,31 @@
-<script context="module">
-	import { Link as a, Code as pre } from "@components";
-	export { pre, a };
-</script>
-
-<script>
+<script lang="ts">
 	import { webpage } from "@core/paths";
 	import { Meta, ScrollToTop } from "@components";
-	import Header from "./ProjectHeader.svelte";
+	import Header from "./project.header.svelte";
 	import { LayoutPage } from "../page-header";
-	import styles from "./project.module.css";
+	import styles from "./project.layout.module.css";
+	import type { Project } from "@types";
 
-	export let dateUpdated;
-	export let description;
-	export let lang;
-	export let maintained;
-	export let npm;
-	export let repository;
-	export let title;
-	export let techstack = [];
-	export let website;
+	export let metadata: Project;
+
+	let {
+		dateUpdated,
+		description,
+		lang,
+		//maintained = true,
+		npm,
+		repository,
+		title,
+		techstack = [],
+		website
+	} = metadata;
 </script>
 
 <Meta
 	{title}
 	meta={{
 		description,
-		keywords: techstack,
+		keywords: techstack.join(","),
 		language: lang
 	}}
 	openGraph={{
@@ -33,7 +33,7 @@
 		description,
 		locale: lang,
 		type: "article",
-		tag: techstack,
+		tag: techstack.join(","),
 		section: "project",
 		site_name: "Eric Rovell",
 		author: "Eric Rovell",
@@ -50,8 +50,8 @@
 
 <LayoutPage wide>
 	<Header
+		{dateUpdated}
 		{description}
-		{maintained}
 		{npm}
 		{repository}
 		{title}
