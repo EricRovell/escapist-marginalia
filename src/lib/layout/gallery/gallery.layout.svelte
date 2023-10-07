@@ -1,26 +1,32 @@
-<script context="module">
-	import { Link as a, Code as pre } from "@components";
-	export { pre, a };
-</script>
-
-<script>
+<script lang="ts">
 	import { t } from "@core/i18n";
 	import { webpage } from "@core/paths";
-	import {
-		Meta,
-		ScrollToTop,
-		Button,
-		Icon,
-		Image,
-		Link,
-		ImageFullscreen,
-		Datetime
-	} from "@components";
+	import { Meta,ScrollToTop, Button, Icon, Image, Link, ImageFullscreen, Datetime } from "@components";
 	import { iconShare, iconDownload, iconFullscreen } from "@icons";
 	import { share } from "@utils/helpers";
-	import styles from "./gallery.module.css";
+	import styles from "./gallery.layout.module.css";
 	import articleStyles from "./article.module.css";
-	import headerStyles from "./header.module.css";
+	import type { GalleryItemPage } from "@types";
+
+	export let metadata: GalleryItemPage;
+
+	let {
+		camera,
+		dateCreated,
+		dateTaken,
+		dateUpdated,
+		description,
+		fnumber,
+		focalLength,
+		fullsize,
+		iso,
+		keywords,
+		lang,
+		lens,
+		og,
+		shutter,
+		title
+	} = metadata;
 
 	let open = false;
 
@@ -48,23 +54,6 @@
 		});
 	};
 
-	export let camera;
-	export let dateCreated;
-	export let dateTaken;
-	export let dateUpdated = undefined;
-	export let description;
-	export let fnumber;
-	export let focalLength;
-	export let fullsize;
-	export let iso;
-	export let keywords;
-	export let lang;
-	export let lens;
-	export let og;
-	export let title;
-	export let shutter;
-	export let updated;
-
 	const metadataList = [
 		{ label: "ISO", value: iso },
 		{ label: "Camera", value: camera },
@@ -80,7 +69,7 @@
 	{title}
 	meta={{
 		description,
-		keywords,
+		keywords: keywords.join(","),
 		language: lang
 	}}
 	openGraph={{
@@ -88,13 +77,13 @@
 		description,
 		locale: lang,
 		type: "article",
-		tag: keywords,
+		tag: keywords.join(","),
 		section: "gallery",
 		site_name: "Eric Rovell",
 		author: "Eric Rovell",
 		url: $webpage,
-		"article:published_time": new Date(dateCreated),
-		"article:modified_time": updated,
+		"article:published_time": dateCreated,
+		"article:modified_time": dateUpdated,
 		image: `${og.src}.jpeg`
 	}}
 	twitter={{
@@ -130,7 +119,7 @@
 		/>
 	</section>
 	<div class="{styles.body}">
-		<header class="{headerStyles.header}">
+		<header class="{styles.header}">
 			<h1>{title}</h1>
 			<p>{description}</p>
 			{#if dateUpdated}

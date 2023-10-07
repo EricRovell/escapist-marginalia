@@ -18,7 +18,8 @@ export const load: PageLoad = async ({ fetch, params }) => {
 		}
 
 		return {
-			Page: page.default
+			page: page.default,
+			metadata: page.metadata
 		};
 
 	} catch (err) {
