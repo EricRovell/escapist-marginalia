@@ -1,5 +1,9 @@
 <script>
+	import { ProjectLayout } from "@layout";
+
 	export let data;
 </script>
 
-<svelte:component this={data.Post} />
+<ProjectLayout metadata={data.metadata}>
+	<svelte:component this={data.page} />
+</ProjectLayout>

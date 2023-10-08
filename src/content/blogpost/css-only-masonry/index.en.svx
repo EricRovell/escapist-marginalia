@@ -9,7 +9,6 @@
 		"web"
 	],
 	"lang": "en",
-	"layout": "blogpost",
 	"slug": "masonry-image-gallery-with-almost-pure-css",
 	"title": "Masonry Image Gallery Layout with (almost) pure CSS",
 	"translation": {

@@ -1,5 +1,9 @@
 <script>
+	import { BlogpostLayout } from "@layout";
+
 	export let data;
 </script>
 
-<svelte:component this={data.Post} />
+<BlogpostLayout metadata={data.metadata}>
+	<svelte:component this={data.page} />
+</BlogpostLayout>

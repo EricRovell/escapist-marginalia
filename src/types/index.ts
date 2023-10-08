@@ -99,14 +99,14 @@ export type Validator<T> = (value: T) => ({
 interface GalleryImage {
 	height: number;
 	src: string;
-	width: string;
+	width: number;
 }
 
 export interface GalleryItemPage {
 	camera: string;
-	dateCreated: number;
-	dateTaken: number;
-	dateUpdated?: number;
+	dateCreated: string;
+	dateTaken: string;
+	dateUpdated?: string;
 	description: string;
 	dominant: [ r: number, g: number, b: number ];
 	fnumber: number;

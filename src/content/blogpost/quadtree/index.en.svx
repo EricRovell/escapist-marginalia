@@ -9,7 +9,6 @@
 		"computer science"
 	],
 	"lang": "en",
-	"layout": "blogpost",
 	"slug": "quadtree",
 	"title": "Quadtree",
 	"translation": {

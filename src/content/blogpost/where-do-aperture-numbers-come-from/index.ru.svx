@@ -10,7 +10,6 @@
 		"f-number"
 	],
 	"lang": "ru",
-	"layout": "blogpost",
 	"slug": "откуда-берутся-числа-диафрагмы",
 	"title": "Откуда берутся числа диафрагмы?",
 	"translation": {

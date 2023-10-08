@@ -1,27 +1,21 @@
-<script context="module">
-	import { Link as a, Code as pre } from "@components";
-	export { pre, a };
-</script>
-
-<script>
+<script lang="ts">
 	import { webpage } from "@core/paths";
 	import { Meta } from "@components";
-	import Header from "./PageHeader.svelte";
 	import { LayoutPage } from "../page-header";
 	import styles from "./page.module.css";
 
-	export let description;
-	export let keywords;
-	export let lang;
-	export let title;
-	export let updated;
+	export let description: string;
+	export let keywords: string[];
+	export let lang: string;
+	export let title: string;
+	export let updated: string;
 </script>
 
 <Meta
 	title="{title}"
 	meta={{
 		description,
-		keywords,
+		keywords: keywords.join(","),
 		language: lang
 	}}
 	openGraph={{
@@ -29,7 +23,7 @@
 		description,
 		locale: lang,
 		type: "article",
-		tag: keywords,
+		tag: keywords.join(","),
 		section: "project",
 		site_name: "Eric Rovell",
 		author: "Eric Rovell",
@@ -45,11 +39,12 @@
 />
 
 <LayoutPage wide>
-	<Header
-		{description}
-		{title}
-		slot="banner"
-	/>
+	<div class={styles.header} slot="banner">
+		<h1>
+			{title}
+		</h1>
+		<p>{description}</p>
+	</div>
 	<article class={styles.article}>
 		<slot />
 	</article>

@@ -9,7 +9,6 @@
 		"math"
 	],
 	"lang": "ru",
-	"layout": "blogpost",
 	"series": "project-euler",
 	"slug": "проект-эйлера-1",
 	"title": "Проект Эйлера #1",

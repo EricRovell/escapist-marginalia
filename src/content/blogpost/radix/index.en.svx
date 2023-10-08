@@ -10,7 +10,6 @@
 		"numeral bases"
 	],
 	"lang": "en",
-	"layout": "blogpost",
 	"slug": "numeral-systems",
 	"title": "Numeral Systems",
 	"translation": {

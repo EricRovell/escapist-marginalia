@@ -4,7 +4,6 @@
 	"description": "Библиотека для работы с евклидовыми векторами, написанная на TypeScript.",
 	"featured": true,
 	"lang": "ru",
-	"layout": "project",
 	"maintained": true,
 	"npm": "@ericrovell/vector",
 	"repository": "EricRovell/vector",

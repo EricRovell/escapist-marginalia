@@ -4,12 +4,12 @@
 	import { Button, Datetime, Icon, Link } from "@components";
 	import { iconShare } from "@icons";
 	import { encodeTitleId, share } from "@utils/helpers";
-	import styles from "./header.module.css";
+	import styles from "./blogpost.header.module.css";
 
 	export let dateCreated: string;
 	export let dateUpdated: string;
 	export let description: string;
-	export let keywords = "";
+	export let keywords = [];
 	export let title: string;
 	export let translation = null;
 

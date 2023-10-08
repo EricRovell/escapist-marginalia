@@ -10,20 +10,10 @@
 		"generative art"
 	],
 	"lang": "en",
-	"layout": "sketch",
 	"title": "The Attractor",
 	"url": "/en/sketch/the-attractor"
 }
 ---
-
-<script>
-	import { default as Sketch } from "./src/TheAttractor.svelte";
-	import t from "./translation/en.json";
-</script>
-
-<svelte:fragment slot="sketch">
-	<Sketch {t} />
-</svelte:fragment>
 
 ## Reference
 

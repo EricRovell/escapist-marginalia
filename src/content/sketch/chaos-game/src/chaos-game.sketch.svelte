@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Sketch } from "@components";
-	import { sketch } from "./the-attractor.render";
-	import { default as Controls } from "./TheAttractor.form.svelte";
+	import { sketch } from "./chaos-game.render";
+	import { default as Controls } from "./chaos-game.form.svelte";
 
 	export let t: Record<string, string>;
 </script>

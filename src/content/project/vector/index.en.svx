@@ -4,7 +4,6 @@
 	"description": "Euclidian vector library written in TypeScript.",
 	"featured": true,
 	"lang": "en",
-	"layout": "project",
 	"maintained": true,
 	"npm": "@ericrovell/vector",
 	"repository": "EricRovell/vector",

@@ -24,7 +24,6 @@
 		"деревья"
 	],
 	"lang": "ru",
-	"layout": "gallery",
 	"lens": "TAMRON 16-300mm F/3.5-6.3 Di II VC PZD B016",
 	"og": {
 		"height": 630,

@@ -10,7 +10,6 @@
 		"equivalent focal length"
 	],
 	"lang": "ru",
-	"layout": "blogpost",
 	"slug": "кроп-фактор",
 	"title": "Кроп Фактор"
 }

@@ -17,6 +17,8 @@ const PATH_ROOT = cwd();
  * Parses the subset metadata of the image.
  */
 async function parseImageMetadata(filePath) {
+	// @ts-expect-error: it is async actually
+	// eslint-disable-next-line @typescript-eslint/await-thenable
 	const tags = await ExifReader.load(filePath, {
 		includeUnknown: true
 	});
@@ -109,7 +111,7 @@ async function processImage({ filePath, pathOutput, id }) {
 		fullsize: {
 			height: imgFullJpeg.height,
 			width: imgFullJpeg.width,
-			src: CONFIG.buildImagePath(`${id}`),
+			src: CONFIG.buildImagePath(`${id}`)
 		},
 		og: {
 			height: imgOgJpeg.height,
@@ -119,12 +121,12 @@ async function processImage({ filePath, pathOutput, id }) {
 		thumbnail: {
 			height: imgThumbJpeg.height,
 			width: imgThumbJpeg.width,
-			src: CONFIG.buildImagePath(`${id}.thumb`),
+			src: CONFIG.buildImagePath(`${id}.thumb`)
 		},
 		thumbnailSquare: {
 			height: imgThumbSquareJpeg.height,
 			width: imgThumbSquareJpeg.width,
-			src: CONFIG.buildImagePath(`${id}.thumbsq`),
+			src: CONFIG.buildImagePath(`${id}.thumbsq`)
 		}
 	};
 }
@@ -161,7 +163,6 @@ async function updateFrontmatter(data) {
 			pageData.data = {
 				...item,
 				lang: page.lang,
-				layout: "gallery",
 				slug: encodeURI(item.id),
 				dateCreated: new Date().toISOString(),
 				...pageData.data
