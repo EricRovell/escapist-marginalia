@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-	import { MathExp } from "@components";
+	import MathExp from "../math.svelte";
 
 	export let type: FStop = "f-number";
 	export let fstop = 0;
