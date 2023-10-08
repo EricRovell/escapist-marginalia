@@ -4,6 +4,7 @@
 		"stylelint-stylistic/config"
 	],
 	"rules": {
+		"no-descending-specificity": null,
 		"stylistic/indentation": "tab",
 		"selector-pseudo-class-no-unknown": [ true,	{
 				"ignorePseudoClasses": [ "global" ]

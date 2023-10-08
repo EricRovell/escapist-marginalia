@@ -46,6 +46,7 @@
 		"src/**/*.ts",
 		"src/**/*.svelte",
 		"src/**/*.json",
-		"src/**/*.module.css"
+		"src/**/*.module.css",
+		"image-generate/**/*.js"
 	]
 }
