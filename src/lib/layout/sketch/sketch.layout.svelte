@@ -1,28 +1,28 @@
-<script context="module">
-	import { Link as a } from "@components";
-	export { a };
-</script>
-
-<script>
+<script lang="ts">
 	import { webpage, webpageRoot } from "@core/paths";
-	import { t } from "@core/i18n";
+	//import { t } from "@core/i18n";
 	import { Meta } from "@components";
 	import { LayoutPage } from "../page-header";
-	import styles from "./sketch-page.module.css";
+	import styles from "./sketch.layout.module.css";
+	import type { Sketch } from "@types";
 
-	export let cover;
-	export let dateUpdated;
-	export let description;
-	export let keywords = [];
-	export let lang;
-	export let title;
+	export let metadata: Sketch;
+
+	let {
+		cover,
+		dateUpdated,
+		description,
+		keywords = [],
+		lang,
+		title
+	} = metadata;
 </script>
 
 <Meta
 	title="{title}"
 	meta={{
 		description,
-		keywords,
+		keywords: keywords.join(","),
 		language: lang
 	}}
 	openGraph={{
@@ -30,7 +30,7 @@
 		description,
 		locale: lang,
 		type: "article",
-		tag: keywords,
+		tag: keywords.join(","),
 		section: "sketch",
 		site_name: "Eric Rovell",
 		author: "Eric Rovell",
@@ -51,7 +51,7 @@
 	<div slot="banner" class="{styles.banner}" />
 	<article class={styles.wrapper}>
 		<slot name="sketch" />
-		<aside class="{styles["shortcuts-wrapper"]}">
+		<!-- <aside class="{styles["shortcuts-wrapper"]}">
 			<ul class="{styles.shortcuts}">
 				<li>
 					<kbd>Space</kbd>
@@ -66,7 +66,7 @@
 					<span>{$t("dict.restart")}</span>
 				</li>
 			</ul>
-		</aside>
+		</aside> -->
 		<header class="{styles.header}">
 			<h1>{title}</h1>
 			<p>{description}</p>

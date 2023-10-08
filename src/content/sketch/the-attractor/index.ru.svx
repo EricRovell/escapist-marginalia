@@ -10,20 +10,10 @@
 		"генеративное искусство"
 	],
 	"lang": "ru",
-	"layout": "sketch",
 	"title": "Аттрактор",
 	"url": "/ru/sketch/the-attractor"
 }
 ---
-
-<script>
-	import { default as Sketch } from "./src/TheAttractor.svelte";
-	import t from "./translation/ru.json";
-</script>
-
-<svelte:fragment slot="sketch">
-	<Sketch {t} />
-</svelte:fragment>
 
 ## Ссылки
 

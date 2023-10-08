@@ -1,3 +1,42 @@
+.header {
+	position: relative;
+	display: grid;
+	grid-auto-rows: min-content;
+	place-content: center;
+	border-block-end: 1px solid var(--color-border-50);
+	width: 100%;
+	padding-block: var(--space-7);
+	height: min-content;
+
+	& > h1 {
+		font-family: var(--font-secondary);
+		text-align: center;
+		max-inline-size: 65ch;
+		margin-block-end: var(--space-1-rel);
+		text-wrap: balance;
+	}
+
+	& > p {
+		text-align: center;
+		max-inline-size: 50ch;
+		line-height: 1.4;
+		font-size: var(--font-size-1);
+		font-style: italic;
+		margin-block-end: var(--space-3-rel);
+
+		&:first-of-type {
+			text-wrap: balance;
+		}
+	}
+
+	& time,
+	& > p:nth-last-of-type(2) {
+		font-size: var(--font-size-0);
+		color: var(--surface-2-text-less-contrast);
+		margin-block-end: var(--space-2-rel);
+	}
+}
+
 .container {
 	/* required for `scroll-to-top` component */
 	position: relative;

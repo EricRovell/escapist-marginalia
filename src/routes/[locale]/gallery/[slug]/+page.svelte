@@ -1,5 +1,9 @@
 <script>
+	import { GalleryItemLayout } from "@layout";
+
 	export let data;
 </script>
 
-<svelte:component this={data.Page} />
+<GalleryItemLayout metadata={data.metadata}>
+	<svelte:component this={data.page} />
+</GalleryItemLayout>

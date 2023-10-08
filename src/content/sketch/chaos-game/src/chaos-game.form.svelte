@@ -1,5 +1,5 @@
 <script lang="ts">
-	import InputRestrictions from "./ChaosGame.restrictions.svelte";
+	import InputRestrictions from "./chaos-game.restrictions.svelte";
 	import { InputColor, Range, SketchControls, Switch } from "@components";
 	import { options, optionsImmutable } from "./chaos-game.options";
 

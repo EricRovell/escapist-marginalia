@@ -15,7 +15,6 @@ export { InputNumber } from "./input-number";
 export { InputText } from "./input-text";
 export { InputSelect } from "./input-select";
 export { Link } from "./link";
-export { MathExp } from "./math";
 export * as Menu from "./menu";
 export { MenuIndicator } from "./menu-indicator";
 export { Meta, PageMeta, type MetaProps } from "./meta";

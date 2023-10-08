@@ -27,7 +27,6 @@
 		"телефото"
 	],
 	"lang": "ru",
-	"layout": "gallery",
 	"lens": "TAMRON SP 150-600mm F/5-6.3 Di VC USD G2 A022",
 	"og": {
 		"height": 630,

@@ -3,7 +3,7 @@
 	import { iconGithub, iconNpm, iconURL } from "@icons";
 	import { t } from "@core/i18n";
 	import type { Project } from "@types";
-	import styles from "./project-header.module.css";
+	import styles from "./project.layout.module.css";
 
 	export let dateUpdated: Project["dateUpdated"];
 	export let description: Project["description"];
@@ -34,7 +34,7 @@
 	].filter(({ href }) => href);
 </script>
 
-<div class={styles.wrapper}>
+<div class={styles.header}>
 	<h1>
 		{title}
 	</h1>

@@ -5,7 +5,6 @@
 	"draft": true,
 	"featured": true,
 	"lang": "en",
-	"layout": "project",
 	"maintained": true,
 	"npm": "@ericrovell/rational",
 	"repository": "EricRovell/rational",

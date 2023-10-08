@@ -4,7 +4,6 @@
 	"description": "Radix is a JS library for radix number transformations and manipulations.",
 	"featured": true,
 	"lang": "en",
-	"layout": "project",
 	"maintained": true,
 	"npm": "@ericrovell/radix",
 	"repository": "EricRovell/radix",

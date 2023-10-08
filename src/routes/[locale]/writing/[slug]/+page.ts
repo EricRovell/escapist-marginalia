@@ -7,18 +7,19 @@ export const load: PageLoad = async ({ fetch, params }) => {
 		const request = await fetch(`/api/blogpost/${encodeURI(params.slug)}`);
 		const { filepath }: Blogpost = await request.json();
 
-		let post = null;
+		let page = null;
 		const modules = import.meta.glob("/src/content/blogpost/**/*.svx");
 
 		for (const [ filepathName, module ] of Object.entries(modules)) {
 			if (filepathName.includes(filepath)) {
-				post = await module();
+				page = await module();
 				break;
 			}
 		}
 
 		return {
-			Post: post.default
+			page: page.default,
+			metadata: page.metadata
 		};
 
 	} catch (err) {

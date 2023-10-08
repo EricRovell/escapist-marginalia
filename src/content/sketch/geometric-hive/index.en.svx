@@ -5,20 +5,10 @@
 	"description": "Particles randomly within the gaps",
 	"keywords": [ "canvas animation", "generative art", "geometry" ],
 	"lang": "en",
-	"layout": "sketch",
 	"title": "Geometric Hive",
 	"url": "/en/sketch/geometric-hive"
 }
 ---
-
-<script>
-	import { default as Sketch } from "./src/geometric-hive.svelte";
-	import t from "./translation/en.json";
-</script>
-
-<svelte:fragment slot="sketch">
-	<Sketch {t} />
-</svelte:fragment>
 
 ## Reference
 
