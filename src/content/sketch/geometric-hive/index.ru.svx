@@ -9,20 +9,10 @@
 		"геометрия"
 	],
 	"lang": "ru",
-	"layout": "sketch",
 	"title": "Геометрический улей",
 	"url": "/ru/sketch/geometric-hive"
 }
 ---
-
-<script>
-	import { default as Sketch } from "./src/geometric-hive.svelte";
-	import t from "./translation/ru.json";
-</script>
-
-<svelte:fragment slot="sketch">
-	<Sketch {t} />
-</svelte:fragment>
 
 ## Ссылки
 

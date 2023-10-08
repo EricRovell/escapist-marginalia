@@ -10,19 +10,9 @@
 		"generative art"
 	],
 	"lang": "en",
-	"layout": "sketch",
 	"title": "Chaos Game",
 	"url": "/en/sketch/chaos-game"
 }
 ---
-
-<script>
-	import { default as Sketch } from "./src/ChaosGame.svelte";
-	import t from "./translation/en.json";
-</script>
-
-<svelte:fragment slot="sketch">
-	<Sketch {t} />
-</svelte:fragment>
 
 You can read more about the Chaos Game in my [blogpost](/en/writing/the-chaos-game).

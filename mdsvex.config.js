@@ -19,7 +19,6 @@ export const mdsvexConfig = {
 	remarkPlugins: [ transformerTOC, math, transformerMath ],
 	rehypePlugins: [ correct_hast_tree, rehype_katex, slug, transformerAnchor ],
 	layout: {
-		"_": "./src/lib/layout/default/default.layout.svelte",
-		"sketch": "./src/lib/layout/sketch/SketchPage.svelte"
+		"_": "./src/lib/layout/default/default.layout.svelte"
 	}
 };

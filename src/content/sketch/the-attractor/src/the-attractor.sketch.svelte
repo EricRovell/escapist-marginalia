@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { Sketch } from "@components";
-	import { sketch } from "./flocking.render";
-	import { default as Controls } from "./Flocking.form.svelte";
+	import { sketch } from "./the-attractor.render";
+	import { default as Controls } from "./the-attractor.form.svelte";
 
 	export let t: Record<string, string>;
 </script>
 
 <Sketch
-	autoclear
-	name="flocking"
+	name="the-attractor"
 	controls="{Controls}"
 	{sketch}
 	{t}

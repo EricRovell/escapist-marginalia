@@ -10,19 +10,9 @@
 		"генеративное искусство"
 	],
 	"lang": "ru",
-	"layout": "sketch",
 	"title": "Игра Хаоса",
 	"url": "/ru/sketch/chaos-game"
 }
 ---
-
-<script>
-	import { default as Sketch } from "./src/ChaosGame.svelte";
-	import t from "./translation/ru.json";
-</script>
-
-<svelte:fragment slot="sketch">
-	<Sketch {t} />
-</svelte:fragment>
 
 Ознакомиться с Игрой Хаоса поближе можно в [блогпосте](/ru/writing/игра-хаоса).
