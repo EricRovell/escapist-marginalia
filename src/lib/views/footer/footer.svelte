@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Datetime, Link, Icon } from "@components";
 	import NavLocale from "./footer.locale.svelte";
-	import { iconGithub, iconInstagram, iconRSS, iconTelegram } from "@icons";
+	import { iconGithub, iconLeetcode, iconInstagram, iconRSS, iconTelegram } from "@icons";
 	import { t } from "@core/i18n";
 	import styles from "./footer.module.css";
 
@@ -10,6 +10,7 @@
 		pathBookmarks,
 		pathGallery,
 		pathInstagram,
+		pathLeetcode,
 		pathLicense,
 		pathPrivacy,
 		pathRSS,
@@ -33,7 +34,8 @@
 		{ label: "source", href: pathSource, icon: iconGithub },
 		{ label: "rss", href: $pathRSS, icon: iconRSS },
 		{ label: "telegram", href: $pathTelegram, icon: iconTelegram },
-		{ label: "instagram", href: pathInstagram, icon: iconInstagram }
+		{ label: "instagram", href: pathInstagram, icon: iconInstagram },
+		{ label: "leetcode", href: pathLeetcode, icon: iconLeetcode }
 	];
 </script>
 

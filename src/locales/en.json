@@ -12,7 +12,8 @@
 		"privacy": "privacy",
 		"rss": "RSS Feed",
 		"telegram": "Telegram Channel",
-		"instagram": "Instagram"
+		"instagram": "Instagram",
+		"leetcode": "Leetcode"
 	},
 	"dict": {
 		"language": "language",

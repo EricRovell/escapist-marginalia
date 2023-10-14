@@ -25,6 +25,7 @@ export const pathProject = derived(pathProjects, $root => (slug: string) => `${$
 
 // socials
 export const pathInstagram = "https://www.instagram.com/Eric_Rovell";
+export const pathLeetcode = "https://leetcode.com/Eric_Rovell/";
 export const pathRSS = derived(root, $root => `${$root}/rss.xml`);
 export const pathRSSMultilang = derived(webpage, $webpage => `${$webpage}/rss.xml`);
 export const pathTelegram = derived(locale, $locale => `https://t.me/escapist_marginalia${$locale === "ru" ? "_ru" : ""}`);
