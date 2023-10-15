@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { t, locale } from "@core/i18n";
-	import { PageMeta, CardProject } from "@components";
+	import { PageMeta, Card } from "@components";
 	import { LayoutPage } from "@layout";
 	import type { Project } from "@types";
 	import type { PageLoad } from "./$types";
@@ -25,12 +25,15 @@
 	</svelte:fragment>
 	<article class={styles.layout}>
 		<ul class={styles.projects}>
-			{#each projects as { description, title, techstack }}
+			{#each projects as { cover, dateUpdated, description, keywords, title, slug }}
 				<li class={styles.project}>
-					<CardProject
+					<Card
+						{cover}
+						date="{dateUpdated}"
 						{description}
+						href="{slug}"
 						{title}
-						{techstack}
+						{keywords}
 					/>
 				</li>
 			{/each}

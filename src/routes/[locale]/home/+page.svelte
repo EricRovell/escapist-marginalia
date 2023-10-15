@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { pathWriting, pathGallery, pathProjects } from "@paths";
-	import { PageMeta, Link, CardBlogpost, CardProject, Gallery } from "@components";
+	import { pathWriting, pathGallery, pathProjects, pathBlogpost, pathSketch } from "@paths";
+	import { PageMeta, Link, Card, Gallery, Icon } from "@components";
+	import { iconArrowTop } from "$lib/icons";
 	import { LayoutPage } from "@layout";
 	import { t } from "@core/i18n";
 	import type { PageData } from "./$types";
@@ -21,7 +22,7 @@
 		</p>
 	</svelte:fragment>
 	<div class={styles.layout}>
-		<section label="recent-posts">
+		<section aria-label="recent-posts">
 			<div>
 				<header>
 					<h2 class="heading">{$t("dict.recent-posts")}</h2>
@@ -32,20 +33,68 @@
 				<ul class="grid-flexible" style="--item-size: 24ch">
 					{#each data.blogposts as { cover, dateCreated, description, keywords, title, slug }}
 						<li>
-							<CardBlogpost
+							<Card
 								{cover}
-								{dateCreated}
+								date="{dateCreated}"
 								{description}
+								href={$pathBlogpost(slug)}
 								{keywords}
 								{title}
-								{slug}
 							/>
 						</li>
 					{/each}
 				</ul>
 			</div>
 		</section>
-		<section class="surface-2" label="recent-photos">
+		<section aria-label="featured-projects">
+			<div>
+				<header>
+					<h2 class="heading">{$t("dict.featured-projects")}</h2>
+					<Link href={$pathProjects}>
+						&#x2192; {$t("dict.all-projects")}
+					</Link>
+				</header>
+				<ul class="grid-flexible" style="--item-size: 25ch">
+					{#each data.projects as { cover, dateUpdated, description, keywords, title, slug }}
+						<li>
+							<Card
+								{cover}
+								date="{dateUpdated}"
+								{description}
+								href={slug}
+								{title}
+								{keywords}
+							/>
+						</li>
+					{/each}
+				</ul>
+			</div>
+		</section>
+		<section aria-label="featured-sketches">
+			<div>
+				<header>
+					<h2 class="heading">{$t("dict.recent-sketches")}</h2>
+					<Link href={$pathSketch}>
+						&#x2192; {$t("dict.all-sketches")}
+					</Link>
+				</header>
+				<ul class="grid-flexible" style="--item-size: 25ch">
+					{#each data.sketches as { cover, dateUpdated, description, keywords, title, slug }}
+						<li>
+							<Card
+								{cover}
+								date="{dateUpdated}"
+								{description}
+								href={slug}
+								{title}
+								{keywords}
+							/>
+						</li>
+					{/each}
+				</ul>
+			</div>
+		</section>
+		<section aria-label="recent-photos">
 			<div>
 				<header>
 					<h2 class="heading">{$t("dict.recent-photos")}</h2>
@@ -56,26 +105,11 @@
 				<Gallery items={data.gallery} />
 			</div>
 		</section>
-		<section label="featured-projects">
-			<div>
-				<header>
-					<h2 class="heading">{$t("dict.featured-projects")}</h2>
-					<Link href={$pathProjects}>
-						&#x2192; {$t("dict.all-projects")}
-					</Link>
-				</header>
-				<ul class="grid-flexible" style="--item-size: 25ch">
-					{#each data.projects as { description, title, techstack }}
-						<li>
-							<CardProject
-								{description}
-								{title}
-								{techstack}
-							/>
-						</li>
-					{/each}
-				</ul>
-			</div>
-		</section>
+		<aside class="{styles.aside}">
+			<Link href="#app">
+				<Icon path="{iconArrowTop}" />
+				{$t("dict.back-to-top")}
+			</Link>
+		</aside>
 	</div>
 </LayoutPage>
