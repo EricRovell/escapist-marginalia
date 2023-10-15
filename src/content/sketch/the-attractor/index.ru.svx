@@ -1,7 +1,12 @@
 ---
 {
+	"cover": {
+		alt: "Упрощённая иллюстрация аттрактора как сущности",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/the-attractor.png",
+		width: 500
+	},
 	"dateUpdated": "2022-11-20T00:37:00.000Z",
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/the-attractor.png",
 	"description": "Визуализация течения частиц в поле аттрактора.",
 	"keywords": [
 		"аттрактор",
@@ -10,8 +15,8 @@
 		"генеративное искусство"
 	],
 	"lang": "ru",
-	"title": "Аттрактор",
-	"url": "/ru/sketch/the-attractor"
+	"slug": "/ru/sketch/the-attractor",
+	"title": "Аттрактор"
 }
 ---
 

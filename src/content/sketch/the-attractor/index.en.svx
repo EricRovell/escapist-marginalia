@@ -1,7 +1,12 @@
 ---
 {
+	"cover": {
+		alt: "Simplified attractor illustration",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/the-attractor.png",
+		width: 500
+	},
 	"dateUpdated": "2022-11-20T00:37:00.000Z",
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/the-attractor.png",
 	"description": "The attractor field flow visualization.",
 	"keywords": [
 		"the attractor",
@@ -10,8 +15,8 @@
 		"generative art"
 	],
 	"lang": "en",
-	"title": "The Attractor",
-	"url": "/en/sketch/the-attractor"
+	"slug": "/en/sketch/the-attractor",
+	"title": "The Attractor"
 }
 ---
 

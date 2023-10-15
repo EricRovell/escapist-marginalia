@@ -1,6 +1,11 @@
 ---
 {
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/project-euler-1.png",
+	"cover": {
+		alt: "Set intersection illustration to describe the problem solution idea.",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/project-euler-1.png",
+		width: 500
+	},
 	"dateCreated": "2022-05-24T00:20:00.000Z",
 	"description": "Multiples of 3 or 5.",
 	"keywords": [

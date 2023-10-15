@@ -1,6 +1,11 @@
 ---
 {
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png",
+	"cover": {
+		alt: "Ломаная внутри треугольника, отображающая базовые принципы Игры Хаоса",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png",
+		width: 500
+	},
 	"dateCreated": "2022-09-10T01:34:00.000Z",
 	"dateUpdated": "2023-01-09T15:20:00.000Z",
 	"description": "Может ли что-то детерменистичное скрываться за случайностью?",

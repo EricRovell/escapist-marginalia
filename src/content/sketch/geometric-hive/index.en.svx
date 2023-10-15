@@ -1,12 +1,17 @@
 ---
 {
+	"cover": {
+		alt: "The block transitioning to another place",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/geometric-hive.png",
+		width: 500
+	},
 	"dateUpdated": "2023-08-30T00:02:00.000Z",
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/geometric-hive.png",
 	"description": "Particles randomly within the gaps",
 	"keywords": [ "canvas animation", "generative art", "geometry" ],
 	"lang": "en",
-	"title": "Geometric Hive",
-	"url": "/en/sketch/geometric-hive"
+	"slug": "/en/sketch/geometric-hive",
+	"title": "Geometric Hive"
 }
 ---
 

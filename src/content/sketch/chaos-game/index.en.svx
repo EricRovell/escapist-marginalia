@@ -1,6 +1,11 @@
 ---
 {
-	"cover": https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png,
+	"cover": {
+		alt: "The polyline within the triangle illustrating the basic chaos game rules.",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png",
+		width: 500
+	},
 	"dateUpdated": "2023-01-05T20:12:00.000Z",
 	"description": "Vizualizing a fractals from simple rules and a randomness.",
 	"keywords": [
@@ -10,8 +15,8 @@
 		"generative art"
 	],
 	"lang": "en",
-	"title": "Chaos Game",
-	"url": "/en/sketch/chaos-game"
+	"slug": "/en/sketch/chaos-game",
+	"title": "Chaos Game"
 }
 ---
 

@@ -1,17 +1,24 @@
 ---
 {
+	"cover": {
+		alt: "Логотип библиотеки radix",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/project-radix.png",
+		width: 500
+	},
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Radix — библиотека для перевода чисел в различные системы счисленя, написанная на TypeScript.",
 	"featured": true,
+	"keywords": [
+		"library",
+		"TypeScript"
+	],
 	"lang": "ru",
 	"maintained": true,
 	"npm": "@ericrovell/radix",
 	"repository": "EricRovell/radix",
+	"slug": "/ru/projects/radix",
 	"title": "radix",
-	"techstack": [
-		"TypeScript"
-	],
-	"type": "library",
 	"website": "https://radix.vercel.app/"
 }
 ---

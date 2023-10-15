@@ -1,17 +1,24 @@
 ---
 {
+	"cover": {
+		alt: "Vector library project logo",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/project-vector.png",
+		width: 500
+	},
 	"dateUpdated": "2023-06-04T00:25:00.000Z",
 	"description": "Euclidian vector library written in TypeScript.",
 	"featured": true,
+	"keywords": [
+		"library",
+		"TypeScript"
+	],
 	"lang": "en",
 	"maintained": true,
 	"npm": "@ericrovell/vector",
 	"repository": "EricRovell/vector",
-	"title": "vector",
-	"techstack": [
-		"TypeScript"
-	],
-	"type": "library"
+	"slug": "/en/projects/vector",
+	"title": "vector"
 }
 ---
 

@@ -1,6 +1,11 @@
 ---
 {
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/quadtree.png",
+	"cover": {
+		alt: "Четырёхлистный клевер как иллюстрация идеи, заложенной в структуру данных Квадратичного дерева",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/quadtree.png",
+		width: 500
+	},
 	"dateCreated": "2023-02-01T15:53:00.000Z",
 	"dateUpdated": "2023-02-17T01:30:00.000Z",
 	"description": "Познакомимся со структурой данных, индексирующую данные на плоскости.",

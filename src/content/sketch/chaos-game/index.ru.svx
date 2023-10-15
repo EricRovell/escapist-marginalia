@@ -1,7 +1,12 @@
 ---
 {
+	"cover": {
+		alt: "Ломаная внутри треугольника, отображающая базовые принципы Игры Хаоса",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png",
+		width: 500
+	},
 	"dateUpdated": "2023-01-05T20:12:00.000Z",
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/chaos-game.png",
 	"description": "Выстраиваем фрактальные геометрические фигуры на основе простых правил и случайности.",
 	"keywords": [
 		"игра хаоса",
@@ -10,8 +15,8 @@
 		"генеративное искусство"
 	],
 	"lang": "ru",
-	"title": "Игра Хаоса",
-	"url": "/ru/sketch/chaos-game"
+	"slug": "/ru/sketch/chaos-game",
+	"title": "Игра Хаоса"
 }
 ---
 
