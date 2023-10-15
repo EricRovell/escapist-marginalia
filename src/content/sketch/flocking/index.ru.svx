@@ -1,7 +1,12 @@
 ---
 {
+	"cover": {
+		alt: "Автоматоны, изображённые в виде деформированных треугольников",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/flocking.png",
+		width: 500
+	},
 	"dateUpdated": "2022-12-04T15:18:00.000Z",
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/flocking.png",
 	"description": "Моделирование поведения стаи на основе алгоритма Крейга Рейнольдса.",
 	"keywords": [
 		"стая",
@@ -9,8 +14,8 @@
 		"моделирование"
 	],
 	"lang": "ru",
-	"title": "Стая",
-	"url": "/ru/sketch/flocking"
+	"slug": "/ru/sketch/flocking",
+	"title": "Стая"
 }
 ---
 

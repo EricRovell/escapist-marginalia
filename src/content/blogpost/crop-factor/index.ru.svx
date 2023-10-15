@@ -1,6 +1,11 @@
 ---
 {
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/crop-factor.png",
+	"cover": {
+		alt: "Фотоаппарат с изображением уменьшенного размера матрицы, иллюстрирующего идею кроп-фактора",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/crop-factor.png",
+		width: 500
+	},
 	"dateCreated": "2023-04-14T00:12:00.000Z",
 	"dateUpdated": "2023-04-16T01:41:00.000Z",
 	"description": "На что влияет размеры сенсора в фотографии и почему это так важно знать фотолюбителю.",

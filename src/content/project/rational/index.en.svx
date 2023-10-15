@@ -1,17 +1,24 @@
 ---
 {
+	"cover": {
+		alt: "Rational library project logo",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/project-rational.png",
+		width: 500
+	},
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Rational is rational numbers library written in TypeScript",
 	"draft": true,
 	"featured": true,
+	"keywords": [
+		"library",
+		"TypeScript"
+	],
 	"lang": "en",
 	"maintained": true,
 	"npm": "@ericrovell/rational",
 	"repository": "EricRovell/rational",
-	"title": "rational",
-	"techstack": [
-		"TypeScript"
-	],
-	"type": "library"
+	"slug": "/en/projects/rational",
+	"title": "rational"
 }
 ---

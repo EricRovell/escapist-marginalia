@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { Button, Drawer, PageMeta, CardBlogpost } from "@components";
+	import { Button, Drawer, PageMeta, Card } from "@components";
 	import { LayoutPage } from "@layout";
 	import { t, locale, i18nTemplate } from "@core/i18n";
+	import { pathBlogpost } from "@paths";
 	import { FilterWriting } from "@views";
 	import { find } from "@utils/query";
 	import styles from "./writing.module.css";
@@ -56,13 +57,13 @@
 				{i18nTemplate($t("message.blogpost-counter"), [ content.length, data.items.length ])}:
 			</aside>
 			{#each content as { cover, dateCreated, description, keywords, title, slug }}
-				<CardBlogpost
+				<Card
 					{cover}
-					{dateCreated}
+					date="{dateCreated}"
 					{description}
+					href="{$pathBlogpost(slug)}"
 					{keywords}
 					{title}
-					{slug}
 				/>
 			{/each}
 		</main>

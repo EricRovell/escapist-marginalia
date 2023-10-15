@@ -1,18 +1,25 @@
 ---
 {
+	"cover": {
+		alt: "Логотип библиотеки Blossom",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/project-blossom.png",
+		width: 500
+	},
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Blossom - библиотека для конвертации цветов и манипуляций на ними, написанная на TypeScript.",
 	"draft": true,
 	"featured": true,
+	"keywords": [
+		"library",
+		"TypeScript"
+	],
 	"lang": "ru",
 	"maintained": false,
 	"npm": "@ericrovell/blossom",
 	"repository": "EricRovell/blossom",
+	"slug": "/ru/projects/blossom",
 	"title": "blossom",
-	"techstack": [
-		"TypeScript"
-	],
-	"type": "library",
 	"website": "https://ericrovell.github.io/blossom-web"
 }
 ---

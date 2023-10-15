@@ -30,16 +30,19 @@
 		"recent-posts": "Последние публикации",
 		"all-posts": "Все публикации",
 		"recent-photos": "Последние фотографии",
+		"recent-sketches": "Последние визуализации",
 		"entire-gallery": "Вся галерея",
 		"featured-projects": "Закреплённые проекты",
 		"all-projects": "Все проекты",
+		"all-sketches": "Все визуализации",
 		"menu": "Меню",
 		"blogpost-filters": "Фильтры публикаций",
 		"settings": "Настройки",
 		"reset": "Сбросить",
 		"restart": "Перезапустить",
 		"fullscreen": "Полноэкранный просмотр",
-		"animation": "Анимация"
+		"animation": "Анимация",
+		"back-to-top": "Вернуться вверх"
 	},
 	"tooltip": {
 		"change-theme": "Сменить тему оформления",

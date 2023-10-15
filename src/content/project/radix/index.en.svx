@@ -1,17 +1,24 @@
 ---
 {
+	"cover": {
+		alt: "Radix library logo",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/project-radix.png",
+		width: 500
+	},
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Radix is a JS library for radix number transformations and manipulations.",
 	"featured": true,
+	"keywords": [
+		"library",
+		"TypeScript"
+	],
 	"lang": "en",
 	"maintained": true,
 	"npm": "@ericrovell/radix",
 	"repository": "EricRovell/radix",
+	"slug": "/en/projects/radix",
 	"title": "radix",
-	"techstack": [
-		"TypeScript"
-	],
-	"type": "library",
 	"website": "https://radix.vercel.app/"
 }
 ---

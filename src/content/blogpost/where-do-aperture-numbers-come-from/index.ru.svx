@@ -1,6 +1,11 @@
 ---
 {
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/diaphragm.png",
+	"cover": {
+		alt: "Иллюстрация механизма диафрагмы",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/diaphragm.png",
+		width: 500
+	},
 	"dateCreated": "2022-08-16T14:41:00.000Z",
 	"dateUpdated": "2022-09-13T20:34:00.000Z",
 	"description": "Попробуем разобраться, почему диафрагменные числа такие какие они есть и каков в этом смысл.",

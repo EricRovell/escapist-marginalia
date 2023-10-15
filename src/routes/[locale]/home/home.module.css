@@ -7,34 +7,51 @@
 	display: grid;
 	gap: var(--space-7);
 	width: 100%;
+
+	& h2 {
+		font-size: var(--font-size-5);
+		margin-bottom: var(--space-1);
+	}
+
+	& section {
+		display: flex;
+		justify-content: center;
+		padding-block: var(--space-7) var(--space-8);
+
+		&:nth-of-type(2n) {
+			background-color: var(--surface-2);
+		}
+
+		& div {
+			display: flex;
+			flex-direction: column;
+			width: min(100% - var(--space-5), var(--max-width));
+		}
+
+		& div > header {
+			margin-bottom: var(--space-7);
+		}
+	}
 }
 
-.layout h2 {
-	font-size: var(--font-size-5);
-}
-
-.layout section > div > header {
-	margin-bottom: var(--space-7);
-}
-
-.layout > section {
+.aside {
 	display: flex;
 	justify-content: center;
-	padding-block: var(--space-9);
+	align-items: center;
+	margin-top: var(--space-9);
+	font-size: var(--font-size-2);
+
+	& a {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-1);
+	}
 }
 
-.layout > section div {
-	display: flex;
-	flex-direction: column;
-	width: min(100% - var(--space-5), var(--max-width));
-}
-
-.layout > section[label="recent-photos"] img {
-	object-fit: cover;
-	border-radius: var(--radius-l);
-}
-
-@media screen and (width <= 640px) {
+@media screen and (width <= 560px) {
 	.layout {
 		grid-template: min-content auto / 1fr;
 	}

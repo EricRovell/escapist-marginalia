@@ -39,7 +39,7 @@
 		url: $webpage,
 		"article:published_time": dateCreated,
 		"article:modified_time": dateUpdated,
-		image: `${$webpageRoot}${cover}`
+		image: `${$webpageRoot}${cover.src}`
 	}}
 	twitter={{
 		card: "summary",

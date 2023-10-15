@@ -1,6 +1,11 @@
 ---
 {
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/project-euler-1.png",
+	"cover": {
+		alt: "Иллюстрация кругов Эйлера как отображение ключевой идеи к решению задачи.",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/project-euler-1.png",
+		width: 500
+	},
 	"dateCreated": "2021-06-10T00:00:00.000Z",
 	"dateUpdated": "2022-05-24T00:20:00.000Z",
 	"description": "Числа, кратные 3 или 5.",

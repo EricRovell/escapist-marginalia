@@ -30,16 +30,19 @@
 		"recent-posts": "Recent Posts",
 		"all-posts": "All posts",
 		"recent-photos": "Recent Photos",
+		"recent-sketches": "Recent Sketches",
 		"entire-gallery": "Entire gallery",
 		"featured-projects": "Featured Projects",
 		"all-projects": "All projects",
+		"all-sketches": "All sketches",
 		"menu": "Menu",
 		"blogpost-filters": "Blogpost filters",
 		"settings": "Settings",
 		"reset": "Reset",
 		"restart": "Restart",
 		"fullscreen": "Fullscreen",
-		"animation": "Animation"
+		"animation": "Animation",
+		"back-to-top": "Back to top"
 	},
 	"tooltip": {
 		"change-theme": "Change theme",

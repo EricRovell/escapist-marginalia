@@ -1,7 +1,12 @@
 ---
 {
+	"cover": {
+		alt: "A lot of small rectangles falling from the top",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/digital-rain.png",
+		width: 500
+	},
 	"dateUpdated": "2022-11-19T00:09:00.000Z",
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/digital-rain.png",
 	"description": "Matrix digital rain, Matrix code or sometimes green rain, is the computer code featured in the Matrix series.",
 	"keywords": [
 		"digital rain",
@@ -11,8 +16,8 @@
 		"generative art"
 	],
 	"lang": "en",
-	"title": "Digital Rain",
-	"url": "/en/sketch/digital-rain"
+	"slug": "/en/sketch/digital-rain",
+	"title": "Digital Rain"
 }
 ---
 

@@ -21,7 +21,7 @@ export const pathWriting = derived(root, $root => `${$root}/writing`);
 // page::item
 export const pathBlogpost = derived(pathWriting, $root => (slug: string) => `${$root}/${encodeURI(slug)}`);
 export const pathGalleryImage = derived(pathGallery, $root => (id: string) => `${$root}/${id}`);
-export const pathProject = derived(pathProjects, $root => (slug: string) => `${$root}/${encodeURI(slug)}`);
+//export const pathProject = derived(pathProjects, $root => (slug: string) => `${$root}/${encodeURI(slug)}`);
 
 // socials
 export const pathInstagram = "https://www.instagram.com/Eric_Rovell";

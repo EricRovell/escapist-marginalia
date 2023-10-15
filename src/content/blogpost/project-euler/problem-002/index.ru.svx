@@ -1,6 +1,11 @@
 ---
 {
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/project-euler-2.png",
+	"cover": {
+		alt: "Перечисление чисел Фибоначчи, выделяя лишь чётные числа отдельным цветом.",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/project-euler-2.png",
+		width: 500
+	},
 	"dateCreated": "2021-06-11T00:00:00.000Z",
 	"dateUpdated": "2021-06-13T00:00:00.000Z",
 	"description": "Чётные числа Фибоначчи.",
