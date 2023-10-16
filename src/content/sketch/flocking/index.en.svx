@@ -1,8 +1,13 @@
 ---
 {
+	"cover": {
+		alt: "Boids illustrated as deformed triangles",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/flocking.png",
+		width: 500
+	},
 	"dateUpdated": "2022-12-04T15:18:00.000Z",
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/flocking.png",
-	"description": Flocking simulation based on Craig Reynolds \"boids\" algorithm.",
+	"description": Flocking simulation based on Craig Reynolds 'boids' algorithm.",
 	"keywords": [
 		"boids",
 		"flocking",
@@ -10,8 +15,8 @@
 		"simulation"
 	],
 	"lang": "en",
-	"title": "Flocking",
-	"url": "/en/sketch/flocking"
+	"slug": "/en/sketch/flocking",
+	"title": "Flocking"
 }
 ---
 

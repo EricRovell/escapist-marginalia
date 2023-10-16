@@ -12,7 +12,8 @@
 		"privacy": "privacy",
 		"rss": "RSS Feed",
 		"telegram": "Telegram Channel",
-		"instagram": "Instagram"
+		"instagram": "Instagram",
+		"leetcode": "Leetcode"
 	},
 	"dict": {
 		"language": "language",
@@ -26,19 +27,19 @@
 		"math": "math",
 		"photo": "photography",
 		"web": "web",
-		"recent-posts": "Recent Posts",
 		"all-posts": "All posts",
+		"recent-posts": "Recent Posts",
 		"recent-photos": "Recent Photos",
-		"entire-gallery": "Entire gallery",
+		"recent-sketches": "Recent Sketches",
 		"featured-projects": "Featured Projects",
-		"all-projects": "All projects",
 		"menu": "Menu",
 		"blogpost-filters": "Blogpost filters",
 		"settings": "Settings",
 		"reset": "Reset",
 		"restart": "Restart",
 		"fullscreen": "Fullscreen",
-		"animation": "Animation"
+		"animation": "Animation",
+		"back-to-top": "Back to top"
 	},
 	"tooltip": {
 		"change-theme": "Change theme",

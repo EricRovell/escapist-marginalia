@@ -36,14 +36,14 @@
 		author: "Eric Rovell",
 		url: $webpage,
 		"article:modified_time": dateUpdated,
-		image: `${$webpageRoot}${cover}`
+		image: `${$webpageRoot}${cover.src}`
 	}}
 	twitter={{
 		card: "summary",
 		title,
 		description,
 		url: $webpage,
-		image: `${$webpageRoot}${cover}`
+		image: `${$webpageRoot}${cover.src}`
 	}}
 />
 

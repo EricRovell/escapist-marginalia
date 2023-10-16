@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { t } from "@core/i18n";
 	import {
 		pathHome,
 		pathWriting,
@@ -8,7 +9,6 @@
 		pathSketch,
 		pathAbout
 	} from "@paths";
-	import { t } from "@core/i18n";
 
 	import { Button, Menu as Navigation, Icon, Link } from "@components";
 	import { iconGear, iconLogo } from "@icons";
@@ -72,7 +72,11 @@
 		</Navigation.Container>
 	</section>
 	<section data-label="controls">
-		<Button on:click={() => showModal = !showModal} icon>
+		<Button
+			on:click={() => showModal = !showModal}
+			aria-label="{$t("dict.settings")}"
+			icon
+		>
 			<Icon path="{iconGear}" />
 		</Button>
 	</section>

@@ -1,6 +1,11 @@
 ---
 {
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/masonry.png",
+	"cover": {
+		alt: "Минималистичное изображение раскладки Масонри посредством нескольких прямоугольных блоков различного размера.",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/masonry.png",
+		width: 500
+	},
 	"dateCreated": "2022-05-11T15:30:00.000Z",
 	"dateUpdated": "2022-09-22T03:16:00.000Z",
 	"description": "Реализуем компонент для галереи изображений в стиле раскладки Masonry, используя возможности CSS.",

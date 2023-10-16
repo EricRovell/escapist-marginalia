@@ -11,11 +11,21 @@ export interface Page<T> {
 	default: SvelteComponent;
 }
 
+export interface GalleryImage {
+	height: number;
+	src: string;
+	width: number;
+}
+
+export interface CoverImage extends GalleryImage {
+	alt: string;
+}
+
 /**
  * Describes the metadata object from the blogpost's frontmatter.
  */
 export interface BlogpostMetadata {
-	cover: string;
+	cover: CoverImage;
 	dateCreated: string;
 	dateUpdated: string;
 	description: string;
@@ -43,8 +53,8 @@ export interface BlogpostMetadata {
  * Describes the blogpost's metadata.
  */
 export interface Blogpost extends Omit<BlogpostMetadata, "dateCreated" | "dateUpdated" | "keywords"> {
-	dateCreated: Date;
-	dateUpdated: Date;
+	dateCreated: string;
+	dateUpdated: string;
 	keywords: string[];
 	slug: string;
 }
@@ -53,27 +63,29 @@ export interface Blogpost extends Omit<BlogpostMetadata, "dateCreated" | "dateUp
  * Project Page Frontmatter data interface.
  */
 export interface Project {
+	cover: CoverImage;
 	dateUpdated: string;
 	description: string;
 	draft?: boolean;
 	featured?: boolean;
+	keywords: string[];
 	lang: Locale;
 	layout: string | false;
 	maintained: boolean;
 	npm?: string;
 	repository: string;
+	slug: string;
 	title: string;
-	techstack: string[];
-	type: "string";
 	website?: string;
 }
 
 export type { GalleryItem } from "@components";
 
 export interface Sketch {
-	cover: string;
+	cover: CoverImage;
 	dateUpdated: string;
 	description: string;
+	draft?: boolean;
 	keywords: string[];
 	lang: string;
 	title: string;
@@ -95,12 +107,6 @@ export type Validator<T> = (value: T) => ({
 	valid: boolean,
 	message: string
 });
-
-interface GalleryImage {
-	height: number;
-	src: string;
-	width: number;
-}
 
 export interface GalleryItemPage {
 	camera: string;

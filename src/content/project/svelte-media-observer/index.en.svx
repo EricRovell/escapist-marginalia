@@ -1,19 +1,26 @@
 ---
 {
+	"cover": {
+		alt: "Svelte Media Observer project logo",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/project-svelte-media-observer.png",
+		width: 500
+	},
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "SvelteJS media queries observer.",
 	"draft": true,
 	"featured": true,
+	"keywords": [
+		"library",
+		"Svelte",
+		"TypeScript"
+	],
 	"lang": "en",
 	"maintained": true,
 	"npm": "svelte-media-observer",
 	"repository": "EricRovell/svelte-media-observer",
-	"title": "svelte-media-observer",
-	"techstack": [
-		"Svelte",
-		"TypeScript"
-	],
-	"type": "library",
+	"slug": "/en/projects/svelte-media-observer",
+	"title": "Svelte Media Observer",
 	"website": "https://svelte.dev/repl/e9f6a16dfd9a4013b1a0a76347b206eb?version=3"
 }
 ---

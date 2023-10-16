@@ -7,40 +7,86 @@
 	display: grid;
 	gap: var(--space-7);
 	width: 100%;
-}
 
-.layout h2 {
-	font-size: var(--font-size-5);
-}
-
-.layout section > div > header {
-	margin-bottom: var(--space-7);
-}
-
-.layout > section {
-	display: flex;
-	justify-content: center;
-	padding-block: var(--space-9);
-}
-
-.layout > section div {
-	display: flex;
-	flex-direction: column;
-	width: min(100% - var(--space-5), var(--max-width));
-}
-
-.layout > section[label="recent-photos"] img {
-	object-fit: cover;
-	border-radius: var(--radius-l);
-}
-
-@media screen and (width <= 640px) {
-	.layout {
-		grid-template: min-content auto / 1fr;
+	& h2 {
+		font-size: var(--font-size-5);
+		margin-bottom: var(--space-3);
 	}
 
-	.layout > main {
-		grid-row: 2;
-		grid-column: 1;
+	& section {
+		display: flex;
+		flex-direction: column;
+		justify-self: center;
+		padding-block: var(--space-7) var(--space-8);
+		width: min(100% - var(--space-5), var(--max-width));
+	}
+}
+
+.wrapper {
+	display: grid;
+
+	&:nth-of-type(2n) {
+		background: var(--background-stripes);
+	}
+}
+
+.aside {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: var(--space-9);
+	font-size: var(--font-size-2);
+
+	& a {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-1);
+	}
+}
+
+@media screen and (width <= 560px) {
+	.layout {
+		/* TODO: remove magic number bottom menu offset, 95% is like 95wv */
+		--edge-offset: 2.5vw;
+
+		gap: 0;
+
+		& section {
+			width: 100%;
+		}
+
+		& header {
+			padding-inline-start: var(--edge-offset);
+		}
+
+		& section[aria-label="recent-photos"] ul {
+			padding-inline: var(--edge-offset);
+		}
+	}
+
+	.content-wrapper {
+		display: grid;
+		width: 100%;
+
+		& > ul {
+			display: flex;
+			flex-wrap: nowrap;
+			gap: var(--space-2);
+			overflow-x: auto;
+			width: 100%;
+			padding: var(--space-2) var(--edge-offset);
+			scroll-snap-type: x mandatory;
+
+			& > li {
+				scroll-snap-align: center;
+			}
+
+			& li > article {
+				width: 75vw;
+			}
+		}
 	}
 }

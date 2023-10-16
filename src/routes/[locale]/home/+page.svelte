@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { pathWriting, pathGallery, pathProjects } from "@paths";
-	import { PageMeta, Link, CardBlogpost, CardProject, Gallery } from "@components";
+	import { pathWriting, pathGallery, pathProjects, pathBlogpost, pathSketch } from "@paths";
+	import { PageMeta, Link, Card, Gallery, Icon } from "@components";
+	import { iconArrowTop } from "$lib/icons";
 	import { LayoutPage } from "@layout";
 	import { t } from "@core/i18n";
 	import type { PageData } from "./$types";
@@ -21,61 +22,98 @@
 		</p>
 	</svelte:fragment>
 	<div class={styles.layout}>
-		<section label="recent-posts">
-			<div>
+		<div class="{styles.wrapper}">
+			<section aria-label="recent-posts">
 				<header>
-					<h2 class="heading">{$t("dict.recent-posts")}</h2>
 					<Link href={$pathWriting}>
-						&#x2192; {$t("dict.all-posts")}
+						<h2 class="heading">{$t("dict.recent-posts")}</h2>
 					</Link>
 				</header>
-				<ul class="grid-flexible" style="--item-size: 24ch">
-					{#each data.blogposts as { cover, dateCreated, description, keywords, title, slug }}
-						<li>
-							<CardBlogpost
-								{cover}
-								{dateCreated}
-								{description}
-								{keywords}
-								{title}
-								{slug}
-							/>
-						</li>
-					{/each}
-				</ul>
-			</div>
-		</section>
-		<section class="surface-2" label="recent-photos">
-			<div>
+				<div class="{styles["content-wrapper"]}">
+					<ul class="grid-flexible" style="--item-size: 24ch">
+						{#each data.blogposts as { cover, dateCreated, description, keywords, title, slug }}
+							<li>
+								<Card
+									{cover}
+									date="{dateCreated}"
+									{description}
+									href={$pathBlogpost(slug)}
+									{keywords}
+									{title}
+								/>
+							</li>
+						{/each}
+					</ul>
+				</div>
+			</section>
+		</div>
+		<div class="{styles.wrapper}">
+			<section aria-label="featured-projects">
 				<header>
-					<h2 class="heading">{$t("dict.recent-photos")}</h2>
-					<Link href={$pathGallery}>
-						&#x2192; {$t("dict.entire-gallery")}
-					</Link>
-				</header>
-				<Gallery items={data.gallery} />
-			</div>
-		</section>
-		<section label="featured-projects">
-			<div>
-				<header>
-					<h2 class="heading">{$t("dict.featured-projects")}</h2>
 					<Link href={$pathProjects}>
-						&#x2192; {$t("dict.all-projects")}
+						<h2 class="heading">{$t("dict.featured-projects")}</h2>
 					</Link>
 				</header>
-				<ul class="grid-flexible" style="--item-size: 25ch">
-					{#each data.projects as { description, title, techstack }}
-						<li>
-							<CardProject
-								{description}
-								{title}
-								{techstack}
-							/>
-						</li>
-					{/each}
-				</ul>
-			</div>
-		</section>
+				<div class="{styles["content-wrapper"]}">
+					<ul class="grid-flexible" style="--item-size: 25ch">
+						{#each data.projects as { cover, dateUpdated, description, keywords, title, slug }}
+							<li>
+								<Card
+									{cover}
+									date="{dateUpdated}"
+									{description}
+									href={slug}
+									{title}
+									{keywords}
+								/>
+							</li>
+						{/each}
+					</ul>
+				</div>
+			</section>
+		</div>
+		<div class="{styles.wrapper}">
+			<section aria-label="featured-sketches">
+				<header>
+					<Link href={$pathSketch}>
+						<h2 class="heading">{$t("dict.recent-sketches")}</h2>
+					</Link>
+				</header>
+				<div class="{styles["content-wrapper"]}">
+					<ul class="grid-flexible" style="--item-size: 25ch">
+						{#each data.sketches as { cover, dateUpdated, description, keywords, title, slug }}
+							<li>
+								<Card
+									{cover}
+									date="{dateUpdated}"
+									{description}
+									href={slug}
+									{title}
+									{keywords}
+								/>
+							</li>
+						{/each}
+					</ul>
+				</div>
+			</section>
+		</div>
+		<div class="{styles.wrapper}">
+			<section aria-label="recent-photos">
+				<div>
+					<header>
+						<Link href={$pathGallery}>
+							<h2 class="heading">{$t("dict.recent-photos")}</h2>
+						</Link>
+					</header>
+					<Gallery items={data.gallery} />
+				</div>
+			</section>
+		</div>
+		<aside class="{styles.aside}">
+			<Link href="#app">
+				<Icon path="{iconArrowTop}" />
+				{$t("dict.back-to-top")}
+			</Link>
+		</aside>
 	</div>
 </LayoutPage>

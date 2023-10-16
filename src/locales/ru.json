@@ -12,7 +12,8 @@
 		"privacy": "Приватность",
 		"rss": "Лента RSS",
 		"telegram": "Канал Telegram",
-		"instagram": "Instagram"
+		"instagram": "Instagram",
+		"leetcode": "Leetcode"
 	},
 	"dict": {
 		"language": "язык",
@@ -27,18 +28,17 @@
 		"photo": "фотография",
 		"web": "веб",
 		"recent-posts": "Последние публикации",
-		"all-posts": "Все публикации",
 		"recent-photos": "Последние фотографии",
-		"entire-gallery": "Вся галерея",
+		"recent-sketches": "Последние визуализации",
 		"featured-projects": "Закреплённые проекты",
-		"all-projects": "Все проекты",
 		"menu": "Меню",
 		"blogpost-filters": "Фильтры публикаций",
 		"settings": "Настройки",
 		"reset": "Сбросить",
 		"restart": "Перезапустить",
 		"fullscreen": "Полноэкранный просмотр",
-		"animation": "Анимация"
+		"animation": "Анимация",
+		"back-to-top": "Вернуться вверх"
 	},
 	"tooltip": {
 		"change-theme": "Сменить тему оформления",

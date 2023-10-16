@@ -1,7 +1,12 @@
 ---
 {
+	"cover": {
+		alt: "Множество зелёных квадратов, падающих сверху",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/digital-rain.png",
+		width: 500
+	},
 	"dateUpdated": "2022-11-19T00:09:00.000Z",
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/digital-rain.png",
 	"description": "Виртуальный дождь, известный как Код Матрицы, можно часто встретить в серии вселенной Матрицы.",
 	"keywords": [
 		"виртуальный дождь",
@@ -11,8 +16,8 @@
 		"генеративное искусство"
 	],
 	"lang": "ru",
-	"title": "Виртуальный дождь",
-	"url": "/ru/sketch/digital-rain"
+	"slug": "/ru/sketch/digital-rain",
+	"title": "Виртуальный дождь"
 }
 ---
 

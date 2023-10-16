@@ -1,18 +1,25 @@
 ---
 {
+	"cover": {
+		alt: "The Blossom project logo",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/project-blossom.png",
+		width: 500
+	},
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Blossom is a JS library tool for colour manipulations and transformations.",
 	"draft": true,
 	"featured": true,
+	"keywords": [
+		"library",
+		"TypeScript"
+	],
 	"lang": "en",
 	"maintained": false,
 	"npm": "@ericrovell/blossom",
 	"repository": "EricRovell/blossom",
+	"slug": "/en/projects/blossom",
 	"title": "blossom",
-	"techstack": [
-		"TypeScript"
-	],
-	"type": "library",
 	"website": "https://ericrovell.github.io/blossom-web"
 }
 ---

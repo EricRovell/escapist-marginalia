@@ -34,11 +34,20 @@
 		justify-content: center;
 		align-items: flex-end;
 		text-transform: capitalize;
-		gap: var(--space-3-rel);
+		gap: var(--space-2);
 	}
 
 	.socials {
 		--icon-size: 1.5em;
+
+		margin-bottom: var(--space-2);
+
+		& a {
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			padding: var(--space-1);
+		}
 	}
 
 	& p {

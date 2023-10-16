@@ -1,6 +1,11 @@
 ---
 {
-	"cover": "https://storage.yandexcloud.net/escapist-marginalia/covers/radix.png",
+	"cover": {
+		alt: "Изображение, содержание единицы и нули - как отображение одного из простейших способов обозначения чисел.",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/radix.png",
+		width: 500
+	},
 	"dateCreated": "2022-11-04T18:20:00.000Z",
 	"description": "Самое важное , что нужно знать про запись чисел.",
 	"keywords": [

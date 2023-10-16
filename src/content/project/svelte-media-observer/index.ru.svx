@@ -1,19 +1,26 @@
 ---
 {
+	"cover": {
+		alt: "Логотип проекта Svelte Media Observer",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/project-svelte-media-observer.png",
+		width: 500
+	},
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Наблюдатель медиа-выражений для SvelteJS",
 	"draft": true,
 	"featured": true,
-	"lang": "ru",
-	"maintained": true,
-	"npm": "svelte-media-observer",
-	"title": "svelte-media-observer",
-	"repository": "EricRovell/svelte-media-observer",
-	"techstack": [
+	"keywords": [
+		"library",
 		"Svelte",
 		"TypeScript"
 	],
-	"type": "library",
+	"lang": "ru",
+	"maintained": true,
+	"npm": "svelte-media-observer",
+	"repository": "EricRovell/svelte-media-observer",
+	"slug": "/ru/projects/svelte-media-observer",
+	"title": "Svelte Media Observer",
 	"website": "https://svelte.dev/repl/e9f6a16dfd9a4013b1a0a76347b206eb?version=3"
 }
 ---
