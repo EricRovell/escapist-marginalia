@@ -121,6 +121,14 @@
 	--space-9-rel: calc(4 * var(--space-unit-rel));
 	--space-10-rel: calc(5 * var(--space-unit-rel));
 
+	--background-stripes: repeating-linear-gradient(
+		45deg,
+		var(--surface-2),
+		var(--surface-2) 10px,
+		var(--surface-1) 10px,
+		var(--surface-1) 20px
+	);
+
 	--max-width: 1440px;
 
 	--bottom-menu-height: 40px;
