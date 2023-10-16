@@ -26,7 +26,6 @@
 	display: grid;
 
 	&:nth-of-type(2n) {
-		background-color: var(--surface-2);
 		background: var(--background-stripes);
 	}
 }
@@ -50,8 +49,7 @@
 
 @media screen and (width <= 560px) {
 	.layout {
-		/* TODO: remove magic number bottom menu offset */
-		/* 95% is like 95wv */
+		/* TODO: remove magic number bottom menu offset, 95% is like 95wv */
 		--edge-offset: 2.5vw;
 
 		gap: 0;
@@ -72,7 +70,7 @@
 	.content-wrapper {
 		display: grid;
 		width: 100%;
-		
+
 		& > ul {
 			display: flex;
 			flex-wrap: nowrap;
