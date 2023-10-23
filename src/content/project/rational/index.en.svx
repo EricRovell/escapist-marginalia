@@ -22,3 +22,52 @@
 	"title": "rational"
 }
 ---
+
+## Starting point
+
+This project's starting point goes way back to the distant path, dating back before I became a web-developer. At that time I was learning the basics of *python* language (things did not go further than basics). Becoming familiar with <abbr title="Object Oriented Programming">OOP</abbr> I have got the idea of implementing the rational numbers support. At that moment *python* provided built-in [`Fraction`](https://docs.python.org/3/library/fractions.html) module, but the interface seemed to basic for me.
+
+Quite possible considering the language, the problem, and existing module, I was reinventing the wheel. At that moment it should not be a problem, in my opinion. The task seemed to be possible for my level and it was really interesting for me.
+
+The project was finished and I was pleased with the result. Thanks to the project I learned more about <abbr title="Object Oriented Programming">OOP</abbr> and *python* itself. Obviously, the project was not published and was completely forgotten deep in file system of my laptop.
+
+## Second encounter
+
+After quite a while, as can be seen in most of my projects, I decided to come back to the project. There were some rationale behind this decision. At that moment I was on my way to become a web-developer and the language I was using to do the job was (what a surprise!) *JavaScript*, and I already had some experience of planning and deploying projects.
+
+Most importantly, *JavaScript* do not have a rational numbers support. And I was thinking that it would be a nice idea to create a library for it. I could get some experience, refresh the knowledge of more or less simple math topic. And, maybe, just maybe if a library turned out to be good, the community may find it useful.
+
+So, I have decided to implement a library, call it `rational` and publish it on *npm*.
+
+## The process
+
+The development process was quite pleasing and productive. I have already got the experience of package publishing and other stuff required to do the job.
+
+Before the work I did some research, learned from existing libraries what does such a library should have under it's belt to be competitive. After that the interface was planned and it was developed using *TypeScript*.
+
+As a result, the zipped package was just a *2 kb* in size, it seemed like a really good result considering the functionality was built in.
+
+### User input
+
+More or less most such a libraries has the same interface. You can create instances and make some operations. You can read what a `rational` can do in [documentation](https://github.com/EricRovell/rational). But I would like to highlight the flexibility of user input:
+
+- `(n?: int = 0, d?: int = 1)` — integer *numerator* and *denominator* values as parameters;
+- `(input: [ n: int = 0, d?: int = 1 ])` — integer *numerator* and *denominator* values as an array;
+- `(input: { int?: number = 0, n: int, d?: int = 1 })` — integer *numerator* and *denominator* values and optional *integer* part as an object;
+- `(input: StringFraction)` — a string in format of `"{sign?}{numerator}/{sign?}`;
+- `(input: RepeatingDecimal)` — a periodic continued fraction as an object;
+- `(input: StringRepeatingDecimal)` — a string as periodic continued fraction in format of `{sign?}{int?}.{non-repeating}?({repeating})`;
+- `(input: Degrees)` — degree measure value as an object;
+- `(input: StringDegrees)` — a degree measure string in format of `{sign?}{degrees?}.{minutes'?}{seconds''?}`.
+
+What makes it even greater the same user input can be used in most methods where another `rational` instance would be required.
+
+## Summarizing
+
+The project itself cannot be considered something outstanding; any developer with a couple of years experience can easily write such a project. However, I was pleased with the result considering my self-criticism and attention to details.
+
+The library is packed with types, the user input types are included for a developer, covered with unit tests, has a good documentation and a functionality covering all needs you may need working with rational numbers. In case a developer need something specific, library is naturally extendable and written using modern *JavaScript* syntax.
+
+There are some limitations considering the `Number` data type. I was considering using [`BigInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) instead, but I had doubts that people may need such an extreme values using this library and the performance dropped significantly (up to 10x).
+
+There are some plans for this project to be a part of some other educational projects in future. The project itself is maintained and always is up to date.

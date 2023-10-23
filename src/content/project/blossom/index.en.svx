@@ -23,3 +23,55 @@
 	"website": "https://ericrovell.github.io/blossom-web"
 }
 ---
+
+## Motivation
+
+The idea to create a library for color manipulations formed a long time ago. After learning the basics of <abbr title="Cascade Style Sheets">CSS</abbr>, I learned about different ways to describe colors. Usually people used hexadecimal syntax and <abbr title="Red Green Blue">RGB</abbr> triplets. These systems were easy to understand but non-intuitive to make up colors from your head. The <abbr title="Hue Saturation Lightness">HSL</abbr> system I stumbled later was a great discovery as it was really intuitive and was widely supported.
+
+To learn about the colors more and to have my own tool to convert colors I decided to create a color converter.
+
+And i did it. Unfortunately, the project did not survive to this day and the project code was hopelessly deleted. At that time I was still far from understanding of unit testing, not so well educated about the basics of JavaScript, semantic markup, and many, many other important aspects necessary to create a high-quality web-application.
+
+Some time has passed and I was ready to came back to the project again. This time I realized that the business logic should be separated from the view. Until now, my projects were a mess! View components were filled with the code that should not be there, after some time I could not maintain any pet project of mine. Such a fate met the [numbers](/en/projects/radix) project I had to abandon and start anew.
+
+Therefore, the work began with the development of a separate library planned to be published on [npm](https://www.npmjs.com/), and subsequently used to develop the web application itself.
+
+## Reference
+
+After some code was written and I did not like the result at all. It did not look like a library, just a bunch of functions to transform colors from one color model to another. It felt wrong, radically wrong.
+
+So I got the idea. Instead of trying to blindly reinvent the wheel myself, I should look at existing projects and use them as reference, trying to understand the source code. Later, I used this method a lot as it proved to be quite effective way of learning something new. By repeating meaningfully, walking along a well-trodden path you can learn and learn quite fast.
+
+The [colord](https://github.com/omgovich/colord) project was chosen as a reference. After looking at the documentation I learned a lot about color manipulation possibilities, some color models I have never met before, and more importantly, looking at the source code I understood how such a library should be created. I really liked the architecture (it was a builder pattern) as it used the <abbr title="Red Green Blue">RGB</abbr> as the master color to manage all underlying manipulations. That was damn simple and effective (however, with sime serious flaws).
+
+## The starting point
+
+In fact, `blossom` project is a fork of the `colord` project in some way. At that time it did not occur to me to make a fork and work with it. For some reason, at that time it seemed like it is better to create the project from scratch as it would make my "learning by peeking" better. I do not think the same now, to be honest.
+
+As the result, I created the project and it has some differences, it was not an exact copy.
+
+Work on this project was the starting point for many serious improvements for me as a developer:
+
+- I realized importance of unit tests and had the practice of writing my first tests;
+- I have got the familiarity with a linter and understood the importance of it's use in public and team projects;
+- I have got an awareness of maintaining a code style when working on open source projects;
+- Managed to understand the process of publishing packages on [npm](https://www.npmjs.com/);
+- I got understanding of <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> processes;
+
+The list goes on, and now it seems as if it is impossible not to know the things mentioned above and start working of any project at all. Until the moment I became acquainted with the `colord` project and “dissected” it, I can confidently say that I was not a developer at all and was only finally starting to become one.
+
+## Open-source experience
+
+Working on `blossom` project I noticed the `colord` miss <abbr title="Cyan Magenta Yellow Key">CMYK</abbr> color model support. `colord` uses a plugin system to add some rarely-used functionality to preserve the small size. After figuring out how the plugin system work I decided to try adding a plugin for the missing color model to `colord` itself.
+
+Honestly, my code did not follow the project style guides, however, the author modified my code, showed me what should I edit and after some time added the plugin to the project.
+
+That was my first pull request, it felt really exciting and nervous, as I was filled with fear of doing something wrong. Not smoothly, but everything went pretty well. Later I worked more to add more functionality into `colord`. It was not hard as I knew the source code pretty well working on `blossom`. The process became more familiar and understandable, I feared no more.
+
+It can be said that I "repaid my debt" to the `colord`, thanks to which I learned a lot of new things and grown a lot as a developer.
+
+## Current state
+
+The project is currently not maintained. I tried to come back for a long time; there were plans to rework some parts of it's interface and I still want it to do. There are some problems that come with upcoming changes and I have no idea how to manage them.
+
+As time goes on, <abbr title="Cascade Style Sheets">CSS</abbr> has got such functions as [`color-mix()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) and [`relative color syntax`](https://developer.chrome.com/blog/css-relative-color-syntax/) that made it possible to solve many problems, for the sake of which the `blossom` was created.
