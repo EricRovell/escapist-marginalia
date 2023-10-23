@@ -9,7 +9,6 @@
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Наблюдатель медиа-выражений для SvelteJS",
 	"draft": true,
-	"featured": true,
 	"keywords": [
 		"library",
 		"Svelte",

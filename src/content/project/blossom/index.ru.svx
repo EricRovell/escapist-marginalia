@@ -8,7 +8,6 @@
 	},
 	"dateUpdated": "2022-11-09T01:29:00.000Z",
 	"description": "Blossom - библиотека для конвертации цветов и манипуляций на ними, написанная на TypeScript.",
-	"draft": true,
 	"featured": true,
 	"keywords": [
 		"library",
