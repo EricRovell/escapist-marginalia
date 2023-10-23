@@ -24,7 +24,8 @@ export const GET: RequestHandler = async ({ params }) => {
 			}),
 			getProjects({
 				featured: true,
-				lang: locale
+				lang: locale,
+				draft: false
 			}, {
 				limit: 5
 			}),
