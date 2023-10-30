@@ -1,25 +1,26 @@
 ---
 {
 	"cover": {
-		alt: "Illumination Schedule SPb project logo",
+		alt: "Photo Companion project logo",
 		height: 500,
-		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/project-spb-light.png",
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/project-photo-companion.png",
 		width: 500
 	},
-	"dateUpdated": "2023-05-07T02:14:00.000Z",
-	"description": "Provides the illumination schedule data for Saint-Petersburg, Russia.",
+	"dateUpdated": "2023-10-29T22:40:00.000Z",
+	"description": "Minimalistic photography toolkit progressive web application.",
 	"featured": true,
 	"keywords": [
 		"web application",
+		"PWA",
 		"Svelte",
 		"TypeScript"
 	],
 	"lang": "en",
 	"maintained": true,
-	"repository": "EricRovell/illumination-schedule-spb",
-	"slug": "/en/projects/illumination-schedule-spb",
-	"title": "Illumination Schedule SPb",
-	"website": "https://illumination-schedule-spb.vercel.app/"
+	"repository": "EricRovell/photo-companion",
+	"slug": "/ru/projects/photo-companion",
+	"title": "Photo Companion",
+	"website": "https://photo-companion.vercel.app/"
 }
 ---
 

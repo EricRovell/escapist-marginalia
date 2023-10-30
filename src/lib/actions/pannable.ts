@@ -17,6 +17,7 @@ export const pannable: Action = (node) => {
 
 	function handleMousedown(event: MouseEvent) {
 		node.style.cursor = "all-scroll";
+		node.setAttribute("draggable", "false");
 		node.dispatchEvent(new CustomEvent("panstart", {
 			detail: {
 				x: event.clientX,
@@ -72,6 +73,7 @@ export const pannable: Action = (node) => {
 		recenter();
 
 		node.style.cursor = "unset";
+		node.removeAttribute("draggable");
 		node.dispatchEvent(new CustomEvent("panend", {
 			detail: {
 				x: event.clientX,
