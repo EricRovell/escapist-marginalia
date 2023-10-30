@@ -199,5 +199,6 @@
 		width={fullsize.width}
 		height={fullsize.height}
 		alt={description}
+		draggable="false"
 	/>
 </ImageFullscreen>
