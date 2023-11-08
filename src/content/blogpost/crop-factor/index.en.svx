@@ -1,0 +1,159 @@
+---
+{
+	"cover": {
+		alt: "A photo camera with a visible matrix to illustrate the definition of a crop-factor",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/crop-factor.png",
+		width: 500
+	},
+	"dateCreated": "2023-11-08T13:41:00.000Z",
+	"dateUpdated": "2023-11-08T13:41:00.000Z",
+	"description": "What does crop-factor mean or what does the matrix size affect in photography?",
+	"keywords": [
+		"photography",
+		"crop-factor",
+		"equivalent focal length"
+	],
+	"lang": "en",
+	"slug": "crop-factor-in-photography",
+	"title": "Crop-factor in photography",
+	"translation": {
+		lang: "russian",
+		slug: "кроп-фактор-в-фотографии"
+	}
+}
+---
+
+<script>
+	import { setContext } from "svelte";
+	import * as Interactive from "./interactive";
+	import t from "./translations/en.json";
+	import "katex/dist/katex.min.css";
+
+	setContext("t", t);
+</script>
+
+Quite often, being immersed in photography, we look at our phone and tell ourselves: "I like this! Maybe I should buy a camera?". You take a sit, look at different camera models and that is a moment when you are bombarded with a lot of new terms, like exposure, ISO, and many-many others. It is fine, we all were here. But some of new words means a lot *before* you buy your first camera. One of such terms is a *crop-factor* and understanding what does it mean can substantially improve your choice.
+
+In this blogpost we will dive into the meaning of crop-factor in your camera, how it affects the photography, how it is connected with other parameters, and why it is actually might be so important to understand before you get the camera in your hands.
+
+## 35mm standard
+
+The meaning behind the crop-factor goes way back to the era of film photography. The most common size was 35mm film (24mm x 36mm) invented by William Kennedy Dixon, an assistant of Thomas Edison in late 19th century and was popularized in the 1920s. Most of photographic equipment of those times was oriented specifically towards it.
+
+With the advent of the digital age, the light-sensitive camera sensor began to be used instead to obtain images. Of course, the popularity of 35mm film was leading to the same sized sensors but it turned out the costs of manufacturing such a sensor would be drastically expensive. The manufacturers decided to develop smaller sensors to lower the costs. The widespread emergence of smaller sensors in the world conquered by 35mm size film led to some interesting consequences.
+
+The image formed by the camera lens in the focal plane of the camera is circular. The size of the photosensitive element (digital sensor or a film) determines the portion of the projection used to form the image, all the light outside of it is "lost". Well, the smaller the photosensitive element is the more light is rejected, the more "cropped" the final image will be. Remember this fact, it will be important in the future. To better understand this connection in action, change the size of the sensor in camera below.
+
+<Interactive.FOVComparison />
+
+And this is the reason why the same lens in combination with different cameras may give completely different resulting image. The smaller the sensor the smaller angle of view you will get; the image will look like zoomed-in. To quantify such an effect, theres is a concept of an "equivalent" focal length.
+
+We still do not understand what crop-factor is, but more and more new terms are continuing to pile up. Everything is connected to each other, we will get everything just in order. Before we get acquainted with equivalent focal length, let us dive into the concept of just a focal length as such.
+
+## Lens focal length
+
+Focal length is an optical attribute of a lens that determines how strongly the lens focuses light rays. The longer the focal length, the farther the light beam is focused from the sensor, which results in smaller field of view in resulting image. What is interesting here is that *the same effect* can be observed using the smaller sensor.
+
+Below you can play with interactive block to evaluate the effects of different focal length and sensor size on the final image.
+
+<Interactive.SensorProjection />
+
+It is really important to note that focal length of a lens has nothing to do with the camera or the size of the sensor as it is an intrinsic property of a specific lens. However, using the same lens in combination with different sensor sizes, the resulting image visually appears *as if* the focal length is changing.
+
+## Equivalent focal length
+
+Equivalent focal length is a conditional characteristic of an optical system consisting of a lens and a photosensitive element; it provides information about the field of view of resulting image. Equivalent focal length shows what focal length the lens *will have* when using photosensitive elements of different sizes to form an *equivalent* field of view.
+
+Since changing the both the focal length and sensor size have a similar effect, the equivalent focal length value allows to take into account the effect associated with the influence of the sensor size on the final image through an *imaginary* change in focal length.
+
+It is important to remember that the focal length **does not** actually change. We are just trying to simplify the problem by discarding some variables such as sensor size by reducing everything to just one variable — the focal length.
+
+To better grasp the idea try out the interactive block below. It consists of two views where you can change the sensor size and the focal length to see the output image projection.
+
+<Interactive.EquivalentFocalLength />
+
+The equivalent focal length value is carried out using the formula from school geometry (geometric similarity):
+
+<div id="formula-efl">
+
+```math
+f_{efl} = f \frac{d_0}{d},
+```
+
+</div>
+
+where:
+
+- $$f$$ - lens focal length;
+- $$d$$ - photosensitive element diagonal length;
+- $$d_0$$ - relative photosensitive element diagonal length (usually 35mm film).
+
+**Note**: the formula does not work well with distortion-free lenses such as fisheye.
+
+In practice, the formula above is rarely used, it is too general. The calculations are often made in relation to the ubiquitous 35mm film size, which has a diagonal of approximately 43.27 mm. The formula can be simplified using the *crop-factor* value.
+
+## Crop-factor
+
+It is finally time to introduce the crop-factor term.
+
+The crop-factor is a value used by manufacturers and photographers to estimate the size of the sensor which is used to calculate the equivalent focal length. The crop-factor as a term arose with a need to recalculate the angle of view using different combinations of cameras and lenses.
+
+### Расчёт значения кроп-фактора
+
+The <a href="#formula-efl">formula</a> can be simplified due the fact that the relative photosensitive element is almost all the time is 35mm film. The ratio between diagonals of an arbitrary sensor and the 35mm film is a *crop-factor* itself:
+
+```math
+f_{efl} = f \times K_f,
+```
+
+where:
+
+- $$f$$ - lens focal length;
+- $$K_f$$ - the crop-factor value.
+
+### Full frame
+
+Essentially, using the crop-factor you can estimate how sizes between the sensors differ. It is important to note that the sensor sizes may be completely arbitrary, but in reality the reference size (what a surprise) is always 35mm film diagonal.
+
+Lens that create a projection sufficient to cover the size of 35mm film are called **full frame lens**, and the camera with such a sensor is also named a **full frame** camera. As it is a reference point, the crop-factor is equal to 1 as you are carrying the division by itself.
+
+#### Cropped sensors
+
+What if we take a camera with a smaller sensor? The crop-factor value moves away from 1, depending on it's size. In case of smaller than a reference size of a sensor the crop-factor value will increase. For example, the crop-factor of 2 means the diagonal of such a sensor is exactly 2 times smaller (and more importantly, the area will be somewhat 4 times smaller).
+
+**Note**: Crop-factor takes into the account only the diagonals, the sizes between sensors may differ so the area difference should be calculated using width and height of a sensor.
+
+Cameras with a $crop-factor > 1$ called **cropped** or **crop-camera**. In case you have or are going to buy such a camera you should get crop-lenses designed specifically to cover such a sensor size. They are significantly cheaper and lighter than their full-frame counterparts. Sure, full-frame lens can be used too, but a lot of light around the sensor will be dismissed and you won't get any profit.
+
+Despite the fact that full-frame and crop are typical names for denoting sensor sizes, manufactures not only produce sensors in a wide variety of sizes, but also have special markings. For example, Canon add the suffix "-S" to denote a cropped sensor. EF or RF stands for full-frame, whereas EF-S or RF-S refers to smaller sensors. Nikon labels full-frame as FX and cropped format as DX.
+
+#### Medium format
+
+In some cases, the sensor size may have a diagonal be actually larger than 35mm film has. Crop-factor will have a value smaller than 1. Such a systems called **medium format**. As with a crop-systems, medium format has specifically manufactured lens to work with. But in this case you cannot use more widespread full-frame lenses, as a light projection of such lens won't cover the sensor.
+
+## Comparing the widespread systems
+
+To compare different widespread systems visually try out the interactive block below. Choose two arbitrary systems to see how output image may differ.
+
+<Interactive.CropFactorComparison />
+
+## Overview
+
+At the beginning of the article we set the goal to learn about the crop-factor — one of the characteristics required to understand before you buy the camera. We learned about the importance and omnipresence of 35mm film camera format dated way back to the digital age.
+
+The transition to digital sensor was not smooth, as the same 35mm film sized sensor would be really expensive. This lead to manufacturing smaller sensors instead. Using the common lenses with such sensors resulted in different images. The photo using the smaller digital sensor looked cropped compared to 35mm film. To calculate such difference before the shooting — the crop-factor value is used.
+
+To understand how exactly the crop-factor unwraps a problem, we had to learn about the lens focal length. We learned that the longer the focal length the less angle of view you get. The effect seemed to be the same we had shooting with a smaller sensor. Noting that the focal length is not changing as it is intrinsic feature of specific lens, we decided to shift the effect of shooting on smaller sensor to "imaginary" change in focal length due it's similar nature.
+
+Thus, the equivalent focal length was introduced. It allows to describe the resulting angle of view using the same lens with sensors of different sizes. That was exactly a problem we were trying to solve at the beginning with the appearance of smaller sensors. Using some geometry we defined the ratio between sensor diagonals and called this ratio a crop-factor. Crop-factor illustrates how two sensors differ in size and we use it's value to calculate the equivalent focal length.
+
+Knowing what crop-factor is allows us to calculate the angle of view we will get using any-sized sensor with any lens way before we shoot.
+
+## Useful links
+
+- [Crop Lenses on Crop Bodies: How it Works vs Full Frame](https://www.youtube.com/watch?v=LxZe4MuM8_Q)
+- [Camera Lens Equivalent Focal Length Calculator](https://www.translatorscafe.com/unit-converter/en-US/calculator/lens-efl)
+- [Camera Sensor Sizes](http://photoseek.com/2013/compare-digital-camera-sensor-sizes-full-frame-35mm-aps-c-micro-four-thirds-1-inch-type/)
+- [What is Crop Factor?](https://photographylife.com/what-is-crop-factor)
+- [Equivalent Focal Length and Field of View](https://photographylife.com/equivalent-focal-length-and-field-of-view)
