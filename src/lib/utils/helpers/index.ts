@@ -1,4 +1,4 @@
-export { clamp } from "./clamp";
+export { clamp, round } from "./clamp";
 export { encodeTitleId } from "./endcode-title-id"; 
 export { groupBy } from "./group-by";
 export { preventPageScroll } from "./prevent-page-scroll";
