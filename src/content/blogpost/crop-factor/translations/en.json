@@ -16,8 +16,11 @@
 	"equivalent-focal-length": {
 		"title": "Equivalent Focal Length",
 		"focal-length": "Focal length",
+		"focal-length-eq": "Focal length equivalent",
 		"crop-factor": "Crop factor",
+		"crop-factor-eq": "Crop factor equivalent",
 		"match": "Equivalent field of view",
-		"not-match": "Non-equivalent field of view"
+		"not-match": "Non-equivalent field of view",
+		"length-unit": "mm"
 	}
 }
