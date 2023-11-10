@@ -2,79 +2,78 @@
 	import { getContext } from "svelte";
 	import { Range } from "@components";
 	import { LensProjection } from "../../components";
+	import { round } from "$lib/utils/helpers";
 	import styles from "./equivalent-focal-length.module.css";
 
-	let focalLength: [ number, number ] = [ 16, 16 ];
-	let cropFactor: [ number, number ] = [ 1, 1 ];
+	let focalLength = 16;
+	let cropFactor = 1;
+	let focalLengthMatch = 16;
+	let cropFactorMatch = 1;
 
 	const t = getContext<Record<string, string>>("t")["equivalent-focal-length"];
-
-	$: match = (Math.abs(focalLength[0] * cropFactor[0] - focalLength[1] * cropFactor[1]) < 1);
 </script>
 
-<section class="wide interactive">
+<section class="wide interactive {styles.wrapper}">
 	<h3>
 		{t["title"]}
 	</h3>
-	<div class="{styles.wrapper}">
-		<div class="{styles.content}" class:match>
-			<div>
-				<LensProjection
-					bind:focalLength="{focalLength[0]}"
-					bind:cropFactor="{cropFactor[0]}"
-				/>
-				<form
-					on:submit|preventDefault
+	<LensProjection
+		bind:focalLength="{focalLength}"
+		bind:cropFactor="{cropFactor}"
+	/>
+	<div class="{styles["form-wrapper"]}">
+		<form class="{styles.form}" on:submit|preventDefault>
+			<fieldset>
+				<legend>{t["focal-length-eq"]}</legend>
+				<output>
+					{t["focal-length"]}: <span>{round(cropFactor * focalLength / cropFactorMatch)} {t["length-unit"]}</span>
+				</output>
+				<Range
+					bind:value="{cropFactorMatch}"
+					min="{1}"
+					max="{4}"
+					step="{0.1}"
+					output
 				>
-					<Range
-						bind:value="{focalLength[0]}"
-						min="{16}"
-						max="{120}"
-						output
-					>
-						{t["focal-length"]}
-					</Range>
-					<Range
-						bind:value="{cropFactor[0]}"
-						min="{1}"
-						max="{6}"
-						step="{0.01}"
-						output
-					>
-						{t["crop-factor"]}
-					</Range>
-				</form>
-			</div>
-			<div>
-				<LensProjection
-					bind:focalLength="{focalLength[1]}"
-					bind:cropFactor="{cropFactor[1]}"
-				/>
-				<form
-					on:submit|preventDefault
+					{t["crop-factor"]}
+				</Range>
+			</fieldset>
+			<span>=</span>
+			<fieldset>
+				<legend>Parameters</legend>
+				<Range
+					bind:value="{focalLength}"
+					min="{16}"
+					max="{120}"
+					output
 				>
-					<Range
-						bind:value="{focalLength[1]}"
-						min="{16}"
-						max="{120}"
-						output
-					>
-						{t["focal-length"]}
-					</Range>
-					<Range
-						bind:value="{cropFactor[1]}"
-						min="{1}"
-						max="{6}"
-						step="{0.01}"
-						output
-					>
-						{t["crop-factor"]}
-					</Range>
-				</form>
-			</div>
-		</div>
+					{t["focal-length"]}
+				</Range>
+				<Range
+					bind:value="{cropFactor}"
+					min="{1}"
+					max="{4}"
+					output
+					step="{0.1}"
+				>
+					{t["crop-factor"]}
+				</Range>
+			</fieldset>
+			<span>=</span>
+			<fieldset>
+				<legend>{t["crop-factor-eq"]}</legend>
+				<output>
+					{t["crop-factor"]}: <span>{round(cropFactor * focalLength / focalLengthMatch, 1)}</span>
+				</output>
+				<Range
+					bind:value="{focalLengthMatch}"
+					min="{16}"
+					max="{120}"
+					output
+				>
+					{t["focal-length"]}
+				</Range>
+			</fieldset>
+		</form>
 	</div>
-	<output class="{styles.output}" class:match>
-		{match ? `✔ ${t["match"]}` : `✘ ${t["not-match"]}`}
-	</output>
 </section>

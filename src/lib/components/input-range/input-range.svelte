@@ -41,6 +41,7 @@
 		{step}
 		type="range"
 		on:change
+		on:input
 		on:blur
 	/>
 </label>

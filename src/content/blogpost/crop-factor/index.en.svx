@@ -7,7 +7,7 @@
 		width: 500
 	},
 	"dateCreated": "2023-11-08T13:41:00.000Z",
-	"dateUpdated": "2023-11-08T13:41:00.000Z",
+	"dateUpdated": "2023-11-10T12:45:00.000Z",
 	"description": "What does crop-factor mean or what does the matrix size affect in photography?",
 	"keywords": [
 		"photography",
@@ -99,7 +99,7 @@ It is finally time to introduce the crop-factor term.
 
 The crop-factor is a value used by manufacturers and photographers to estimate the size of the sensor which is used to calculate the equivalent focal length. The crop-factor as a term arose with a need to recalculate the angle of view using different combinations of cameras and lenses.
 
-### Расчёт значения кроп-фактора
+### Crop-factor calculation
 
 The <a href="#formula-efl">formula</a> can be simplified due the fact that the relative photosensitive element is almost all the time is 35mm film. The ratio between diagonals of an arbitrary sensor and the 35mm film is a *crop-factor* itself:
 
