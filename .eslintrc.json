@@ -1,23 +1,32 @@
 {
 	"env": {
 		"browser": true,
-		"es2021": true
-	},
-	"globals": {
-		"$$Generic": "readonly"
+		"es2021": true,
+		"node": true
 	},
 	"extends": [
-		"plugin:svelte/recommended",
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
-		"plugin:@typescript-eslint/recommended-requiring-type-checking"
+		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		"plugin:svelte/recommended"
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
-		"ecmaVersion": 2022,
+		"ecmaVersion": "latest",
 		"sourceType": "module",
-		"extraFileExtensions": [ ".svelte" ],
-		"project": "./tsconfig.json"
+		"extraFileExtensions": [
+			".svelte"
+		],
+		"project": [
+			"./tsconfig.base.json",
+			"./src/**/tsconfig.json"
+		]
+	},
+	"globals": {
+		"__dirname": true,
+		"Nullable": true,
+		"Optional": true,
+		"$$Generic": true
 	},
 	"overrides": [
 		{
@@ -32,11 +41,16 @@
 		"svelte3/typescript": true
 	},
 	"plugins": [
-		"@typescript-eslint",
-		"perfectionist"
+		"@typescript-eslint"
 	],
 	"rules": {
 		"no-self-assign": "off",
+		"no-console": [ "error", {
+			"allow": [
+				"warn",
+				"error"
+			]
+		}],
 		"svelte/no-at-html-tags": "off",
 		"@typescript-eslint/no-unsafe-assignment": "off",
 		"@typescript-eslint/no-unsafe-call": "off",
@@ -58,6 +72,8 @@
 		"indent": [ "error", "tab", { "SwitchCase": 1 } ],
 		"linebreak-style": 0,
 		"quotes": [ "error","double" ],
-		"semi": [ "error", "always" ]
+		"semi": [ "error", "always" ],
+		"no-var": "error",
+		"curly": "error"
 	}
 }
