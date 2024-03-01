@@ -1,3 +1,4 @@
+**/build
 svelte.config.js
 mdsvex.config.js
 vite.config.js

@@ -1,14 +1,14 @@
-/.svelte-kit
-/build
-/node_modules
-*/**/node_modules
-/static/img/*
-/src/data/gallery.json
-/workfiles
+.env
+.svelte-kit
 .vercel
+
+coverage
+build
+node_modules
 vite.config.js.timestamp*
-*/**/.env
-/coverage
+
+/static/img/*
+/workfiles
 
 /image-generate/**/*.JPG
 /image-generate/**/*.jpeg

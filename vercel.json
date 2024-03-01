@@ -1,7 +1,11 @@
 {
-  "cleanUrls": true,
-  "github": {
-    "enabled": false,
-    "silent": true
-  }
+	"buildCommand": "npm i pnpm -g && pnpm build",
+	"cleanUrls": true,
+	"devCommand": "pnpm dev",
+	"framework": "svelte",
+	"github": {
+		"enabled": false,
+		"silent": true
+	},
+	"outputDirectory": "src/apps/escapist-marginalia/build"
 }
