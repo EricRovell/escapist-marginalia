@@ -1,4 +1,4 @@
-import type { VerticeRestrictionRule } from "../lib/chaos.types";
+import type { VerticeRestrictionRule } from "chaos-game";
 
 export interface Options {
 	"points-color-wheel": boolean;

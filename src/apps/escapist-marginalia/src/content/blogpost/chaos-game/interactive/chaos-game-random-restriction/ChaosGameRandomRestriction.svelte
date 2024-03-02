@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { getContext } from "svelte";
+	import { range } from "utils/math";
+	import { randInt, randItem } from "utils/random";
+
 	import { Button, Range } from "@components";
 	import { ChaosGame } from "../../components/chaos-game";
-	import { range } from "@utils/helpers";
-	import { randInt, randItem } from "@utils/random";
 	import styles from "./chaos-game-random-restriction.module.css";
 
 	const t = getContext<Record<string, string>>("t")["random-restrictions"];

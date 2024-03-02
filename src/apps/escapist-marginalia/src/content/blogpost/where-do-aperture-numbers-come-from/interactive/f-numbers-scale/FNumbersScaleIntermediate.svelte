@@ -1,6 +1,7 @@
 <script lang="ts" context="module">
+	import { clamp } from "utils/math";
+
 	import { Button, Range } from "@components";
-	import { clamp } from "@utils/helpers";
 	import { FNumbers } from "../../components";
 </script>
 

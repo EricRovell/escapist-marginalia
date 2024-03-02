@@ -1,5 +1,5 @@
+import { randBool, randItem } from "utils/random";
 import { Particle, type Position } from "./particle";
-import { randBool, randItem } from "$lib/utils/random";
 import type { Renderer } from "@components/canvas";
 import { options as optionsDefault, type Options } from "./geometric-hive.options";
 

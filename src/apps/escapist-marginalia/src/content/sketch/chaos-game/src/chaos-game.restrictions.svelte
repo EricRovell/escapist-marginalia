@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { clamp } from "utils/math";
+	import type { VerticeRestrictionRule } from "chaos-game";
+
 	import { Button, InputNumber, Switch, InputText } from "@components";
-	import type { VerticeRestrictionRule } from "../lib/chaos.types";
-	import { clamp } from "@utils/helpers";
 
 	export let sides: number;
 	export let forbidden = false;

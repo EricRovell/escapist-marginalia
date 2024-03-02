@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { getContext } from "svelte";
+	import { Chaos, createPolygon } from "chaos-game";
+	import type { Coords, Move, PolygonOrigin } from "chaos-game";
+
 	import { Button, Switch } from "@components";
-	import { Chaos, createPolygon } from "@content/sketch/chaos-game/index";
-	import type { Coords, Move, PolygonOrigin } from "@content/sketch/chaos-game/lib/chaos.types";
 	import styles from "./chaos-game-rules-demo.module.css";
 
 	export let height = 350;

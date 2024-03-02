@@ -1,4 +1,4 @@
-import { range } from "../../../lib/utils/helpers";
+import { range } from "utils/math";
 import type { IndexGenerator } from "./pagination.types";
 
 /**

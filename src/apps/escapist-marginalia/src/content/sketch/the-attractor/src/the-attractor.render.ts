@@ -1,4 +1,4 @@
-import { randFloat, randBool, randInt } from "@utils/random";
+import { randFloat, randBool, randInt } from "utils/random";
 import type { Renderer } from "@components/canvas";
 import { options as optionsDefault, type Options } from "./the-attractor.options";
 

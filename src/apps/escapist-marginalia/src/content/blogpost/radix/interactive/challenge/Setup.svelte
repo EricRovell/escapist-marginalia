@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getContext } from "svelte";
+
 	import { Button, InputNumber } from "@components";
 	import type { Settings } from "./challenge.types";
 	import styles from "./setup.module.css";

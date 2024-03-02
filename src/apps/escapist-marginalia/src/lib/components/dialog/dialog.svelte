@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { afterUpdate, createEventDispatcher } from "svelte";
+	import { preventPageScroll } from "utils";
+
 	import { Button } from "../button";
 	import { Icon } from "../icon";
 	import { iconCancel } from "@icons";
 	import styles from "./dialog.module.css";
 	import { clickOutside, shortcut } from "../../actions";
-	import { preventPageScroll } from "$lib/utils/helpers";
 
 	export let className = "";
 	export let element: HTMLDialogElement | undefined = undefined;

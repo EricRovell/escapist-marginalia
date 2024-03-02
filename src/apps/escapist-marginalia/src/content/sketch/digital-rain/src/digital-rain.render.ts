@@ -1,4 +1,4 @@
-import { randFloat, randInt, randColor } from "@utils/random";
+import { randFloat, randInt, randColor } from "utils/random";
 import { options as optionsDefault, type Options } from "./digital-rain.options";
 import { getRandomChar } from "./digital-rain.util";
 import type { Renderer } from "@components/canvas";

@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { getContext } from "svelte";
 	import { onDestroy } from "svelte";
+	import { clamp } from "utils/math";
+	import { QuadTree, Circle, Rectangle } from "quadtree";
+
 	import { QuadTreeGrid } from "../../components";
 	import { Button, InputSelect, Range } from "@components";
-	import { QuadTree, Circle, Rectangle } from "@utils/quad-tree";
-	import { clamp } from "@utils/helpers";
 	import { getBoundaries, getRandomPoints } from "../../utils";
 	import styles from "./quadtree-query.module.css";
 

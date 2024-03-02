@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { share } from "utils";
+
 	import { t } from "@core/i18n";
 	import { webpage } from "@core/paths";
 	import { Meta,ScrollToTop, Button, Icon, Image, Link, ImageFullscreen, Datetime } from "@components";
 	import { iconShare, iconDownload, iconFullscreen } from "@icons";
-	import { share } from "@utils/helpers";
 	import styles from "./gallery.layout.module.css";
 	import articleStyles from "./article.module.css";
 	import type { GalleryItemPage } from "@types";

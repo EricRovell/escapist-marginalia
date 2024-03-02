@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getContext } from "svelte";
+
 	import { FormNumerals, MathExp } from "../../components";
 	import { getConversionStages, getRanks } from "./decimal-conversion-stages.helpers";
 	import { buildMathDifferences, buildMathPowerInequalities, buildMathRanks } from "./decimal-conversion-stages.katex";

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getContext } from "svelte";
+
 	import { Range } from "@components";
 	import { LensProjection } from "../../components";
 	import styles from "./fov-comparison.module.css";

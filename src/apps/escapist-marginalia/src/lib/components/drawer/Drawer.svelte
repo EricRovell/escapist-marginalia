@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
 	import { writable } from "svelte/store";
-	import { preventPageScroll } from "$lib/utils/helpers";
+	import { preventPageScroll } from "utils";
 
 	const createStore = () => {
 		const { subscribe, update } = writable<string>();

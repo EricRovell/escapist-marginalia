@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { getContext } from "svelte";
+	import { round } from "utils/math";
+
 	import { Range } from "@components";
 	import { LensProjection } from "../../components";
-	import { round } from "$lib/utils/helpers";
 	import styles from "./equivalent-focal-length.module.css";
 
 	let focalLength = 16;

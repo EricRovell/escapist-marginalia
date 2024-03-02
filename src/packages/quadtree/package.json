@@ -1,0 +1,23 @@
+{
+	"author": "Eric Rovell",
+	"description": "Quadtree data structure.",
+	"dependencies": {
+		"utils": "workspace:*"
+	},
+	"exports": {
+		".": {
+			"import": "./src/index.ts"
+		}
+	},
+	"keywords": [
+		"data-structure",
+		"quadtree"
+	],
+	"name": "quadtree",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"lint:types": "tsc --noEmit"
+	},
+	"type": "module"
+}

@@ -45,6 +45,6 @@ export const GET: RequestHandler = async ({ params }) => {
 			})
 		);
 	} catch (error) {
-		throw error(404, `Something is wrong: ${error.message}`);
+		throw error(404, `Something is wrong: ${error}`);
 	}
 };

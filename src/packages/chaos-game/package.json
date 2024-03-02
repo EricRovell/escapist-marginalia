@@ -1,0 +1,23 @@
+{
+	"author": "Eric Rovell",
+	"description": "Chaos Game implementation.",
+	"dependencies": {
+		"utils": "workspace:*"
+	},
+	"exports": {
+		".": {
+			"import": "./src/index.ts"
+		}
+	},
+	"keywords": [
+		"chaos-game",
+		"probability"
+	],
+	"name": "chaos-game",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"lint:types": "tsc --noEmit"
+	},
+	"type": "module"
+}

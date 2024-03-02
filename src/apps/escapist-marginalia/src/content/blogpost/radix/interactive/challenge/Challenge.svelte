@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getContext } from "svelte";
+
 	import Setup from "./Setup.svelte";
 	import Progress from "./Progress.svelte";
 	import type { Settings } from "./challenge.types";

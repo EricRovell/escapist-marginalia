@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { createEventDispatcher } from "svelte";
 	import { fade } from "svelte/transition";
+	import { preventPageScroll } from "utils";
+
 	import { portal, shortcut } from "@lib/actions";
 	import { Icon } from "../icon";
 	import { iconCancel } from "@icons";
-	import { preventPageScroll } from "@utils/helpers";
 	import styles from "./modal.module.css";
 
 	export let className = "";

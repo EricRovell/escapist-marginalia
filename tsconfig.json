@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"module": "ESNext",
 		"lib": [ "ESNext", "DOM" ],
 		"target": "ESNext",
@@ -11,7 +11,9 @@
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
 		"plugins": [
-			{ "name": "typescript-plugin-css-modules" }
+			{
+				"name": "typescript-plugin-css-modules"
+			}
 		]
 	},
 	"include": [

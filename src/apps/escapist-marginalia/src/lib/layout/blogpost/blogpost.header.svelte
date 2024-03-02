@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { share } from "utils";
 	import { t, locale } from "@core/i18n";
 	import { pathBlogpost, webpage } from "@core/paths";
 	import { Button, Datetime, Icon, Link } from "@components";
 	import { iconShare } from "@icons";
-	import { encodeTitleId, share } from "@utils/helpers";
+	import { encodeTitleId } from "@utils/helpers";
 	import styles from "./blogpost.header.module.css";
 
 	export let dateCreated: string;

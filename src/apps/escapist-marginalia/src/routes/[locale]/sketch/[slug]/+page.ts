@@ -31,7 +31,7 @@ export const load: PageLoad = async ({ params }) => {
 
 		return {
 			sketch: sketch.default,
-			translation,
+			translation: translation.default,
 			page: page.default,
 			metadata: page.metadata
 		};

@@ -1,4 +1,4 @@
-import { randomNumberFromRanges } from "@utils/random";
+import { randomNumberFromRanges } from "utils/random";
 
 const charcodes = {
 	digits: [ 48, 57 ],

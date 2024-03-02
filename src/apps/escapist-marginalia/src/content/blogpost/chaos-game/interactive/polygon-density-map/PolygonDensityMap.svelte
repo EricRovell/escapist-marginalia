@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { getContext } from "svelte";
+	import { createPolygon, type PolygonOrigin } from "chaos-game";
+
 	import { Range } from "@components";
-	import { createPolygon } from "@content/sketch/chaos-game/index";
-	import type { PolygonOrigin } from "@content/sketch/chaos-game/lib/chaos.types";
 	import styles from "./polygon-density-map.module.css";
 
 	export let height = 375;

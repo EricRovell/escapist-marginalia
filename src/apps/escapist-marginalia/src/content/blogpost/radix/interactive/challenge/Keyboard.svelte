@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher, getContext } from "svelte";
+
 	import { Button, Icon } from "@components";
 	import { iconDelete } from "@icons";
 	import { radix36, buildPattern } from "../../util";

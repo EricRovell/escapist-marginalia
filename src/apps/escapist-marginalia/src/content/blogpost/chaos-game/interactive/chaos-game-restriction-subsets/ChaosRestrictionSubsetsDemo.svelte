@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { subsets } from "chaos-game";
+	import { range } from "utils/math";
 	import { getContext } from "svelte";
+
 	import { Pagination, Range } from "@components";
 	import { ChaosGame } from "../../components/chaos-game";
-	import { subsets } from "@content/sketch/chaos-game/lib/chaos.utils";
-	import { range } from "@utils/helpers";
 	import styles from "./chaos-restriction-subsets-demo.module.css";
 
 	export let n = 3;

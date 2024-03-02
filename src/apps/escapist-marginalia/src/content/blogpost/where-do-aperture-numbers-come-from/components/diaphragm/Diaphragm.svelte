@@ -1,5 +1,6 @@
 <script>
-	import { createPolygon } from "@content/sketch/chaos-game/lib/polygon";
+	import { createPolygon } from "chaos-game";
+
 	import styles from "./diaphragm.module.css";
 
 	export let angle = 45;

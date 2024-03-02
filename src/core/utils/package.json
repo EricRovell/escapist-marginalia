@@ -1,0 +1,27 @@
+{
+	"author": "Eric Rovell",
+	"description": "Project core helper utilities",
+	"exports": {
+		".": {
+			"import": "./src/index.ts"
+		},
+		"./random": {
+			"import": "./src/random/index.ts"
+		},
+		"./math": {
+			"import": "./src/math/index.ts"
+		}
+	},
+	"keywords": [
+		"utilities",
+		"helpers",
+		"random"
+	],
+	"name": "utils",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"lint:types": "tsc --noEmit"
+	},
+	"type": "module"
+}

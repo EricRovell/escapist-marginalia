@@ -1,6 +1,7 @@
 <script lang="ts" context="module">
+	import { range } from "utils/math";
+
 	import FNumber, { type FStop } from "./FNumber.svelte";
-	import { range } from "@utils/helpers";
 </script>
 
 <script lang="ts">

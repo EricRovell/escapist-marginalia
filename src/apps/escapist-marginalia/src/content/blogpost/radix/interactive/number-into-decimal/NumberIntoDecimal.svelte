@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getContext } from "svelte";
 	import { radix } from "@ericrovell/radix";
+
 	import { FormNumerals, Number, Numerals, MathExp } from "../../components";
 	import { decoder } from "../../util";
 	import styles from "./number-into-decimal.module.css";
