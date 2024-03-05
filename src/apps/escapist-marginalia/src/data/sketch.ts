@@ -1,4 +1,4 @@
-import { find, type QueryItem } from "@utils/query";
+import { find, type QueryItem } from "$lib/utils";
 import type { Sketch, Page } from "../types";
 
 interface Options {

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { getContext } from "svelte";
 	import { createPolygon, type PolygonOrigin } from "chaos-game";
+	import { InputRange } from "ui";
+	import { getContext } from "svelte";
 
-	import { Range } from "@components";
 	import styles from "./polygon-density-map.module.css";
 
 	export let height = 375;
@@ -61,8 +61,8 @@
 		{/each}
 	</svg>
 	<form class="{styles.form}" on:submit|preventDefault>
-		<Range bind:value={n} min={3} max={9} output>
+		<InputRange bind:value={n} min={3} max={9} output>
 			{t["number-of-sides"]}
-		</Range>
+		</InputRange>
 	</form>
 </section>

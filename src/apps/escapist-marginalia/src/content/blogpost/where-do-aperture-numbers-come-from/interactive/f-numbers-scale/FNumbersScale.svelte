@@ -1,5 +1,6 @@
 <script lang="ts" context="module">
-	import { Range } from "@components";
+	import { InputRange } from "ui";
+
 	import { FNumbers } from "../../components";
 </script>
 
@@ -35,13 +36,13 @@
 		{t}
 	/>
 	<form on:submit|preventDefault>
-		<Range
+		<InputRange
 			on:change={handleChange}
 			min={fstopMin + 1}
 			max={fstopMax}
 			value="{fstopTo}"
 		>
 			{t["f-numbers"]}
-		</Range>
+		</InputRange>
 	</form>
 </section>

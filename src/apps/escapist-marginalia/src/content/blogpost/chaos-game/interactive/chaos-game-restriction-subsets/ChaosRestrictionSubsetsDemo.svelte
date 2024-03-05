@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { subsets } from "chaos-game";
+	import { InputRange, Pagination } from "ui";
 	import { range } from "utils/math";
 	import { getContext } from "svelte";
 
-	import { Pagination, Range } from "@components";
 	import { ChaosGame } from "../../components/chaos-game";
 	import styles from "./chaos-restriction-subsets-demo.module.css";
 
@@ -61,8 +61,8 @@
 			end="{pages}"
 			ordinal
 		/>
-		<Range bind:value="{n}" min="{3}" max="{9}" output>
+		<InputRange bind:value="{n}" min="{3}" max="{9}" output>
 			{t["number-of-sides"]}
-		</Range>
+		</InputRange>
 	</form>
 </section>

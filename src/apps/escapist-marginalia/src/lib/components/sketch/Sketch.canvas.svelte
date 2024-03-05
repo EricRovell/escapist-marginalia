@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { afterUpdate } from "svelte";
-	import { Canvas, CanvasLayer } from "../canvas";
+	import { Canvas, CanvasLayer } from "ui";
 	import type { Sketch } from "./sketch.types";
 
 	type Options = $$Generic;

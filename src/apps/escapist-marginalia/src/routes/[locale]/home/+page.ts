@@ -1,5 +1,7 @@
 import { error } from "@sveltejs/kit";
-import type { Blogpost, GalleryItem, Project } from "@types";
+import type { GalleryItem } from "ui";
+
+import type { Blogpost, Project } from "@types";
 import type { PageLoad } from "./$types";
 
 interface RecentItems {

@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { Link } from "ui";
+
 	import { page } from "$app/stores";
 	import { locale, t } from "@core/i18n";
-	import { Link } from "@components";
 	import styles from "./footer.module.css";
 
 	const regex = /^\/(ru|en)\//;

@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { clamp } from "utils/math";
 	import type { VerticeRestrictionRule } from "chaos-game";
-
-	import { Button, InputNumber, Switch, InputText } from "@components";
+	import { Button, InputText, InputNumber, InputSwitch } from "ui";
 
 	export let sides: number;
 	export let forbidden = false;
@@ -83,7 +82,7 @@
 		<div class="rule">
 			<InputNumber value="{-1 - 1 * i}" name="restrictions" data-index="{i}" min="{-sides}" max="{-1}" />
 			<InputText name="restrictions" data-index="{i}" placeholder="{t["distances-placeholder"]}" />
-			<Switch name="restrictions" data-index="{i}" />
+			<InputSwitch name="restrictions" data-index="{i}" />
 		</div>
 	{/each}
 	<div class="controls">

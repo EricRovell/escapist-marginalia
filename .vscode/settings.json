@@ -10,5 +10,9 @@
 	"cssVariables.lookupFiles": [
 		"src/lib/styles/tokens.css",
 		"src/lib/styles/theme-*.css"
-	]
+	],
+	"search.exclude": {
+		"**/.svelte-kit": true,
+		"**/build": true
+	}
 }

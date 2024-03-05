@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { InputNumber } from "@components";
+	import { InputNumber } from "ui";
+
 	import InputNumerals from "./InputNumerals.svelte";
 	import styles from "./form-numerals.module.css";
 

@@ -10,6 +10,9 @@
 		},
 		"./math": {
 			"import": "./src/math/index.ts"
+		},
+		"./validators": {
+			"import": "./src/validators/index.ts"
 		}
 	},
 	"keywords": [

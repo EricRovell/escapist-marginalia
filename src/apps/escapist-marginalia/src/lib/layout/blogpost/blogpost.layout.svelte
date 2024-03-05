@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { Meta, ScrollToTop } from "ui";
+
 	import { webpage, webpageRoot } from "@core/paths";
-	import { Meta, TOC, ScrollToTop } from "@components";
+	import { TOC } from "@components";
 	import Header from "./blogpost.header.svelte";
 	import { LayoutPage } from "../page-header";
 	import styles from "./blogpost.layout.module.css";

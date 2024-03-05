@@ -1,6 +1,6 @@
 import { Chaos, createPolygon, type Polygon } from "chaos-game";
+import type { Renderer } from "ui";
 
-import type { Renderer } from "@components/canvas";
 import { options as optionsDefault, type Options } from "./chaos-game.options";
 
 export const sketch = (options: Options = optionsDefault) => {

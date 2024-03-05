@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { Meta, ScrollToTop } from "ui";
+
 	import { webpage } from "@core/paths";
-	import { Meta, ScrollToTop } from "@components";
 	import Header from "./project.header.svelte";
 	import { LayoutPage } from "../page-header";
 	import styles from "./project.layout.module.css";
@@ -14,9 +15,9 @@
 		lang,
 		//maintained = true,
 		npm,
+		keywords = [],
 		repository,
 		title,
-		techstack = [],
 		website
 	} = metadata;
 </script>
@@ -25,7 +26,7 @@
 	{title}
 	meta={{
 		description,
-		keywords: techstack.join(","),
+		keywords: keywords.join(","),
 		language: lang
 	}}
 	openGraph={{
@@ -33,7 +34,7 @@
 		description,
 		locale: lang,
 		type: "article",
-		tag: techstack.join(","),
+		tag: keywords.join(","),
 		section: "project",
 		site_name: "Eric Rovell",
 		author: "Eric Rovell",
@@ -55,7 +56,7 @@
 		{npm}
 		{repository}
 		{title}
-		{techstack}
+		{keywords}
 		{website}
 		slot="banner"
 	/>

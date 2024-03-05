@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { radix as rx } from "@ericrovell/radix";
-	import { InputText } from "@components";
+	import { InputText } from "ui";
+
 	import { buildPattern, decoder } from "../../util";
 
 	export let radix = 10;

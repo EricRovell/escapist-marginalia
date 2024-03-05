@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Dialog } from "../../components";
+	import { Dialog } from "ui";
+
 	import ThemeRadio from "./preferences-theme.svelte";
 	import LanguageRadio from "./preferences-language.svelte";
 	import styles from "./preferences-modal.module.css";

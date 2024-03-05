@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { Range, SketchControls, Switch, InputColor } from "@components";
+	import { InputColor, InputRange, InputSwitch } from "ui";
+
+	import { SketchControls } from "@components";
 	import { options, optionsImmutable } from "./digital-rain.options";
 
 	export let t: Record<string, string>;
@@ -35,12 +37,12 @@
 		<legend>
 			{t.general}
 		</legend>
-		<Range output bind:value="{state.scale}" name="scale" min="{1}" max="{25}">
+		<InputRange output bind:value="{state.scale}" name="scale" min="{1}" max="{25}">
 			{t["font-size"]}
-		</Range>
-		<Range output bind:value="{state.depth}" name="depth" min="{0.01}" max="{1}" step="{0.01}">
+		</InputRange>
+		<InputRange output bind:value="{state.depth}" name="depth" min="{0.01}" max="{1}" step="{0.01}">
 			{t.depth}
-		</Range>
+		</InputRange>
 		<InputColor bind:value="{state.color}" name="color">
 			{t.color}
 		</InputColor>
@@ -52,28 +54,28 @@
 		<legend>
 			{t.behavior}
 		</legend>
-		<Switch bind:checked="{state.distributed}" name="distributed">
+		<InputSwitch bind:checked="{state.distributed}" name="distributed">
 			{t.distributed}
-		</Switch>
-		<Switch bind:checked="{state.randomColors}" name="randomColors">
+		</InputSwitch>
+		<InputSwitch bind:checked="{state.randomColors}" name="randomColors">
 			{t["random-colors"]}
-		</Switch>
+		</InputSwitch>
 	</fieldset>
 	<fieldset>
 		<legend>
 			{t.symbols}
 		</legend>
-		<Switch name="digits" checked>
+		<InputSwitch name="digits" checked>
 			{t.digits}
-		</Switch>
-		<Switch name="katakana" checked>
+		</InputSwitch>
+		<InputSwitch name="katakana" checked>
 			{t.katakana}
-		</Switch>
-		<Switch name="math" checked>
+		</InputSwitch>
+		<InputSwitch name="math" checked>
 			{t["math"]}
-		</Switch>
-		<Switch name="uppercaseLetters" checked>
+		</InputSwitch>
+		<InputSwitch name="uppercaseLetters" checked>
 			{t["uppercase"]}
-		</Switch>
+		</InputSwitch>
 	</fieldset>
 </SketchControls>

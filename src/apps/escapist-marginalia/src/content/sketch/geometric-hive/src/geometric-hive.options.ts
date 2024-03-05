@@ -1,7 +1,5 @@
-import type { ColorString } from "$lib/components/input-color/input-color.types";
-
 export interface Options {
-	"background": ColorString;
+	"background": string;
 	"gap-frequency": number;
 	"particle-gap": number;
 	"particle-size": number;

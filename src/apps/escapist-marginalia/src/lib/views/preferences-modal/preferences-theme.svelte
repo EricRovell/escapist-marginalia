@@ -3,9 +3,10 @@
 </script>
 
 <script lang="ts">
+	import { Icon, InputRadio } from "ui";
+	import { iconMoon, iconSun, iconSunset } from "ui/icons";
+
 	import { theme, type ThemeOptions } from "@stores";
-	import { Radio, Icon } from "@components";
-	import { iconMoon, iconSun, iconSunset } from "@icons";
 
 	const options = [
 		{
@@ -35,7 +36,7 @@
 	};
 </script>
 
-<Radio.Group
+<InputRadio.Group
 	name="theme"
 	on:change={handleChange}
 >
@@ -43,11 +44,11 @@
 		Theme
 	</h4>
 	{#each options as { checked, icon, label, value }}
-		<Radio.Button
+		<InputRadio.Button
 			{value}
 			checked={checked}
 		>
 			<Icon path="{icon}" /> {label}
-		</Radio.Button>
+		</InputRadio.Button>
 	{/each}
-</Radio.Group>
+</InputRadio.Group>

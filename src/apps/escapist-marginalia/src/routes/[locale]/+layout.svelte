@@ -1,7 +1,8 @@
 <script>
 	import { page } from "$app/stores";
+	import { Meta } from "ui";
+
 	import { locale } from "@core/i18n";
-	import { Meta } from "@components";
 
 	$: $locale = $page.params.locale;
 </script>

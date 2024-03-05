@@ -1,8 +1,9 @@
 import { dev } from "$app/environment";
 import { error } from "@sveltejs/kit";
+import type { GalleryItem } from "ui";
+
 import { getGalleryItems } from "@data/gallery";
 import type { RequestHandler } from "./$types";
-import type { GalleryItem } from "@types";
 
 export const GET: RequestHandler = async ({ params }) => {
 	const slug: string = params.slug;

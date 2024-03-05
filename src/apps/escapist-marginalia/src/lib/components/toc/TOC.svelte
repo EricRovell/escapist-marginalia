@@ -7,8 +7,9 @@
 </script>
 
 <script lang="ts">
-	import { Details, Link } from "@components";
-	import { encodeTitleId } from "@utils/helpers";
+	import { Details, Link } from "ui";
+
+	import { encodeTitleId } from "$lib/utils";
 	import { t } from "@core/i18n";
 	import styles from "./toc.module.css";
 

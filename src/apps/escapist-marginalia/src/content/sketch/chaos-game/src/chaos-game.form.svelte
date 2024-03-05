@@ -1,7 +1,8 @@
 <script lang="ts">
-	import InputRestrictions from "./chaos-game.restrictions.svelte";
+	import { InputColor, InputRange, InputSwitch } from "ui";
 
-	import { InputColor, Range, SketchControls, Switch } from "@components";
+	import InputRestrictions from "./chaos-game.restrictions.svelte";
+	import { SketchControls } from "@components";
 	import { options, optionsImmutable } from "./chaos-game.options";
 
 	export let t: Record<string, string>;
@@ -15,7 +16,7 @@
 		<legend>
 			Polygon
 		</legend>
-		<Range
+		<InputRange
 			output
 			bind:value="{state["polygon-sides"]}"
 			name="polygon-sides"
@@ -23,8 +24,8 @@
 			max="{12}"
 		>
 			{t["polygon-sides"]}
-		</Range>
-		<Range
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["polygon-scale"]}"
 			name="polygon-scale"
@@ -33,8 +34,8 @@
 			step="{0.01}"
 		>
 			{t["polygon-scale"]}
-		</Range>
-		<Range
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["polygon-origin-theta"]}"
 			name="polygon-origin-theta"
@@ -42,8 +43,8 @@
 			max="{360}"
 		>
 			{t["polygon-origin-theta"]}
-		</Range>
-		<Range
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["polygon-line-width"]}"
 			name="polygon-line-width"
@@ -53,13 +54,13 @@
 			disabled="{!state["polygon-visible"]}"
 		>
 			{t["polygon-line-width"]}
-		</Range>
-		<Switch
+		</InputRange>
+		<InputSwitch
 			bind:checked="{state["polygon-visible"]}"
 			name="polygon-visible"
 		>
 			{t["polygon-visible"]}
-		</Switch>
+		</InputSwitch>
 		<InputColor
 			bind:value="{state["polygon-color"]}"
 			name="polygon-color"
@@ -72,7 +73,7 @@
 		<legend>
 			Marks
 		</legend>
-		<Range
+		<InputRange
 			output
 			bind:value="{state["points-limit"]}"
 			name="points-limit"
@@ -80,8 +81,8 @@
 			max="{500000}"
 		>
 			{t["points-limit"]}
-		</Range>
-		<Range
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["point-scale"]}"
 			name="point-scale"
@@ -90,8 +91,8 @@
 			step="{0.1}"
 		>
 			{t["point-scale"]}
-		</Range>
-		<Range
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["speed"]}"
 			name="speed"
@@ -99,13 +100,13 @@
 			max="{150}"
 		>
 			{t["speed"]}
-		</Range>
-		<Switch
+		</InputRange>
+		<InputSwitch
 			bind:checked="{state["points-color-wheel"]}"
 			name="points-color-wheel"
 		>
 			{t["points-color-wheel"]}
-		</Switch>
+		</InputSwitch>
 		<InputColor
 			bind:value="{state["points-color"]}"
 			name="points-color"
@@ -118,13 +119,13 @@
 		<legend>
 			Step
 		</legend>
-		<Switch
+		<InputSwitch
 			bind:checked="{state["step-factor"]}"
 			name="step-factor"
 		>
 			{t["step-factor"]}
-		</Switch>
-		<Range
+		</InputSwitch>
+		<InputRange
 			output
 			bind:value="{state["step-coef"]}"
 			disabled="{!state["step-factor"]}"
@@ -134,8 +135,8 @@
 			step="{0.01}"
 		>
 			{t["step-coef"]}
-		</Range>
-		<Range
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["step-distance"]}"
 			disabled="{state["step-factor"]}"
@@ -145,7 +146,7 @@
 			step="{0.1}"
 		>
 			{t["step-distance"]}
-		</Range>
+		</InputRange>
 	</fieldset>
 	<InputRestrictions
 		bind:value="{state["restrictions"]}"

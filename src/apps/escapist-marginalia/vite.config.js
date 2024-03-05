@@ -11,7 +11,6 @@ const aliasList = [
 	{ name: "@data", path: "./src/data" },
 	{ name: "@components", path: "./src/lib/components" },
 	{ name: "@content", path: "./src/content" },
-	{ name: "@icons", path: "./src/lib/icons" },
 	{ name: "@layout", path: "./src/lib/layout" },
 	{ name: "@lib", path: "./src/lib" },
 	{ name: "@styles", path: "./src/lib/styles" },

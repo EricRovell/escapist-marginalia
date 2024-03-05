@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { getContext } from "svelte";
 	import { QuadTree, Rectangle } from "quadtree";
+	import { Button } from "ui";
 
-	import { Button } from "@components";
 	import { QuadTreeGrid } from "../../components";
 	import { getBoundaries, getRandomPoints } from "../../utils";
 	import styles from "./quadtree-viz.module.css";

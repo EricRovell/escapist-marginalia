@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { getContext } from "svelte";
 	import { onDestroy } from "svelte";
+	import { Button, InputRange, InputSelect } from "ui";
 	import { clamp } from "utils/math";
 	import { QuadTree, Circle, Rectangle } from "quadtree";
 
 	import { QuadTreeGrid } from "../../components";
-	import { Button, InputSelect, Range } from "@components";
 	import { getBoundaries, getRandomPoints } from "../../utils";
 	import styles from "./quadtree-query.module.css";
 
@@ -143,31 +143,31 @@
 			{t["boundary"]}
 		</InputSelect>
 		{#if rect}
-			<Range
+			<InputRange
 				bind:value="{width}"
 				min="{50}"
 				max="{500}"
 				output
 			>
 				{t["width"]}
-			</Range>
-			<Range
+			</InputRange>
+			<InputRange
 				bind:value="{height}"
 				min="{50}"
 				max="{500}"
 				output
 			>
 				{t["height"]}
-			</Range>
+			</InputRange>
 		{:else}
-			<Range
+			<InputRange
 				bind:value="{r}"
 				min="{50}"
 				max="{500}"
 				output
 			>
 				{t["radius"]}
-			</Range>
+			</InputRange>
 		{/if}
 		<Button on:click="{handleRandomPlacement}">
 			{t["add-100"]}

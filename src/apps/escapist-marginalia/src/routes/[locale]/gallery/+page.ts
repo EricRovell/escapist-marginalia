@@ -1,5 +1,6 @@
 import { error } from "@sveltejs/kit";
-import type { GalleryItem } from "@types";
+import type { GalleryItem } from "ui";
+
 import type { PageLoad } from "./$types";
 	
 export const load: PageLoad = async ({ fetch, params }) => {

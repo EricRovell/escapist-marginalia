@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getContext } from "svelte";
-	import { Switch } from "@components";
+	import { InputSwitch } from "ui";
 	import styles from "./comparing-objects.module.css";
 
 	export let closest = false;
@@ -38,8 +38,8 @@
 		</g>
 	</svg>
 	<form>
-		<Switch bind:checked="{closest}">
+		<InputSwitch bind:checked="{closest}">
 			{t["compare-closest"]}
-		</Switch>
+		</InputSwitch>
 	</form>
 </div>

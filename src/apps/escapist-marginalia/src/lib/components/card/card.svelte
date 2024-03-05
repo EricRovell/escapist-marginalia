@@ -3,9 +3,9 @@
 </script>
 
 <script lang="ts">
-	import { Datetime } from "../datetime";
-	import { Link } from "../link";
-	import { Image } from "../image";
+	import { Datetime, Image, Link } from "ui";
+
+	import { locale } from "@core/i18n";
 	import styles from "./card.module.css";
 
 	export let cover: CoverImage;
@@ -25,6 +25,7 @@
 	/>
 	<Datetime
 		date={date}
+		locale="{$locale}"
 		options={{
 			month: "long",
 			day: "numeric",

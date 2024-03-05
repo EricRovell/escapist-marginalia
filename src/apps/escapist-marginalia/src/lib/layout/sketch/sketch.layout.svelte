@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { Meta } from "ui";
+
 	import { webpage, webpageRoot } from "@core/paths";
 	//import { t } from "@core/i18n";
-	import { Meta } from "@components";
 	import { LayoutPage } from "../page-header";
 	import styles from "./sketch.layout.module.css";
 	import type { Sketch } from "@types";

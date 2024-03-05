@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getContext } from "svelte";
+	import { InputRange } from "ui";
 
-	import { Range } from "@components";
 	import { LensProjection } from "../../components";
 	import styles from "./fov-comparison.module.css";
 
@@ -41,13 +41,13 @@
 		</g>
 	</svg>
 	<form on:submit|preventDefault>
-		<Range
+		<InputRange
 			bind:value="{cropFactor}"
 			min="{1}"
 			max="{3}"
 			step="{0.1}"
 		>
 			{t["size"]}
-		</Range>
+		</InputRange>
 	</form>
 </section>

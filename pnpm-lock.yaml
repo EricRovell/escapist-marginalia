@@ -99,6 +99,12 @@ importers:
       svelte-media-observer:
         specifier: ^1.0.2
         version: 1.0.2(svelte@4.2.12)
+      types:
+        specifier: workspace:*
+        version: link:../../core/types
+      ui:
+        specifier: workspace:*
+        version: link:../../core/ui
       utils:
         specifier: workspace:*
         version: link:../../core/utils
@@ -142,6 +148,17 @@ importers:
       vite:
         specifier: ^5.1.4
         version: 5.1.4
+
+  src/core/types: {}
+
+  src/core/ui:
+    dependencies:
+      svelte:
+        specifier: ^4.2.12
+        version: 4.2.12
+      utils:
+        specifier: workspace:*
+        version: link:../utils
 
   src/core/utils: {}
 

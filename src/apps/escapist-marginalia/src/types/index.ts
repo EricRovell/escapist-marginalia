@@ -1,7 +1,7 @@
 import type { SvelteComponent } from "svelte";
+import type { Locale } from "types";
 
 export type Variant = "neutral" | "primary" | "success" | "danger" | "warning" | "info" | "link" | "";
-export type Locale = "ru" | "en";
 
 /**
  * The MDSvex page interface.
@@ -79,8 +79,6 @@ export interface Project {
 	website?: string;
 }
 
-export type { GalleryItem } from "@components";
-
 export interface Sketch {
 	cover: CoverImage;
 	dateUpdated: string;
@@ -99,14 +97,6 @@ export interface Bookmark {
 	topics: string[];
 	url: string;
 }
-
-/**
- * Input field value validator.
- */
-export type Validator<T> = (value: T) => ({
-	valid: boolean,
-	message: string
-});
 
 export interface GalleryItemPage {
 	camera: string;

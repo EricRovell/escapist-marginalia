@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { Link, Icon, Datetime } from "@components";
-	import { iconGithub, iconNpm, iconURL } from "@icons";
-	import { t } from "@core/i18n";
+	import { Datetime, Icon, Link } from "ui";
+	import { iconGithub, iconNpm, iconURL } from "ui/icons";
+
+	import { t, locale } from "@core/i18n";
 	import type { Project } from "@types";
 	import styles from "./project.layout.module.css";
 
@@ -10,7 +11,7 @@
 	export let title: Project["title"];
 	export let npm: Project["npm"];
 	export let repository: Project["repository"];
-	export let techstack: Project["techstack"] = [];
+	export let keywords: Project["keywords"] = [];
 	export let website: Project["website"];
 
 	const links = [
@@ -39,10 +40,10 @@
 		{title}
 	</h1>
 	<p>{description}</p>
-	<p>{$t("message.updated")} <Datetime date="{dateUpdated}" /></p>
+	<p>{$t("message.updated")} <Datetime locale="{$locale}" date="{dateUpdated}" /></p>
 	<footer>
 		<ul class="{styles.keywords}">
-			{#each techstack as keyword}
+			{#each keywords as keyword}
 				<li class="surface-4">
 					{keyword}
 				</li>

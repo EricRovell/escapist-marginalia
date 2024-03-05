@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getContext, onDestroy } from "svelte";
+	import { InputSelect } from "ui";
 
-	import { InputSelect } from "@components";
 	import { uniqueID } from "$lib/stores";
 	import { cropFactorData } from "./crop-factor-data";
 	import styles from "./crop-factor-comparison.module.css";

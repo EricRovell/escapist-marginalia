@@ -48,6 +48,8 @@
 	"type": "module",
 	"dependencies": {
 		"chaos-game": "workspace:*",
+		"types": "workspace:*",
+		"ui": "workspace:*",
 		"utils": "workspace:*",
 		"quadtree": "workspace:*",
 		"@ericrovell/radix": "^1.1.0",

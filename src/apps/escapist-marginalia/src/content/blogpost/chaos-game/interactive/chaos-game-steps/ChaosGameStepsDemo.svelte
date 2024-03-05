@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getContext } from "svelte";
-	import { Range } from "@components";
+	import { InputRange } from "ui";
+
 	import { ChaosGame } from "../../components/chaos-game";
 	import styles from "./chaos-game-steps-demo.module.css";
 
@@ -28,17 +29,17 @@
 		}}
 	/>
 	<form class="{styles.form}" on:submit|preventDefault>
-		<Range bind:value={n} min={3} max={9} output>
+		<InputRange bind:value={n} min={3} max={9} output>
 			{t["number-of-sides"]}
-		</Range>
+		</InputRange>
 		{#if factor}
-			<Range bind:value min={0.1} max={1} step={0.01} output>
+			<InputRange bind:value min={0.1} max={1} step={0.01} output>
 				{t["step-factor"]}
-			</Range>
+			</InputRange>
 		{:else}
-			<Range bind:value min={0} max={300} step={1} output>
+			<InputRange bind:value min={0} max={300} step={1} output>
 				{t["step"]}
-			</Range>
+			</InputRange>
 		{/if}
 	</form>
 </section>

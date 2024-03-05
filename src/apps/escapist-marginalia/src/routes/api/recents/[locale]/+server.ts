@@ -1,8 +1,9 @@
+import type { Locale } from "types";
+
 import { getProjects } from "@data/projects";
 import { getBlogposts } from "@data/posts";
 import { getGalleryItems } from "@data/gallery";
 import { getSketches } from "@data/sketch";
-import type { Locale } from "@types";
 import type { RequestHandler } from "./$types";
 
 export const GET: RequestHandler = async ({ params }) => {

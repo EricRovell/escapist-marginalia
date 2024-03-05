@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Range, InputColor } from "@components";
+	import { InputColor, InputRange } from "ui";
+
 	import { SketchControls } from "@components";
 	import { options, optionsImmutable } from "./geometric-hive.options";
 
@@ -25,7 +26,7 @@
 		<legend>
 			{t.particles}
 		</legend>
-		<Range
+		<InputRange
 			output
 			bind:value="{state["particle-gap"]}"
 			name="particle-gap"
@@ -34,8 +35,8 @@
 			step="{0.01}"
 		>
 			{t["particle-gap"]}
-		</Range>
-		<Range
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["particle-size"]}"
 			name="particle-size"
@@ -43,8 +44,8 @@
 			max="{40}"
 		>
 			{t["particle-size"]}
-		</Range>
-		<Range
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["particle-speed-base"]}"
 			name="particle-speed-base"
@@ -53,13 +54,13 @@
 			step="{0.01}"
 		>
 			{t["particle-speed-base"]}
-		</Range>
+		</InputRange>
 	</fieldset>
 	<fieldset>
 		<legend>
 			{t.gaps}
 		</legend>
-		<Range
+		<InputRange
 			output
 			bind:value="{state["gap-frequency"]}"
 			name="gap-frequency"
@@ -68,6 +69,6 @@
 			step="{0.01}"
 		>
 			{t["gap-frequency"]}
-		</Range>
+		</InputRange>
 	</fieldset>
 </SketchControls>

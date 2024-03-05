@@ -1,3 +1,5 @@
+import type { Locale } from "types";
+
 import { buildRSSFeed } from "@data/rss";
 
 export const prerender = true;
@@ -5,7 +7,7 @@ export const prerender = true;
 export const GET = async ({ params, url }) => {
 	const rssFeed = await buildRSSFeed({
 		origin: url.origin,
-		locale: params.locale
+		locale: params.locale as Locale
 	});
 
 	return new Response(rssFeed.trim(), {

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { getContext } from "svelte";
+	import { Button, InputRange } from "ui";
 	import { range } from "utils/math";
 	import { randInt, randItem } from "utils/random";
 
-	import { Button, Range } from "@components";
 	import { ChaosGame } from "../../components/chaos-game";
 	import styles from "./chaos-game-random-restriction.module.css";
 
@@ -63,9 +63,9 @@
 	<p><span>{renderRestrictionSet(penultimate)}</span> from <strong>{t["from-the-penultimate"]}</strong>.</p>
 	</ChaosGame>
 	<form class="{styles.form}" on:submit|preventDefault>
-		<Range bind:value={n} min={3} max={10} output>
+		<InputRange bind:value={n} min={3} max={10} output>
 			{t["number-of-sides"]}
-		</Range>
+		</InputRange>
 		<Button on:click={handleClick}>
 			{t["random-chaos"]}
 		</Button>

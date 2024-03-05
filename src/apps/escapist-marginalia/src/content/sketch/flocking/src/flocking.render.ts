@@ -1,9 +1,9 @@
 import { QuadTree, Rectangle, Point, Circle } from "quadtree";
+import type { Renderer } from "ui";
 import { randInt } from "utils/random";
 
 import { Boid } from "./boid";
 import { options as optionsDefault, type Options } from "./flocking.options";
-import type { Renderer } from "@components/canvas";
 import type { Sketch } from "@components/sketch/sketch.types";
 
 export const sketch: Sketch<Options> = (options = optionsDefault) => {

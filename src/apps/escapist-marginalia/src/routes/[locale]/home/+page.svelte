@@ -1,7 +1,9 @@
 <script lang="ts">
+	import { Gallery, Icon, Link } from "ui";
+	import { iconArrowTop } from "ui/icons";
+
 	import { pathWriting, pathGallery, pathProjects, pathBlogpost, pathSketch } from "@paths";
-	import { PageMeta, Link, Card, Gallery, Icon } from "@components";
-	import { iconArrowTop } from "$lib/icons";
+	import { PageMeta, Card } from "@components";
 	import { LayoutPage } from "@layout";
 	import { t } from "@core/i18n";
 	import type { PageData } from "./$types";

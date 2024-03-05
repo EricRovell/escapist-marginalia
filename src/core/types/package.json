@@ -1,0 +1,21 @@
+{
+	"author": "Eric Rovell",
+	"description": "Project core types definitions",
+	"exports": {
+		".": {
+			"import": "./src/index.ts"
+		}
+	},
+	"keywords": [
+		"code",
+		"types",
+		"utilities"
+	],
+	"name": "types",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"lint:types": "tsc --noEmit"
+	},
+	"type": "module"
+}

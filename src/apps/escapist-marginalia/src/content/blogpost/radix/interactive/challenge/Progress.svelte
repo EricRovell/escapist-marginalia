@@ -5,9 +5,9 @@
 <script lang="ts">
 	import { createEventDispatcher, getContext } from "svelte";
 	import { fade } from "svelte/transition";
+	import { Button } from "ui";
 	import { randInt } from "utils/random";
 
-	import { Button } from "@components";
 	import { Number, MathExp } from "../../components";
 	import Keyboard from "./Keyboard.svelte";
 	import { radix } from "@ericrovell/radix";

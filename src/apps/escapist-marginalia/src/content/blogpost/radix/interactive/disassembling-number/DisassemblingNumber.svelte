@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { getContext } from "svelte";
 	import { radix } from "@ericrovell/radix";
+	import { InputSwitch } from "ui";
 
-	import { Switch } from "@components";
 	import { FormNumerals, Number, Numerals } from "../../components";
 	import styles from "./disassembling-number.module.css";
 
@@ -40,8 +40,8 @@
 		bind:valid
 		{t}
 	>
-		<Switch bind:checked="{showPower}">
+		<InputSwitch bind:checked="{showPower}">
 			{t["power"]}
-		</Switch>
+		</InputSwitch>
 	</FormNumerals>
 </section>

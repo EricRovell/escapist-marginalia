@@ -26,7 +26,8 @@
 
 <script>
 	import { setContext } from "svelte";
-	import { Details } from "@components"
+	import { Details } from "ui";
+
 	import * as Interactive from "./interactive"
 	import * as Assets from "./assets";
 	import t from "./translations/ru.json";

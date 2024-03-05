@@ -1,6 +1,7 @@
+import type { Renderer } from "ui";
 import { randBool, randItem } from "utils/random";
+
 import { Particle, type Position } from "./particle";
-import type { Renderer } from "@components/canvas";
 import { options as optionsDefault, type Options } from "./geometric-hive.options";
 
 export const sketch = (options: Options = optionsDefault) => {

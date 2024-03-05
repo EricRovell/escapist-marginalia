@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { InputSwitchGroup } from "ui";
+	import { iconPi, iconImg, iconGlobe } from "ui/icons";
+
 	import { locale, t } from "@core/i18n";
-	import { SwitchGroup } from "@components";
-	import { iconPi, iconImg, iconGlobe } from "@icons";
 	import styles from "./filter-writing.module.css";
 
 	export let value = {
@@ -11,7 +12,7 @@
 </script>
 
 <form class="{styles.filters}" on:submit|preventDefault on:change>
-	<SwitchGroup
+	<InputSwitchGroup
 		legend={$t("dict.language")}
 		name="content-lang"
 		options={[
@@ -20,7 +21,7 @@
 		]}
 		bind:group={value["content-lang"]}
 	/>
-	<SwitchGroup
+	<InputSwitchGroup
 		legend={$t("dict.topics")}
 		name="content-topics"
 		options={[

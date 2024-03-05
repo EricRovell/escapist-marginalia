@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Link } from "@components";
+	import { Link } from "ui";
+
 	import styles from "./euler-problem.module.css";
 
 	export let problem: number;

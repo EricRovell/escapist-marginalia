@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"useDefineForClassFields": true,
+		"module": "ESNext",
+		"allowJs": true,
+		"checkJs": true,
+		"isolatedModules": true,
+		"lib": [ "ESNext" ],
+		"moduleResolution": "bundler"
+	},
+	"include": [
+		"src/components/**/*.svelte",
+		"src/**/*.ts",
+		"test/**/*.js",
+		"../../../global.d.ts"
+	]
+}

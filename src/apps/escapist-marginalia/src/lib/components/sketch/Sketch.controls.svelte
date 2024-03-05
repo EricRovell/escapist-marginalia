@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from "svelte";
-	import { Button } from "../button";
+	import { Button } from "ui";
+
 	import { t } from "@core/i18n";
 	import styles from "./sketch.module.css";
 

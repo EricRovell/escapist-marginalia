@@ -1,6 +1,6 @@
 <script>
 	import { page } from "$app/stores";
-	import { Meta } from "@components";
+	import { Meta } from "ui";
 </script>
 
 <Meta

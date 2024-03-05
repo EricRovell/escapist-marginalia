@@ -1,4 +1,8 @@
 <script lang="ts">
+	import { page } from "$app/stores";
+	import { Button, Icon, Link, Navigation, NavigationItem } from "ui";
+	import { iconGear, iconLogo } from "ui/icons";
+
 	import { t } from "@core/i18n";
 	import {
 		pathHome,
@@ -9,9 +13,6 @@
 		pathSketch,
 		pathAbout
 	} from "@paths";
-
-	import { Button, Menu as Navigation, Icon, Link } from "@components";
-	import { iconGear, iconLogo } from "@icons";
 	import { PreferencesModal } from "..";
 	import styles from "./masthead.module.css";
 
@@ -63,13 +64,13 @@
 		</Link>
 	</section>
 	<section data-label="navigation">
-		<Navigation.Container>
+		<Navigation>
 			{#each menuItems as { href, pattern, label }}
-				<Navigation.Item {href} {pattern}>
+				<NavigationItem {href} {pattern} pathname="{$page.url.pathname}">
 					{label}
-				</Navigation.Item>
+				</NavigationItem>
 			{/each}
-		</Navigation.Container>
+		</Navigation>
 	</section>
 	<section data-label="controls">
 		<Button

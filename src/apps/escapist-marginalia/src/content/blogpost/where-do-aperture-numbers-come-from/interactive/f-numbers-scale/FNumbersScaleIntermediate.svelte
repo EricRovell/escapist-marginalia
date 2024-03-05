@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
+	import { Button, InputRange } from "ui";
 	import { clamp } from "utils/math";
 
-	import { Button, Range } from "@components";
 	import { FNumbers } from "../../components";
 </script>
 
@@ -63,7 +63,7 @@
 				{t["next"]}
 			</Button>
 		</fieldset>
-		<Range
+		<InputRange
 			min={1}
 			max={7}
 			on:change={handleChange}
@@ -74,6 +74,6 @@
 			<svelte:fragment slot="output">
 				1 / {step}
 			</svelte:fragment>
-		</Range>
+		</InputRange>
 	</form>
 </section>

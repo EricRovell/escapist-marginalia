@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getContext } from "svelte";
+	import { InputRange } from "ui";
 
-	import { Range } from "@components";
 	import LensFocalLength from "./LensFocalLength.svelte";
 	import { LensProjection } from "../../components";
 	import styles from "./sensor-projection.module.css";
@@ -32,15 +32,15 @@
 		class="{styles.form}"
 		on:submit|preventDefault
 	>
-		<Range
+		<InputRange
 			bind:value="{focalLength}"
 			min="{16}"
 			max="{120}"
 			output
 		>
 			{t["focal-length"]}
-		</Range>
-		<Range
+		</InputRange>
+		<InputRange
 			bind:value="{cropFactor}"
 			min="{1}"
 			max="{6}"
@@ -48,6 +48,6 @@
 			output
 		>
 			{t["crop-factor"]}
-		</Range>
+		</InputRange>
 	</form>
 </section>

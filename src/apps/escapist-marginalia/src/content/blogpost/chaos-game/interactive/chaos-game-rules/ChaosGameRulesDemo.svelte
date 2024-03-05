@@ -2,8 +2,8 @@
 	import { getContext } from "svelte";
 	import { Chaos, createPolygon } from "chaos-game";
 	import type { Coords, Move, PolygonOrigin } from "chaos-game";
+	import { Button, InputSwitch } from "ui";
 
-	import { Button, Switch } from "@components";
 	import styles from "./chaos-game-rules-demo.module.css";
 
 	export let height = 350;
@@ -109,12 +109,12 @@
 		</section>
 		<form on:submit|preventDefault class="{styles.form}">
 			<fieldset class="{styles["controls-render"]}">
-				<Switch on:change={handleLinesVisibility} checked={showLines}>
+				<InputSwitch on:change={handleLinesVisibility} checked={showLines}>
 					{t["show-paths"]}
-				</Switch>
-				<Switch on:change={handlePointsVisibility} checked={showPoints}>
+				</InputSwitch>
+				<InputSwitch on:change={handlePointsVisibility} checked={showPoints}>
 					{t["show-points"]}
-				</Switch>
+				</InputSwitch>
 			</fieldset>
 			<fieldset class="{styles["controls-actions"]}">
 				<Button on:click={() => handleNextMove()} disabled={points.length >= limit}>
