@@ -5,4 +5,4 @@ export interface Color {
 	opacity: number;
 }
 
-export type ColorString = `hsl(${number} ${number}% ${number}% / ${number})`;
+export type { ColorStringHSL } from "types";

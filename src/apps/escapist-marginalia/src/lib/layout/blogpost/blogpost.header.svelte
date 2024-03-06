@@ -4,7 +4,7 @@
 	import { share } from "utils";
 
 	import { t, locale } from "@core/i18n";
-	import { pathBlogpost, webpage } from "@core/paths";
+	import { pathBlogpostWithLang, webpage } from "@core/paths";
 	import { encodeTitleId } from "$lib/utils";
 	import styles from "./blogpost.header.module.css";
 
@@ -63,7 +63,7 @@
 		</span>
 		{#if translation}
 			<span class="{styles.translations}">
-				{$t("message.available-translation")} <Link href="{$pathBlogpost(translation.slug)}">{translation.lang}</Link>
+				{$t("message.available-translation")} <Link href="{pathBlogpostWithLang(translation.locale, translation.slug)}">{translation.locale}</Link>
 			</span>
 		{/if}
 	</footer>

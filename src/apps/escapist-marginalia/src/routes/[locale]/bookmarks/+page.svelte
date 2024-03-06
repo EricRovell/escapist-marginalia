@@ -2,7 +2,7 @@
 	import { Link } from "ui";
 
 	import { t } from "@core/i18n";
-	import { PageMeta } from "@components";
+	import { PageMeta } from "$lib/components";
 	import { LayoutPage } from "@layout";
 	import type { PageData } from "./$types";
 	import styles from "./bookmarks.module.css";

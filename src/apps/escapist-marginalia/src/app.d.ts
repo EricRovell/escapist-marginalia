@@ -13,9 +13,3 @@ declare module "$locales/*.json" {
 	const value: DeepDictionary;
 	export default value;
 }
-
-declare namespace App {
-	interface Session {
-		userLanguage?: string;
-	}
-}

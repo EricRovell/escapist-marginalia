@@ -16,7 +16,6 @@
 	export let loop = true;
 	export let name: string;
 	export let sketch: Sketch<Options>;
-	export let t: Record<string, string> | undefined = undefined;
 
 	let options: Options = undefined;
 
@@ -58,7 +57,6 @@
 					this="{controls}"
 					bind:state="{options}"
 					on:reset="{handleReset}"
-					{t}
 				/>
 			</Details>
 		{/if}

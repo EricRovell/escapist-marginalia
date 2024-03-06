@@ -3,10 +3,10 @@ import type { Renderer } from "ui";
 import { randInt } from "utils/random";
 
 import { Boid } from "./boid";
-import { options as optionsDefault, type Options } from "./flocking.options";
-import type { Sketch } from "@components/sketch/sketch.types";
+import { DEFAULT_OPTIONS, type Options } from "./flocking.options";
+import type { Sketch } from "$lib/components/sketch/sketch.types";
 
-export const sketch: Sketch<Options> = (options = optionsDefault) => {
+export const sketch: Sketch<Options> = (options = DEFAULT_OPTIONS) => {
 	const boids: Boid[] = [];
 
 	const setup: Renderer = ({ width, height }) => {

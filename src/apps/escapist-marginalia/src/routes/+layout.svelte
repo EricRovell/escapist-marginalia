@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LayoutRoot } from "@lib/layout";
+	import { LayoutRoot } from "$lib/layout";
 </script>
 
 <LayoutRoot>

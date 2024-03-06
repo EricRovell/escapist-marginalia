@@ -1,11 +1,11 @@
 import type { Renderer } from "ui";
 import { randFloat, randInt, randColor } from "utils/random";
 
-import { options as optionsDefault, type Options } from "./digital-rain.options";
+import { DEFAULT_OPTIONS, type Options } from "./digital-rain.options";
 import { getRandomChar } from "./digital-rain.util";
-import type { Sketch } from "@components/sketch/sketch.types";
+import type { Sketch } from "$lib/components/sketch/sketch.types";
 
-export const sketch: Sketch<Options> = (options = optionsDefault) => {
+export const sketch: Sketch<Options> = (options = DEFAULT_OPTIONS) => {
 	let columns: number;
 	let data: number[];
 	let frame = 0;

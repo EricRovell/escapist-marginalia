@@ -1,9 +1,13 @@
 <script>
+	import { Context } from "ui";
+
 	import { BlogpostLayout } from "@layout";
 
 	export let data;
 </script>
 
 <BlogpostLayout metadata={data.metadata}>
-	<svelte:component this={data.page} />
+	<Context key="t" value="{data.translation}">
+		<svelte:component this={data.page} />
+	</Context>
 </BlogpostLayout>

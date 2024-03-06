@@ -9,3 +9,11 @@ export function isNotNullable<T>(value: T | undefined | null): value is T {
 export function isRealNumber(value: unknown): value is number {
 	return typeof value === "number" && !Number.isNaN(value);
 }
+
+export function isNonNegativeInteger(value: unknown): value is number {
+	return (
+		typeof value === "number" &&
+		Number.isInteger(value) &&
+		value >= 0
+	);
+}

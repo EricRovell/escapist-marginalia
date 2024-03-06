@@ -1,5 +1,7 @@
 import { randItem } from "utils/random";
 import { range } from "utils/math";
+import { isNonNegativeInteger } from "utils/validators";
+
 import { getValidVertices, jump, move, getSetIntersection  } from "./utils";
 import type { ChaosOptions, Coords, Move, Polygon, VerticeRestrictionRule } from "./types";
 
@@ -82,8 +84,9 @@ export class Chaos {
 		const allowed: Set<number>[] = [];
 
 		for (const { index, values } of this.distances) {
-			const vertice = this.history[index];
-			if (vertice >= 0) {
+			const vertice = this.history.at(index);
+
+			if (isNonNegativeInteger(vertice)) {
 				const vertices = getValidVertices(vertice, this.polygon.sides, values);
 				allowed.push(new Set(vertices));
 			}
@@ -117,13 +120,11 @@ export class Chaos {
 			: jump(this.position, verticeCoords, this.step.value);
 		this.position = coords;
 		this.counter += 1;
-
 		return this.moveData;
 	}
 
 	moves(value = 1): Move[] {
 		const positions = [];
-
 		for (let i = 0; i < value; i++) {
 			positions.push(
 				this.move()

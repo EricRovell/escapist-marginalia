@@ -3,7 +3,7 @@
 	import { iconArrowTop } from "ui/icons";
 
 	import { pathWriting, pathGallery, pathProjects, pathBlogpost, pathSketch } from "@paths";
-	import { PageMeta, Card } from "@components";
+	import { PageMeta, Card } from "$lib/components";
 	import { LayoutPage } from "@layout";
 	import { t } from "@core/i18n";
 	import type { PageData } from "./$types";

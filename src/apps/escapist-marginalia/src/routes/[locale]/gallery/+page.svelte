@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Gallery } from "ui";
 
-	import { PageMeta } from "@components";
+	import { PageMeta } from "$lib/components";
 	import { t } from "@core/i18n";
 	import { LayoutPage } from "@layout";
 	import type { PageData } from "./$types";

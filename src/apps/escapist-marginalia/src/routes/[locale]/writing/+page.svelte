@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button, Drawer } from "ui";
 
-	import { PageMeta, Card } from "@components";
+	import { PageMeta, Card } from "$lib/components";
 	import { LayoutPage } from "@layout";
 	import { t, locale, i18nTemplate } from "@core/i18n";
 	import { pathBlogpost } from "@paths";

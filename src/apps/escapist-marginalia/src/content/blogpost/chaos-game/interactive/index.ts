@@ -1,6 +1,6 @@
-export { default as ChaosGameRulesDemo } from "./chaos-game-rules/ChaosGameRulesDemo.svelte";
-export { default as ChaosRestrictionSubsetsDemo } from "./chaos-game-restriction-subsets/ChaosRestrictionSubsetsDemo.svelte";
-export { default as PolygonDensityMap } from "./polygon-density-map/PolygonDensityMap.svelte";
-export { default as ChaosGameRandomRestriction } from "./chaos-game-random-restriction/ChaosGameRandomRestriction.svelte";
-export { default as ChaosGameStepsDemo } from "./chaos-game-steps/ChaosGameStepsDemo.svelte";
-export { default as SquareRestrictionsDemo } from "./chaos-game-square-restrictions/SquareRestrictionsDemo.svelte";
+export { default as ChaosGameRules } from "./chaos-game-rules/chaos-game-rules.svelte";
+export { default as RestrictionSubsets } from "./restriction-subsets/restriction-subsets.svelte";
+export { default as PolygonDensityMap } from "./polygon-density-map/polygon-density-map.svelte";
+export { default as RandomRestriction } from "./random-restriction/random-restriction.svelte";
+export { default as ChaosGameSteps } from "./chaos-game-steps/chaos-game-steps.svelte";
+export { default as SquareRestrictions } from "./square-restrictions/square-restrictions.svelte";

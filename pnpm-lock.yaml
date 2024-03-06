@@ -159,6 +159,10 @@ importers:
       utils:
         specifier: workspace:*
         version: link:../utils
+    devDependencies:
+      types:
+        specifier: workspace:*
+        version: link:../types
 
   src/core/utils: {}
 

@@ -1,14 +1,11 @@
 <script lang="ts">
-	import { Sketch } from "@components";
+	import { Sketch } from "$lib/components";
 	import { sketch } from "./digital-rain.render";
 	import { default as Controls } from "./digital-rain.form.svelte";
-
-	export let t: Record<string, string> | undefined = undefined;
 </script>
 
 <Sketch
 	name="digital-rain"
 	controls="{Controls}"
 	{sketch}
-	{t}
 />

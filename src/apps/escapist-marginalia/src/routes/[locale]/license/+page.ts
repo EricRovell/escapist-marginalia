@@ -7,10 +7,10 @@ export const load: PageLoad = async ({ params }) => {
 
 		let page = null;
 
-		const modules = import.meta.glob("/src/content/pages/licence/*.svx");
+		const modules = import.meta.glob("/src/content/pages/licence/*.mdx");
 
 		for (const [ filepathName, module ] of Object.entries(modules)) {
-			if (filepathName.includes(`index.${locale}.svx`)) {
+			if (filepathName.includes(`index.${locale}.mdx`)) {
 				page = await module();
 			}
 		}

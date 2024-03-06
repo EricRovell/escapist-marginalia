@@ -1,4 +1,4 @@
-import type { Color, ColorString } from "./input-color.types";
+import type { Color, ColorStringHSL } from "./input-color.types";
 
 export const colorDefault: Color = {
 	hue: 0,
@@ -7,11 +7,11 @@ export const colorDefault: Color = {
 	opacity: 1
 };
 
-export const convertColorToString = (value: Color = colorDefault): ColorString => {
-	return `hsl(${value.hue} ${value.saturation}% ${value.lightness}% / ${value.opacity})`;
+export const convertColorToString = (value: Color = colorDefault): ColorStringHSL => {
+	return `hsl(${value.hue}deg ${value.saturation}% ${value.lightness}% / ${value.opacity})`;
 };
 
-export const getContrast = (value: Color = colorDefault): ColorString => {
+export const getContrast = (value: Color = colorDefault): ColorStringHSL => {
 	let { lightness } = value;
 
 	lightness = (lightness >= 50)
@@ -28,7 +28,7 @@ export const getContrast = (value: Color = colorDefault): ColorString => {
  */
 export const colorMatcher = /^hsl\(\s*([+-]?\d*\.?\d+)(deg|rad|grad|turn)?\s+([+-]?\d*\.?\d+)%\s+([+-]?\d*\.?\d+)%\s*(?:\/\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i;
 
-export const parseColorString = (input: ColorString): Color => {
+export const parseColorString = (input: ColorStringHSL): Color => {
 	if (!colorMatcher.test(input)) {
 		return colorDefault;
 	}

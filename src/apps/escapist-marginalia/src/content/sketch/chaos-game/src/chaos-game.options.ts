@@ -1,11 +1,12 @@
 import type { VerticeRestrictionRule } from "chaos-game";
+import type { ColorStringHSL } from "types";
 
 export interface Options {
 	"points-color-wheel": boolean;
-	"points-color": string;
+	"points-color": ColorStringHSL;
 	"point-scale": number;
 	"points-limit": number;
-	"polygon-color": string;
+	"polygon-color": ColorStringHSL;
 	"polygon-line-width": number;
 	"polygon-origin-theta": number;
 	"polygon-scale": number;
@@ -18,12 +19,12 @@ export interface Options {
 	"step-factor": boolean;
 }
 
-export const options: Options = {
+export const DEFAULT_OPTIONS: Options = {
 	"points-color-wheel": true,
-	"points-color": "hsl(0 0% 98% / 1)",
+	"points-color": "hsl(0deg 0% 98% / 1)",
 	"point-scale": 1,
 	"points-limit": 5000,
-	"polygon-color": "hsl(0 100% 50% / 0.5)",
+	"polygon-color": "hsl(0deg 100% 50% / 0.5)",
 	"polygon-line-width": 2,
 	"polygon-origin-theta": 0,
 	"polygon-scale": 0.45,
@@ -36,7 +37,7 @@ export const options: Options = {
 	"step-factor": true
 };
 
-export const optionsImmutable: Set<keyof Options> = new Set([
+export const IMMUTABLE_OPTIONS: Set<keyof Options> = new Set([
 	"points-color-wheel",
 	"polygon-color",
 	"polygon-line-width",

@@ -6,7 +6,7 @@
 	import { Icon, InputRadio } from "ui";
 	import { iconMoon, iconSun, iconSunset } from "ui/icons";
 
-	import { theme, type ThemeOptions } from "@stores";
+	import { theme, type ThemeOptions } from "$lib/stores";
 
 	const options = [
 		{

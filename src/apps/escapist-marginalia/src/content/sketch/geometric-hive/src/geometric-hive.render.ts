@@ -2,9 +2,9 @@ import type { Renderer } from "ui";
 import { randBool, randItem } from "utils/random";
 
 import { Particle, type Position } from "./particle";
-import { options as optionsDefault, type Options } from "./geometric-hive.options";
+import { DEFAULT_OPTIONS, type Options } from "./geometric-hive.options";
 
-export const sketch = (options: Options = optionsDefault) => {
+export const sketch = (options: Options = DEFAULT_OPTIONS) => {
 	const particles: Particle[] = [];
 	const holes: Position[] = [];
 	let columns: number;

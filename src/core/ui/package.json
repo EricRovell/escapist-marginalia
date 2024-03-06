@@ -1,6 +1,9 @@
 {
 	"author": "Eric Rovell",
 	"description": "Core UI components.",
+	"devDependencies": {
+		"types": "workspace:*"
+	},
 	"exports": {
 		".": {
 			"import": "./src/components/index.ts"

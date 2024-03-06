@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { t, locale } from "@core/i18n";
-	import { PageMeta, Card } from "@components";
+	import { PageMeta, Card } from "$lib/components";
 	import { LayoutPage } from "@layout";
 	import type { Project } from "@types";
 	import type { PageLoad } from "./$types";

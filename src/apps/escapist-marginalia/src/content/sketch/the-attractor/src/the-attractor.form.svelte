@@ -1,33 +1,41 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { InputRange } from "ui";
 
-	import { SketchControls } from "@components";
-	import { options, optionsImmutable } from "./the-attractor.options";
+	import { SketchControls } from "$lib/components";
+	import { DEFAULT_OPTIONS, IMMUTABLE_OPTIONS } from "./the-attractor.options";
+	import type { Translation } from "../translations/types";
 
-	export let t: Record<string, string>;
-	export let state: typeof options = {
-		...options
+	export let state: typeof DEFAULT_OPTIONS = {
+		...DEFAULT_OPTIONS
 	};
+
+	const t = getContext<Translation>("t");
 </script>
 
-<SketchControls bind:state on:reset {optionsImmutable} {options}>
+<SketchControls
+	bind:state
+	on:reset
+	options="{DEFAULT_OPTIONS}"
+	optionsImmutable="{IMMUTABLE_OPTIONS}"
+>
 	<fieldset>
 		<legend>
-			{t.field}
+			{t.FIELD}
 		</legend>
 		<InputRange output bind:value="{state.attractors}" name="attractors" min="{1}" max="{15}">
-			{t.attractors}
+			{t.ATTRACTORS}
 		</InputRange>
 	</fieldset>
 	<fieldset>
 		<legend>
-			{t.particles}
+			{t.PARTICLES}
 		</legend>
 		<InputRange output bind:value="{state.particles}" name="particles" min="{500}" max="{2500}">
-			{t.count}
+			{t.COUNT}
 		</InputRange>
 		<InputRange output bind:value="{state.lifetime}" name="lifetime" min="{250}" max="{3000}">
-			{t.lifetime}
+			{t.LIFETIME}
 		</InputRange>
 	</fieldset>
 </SketchControls>

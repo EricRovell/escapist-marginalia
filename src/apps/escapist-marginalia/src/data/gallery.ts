@@ -7,7 +7,7 @@ async function fetchGalleryItems(): Promise<GalleryItem[]> {
 	const items: GalleryItem[] = [];
 
 	// Import all .svx files in the directory
-	const modules = import.meta.glob("/src/content/gallery/**/*.svx");
+	const modules = import.meta.glob("/src/content/gallery/**/*.mdx");
 
 	for await (const [ filename, module ] of Object.entries(modules)) {
 		const { metadata } = await module() as Page<GalleryItem>;

@@ -1,4 +1,4 @@
-import data from "@lib/../content/bookmarks/index.json";
+import data from "$lib/../content/bookmarks/index.json";
 import type { Bookmark } from "@types";
 import type { PageLoad } from "./$types";
 

@@ -1,59 +1,67 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { InputRange, InputSwitch } from "ui";
 
-	import { SketchControls } from "@components";
-	import { options, optionsImmutable } from "./flocking.options";
+	import { SketchControls } from "$lib/components";
+	import { DEFAULT_OPTIONS, IMMUTABLE_OPTIONS } from "./flocking.options";
+	import type { Translation } from "../translations/types";
 
-	export let t: Record<string, string>;
-	export let state: typeof options = {
-		...options
+	const t = getContext<Translation>("t");
+
+	export let state: typeof DEFAULT_OPTIONS = {
+		...DEFAULT_OPTIONS
 	};
 </script>
 
-<SketchControls bind:state on:reset {optionsImmutable} {options}>
+<SketchControls
+	bind:state
+	on:reset
+	options="{DEFAULT_OPTIONS}"
+	optionsImmutable="{IMMUTABLE_OPTIONS}"
+>
 	<fieldset>
 		<legend>
-			{t.behavior}
+			{t.BEHAVIOR}
 		</legend>
 		<InputRange output bind:value="{state.boids}" name="boids" min="{10}" max="{250}">
-			{t.boids}
+			{t.BOIDS}
 		</InputRange>
 		<InputSwitch bind:checked="{state.bound}" name="bound">
-			{t.bound}
+			{t.BOUND}
 		</InputSwitch>
 		<InputRange output bind:value="{state.align}" name="align" min="{0.1}" max="{2.5}" step="{0.01}">
-			{t.alignment}
+			{t.ALIGNMENT}
 		</InputRange>
 		<InputRange output bind:value="{state.cohesion}" name="cohesion" min="{0.01}" max="{2}" step="{0.01}">
-			{t.cohesion}
+			{t.COHESION}
 		</InputRange>
 		<InputRange output bind:value="{state.separate}" name="separate" min="{0.1}" max="{2.5}" step="{0.01}">
-			{t.separation}
+			{t.SEPARATION}
 		</InputRange>
 	</fieldset>
 	<fieldset>
 		<legend>
-			{t.appearance}
+			{t.APPEARANCE}
 		</legend>
 		<InputRange output bind:value="{state.scale}" name="scale" min="{1}" max="{5}" step="{0.1}">
-			{t.scale}
+			{t.SCALE}
 		</InputRange>
 	</fieldset>
 	<fieldset>
 		<legend>
-			{t.quadtree}
+			{t.QTREE}
 		</legend>
 		<InputSwitch bind:checked="{state.qtree}" name="qtree">
-			{t["qtree-optimization"]}
+			{t.QTREE_OPTIMIZATION}
 		</InputSwitch>
 		<InputSwitch bind:checked="{state.showQTree}" disabled="{!state.qtree}" name="showQTree">
-			{t["qtree-appearance"]}
+			{t.QTREE_APPEARANCE}
 		</InputSwitch>
 		<InputSwitch bind:checked="{state.showPerception}" disabled="{!state.qtree}" name="showPerception">
-			{t["perception-appearance"]}
+			{t.PERCEPTION_APPEARANCE}
 		</InputSwitch>
 		<InputRange output bind:value="{state.perception}" disabled="{!state.qtree}" name="perception" min="{50}" max="{250}">
-			{t.perception}
+			{t.PERCEPTION}
 		</InputRange>
 	</fieldset>
 </SketchControls>

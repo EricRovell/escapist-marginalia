@@ -1,14 +1,11 @@
-<script lang="ts" context="module">
-	import type { Color } from "./input-color.types";
-	import { colorDefault, convertColorToString } from "./input-color.helpers";
-</script>
-
 <script lang="ts">
 	import { createEventDispatcher } from "svelte";
 	import { InputRange } from "../input-range";
 	import { Button } from "../button";
 	import { trapFocus } from "../../actions";
+	import { colorDefault, convertColorToString } from "./input-color.helpers";
 	import { t } from "./locale";
+	import type { Color } from "./input-color.types";
 	import styles from "./input-color.module.css";
 
 	export let className = "";

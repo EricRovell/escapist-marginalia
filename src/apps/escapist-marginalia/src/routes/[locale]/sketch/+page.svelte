@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { t } from "@core/i18n";
-	import { Card, PageMeta } from "@components";
+	import { Card, PageMeta } from "$lib/components";
 	import { LayoutPage } from "@layout";
 	import type { PageLoad } from "./$types";
 	import styles from "./sketch.module.css";

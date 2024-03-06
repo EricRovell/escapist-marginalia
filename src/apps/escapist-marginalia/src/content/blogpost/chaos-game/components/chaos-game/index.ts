@@ -1,1 +1,1 @@
-export { default as ChaosGame } from "./ChaosGame.svelte";
+export { default as ChaosGame } from "./chaos-game.svelte";

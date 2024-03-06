@@ -30,7 +30,8 @@ export interface BlogpostMetadata {
 	dateUpdated: string;
 	description: string;
 	draft?: boolean;
-	filepath: string;
+	dirname: string;
+	filename: string;
 	keywords: string[];
 	lang: Locale;
 	layout?: string;
@@ -39,7 +40,7 @@ export interface BlogpostMetadata {
 	slug: string;
 	title: string;
 	translation: {
-		lang: Locale;
+		locale: Locale;
 		slug: string;
 	};
 	toc: {
@@ -111,7 +112,7 @@ export interface GalleryItemPage {
 	id: string;
 	iso: number;
 	keywords?: string[];
-	lang: "en" | "ru";
+	lang: Locale;
 	layout: "gallery";
 	lens: string;
 	og: GalleryImage;

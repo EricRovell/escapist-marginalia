@@ -1,30 +1,38 @@
 <script lang="ts">
+	import { getContext } from "svelte";
 	import { InputColor, InputRange } from "ui";
 
-	import { SketchControls } from "@components";
-	import { options, optionsImmutable } from "./geometric-hive.options";
+	import { SketchControls } from "$lib/components";
+	import { DEFAULT_OPTIONS, IMMUTABLE_OPTIONS } from "./geometric-hive.options";
+	import type { Translation } from "../translations/types";
 
-	export let t: Record<string, string>;
-	export let state: typeof options = {
-		...options
+	export let state: typeof DEFAULT_OPTIONS = {
+		...DEFAULT_OPTIONS
 	};
+
+	const t = getContext<Translation>("t");
 </script>
 
-<SketchControls bind:state on:reset {optionsImmutable} {options}>
+<SketchControls
+	bind:state
+	on:reset
+	options="{DEFAULT_OPTIONS}"
+	optionsImmutable="{IMMUTABLE_OPTIONS}"
+>
 	<fieldset>
 		<legend>
-			{t.field}
+			{t.FIELD}
 		</legend>
 		<InputColor
 			bind:value="{state["background"]}"
 			name="background"
 		>
-			{t["background"]}
+			{t.BACKGROUND}
 		</InputColor>
 	</fieldset>
 	<fieldset>
 		<legend>
-			{t.particles}
+			{t.PARTICLES}
 		</legend>
 		<InputRange
 			output
@@ -34,7 +42,7 @@
 			max="{4}"
 			step="{0.01}"
 		>
-			{t["particle-gap"]}
+			{t.PARTICLE_GAP}
 		</InputRange>
 		<InputRange
 			output
@@ -43,7 +51,7 @@
 			min="{5}"
 			max="{40}"
 		>
-			{t["particle-size"]}
+			{t.PARTICLE_SIZE}
 		</InputRange>
 		<InputRange
 			output
@@ -53,12 +61,12 @@
 			max="{0.3}"
 			step="{0.01}"
 		>
-			{t["particle-speed-base"]}
+			{t.PARTICLE_SPEED_BASE}
 		</InputRange>
 	</fieldset>
 	<fieldset>
 		<legend>
-			{t.gaps}
+			{t.GAPS}
 		</legend>
 		<InputRange
 			output
@@ -68,7 +76,7 @@
 			max="{0.97}"
 			step="{0.01}"
 		>
-			{t["gap-frequency"]}
+			{t.GAP_FREQUENCY}
 		</InputRange>
 	</fieldset>
 </SketchControls>

@@ -20,6 +20,7 @@ import {
 const LAYOUT_PATH = "/src/lib/layout/default/default.layout.svelte";
 
 export const mdsvexConfig = {
+	extensions: [ ".mdx" ],
 	remarkPlugins: [ transformerTOC, math, transformerMath ],
 	rehypePlugins: [ correct_hast_tree, rehype_katex, slug, transformerAnchor ],
 	layout: {

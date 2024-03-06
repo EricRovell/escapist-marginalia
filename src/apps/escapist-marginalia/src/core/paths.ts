@@ -1,6 +1,7 @@
 import { derived } from "svelte/store";
 import { locale } from "./i18n";
 import { page } from "$app/stores";
+import type { Locale } from "types";
 
 // base
 export const webpageRoot = derived(page, $page => `https://${$page.url.host}`);
@@ -19,6 +20,7 @@ export const pathSketch = derived(root, $root => `${$root}/sketch`);
 export const pathWriting = derived(root, $root => `${$root}/writing`);
 
 // page::item
+export const pathBlogpostWithLang = (locale: Locale, slug: string) => `/${locale}/writing/${encodeURI(slug)}`;
 export const pathBlogpost = derived(pathWriting, $root => (slug: string) => `${$root}/${encodeURI(slug)}`);
 export const pathGalleryImage = derived(pathGallery, $root => (id: string) => `${$root}/${id}`);
 //export const pathProject = derived(pathProjects, $root => (slug: string) => `${$root}/${encodeURI(slug)}`);

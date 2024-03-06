@@ -2,6 +2,7 @@ export { Button } from "./button";
 export { Canvas, CanvasLayer, type Renderer, type RenderArguments } from "./canvas";
 export { Card } from "./card";
 export { default as Code } from "./code/code.svelte";
+export { default as Context } from "./Context.svelte";
 export { Datetime } from "./datetime";
 export { Details } from "./details";
 export { Dialog } from "./dialog";

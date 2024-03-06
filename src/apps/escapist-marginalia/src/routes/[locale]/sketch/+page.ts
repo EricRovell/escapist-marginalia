@@ -7,7 +7,7 @@ export const load: PageLoad = async ({ params }) => {
 		const { locale = "en" } = params;
 		const sketches = [];
 
-		const modules = import.meta.glob("/src/content/sketch/**/*.svx");
+		const modules = import.meta.glob("/src/content/sketch/**/*.mdx");
 
 		for (const [ , module ] of Object.entries(modules)) {
 			const { metadata } = await module() as Page<Sketch>;

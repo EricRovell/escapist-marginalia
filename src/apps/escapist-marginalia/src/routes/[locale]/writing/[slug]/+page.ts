@@ -5,23 +5,35 @@ import type { Blogpost } from "@types";
 export const load: PageLoad = async ({ fetch, params }) => {
 	try {
 		const request = await fetch(`/api/blogpost/${encodeURI(params.slug)}`);
-		const { filepath }: Blogpost = await request.json();
+		const { dirname, filename, lang }: Blogpost = await request.json();
 
 		let page = null;
-		const modules = import.meta.glob("/src/content/blogpost/**/*.svx");
+		let translation = null;
+
+		const modules = import.meta.glob([
+			"/src/content/blogpost/**/*.mdx",
+			"/src/content/blogpost/**/translations/*.ts"
+		]);
 
 		for (const [ filepathName, module ] of Object.entries(modules)) {
-			if (filepathName.includes(filepath)) {
+			if (filepathName.includes(`${dirname}/${filename}`)) {
 				page = await module();
+			}
+
+			if (filepathName.includes(`${dirname}/translations/${lang}.ts`)) {
+				translation = await module();
+			}
+
+			if (page && translation) {
 				break;
 			}
 		}
 
 		return {
-			page: page.default,
-			metadata: page.metadata
+			page: page?.default,
+			translation: translation?.t,
+			metadata: page?.metadata
 		};
-
 	} catch (err) {
 		throw error(404, `Not found: ${err.message}`);
 	}

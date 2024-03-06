@@ -1,22 +1,15 @@
-<script lang="ts" context="module">
-	import type { Color, ColorString } from "./input-color.types";
-	import {
-		convertColorToString,
-		getContrast,
-		parseColorString
-	} from "./input-color.helpers";
-</script>
-
 <script lang="ts">
 	import Picker from "./input-color.picker.svelte";
 	import { Modal } from "../modal";
 	import { clickOutside, shortcut } from "../../actions";
+	import { convertColorToString, getContrast, parseColorString } from "./input-color.helpers";
+	import type { Color, ColorStringHSL } from "./input-color.types";
 	import styles from "./input-color.module.css";
 
 	export let disabled = false;
 	export let name: string;
 	export let open = false;
-	export let value: ColorString = "hsl(0 50% 50% / 1)";
+	export let value: ColorStringHSL = "hsl(0deg 50% 50% / 1)";
 	export let valueAsObject: Color = parseColorString(value);
 	export let isMobile = false;
 
