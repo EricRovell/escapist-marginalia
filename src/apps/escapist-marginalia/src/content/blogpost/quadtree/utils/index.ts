@@ -1,5 +1,5 @@
-import { randFloat } from "@utils/random";
-import type { QuadTree, Boundary } from "@utils/quad-tree";
+import { randFloat } from "utils/random";
+import type { QuadTree, Boundary } from "quadtree";
 
 /**
  * Returns the boundaries coordinates that have children.

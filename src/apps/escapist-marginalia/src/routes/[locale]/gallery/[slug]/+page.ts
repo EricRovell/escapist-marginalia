@@ -1,6 +1,7 @@
 import { error } from "@sveltejs/kit";
+import type { GalleryItem } from "ui";
+
 import type { PageLoad } from "./$types";
-import type { GalleryItem } from "@types";
 
 export const load: PageLoad = async ({ fetch, params }) => {
 	try {
@@ -8,7 +9,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
 		const { filepath }: GalleryItem = await request.json();
 
 		let page = null;
-		const modules = import.meta.glob("/src/content/gallery/**/*.svx");
+		const modules = import.meta.glob("/src/content/gallery/**/*.mdx");
 
 		for (const [ filepathName, module ] of Object.entries(modules)) {
 			if (filepathName.includes(filepath)) {

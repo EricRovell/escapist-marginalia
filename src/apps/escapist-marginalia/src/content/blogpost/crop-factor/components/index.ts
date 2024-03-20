@@ -1,1 +1,1 @@
-export { default as LensProjection } from "./lens-projection/LensProjection.svelte";
+export { default as LensProjection } from "./lens-projection/lens-projection.svelte";

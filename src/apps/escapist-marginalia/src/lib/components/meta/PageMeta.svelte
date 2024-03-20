@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { Meta } from "ui";
+
 	import { t } from "@core/i18n";
 	import { webpage } from "@core/paths";
-	import Meta from "./Meta.svelte";
 
 	// the route name defined in page locales dictionary
 	export let route: string;

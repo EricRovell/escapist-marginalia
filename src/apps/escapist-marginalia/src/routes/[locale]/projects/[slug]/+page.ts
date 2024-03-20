@@ -6,7 +6,7 @@ export const load: PageLoad = async ({ params }) => {
 	try {
 		const { locale = "en", slug } = params;
 		const filepathName = `/${slug}/index.${locale}`;
-		const modules = import.meta.glob("/src/content/project/**/*.svx");
+		const modules = import.meta.glob("/src/content/project/**/*.mdx");
 		let page: Page<Project>;
 
 		for (const [ filepath, module ] of Object.entries(modules)) {

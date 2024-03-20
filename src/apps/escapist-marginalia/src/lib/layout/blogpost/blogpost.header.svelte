@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { Button, Datetime, Icon, Link } from "ui";
+	import { iconShare } from "ui/icons";
+	import { share } from "utils";
+
 	import { t, locale } from "@core/i18n";
-	import { pathBlogpost, webpage } from "@core/paths";
-	import { Button, Datetime, Icon, Link } from "@components";
-	import { iconShare } from "@icons";
-	import { encodeTitleId, share } from "@utils/helpers";
+	import { pathBlogpostWithLang, webpage } from "@core/paths";
+	import { encodeTitleId } from "$lib/utils";
 	import styles from "./blogpost.header.module.css";
 
 	export let dateCreated: string;
@@ -61,7 +63,7 @@
 		</span>
 		{#if translation}
 			<span class="{styles.translations}">
-				{$t("message.available-translation")} <Link href="{$pathBlogpost(translation.slug)}">{translation.lang}</Link>
+				{$t("message.available-translation")} <Link href="{pathBlogpostWithLang(translation.locale, translation.slug)}">{translation.locale}</Link>
 			</span>
 		{/if}
 	</footer>

@@ -1,6 +1,6 @@
 {
 	"files.associations": {
-		"*.svx": "markdown"
+		"*.mdx": "markdown"
 	},
 	"eslint.validate": [
 		"javascript",
@@ -8,7 +8,12 @@
 		"svelte"
 	],
 	"cssVariables.lookupFiles": [
-		"src/lib/styles/tokens.css",
-		"src/lib/styles/theme-*.css"
-	]
+		"src/**/tokens.css",
+		"src/**/theme-*.css"
+	],
+	"search.exclude": {
+		"**/.svelte-kit": true,
+		"**/build": true
+	},
+	"cSpell.language": "en,ru,en-US,ru-RU"
 }

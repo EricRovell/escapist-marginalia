@@ -87,12 +87,27 @@ importers:
       '@ericrovell/vector':
         specifier: ^0.15.0
         version: 0.15.0
+      chaos-game:
+        specifier: workspace:*
+        version: link:../../packages/chaos-game
+      quadtree:
+        specifier: workspace:*
+        version: link:../../packages/quadtree
       svelte-intl-precompile:
         specifier: ^0.12.3
         version: 0.12.3(@babel/core@7.24.0)(svelte@4.2.12)
       svelte-media-observer:
         specifier: ^1.0.2
         version: 1.0.2(svelte@4.2.12)
+      types:
+        specifier: workspace:*
+        version: link:../../core/types
+      ui:
+        specifier: workspace:*
+        version: link:../../core/ui
+      utils:
+        specifier: workspace:*
+        version: link:../../core/utils
     devDependencies:
       '@rollup/plugin-replace':
         specifier: ^5.0.5
@@ -133,6 +148,35 @@ importers:
       vite:
         specifier: ^5.1.4
         version: 5.1.4
+
+  src/core/types: {}
+
+  src/core/ui:
+    dependencies:
+      svelte:
+        specifier: ^4.2.12
+        version: 4.2.12
+      utils:
+        specifier: workspace:*
+        version: link:../utils
+    devDependencies:
+      types:
+        specifier: workspace:*
+        version: link:../types
+
+  src/core/utils: {}
+
+  src/packages/chaos-game:
+    dependencies:
+      utils:
+        specifier: workspace:*
+        version: link:../../core/utils
+
+  src/packages/quadtree:
+    dependencies:
+      utils:
+        specifier: workspace:*
+        version: link:../../core/utils
 
 packages:
 

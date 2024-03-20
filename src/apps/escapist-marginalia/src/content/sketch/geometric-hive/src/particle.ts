@@ -1,4 +1,4 @@
-import { randInt, randFloat } from "$lib/utils/random";
+import { randInt, randFloat } from "utils/random";
 
 export interface Position {
 	x: number;

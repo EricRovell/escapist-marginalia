@@ -1,4 +1,4 @@
-import { range } from "@utils/helpers";
+import { range } from "utils/math";
 import type { Decoder } from "@ericrovell/radix";
 
 /**

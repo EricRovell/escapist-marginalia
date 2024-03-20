@@ -1,7 +1,8 @@
 import { dev, building } from "$app/environment";
-import { getGalleryItems } from "@data/gallery";
+import type { GalleryItem } from "ui";
 import type { RequestHandler } from "@sveltejs/kit";
-import type { GalleryItem } from "@types";
+
+import { getGalleryItems } from "@data/gallery";
 
 export const GET: RequestHandler = async () => {
 	const status = !dev || building

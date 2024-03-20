@@ -47,6 +47,11 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"chaos-game": "workspace:*",
+		"types": "workspace:*",
+		"ui": "workspace:*",
+		"utils": "workspace:*",
+		"quadtree": "workspace:*",
 		"@ericrovell/radix": "^1.1.0",
 		"@ericrovell/vector": "^0.15.0",
 		"svelte-intl-precompile": "^0.12.3",

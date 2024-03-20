@@ -1,9 +1,11 @@
+import type { ColorStringHSL } from "types";
+
 export interface Options {
 	align: number;
 	bound: boolean;
 	capacity: number;
 	cohesion: number;
-	color: string;
+	color: ColorStringHSL;
 	boids: number;
 	perception: number;
 	scale: number;
@@ -13,12 +15,12 @@ export interface Options {
 	qtree: boolean;
 }
 
-export const options: Options = {
+export const DEFAULT_OPTIONS: Options = {
 	align: 1,
 	bound: false,
 	cohesion: 1,
 	capacity: 4,
-	color: "rgb(255 255 255 / 0.05)",
+	color: "hsl(0deg 0% 100% / 0.05)",
 	boids: 125,
 	perception: 50,
 	scale: 3.5,
@@ -28,7 +30,7 @@ export const options: Options = {
 	qtree: true
 };
 
-export const optionsImmutable: Set<keyof Options> = new Set([
+export const IMMUTABLE_OPTIONS: Set<keyof Options> = new Set([
 	"boids",
 	"scale"
 ]);

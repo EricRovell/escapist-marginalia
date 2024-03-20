@@ -1,6 +1,7 @@
-import { randFloat, randBool, randInt } from "@utils/random";
-import type { Renderer } from "@components/canvas";
-import { options as optionsDefault, type Options } from "./the-attractor.options";
+import type { Renderer } from "ui";
+import { randFloat, randBool, randInt } from "utils/random";
+
+import { DEFAULT_OPTIONS, type Options } from "./the-attractor.options";
 
 const makeAttractor = (width: number, height: number) => ({
 	x: randFloat(0.35 * width, 0.75 * width),
@@ -20,7 +21,7 @@ const makeParticle = (width: number, height: number, lifetime: number) => ({
 	lifetime: randFloat(lifetime * 0.8, lifetime * 1.2)
 });
 
-export const sketch = (options: Options = optionsDefault) => {
+export const sketch = (options: Options = DEFAULT_OPTIONS) => {
 	const hueShift = randInt(0, 360);
 	const attractors: ReturnType<typeof makeAttractor>[] = [];
 	const particles: ReturnType<typeof makeParticle>[] = [];

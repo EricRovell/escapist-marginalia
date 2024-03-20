@@ -1,7 +1,17 @@
 <script>
-	import { pathHome, pathWriting, pathGallery, pathProjects, pathSketch, pathBookmarks, pathAbout } from "@paths";
+	import { page } from "$app/stores";
+	import { Navigation, NavigationItem } from "ui";
+
+	import {
+		pathHome,
+		pathWriting,
+		pathGallery,
+		pathProjects,
+		pathSketch,
+		pathBookmarks,
+		pathAbout
+	} from "@paths";
 	import { t } from "@core/i18n";
-	import { Menu as Navigation } from "@components";
 	import styles from "./root-side-menu.module.css";
 
 	$: menuItems = [
@@ -44,11 +54,11 @@
 </script>
 
 <section label="nav" class="{styles.nav}">
-	<Navigation.Container>
+	<Navigation>
 		{#each menuItems as { href, pattern, label }}
-			<Navigation.Item {href} {pattern}>
+			<NavigationItem {href} {pattern} pathname="{$page.url.pathname}">
 				{label}
-			</Navigation.Item>
+			</NavigationItem>
 		{/each}
-	</Navigation.Container>
+	</Navigation>
 </section>

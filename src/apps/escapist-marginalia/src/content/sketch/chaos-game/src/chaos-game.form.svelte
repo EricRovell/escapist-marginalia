@@ -1,29 +1,39 @@
 <script lang="ts">
-	import InputRestrictions from "./chaos-game.restrictions.svelte";
-	import { InputColor, Range, SketchControls, Switch } from "@components";
-	import { options, optionsImmutable } from "./chaos-game.options";
+	import { getContext } from "svelte";
+	import { InputColor, InputRange, InputSwitch } from "ui";
 
-	export let t: Record<string, string>;
-	export let state: typeof options = {
-		...options
+	import InputRestrictions from "./chaos-game.restrictions.svelte";
+	import { SketchControls } from "$lib/components";
+	import { DEFAULT_OPTIONS, IMMUTABLE_OPTIONS } from "./chaos-game.options";
+	import type { Translation } from "../translations/types";
+
+	export let state: typeof DEFAULT_OPTIONS = {
+		...DEFAULT_OPTIONS
 	};
+
+	const t = getContext<Translation>("t");
 </script>
 
-<SketchControls bind:state on:reset {optionsImmutable} {options}>
+<SketchControls
+	bind:state
+	on:reset
+	optionsImmutable="{IMMUTABLE_OPTIONS}"
+	options="{DEFAULT_OPTIONS}"
+>
 	<fieldset>
 		<legend>
 			Polygon
 		</legend>
-		<Range
+		<InputRange
 			output
 			bind:value="{state["polygon-sides"]}"
 			name="polygon-sides"
 			min="{3}"
 			max="{12}"
 		>
-			{t["polygon-sides"]}
-		</Range>
-		<Range
+			{t.POLYGON_SIDES}
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["polygon-scale"]}"
 			name="polygon-scale"
@@ -31,18 +41,18 @@
 			max="{2}"
 			step="{0.01}"
 		>
-			{t["polygon-scale"]}
-		</Range>
-		<Range
+			{t.POLYGON_SCALE}
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["polygon-origin-theta"]}"
 			name="polygon-origin-theta"
 			min="{0}"
 			max="{360}"
 		>
-			{t["polygon-origin-theta"]}
-		</Range>
-		<Range
+			{t.POLYGON_ORIGIN_THETA}
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["polygon-line-width"]}"
 			name="polygon-line-width"
@@ -51,36 +61,36 @@
 			step="{0.5}"
 			disabled="{!state["polygon-visible"]}"
 		>
-			{t["polygon-line-width"]}
-		</Range>
-		<Switch
+			{t.POLYGON_LINE_WIDTH}
+		</InputRange>
+		<InputSwitch
 			bind:checked="{state["polygon-visible"]}"
 			name="polygon-visible"
 		>
-			{t["polygon-visible"]}
-		</Switch>
+			{t.POLYGON_VISIBLE}
+		</InputSwitch>
 		<InputColor
 			bind:value="{state["polygon-color"]}"
 			name="polygon-color"
 			disabled="{!state["polygon-visible"]}"
 		>
-			{t["polygon-color"]}
+			{t.POLYGON_COLOR}
 		</InputColor>
 	</fieldset>
 	<fieldset>
 		<legend>
 			Marks
 		</legend>
-		<Range
+		<InputRange
 			output
 			bind:value="{state["points-limit"]}"
 			name="points-limit"
 			min="{1}"
 			max="{500000}"
 		>
-			{t["points-limit"]}
-		</Range>
-		<Range
+			{t.POINTS_LIMIT}
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["point-scale"]}"
 			name="point-scale"
@@ -88,42 +98,42 @@
 			max="{5}"
 			step="{0.1}"
 		>
-			{t["point-scale"]}
-		</Range>
-		<Range
+			{t.POINT_SCALE}
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["speed"]}"
 			name="speed"
 			min="{1}"
 			max="{150}"
 		>
-			{t["speed"]}
-		</Range>
-		<Switch
+			{t.SPEED}
+		</InputRange>
+		<InputSwitch
 			bind:checked="{state["points-color-wheel"]}"
 			name="points-color-wheel"
 		>
-			{t["points-color-wheel"]}
-		</Switch>
+			{t.POINTS_COLOR_WHEEL}
+		</InputSwitch>
 		<InputColor
 			bind:value="{state["points-color"]}"
 			name="points-color"
 			disabled="{state["points-color-wheel"]}"
 		>
-			{t["polygon-color"]}
+			{t.POLYGON_COLOR}
 		</InputColor>
 	</fieldset>
 	<fieldset>
 		<legend>
 			Step
 		</legend>
-		<Switch
+		<InputSwitch
 			bind:checked="{state["step-factor"]}"
 			name="step-factor"
 		>
-			{t["step-factor"]}
-		</Switch>
-		<Range
+			{t.STEP_FACTOR}
+		</InputSwitch>
+		<InputRange
 			output
 			bind:value="{state["step-coef"]}"
 			disabled="{!state["step-factor"]}"
@@ -132,9 +142,9 @@
 			max="{1.5}"
 			step="{0.01}"
 		>
-			{t["step-coef"]}
-		</Range>
-		<Range
+			{t.STEP_COEF}
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["step-distance"]}"
 			disabled="{state["step-factor"]}"
@@ -143,14 +153,13 @@
 			max="{1000}"
 			step="{0.1}"
 		>
-			{t["step-distance"]}
-		</Range>
+			{t.STEP_DISTANCE}
+		</InputRange>
 	</fieldset>
 	<InputRestrictions
 		bind:value="{state["restrictions"]}"
 		sides="{state["polygon-sides"]}"
-		{t}
 	>
-		{t["restrictions"]}
+		{t.RESTRICTIONS}
 	</InputRestrictions>
 </SketchControls>

@@ -1,11 +1,13 @@
-import { find, type QueryItem } from "@utils/query";
-import type { GalleryItem, Page } from "../types";
+import type { GalleryItem } from "ui";
+
+import { find, type QueryItem } from "$lib/utils";
+import type { Page } from "../types";
 
 async function fetchGalleryItems(): Promise<GalleryItem[]> {
 	const items: GalleryItem[] = [];
 
 	// Import all .svx files in the directory
-	const modules = import.meta.glob("/src/content/gallery/**/*.svx");
+	const modules = import.meta.glob("/src/content/gallery/**/*.mdx");
 
 	for await (const [ filename, module ] of Object.entries(modules)) {
 		const { metadata } = await module() as Page<GalleryItem>;

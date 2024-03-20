@@ -1,0 +1,229 @@
+---
+{
+	"cover": {
+		alt: "Binary data illustration describing one of the most basic way to represent numbers.",
+		height: 500,
+		src: "https://storage.yandexcloud.net/escapist-marginalia/covers/radix.png",
+		width: 500
+	},
+	"dateCreated": "2022-11-04T02:30:00.000Z",
+	"description": "The basics you need to know how we represent numbers.",
+	"keywords": [
+		"math",
+		"radix",
+		"numbers",
+		"numeral bases"
+	],
+	"lang": "en",
+	"slug": "numeral-systems",
+	"title": "Numeral Systems",
+	"translation": {
+		locale: "ru",
+		slug: "системы-счисления"
+	}
+}
+---
+
+<script>
+	import * as Interactive from "./interactive";
+	import "katex/dist/katex.min.css";
+</script>
+
+## Preface
+
+Numbers play an essential role in our everyday life. The familiar decimal number system has deeply rooted in our consciousness. In the modern world there is no need to present numbers in some other ways. We learn about Roman Numerals in school, get to know about binary system as the language computers understand, and still the decimal system is what you usually need.
+
+The thing is - the decimal system is not that special. There are numerous number of ways to represent a number, some are more practical, and some are not. We will dive into a brief historical excursion to see the how we used to represent numbers, their pros and cons, and how we come to what we have. The purpose of this blogpost is to understand the the basic principles behind numeral systems.
+
+## Numeral system
+
+A numeral system is a writing system for expressing numbers. This is a mathematical notation for representing numbers of a given set, using symbols in a consistent manner.
+
+## Non-positional numeral systems
+
+Non-positional numeral systems are systems of numerations in which the placement of a numeral symbol does not change it’s value.
+
+Non-positional systems are the most simple and ancient ones. The most primitive way to represent a number in written form is tallying. Counting using strokes as |, ||, |||, and so on, using a single symbol and repeat it as many times as the number we need. This is the example of non-positional system.
+
+This approach is quite simple going as far as the simple needs of people required. But we have infinitely many natural numbers and representing large ones are quite impractical. It would take a lot of time and effort to write a number just as small as one million.
+
+As life became more and more complicated, the need for group numbers became apparent. It was a little step forward to something more practical with the further naming of some special numbers.
+
+### Ancient Egyptian Numerals
+
+The earliest example of non-positional numeral system is the scheme encountered in hieroglyphs, which Egyptians used for writing on stone. The system used groups formed by the number $10$ as it’s base. Each power of $10$ required a new symbol:
+
+<!-- Egyptian Unicode HTML Codes -->
+<Interactive.Numerals
+	codes="{[
+		"&#78820",
+		"&#78726",
+		"&#78690",
+		"&#78268",
+		"&#77997",
+		"&#78224",
+		"&#77928"
+	]}"
+/>
+
+The intermediate numbers are then formed by addition, each symbol repeated the required number of times. Usually the symbols were placed in ascending order, but the order did not matter.
+
+### Roman Numerals
+
+Another well-known non-positional numeral system is Roman numerals. The direct influence of Rome for such a long period, the superiority of this numeral system over any other simple ones that had been known in Europe before 10th century explains the strong position that the system maintained for nearly 2 000 years in scientific and theological literature.
+
+Roman numerals had the great advantage - simplicity; memorizing the values of only five letters was necessary: $I, V, X, L$, and $C$. Moreover, it was easier to see three in $III$ than in $3$ or to see seven in $VII$ than in 7.
+
+Roman system in it’s simple form allows to count only till $3 999$, as it was prohibited to repeat a symbol more than 3 times. Later, the system evolved and the symbolic system became more and more complex as new special syntax was included. Well-known simple form uses next symbols to construct a number:
+
+```math
+\begin{array}{c:c:c:c:c:c:c}
+I & V & X & L & C & D & M\\ \hline
+1 & 5 & 10 & 50 & 100 & 500 & 1000
+\end{array}
+```
+
+Despite symbols for numbers $50$ and $500$, Roman Numerals have the base of 10.
+
+<Interactive.RomanNumerals />
+
+## Positional Numeral Systems
+
+Positional numeral systems are systems of numerations in which the placement of a numeral symbol does change it’s value. These systems are the next major step in numeral systems development. The decimal number system is an example of a positional system.
+
+It is the only one of the systems that can be used for describing large numbers, since each of other systems before gives special names to various numbers bigger than some large number, and an infinite number of names would be required for all the numbers. Non-positional systems used a new symbol for each threshold, positional systems reuse the set of symbols to represent a number of any value no matter how big it is.
+
+Let’s try to figure it out how number is constructed in positional system.
+
+Any positional system has it’s radix value (also known as numeral base); this value describes how many symbols we have at our disposal. For an arbitrary system with radix $r$ there are a set of symbols: $0, 1, 2, … , r - 1$. The decimal system has radix $10$ as it uses ten digits $0… 9$.
+
+Counting one by one with a given set we are limited with a value $r - 1$ as a threshold, after this the positional system reuse the same symbols placing them ahead, that’s how the ranks are formed: $r_n… r_2 r_1 r_0$. Each time the next threshold is met, new rank is appended.
+
+The first rank has $r$ values, the next one has $r * r = r^2$. Appending a new rank increases the number of values by $r$ times. For example, in decimal system in every thousand there are ten hundreds, in every hundred there are ten tens, in every ten there are ten units.
+
+As a result, in positional system with an arbitrary radix $r$, any number $N$ can be written in a unique fashion in the form:
+
+<p id="positional-number-formula" style="margin: 0">
+
+```math
+\begin{aligned}
+	N &= \sum_{i} d_i r^i \\
+	&= ... + d_2 r^2 + d_1 r^1 + d_0 r^0,\\
+\end{aligned}
+```
+
+</p>
+
+where $d_i$ - are ranks; i.e., symbols from the group $0, 1, 2, ... , r - 1$.
+
+We will return to this formula later to understand how to convert a number from one base to another. But first, let’s look at some examples of positional systems.
+
+### Cuneiform Numerals
+
+Babylonian cunieform numeral system first appeared around 2000 B.C. It’s numerals were written in cunieform, using wedge-tipped reed stylus to make a mark of a soft clay tablet which would be exposed in the sun to harden to create a permanent record.
+
+The Babylonians, who were famous for their astronomical observations, as well as their calculations, used a sexagesimal (base-60) positional numeral system. The Babylonian system is credited as the first known positional numeral system.
+
+Only two symbols were used, one for counting units and another for counting tens:
+
+<!-- Cuneiform -->
+<Interactive.Numerals
+	codes="{[
+		"&#74773",
+		"&#74507"
+	]}"
+/>
+
+Because the pressure of the stylus gave a wedge-shaped symbol, the inscriptions are known as cunieform, from the Latin *cuneus* - “wedge” and *forma* - “shape”.
+
+The Babylonian system suffered until very late from the lack of a zero symbol, it was developed around 300 B.C.:
+
+<!-- Cuneiform Zero -->
+<Interactive.Numerals
+	codes="{[ "&#74826" ]}"
+	calcValue="{() => 0}"
+/>
+
+The resulting ambiguities may well have bothered the Babylonians as much as later translators, as such numbers as $77$ and $7700$ would look the same, it was possible to get the correct value only from context.
+
+### Binary system
+
+There is one “island” where the familiar decimal system is no longer supreme: the electronic computers. Here the binary positional system has been found to have great advantages over the decimal.
+
+Binary system’s radix value is $2$, there are just two symbols: 0 and 1. Counting in binary may be look weird, but the underlying principles are the same as for decimal: $0, 1, 10, 11, 100, 101, 110, ... $.
+
+A binary number is generally much longer than it’s corresponding decimal number; for example, $12 345$ has the binary representation as $11000000111001$. The reason is that a binary digit distinguishes between only two possibilities: 0 and 1, whereas decimal has 10. In other words, a binary digit carries much less information than a decimal digit. That’s why a binary digit called a **bit** for short.
+
+Is is much easier to construct a machine to distinguish between two possibilities than among 10, and this is another advantage for a binary system. Nevertheless, the more important point is that bit serve simultaneously to carry numerical information and the logic; the dichotomies of “true” and “false” are preserved in the machine the same way as 0 and 1. In the end everything reduces to a sequences of these two symbols.
+
+### Hexadecimal system
+
+Another positional system widely used in computer technologies is hexadecimal (base-16). Since there are no traditional numerals to represent the quantities from ten to fifteen, alphabetic letters is used as a substitute. The system uses the same set of symbols as the decimal: $0, 1, ... , 9$, and the sequence continues as $A, B, ..., F$ to represent numbers $10, 11, ..., 15$ respectively.
+
+The most common usage is low-level programming to represent memory address as two hexadecimal numbers. Another widespread use case is <abbr title="Red Green Blue">RGB</abbr> color notation as three hexadecimal numbers.
+
+## Converting number from one radix to another
+
+There are a lot of algorithms to convert a number from one numeral base to another. The thing is, for practical purposes two algorithms is enough: from arbitrary radix into decimal and vice versa. Using the decimal system as an intermediate value, we can convert numbers in two steps.
+
+It is important to note, usually you won’t do conversion on your own. Let’s leave this job for a computer. Understanding how conversion works is the main purpose why we may convert the numbers ourselves.
+
+All conversions consider we are working with positional numeral systems.
+
+### A bit about positional system structure
+
+As we seen before, every number in arbitrary radix [can be written](#positional-number-formula) in a unique fashion. Under the hood this formula breaks the number into specific parts considering the combinations we have counting with the set of available symbols (digits).
+
+The structure of a number is like a molecule. Molecule is a unique combination of atoms, the same way any number in positional system is a combination of other numbers, the “atoms”. These “atoms” are the thresholds we met each time we need to use one more symbol. In decimal system the “atoms” will be a powers of radix value: $10^0 = 1$, $10^1 = 10$, $10^ 2 = 100$, and so on.
+
+In other words, to represent any number in positional system with radix $r$, the number should be broken into special size groups, and each group can be used $r - 1$ times before a bigger group - rank appears.
+
+<Interactive.DisassemblingNumber />
+
+As the result, converting the number from some radix to another boils down to constructing or breaking it down into groups.
+
+### Converting from decimal to arbitrary radix
+
+Converting the decimal number into arbitrary radix $r$ means that number’s inner structure should be rearranged from radix $10$ to $r$. The resulting number should have $r^0, r^1, r^2, r^3, ...$ where each value is a number of groups and it’s position defines a group value - threshold.
+
+The resulting ranks should be formed using the “greedy algorithm” approach:
+
+1. Determine the largest $r^n$ value not exceeding the input value;
+2. Subtract the largest $r^n$ value as many times as possible; the power $n$ marks the rank order and the number of subtractions define the rank value;
+3. Repeat steps $1, 2$ until the input turns into zero.
+
+It is important not to skip unused powers while recording the result. All ranks should be in place in order. If some power was unused - zero is placed on it’s place.
+
+You can see how the arbitrary decimal number converted into arbitrary radix number step-by-step below:
+
+<Interactive.DecimalConversionStages />
+
+### Converting the number in arbitrary radix to decimal
+
+To convert the number in arbitrary radix to decimal we need to break down the number rank by rank, whereas each rank’s position $i$ defines a group value as $r_i$ and it’s value - how many such groups we should count.
+
+There is no extra work need to be done because we do calculations using usual decimal arithmetic hence the result will be in decimal:
+
+1. Break down the number into ranks $a_n, ... a_2, a_1, a_0$, where $a$ - is the value, and $n$ is it’s power;
+2. Find the sum using the [the formula](#positional-number-formula);
+
+<Interactive.NumberIntoDecimal />
+
+## Exercise
+
+To test your knowledge about number conversion you can use an interactive exercise section below. Before you begin you need to select a numerical interval, from which a randomly chosen number will be used. The next step is to select radix values defining the number you will be asked to convert and what radix should be result in.
+
+You are free to choose any radix from binary up till $36$. Any system above decimal use alphabetic letters to depict digits above $9$, the same way the [hexadecimal system does](#hexadecimal-system).
+
+You can use the provided virtual keyboard for input. Focusing (for example, on touch) the virtual keyboard allows to use physical keyboard. To undo the last symbol, use `Backspace` key; to reset the input use `Delete` key. When you are ready to check the result, press `Enter`.
+
+A failed attempt does not carry any penalty, you can try again and again as many times as you want to.
+
+<Interactive.Exercise />
+
+## Related resources
+
+- [Numeral systems: Everything You Need to Know](https://www.probabilisticworld.com/numeral-systems-everything-you-need-to-know)
+- [Numerals and numeral systems](https://www.britannica.com/science/numeral)
+- [Radix](https://en.wikipedia.org/wiki/Radix)
+- [Numeral Base Converter](https://www.rapidtables.com/convert/number/base-converter.html)

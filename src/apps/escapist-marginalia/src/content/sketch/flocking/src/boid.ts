@@ -1,5 +1,5 @@
-import type { RenderArguments } from "@components/canvas";
 import { vector, type Vector } from "@ericrovell/vector";
+import type { RenderArguments } from "ui";
 
 interface BoidOptions {
 	forceLimit?: number;

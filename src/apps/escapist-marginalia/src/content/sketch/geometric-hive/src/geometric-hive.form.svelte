@@ -1,31 +1,40 @@
 <script lang="ts">
-	import { Range, InputColor } from "@components";
-	import { SketchControls } from "@components";
-	import { options, optionsImmutable } from "./geometric-hive.options";
+	import { getContext } from "svelte";
+	import { InputColor, InputRange } from "ui";
 
-	export let t: Record<string, string>;
-	export let state: typeof options = {
-		...options
+	import { SketchControls } from "$lib/components";
+	import { DEFAULT_OPTIONS, IMMUTABLE_OPTIONS } from "./geometric-hive.options";
+	import type { Translation } from "../translations/types";
+
+	export let state: typeof DEFAULT_OPTIONS = {
+		...DEFAULT_OPTIONS
 	};
+
+	const t = getContext<Translation>("t");
 </script>
 
-<SketchControls bind:state on:reset {optionsImmutable} {options}>
+<SketchControls
+	bind:state
+	on:reset
+	options="{DEFAULT_OPTIONS}"
+	optionsImmutable="{IMMUTABLE_OPTIONS}"
+>
 	<fieldset>
 		<legend>
-			{t.field}
+			{t.FIELD}
 		</legend>
 		<InputColor
 			bind:value="{state["background"]}"
 			name="background"
 		>
-			{t["background"]}
+			{t.BACKGROUND}
 		</InputColor>
 	</fieldset>
 	<fieldset>
 		<legend>
-			{t.particles}
+			{t.PARTICLES}
 		</legend>
-		<Range
+		<InputRange
 			output
 			bind:value="{state["particle-gap"]}"
 			name="particle-gap"
@@ -33,18 +42,18 @@
 			max="{4}"
 			step="{0.01}"
 		>
-			{t["particle-gap"]}
-		</Range>
-		<Range
+			{t.PARTICLE_GAP}
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["particle-size"]}"
 			name="particle-size"
 			min="{5}"
 			max="{40}"
 		>
-			{t["particle-size"]}
-		</Range>
-		<Range
+			{t.PARTICLE_SIZE}
+		</InputRange>
+		<InputRange
 			output
 			bind:value="{state["particle-speed-base"]}"
 			name="particle-speed-base"
@@ -52,14 +61,14 @@
 			max="{0.3}"
 			step="{0.01}"
 		>
-			{t["particle-speed-base"]}
-		</Range>
+			{t.PARTICLE_SPEED_BASE}
+		</InputRange>
 	</fieldset>
 	<fieldset>
 		<legend>
-			{t.gaps}
+			{t.GAPS}
 		</legend>
-		<Range
+		<InputRange
 			output
 			bind:value="{state["gap-frequency"]}"
 			name="gap-frequency"
@@ -67,7 +76,7 @@
 			max="{0.97}"
 			step="{0.01}"
 		>
-			{t["gap-frequency"]}
-		</Range>
+			{t.GAP_FREQUENCY}
+		</InputRange>
 	</fieldset>
 </SketchControls>

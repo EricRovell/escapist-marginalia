@@ -1,12 +1,15 @@
 <script lang="ts">
-	import { Button, InputNumber, Switch, InputText } from "@components";
-	import type { VerticeRestrictionRule } from "../lib/chaos.types";
-	import { clamp } from "@utils/helpers";
+	import type { VerticeRestrictionRule } from "chaos-game";
+	import { Button, InputText, InputNumber, InputSwitch } from "ui";
+	import { clamp } from "utils/math";
+	import { getContext } from "svelte";
+	import type { Translation } from "../translations/types";
 
 	export let sides: number;
 	export let forbidden = false;
 	export let value: VerticeRestrictionRule[] = [];
-	export let t: Record<string, string>;
+
+	const t = getContext<Translation>("t");
 
 	let input: VerticeRestrictionRule[] = [];
 
@@ -64,33 +67,33 @@
 	{#if !input.length}
 		<aside class="message">
 			<p class="message">
-				{t["restrictions-message-1"]}
+				{t.MESSAGE_RESTRICTIONS_1}
 			</p>
 			<p>
-				{t["restrictions-message-2"]}
+				{t.MESSAGE_RESTRICTIONS_2}
 			</p>
 		</aside>
 	{/if}
 	{#if input.length}
 		<div class="rule labels">
-			<span>{t.vertice}</span>
-			<span>{t.distances}</span>
-			<span>{t.forbidden}</span>
+			<span>{t.VERTICE}</span>
+			<span>{t.DISTANCES}</span>
+			<span>{t.FORBIDDEN}</span>
 		</div>
 	{/if}
 	{#each input as _, i}
 		<div class="rule">
 			<InputNumber value="{-1 - 1 * i}" name="restrictions" data-index="{i}" min="{-sides}" max="{-1}" />
-			<InputText name="restrictions" data-index="{i}" placeholder="{t["distances-placeholder"]}" />
-			<Switch name="restrictions" data-index="{i}" />
+			<InputText name="restrictions" data-index="{i}" placeholder="{t.PLACEHOLDER_DISTANCES}" />
+			<InputSwitch name="restrictions" data-index="{i}" />
 		</div>
 	{/each}
 	<div class="controls">
 		<Button on:click={addItem} disabled="{input.length === sides}">
-			{t["add-rule"]}
+			{t.ADD_RULE}
 		</Button>
 		<Button appearance="outline"  on:click="{removeItems}" disabled="{input.length === 0}">
-			{t["reset"]}
+			{t.RESET}
 		</Button>
 	</div>
 </fieldset>

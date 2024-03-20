@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { Button, Drawer, Icon, IconMenu, Link } from "ui";
+	import { iconLogo, iconGear } from "ui/icons";
+
 	import { pathHome } from "@paths";
-	import { Button, Drawer, MenuIndicator, Link, Icon } from "@components";
-	import { iconLogo, iconGear } from "@icons";
 	import BottomMenuContents from "./root.bottom-menu-contents.svelte";
 	import { PreferencesLanguage, PreferencesTheme } from "@views";
 
@@ -49,8 +50,6 @@
 		icon
 		appearance="ghost"
 	>
-		<MenuIndicator
-			active="{showNavigation}"
-		/>
+		<IconMenu active="{showNavigation}" />
 	</Button>
 </header>

@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { t } from "@core/i18n";
+	import { Button, Datetime, Icon, Image, ImageFullscreen, Link, Meta, ScrollToTop } from "ui";
+	import { iconShare, iconDownload, iconFullscreen } from "ui/icons";
+	import { share } from "utils";
+
+	import { t, locale } from "@core/i18n";
 	import { webpage } from "@core/paths";
-	import { Meta,ScrollToTop, Button, Icon, Image, Link, ImageFullscreen, Datetime } from "@components";
-	import { iconShare, iconDownload, iconFullscreen } from "@icons";
-	import { share } from "@utils/helpers";
 	import styles from "./gallery.layout.module.css";
 	import articleStyles from "./article.module.css";
 	import type { GalleryItemPage } from "@types";
@@ -123,9 +124,9 @@
 			<h1>{title}</h1>
 			<p>{description}</p>
 			{#if dateUpdated}
-				<p>{$t("message.updated")} <Datetime date="{dateUpdated}" /></p>
+				<p>{$t("message.updated")} <Datetime locale="{$locale}" date="{dateUpdated}" /></p>
 			{:else}
-				<p>{$t("message.published")} <Datetime date="{dateCreated}" /></p>
+				<p>{$t("message.published")} <Datetime locale="{$locale}" date="{dateCreated}" /></p>
 			{/if}
 			<aside class="{styles.actions}">
 				<Button
@@ -160,7 +161,7 @@
 			<dl>
 				<dt>Date taken:</dt>
 				<dd>
-					<Datetime date={dateTaken} />
+					<Datetime locale="{$locale}" date={dateTaken} />
 				</dd>
 			</dl>
 			{#each metadataList as { label, value }}

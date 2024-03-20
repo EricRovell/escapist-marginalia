@@ -1,4 +1,4 @@
-import type { Renderer } from "@components/canvas";
+import type { Renderer } from "ui";
 
 interface SketchReturn<Options = undefined> {
 	draw: Renderer;

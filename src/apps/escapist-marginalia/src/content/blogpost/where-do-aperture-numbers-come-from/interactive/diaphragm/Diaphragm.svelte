@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { getContext } from "svelte";
-	import { Range } from "@components";
+	import { InputRange } from "ui";
+
 	import { Diaphragm } from "../../components";
+	import type { Translation } from "../../translations/types";
 	import styles from "./diaphragm.module.css";
 
-	const t: Record<string, string> = getContext("t")["diaphragm"];
+	const t = getContext<Translation>("t");
 
 	let angle = 45;
 </script>
@@ -13,11 +15,11 @@
 	Iris Diaphragm Mechanism Demonstration.
 -->
 <section class="wide interactive">
-	<h3>{t["title"]}</h3>
+	<h3>{t.TITLE_DIAPHRAGM}</h3>
 	<Diaphragm bind:angle />
 	<form class="{styles.controls}">
-		<Range bind:value={angle} min={45} max={85}>
-			{t["angle"]}
-		</Range>
+		<InputRange bind:value={angle} min={45} max={85}>
+			{t.DIAPHRAGM_ANGLE}
+		</InputRange>
 	</form>
 </section>

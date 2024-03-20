@@ -1,7 +1,7 @@
 import type { SvelteComponent } from "svelte";
+import type { Locale } from "types";
 
 export type Variant = "neutral" | "primary" | "success" | "danger" | "warning" | "info" | "link" | "";
-export type Locale = "ru" | "en";
 
 /**
  * The MDSvex page interface.
@@ -30,7 +30,8 @@ export interface BlogpostMetadata {
 	dateUpdated: string;
 	description: string;
 	draft?: boolean;
-	filepath: string;
+	dirname: string;
+	filename: string;
 	keywords: string[];
 	lang: Locale;
 	layout?: string;
@@ -39,7 +40,7 @@ export interface BlogpostMetadata {
 	slug: string;
 	title: string;
 	translation: {
-		lang: Locale;
+		locale: Locale;
 		slug: string;
 	};
 	toc: {
@@ -79,8 +80,6 @@ export interface Project {
 	website?: string;
 }
 
-export type { GalleryItem } from "@components";
-
 export interface Sketch {
 	cover: CoverImage;
 	dateUpdated: string;
@@ -100,14 +99,6 @@ export interface Bookmark {
 	url: string;
 }
 
-/**
- * Input field value validator.
- */
-export type Validator<T> = (value: T) => ({
-	valid: boolean,
-	message: string
-});
-
 export interface GalleryItemPage {
 	camera: string;
 	dateCreated: string;
@@ -121,7 +112,7 @@ export interface GalleryItemPage {
 	id: string;
 	iso: number;
 	keywords?: string[];
-	lang: "en" | "ru";
+	lang: Locale;
 	layout: "gallery";
 	lens: string;
 	og: GalleryImage;

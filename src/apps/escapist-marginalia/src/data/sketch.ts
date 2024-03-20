@@ -1,4 +1,4 @@
-import { find, type QueryItem } from "@utils/query";
+import { find, type QueryItem } from "$lib/utils";
 import type { Sketch, Page } from "../types";
 
 interface Options {
@@ -11,7 +11,7 @@ interface Options {
 const getSketchPageData = async () => {
 	try {
 		const pages: Sketch[] = [];
-		const modules = import.meta.glob("/src/content/sketch/*/*.svx");
+		const modules = import.meta.glob("/src/content/sketch/*/*.mdx");
 
 		// the key is filename, we do not need it here
 		for await (const [ , module ] of Object.entries(modules)) {

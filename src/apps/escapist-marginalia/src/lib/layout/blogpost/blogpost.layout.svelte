@@ -1,67 +1,57 @@
 <script lang="ts">
+	import { Meta, ScrollToTop } from "ui";
+
 	import { webpage, webpageRoot } from "@core/paths";
-	import { Meta, TOC, ScrollToTop } from "@components";
+	import { TOC } from "$lib/components";
 	import Header from "./blogpost.header.svelte";
 	import { LayoutPage } from "../page-header";
 	import styles from "./blogpost.layout.module.css";
 	import type { BlogpostMetadata } from "@types";
 
 	export let metadata: BlogpostMetadata;
-
-	let {
-		cover,
-		dateCreated,
-		dateUpdated,
-		description,
-		keywords = [],
-		lang,
-		title,
-		toc = [],
-		translation = null
-	} = metadata;
 </script>
 
 <Meta
-	{title}
+	title="{metadata.title}"
 	meta={{
-		description,
-		keywords: keywords.join(","),
-		language: lang
+		description: metadata.description,
+		keywords: metadata.keywords.join(","),
+		language: metadata.lang
 	}}
 	openGraph={{
-		title,
-		description,
-		locale: lang,
+		title: metadata.title,
+		description: metadata.description,
+		locale: metadata.lang,
 		type: "article",
-		tag: keywords.join(","),
+		tag: metadata.keywords.join(","),
 		site_name: "Eric Rovell",
 		author: "Eric Rovell",
 		url: $webpage,
-		"article:published_time": dateCreated,
-		"article:modified_time": dateUpdated,
-		image: `${$webpageRoot}${cover.src}`
+		"article:published_time": metadata.dateCreated,
+		"article:modified_time": metadata.dateUpdated,
+		image: `${$webpageRoot}${metadata.cover.src}`
 	}}
 	twitter={{
 		card: "summary",
-		title,
-		description,
+		title: metadata.title,
+		description: metadata.description,
 		url: $webpage
 	}}
 />
 
 <LayoutPage wide>
 	<Header
-		{title}
-		{description}
-		{keywords}
-		{dateCreated}
-		{dateUpdated}
-		{translation}
+		title="{metadata.title}"
+		description="{metadata.description}"
+		keywords="{metadata.keywords}"
+		dateCreated="{metadata.dateCreated}"
+		dateUpdated="{metadata.dateUpdated}"
+		translation="{metadata.translation}"
 		slot="banner"
 	/>
 	<article class={styles.article}>
 		<aside class={styles.toc}>
-			<TOC headings={toc} {title} />
+			<TOC headings={metadata.toc} title="{metadata.title}" />
 		</aside>
 		<slot name="pre-content" />
 		<slot />

@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { Datetime, Link, Icon } from "@components";
+	import { Datetime, Icon, Link } from "ui";
+	import { iconGithub, iconLeetcode, iconInstagram, iconRSS, iconTelegram } from "ui/icons";
+
 	import NavLocale from "./footer.locale.svelte";
-	import { iconGithub, iconLeetcode, iconInstagram, iconRSS, iconTelegram } from "@icons";
-	import { t } from "@core/i18n";
+	import { locale, t } from "@core/i18n";
 	import styles from "./footer.module.css";
 
 	import {
@@ -66,9 +67,9 @@
 		<section class={styles.user}>
 			<p>
 				<span>
-					© <Datetime options={{ year: "numeric" }} />, Eric/Rovell
+					© <Datetime locale="{$locale}" options={{ year: "numeric" }} />, Eric/Rovell
 				</span>
-				<span>{$t("message.build-at")} <Datetime date={"BUILD_TIME"} /></span>
+				<span>{$t("message.build-at")} <Datetime locale="{$locale}" date={"BUILD_TIME"} /></span>
 			</p>
 			<div class={styles.locale}>
 				<span>{$t("dict.language")}:</span>

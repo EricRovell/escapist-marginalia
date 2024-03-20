@@ -1,57 +1,67 @@
 <script lang="ts">
-	import { Switch, Range, SketchControls } from "@components";
-	import { options, optionsImmutable } from "./flocking.options";
+	import { getContext } from "svelte";
+	import { InputRange, InputSwitch } from "ui";
 
-	export let t: Record<string, string>;
-	export let state: typeof options = {
-		...options
+	import { SketchControls } from "$lib/components";
+	import { DEFAULT_OPTIONS, IMMUTABLE_OPTIONS } from "./flocking.options";
+	import type { Translation } from "../translations/types";
+
+	const t = getContext<Translation>("t");
+
+	export let state: typeof DEFAULT_OPTIONS = {
+		...DEFAULT_OPTIONS
 	};
 </script>
 
-<SketchControls bind:state on:reset {optionsImmutable} {options}>
+<SketchControls
+	bind:state
+	on:reset
+	options="{DEFAULT_OPTIONS}"
+	optionsImmutable="{IMMUTABLE_OPTIONS}"
+>
 	<fieldset>
 		<legend>
-			{t.behavior}
+			{t.BEHAVIOR}
 		</legend>
-		<Range output bind:value="{state.boids}" name="boids" min="{10}" max="{250}">
-			{t.boids}
-		</Range>
-		<Switch bind:checked="{state.bound}" name="bound">
-			{t.bound}
-		</Switch>
-		<Range output bind:value="{state.align}" name="align" min="{0.1}" max="{2.5}" step="{0.01}">
-			{t.alignment}
-		</Range>
-		<Range output bind:value="{state.cohesion}" name="cohesion" min="{0.01}" max="{2}" step="{0.01}">
-			{t.cohesion}
-		</Range>
-		<Range output bind:value="{state.separate}" name="separate" min="{0.1}" max="{2.5}" step="{0.01}">
-			{t.separation}
-		</Range>
+		<InputRange output bind:value="{state.boids}" name="boids" min="{10}" max="{250}">
+			{t.BOIDS}
+		</InputRange>
+		<InputSwitch bind:checked="{state.bound}" name="bound">
+			{t.BOUND}
+		</InputSwitch>
+		<InputRange output bind:value="{state.align}" name="align" min="{0.1}" max="{2.5}" step="{0.01}">
+			{t.ALIGNMENT}
+		</InputRange>
+		<InputRange output bind:value="{state.cohesion}" name="cohesion" min="{0.01}" max="{2}" step="{0.01}">
+			{t.COHESION}
+		</InputRange>
+		<InputRange output bind:value="{state.separate}" name="separate" min="{0.1}" max="{2.5}" step="{0.01}">
+			{t.SEPARATION}
+		</InputRange>
 	</fieldset>
 	<fieldset>
 		<legend>
-			{t.appearance}
+			{t.APPEARANCE}
 		</legend>
-		<Range output bind:value="{state.scale}" name="scale" min="{1}" max="{5}" step="{0.1}">
-			{t.scale}
-		</Range>
+		<InputRange output bind:value="{state.scale}" name="scale" min="{1}" max="{5}" step="{0.1}">
+			{t.SCALE}
+		</InputRange>
 	</fieldset>
 	<fieldset>
 		<legend>
-			{t.quadtree}
+			{t.QTREE}
 		</legend>
-		<Switch bind:checked="{state.qtree}" name="qtree">
-			{t["qtree-optimization"]}
-		</Switch>
-		<Switch bind:checked="{state.showQTree}" disabled="{!state.qtree}" name="showQTree">
-			{t["qtree-appearance"]}
-		</Switch>
-		<Switch bind:checked="{state.showPerception}" disabled="{!state.qtree}" name="showPerception">
-			{t["perception-appearance"]}
-		</Switch>
-		<Range output bind:value="{state.perception}" disabled="{!state.qtree}" name="perception" min="{50}" max="{250}">
-			{t.perception}
-		</Range>
+		<InputSwitch bind:checked="{state.qtree}" name="qtree">
+			{t.QTREE_OPTIMIZATION}
+		</InputSwitch>
+		<InputSwitch bind:checked="{state.showQTree}" disabled="{!state.qtree}" name="showQTree">
+			{t.QTREE_APPEARANCE}
+		</InputSwitch>
+		<InputSwitch bind:checked="{state.showPerception}" disabled="{!state.qtree}" name="showPerception">
+			{t.PERCEPTION_APPEARANCE}
+		</InputSwitch>
+		<InputRange output bind:value="{state.perception}" disabled="{!state.qtree}" name="perception" min="{50}" max="{250}">
+			{t.PERCEPTION}
+		</InputRange>
 	</fieldset>
 </SketchControls>

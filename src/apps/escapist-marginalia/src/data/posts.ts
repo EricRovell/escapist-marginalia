@@ -1,12 +1,13 @@
-import { find } from "@utils/query";
-import type { QueryItem } from "@utils/query";
-import type { Blogpost, BlogpostMetadata, Locale, Page } from "../types";
+import type { Locale } from "types";
+
+import { find, type QueryItem } from "$lib/utils";
+import type { Blogpost, BlogpostMetadata, Page } from "../types";
 
 async function fetchBlogposts(): Promise<Blogpost[]> {
 	const posts: Blogpost[] = [];
 
 	// Import all .svx files in the directory
-	const modules = import.meta.glob("/src/content/blogpost/**/*.svx");
+	const modules = import.meta.glob("/src/content/blogpost/**/*.mdx");
 
 	for await (const [ filename, module ] of Object.entries(modules)) {
 		const { metadata } = await module() as Page<BlogpostMetadata>;
@@ -16,16 +17,16 @@ async function fetchBlogposts(): Promise<Blogpost[]> {
 			...rest
 		}: BlogpostMetadata = metadata;
 
+		const path = filename.split("/");
+
 		posts.push({
 			draft,
 			title,
 			/**
-			 * All blogpost contents are located as:
-			 * /src/content/blogpost/{blogpost}/{file}.svx
-			 * For vite to analize dynamic imports we strill all but `{blogpost}/{file}`
-			 * And later we have to break it by "/" and put parts into the path.
+			 * The directory name where blogpost files are located.
 			 * */
-			filepath: filename.slice(22, -4),
+			dirname: path[4],
+			filename: path[5],
 			...rest
 		});
 	}

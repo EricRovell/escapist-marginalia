@@ -1,11 +1,16 @@
 <script lang="ts">
-	import { Range, SketchControls, Switch, InputColor } from "@components";
-	import { options, optionsImmutable } from "./digital-rain.options";
+	import { getContext } from "svelte";
+	import { InputColor, InputRange, InputSwitch } from "ui";
 
-	export let t: Record<string, string>;
-	export let state: typeof options = {
-		...options
+	import { SketchControls } from "$lib/components";
+	import { DEFAULT_OPTIONS, IMMUTABLE_OPTIONS } from "./digital-rain.options";
+	import type { Translation } from "../translations/types";
+
+	export let state: typeof DEFAULT_OPTIONS = {
+		...DEFAULT_OPTIONS
 	};
+
+	const t = getContext<Translation>("t");
 
 	const charOptions = new Set([
 		"digits", "katakana", "math", "uppercaseLetters"
@@ -30,50 +35,56 @@
 	};
 </script>
 
-<SketchControls bind:state on:reset {optionsImmutable} {options} on:change="{handleChange}">
+<SketchControls
+	bind:state
+	on:change="{handleChange}"
+	on:reset
+	optionsImmutable="{IMMUTABLE_OPTIONS}"
+	options="{DEFAULT_OPTIONS}"
+>
 	<fieldset>
 		<legend>
-			{t.general}
+			{t.GENERAL}
 		</legend>
-		<Range output bind:value="{state.scale}" name="scale" min="{1}" max="{25}">
+		<InputRange output bind:value="{state.scale}" name="scale" min="{1}" max="{25}">
 			{t["font-size"]}
-		</Range>
-		<Range output bind:value="{state.depth}" name="depth" min="{0.01}" max="{1}" step="{0.01}">
-			{t.depth}
-		</Range>
+		</InputRange>
+		<InputRange output bind:value="{state.depth}" name="depth" min="{0.01}" max="{1}" step="{0.01}">
+			{t.DEPTH}
+		</InputRange>
 		<InputColor bind:value="{state.color}" name="color">
-			{t.color}
+			{t.COLOR}
 		</InputColor>
 		<InputColor bind:value="{state.background}" name="background">
-			{t.background}
+			{t.BACKGROUND}
 		</InputColor>
 	</fieldset>
 	<fieldset>
 		<legend>
-			{t.behavior}
+			{t.BEHAVIOR}
 		</legend>
-		<Switch bind:checked="{state.distributed}" name="distributed">
-			{t.distributed}
-		</Switch>
-		<Switch bind:checked="{state.randomColors}" name="randomColors">
-			{t["random-colors"]}
-		</Switch>
+		<InputSwitch bind:checked="{state.distributed}" name="distributed">
+			{t.DISTRIBUTED}
+		</InputSwitch>
+		<InputSwitch bind:checked="{state.randomColors}" name="randomColors">
+			{t.RANDOM_COLORS}
+		</InputSwitch>
 	</fieldset>
 	<fieldset>
 		<legend>
-			{t.symbols}
+			{t.SYMBOLS}
 		</legend>
-		<Switch name="digits" checked>
-			{t.digits}
-		</Switch>
-		<Switch name="katakana" checked>
-			{t.katakana}
-		</Switch>
-		<Switch name="math" checked>
-			{t["math"]}
-		</Switch>
-		<Switch name="uppercaseLetters" checked>
-			{t["uppercase"]}
-		</Switch>
+		<InputSwitch name="digits" checked>
+			{t.DIGITS}
+		</InputSwitch>
+		<InputSwitch name="katakana" checked>
+			{t.KATAKANA}
+		</InputSwitch>
+		<InputSwitch name="math" checked>
+			{t.MATH}
+		</InputSwitch>
+		<InputSwitch name="uppercaseLetters" checked>
+			{t.UPPERCASE}
+		</InputSwitch>
 	</fieldset>
 </SketchControls>

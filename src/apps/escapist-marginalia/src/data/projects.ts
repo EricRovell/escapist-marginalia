@@ -1,4 +1,4 @@
-import { find, type QueryItem } from "@utils/query";
+import { find, type QueryItem } from "$lib/utils";
 import type { Project, Page } from "../types";
 
 interface Options {
@@ -11,7 +11,7 @@ interface Options {
 const getProjectPageData = async () => {
 	try {
 		const projects: Project[] = [];
-		const modules = import.meta.glob("/src/content/project/*/*.svx");
+		const modules = import.meta.glob("/src/content/project/*/*.mdx");
 
 		// the key is filename, we do not need it here
 		for await (const [ , module ] of Object.entries(modules)) {

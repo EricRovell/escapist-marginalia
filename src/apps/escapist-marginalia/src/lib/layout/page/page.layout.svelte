@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { Meta } from "ui";
+
 	import { webpage } from "@core/paths";
-	import { Meta } from "@components";
 	import { LayoutPage } from "../page-header";
 	import styles from "./page.module.css";
 

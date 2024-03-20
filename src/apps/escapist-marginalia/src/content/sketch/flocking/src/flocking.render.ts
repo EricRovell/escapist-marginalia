@@ -1,11 +1,12 @@
-import { Boid } from "./boid";
-import { randInt } from "@utils/random";
-import { QuadTree, Rectangle, Point, Circle } from "@utils/quad-tree";
-import { options as optionsDefault, type Options } from "./flocking.options";
-import type { Renderer } from "@components/canvas";
-import type { Sketch } from "@components/sketch/sketch.types";
+import { QuadTree, Rectangle, Point, Circle } from "quadtree";
+import type { Renderer } from "ui";
+import { randInt } from "utils/random";
 
-export const sketch: Sketch<Options> = (options = optionsDefault) => {
+import { Boid } from "./boid";
+import { DEFAULT_OPTIONS, type Options } from "./flocking.options";
+import type { Sketch } from "$lib/components/sketch/sketch.types";
+
+export const sketch: Sketch<Options> = (options = DEFAULT_OPTIONS) => {
 	const boids: Boid[] = [];
 
 	const setup: Renderer = ({ width, height }) => {

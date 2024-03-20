@@ -2,12 +2,12 @@
 	import { Masthead, Footer } from "$lib/views";
 	import BottomMenu from "./root.bottom-menu.svelte";
 
-	import "@styles/utility.css";
-	import "@styles/tokens.css";
-	import "@styles/normalize.css";
-	import "@styles/theme-dark.css";
-	import "@styles/theme-light.css";
-	import "@styles/typography.css";
+	import "../../styles/utility.css";
+	import "../../styles/tokens.css";
+	import "../../styles/normalize.css";
+	import "../../styles/theme-dark.css";
+	import "../../styles/theme-light.css";
+	import "../../styles/typography.css";
 	import styles from "./root.module.css";
 </script>
 

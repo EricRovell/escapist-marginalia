@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { getContext } from "svelte";
-	import { Switch } from "@components";
+	import { InputSwitch } from "ui";
+
+	import type { Translation } from "../../translations/types";
 	import styles from "./comparing-objects.module.css";
 
 	export let closest = false;
 
-	const t = getContext<Record<string, string>>("t");
+	const t = getContext<Translation>("t");
 </script>
 
 <div class="{styles.root}">
@@ -38,8 +40,8 @@
 		</g>
 	</svg>
 	<form>
-		<Switch bind:checked="{closest}">
-			{t["compare-closest"]}
-		</Switch>
+		<InputSwitch bind:checked="{closest}">
+			{t.COMPARE_CLOSEST}
+		</InputSwitch>
 	</form>
 </div>

@@ -1,0 +1,32 @@
+{
+	"author": "Eric Rovell",
+	"description": "Core UI components.",
+	"devDependencies": {
+		"types": "workspace:*"
+	},
+	"exports": {
+		".": {
+			"import": "./src/components/index.ts"
+		},
+		"./actions": {
+			"import": "./src/actions/index.ts"
+		},
+		"./icons": {
+			"import": "./src/icons/index.ts"
+		}
+	},
+	"keywords": [
+		"ui"
+	],
+	"name": "ui",
+	"license": "MIT",
+	"peerDependencies": {
+		"utils": "workspace:*",
+		"svelte": "^4.2.12"
+	},
+	"private": true,
+	"scripts": {
+		"lint:types": "tsc --noEmit"
+	},
+	"type": "module"
+}

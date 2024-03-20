@@ -1,16 +1,18 @@
+import type { ColorStringHSL } from "types";
+
 export interface Options {
-	background: string;
+	background: ColorStringHSL;
 	chars: Array<"digits" | "katakana" | "math" | "uppercaseLetters">;
-	color: string;
+	color: ColorStringHSL;
 	depth: number;
 	distributed: boolean;
 	randomColors: boolean;
 	scale: number;
 }
 
-export const options: Options = {
-	background: "hsl(0 0% 0% / 0.1)",
-	color: "hsl(120 100% 50% / 1)",
+export const DEFAULT_OPTIONS: Options = {
+	background: "hsl(0deg 0% 0% / 0.1)",
+	color: "hsl(120deg 100% 50% / 1)",
 	chars: [ "digits", "katakana", "math", "uppercaseLetters" ],
 	depth: 0.25,
 	distributed: true,
@@ -18,7 +20,7 @@ export const options: Options = {
 	scale: 10
 };
 
-export const optionsImmutable: Set<keyof Options> = new Set([
+export const IMMUTABLE_OPTIONS: Set<keyof Options> = new Set([
 	"scale",
 	"background",
 	"color",

@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import { goto } from "$app/navigation";
+	import { InputRadio } from "ui";
+
 	import { locale } from "@core/i18n";
-	import * as Radio from "../../components/radio";
 
 	const handleChange = async (event: InputEvent) => {
 		const target = event.target as HTMLInputElement;
@@ -14,14 +15,14 @@
 	};
 </script>
 
-<Radio.Group name="language" on:change={handleChange}>
+<InputRadio.Group name="language" on:change={handleChange}>
 	<h4 slot="title">
 		Interface language
 	</h4>
-	<Radio.Button value="en" checked="{$locale === "en"}">
+	<InputRadio.Button value="en" checked="{$locale === "en"}">
 		English
-	</Radio.Button>
-	<Radio.Button value="ru" checked="{$locale === "ru"}">
+	</InputRadio.Button>
+	<InputRadio.Button value="ru" checked="{$locale === "ru"}">
 		Русский
-	</Radio.Button>
-</Radio.Group>
+	</InputRadio.Button>
+</InputRadio.Group>
