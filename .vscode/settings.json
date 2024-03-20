@@ -14,5 +14,6 @@
 	"search.exclude": {
 		"**/.svelte-kit": true,
 		"**/build": true
-	}
+	},
+	"cSpell.language": "en,ru,en-US,ru-RU"
 }
