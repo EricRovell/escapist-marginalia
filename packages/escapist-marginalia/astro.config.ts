@@ -15,6 +15,7 @@ export default defineConfig({
 		solid(),
 		mdx()
 	],
+	outDir: process.env.LANG === "ru" ? "./dist-ru" : undefined,
 	markdown: {
 		rehypePlugins: [
 			rehypeKatex

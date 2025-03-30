@@ -10,3 +10,4 @@ vite.config.js.timestamp*
 
 .astro
 dist
+dist-ru
