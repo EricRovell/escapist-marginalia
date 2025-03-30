@@ -1,0 +1,22 @@
+---
+import type { Lang } from "~/types";
+import { LANG } from '~/consts';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<"time"> {
+	date?: Date;
+	locale?: Lang;
+	options?: Intl.DateTimeFormatOptions;
+}
+
+const {
+	date = new Date(),
+	locale = LANG,
+	options = {},
+	...rest
+} = Astro.props;
+---
+
+<time datetime={date.toISOString()} {...rest}>
+	{date.toLocaleDateString(locale, options)}
+</time>

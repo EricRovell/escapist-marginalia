@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import { LayoutBase } from '~/layouts/base';
+import Card from '~/components/card/card.astro';
+import { ROUTES } from '~/consts';
+
+const collection = await getCollection("projects");
+
+collection.sort((a, b) => b.data.date_created.valueOf() - a.data.date_created.valueOf());
+---
+
+<LayoutBase title="Projects" description="Portfolio of my web development projects and contributions.">
+	<div data-auto-grid>
+		{
+			collection.map(item => (
+				<Card
+					cover_alt={item.data.cover_alt}
+					cover_src={item.data.cover_src.src}
+					cover_size={item.data.cover_src.width}
+					date_created={item.data.date_created}
+					description={item.data.description}
+					href={ROUTES.PROJECTS_ITEM(item.id)}
+					title={item.data.title}
+				/>
+			))
+		}
+	</div>
+</LayoutBase>

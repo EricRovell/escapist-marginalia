@@ -1,0 +1,64 @@
+---
+	import { Link } from "ui";
+	import { IconLogoEscapist } from "ui/icons";
+	import { ROUTES } from "~/consts";
+
+	import { t } from "./header.translation";
+
+	import styles from "./header.module.css";
+
+	const items = [
+		{
+			href: ROUTES.HOME,
+			label: t.HOME,
+			pattern: /\/$/,
+		},
+		{
+			href: ROUTES.WRITING,
+			pattern: /\/writing/,
+			label: t.WRITING
+		},
+		{
+			href: ROUTES.GALLERY,
+			pattern: /\/gallery/,
+			label: t.GALLERY
+		},
+		{
+			href: ROUTES.PROJECTS,
+			pattern: /\/projects/,
+			label: t.PROJECTS
+		},
+		{
+			href: ROUTES.SKETCHES,
+			pattern: /\/sketches/,
+			label: t.SKETCH
+		},
+		{
+			href: ROUTES.ABOUT,
+			pattern: /\/about/,
+			label: t.ABOUT
+		}
+	];
+---
+
+<div class={styles.header}>
+	<Link href="/" aria-label="Escapist Marginalia Logo" class={styles.logo} appearance="ghost">
+		<IconLogoEscapist viewBox="0 0 24 24" />
+		Escapist Marginalia
+	</Link>
+	<nav class={styles.navigation}>
+		<ul class={styles.items}>
+			{items.map(({ href, pattern, label }) => (
+				<li class={styles.item}>
+					<Link
+						href={href}
+						aria-current={pattern.test(Astro.url.pathname) ? "page" : undefined}
+						appearance="ghost"
+					>
+						{label}
+					</Link>
+				</li>
+			))}
+		</ul>
+	</nav>
+</div>

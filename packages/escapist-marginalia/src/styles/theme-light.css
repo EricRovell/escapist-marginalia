@@ -1,0 +1,123 @@
+/* stylelint-disable custom-property-empty-line-before */
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--color-surface-1: hsl(200deg 35% 100%);
+		--color-surface-2: hsl(200deg 80% 95% / 50%);
+		--color-surface-3: hsl(240deg 35% 96%);
+		--color-surface-4: hsl(240deg 35% 93%);
+
+		--color-warning: hsl(40deg 100% 50%);
+		--color-danger: hsl(3deg 100% 50%);
+		--color-accent: hsl(237deg 80% 65%);
+		--color-success: hsl(137deg 100% 30%);
+		--color-neutral: hsl(0deg 0% 77%);
+		--color-info: hsl(190deg 100% 40%);
+
+		--color-neutral-050: #383838;
+		--color-neutral-100: #4C4C4C;
+		--color-neutral-200: #5E5E5E;
+		--color-neutral-300: #717171;
+		--color-neutral-400: #8C8C8C;
+		--color-neutral-500: #A6A6A6;
+		--color-neutral-600: #BDBDBD;
+		--color-neutral-700: #D5D5D5;
+		--color-neutral-800: #EEE;
+		--color-neutral-900: #FAFAFA;
+
+		--color-text: var(--color-neutral-050);
+		--color-text-secondary: var(--color-neutral-200);
+		--color-text-link: hsl(from var(--color-accent) h 100% 60%);
+		--color-text-info: hsl(from var(--color-info) h 80% 30%);
+
+		/* button::accent */
+		--button-bg-accent-fill: hsl(from var(--color-accent) h s l / 85%);
+		--button-bg-active-accent-fill: hsl(from var(--color-accent) h s l / 100%);
+		--button-bg-hover-accent-fill: hsl(from var(--color-accent) h s l / 95%);
+		--button-border-color-accent-outline: hsl(from var(--color-accent) h 100% 70%);
+		--button-color-accent-fill: var(--color-neutral-900);
+
+		--button-bg-hover-accent-ghost: hsl(from var(--color-accent) h 100% l / 15%);
+		--button-bg-active-accent-ghost: hsl(from var(--color-accent) h 100% l / 25%);
+		--button-color-accent-ghost: hsl(from var(--color-accent) h 100% 60%);
+		--button-color-active-accent-text: hsl(from var(--color-accent) h 100% 80%);
+
+		/* button::danger */
+		--button-bg-danger-fill: hsl(from var(--color-danger) h s l / 80%);
+		--button-bg-active-danger-fill: hsl(from var(--color-danger) h s 35% / 90%);
+		--button-bg-hover-danger-fill: hsl(from var(--color-danger) h s 40% / 90%);
+		--button-border-color-danger-outline: var(--color-danger);
+		--button-color-danger-fill: var(--color-neutral-900);
+
+		--button-bg-hover-danger-ghost: hsl(from var(--color-danger) h s l / 15%);
+		--button-bg-active-danger-ghost: hsl(from var(--color-danger) h s l / 20%);
+		--button-color-danger-ghost: hsl(from var(--color-danger) h 100% 60%);
+		--button-color-active-danger-text: hsl(from var(--color-danger) h 100% 80%);
+
+		/* button::info */
+		--button-bg-info-fill: hsl(from var(--color-info) h s l / 95%);
+		--button-bg-active-info-fill: hsl(from var(--color-info) h s 33%);
+		--button-bg-hover-info-fill: hsl(from var(--color-info) h s 37%);
+		--button-border-color-info-outline: var(--color-info);
+		--button-color-info-fill: var(--color-neutral-900);
+
+		--button-bg-hover-info-ghost: hsl(from var(--color-info) h s l / 15%);
+		--button-bg-active-info-ghost: hsl(from var(--color-info) h s l / 25%);
+		--button-color-info-ghost: hsl(from var(--color-info) h 100% 40%);
+		--button-color-active-info-text: hsl(from var(--color-info) h 100% 95%);
+
+		/* button::neutral */
+		--button-bg-neutral-fill: hsl(from var(--color-neutral) h s l / 50%);
+		--button-bg-active-neutral-fill: hsl(from var(--color-neutral) h s 70% / 80%);
+		--button-bg-hover-neutral-fill: hsl(from var(--color-neutral) h s 74% / 80%);
+		--button-border-color-neutral-outline: hsl(from var(--color-neutral) h s 55%);
+		--button-color-neutral-fill: var(--color-neutral-100);
+
+		--button-bg-hover-neutral-ghost: hsl(from var(--color-neutral) h s l / 30%);
+		--button-bg-active-neutral-ghost: hsl(from var(--color-neutral) h s l / 40%);
+		--button-color-neutral-ghost: hsl(from var(--color-neutral) h s 35%);
+		--button-color-active-neutral-text: hsl(from var(--color-neutral) h s 35%);
+
+		/* button::success */
+		--button-bg-success-fill: hsl(from var(--color-success) h s 20% / 50%);
+		--button-bg-active-success-fill: hsl(from var(--color-success) h s l / 70%);
+		--button-bg-hover-success-fill: hsl(from var(--color-success) h s l / 60%);
+		--button-border-color-success-outline: hsl(from var(--color-success) h s 40%);
+		--button-color-success-fill: var(--color-neutral-900);
+
+		--button-bg-hover-success-ghost: hsl(from var(--color-success) h s l / 15%);
+		--button-bg-active-success-ghost: hsl(from var(--color-success) h s l / 25%);
+		--button-color-success-ghost: hsl(from var(--color-success) h 100% 35%);
+		--button-color-active-success-text: hsl(from var(--color-success) h s 25%);
+
+		/* button::warning */
+		--button-bg-warning-fill: hsl(from var(--color-warning) h s l / 90%);
+		--button-bg-active-warning-fill: hsl(from var(--color-warning) h s l);
+		--button-bg-hover-warning-fill: hsl(from var(--color-warning) h s l / 50%);
+		--button-border-color-warning-outline: var(--color-warning);
+		--button-color-warning-fill: var(--color-neutral-100);
+
+		--button-bg-hover-warning-ghost: hsl(from var(--color-warning) h s l / 30%);
+		--button-bg-active-warning-ghost: hsl(from var(--color-warning) h s l / 40%);
+		--button-color-warning-ghost: hsl(from var(--color-warning) h 100% 35%);
+		--button-color-active-warning-text: hsl(from var(--color-warning) h 100% 25%);
+
+		--color-info-bg: var(--color-info-100);
+		--color-info-text: var(--color-info-700);
+		--color-info-border: var(--color-info-300);
+
+		--color-border: var(--color-info-200);
+	
+		--color-border-accent: var(--color-blue-600);
+		--color-border-50: #B4B8F180;
+
+		--focus-ring-color: var(--color-blue-300);
+
+		--scroll-track-color: var(--color-surface-2);
+		--scroll-thumb-color: rgb(76 101 146);
+
+		--loader-binary-color-digit: var(--color-neutral-050);
+		--loader-binary-color-pit: var(--color-neutral-500);
+		--loader-binary-color-pit-shadow: var(--color-neutral-300);
+	}
+}

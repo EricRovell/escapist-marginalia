@@ -1,0 +1,37 @@
+---
+import BaseHead from "~/components/BaseHead.astro";
+import { Header, Footer } from "~/components";
+import { SITE_NAME } from "~/consts";
+import { ClientRouter  } from "astro:transitions";
+
+import styles from "./base-layout.module.css";
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_NAME} />
+		<ClientRouter />
+		<slot name="head" />
+	</head>
+	<body class={styles.body} data-full-bleed>
+		<header data-full-bleed>
+			<Header />
+			<h1 class={styles.title}>{title}</h1>
+			<p class={styles.description}>{description}</p>
+		</header>
+		<main class={styles.content} data-full-bleed>
+			<slot />
+		</main>
+		<div data-full-bleed class={styles.footer}>
+			<Footer />
+		</div>
+	</body>
+</html>

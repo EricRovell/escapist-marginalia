@@ -1,0 +1,9 @@
+.message {
+	display: grid;
+	grid-auto-rows: min-content;
+	gap: 3.6rem;
+	justify-content: center;
+	place-items: center;
+	justify-self: center;
+	margin-block-start: 7.2rem;
+}

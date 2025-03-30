@@ -1,0 +1,17 @@
+/* stylelint-disable custom-property-empty-line-before */
+
+:root {
+	--radius: 0.5rem;
+
+	--scroll-width: 8px;
+	--scroll-height: 5px;
+	--scroll-thumb-radius: 10px;
+	--scroll-thumb-padding: 1px;
+
+	/* space */
+
+	--max-width: 1440px;
+
+	--bottom-menu-height: 40px;
+	--bottom-menu-width: 95%;
+}

@@ -1,0 +1,20 @@
+---
+import { LoaderBinary } from 'ui';
+import { LayoutBase } from '~/layouts/base';
+
+import styles from "./work-in-progress.module.css";
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<LayoutBase title={title} description={description}>
+	<aside class={styles.message}>
+		<LoaderBinary />
+		<h2>Website is in development</h2>
+	</aside>
+</LayoutBase>

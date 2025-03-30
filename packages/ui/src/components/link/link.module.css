@@ -1,0 +1,21 @@
+.link {
+	min-width: 0;
+
+	&[data-disabled] {
+		pointer-events: none;
+		opacity: 0.5;
+	}
+
+	&[data-appearance="text"] {
+		display: inline-flex;
+		
+		&:active,
+		&:hover:active {
+			transform: none;
+		}
+	}
+
+	&[data-appearance="text"][data-disabled] {
+		text-decoration: line-through;
+	}
+}

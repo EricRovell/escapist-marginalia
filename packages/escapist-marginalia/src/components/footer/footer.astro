@@ -1,0 +1,39 @@
+---
+import { Link } from "ui";
+import { IconGithub, IconTelegram, IconInstagram, IconLeetcode, IconLogo, IconGitlab } from "ui/icons";
+import { ROUTES_SOCIALS } from "~/consts";
+
+import styles from "./footer.module.css";
+
+const socials = [
+	{ label: "source", href: ROUTES_SOCIALS.GITHUB, Icon: IconGithub },
+	{ label: "gitlab", href: ROUTES_SOCIALS.GITLAB, Icon:  IconGitlab },
+	{ label: "telegram", href: ROUTES_SOCIALS.TELEGRAM, Icon:  IconTelegram },
+	{ label: "instagram", href: ROUTES_SOCIALS.INSTAGRAM, Icon:  IconInstagram },
+	{ label: "leetcode", href: ROUTES_SOCIALS.LEETCODE, Icon:  IconLeetcode }
+];
+---
+
+<footer class={styles.footer}>
+	<section class={styles.info}>
+		<div class={styles.logo}>
+			<IconLogo />
+			<p>© 2021 - present</p>
+			<p>Eric Rovell, All rights reserved</p>
+		</div>
+		<p class={styles.build}>
+			<strong>Build</strong>: {new Date().toUTCString()}
+		</p>
+	</section>
+	<nav class={styles.nav}>
+		<ul class={styles.socials}>
+			{socials.map(({ href, Icon, label }) => (
+				<li>
+					<Link href={href} appearance="ghost" icon title={label}>
+						<Icon title={label} />
+					</Link>
+				</li>
+			))}
+		</ul>
+	</nav>
+</footer>

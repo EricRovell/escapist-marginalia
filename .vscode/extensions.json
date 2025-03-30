@@ -3,7 +3,8 @@
 		"dbaeumer.vscode-eslint",
 		"editorconfig.editorconfig",
 		"yzhang.markdown-all-in-one",
-		"svelte.svelte-vscode",
-		"vunguyentuan.vscode-css-variables"
+		"vunguyentuan.vscode-css-variables",
+		"astro-build.astro-vscode",
+		"unifiedjs.vscode-mdx"
 	]
 }

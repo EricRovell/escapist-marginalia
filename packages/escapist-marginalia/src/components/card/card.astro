@@ -1,0 +1,57 @@
+---
+import Datetime from "../datetime.astro";
+import Show from "../show.astro";
+
+import styles from "./card.module.css";
+
+interface Props {
+	cover_alt: string;
+	cover_src: string;
+	cover_size: number;
+	date_created: Date;
+	description: string;
+	href: string;
+	title: string;
+}
+
+const {
+	cover_src,
+	cover_alt,
+	cover_size,
+	date_created,
+	href,
+	description,
+	title
+} = Astro.props;
+---
+
+<article class={styles.card}>
+	<img
+		class={styles.cover}
+		alt={cover_alt}
+		height={cover_size}
+		src={cover_src}
+		width={cover_size}
+	/>
+	<div class={styles.content}>
+		<Datetime
+			class={styles.datetime}
+			date={date_created}
+			options={{
+				month: "long",
+				day: "numeric",
+				year: "numeric"
+			}}
+		/>
+		<h3 class={styles.title}>
+			<a href={href} class={styles.link}>
+				{title}
+			</a>
+		</h3>
+		<Show when={description}>
+			<p class={styles.description}>
+				{description}
+			</p>
+		</Show>
+	</div>
+</article>

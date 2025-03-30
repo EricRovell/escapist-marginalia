@@ -1,0 +1,38 @@
+:root {
+	--font-main: montserrat, var(--font-fallback);
+	--font-secondary: "Caveat-Semibold", var(--font-main);
+	--font-fallback:
+		system-ui,
+		-apple-system,
+		blinkmacsystemfont,
+		"Segoe UI",
+		roboto,
+		"Helvetica Neue",
+		arial,
+		"Noto Sans",
+		sans-serif,
+		"Apple Color Emoji",
+		"Segoe UI Emoji",
+		"Segoe UI Symbol",
+		"Noto Color Emoji";
+}
+
+/* variation fonts */
+@font-face {
+	font-family: montserrat;
+	src: url("/fonts/montserrat-vf.woff2") format("woff2-variations");
+	font-display: swap;
+}
+
+/* fallbacks, regular */
+@font-face {
+	font-family: Montserrat-Medium-Regular;
+	src: url("/fonts/montserrat-medium-regular.woff2") format("woff2");
+	font-display: swap;
+}
+
+@supports (font-variation-settings: normal) {
+	:root {
+		--font-main: "montserrat", var(--font-fallback);
+	}
+}

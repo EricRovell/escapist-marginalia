@@ -1,0 +1,32 @@
+{
+	"name": "escapist-marginalia",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"tsc": "astro check"
+	},
+	"dependencies": {
+		"@astrojs/check": "catalog:default",
+		"@astrojs/mdx": "^4.0.1",
+		"@astrojs/solid-js": "^5.0.0",
+		"@ericrovell/radix": "^1.1.0",
+		"@ericrovell/vector": "^0.15.0",
+		"astro": "^5.0.3",
+		"chaos-game": "workspace:*",
+		"quadtree": "workspace:*",
+		"solid-js": "catalog:default",
+		"ui": "workspace:*",
+		"utils": "workspace:*"
+	},
+	"devDependencies": {
+		"katex": "^0.16.11",
+		"rehype-katex": "^7.0.1",
+		"remark-math": "^6.0.0",
+		"typescript": "catalog:default"
+	}
+}

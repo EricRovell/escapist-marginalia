@@ -1,0 +1,28 @@
+{
+	"author": "Eric Rovell",
+	"description": "Core UI components",
+	"exports": {
+		".": {
+			"import": "./src/components/index.ts"
+		},
+		"./icons": {
+			"import": "./src/components/icon/index.tsx"
+		}
+	},
+	"keywords": [
+		"ui"
+	],
+	"name": "ui",
+	"license": "MIT",
+	"peerDependencies": {
+		"solid-js": "catalog:default"
+	},
+	"dependencies": {
+		"utils": "workspace:*"
+	},
+	"private": true,
+	"scripts": {
+		"tsc": "tsc --noEmit"
+	},
+	"type": "module"
+}

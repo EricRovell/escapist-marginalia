@@ -10,7 +10,8 @@
 		"declaration": true,
 		"noEmit": true,
 		"strict": true,
-		"esModuleInterop": true
+		"esModuleInterop": true,
+		"strictNullChecks": true
 	},
 	"include": [
 		"./src/**/*.ts",

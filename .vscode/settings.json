@@ -15,5 +15,10 @@
 		"**/.svelte-kit": true,
 		"**/build": true
 	},
-	"cSpell.language": "en,ru,en-US,ru-RU"
+  "cSpell.language": "en,ru,en-US,ru-RU",
+  "cSpell.words": [
+    "astro",
+    "rehype",
+    "кроп"
+  ]
 }
