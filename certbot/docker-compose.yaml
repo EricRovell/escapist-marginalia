@@ -6,4 +6,4 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt:rw
     ports:
       - "80:80"
-    command: certonly --standalone --non-interactive --email ericrovell@gmail.com --agree-tos --preferred-challenges http --dry-run -d "escapist-marginalia.tech,en.escapist-marginalia.tech,ru.escapist-marginalia.tech"
+    command: certonly --standalone --non-interactive --email ericrovell@gmail.com --agree-tos --preferred-challenges http -d "escapist-marginalia.tech,en.escapist-marginalia.tech,ru.escapist-marginalia.tech"
