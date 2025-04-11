@@ -1,0 +1,8 @@
+FROM certbot/certbot:latest
+
+COPY cert-renew-crontab /etc/crontabs
+
+RUN crontab /etc/crontabs/cert-renew-crontab
+
+# run cron in foreground
+ENTRYPOINT ["crond", "-f"]
