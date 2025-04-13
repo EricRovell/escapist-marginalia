@@ -27,6 +27,6 @@
 		"packages/**/*.module.css",
 	],
 	"exclude": [
-		"**/node_modules"
+		"node_modules"
 	]
 }
