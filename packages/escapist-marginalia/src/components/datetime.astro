@@ -16,7 +16,7 @@ const {
 	...rest
 } = Astro.props;
 
-console.log({ locale });
+console.log({ locale: import.meta.env.LANG });
 ---
 
 <time datetime={date.toISOString()} {...rest}>
