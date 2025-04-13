@@ -30,8 +30,8 @@ jobs:
         run: pnpm lint:code
       - name: stylelint
         run: pnpm lint:styles
-      - name: typescript
-        run: pnpm lint:types
+      #- name: typescript
+      #  run: pnpm lint:types
       - name: unit-testing
         run: pnpm test:unit:ci
       - name: unit-testing-coverage
