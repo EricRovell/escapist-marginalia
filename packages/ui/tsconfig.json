@@ -10,7 +10,8 @@
 		"moduleResolution": "bundler",
 		"jsx": "preserve",
 		"jsxImportSource": "solid-js",
-		"strictNullChecks": true
+		"strictNullChecks": true,
+		"types": []
 	},
 	"include": [
 		"src/**/*.tsx",
