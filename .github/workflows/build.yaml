@@ -46,7 +46,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist-en
-          path: ./src/packages/escapist-marginalia/dist
+          path: ./packages/escapist-marginalia/dist
           if-no-files-found: error
       - name: build-ru
         run: LANG=ru pnpm build
@@ -54,5 +54,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist-ru
-          path: ./src/packages/escapist-marginalia/dist-ru
+          path: ./packages/escapist-marginalia/dist-ru
           if-no-files-found: error
