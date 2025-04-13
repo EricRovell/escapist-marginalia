@@ -25,5 +25,8 @@
 		"packages/**/*.ts",
 		"packages/**/*.json",
 		"packages/**/*.module.css",
+	],
+	"exclude": [
+		"**/node_modules"
 	]
 }
