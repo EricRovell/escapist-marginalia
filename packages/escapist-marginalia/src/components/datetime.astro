@@ -15,6 +15,8 @@ const {
 	options = {},
 	...rest
 } = Astro.props;
+
+console.log({ locale });
 ---
 
 <time datetime={date.toISOString()} {...rest}>
