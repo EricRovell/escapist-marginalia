@@ -30,13 +30,13 @@ jobs:
       - name: install-dependencies
         run: pnpm i -r
       - name: eslint
-        run: pnpm lint:code
+        run: pnpm run lint:code
       - name: stylelint
-        run: pnpm lint:styles
+        run: pnpm run lint:styles
       - name: typescript
-        run: pnpm lint:types
+        run: pnpm run lint:types
       - name: unit-testing
-        run: pnpm test:unit:ci
+        run: pnpm run test:unit:ci
       - name: unit-testing-coverage
         uses: actions/upload-artifact@v4
         with:
@@ -44,7 +44,7 @@ jobs:
           path: ./coverage
           if-no-files-found: error
       - name: build-en
-        run: pnpm build
+        run: pnpm run build
       - name: build-en-artifact
         uses: actions/upload-artifact@v4
         with:
@@ -52,7 +52,7 @@ jobs:
           path: ./src/packages/escapist-marginalia/dist
           if-no-files-found: error
       - name: build-ru
-        run: LANG=ru pnpm build
+        run: LANG=ru pnpm run build
       - name: build-ru-artifact
         uses: actions/upload-artifact@v4
         with:
