@@ -4,6 +4,7 @@
 	],
 	"ignoreFiles": [
 		"**/dist/**/*.css",
+		"**/dist-ru/**/*.css",
 		"**/build/**/*.css"
 	],
 	"plugins": [

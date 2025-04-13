@@ -15,7 +15,6 @@ export default defineConfig({
 		solid(),
 		mdx()
 	],
-	outDir: process.env.LANG === "ru" ? "./dist-ru" : undefined,
 	markdown: {
 		rehypePlugins: [
 			rehypeKatex
@@ -30,6 +29,7 @@ export default defineConfig({
 			}
 		}
 	},
+	outDir: process.env.LANG === "ru" ? "./dist-ru" : undefined,
 	site: "https://example.com",
 	vite: {
 		resolve: {
