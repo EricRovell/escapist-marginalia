@@ -4,7 +4,7 @@
 		"build": "pnpm --filter escapist-marginalia run build",
 		"dev": "pnpm --filter escapist-marginalia run dev",
 		"lint:all": "pnpm lint:code && pnpm lint:styles && pnpm lint:types",
-		"lint:code": "eslint packages/**/*.{ts,tsx,js}",
+		"lint:code": "pnpm eslint packages/**/*.{ts,tsx,js}",
 		"lint:styles": "npx stylelint packages/**/*.css",
 		"lint:types": "pnpm run --r tsc",
 		"preview": "pnpm --filter escapist-marginalia run preview",
