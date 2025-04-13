@@ -12,7 +12,7 @@ on:
   workflow_call:
 
 jobs:
-  setup:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -22,64 +22,40 @@ jobs:
         with:
           version: 10.4.1
           run_install: false
-      - name: install node-js
+      - name: install-node-js
         uses: actions/setup-node@master
         with:
           node-version: 22.x
           cache: "pnpm"
-      - name: install dependencies
+      - name: install-dependencies
         run: pnpm i -r
-  eslint:
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
-      - name: check
+      - name: eslint
         run: pnpm lint:code
-  stylelint:
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
-      - name: check
+      - name: stylelint
         run: pnpm lint:styles
-  typescript:
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
-      - name: check
+      - name: typescript
         run: pnpm lint:types
-  unit-testing:
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
-      - name: check
+      - name: unit-testing
         run: pnpm test:unit:ci
-      - name: coverage
+      - name: unit-testing-coverage
         uses: actions/upload-artifact@v4
         with:
           name: coverage
           path: ./coverage
           if-no-files-found: error
-  build-en:
-    runs-on: ubuntu-latest
-    needs: [ eslint, stylelint, typescript, unit-testing ]
-    steps:
-      - name: build
+      - name: build-en
         run: pnpm build
-      - name: build artifacts
+      - name: build-en-artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build
+          name: dist-en
           path: ./src/packages/escapist-marginalia/dist
           if-no-files-found: error
-  build-ru:
-    runs-on: ubuntu-latest
-    needs: [ eslint, stylelint, typescript, unit-testing ]
-    steps:
-      - name: build
+      - name: build-ru
         run: LANG=ru pnpm build
-      - name: build artifacts
+      - name: build-ru-artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build
+          name: dist-ru
           path: ./src/packages/escapist-marginalia/dist-ru
           if-no-files-found: error
