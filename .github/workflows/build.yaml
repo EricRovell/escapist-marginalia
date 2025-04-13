@@ -18,15 +18,12 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        with:
-          version: 10.4.1
-          run_install: false
       - name: install-node-js
         uses: actions/setup-node@master
         with:
           node-version: 22.x
-          cache: "pnpm"
+      - name: install-pnpm
+        run: npm i pnpm -g
       - name: install-dependencies
         run: pnpm i -r
       - name: eslint
