@@ -2,7 +2,7 @@
 
 echo "Starting redeployment"
 
-cd ../
+cd ..
 
 git checkout migrate-astro
 git pull
