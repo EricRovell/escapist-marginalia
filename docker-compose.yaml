@@ -9,7 +9,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf/:ro
       - /etc/letsencrypt:/etc/letsencrypt:rw
       - /var/www/certbot:/var/www/certbot:ro
-      - ./reload-cert.sh:/docker-entrypoint.d/reload-cert.sh:ro
+      - ./scripts/reload-cert.sh:/docker-entrypoint.d/reload-cert.sh:ro
   cert-renew:
     container_name: cert-renew
     build:
