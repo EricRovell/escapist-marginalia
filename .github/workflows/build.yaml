@@ -70,4 +70,4 @@ jobs:
           ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
       - name: ssh-script
         run: |
-          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "sh /escapist-marginalia/scripts/redeploy.sh"
+          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "sh /root/escapist-marginalia/scripts/redeploy.sh"
