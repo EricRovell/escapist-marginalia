@@ -21,3 +21,7 @@ export function isNonNegativeInteger(value: unknown): value is number {
 export function isNonEmptyString(value: unknown): value is string {
 	return typeof value === "string" && value.length > 0;
 }
+
+export function isClient() {
+	return !isNullable(globalThis.window);
+}
