@@ -1,9 +1,11 @@
 ---
 import { Link } from "ui";
 import { IconGithub, IconTelegram, IconInstagram, IconLeetcode, IconLogo, IconGitlab } from "ui/icons";
-import { ROUTES_SOCIALS } from "~/consts";
+import { LANG, ROUTES_SOCIALS } from "~/consts";
 
 import styles from "./footer.module.css";
+import { t } from "./footer.translation";
+import { classnames } from "ui/utils";
 
 const socials = [
 	{ label: "source", href: ROUTES_SOCIALS.GITHUB, Icon: IconGithub },
@@ -12,19 +14,24 @@ const socials = [
 	{ label: "instagram", href: ROUTES_SOCIALS.INSTAGRAM, Icon:  IconInstagram },
 	{ label: "leetcode", href: ROUTES_SOCIALS.LEETCODE, Icon:  IconLeetcode }
 ];
+
+const BUILD_DATE = new Intl.DateTimeFormat(LANG, {
+	year: "numeric",
+	month: "long",
+	day: "2-digit",
+	hour: "2-digit",
+	minute: "2-digit"
+}).format();
 ---
 
 <footer class={styles.footer}>
-	<section class={styles.info}>
-		<div class={styles.logo}>
-			<IconLogo />
-			<p>© 2021 - present</p>
-			<p>Eric Rovell, All rights reserved</p>
-		</div>
-		<p class={styles.build}>
-			<strong>Build</strong>: {new Date().toUTCString()}
-		</p>
-	</section>
+	<div class={styles.logo}>
+		<IconLogo />
+		<p>Eric Rovell</p>
+	</div>
+	<p class={classnames(styles.secondary, styles.build)}>
+		<strong>{t.BUILD}</strong>: {BUILD_DATE}
+	</p>
 	<nav class={styles.nav}>
 		<ul class={styles.socials}>
 			{socials.map(({ href, Icon, label }) => (
@@ -36,4 +43,7 @@ const socials = [
 			))}
 		</ul>
 	</nav>
+	<p class={classnames(styles.secondary, styles.warning)}>
+		{t.NO_AI}
+	</p>
 </footer>

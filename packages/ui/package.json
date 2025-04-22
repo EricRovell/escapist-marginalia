@@ -7,6 +7,9 @@
 		},
 		"./icons": {
 			"import": "./src/components/icon/index.tsx"
+		},
+		"./utils": {
+			"import": "./src/utils/index.ts"
 		}
 	},
 	"keywords": [
