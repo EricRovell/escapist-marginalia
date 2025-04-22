@@ -52,3 +52,24 @@
 		--button-bg: hsl(from var(--button-bg-accent-fill) h s l / 30%);
 	}
 }
+
+@media screen and (width <= 770px) {
+	.header {
+		display: grid;
+		grid-template: repeat(2, min-content) / 1fr;
+		width: 100%;
+		grid-column: 1 / span 3;
+	}
+
+	.logo {
+		margin-inline-start: 2rem;
+	}
+
+	.navigation {
+		overflow-x: auto;
+	}
+
+	.items {
+		margin-inline: 2rem;
+	}
+}

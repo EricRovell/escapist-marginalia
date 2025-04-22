@@ -6,4 +6,8 @@
 	place-items: center;
 	justify-self: center;
 	margin-block-start: 7.2rem;
+
+	& h2 {
+		text-align: center;
+	}
 }
