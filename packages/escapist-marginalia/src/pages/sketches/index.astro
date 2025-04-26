@@ -1,8 +1,28 @@
 ---
-import { LayoutWorkInProgress } from '~/layouts';
+import { getCollection } from 'astro:content';
+import { LayoutBaseTitle } from '~/layouts';
+import Card from '~/components/card/card.astro';
+import { ROUTES } from '~/consts';
+
+const collection = await getCollection("sketches");
+
+collection.sort((a, b) => b.data.date_created.valueOf() - a.data.date_created.valueOf());
 ---
 
-<LayoutWorkInProgress
-	title="Sketch"
-	description="Generative art sketch and various visualizations using Canvas API and SVG"
-/>
+<LayoutBaseTitle title="Sketches" description="Generative art sketch and various visualizations">
+	<div data-auto-grid>
+		{
+			collection.map(item => (
+				<Card
+					cover_alt={item.data.cover_alt}
+					cover_src={item.data.cover_src.src}
+					cover_size={item.data.cover_src.width}
+					date_created={item.data.date_created}
+					description={item.data.description}
+					href={ROUTES.SKETCHES_ITEM(item.id)}
+					title={item.data.title}
+				/>
+			))
+		}
+	</div>
+</LayoutBaseTitle>

@@ -1,0 +1,59 @@
+import { LANG } from "~/consts";
+
+export const tEn = {
+	ADD_RULE: "Add rule",
+	DISTANCES: "Distances",
+	FORBIDDEN: "Forbidden",
+	MESSAGE_RESTRICTIONS_1: "Restrict what distance allowed (restricted) the next randomly chosen vertice may have relative to previous ones.",
+	MESSAGE_RESTRICTIONS_2: "Provide the relative index: -1 - means the last, -2 - the penultimate, etc; and the list of distances separated by comma.",
+	PLACEHOLDER_DISTANCES: "Distances separated by comma",
+	POINT_SCALE: "Size",
+	POINTS_COLOR: "Color",
+	POINTS_COLOR_OPACITY: "Opacity",
+	POINTS_COLOR_WHEEL: "Color Wheel",
+	POINTS_LIMIT: "Limit",
+	POLYGON_COLOR: "Color",
+	POLYGON_COLOR_OPACITY: "Color opacity",
+	POLYGON_LINE_WIDTH: "Line width",
+	POLYGON_ORIGIN_THETA: "Rotate",
+	POLYGON_SCALE: "Size",
+	POLYGON_SIDES: "Number of sides",
+	POLYGON_VISIBLE: "Visibility",
+	RESET: "Reset",
+	RESTRICTIONS: "Vertice randomness restrictions",
+	SPEED: "Painting speed",
+	STEP_COEF: "Step coefficient",
+	STEP_DISTANCE: "Absolute distance step",
+	STEP_FACTOR: "Factored steps",
+	VERTICE: "Relative vertice"
+} as const;
+
+export const tRu = {
+	ADD_RULE: "Добавить правило",
+	DISTANCES: "Расстояния",
+	FORBIDDEN: "Запрет",
+	MESSAGE_RESTRICTIONS_1: "Позволяет контролировать возможное (запрещённое) расстояние от новой выбранной вершины относительно предыдущих выбранных вершин.",
+	MESSAGE_RESTRICTIONS_2: "Необходимо указать относительный индекс: -1 - означает относительно последней вершины, -2 - относительно позапрошлой, и так далее. Расстояния указываются через запятую.",
+	PLACEHOLDER_DISTANCES: "Расстояния через запятую",
+	POINT_SCALE: "Размер",
+	POINTS_COLOR: "Цвет",
+	POINTS_COLOR_OPACITY: "Прозрачность",
+	POINTS_COLOR_WHEEL: "Цветовой круг",
+	POINTS_LIMIT: "Количество",
+	POLYGON_COLOR: "Цвет",
+	POLYGON_COLOR_OPACITY: "Прозрачность цвета",
+	POLYGON_LINE_WIDTH: "Толщина сторон",
+	POLYGON_ORIGIN_THETA: "Поворот вокруг оси",
+	POLYGON_SCALE: "Размер",
+	POLYGON_SIDES: "Количество сторон",
+	POLYGON_VISIBLE: "Видимость",
+	RESET: "Сбросить",
+	RESTRICTIONS: "Ограничения выбора вершин",
+	SPEED: "Скорость игры",
+	STEP_COEF: "Коэффициент относительного шага",
+	STEP_DISTANCE: "Абсолютная величина шага",
+	STEP_FACTOR: "Относительный шаг",
+	VERTICE: "Предыдущая вершина"
+} as const satisfies Record<keyof typeof tEn, string>;
+
+export const t = LANG === "en" ? tEn : tRu;

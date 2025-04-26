@@ -1,6 +1,6 @@
 ---
 import { ButtonScrollTop } from "ui";
-import { LayoutBase } from "..";
+import { LayoutBaseTitle } from "..";
 
 import styles from "./layout-article.module.css";
 
@@ -12,9 +12,9 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<LayoutBase title={title} description={description}>
+<LayoutBaseTitle title={title} description={description}>
 	<article class={styles.article} data-full-bleed>
 		<slot />
 		<ButtonScrollTop client:visible />
 	</article>
-</LayoutBase>
+</LayoutBaseTitle>

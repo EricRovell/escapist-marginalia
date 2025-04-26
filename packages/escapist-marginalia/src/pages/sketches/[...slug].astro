@@ -1,0 +1,33 @@
+---
+import { type CollectionEntry, getCollection, render, getEntry } from 'astro:content';
+import { LayoutSketch } from '~/layouts';
+
+export async function getStaticPaths() {
+	const pages = await getCollection("sketches");
+
+	return pages.map(page => ({
+		params: {
+			slug: page.id
+		},
+		props: page,
+	}));
+}
+
+const sketch = await getEntry("sketch", Astro.params.slug);
+
+if (!sketch) {
+	throw new Error(`No sketch with id: ${Astro.params.slug} was found`);
+}
+
+type Props = CollectionEntry<"sketches">;
+
+const page = Astro.props;
+
+const { Content: Page } = await render(page);
+const { Content: Sketch } = await render(sketch);
+---
+
+<LayoutSketch title={page.data.title} description={page.data.description}>
+	<Sketch slot="sketch" />
+	<Page />
+</LayoutSketch>

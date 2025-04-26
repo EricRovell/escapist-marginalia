@@ -56,19 +56,31 @@ const projects = defineCollection({
 	})
 });
 
-/* const sketches = defineCollection({
+const sketches = defineCollection({
 	loader: glob({
-		pattern,
-		base: "./src/content/sketches"
+		base: "./src/content/sketches",
+		pattern
 	}),
 	schema: ({ image }) => z.object({
 		cover_alt: z.string(),
 		cover_src: image(),
 		...PAGE_SCHEMA
 	})
-}); */
+});
+
+const sketch = defineCollection({
+	loader: glob({
+		base: "./src/content/sketches",
+		pattern: "**/sketch.mdx"
+	}),
+	schema: z.object({
+		slug: z.string()
+	})
+});
 
 export const collections = {
 	pages,
-	projects
+	projects,
+	sketch,
+	sketches
 };
