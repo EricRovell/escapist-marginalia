@@ -1,25 +1,31 @@
 ---
 import BaseHead from "~/components/BaseHead.astro";
 import { Header, Footer } from "~/components";
-import { SITE_NAME } from "~/consts";
+import { SITE_NAME, LANG } from "~/consts";
 import { ClientRouter  } from "astro:transitions";
 
 import styles from "./base-layout.module.css";
+
+const { maxWidth, ...rest } = Astro.props;
+const style = maxWidth
+	? { "--full-bleed-width": `${maxWidth}px` }
+	: {};
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
+<html lang={LANG}>
+	<head style={style}>
 		<BaseHead title={SITE_NAME} />
 		<ClientRouter />
 		<slot name="head" />
 	</head>
-	<body class={styles.body} data-full-bleed style={{ "--full-bleed-width": "1800px" }}>
+	<body class={styles.body} data-full-bleed style={style} {...rest}>
 		<header data-full-bleed>
 			<Header />
+			<slot name="header" />
 		</header>
 		<slot />
-		<div data-full-bleed class={styles.footer}>
+		<div data-full-bleed class={styles.footer} style={style}>
 			<Footer />
 		</div>
 	</body>

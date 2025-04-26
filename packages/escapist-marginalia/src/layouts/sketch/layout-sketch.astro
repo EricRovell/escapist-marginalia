@@ -11,8 +11,8 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<LayoutBase>
-	<div data-full-bleed>
+<LayoutBase maxWidth={1800}>
+	<div data-full-bleed style={{ "--full-bleed-width": "1800px" }}>
 		<main class={styles.layout}>
 			<slot name="sketch" />
 			<h1 class={styles.title}>{title}</h1>

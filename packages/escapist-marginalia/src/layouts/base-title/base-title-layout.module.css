@@ -1,15 +1,13 @@
-.body {
-	display: grid;
-	grid-template: min-content 1fr min-content / 1fr;
-	min-height: 125vh;
-	font-family: montserrat, Arial, Helvetica, sans-serif;
-}
-
 .content {
 	margin-block: 4rem 25vh;
 }
 
-.footer {
-	background-color: var(--color-surface-2);
-	border-top: 1px solid var(--color-accent);
+.title {
+	font-size: 4.8rem;
+	margin-block: 4rem 0.5rem;
+}
+
+.description {
+	font-size: 2rem;
+	margin-block-end: 4rem;
 }
