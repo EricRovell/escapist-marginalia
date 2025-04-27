@@ -1,20 +1,31 @@
 .footer {
 	--icon-size: 3.5rem;
 
-	display: grid;
-	grid-template: repeat(2, auto) / auto 1fr auto;
-	grid-template-areas:
-		"logo . socials"
-		"build . no-ai";
-	gap: 0.8rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
 	width: 100%;
 	height: min-content;
 	padding-block: 2.4rem;
 }
 
+.section {
+	display: flex;
+	flex-flow: column wrap;
+	gap: 0.4rem;
+
+	/* align due socials button padding */
+	&:first-of-type {
+		margin-block-start: 0.9rem;
+	}
+}
+
 .nav {
-	grid-area: socials;
 	margin-inline-start: auto;
+}
+
+.link {
+	font-weight: 400;
 }
 
 .socials {
@@ -30,40 +41,37 @@
 	--icon-size: 2rem;
 	--icon-color: var(--color-info);
 
-	grid-area: logo;
 	display: flex;
 	align-items: center;
 	gap: 0.8rem;
+	font-size: 1.6rem;
+	margin-block-end: 0.4rem;
+}
+
+.text {
 	font-size: 1.4rem;
-}
-
-.secondary {
-	font-size: 1.2rem;
 	color: var(--color-text-secondary);
-	max-width: 35ch;
 }
 
-.build {
-	grid-area: build;
-}
-
-.warning {
+.ai {
 	text-wrap: balance;
-	grid-area: no-ai;
 	text-align: right;
+	max-width: 25ch;
 }
-
 
 @media screen and (width <= 600px) {
 	.footer {
-		justify-items: center;
+		flex-flow: column-reverse wrap;
+		align-items: center;
 		gap: 1.6rem;
-		grid-template: repeat(4, min-content) / 1fr;
-		grid-template-areas:
-			"socials"
-			"logo"
-			"no-ai"
-			"build";
+	}
+
+	.text {
+		text-align: center;
+	}
+
+	.link {
+		align-self: center;
 	}
 
 	.logo {
@@ -78,9 +86,5 @@
 
 	.nav {
 		margin-inline-start: unset;
-	}
-
-	.warning {
-		text-align: center;
 	}
 }

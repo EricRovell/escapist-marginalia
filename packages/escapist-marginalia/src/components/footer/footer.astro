@@ -9,10 +9,10 @@ import { classnames } from "ui/utils";
 
 const socials = [
 	{ label: "source", href: ROUTES_SOCIALS.GITHUB, Icon: IconGithub },
-	{ label: "gitlab", href: ROUTES_SOCIALS.GITLAB, Icon:  IconGitlab },
-	{ label: "telegram", href: ROUTES_SOCIALS.TELEGRAM, Icon:  IconTelegram },
-	{ label: "instagram", href: ROUTES_SOCIALS.INSTAGRAM, Icon:  IconInstagram },
-	{ label: "leetcode", href: ROUTES_SOCIALS.LEETCODE, Icon:  IconLeetcode }
+	{ label: "gitlab", href: ROUTES_SOCIALS.GITLAB, Icon: IconGitlab },
+	{ label: "telegram", href: ROUTES_SOCIALS.TELEGRAM, Icon: IconTelegram },
+	{ label: "instagram", href: ROUTES_SOCIALS.INSTAGRAM, Icon: IconInstagram },
+	{ label: "leetcode", href: ROUTES_SOCIALS.LEETCODE, Icon: IconLeetcode }
 ];
 
 const BUILD_DATE = new Intl.DateTimeFormat(LANG, {
@@ -22,28 +22,40 @@ const BUILD_DATE = new Intl.DateTimeFormat(LANG, {
 	hour: "2-digit",
 	minute: "2-digit"
 }).format();
+
+// TODO
+const link = LANG === "en"
+	? "https://ru.escapist-marginalia.tech/"
+	: "https://escapist-marginalia.tech/"
 ---
 
 <footer class={styles.footer}>
-	<div class={styles.logo}>
-		<IconLogo />
-		<p>Eric Rovell</p>
-	</div>
-	<p class={classnames(styles.secondary, styles.build)}>
-		<strong>{t.BUILD}</strong>: {BUILD_DATE}
-	</p>
-	<nav class={styles.nav}>
-		<ul class={styles.socials}>
-			{socials.map(({ href, Icon, label }) => (
-				<li>
-					<Link href={href} appearance="ghost" icon title={label}>
-						<Icon title={label} />
-					</Link>
-				</li>
-			))}
-		</ul>
-	</nav>
-	<p class={classnames(styles.secondary, styles.warning)}>
-		{t.NO_AI}
-	</p>
+	<section class={styles.section}>
+		<div class={styles.logo}>
+			<IconLogo />
+			<p>Eric Rovell</p>
+		</div>
+		<Link appearance="text" class={classnames(styles.text, styles.link)} href={link} variant="neutral">
+			{t.ANOTHER_LANG}
+		</Link>
+		<p class={classnames(styles.text, styles.build)}>
+			{t.BUILD}: {LANG.toUpperCase()} {BUILD_DATE}
+		</p>
+	</section>
+	<section class={styles.section}>
+		<nav class={styles.nav}>
+			<ul class={styles.socials}>
+				{socials.map(({ href, Icon, label }) => (
+					<li>
+						<Link href={href} appearance="ghost" icon title={label}>
+							<Icon title={label} />
+						</Link>
+					</li>
+				))}
+			</ul>
+		</nav>
+		<p class={classnames(styles.text, styles.ai)}>
+			{t.NO_AI}
+		</p>
+	</section>
 </footer>

@@ -2,6 +2,7 @@ import { LANG } from "~/consts";
 
 const tEn = {
 	ABOUT: "About",
+	ANOTHER_LANG: "Веб-сайт на русском",
 	BUILD: "Build",
 	GALLERY: "Gallery",
 	HOME: "Home",
@@ -13,6 +14,7 @@ const tEn = {
 
 const tRu = {
 	ABOUT: "О себе",
+	ANOTHER_LANG: "English website",
 	BUILD: "Сборка",
 	GALLERY: "Галерея",
 	HOME: "Главная",
