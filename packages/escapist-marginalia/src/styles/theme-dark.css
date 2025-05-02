@@ -108,6 +108,10 @@
 		--loader-binary-color-digit: var(--color-neutral-200);
 		--loader-binary-color-pit: #1B2A33;
 		--loader-binary-color-pit-shadow: #162229;
+		--toggle-track-color: var(--color-neutral-600);
+		--toggle-track-color-active: var(--color-accent);
+		--toggle-thumb-color: var(--color-neutral-200);
+		--toggle-thumb-color-highlight: hsl(from var(--color-accent) h 60% 50%);
 
 		.astro-code,
 		.astro-code span {

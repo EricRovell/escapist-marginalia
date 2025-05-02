@@ -1,0 +1,90 @@
+.root {
+	--toggle-thumb-size: 2.4rem;
+	--toggle-track-size: calc(var(--toggle-thumb-size) * 1.6);
+	--toggle-highlight-size: calc(0.15 * var(--toggle-thumb-size));
+	--toggle-track-padding: 4px;
+	--toggle-border-radius: 5px;
+	--toggle-transition-duration: 350ms;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1ch;
+	height: fit-content;
+	cursor: pointer;
+	user-select: none;
+	width: 100%;
+
+	&:has(.input:disabled) {
+		cursor: not-allowed;
+	}
+
+	&:hover:not(:disabled) {
+		color: var(--surface-4-text-contrast);
+	}
+}
+
+.input {
+	appearance: none;
+	flex-shrink: 0;
+	display: grid;
+	align-items: center;
+	margin-left: auto;
+	grid: [track] 1fr / [track] 1fr;
+	inline-size: var(--toggle-track-size);
+	block-size: var(--toggle-thumb-size);
+	border: none;
+	border-radius: var(--toggle-border-radius);
+	padding: var(--toggle-track-padding);
+	background: var(--toggle-track-color);
+	outline-offset: 5px;
+	transition: box-shadow var(--toggle-transition-duration) linear;
+	cursor: pointer;
+	touch-action: pan-y;
+
+	/* transform: translateX(calc(-50% - 0.5 * var(--toggle-thumb-size))); */
+
+	/* thumb */
+	&::after {
+		content: "";
+		grid-area: track;
+		inline-size: calc(var(--toggle-thumb-size) - 2 * var(--toggle-track-padding));
+		block-size: calc(var(--toggle-thumb-size) - 2 * var(--toggle-track-padding));
+		background-color: var(--toggle-thumb-color);
+		border-radius: var(--toggle-border-radius);
+		transform: translateX(var(--toggle-thumb-position, 0%));
+		transition:
+			transform var(--toggle-transition-duration) ease,
+			background-color 0.25s ease;
+	}
+
+	&:checked {
+		--toggle-thumb-position: calc(var(--toggle-track-size) - 100% - 2 * var(--toggle-track-padding));
+
+		background-color: var(--toggle-track-color-active);
+	}
+
+	&:checked::after {
+		background-color: var(--toggle-thumb-color-active, var(--toggle-thumb-color));
+	}
+
+	&:focus-visible {
+		outline: 2px dashed var(--color-accent);
+		outline-offset: 2px;
+	}
+
+	&:hover:not(:disabled) {
+		box-shadow: 0 0 0 var(--toggle-highlight-size) var(--toggle-thumb-color-highlight);
+	}
+
+	&:disabled::after {
+		background-color: unset;
+		box-shadow: inset 0 0 0 2px var(--toggle-thumb-color);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		&::after {
+			transition: unset;
+		}
+	}
+}
