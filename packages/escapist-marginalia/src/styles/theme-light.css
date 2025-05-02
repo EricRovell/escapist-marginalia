@@ -107,7 +107,7 @@
 		--color-info-border: var(--color-info-300);
 
 		--color-border: var(--color-info-200);
-	
+
 		--color-border-accent: var(--color-blue-600);
 		--color-border-50: #B4B8F180;
 
@@ -119,10 +119,15 @@
 		--loader-binary-color-digit: var(--color-neutral-050);
 		--loader-binary-color-pit: var(--color-neutral-500);
 		--loader-binary-color-pit-shadow: var(--color-neutral-300);
+
 		--toggle-track-color: var(--color-neutral-700);
 		--toggle-track-color-active: var(--color-accent);
 		--toggle-thumb-color: var(--color-neutral-400);
 		--toggle-thumb-color-active: var(--color-neutral-800);
 		--toggle-thumb-color-highlight: hsl(from var(--color-accent) h 80% 80%);
+
+		--input-range-color: var(--color-accent);
+		--input-range-color-active: hsl(from var(--color-accent) h s 75%);
+		--input-range-color-secondary: var(--color-neutral-700);
 	}
 }

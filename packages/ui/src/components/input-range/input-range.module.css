@@ -1,0 +1,124 @@
+.root {
+	display: grid;
+	grid-template: auto auto / 1fr auto;
+	gap: 0.2em;
+	margin-block-end: 0.25em;
+}
+
+.label {
+	grid-row: 1;
+	grid-column: 1;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.output {
+	grid-row: 1;
+	grid-column: 2;
+	align-self: center;
+	visibility: hidden;
+	height: min-content;
+	padding-top: 0.05em;
+	font-variant-numeric: tabular-nums;
+
+	&[data-visible] {
+		visibility: visible;
+	}
+}
+
+/* Override basic appearance */
+
+.input {
+	--input-range-gap: 5px;
+	--input-range-thickness: 2px;
+	--input-range-thumb-size: 20px;
+
+	/* for Firefox and prevent focus ring clip */
+	height: calc(var(--input-range-thumb-size) + 8px);
+	appearance: none;
+	grid-column: 1 / -1;
+	width: 100%;
+	background: none;
+	cursor: pointer;
+	overflow: hidden;
+
+	&:focus-visible {
+		outline: none;
+	}
+
+	&:focus-visible,
+	&:hover{
+		--input-range-color: var(--input-range-color-active);
+	}
+
+	&:active,
+	&:focus-visible{
+		--input-range-thumb-offset: var(--input-range-thumb-size);
+		--input-range-color: var(--input-range-color-active);
+	}
+
+	/* chromium */
+
+	&[type="range" i]::-webkit-slider-thumb {
+		height: var(--input-range-thumb-size);
+		aspect-ratio: 1;
+		border-radius: 50%;
+		box-shadow: 0 0 0 var(--input-range-thumb-offset, var(--input-range-thickness)) inset var(--input-range-color);
+		appearance: none;
+		transition: .3s;
+		border-image: linear-gradient(
+			90deg,
+			var(--input-range-color) 50%,  var(--input-range-color-secondary) 0)
+			0
+			1/calc(50% - var(--input-range-thickness) / 2)
+			100vw / 0
+			calc(100vw + var(--input-range-gap)
+		);
+	}
+
+	&[type="range" i]:focus-visible::-webkit-slider-thumb {
+		outline: 2px dashed var(--color-accent);
+		outline-offset: 2px;
+	}
+
+	&[type="range" i]:hover::-webkit-slider-thumb {
+		cursor: grab;
+	}
+
+	&[type="range" i]:active::-webkit-slider-thumb {
+		cursor: ew-resize;
+	}
+
+	/* Firefox */
+	&[type="range"]::-moz-range-thumb {
+		height: var(--input-range-thumb-size);
+		width: var(--input-range-thumb-size);
+		background: none;
+		border-radius: 50%;
+		box-shadow: 0 0 0 var(--input-range-thumb-offset ,var(--input-range-thickness)) inset var(--input-range-color);
+		appearance: none;
+		transition: .3s;
+		border-image: linear-gradient(
+			90deg,
+			var(--input-range-color) 50%, var(--input-range-color-secondary) 0)
+			0
+			1/calc(50% - var(--input-range-thickness) / 2)
+			100vw / 0
+			calc(100vw + var(--input-range-gap)
+		);
+	}
+
+	&[type="range" i]:focus-visible::-moz-range-thumb {
+		outline: 2px dashed var(--color-accent);
+		outline-offset: 2px;
+	}
+
+	&[type="range" i]:hover::-moz-range-thumb {
+		cursor: grab;
+	}
+
+	&[type="range" i]:active::-moz-range-thumb {
+		cursor: ew-resize;
+	}
+}
