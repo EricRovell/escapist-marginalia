@@ -1,0 +1,114 @@
+.root {
+	display: flex;
+	justify-content: space-between;
+}
+
+.label {
+	width: fit-content;
+}
+
+.swatch {
+	anchor-name: var(--input-color-anchor);
+	aspect-ratio: 1;
+	padding: 0;
+	width: 2.4rem;
+	height: 2.4rem;
+	transition:
+		background-color 0.25s linear,
+		border-color 0.25s linear;
+
+	&:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 2px;
+	}
+
+	&[data-transparent] {
+		background-image: url('data:image/svg+xml;utf8,<svg preserveAspectRatio="none" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><line x1="2" y1="2" x2="8" y2="8" stroke="red" /><line x1="8" y1="2" x2="2" y2="8" stroke="red" /></svg>');
+	}
+}
+
+.picker {
+	position: absolute;
+	position-anchor: var(--input-color-anchor);
+	position-area: bottom span-left;
+	grid-auto-rows: min-content;
+	gap: 1.2rem;
+	width: min(100%, 350px);
+	height: min-content;
+	background-color: var(--color-surface-2);
+	padding: 2.4rem;
+	border: 1px solid var(--color-surface-4);
+	font-size: 1.2rem;
+
+	&[popover],
+	&[popover]::backdrop {
+		transition:
+			opacity 0.25s,
+			transform 0.25s,
+			overlay 0.25s,
+			display 0.25s;
+		transition-behavior: allow-discrete;
+	}
+
+	/* On open, transition to... */
+	&[popover]:popover-open {
+		display: grid;
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	&[popover]:popover-open::backdrop {
+		background-color: rgba( 0 0 0 / 25% );
+		opacity: 1;
+	}
+
+	/* On close, transition to... */
+	&[popover] {
+		transform: translateY(2rem);
+		opacity: 0;
+	}
+
+	&[popover]::backdrop {
+		opacity: 0;
+		background-color: rgba( 0 0 0 / 25% );
+	}
+
+	/* On open, starting-style */
+	@starting-style {
+		&[popover]:popover-open {
+			transform: translateY(-2rem);
+			opacity: 0;
+		}
+
+		&[popover]:popover-open::backdrop {
+			opacity: 0;
+		}
+	}
+}
+
+.picker-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-block-end: 1.6rem;
+	font-size: 1.6rem;
+}
+
+.picker-swatch {
+	display: block;
+	height: 2.4rem;
+	width: 2.4rem;
+	transition:
+		background-color 0.25s linear,
+		border-color 0.25s linear;
+	background-image:
+		linear-gradient(var(--button-bg), var(--button-bg)),
+		url('data:image/svg+xml;utf8,<svg preserveAspectRatio="none" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="5" height="5" fill="grey" /><rect x="5" y="5" width="5" height="5" fill="grey" /><rect x="5" y="0" width="5" height="5" fill="white" /><rect x="0" y="5" width="5" height="5" fill="white" /></svg>');
+}
+
+.picker-footer {
+	display: grid;
+	grid-template: 1fr / 1fr 1fr;
+	gap: 1.2rem;
+	margin-block-start: 0.8rem;
+}

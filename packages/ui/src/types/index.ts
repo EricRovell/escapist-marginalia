@@ -10,3 +10,18 @@ export type Variant = "accent" | "danger" | "info" | "neutral" | "success" | "wa
  * ```
  */
 export type Classes<T extends string> = Partial<Record<T, string>>;
+
+export interface ColorModelHSL {
+	/** hue */
+	h: number;
+	/** lightness */
+	l: number;
+	/** opacity */
+	o: number;
+	/** saturation */
+	s: number;
+}
+
+export type ColorStringHSL =
+	| `hsl(${number}deg ${number}% ${number}%)`
+	| `hsl(${number}deg ${number}% ${number}% / ${number}%)`;

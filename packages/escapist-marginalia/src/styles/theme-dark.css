@@ -105,6 +105,8 @@
 		--scroll-track-color: var(--color-surface-2);
 		--scroll-thumb-color: #253758;
 
+		--color-border: var(--color-info);
+
 		--loader-binary-color-digit: var(--color-neutral-200);
 		--loader-binary-color-pit: #1B2A33;
 		--loader-binary-color-pit-shadow: #162229;

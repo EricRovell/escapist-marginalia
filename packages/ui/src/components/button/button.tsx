@@ -13,6 +13,7 @@ export interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement>
 	icon?: boolean;
 	pending?: boolean;
 	variant?: Variant;
+	wide?: boolean;
 }
 
 const DEFAULT_PROPS: ButtonProps = {
@@ -29,7 +30,8 @@ export function Button(allProps: ButtonProps) {
 		"class",
 		"icon",
 		"pending",
-		"variant"
+		"variant",
+		"wide"
 	]);
 
 	return (
@@ -39,6 +41,7 @@ export function Button(allProps: ButtonProps) {
 			data-icon={setAttr(props.icon)}
 			data-pending={setAttr(props.pending)}
 			data-variant={props.variant}
+			data-wide={setAttr(props.wide)}
 			{...rest}
 		>
 			{props.children}
