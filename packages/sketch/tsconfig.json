@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"useDefineForClassFields": true,
+		"module": "ESNext",
+		"allowJs": true,
+		"checkJs": true,
+		"isolatedModules": true,
+		"lib": [ "ESNext", "DOM", "DOM.Iterable" ],
+		"moduleResolution": "bundler",
+		"jsx": "preserve",
+		"jsxImportSource": "solid-js",
+		"strictNullChecks": true,
+		"types": []
+	},
+	"include": [
+		"src/**/*.tsx",
+		"src/**/*.ts",
+		"../../global.d.ts"
+	]
+}

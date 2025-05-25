@@ -1,0 +1,26 @@
+{
+	"author": "Eric Rovell",
+	"description": "Sketch: canvas component renderer",
+	"exports": {
+		".": {
+			"import": "./src/index.ts"
+		}
+	},
+	"keywords": [
+		"ui"
+	],
+	"name": "sketch",
+	"license": "MIT",
+	"peerDependencies": {
+		"solid-js": "catalog:default"
+	},
+	"dependencies": {
+		"utils": "workspace:*",
+		"ui": "workspace:*"
+	},
+	"private": true,
+	"scripts": {
+		"tsc": "tsc --noEmit"
+	},
+	"type": "module"
+}

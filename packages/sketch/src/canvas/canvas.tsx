@@ -1,9 +1,9 @@
 import { createEffect, createSignal, type JSX, mergeProps, onCleanup, splitProps } from "solid-js";
+import { createStore } from "solid-js/store";
 import { classnames } from "utils";
 import { isNullable } from "utils/validators";
 
-import type { Setter} from "solid-js";
-
+import { useIntersectionObserver, useResizeObserver } from "./canvas.hooks";
 import { createRenderService } from "./canvas.service";
 
 import type { Renderer } from "./canvas.types";
@@ -15,17 +15,16 @@ export interface CanvasProps extends JSX.CanvasHTMLAttributes<HTMLCanvasElement>
 	draw?: Renderer;
 	height?: number;
 	loop?: boolean;
-	onResize?: VoidFunction;
+	onIntersect?: (entry: IntersectionObserverEntry) => void;
+	onResize?: (size: { height: number, width: number }) => void;
 	pixelRatio?: number;
-	ref?: Setter<HTMLCanvasElement | undefined>;
+	ref?: (ref: HTMLCanvasElement) => void;
 	setup?: Renderer;
 	width?: number;
 }
 
 const DEFAULT_PROPS = {
-	height: 150,
-	pixelRatio: isNullable(globalThis.window) ? 1 : globalThis.devicePixelRatio,
-	width: 300
+	pixelRatio: isNullable(globalThis.window) ? 1 : globalThis.devicePixelRatio
 };
 
 export function Canvas(allProps: CanvasProps) {
@@ -36,15 +35,20 @@ export function Canvas(allProps: CanvasProps) {
 		"setup",
 		"class",
 		"children",
-		"height",
 		"loop",
-		"pixelRatio",
-		"width",
 		"onResize",
+		"onIntersect",
 		"ref"
 	]);
 
 	const [ ref, setRef ] = createSignal<HTMLCanvasElement>();
+
+	const [ size, setSize ] = createStore({
+		height: 150,
+		pixelRatio: isNullable(globalThis.window) ? 1 : globalThis.devicePixelRatio,
+		width: 300
+	});
+
 	const service = createRenderService();
 
 	createEffect(() => {
@@ -56,19 +60,25 @@ export function Canvas(allProps: CanvasProps) {
 
 		service.updateParams({
 			autoclear: Boolean(props.autoclear),
-			context,
-			loop: Boolean(props.loop)
+			context
 		});
 	});
 
 	createEffect(() => {
+		service.setLoop(Boolean(props.loop));
+	});
+
+	createEffect(() => {
 		service.updateParams({
-			height: props.height,
-			pixelRatio: props.pixelRatio,
-			width: props.width
+			height: size.height,
+			pixelRatio: size.pixelRatio,
+			width: size.width
 		});
 
-		props.onResize?.();
+		props.onResize?.({
+			height: size.height,
+			width: size.width
+		});
 	});
 
 	createEffect(() => {
@@ -78,17 +88,32 @@ export function Canvas(allProps: CanvasProps) {
 		});
 	});
 
+	useResizeObserver(ref, size => {
+		props.onResize?.(size);
+		setSize("width", size.width);
+		setSize("height", size.height);
+
+		service.register({
+			draw: props.draw,
+			setup: props.setup
+		});
+	});
+
+	useIntersectionObserver(ref, entry => {
+		props.onIntersect?.(entry);
+	}, { threshold: 0.65 });
+
 	onCleanup(() => service.unregister());
 
 	return (
 		<canvas
 			class={classnames(styles.canvas, props.class)}
-			height={props.height * props.pixelRatio}
+			height={size.height * size.pixelRatio}
 			ref={element => {
 				setRef(element);
 				props.ref?.(element);
 			}}
-			width={props.width * props.pixelRatio}
+			width={size.width * size.pixelRatio}
 			{...rest}
 		/>
 	);

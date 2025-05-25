@@ -121,6 +121,9 @@ importers:
       quadtree:
         specifier: workspace:*
         version: link:../quadtree
+      sketch:
+        specifier: workspace:*
+        version: link:../sketch
       solid-js:
         specifier: catalog:default
         version: 1.9.3
@@ -146,6 +149,18 @@ importers:
 
   packages/quadtree:
     dependencies:
+      utils:
+        specifier: workspace:*
+        version: link:../utils
+
+  packages/sketch:
+    dependencies:
+      solid-js:
+        specifier: catalog:default
+        version: 1.9.3
+      ui:
+        specifier: workspace:*
+        version: link:../ui
       utils:
         specifier: workspace:*
         version: link:../utils

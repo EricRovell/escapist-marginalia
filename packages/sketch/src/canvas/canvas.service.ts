@@ -88,6 +88,7 @@ export function createRenderService() {
 		params = { ...params, ...nextParams };
 		shouldRedraw = true;
 		shouldResize = true;
+
 		stop();
 		start();
 	}
@@ -101,12 +102,19 @@ export function createRenderService() {
 		stop();
 	}
 
+	function setLoop(state: boolean) {
+		params.loop = state;
+		shouldRedraw = true;
+
+		stop();
+		start();
+	}
+
 	return {
 		clear,
 		register,
 		render,
-		start,
-		stop,
+		setLoop,
 		unregister,
 		updateParams
 	};

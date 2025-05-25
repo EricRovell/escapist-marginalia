@@ -1,6 +1,6 @@
 import { createEffect, onCleanup } from "solid-js";
 
-import type { Accessor} from "solid-js";
+import type { Accessor } from "solid-js";
 
 type ResizeHandler = ({ height, width }: { height: number; width: number, }) => void;
 
