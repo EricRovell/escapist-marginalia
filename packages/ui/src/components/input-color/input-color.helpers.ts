@@ -7,7 +7,7 @@ export const DEFAULT_MODEL: ColorModelHSL = {
 	s: 50
 };
 
-export const colorToString = (value = DEFAULT_MODEL, opaque = false): ColorStringHSL => {
+export const toColorString = (value = DEFAULT_MODEL, opaque = false): ColorStringHSL => {
 	if (opaque) {
 		return `hsl(${value.h}deg ${value.s}% ${value.l}%)`;
 	}
@@ -16,9 +16,19 @@ export const colorToString = (value = DEFAULT_MODEL, opaque = false): ColorStrin
 };
 
 export const getContrast = (value = DEFAULT_MODEL): ColorStringHSL => {
-	return colorToString({
+	let lightness = 0;
+
+	if (value.l === 0) {
+		lightness = 50;
+	} else if (value.l >= 50) {
+		lightness = value.l / 2;
+	} else {
+		lightness = value.l * 2;
+	}
+
+	return toColorString({
 		...value,
-		l: Math.round(value.l >= 50 ? value.l / 2 : value.l * 2),
+		l: lightness,
 		o: 100
 	});
 };
@@ -44,7 +54,7 @@ export const parseColorString = (input: ColorStringHSL): ColorModelHSL => {
 	return {
 		h: Number(match[1]),
 		l: Number(match[4]),
-		o: match[3] ? Number(match[5]) : 1,
+		o: match[5] ? Number(match[5]) : 100,
 		s: Number(match[3])
 	};
 };

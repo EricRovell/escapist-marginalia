@@ -2,45 +2,57 @@ import { createSignal, type JSX, Show } from "solid-js";
 import { createStore, unwrap } from "solid-js/store";
 import { classnames } from "utils";
 
-import { Button } from "../button/button";
-import { InputRange } from "../input-range";
-import { useColorContext } from "./input-color.context";
-import { colorToString, DEFAULT_MODEL, getContrast } from "./input-color.helpers";
-import { t } from "./input-color.translation";
+import { Button } from "../../button/button";
+import { InputRange } from "../../input-range";
+import { getContrast, toColorString } from "../input-color.helpers";
+import { t } from "../input-color.translation";
 
-import type { ColorModelHSL } from "../../types";
+import type { ColorModelHSL } from "../../../types";
+import type { InputChangeHandlerValue } from "../input-color";
 
-import styles from "./input-color.module.css";
+import styles from "../input-color.module.css";
 
 interface Props extends JSX.HTMLAttributes<HTMLFieldSetElement> {
-	onColorChange?: (model: ColorModelHSL) => void;
+	initialModel: ColorModelHSL;
+	onColorChange?: (value: InputChangeHandlerValue) => void;
 	opaque?: boolean;
+	pickerID: string;
 }
 
 export function InputColorPicker(props: Props) {
 	const [ getRef, setRef ] = createSignal<HTMLFieldSetElement>();
-	const [ color, setColor ] = createStore<ColorModelHSL>({ ...DEFAULT_MODEL });
-	const { model, pickerID, setModel } = useColorContext();
+	const [ color, setColor ] = createStore<ColorModelHSL>({ ...unwrap(props.initialModel) });
 
 	const handleClose = () => getRef()?.hidePopover();
 
 	const handleSubmit = () => {
 		const value = { ...unwrap(color) };
-		setModel(value);
-		props.onColorChange?.(value);
+		props.onColorChange?.({
+			value,
+			valueAsString: toColorString(value)
+		});
 		handleClose();
 	};
 
 	const handleCancel = () => {
-		setColor({ ...unwrap(model) });
 		handleClose();
 	};
 
-	const getColor = () => colorToString(color);
+	const handleBeforeToggle = () => {
+		setColor({ ...unwrap(props.initialModel) });
+	};
+
+	const getColor = () => toColorString(color);
 	const colorContrast = () => getContrast(color);
 
 	return (
-		<fieldset class={classnames(styles.picker)} id={pickerID} popover="auto" ref={setRef}>
+		<fieldset
+			class={classnames(styles.picker)}
+			id={props.pickerID}
+			onBeforeToggle={handleBeforeToggle}
+			popover="auto"
+			ref={setRef}
+		>
 			<header class={styles["picker-header"]}>
 				{t.HEADER}:
 				<output
@@ -56,6 +68,7 @@ export function InputColorPicker(props: Props) {
 				max={360}
 				min={0}
 				onInput={event => setColor("h", event.target.valueAsNumber)}
+				output
 				step={1}
 				value={color.h}
 			/>
@@ -64,6 +77,7 @@ export function InputColorPicker(props: Props) {
 				max={100}
 				min={0}
 				onInput={event => setColor("s", event.target.valueAsNumber)}
+				output
 				step={1}
 				value={color.s}
 			/>
@@ -81,6 +95,7 @@ export function InputColorPicker(props: Props) {
 					max={100}
 					min={0}
 					onInput={event => setColor("o", event.target.valueAsNumber)}
+					output
 					step={1}
 					value={color.o}
 				/>
