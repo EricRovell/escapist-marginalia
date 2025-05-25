@@ -2,9 +2,10 @@
 	--toggle-thumb-size: 2.4rem;
 	--toggle-track-size: calc(var(--toggle-thumb-size) * 1.6);
 	--toggle-highlight-size: calc(0.15 * var(--toggle-thumb-size));
-	--toggle-track-padding: 4px;
-	--toggle-border-radius: 5px;
+	--toggle-track-padding: 3px;
+	--toggle-border-radius: 12px;
 	--toggle-transition-duration: 350ms;
+	--toggle-border: 2px;
 
 	display: flex;
 	align-items: center;
@@ -33,25 +34,25 @@
 	grid: [track] 1fr / [track] 1fr;
 	inline-size: var(--toggle-track-size);
 	block-size: var(--toggle-thumb-size);
-	border: none;
+	border: var(--toggle-border) solid var(--toggle-color);
 	border-radius: var(--toggle-border-radius);
 	padding: var(--toggle-track-padding);
-	background: var(--toggle-track-color);
-	outline-offset: 5px;
-	transition: box-shadow var(--toggle-transition-duration) linear;
+	background: transparent;
 	cursor: pointer;
+	outline: 3px solid transparent;
+	outline-offset: 2px;
 	touch-action: pan-y;
-
-	/* transform: translateX(calc(-50% - 0.5 * var(--toggle-thumb-size))); */
+	transition: outline-color linear 0.125s;
 
 	/* thumb */
 	&::after {
 		content: "";
 		grid-area: track;
-		inline-size: calc(var(--toggle-thumb-size) - 2 * var(--toggle-track-padding));
-		block-size: calc(var(--toggle-thumb-size) - 2 * var(--toggle-track-padding));
-		background-color: var(--toggle-thumb-color);
-		border-radius: var(--toggle-border-radius);
+		aspect-ratio: 1;
+		inline-size: calc(var(--toggle-thumb-size) - 2 * var(--toggle-track-padding) - 2 * var(--toggle-border));
+		block-size: 100%;
+		background-color: var(--toggle-color);
+		border-radius: calc(var(--toggle-border-radius) - var(--toggle-track-padding));
 		transform: translateX(var(--toggle-thumb-position, 0%));
 		transition:
 			transform var(--toggle-transition-duration) ease,
@@ -59,27 +60,28 @@
 	}
 
 	&:checked {
-		--toggle-thumb-position: calc(var(--toggle-track-size) - 100% - 2 * var(--toggle-track-padding));
+		--toggle-thumb-position: calc(var(--toggle-track-size) - 100% - 2 * var(--toggle-track-padding) - 2 * var(--toggle-border));
 
-		background-color: var(--toggle-track-color-active);
+		border-color: var(--toggle-color-active);
 	}
 
 	&:checked::after {
-		background-color: var(--toggle-thumb-color-active, var(--toggle-thumb-color));
+		background-color: var(--toggle-color-active, var(--toggle-thumb-color));
 	}
 
 	&:focus-visible {
-		outline: 2px dashed var(--color-accent);
-		outline-offset: 2px;
+		outline-style: dashed;
+		outline-color: var(--color-accent);
 	}
 
 	&:hover:not(:disabled) {
-		box-shadow: 0 0 0 var(--toggle-highlight-size) var(--toggle-thumb-color-highlight);
+		outline-color: var(--toggle-thumb-color-highlight);
 	}
 
 	&:disabled::after {
 		background-color: unset;
-		box-shadow: inset 0 0 0 2px var(--toggle-thumb-color);
+		box-shadow: inset 0 0 0 2px var(--toggle-color);
+		cursor: not-allowed;
 	}
 
 	@media (prefers-reduced-motion: reduce) {

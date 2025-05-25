@@ -111,9 +111,8 @@
 		--loader-binary-color-pit: #1B2A33;
 		--loader-binary-color-pit-shadow: #162229;
 
-		--toggle-track-color: var(--color-neutral-600);
-		--toggle-track-color-active: var(--color-accent);
-		--toggle-thumb-color: var(--color-neutral-200);
+		--toggle-color: var(--color-neutral-600);
+		--toggle-color-active: var(--color-accent);
 		--toggle-thumb-color-highlight: hsl(from var(--color-accent) h 60% 50%);
 
 		--input-range-color: var(--color-accent);
