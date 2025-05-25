@@ -21,7 +21,8 @@
 		"quadtree": "workspace:*",
 		"solid-js": "catalog:default",
 		"ui": "workspace:*",
-		"utils": "workspace:*"
+		"utils": "workspace:*",
+		"sketch": "workspace:*"
 	},
 	"devDependencies": {
 		"katex": "^0.16.11",
