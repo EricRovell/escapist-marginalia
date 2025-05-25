@@ -10,6 +10,9 @@
 		},
 		"./utils": {
 			"import": "./src/utils/index.ts"
+		},
+		"./types": {
+			"import": "./src/types/index.ts"
 		}
 	},
 	"keywords": [
