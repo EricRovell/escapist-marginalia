@@ -1,23 +1,18 @@
-import { Sketch } from "ui";
+import { createRenderSignal, Sketch, SketchProvider } from "sketch";
 
-import { createSketch } from "./flocking.render";
+import { SketchForm } from "./flocking.form";
+import { ModelProvider } from "./flocking.model";
+import { sketch } from "./flocking.render";
 
-export default () => (
-	<>
-		<Sketch
-			autoclear
-			createSketch={createSketch}
-			style={{
-				"grid-area": "sketch"
-			}}
-		/>
-		<form
-			style={{
-				background: "rgb(13 18 21)",
-				"grid-area": "controls",
-				height: "80vh",
-				width: "100%"
-			}}
-		/>
-	</>
-);
+export default function View() {
+	const { getSketch, resetSketch } = createRenderSignal(sketch);
+
+	return (
+		<ModelProvider>
+			<SketchProvider>
+				<Sketch autoclear createSketch={getSketch()} />
+				<SketchForm onReset={resetSketch} />
+			</SketchProvider>
+		</ModelProvider>
+	);
+}

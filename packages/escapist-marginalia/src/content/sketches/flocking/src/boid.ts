@@ -1,6 +1,6 @@
 import { vector, type Vector } from "@ericrovell/vector";
 
-import type { RenderArguments } from "ui";
+import type { RenderArguments } from "sketch";
 
 interface BoidOptions {
 	forceLimit: number;

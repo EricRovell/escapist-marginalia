@@ -13,6 +13,7 @@ export const tEn = {
 	KATAKANA: "Katakana",
 	MATH: "Math symbols",
 	RANDOM_COLORS: "Random Colors",
+	SCALE: "Scale",
 	SYMBOLS: "Symbols",
 	UPPERCASE: "Uppercase Letters"
 } as const;
@@ -30,6 +31,7 @@ export const tRu = {
 	KATAKANA: "Катакана",
 	MATH: "Математические обозначения",
 	RANDOM_COLORS: "Случайные цвета",
+	SCALE: "Масштаб",
 	SYMBOLS: "Символы",
 	UPPERCASE: "Заглавные буквы"
 } as const satisfies Record<keyof typeof tEn, string>;

@@ -1,22 +1,18 @@
-import { Sketch } from "ui";
+import { createRenderSignal, Sketch, SketchProvider } from "sketch";
 
-import { createSketch } from "./geometric-hive.render";
+import { SketchForm } from "./geometric-hive.form";
+import { ModelProvider } from "./geometric-hive.model";
+import { sketch } from "./geometric-hive.render";
 
-export default () => (
-	<>
-		<Sketch
-			createSketch={createSketch}
-			style={{
-				"grid-area": "sketch"
-			}}
-		/>
-		<form
-			style={{
-				background: "rgb(13 18 21)",
-				"grid-area": "controls",
-				height: "80vh",
-				width: "100%"
-			}}
-		/>
-	</>
-);
+export default function View() {
+	const { getSketch, resetSketch } = createRenderSignal(sketch);
+
+	return (
+		<ModelProvider>
+			<SketchProvider>
+				<Sketch createSketch={getSketch()} />
+				<SketchForm onReset={resetSketch} />
+			</SketchProvider>
+		</ModelProvider>
+	);
+}

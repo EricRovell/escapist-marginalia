@@ -1,8 +1,9 @@
+import { createModelContext } from "sketch";
+
 import type { VerticeRestrictionRule } from "chaos-game";
+import type { ColorStringHSL } from "ui/types";
 
-import type { ColorStringHSL } from "~/types";
-
-export interface Options {
+export interface Model {
 	"point-scale": number;
 	"points-color": ColorStringHSL;
 	"points-color-wheel": boolean;
@@ -20,12 +21,12 @@ export interface Options {
 	"step-factor": boolean;
 }
 
-export const DEFAULT_OPTIONS: Options = {
+export const DEFAULT_MODEL: Model = {
 	"point-scale": 1,
-	"points-color": "hsl(0deg 0% 98% / 1)",
+	"points-color": "hsl(0deg 0% 98%)",
 	"points-color-wheel": true,
 	"points-limit": 5000,
-	"polygon-color": "hsl(0deg 100% 50% / 0.5)",
+	"polygon-color": "hsl(0deg 100% 50% / 50%)",
 	"polygon-line-width": 2,
 	"polygon-origin-theta": 0,
 	"polygon-scale": 0.45,
@@ -38,16 +39,4 @@ export const DEFAULT_OPTIONS: Options = {
 	"step-factor": true
 };
 
-export const IMMUTABLE_OPTIONS = new Set<keyof Options>([
-	"points-color-wheel",
-	"polygon-color",
-	"polygon-line-width",
-	"polygon-origin-theta",
-	"polygon-scale",
-	"polygon-sides",
-	"polygon-visible",
-	"restrictions",
-	"step-coef",
-	"step-distance",
-	"step-factor"
-]);
+export const { ModelProvider, useModel } = createModelContext(DEFAULT_MODEL);

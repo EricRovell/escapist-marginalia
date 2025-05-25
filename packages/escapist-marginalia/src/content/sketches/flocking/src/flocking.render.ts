@@ -1,19 +1,21 @@
 import { Circle, Point, QuadTree, Rectangle } from "quadtree";
 import { randInt } from "utils/random";
 
-import type { CreateSketch, Renderer } from "ui";
+import type { Renderer, SketchConstructor } from "sketch";
 
 import { Boid } from "./boid";
-import { DEFAULT_OPTIONS, type Options } from "./flocking.options";
+import { useModel } from "./flocking.model";
 
-export const createSketch: CreateSketch = (options: Options = DEFAULT_OPTIONS) => {
+export const sketch: SketchConstructor = () => () => {
+	const { model } = useModel();
+
 	const boids: Boid[] = [];
 
 	const setup: Renderer = ({ height, width }) => {
-		for (let i = 0; i < options.boids; i++) {
+		for (let i = 0; i < model.boids; i++) {
 			boids.push(
 				new Boid({
-					scale: options.scale,
+					scale: model.scale,
 					separation: 1500,
 					x: randInt(100, width),
 					y: randInt(100, height)
@@ -24,7 +26,7 @@ export const createSketch: CreateSketch = (options: Options = DEFAULT_OPTIONS) =
 
 	const draw: Renderer = ({ context, height, width }) => {
 		const boundary = new Rectangle(0, 0, width, height);
-		const qtree = new QuadTree<Point<Boid>>(options.capacity, boundary);
+		const qtree = new QuadTree<Point<Boid>>(model.capacity, boundary);
 
 		for (let i = 0; i < boids.length; i++) {
 			qtree.insert(
@@ -32,16 +34,16 @@ export const createSketch: CreateSketch = (options: Options = DEFAULT_OPTIONS) =
 			);
 		}
 
-		if (options.qtree && options.showQTree) {
+		if (model.qtree && model.showQTree) {
 			qtree.render(context);
 		}
 
 		for (let i = 0; i < boids.length; i++) {
-			if (options.qtree) {
+			if (model.qtree) {
 				const range = new Circle(
 					boids[i].position.x,
 					boids[i].position.y,
-					options.perception
+					model.perception
 				);
 				const points = qtree.query(range);
 				const neighbours: Boid[] = [];
@@ -52,22 +54,22 @@ export const createSketch: CreateSketch = (options: Options = DEFAULT_OPTIONS) =
 					}
 				}
 
-				boids[i].handleBorders(width, height, options.bound);
+				boids[i].handleBorders(width, height, model.bound);
 				boids[i].applyBehaviors(neighbours, {
-					align: options.align,
-					cohesion: options.cohesion,
-					perception: options.perception,
-					separate: options.separate
+					align: model.align,
+					cohesion: model.cohesion,
+					perception: model.perception,
+					separate: model.separate
 				});
 				boids[i].move();
-				boids[i].render({ context, height, width }, options.showPerception, options.perception);
+				boids[i].render({ context, height, width }, model.showPerception, model.perception);
 			} else {
-				boids[i].handleBorders(width, height, options.bound);
+				boids[i].handleBorders(width, height, model.bound);
 				boids[i].applyBehaviors(boids, {
-					align: options.align,
-					cohesion: options.cohesion,
-					perception: options.perception,
-					separate: options.separate
+					align: model.align,
+					cohesion: model.cohesion,
+					perception: model.perception,
+					separate: model.separate
 				});
 				boids[i].move();
 				boids[i].render({ context, height, width });
@@ -77,12 +79,6 @@ export const createSketch: CreateSketch = (options: Options = DEFAULT_OPTIONS) =
 
 	return {
 		draw,
-		setup,
-		update(newOptions?: Options) {
-			options = {
-				...options,
-				...newOptions
-			};
-		}
+		setup
 	};
 };

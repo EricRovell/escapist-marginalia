@@ -1,17 +1,18 @@
-import { Sketch } from "ui";
+import { createRenderSignal, Sketch, SketchProvider } from "sketch";
 
-import { createSketch } from "./digital-rain.render";
+import { SketchForm } from "./digital-rain.form";
+import { ModelProvider } from "./digital-rain.model";
+import { sketch } from "./digital-rain.render";
 
-export default () => (
-	<>
-		<Sketch createSketch={createSketch} />
-		<form
-			style={{
-				background: "rgb(13 18 21)",
-				"grid-area": "controls",
-				height: "50vh",
-				width: "100%"
-			}}
-		/>
-	</>
-);
+export default function View() {
+	const { getSketch, resetSketch } = createRenderSignal(sketch);
+
+	return (
+		<ModelProvider>
+			<SketchProvider>
+				<Sketch createSketch={getSketch()} />
+				<SketchForm onReset={resetSketch} />
+			</SketchProvider>
+		</ModelProvider>
+	);
+}

@@ -1,32 +1,34 @@
 import { randBool, randItem } from "utils/random";
 
-import type { CreateSketch, Renderer } from "ui";
+import type { Renderer, SketchConstructor } from "sketch";
 
-import { DEFAULT_OPTIONS, type Options } from "./geometric-hive.options";
+import { useModel } from "./geometric-hive.model";
 import { Particle, type Position } from "./particle";
 
-export const createSketch: CreateSketch = (options: Options = DEFAULT_OPTIONS) => {
+export const sketch: SketchConstructor = () => () => {
+	const { model } = useModel();
+
 	const particles: Particle[] = [];
 	const holes: Position[] = [];
 	let columns: number;
 	let rows: number;
 
 	const setup: Renderer = ({ height, width }) => {
-		Particle.size = options["particle-size"];
-		Particle.speedBase = options["particle-speed-base"];
+		Particle.size = model["particle-size"];
+		Particle.speedBase = model["particle-speed-base"];
 
-		columns = Math.floor(width / options["particle-size"]);
-		rows = Math.floor(height / options["particle-size"]);
+		columns = Math.floor(width / model["particle-size"]);
+		rows = Math.floor(height / model["particle-size"]);
 
 		for (let x = 0; x < columns; x++) {
 			for (let y = 0; y < rows; y++) {
 				const position: Position = {
-					x: x * options["particle-size"],
-					y: y * options["particle-size"]
+					x: x * model["particle-size"],
+					y: y * model["particle-size"]
 				};
 
-				if (randBool(options["gap-frequency"])) {
-					particles.push(new Particle({ gap: options["particle-gap"], position }));
+				if (randBool(model["gap-frequency"])) {
+					particles.push(new Particle({ gap: model["particle-gap"], position }));
 				} else {
 					holes.push(position);
 				}
@@ -35,7 +37,7 @@ export const createSketch: CreateSketch = (options: Options = DEFAULT_OPTIONS) =
 	};
 
 	const draw: Renderer = ({ context, height, width }) => {
-		context.fillStyle = options.background;
+		context.fillStyle = model.background;
 		context.fillRect(0, 0, width, height);
 
 		for (let i = 0; i < holes.length; i++) {
@@ -76,12 +78,6 @@ export const createSketch: CreateSketch = (options: Options = DEFAULT_OPTIONS) =
 
 	return {
 		draw,
-		setup,
-		update(newOptions?: Options) {
-			options = {
-				...options,
-				...newOptions
-			};
-		}
+		setup
 	};
 };

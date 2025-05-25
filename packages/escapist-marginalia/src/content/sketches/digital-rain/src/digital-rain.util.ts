@@ -4,7 +4,7 @@ const charcodes = {
 	digits: [ 48, 57 ],
 	katakana: [ 12449, 12538 ],
 	math: [ 8704, 8959 ],
-	uppercaseLetters: [ 65, 90 ]
+	uppercase_letters: [ 65, 90 ]
 };
 
 export const getRandomChar = (options: (keyof typeof charcodes)[]): string => {

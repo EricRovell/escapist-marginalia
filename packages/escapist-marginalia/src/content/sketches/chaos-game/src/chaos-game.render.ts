@@ -1,10 +1,12 @@
 import { Chaos, createPolygon, type Polygon } from "chaos-game";
+import { type Renderer, type SketchConstructor, useSketch } from "sketch";
 
-import type { CreateSketch, Renderer } from "ui";
+import { useModel } from "./chaos-game.model";
 
-import { DEFAULT_OPTIONS, type Options } from "./chaos-game.options";
+export const sketch: SketchConstructor = () => () => {
+	const { model } = useModel();
+	const { handlePlayState } = useSketch();
 
-export const createSketch: CreateSketch = (options: Options = DEFAULT_OPTIONS) => {
 	let polygon: Polygon;
 	let chaos: Chaos;
 	let counter = 0;
@@ -12,18 +14,19 @@ export const createSketch: CreateSketch = (options: Options = DEFAULT_OPTIONS) =
 
 	const setup: Renderer = ({ context, height, width }) => {
 		context.translate(width / 2, height / 2);
+		counter = 0;
 
 		polygon = createPolygon(
-			options["polygon-sides"],
-			options["polygon-scale"] * Math.min(height, width),
-			{ angle: options["polygon-origin-theta"] / 180 * Math.PI }
+			model["polygon-sides"],
+			model["polygon-scale"] * Math.min(height, width),
+			{ angle: model["polygon-origin-theta"] / 180 * Math.PI }
 		);
 
 		chaos = new Chaos(polygon, {
-			distances: options.restrictions,
+			distances: model.restrictions,
 			step: {
-				factor: options["step-factor"],
-				value: options["step-factor"] ? options["step-coef"] : options["step-distance"]
+				factor: model["step-factor"],
+				value: model["step-factor"] ? model["step-coef"] : model["step-distance"]
 			}
 		});
 
@@ -31,9 +34,9 @@ export const createSketch: CreateSketch = (options: Options = DEFAULT_OPTIONS) =
 			colorWheel.push(`hsl(${Math.round(phi * 180 / Math.PI)} 75% 50%)`);
 		}
 
-		if (options["polygon-visible"]) {
-			context.strokeStyle = options["polygon-color"];
-			context.lineWidth = options["polygon-line-width"];
+		if (model["polygon-visible"]) {
+			context.strokeStyle = model["polygon-color"];
+			context.lineWidth = model["polygon-line-width"];
 			context.beginPath();
 			context.moveTo(polygon.vertices[0].x, polygon.vertices[0].y);
 
@@ -47,32 +50,27 @@ export const createSketch: CreateSketch = (options: Options = DEFAULT_OPTIONS) =
 	};
 
 	const draw: Renderer = ({ context }) => {
-		if (counter >= options["points-limit"]) {
+		if (counter >= model["points-limit"]) {
+			handlePlayState(false);
 			return;
 		}
 
-		for (const { position, verticeIndex } of chaos.moves(options.speed)) {
-			context.fillStyle = options["points-color-wheel"]
+		for (const { position, verticeIndex } of chaos.moves(model.speed)) {
+			context.fillStyle = model["points-color-wheel"]
 				? colorWheel[verticeIndex]
-				: options["points-color"];
+				: model["points-color"];
 
 			context.beginPath();
-			context.arc(position.x, position.y, options["point-scale"], 0, 2 * Math.PI, false);
+			context.arc(position.x, position.y, model["point-scale"], 0, 2 * Math.PI, false);
 			context.closePath();
 			context.fill();
 		}
 
-		counter += options.speed;
+		counter += model.speed;
 	};
 
 	return {
 		draw,
-		setup,
-		update(newOptions?: Options) {
-			options = {
-				...options,
-				...newOptions
-			};
-		}
+		setup
 	};
 };
