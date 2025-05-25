@@ -122,3 +122,34 @@
 		grid-column: 1 / -1;
 	}
 }
+
+.form {
+	grid-area: controls;
+	display: grid;
+	grid-auto-rows: min-content;
+	gap: 1.2rem;
+	padding: 1.8rem;
+	padding-block-start: 0;
+	width: 100%;
+	border: 1px solid rgb(13 18 21);
+}
+
+.fieldset {
+	border: none;
+	float: left;
+	display: grid;
+	gap: 1.2rem;
+	font-size: 1.2rem;
+
+	&:not(:last-child) {
+		border-block-end: 1px solid color-mix(in srgb, var(--color-neutral-800), transparent 60%);
+		padding-block-end: 1.6rem;
+		margin-block-end: 1.6rem;
+	}
+}
+
+.legend {
+	font-size: 1.6rem;
+	font-weight: 600;
+	margin-block-end: 1.2rem;
+}
