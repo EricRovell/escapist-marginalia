@@ -17,7 +17,7 @@ export const ROUTES_SOCIALS = {
 	GITHUB: "https://github.com/EricRovell",
 	GITLAB: "https://gitlab.com/ericrovell",
 	INSTAGRAM: "https://www.instagram.com/Eric_Rovell",
-	LEETCODE: "https://leetcode.com/Eric_Rovell/",
+	LEETCODE: "https://leetcode.com/EricRovell/",
 	RSS: "/rss.xml",
 	TELEGRAM: "https://t.me/escapist_marginalia"
 };
