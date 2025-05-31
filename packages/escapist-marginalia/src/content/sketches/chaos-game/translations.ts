@@ -2,6 +2,7 @@ import { LANG } from "~/consts";
 
 export const tEn = {
 	ADD_RULE: "Add rule",
+	DELETE: "Delete",
 	DISTANCES: "Distances",
 	FORBIDDEN: "Forbidden",
 	MESSAGE_RESTRICTIONS_1: "Restrict what distance allowed (restricted) the next randomly chosen vertice may have relative to previous ones.",
@@ -21,7 +22,7 @@ export const tEn = {
 	POLYGON_SCALE: "Size",
 	POLYGON_SIDES: "Number of sides",
 	POLYGON_VISIBLE: "Visibility",
-	RESET: "Reset",
+	RESET: "Reset rules",
 	RESTRICTIONS: "Vertice randomness restrictions",
 	SPEED: "Painting speed",
 	STEP: "Step",
@@ -33,6 +34,7 @@ export const tEn = {
 
 export const tRu = {
 	ADD_RULE: "Добавить правило",
+	DELETE: "Удалить",
 	DISTANCES: "Расстояния",
 	FORBIDDEN: "Запрет",
 	MESSAGE_RESTRICTIONS_1: "Позволяет контролировать возможное (запрещённое) расстояние от новой выбранной вершины относительно предыдущих выбранных вершин.",
@@ -52,7 +54,7 @@ export const tRu = {
 	POLYGON_SCALE: "Размер",
 	POLYGON_SIDES: "Количество сторон",
 	POLYGON_VISIBLE: "Видимость",
-	RESET: "Сбросить",
+	RESET: "Сбросить правила",
 	RESTRICTIONS: "Ограничения выбора вершин",
 	SPEED: "Скорость игры",
 	STEP: "Шаги",

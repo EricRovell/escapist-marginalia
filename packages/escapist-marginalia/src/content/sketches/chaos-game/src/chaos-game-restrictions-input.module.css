@@ -1,0 +1,28 @@
+.rule {
+	display: grid;
+	grid-template: 1fr 1fr 1fr / 1fr;
+	align-items: center;
+	gap: 0.8rem;
+	font-size: var(--font-size-00);
+	background-color: var(--color-surface-2);
+	padding: 0.8rem;
+	border-radius: var(--radius);
+
+	& > :last-child {
+		grid-column: 1 / -1;
+	}
+}
+
+.controls {
+	display: grid;
+	grid-template: 1fr / 1fr 1fr;
+	justify-self: center;
+	gap: 0.8rem;
+	width: fit-content;
+}
+
+.message {
+	display: grid;
+	gap: 1.2rem;
+	color: var(--color-text-secondary);
+}

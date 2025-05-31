@@ -3,6 +3,7 @@ import { InputColor, InputRange, InputToggle } from "ui";
 import { Fieldset, Form } from "~/layouts/sketch";
 
 import { t } from "../translations";
+import { InputChaosRestrictions } from "./chaos-game-restrictions-input";
 import { useModel } from "./chaos-game.model";
 
 interface Props {
@@ -17,6 +18,8 @@ export function SketchForm(props: Props) {
 
 	const handleReset = () => {
 		resetModel();
+		// TODO: can't reset store deeply
+		setModel("restrictions", []);
 		props.onReset?.();
 	};
 
@@ -171,13 +174,8 @@ export function SketchForm(props: Props) {
 					step={0.1}
 					value={model["step-distance"]}
 				/>
-				{/* <InputRestrictions !reset
-					bind:value="{state["restrictions"]}"
-					sides="{state["polygon-sides"]}"
-				>
-					{t.RESTRICTIONS}
-				</InputRestrictions> */}
 			</Fieldset>
+			<InputChaosRestrictions onReset={props.onReset} />
 		</Form>
 	);
 }

@@ -1,5 +1,5 @@
 import { createContext, type ParentProps, useContext } from "solid-js";
-import { createStore } from "solid-js/store";
+import { createStore, reconcile } from "solid-js/store";
 import { isNullable } from "utils/validators";
 
 export function createModelContext<Model extends object>(defaultModel: Model) {
@@ -8,7 +8,7 @@ export function createModelContext<Model extends object>(defaultModel: Model) {
 		const [ model, setModel ] = createStore<Model>({ ...defaultModel });
 
 		const resetModel = () => {
-			setModel({ ...defaultModel });
+			setModel(reconcile({ ...defaultModel }));
 		};
 
 		return {
