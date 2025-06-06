@@ -18,8 +18,6 @@ export function SketchForm(props: Props) {
 
 	const handleReset = () => {
 		resetModel();
-		// TODO: can't reset store deeply
-		setModel("restrictions", []);
 		props.onReset?.();
 	};
 

@@ -1,15 +1,18 @@
 import { createContext, type ParentProps, useContext } from "solid-js";
-import { createStore, reconcile } from "solid-js/store";
+import { createStore } from "solid-js/store";
 import { isNullable } from "utils/validators";
 
 export function createModelContext<Model extends object>(defaultModel: Model) {
+	function getDefaultModel() {
+		return structuredClone(defaultModel);
+	}
 
 	function createState() {
-		const [ model, setModel ] = createStore<Model>({ ...defaultModel });
+		const [ model, setModel ] = createStore<Model>(getDefaultModel());
 
-		const resetModel = () => {
-			setModel(reconcile({ ...defaultModel }));
-		};
+		function resetModel() {
+			setModel(getDefaultModel());
+		}
 
 		return {
 			model,
