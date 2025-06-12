@@ -30,7 +30,7 @@ export function SketchControls(props: Props) {
 			<Button appearance="outline" disabled={state.stopped} icon onClick={handleDownload}>
 				<IconDownload />
 			</Button>
-			<Button appearance="outline" disabled icon onClick={handleFullscreen}>
+			<Button appearance="outline" icon onClick={handleFullscreen}>
 				<IconFullscreen />
 			</Button>
 		</fieldset>

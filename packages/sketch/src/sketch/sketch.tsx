@@ -1,8 +1,8 @@
 import { createSignal, Show, splitProps } from "solid-js";
-import { Dialog } from "ui";
 import { setAttribute } from "utils";
 
 import { Canvas, type CanvasProps } from "../canvas";
+import { ModalFullscreen } from "../modal-fullscreen/modal-fullscreen";
 import { useSketch } from "./sketch.context";
 import { SketchControls } from "./sketch.controls";
 
@@ -64,16 +64,14 @@ export function Sketch(allProps: SketchProps) {
 					onStop={handleStop}
 				/>
 			</Show>
-			<Dialog onClose={() => setState("fullscreen", false)} open={state.fullscreen}>
-				<div style={{ height: "100vh", position: "relative", width: "100%" }}>
-					<Show when={state.fullscreen}>
-						<Canvas
-							{...sketch()()}
-							loop={true}
-						/>
-					</Show>
-				</div>
-			</Dialog>
+			<ModalFullscreen onClose={() => setState("fullscreen", false)} open={state.fullscreen}>
+				<Show when={state.fullscreen}>
+					<Canvas
+						{...sketch()()}
+						loop={true}
+					/>
+				</Show>
+			</ModalFullscreen>
 		</article>
 	);
 }
