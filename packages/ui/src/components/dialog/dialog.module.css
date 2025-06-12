@@ -2,6 +2,7 @@
 	display: grid;
 	border: none;
 	background-color: transparent;
+	position: fixed;
 
 	&::backdrop {
 		background-color: rgb(0 0 0 / 70%);
@@ -12,9 +13,6 @@
 		pointer-events: none;
 		visibility: hidden;
 		opacity: 0;
-		transition:
-			opacity 0.35s ease-in-out 0.25s,
-			visibility 0.35s ease-in-out 0.25s;
 	}
 }
 
