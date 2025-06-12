@@ -99,7 +99,7 @@
 
 /* accent */
 
-.button[data-variant="accent"][data-appearance="fill"] {
+:where(.button[data-variant="accent"][data-appearance="fill"]) {
 	--button-bg: var(--button-bg-accent-fill);
 	--button-bg-active: var(--button-bg-active-accent-fill);
 	--button-bg-hover: var(--button-bg-hover-accent-fill);
@@ -107,24 +107,24 @@
 	--button-color: var(--button-color-accent-fill);
 }
 
-.button[data-variant="accent"]:is([data-appearance="ghost"], [data-appearance="outline"]) {
+:where(.button[data-variant="accent"]:is([data-appearance="ghost"], [data-appearance="outline"])) {
 	--button-bg-hover: var(--button-bg-hover-accent-ghost);
 	--button-bg-active: var(--button-bg-active-accent-ghost);
 	--button-color: var(--button-color-accent-ghost);
 }
 
-.button[data-variant="accent"][data-appearance="outline"] {
+:where(.button[data-variant="accent"][data-appearance="outline"]) {
 	--button-border-color: var(--button-border-color-accent-outline);
 }
 
-.button[data-variant="accent"][data-appearance="text"] {
+:where(.button[data-variant="accent"][data-appearance="text"]) {
 	--button-color: var(--button-color-accent-ghost);
 	--button-color-active: var(--button-color-active-accent-text);
 }
 
 /* danger */
 
-.button[data-variant="danger"][data-appearance="fill"] {
+:where(.button[data-variant="danger"][data-appearance="fill"]) {
 	--button-bg: var(--button-bg-danger-fill);
 	--button-bg-active: var(--button-bg-active-danger-fill);
 	--button-bg-hover: var(--button-bg-hover-danger-fill);
@@ -132,24 +132,24 @@
 	--button-color: var(--button-color-danger-fill);
 }
 
-.button[data-variant="danger"]:is([data-appearance="ghost"], [data-appearance="outline"]) {
+:where(.button[data-variant="danger"]:is([data-appearance="ghost"], [data-appearance="outline"])) {
 	--button-bg-hover: var(--button-bg-hover-danger-ghost);
 	--button-bg-active: var(--button-bg-active-danger-ghost);
 	--button-color: var(--button-color-danger-ghost);
 }
 
-.button[data-variant="danger"][data-appearance="outline"] {
+:where(.button[data-variant="danger"][data-appearance="outline"]) {
 	--button-border-color: var(--button-border-color-danger-outline);
 }
 
-.button[data-variant="danger"][data-appearance="text"] {
+:where(.button[data-variant="danger"][data-appearance="text"]) {
 	--button-color: var(--button-color-danger-ghost);
 	--button-color-active: var(--button-color-active-danger-text);
 }
 
 /* info */
 
-.button[data-variant="info"][data-appearance="fill"] {
+:where(.button[data-variant="info"][data-appearance="fill"]) {
 	--button-bg: var(--button-bg-info-fill);
 	--button-bg-active: var(--button-bg-active-info-fill);
 	--button-bg-hover: var(--button-bg-hover-info-fill);
@@ -157,24 +157,24 @@
 	--button-color: var(--button-color-info-fill);
 }
 
-.button[data-variant="info"]:is([data-appearance="ghost"], [data-appearance="outline"]) {
+:where(.button[data-variant="info"]:is([data-appearance="ghost"], [data-appearance="outline"])) {
 	--button-bg-hover: var(--button-bg-hover-info-ghost);
 	--button-bg-active: var(--button-bg-active-info-ghost);
 	--button-color: var(--button-color-info-ghost);
 }
 
-.button[data-variant="info"][data-appearance="outline"] {
+:where(.button[data-variant="info"][data-appearance="outline"]) {
 	--button-border-color: var(--button-border-color-info-outline);
 }
 
-.button[data-variant="info"][data-appearance="text"] {
+:where(.button[data-variant="info"][data-appearance="text"]) {
 	--button-color: var(--button-color-info-ghost);
 	--button-color-active: var(--button-color-active-info-text);
 }
 
 /* neutral */
 
-.button[data-variant="neutral"][data-appearance="fill"] {
+:where(.button[data-variant="neutral"][data-appearance="fill"]) {
 	--button-bg: var(--button-bg-neutral-fill);
 	--button-bg-active: var(--button-bg-active-neutral-fill);
 	--button-bg-hover: var(--button-bg-hover-neutral-fill);
@@ -182,24 +182,24 @@
 	--button-color: var(--button-color-neutral-fill);
 }
 
-.button[data-variant="neutral"]:is([data-appearance="ghost"], [data-appearance="outline"]) {
+:where(.button[data-variant="neutral"]:is([data-appearance="ghost"], [data-appearance="outline"])) {
 	--button-bg-hover: var(--button-bg-hover-neutral-ghost);
 	--button-bg-active: var(--button-bg-active-neutral-ghost);
 	--button-color: var(--button-color-neutral-ghost);
 }
 
-.button[data-variant="neutral"][data-appearance="outline"] {
+:where(.button[data-variant="neutral"][data-appearance="outline"]) {
 	--button-border-color: var(--button-border-color-neutral-outline);
 }
 
-.button[data-variant="neutral"][data-appearance="text"] {
+:where(.button[data-variant="neutral"][data-appearance="text"]) {
 	--button-color: var(--button-color-neutral-ghost);
 	--button-color-active: var(--button-color-active-neutral-text);
 }
 
 /* success */
 
-.button[data-variant="success"][data-appearance="fill"] {
+:where(.button[data-variant="success"][data-appearance="fill"]) {
 	--button-bg: var(--button-bg-success-fill);
 	--button-bg-active: var(--button-bg-active-success-fill);
 	--button-bg-hover: var(--button-bg-hover-success-fill);
@@ -207,24 +207,24 @@
 	--button-color: var(--button-color-success-fill);
 }
 
-.button[data-variant="success"]:is([data-appearance="ghost"], [data-appearance="outline"]) {
+:where(.button[data-variant="success"]:is([data-appearance="ghost"], [data-appearance="outline"])) {
 	--button-bg-hover: var(--button-bg-hover-success-ghost);
 	--button-bg-active: var(--button-bg-active-success-ghost);
 	--button-color: var(--button-color-success-ghost);
 }
 
-.button[data-variant="success"][data-appearance="outline"] {
+:where(.button[data-variant="success"][data-appearance="outline"]) {
 	--button-border-color: var(--button-border-color-success-outline);
 }
 
-.button[data-variant="success"][data-appearance="text"] {
+:where(.button[data-variant="success"][data-appearance="text"]) {
 	--button-color: var(--button-color-success-ghost);
 	--button-color-active: var(--button-color-active-success-text);
 }
 
 /* warning */
 
-.button[data-variant="warning"][data-appearance="fill"] {
+:where(.button[data-variant="warning"][data-appearance="fill"]) {
 	--button-bg: var(--button-bg-warning-fill);
 	--button-bg-active: var(--button-bg-active-warning-fill);
 	--button-bg-hover: var(--button-bg-hover-warning-fill);
@@ -232,24 +232,24 @@
 	--button-color: var(--button-color-warning-fill);
 }
 
-.button[data-variant="warning"]:is([data-appearance="ghost"], [data-appearance="outline"]) {
+:where(.button[data-variant="warning"]:is([data-appearance="ghost"], [data-appearance="outline"])) {
 	--button-bg-hover: var(--button-bg-hover-warning-ghost);
 	--button-bg-active: var(--button-bg-active-warning-ghost);
 	--button-color: var(--button-color-warning-ghost);
 }
 
-.button[data-variant="warning"][data-appearance="outline"] {
+:where(.button[data-variant="warning"][data-appearance="outline"]) {
 	--button-border-color: var(--button-border-color-warning-outline);
 }
 
-.button[data-variant="warning"][data-appearance="text"] {
+:where(.button[data-variant="warning"][data-appearance="text"]) {
 	--button-color: var(--button-color-warning-ghost);
 	--button-color-active: var(--button-color-active-warning-text);
 }
 
 /* text */
 
-.button[data-appearance="text"] {
+:where(.button[data-appearance="text"]) {
 	--button-bg-hover: transparent;
 	--button-bg-active: transparent;
 
