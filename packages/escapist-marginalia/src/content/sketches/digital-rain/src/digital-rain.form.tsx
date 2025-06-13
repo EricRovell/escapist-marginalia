@@ -3,7 +3,7 @@ import { InputColor, InputRange, InputToggle } from "ui";
 import { Fieldset, Form } from "~/layouts/sketch";
 
 import { t } from "../translations";
-import { useModel } from "./digital-rain.model";
+import { MODEL_RESTRICTIONS, useModel } from "./digital-rain.model";
 
 import type { CharType } from "./digital-rain.model";
 
@@ -35,26 +35,23 @@ export function SketchForm(props: Props) {
 			<Fieldset legend={t.GENERAL}>
 				<InputRange
 					label={t.SCALE}
-					max={25}
-					min={1}
 					onChange={event => {
 						setModel("scale", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={1}
 					value={model.scale}
+					{...MODEL_RESTRICTIONS.scale}
 				/>
 				<InputRange
 					label={t.DEPTH}
-					max={1}
-					min={0.01}
 					onChange={event => {
 						setModel("depth", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
 					value={model.depth}
+					{...MODEL_RESTRICTIONS.depth}
 				/>
 				<InputColor
 					disabled={model.random_colors}

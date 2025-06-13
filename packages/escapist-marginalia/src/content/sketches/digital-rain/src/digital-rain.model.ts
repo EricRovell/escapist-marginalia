@@ -25,3 +25,16 @@ export const DEFAULT_MODEL: Model = {
 };
 
 export const { ModelProvider, useModel } = createModelContext(DEFAULT_MODEL);
+
+export const MODEL_RESTRICTIONS = {
+	depth: {
+		max: 1,
+		min: 0.01,
+		step: 0.01
+	},
+	scale: {
+		max: 25,
+		min: 1,
+		step: 1
+	}
+} as const;

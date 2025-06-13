@@ -3,7 +3,7 @@ import { InputColor, InputRange } from "ui";
 import { Fieldset, Form } from "~/layouts/sketch";
 
 import { t } from "../translations";
-import { useModel } from "./geometric-hive.model";
+import { MODEL_RESTRICTIONS, useModel } from "./geometric-hive.model";
 
 interface Props {
 	/**
@@ -32,53 +32,45 @@ export function SketchForm(props: Props) {
 			<Fieldset legend={t.PARTICLES}>
 				<InputRange
 					label={t.PARTICLE_GAP}
-					max={4}
-					min={1}
 					onChange={event => {
 						setModel("particle_gap", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={0.01}
 					value={model.particle_gap}
+					{...MODEL_RESTRICTIONS.particle_gap}
 				/>
 				<InputRange
 					label={t.PARTICLE_SIZE}
-					max={40}
-					min={5}
 					onChange={event => {
 						setModel("particle_size", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={1}
 					value={model.particle_size}
+					{...MODEL_RESTRICTIONS.particle_size}
 				/>
 				<InputRange
 					label={t.PARTICLE_SPEED_BASE}
-					max={0.3}
-					min={0.05}
 					onChange={event => {
 						setModel("particle_speed_base", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={0.01}
 					value={model.particle_speed_base}
+					{...MODEL_RESTRICTIONS.particle_speed_base}
 				/>
 			</Fieldset>
 			<Fieldset legend={t.GAPS}>
 				<InputRange
 					label={t.GAP_FREQUENCY}
-					max={0.97}
-					min={0.8}
 					onChange={event => {
 						setModel("gap_frequency", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={0.01}
 					value={model.gap_frequency}
+					{...MODEL_RESTRICTIONS.gap_frequency}
 				/>
 			</Fieldset>
 		</Form>

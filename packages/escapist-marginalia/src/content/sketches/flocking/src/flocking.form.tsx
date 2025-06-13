@@ -3,7 +3,7 @@ import { InputRange, InputToggle } from "ui";
 import { Fieldset, Form } from "~/layouts/sketch";
 
 import { t } from "../translations";
-import { useModel } from "./flocking.model";
+import { MODEL_RESTRICTIONS, useModel } from "./flocking.model";
 
 interface Props {
 	/**
@@ -25,15 +25,13 @@ export function SketchForm(props: Props) {
 			<Fieldset legend={t.BEHAVIOR}>
 				<InputRange
 					label={t.BOIDS}
-					max={250}
-					min={10}
 					onChange={event => {
 						setModel("boids", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={1}
 					value={model.boids}
+					{...MODEL_RESTRICTIONS.boids}
 				/>
 				<InputToggle
 					checked={model.bound}
@@ -42,44 +40,36 @@ export function SketchForm(props: Props) {
 				/>
 				<InputRange
 					label={t.ALIGNMENT}
-					max={2.5}
-					min={0.1}
 					onChange={event => setModel("align", event.target.valueAsNumber)}
 					output
-					step={0.01}
 					value={model.align}
+					{...MODEL_RESTRICTIONS.align}
 				/>
 				<InputRange
 					label={t.COHESION}
-					max={2}
-					min={0.01}
 					onChange={event => setModel("cohesion", event.target.valueAsNumber)}
 					output
-					step={0.01}
 					value={model.cohesion}
+					{...MODEL_RESTRICTIONS.cohesion}
 				/>
 				<InputRange
 					label={t.SEPARATION}
-					max={2.5}
-					min={0.1}
 					onChange={event => setModel("separate", event.target.valueAsNumber)}
 					output
-					step={0.01}
 					value={model.separate}
+					{...MODEL_RESTRICTIONS.separate}
 				/>
 			</Fieldset>
 			<Fieldset legend={t.APPEARANCE}>
 				<InputRange
 					label={t.SCALE}
-					max={5}
-					min={1}
 					onChange={event => {
 						setModel("scale", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={0.1}
 					value={model.scale}
+					{...MODEL_RESTRICTIONS.scale}
 				/>
 			</Fieldset>
 			<Fieldset legend={t.QTREE}>
@@ -102,12 +92,10 @@ export function SketchForm(props: Props) {
 				/>
 				<InputRange
 					label={t.PERCEPTION}
-					max={250}
-					min={50}
 					onChange={event => setModel("perception", event.target.valueAsNumber)}
 					output
-					step={1}
 					value={model.perception}
+					{...MODEL_RESTRICTIONS.separate}
 				/>
 			</Fieldset>
 		</Form>

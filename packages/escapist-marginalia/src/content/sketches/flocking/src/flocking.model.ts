@@ -33,3 +33,36 @@ export const DEFAULT_MODEL: Model = {
 };
 
 export const { ModelProvider, useModel } = createModelContext(DEFAULT_MODEL);
+
+export const MODEL_RESTRICTIONS = {
+	align: {
+		max: 2.5,
+		min: 0.1,
+		step: 0.01
+	},
+	boids: {
+		max: 250,
+		min: 10,
+		step: 1
+	},
+	cohesion: {
+		max: 2.5,
+		min: 0.1,
+		step: 0.01
+	},
+	perception: {
+		max: 250,
+		min: 50,
+		step: 1
+	},
+	scale: {
+		max: 5,
+		min: 1,
+		step: 0.1
+	},
+	separate: {
+		max: 2.5,
+		min: 0.1,
+		step: 0.01
+	}
+} as const;

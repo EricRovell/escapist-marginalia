@@ -40,3 +40,51 @@ export const DEFAULT_MODEL: Model = {
 };
 
 export const { ModelProvider, useModel } = createModelContext(DEFAULT_MODEL);
+
+export const MODEL_RESTRICTIONS = {
+	point_scale: {
+		max: 5,
+		min: 0.1,
+		step: 0.1
+	},
+	points_limit: {
+		max: 500000,
+		min: 10,
+		step: 1
+	},
+	polygon_line_width: {
+		max: 5,
+		min: 0.5,
+		step: 0.5
+	},
+	polygon_origin_theta: {
+		max: 360,
+		min: 0,
+		step: 0.01
+	},
+	polygon_scale: {
+		max: 2,
+		min: 0.1,
+		step: 0.01
+	},
+	polygon_sides: {
+		max: 12,
+		min: 3,
+		step: 1
+	},
+	speed: {
+		max: 150,
+		min: 1,
+		step: 1
+	},
+	step_coef: {
+		max: 1.5,
+		min: 0.01,
+		step: 0.01
+	},
+	step_distance: {
+		max: 1000,
+		min: 0.1,
+		step: 0.1
+	}
+} as const;

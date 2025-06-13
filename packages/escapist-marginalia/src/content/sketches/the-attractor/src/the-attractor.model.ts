@@ -13,3 +13,21 @@ export const DEFAULT_MODEL: Model = {
 };
 
 export const { ModelProvider, useModel } = createModelContext(DEFAULT_MODEL);
+
+export const MODEL_RESTRICTIONS = {
+	attractors: {
+		max: 15,
+		min: 1,
+		step: 1
+	},
+	lifetime: {
+		max: 3000,
+		min: 250,
+		step: 1
+	},
+	particles: {
+		max: 2500,
+		min: 500,
+		step: 1
+	}
+} as const;

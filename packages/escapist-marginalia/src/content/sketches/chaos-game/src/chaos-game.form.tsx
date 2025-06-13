@@ -4,7 +4,7 @@ import { Fieldset, Form } from "~/layouts/sketch";
 
 import { t } from "../translations";
 import { InputChaosRestrictions } from "./chaos-game-restrictions-input";
-import { useModel } from "./chaos-game.model";
+import { MODEL_RESTRICTIONS, useModel } from "./chaos-game.model";
 
 interface Props {
 	/**
@@ -34,52 +34,44 @@ export function SketchForm(props: Props) {
 				/>
 				<InputRange
 					label={t.POLYGON_SIDES}
-					max={12}
-					min={3}
 					onChange={event => {
 						setModel("polygon_sides", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={1}
 					value={model.polygon_sides}
+					{...MODEL_RESTRICTIONS.polygon_sides}
 				/>
 				<InputRange
 					label={t.POLYGON_SCALE}
-					max={2}
-					min={0.1}
 					onChange={event => {
 						setModel("polygon_scale", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={0.01}
 					value={model.polygon_scale}
+					{...MODEL_RESTRICTIONS.polygon_scale}
 				/>
 				<InputRange
 					label={t.POLYGON_ORIGIN_THETA}
-					max={360}
-					min={0}
 					onChange={event => {
 						setModel("polygon_origin_theta", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={0.01}
-					value={model.polygon_scale}
+					value={model.polygon_origin_theta}
+					{...MODEL_RESTRICTIONS.polygon_origin_theta}
 				/>
 				<InputRange
 					disabled={!model.polygon_visible}
 					label={t.POLYGON_LINE_WIDTH}
-					max={5}
-					min={0.5}
 					onChange={event => {
 						setModel("polygon_line_width", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={0.5}
 					value={model.polygon_line_width}
+					{...MODEL_RESTRICTIONS.polygon_line_width}
 				/>
 				<InputColor
 					disabled={model.polygon_visible}
@@ -94,33 +86,27 @@ export function SketchForm(props: Props) {
 			<Fieldset legend={t.POINTS}>
 				<InputRange
 					label={t.POINTS_LIMIT}
-					max={500000}
-					min={10}
 					onChange={event => {
 						setModel("points_limit", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={1}
 					value={model.points_limit}
+					{...MODEL_RESTRICTIONS.points_limit}
 				/>
 				<InputRange
 					label={t.POINT_SCALE}
-					max={5}
-					min={0.1}
 					onChange={event => setModel("point_scale", event.target.valueAsNumber)}
 					output
-					step={0.1}
 					value={model.point_scale}
+					{...MODEL_RESTRICTIONS.polygon_scale}
 				/>
 				<InputRange
 					label={t.SPEED}
-					max={150}
-					min={1}
 					onChange={event => setModel("speed", event.target.valueAsNumber)}
 					output
-					step={1}
 					value={model.speed}
+					{...MODEL_RESTRICTIONS.speed}
 				/>
 				<InputToggle
 					checked={model.points_color_wheel}
@@ -149,28 +135,24 @@ export function SketchForm(props: Props) {
 				<InputRange
 					disabled={!model.step_factor}
 					label={t.STEP_COEF}
-					max={1.5}
-					min={0.01}
 					onChange={event => {
 						setModel("step_coef", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={0.01}
 					value={model.step_coef}
+					{...MODEL_RESTRICTIONS.step_coef}
 				/>
 				<InputRange
 					disabled={!model.step_factor}
 					label={t.STEP_DISTANCE}
-					max={1000}
-					min={0.1}
 					onChange={event => {
 						setModel("step_distance", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
-					step={0.1}
 					value={model.step_distance}
+					{...MODEL_RESTRICTIONS.step_distance}
 				/>
 			</Fieldset>
 			<InputChaosRestrictions onReset={props.onReset} />

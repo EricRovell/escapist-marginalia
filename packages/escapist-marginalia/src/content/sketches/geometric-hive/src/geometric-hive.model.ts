@@ -19,3 +19,26 @@ export const DEFAULT_MODEL: Model = {
 };
 
 export const { ModelProvider, useModel } = createModelContext(DEFAULT_MODEL);
+
+export const MODEL_RESTRICTIONS = {
+	gap_frequency: {
+		max: 0.97,
+		min: 0.8,
+		step: 0.01
+	},
+	particle_gap: {
+		max: 4,
+		min: 1,
+		step: 0.01
+	},
+	particle_size: {
+		max: 40,
+		min: 5,
+		step: 1
+	},
+	particle_speed_base: {
+		max: 0.3,
+		min: 0.05,
+		step: 0.01
+	}
+} as const;
