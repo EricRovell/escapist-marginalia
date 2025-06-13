@@ -147,8 +147,8 @@ export class Boid {
 		this.acceleration.set(0, 0);
 	}
 
-	render({ context }: RenderArguments, showPerception = false, perception = 0): void {
-		if (showPerception) {
+	render({ context }: RenderArguments, show_perception = false, perception = 0): void {
+		if (show_perception) {
 			context.beginPath();
 			context.strokeStyle = "rgb(200 200 200 / 0.2)";
 			context.lineWidth = 0.5;

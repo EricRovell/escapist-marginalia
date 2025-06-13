@@ -34,7 +34,7 @@ export const sketch: SketchConstructor = () => () => {
 			);
 		}
 
-		if (model.qtree && model.showQTree) {
+		if (model.qtree && model.show_qtree) {
 			qtree.render(context);
 		}
 
@@ -62,7 +62,7 @@ export const sketch: SketchConstructor = () => () => {
 					separate: model.separate
 				});
 				boids[i].move();
-				boids[i].render({ context, height, width }, model.showPerception, model.perception);
+				boids[i].render({ context, height, width }, model.show_perception, model.perception);
 			} else {
 				boids[i].handleBorders(width, height, model.bound);
 				boids[i].applyBehaviors(boids, {

@@ -14,21 +14,21 @@ export const sketch: SketchConstructor = () => () => {
 	let rows: number;
 
 	const setup: Renderer = ({ height, width }) => {
-		Particle.size = model["particle-size"];
-		Particle.speedBase = model["particle-speed-base"];
+		Particle.size = model.particle_size;
+		Particle.speedBase = model.particle_speed_base;
 
-		columns = Math.floor(width / model["particle-size"]);
-		rows = Math.floor(height / model["particle-size"]);
+		columns = Math.floor(width / model.particle_size);
+		rows = Math.floor(height / model.particle_size);
 
 		for (let x = 0; x < columns; x++) {
 			for (let y = 0; y < rows; y++) {
 				const position: Position = {
-					x: x * model["particle-size"],
-					y: y * model["particle-size"]
+					x: x * model.particle_size,
+					y: y * model.particle_size
 				};
 
-				if (randBool(model["gap-frequency"])) {
-					particles.push(new Particle({ gap: model["particle-gap"], position }));
+				if (randBool(model.gap_frequency)) {
+					particles.push(new Particle({ gap: model.particle_gap, position }));
 				} else {
 					holes.push(position);
 				}

@@ -13,8 +13,8 @@ export interface Model {
 	qtree: boolean;
 	scale: number;
 	separate: number;
-	showPerception: boolean;
-	showQTree: boolean;
+	show_perception: boolean;
+	show_qtree: boolean;
 }
 
 export const DEFAULT_MODEL: Model = {
@@ -28,8 +28,8 @@ export const DEFAULT_MODEL: Model = {
 	qtree: true,
 	scale: 3.5,
 	separate: 1,
-	showPerception: false,
-	showQTree: false
+	show_perception: false,
+	show_qtree: false
 };
 
 export const { ModelProvider, useModel } = createModelContext(DEFAULT_MODEL);

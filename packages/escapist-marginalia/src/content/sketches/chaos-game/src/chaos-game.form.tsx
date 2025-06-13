@@ -25,10 +25,10 @@ export function SketchForm(props: Props) {
 		<Form onReset={handleReset}>
 			<Fieldset legend={t.POLYGON}>
 				<InputToggle
-					checked={model["polygon-visible"]}
+					checked={model.polygon_visible}
 					label={t.POLYGON_VISIBLE}
 					onChange={event => {
-						setModel("polygon-visible", event.target.checked);
+						setModel("polygon_visible", event.target.checked);
 						props.onReset?.();
 					}}
 				/>
@@ -37,58 +37,58 @@ export function SketchForm(props: Props) {
 					max={12}
 					min={3}
 					onChange={event => {
-						setModel("polygon-sides", event.target.valueAsNumber);
+						setModel("polygon_sides", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
 					step={1}
-					value={model["polygon-sides"]}
+					value={model.polygon_sides}
 				/>
 				<InputRange
 					label={t.POLYGON_SCALE}
 					max={2}
 					min={0.1}
 					onChange={event => {
-						setModel("polygon-scale", event.target.valueAsNumber);
+						setModel("polygon_scale", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
 					step={0.01}
-					value={model["polygon-scale"]}
+					value={model.polygon_scale}
 				/>
 				<InputRange
 					label={t.POLYGON_ORIGIN_THETA}
 					max={360}
 					min={0}
 					onChange={event => {
-						setModel("polygon-origin-theta", event.target.valueAsNumber);
+						setModel("polygon_origin_theta", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
 					step={0.01}
-					value={model["polygon-scale"]}
+					value={model.polygon_scale}
 				/>
 				<InputRange
-					disabled={!model["polygon-visible"]}
+					disabled={!model.polygon_visible}
 					label={t.POLYGON_LINE_WIDTH}
 					max={5}
 					min={0.5}
 					onChange={event => {
-						setModel("polygon-line-width", event.target.valueAsNumber);
+						setModel("polygon_line_width", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
 					step={0.5}
-					value={model["polygon-line-width"]}
+					value={model.polygon_line_width}
 				/>
 				<InputColor
-					disabled={model["polygon-visible"]}
+					disabled={model.polygon_visible}
 					label={t.POLYGON_COLOR}
 					onChange={({ valueAsString }) => {
-						setModel("polygon-color", valueAsString);
+						setModel("polygon_color", valueAsString);
 						props.onReset?.();
 					}}
-					value={model["polygon-color"]}
+					value={model.polygon_color}
 				/>
 			</Fieldset>
 			<Fieldset legend={t.POINTS}>
@@ -97,21 +97,21 @@ export function SketchForm(props: Props) {
 					max={500000}
 					min={10}
 					onChange={event => {
-						setModel("points-limit", event.target.valueAsNumber);
+						setModel("points_limit", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
 					step={1}
-					value={model["points-limit"]}
+					value={model.points_limit}
 				/>
 				<InputRange
 					label={t.POINT_SCALE}
 					max={5}
 					min={0.1}
-					onChange={event => setModel("point-scale", event.target.valueAsNumber)}
+					onChange={event => setModel("point_scale", event.target.valueAsNumber)}
 					output
 					step={0.1}
-					value={model["point-scale"]}
+					value={model.point_scale}
 				/>
 				<InputRange
 					label={t.SPEED}
@@ -123,54 +123,54 @@ export function SketchForm(props: Props) {
 					value={model.speed}
 				/>
 				<InputToggle
-					checked={model["points-color-wheel"]}
+					checked={model.points_color_wheel}
 					label={t.POINTS_COLOR_WHEEL}
 					onChange={event => {
-						setModel("points-color-wheel", event.target.checked);
+						setModel("points_color_wheel", event.target.checked);
 						props.onReset?.();
 					}}
 				/>
 				<InputColor
-					disabled={model["points-color-wheel"]}
+					disabled={model.points_color_wheel}
 					label={t.POINTS_COLOR}
-					onChange={({ valueAsString }) => setModel("points-color", valueAsString)}
-					value={model["points-color"]}
+					onChange={({ valueAsString }) => setModel("points_color", valueAsString)}
+					value={model.points_color}
 				/>
 			</Fieldset>
 			<Fieldset legend={t.STEP}>
 				<InputToggle
-					checked={model["step-factor"]}
+					checked={model.step_factor}
 					label={t.STEP_FACTOR}
 					onChange={event => {
-						setModel("step-factor", event.target.checked);
+						setModel("step_factor", event.target.checked);
 						props.onReset?.();
 					}}
 				/>
 				<InputRange
-					disabled={!model["step-factor"]}
+					disabled={!model.step_factor}
 					label={t.STEP_COEF}
 					max={1.5}
 					min={0.01}
 					onChange={event => {
-						setModel("step-coef", event.target.valueAsNumber);
+						setModel("step_coef", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
 					step={0.01}
-					value={model["step-coef"]}
+					value={model.step_coef}
 				/>
 				<InputRange
-					disabled={!model["step-factor"]}
+					disabled={!model.step_factor}
 					label={t.STEP_DISTANCE}
 					max={1000}
 					min={0.1}
 					onChange={event => {
-						setModel("step-distance", event.target.valueAsNumber);
+						setModel("step_distance", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
 					step={0.1}
-					value={model["step-distance"]}
+					value={model.step_distance}
 				/>
 			</Fieldset>
 			<InputChaosRestrictions onReset={props.onReset} />

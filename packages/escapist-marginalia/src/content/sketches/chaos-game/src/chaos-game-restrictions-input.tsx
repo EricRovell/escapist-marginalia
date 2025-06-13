@@ -27,7 +27,7 @@ export function InputChaosRestrictions(props: Props) {
 	const { model, setModel } = useModel();
 
 	const handleAddRule = () => {
-		if (model.restrictions.length >= model["polygon-sides"]) {
+		if (model.restrictions.length >= model.polygon_sides) {
 			return;
 		}
 
@@ -56,7 +56,7 @@ export function InputChaosRestrictions(props: Props) {
 		if (target.type === "checkbox") {
 			setModel("restrictions", index, "forbidden", target.checked);
 		} else if (target.type === "text") {
-			const distances = target.value.split(",").map(value => clamp(Number(value), 1, model["polygon-sides"]));
+			const distances = target.value.split(",").map(value => clamp(Number(value), 1, model.polygon_sides));
 			setModel("restrictions", index, "values", [ ...new Set(distances) ]);
 		} else {
 			setModel("restrictions", index, "index", Number(target.value));
@@ -74,7 +74,7 @@ export function InputChaosRestrictions(props: Props) {
 							data-index={i()}
 							label={t.VERTICE}
 							max={-1}
-							min={-model["polygon-sides"]}
+							min={-model.polygon_sides}
 							type="number"
 							value={rule.index}
 						/>
@@ -102,7 +102,7 @@ export function InputChaosRestrictions(props: Props) {
 			</For>
 			<div class={styles.controls}>
 				<Button
-					disabled={model.restrictions.length === model["polygon-sides"]}
+					disabled={model.restrictions.length === model.polygon_sides}
 					onClick={handleAddRule}
 				>
 					{t.ADD_RULE}

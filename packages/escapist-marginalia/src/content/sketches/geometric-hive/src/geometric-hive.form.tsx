@@ -35,36 +35,36 @@ export function SketchForm(props: Props) {
 					max={4}
 					min={1}
 					onChange={event => {
-						setModel("particle-gap", event.target.valueAsNumber);
+						setModel("particle_gap", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
 					step={0.01}
-					value={model["particle-gap"]}
+					value={model.particle_gap}
 				/>
 				<InputRange
 					label={t.PARTICLE_SIZE}
 					max={40}
 					min={5}
 					onChange={event => {
-						setModel("particle-size", event.target.valueAsNumber);
+						setModel("particle_size", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
 					step={1}
-					value={model["particle-size"]}
+					value={model.particle_size}
 				/>
 				<InputRange
 					label={t.PARTICLE_SPEED_BASE}
 					max={0.3}
 					min={0.05}
 					onChange={event => {
-						setModel("particle-speed-base", event.target.valueAsNumber);
+						setModel("particle_speed_base", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
 					step={0.01}
-					value={model["particle-speed-base"]}
+					value={model.particle_speed_base}
 				/>
 			</Fieldset>
 			<Fieldset legend={t.GAPS}>
@@ -73,12 +73,12 @@ export function SketchForm(props: Props) {
 					max={0.97}
 					min={0.8}
 					onChange={event => {
-						setModel("gap-frequency", event.target.valueAsNumber);
+						setModel("gap_frequency", event.target.valueAsNumber);
 						props.onReset?.();
 					}}
 					output
 					step={0.01}
-					value={model["gap-frequency"]}
+					value={model.gap_frequency}
 				/>
 			</Fieldset>
 		</Form>

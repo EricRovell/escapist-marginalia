@@ -17,16 +17,16 @@ export const sketch: SketchConstructor = () => () => {
 		counter = 0;
 
 		polygon = createPolygon(
-			model["polygon-sides"],
-			model["polygon-scale"] * Math.min(height, width),
-			{ angle: model["polygon-origin-theta"] / 180 * Math.PI }
+			model.polygon_sides,
+			model.polygon_scale * Math.min(height, width),
+			{ angle: model.polygon_origin_theta / 180 * Math.PI }
 		);
 
 		chaos = new Chaos(polygon, {
 			distances: model.restrictions,
 			step: {
-				factor: model["step-factor"],
-				value: model["step-factor"] ? model["step-coef"] : model["step-distance"]
+				factor: model.step_factor,
+				value: model.step_factor ? model.step_coef : model.step_distance
 			}
 		});
 
@@ -34,9 +34,9 @@ export const sketch: SketchConstructor = () => () => {
 			colorWheel.push(`hsl(${Math.round(phi * 180 / Math.PI)} 75% 50%)`);
 		}
 
-		if (model["polygon-visible"]) {
-			context.strokeStyle = model["polygon-color"];
-			context.lineWidth = model["polygon-line-width"];
+		if (model.polygon_visible) {
+			context.strokeStyle = model.polygon_color;
+			context.lineWidth = model.polygon_line_width;
 			context.beginPath();
 			context.moveTo(polygon.vertices[0].x, polygon.vertices[0].y);
 
@@ -50,18 +50,18 @@ export const sketch: SketchConstructor = () => () => {
 	};
 
 	const draw: Renderer = ({ context }) => {
-		if (counter >= model["points-limit"]) {
+		if (counter >= model.points_limit) {
 			handlePlayState(false);
 			return;
 		}
 
 		for (const { position, verticeIndex } of chaos.moves(model.speed)) {
-			context.fillStyle = model["points-color-wheel"]
+			context.fillStyle = model.points_color_wheel
 				? colorWheel[verticeIndex]
-				: model["points-color"];
+				: model.points_color;
 
 			context.beginPath();
-			context.arc(position.x, position.y, model["point-scale"], 0, 2 * Math.PI, false);
+			context.arc(position.x, position.y, model.point_scale, 0, 2 * Math.PI, false);
 			context.closePath();
 			context.fill();
 		}

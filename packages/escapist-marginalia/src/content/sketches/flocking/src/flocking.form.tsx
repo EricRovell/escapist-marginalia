@@ -89,16 +89,16 @@ export function SketchForm(props: Props) {
 					onChange={event => setModel("qtree", event.target.checked)}
 				/>
 				<InputToggle
-					checked={model.showQTree}
+					checked={model.show_qtree}
 					disabled={!model.qtree}
 					label={t.QTREE_APPEARANCE}
-					onChange={event => setModel("showQTree", event.target.checked)}
+					onChange={event => setModel("show_qtree", event.target.checked)}
 				/>
 				<InputToggle
-					checked={model.showPerception}
+					checked={model.show_perception}
 					disabled={!model.qtree}
 					label={t.PERCEPTION_APPEARANCE}
-					onChange={event => setModel("showPerception", event.target.checked)}
+					onChange={event => setModel("show_perception", event.target.checked)}
 				/>
 				<InputRange
 					label={t.PERCEPTION}
