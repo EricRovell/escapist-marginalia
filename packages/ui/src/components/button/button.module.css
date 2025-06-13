@@ -249,7 +249,7 @@
 
 /* text */
 
-:where(.button[data-appearance="text"]) {
+.button[data-appearance="text"] {
 	--button-bg-hover: transparent;
 	--button-bg-active: transparent;
 
