@@ -15,11 +15,13 @@ const { title, description } = Astro.props;
 	<div data-full-bleed style={{ "--full-bleed-width": "1800px" }}>
 		<main class={styles.layout}>
 			<slot name="sketch" />
-			<h1 class={styles.title}>{title}</h1>
-			<p class={styles.description}>{description}</p>
-			<article class={styles.article}>
-				<slot />
-			</article>
+			<div>
+				<h1 class={styles.title}>{title}</h1>
+				<p class={styles.description}>{description}</p>
+				<article class={styles.article}>
+					<slot />
+				</article>
+			</div>
 		</main>
 	</div>
 </LayoutBase>

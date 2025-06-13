@@ -1,6 +1,6 @@
 .layout {
 	display: grid;
-	grid-template: 70vh min-content min-content auto / 1fr 30ch;
+	grid-template: 70vh min-content auto / 1fr 30ch;
 	grid-template-areas:
 		"sketch controls"
 		"title controls"
@@ -24,11 +24,14 @@
 .title {
 	grid-area: title;
 	font-size: 4.8rem;
+	height: min-content;
 }
 
 .description {
 	grid-area: description;
 	font-size: 2rem;
+	height: min-content;
+	margin-block-end: 2rem;
 }
 
 .article {
