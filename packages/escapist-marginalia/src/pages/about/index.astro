@@ -11,6 +11,6 @@ if (!page) {
 const { Content } = await render(page);
 ---
 
-<LayoutArticle title={page.data.title} description={page.data.description}>
+<LayoutArticle {...page}>
 	<Content />
 </LayoutArticle>

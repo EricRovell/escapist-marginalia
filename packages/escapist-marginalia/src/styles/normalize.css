@@ -46,6 +46,10 @@ sup {
 	top: -0.75em;
 }
 
+fieldset {
+	border: none;
+}
+
 :focus-visible {
 	outline: 2px dashed var(--color-info);
 	outline-offset: 2px;

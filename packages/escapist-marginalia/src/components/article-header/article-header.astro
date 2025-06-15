@@ -1,0 +1,47 @@
+---
+import { isNullable } from "utils/validators";
+
+import Datetime from "~/components/datetime.astro";
+
+import styles from "./article-header.module.css";
+
+interface Props {
+	title: string;
+	description: string;
+	date: Date;
+	image?: {
+		src: string;
+		width: number;
+		height: number;
+	}
+}
+
+const { title, description, image, date } = Astro.props;
+---
+
+<header class={styles.header} data-full-bleed>
+	{!isNullable(image) && (
+		<img
+			class={styles.cover}
+			alt=""
+			height={image.height}
+			src={image.src}
+			width={image.width}
+		/>
+	)}
+	<h1 class={styles.title}>{title}</h1>
+	<p class={styles.description}>{description}</p>
+	<slot />
+	<div class={styles.date} data-full-bleed-center>
+		<div class={styles.divider} />
+		<Datetime
+			date={date}
+			options={{
+				year: "numeric",
+				month: "long",
+				day: "2-digit"
+			}}
+		/>
+		<div class={styles.divider} />
+	</div>
+</header>

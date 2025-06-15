@@ -1,0 +1,38 @@
+.header {
+	display: grid;
+	justify-items: center;
+	margin-block: 8rem;
+}
+
+.cover {
+	width: 125px;
+	height: 125px;
+}
+
+.title {
+	font-size: 4.8rem;
+	text-align: center;
+}
+
+.description {
+	font-size: 1.8rem;
+	max-width: 32ch;
+	text-wrap: balance;
+	text-align: center;
+}
+
+.date {
+	display: grid;
+	grid-template: 1fr / 1fr max-content 1fr;
+	align-items: center;
+	gap: 2rem;
+	margin-block-start: 2.4rem;
+	width: min(75ch, 100%);
+	color: var(--color-text-secondary);
+}
+
+.divider {
+	width: 100%;
+	height: 1px;
+	background-color: hsl(from var(--color-border) h s l / 20%);
+}

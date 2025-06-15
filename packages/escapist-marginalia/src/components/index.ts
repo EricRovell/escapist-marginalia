@@ -1,3 +1,4 @@
+export { default as ArticleHeader } from "./article-header/article-header.astro";
 export { default as Card } from "./card/card.astro";
 export { default as Footer } from "./footer/footer.astro";
 export { default as Header } from "./header/header.astro";

@@ -58,7 +58,7 @@
 		display: grid;
 		grid-template: repeat(2, min-content) / 1fr;
 		width: 100%;
-		grid-column: 1 / span 3;
+		grid-column: 1 / span 3 !important;
 	}
 
 	.logo {

@@ -1,4 +1,3 @@
-export { ButtonScrollTop } from "./button-scroll-top/button-scroll-top";
 export { Button } from "./button/button";
 export { Dialog, type DialogProps } from "./dialog";
 export { Input } from "./input";

@@ -6,7 +6,7 @@ import { ClientRouter  } from "astro:transitions";
 
 import styles from "./base-layout.module.css";
 
-const { maxWidth, ...rest } = Astro.props;
+const { maxWidth } = Astro.props;
 
 const style = maxWidth
 	? { "--full-bleed-width": `${maxWidth}px` }
@@ -20,7 +20,7 @@ const style = maxWidth
 		<ClientRouter />
 		<slot name="head" />
 	</head>
-	<body class={styles.body} data-full-bleed {...rest}>
+	<body class={styles.body} data-full-bleed>
 		<header data-full-bleed style={style}>
 			<Header />
 			<slot name="header" />
