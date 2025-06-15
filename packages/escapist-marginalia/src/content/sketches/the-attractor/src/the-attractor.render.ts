@@ -12,13 +12,9 @@ export const sketch: SketchConstructor = () => () => {
 	const attractors: ReturnType<typeof makeAttractor>[] = [];
 	const particles: ReturnType<typeof makeParticle>[] = [];
 
-	const cleanup = () => {
+	const setup: Renderer = ({ context, height, width }) => {
 		attractors.length = 0;
 		particles.length = 0;
-	};
-
-	const setup: Renderer = ({ context, height, width }) => {
-		cleanup();
 
 		context.lineWidth = 1;
 

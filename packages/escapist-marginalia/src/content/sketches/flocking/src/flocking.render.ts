@@ -12,6 +12,8 @@ export const sketch: SketchConstructor = () => () => {
 	const boids: Boid[] = [];
 
 	const setup: Renderer = ({ height, width }) => {
+		boids.length = 0;
+
 		for (let i = 0; i < model.boids; i++) {
 			boids.push(
 				new Boid({
